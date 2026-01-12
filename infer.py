@@ -4,10 +4,14 @@ import random
 from datasets import load_dataset
 import requests
 
-question = "Mike Barnett negotiated many contracts including which player that went on to become general manager of CSKA Moscow of the Kontinental Hockey League?"
+# hotpotqa
+# question = "Mike Barnett negotiated many contracts including which player that went on to become general manager of CSKA Moscow of the Kontinental Hockey League?"
+
+# widesearch
+question = "My son is about to start his university applications in 2025 for postgraduates but he’s still uncertain about both his major and which universities to apply to. Could you help me find the top five universities in each of the five broad subjects from the QS World University Rankings by Subject 2025, and also check their standings in the QS World University Rankings 2025 and the Times Higher Education World University Rankings 2025? And I need the home page of the university's official website, standard application deadline for regular decision as well as the application fee without the fee waiver.\n\nPlease organize the results in one Markdown table with the following columns:\nSubject, University, QS World University Rankings by Subject 2025, QS World University Rankings 2025, Times Higher Education  World University Rankings 2025, Home Page, Application Deadline, Application Fee\nPlease use the universities’ full official names in English. \nUse only Arabic numerals in the ranking, for example: 1.\nDon't ask me any questions, just output the results according to the columns without omitting cells arbitrarily. The output format is \n```markdown\n{data_content}\n```."
 
 # Model ID and device setup
-model_id = "PeterJinGo/SearchR1-nq_hotpotqa_train-qwen2.5-7b-em-ppo"
+model_id = "/mnt/mnt/public/zhangruize/MAS/ckpt/SearchR1-nq_hotpotqa_train-qwen2.5-7b-it-em-grpo-v0.2"
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 question = question.strip()
