@@ -26,6 +26,7 @@ import re
 import requests
 import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Optional, Any
 
@@ -417,6 +418,7 @@ def run_inference(
     trial_idx: int = 0,
     max_workers: int = 1,
     num_samples: int = None,
+    use_timestamp: bool = True,
 ):
     """
     Run inference on all questions in the dataset.
@@ -431,8 +433,14 @@ def run_inference(
         trial_idx: Trial index for output naming
         max_workers: Maximum parallel workers (usually 1 for GPU)
         num_samples: Number of samples to use (None = use all)
+        use_timestamp: Whether to create timestamped subdirectory (default: True)
     """
     model_name = Path(model_path).name
+
+    # Create timestamped subdirectory (only if use_timestamp is True)
+    if use_timestamp:
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        output_dir = os.path.join(output_dir, timestamp)
     os.makedirs(output_dir, exist_ok=True)
 
     # Load questions
@@ -585,7 +593,13 @@ def main():
         "--trial_idx",
         type=int,
         default=0,
-        help="Trial index for output file naming",
+        help="Trial index for output file naming (ignored if trial_num > 1)",
+    )
+    parser.add_argument(
+        "--trial_num",
+        type=int,
+        default=1,
+        help="Number of trials to run (default: 1)",
     )
     parser.add_argument(
         "--max_workers",
@@ -602,17 +616,57 @@ def main():
 
     args = parser.parse_args()
 
-    run_inference(
-        dataset_path=args.dataset_path,
-        output_dir=args.output_dir,
-        model_path=args.model_path,
-        search_host=args.search_host,
-        search_port=args.search_port,
-        search_topk=args.search_topk,
-        trial_idx=args.trial_idx,
-        max_workers=args.max_workers,
-        num_samples=args.num_samples,
-    )
+    # Run multiple trials if trial_num > 1
+    if args.trial_num > 1:
+        # Create a shared timestamped directory for all trials
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        shared_output_dir = os.path.join(args.output_dir, timestamp)
+        os.makedirs(shared_output_dir, exist_ok=True)
+
+        print(f"\n{'='*60}")
+        print(f"Running {args.trial_num} trials")
+        print(f"Output directory: {shared_output_dir}")
+        print(f"{'='*60}\n")
+
+        for trial_idx in range(args.trial_num):
+            print(f"\n{'='*60}")
+            print(f"Starting Trial {trial_idx + 1}/{args.trial_num}")
+            print(f"{'='*60}\n")
+
+            run_inference(
+                dataset_path=args.dataset_path,
+                output_dir=shared_output_dir,
+                model_path=args.model_path,
+                search_host=args.search_host,
+                search_port=args.search_port,
+                search_topk=args.search_topk,
+                trial_idx=trial_idx,
+                max_workers=args.max_workers,
+                num_samples=args.num_samples,
+                use_timestamp=False,  # Don't create timestamp, use shared directory
+            )
+
+            print(f"\n{'='*60}")
+            print(f"Completed Trial {trial_idx + 1}/{args.trial_num}")
+            print(f"{'='*60}\n")
+
+        print(f"\n{'='*60}")
+        print(f"All {args.trial_num} trials completed!")
+        print(f"Results saved to: {shared_output_dir}")
+        print(f"{'='*60}\n")
+    else:
+        run_inference(
+            dataset_path=args.dataset_path,
+            output_dir=args.output_dir,
+            model_path=args.model_path,
+            search_host=args.search_host,
+            search_port=args.search_port,
+            search_topk=args.search_topk,
+            trial_idx=args.trial_idx,
+            max_workers=args.max_workers,
+            num_samples=args.num_samples,
+            use_timestamp=True,  # Use timestamp for single trial
+        )
 
 
 if __name__ == "__main__":
