@@ -419,6 +419,8 @@ def run_inference(
     max_workers: int = 1,
     num_samples: int = None,
     use_timestamp: bool = True,
+    model = None,
+    tokenizer = None,
 ):
     """
     Run inference on all questions in the dataset.
@@ -434,6 +436,8 @@ def run_inference(
         max_workers: Maximum parallel workers (usually 1 for GPU)
         num_samples: Number of samples to use (None = use all)
         use_timestamp: Whether to create timestamped subdirectory (default: True)
+        model: Pre-loaded model (optional, will load from model_path if not provided)
+        tokenizer: Pre-loaded tokenizer (optional, will load from model_path if not provided)
     """
     model_name = Path(model_path).name
 
@@ -464,14 +468,18 @@ def run_inference(
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Using device: {device}")
 
-    # Load model and tokenizer
-    print(f"Loading model from {model_path}...")
-    tokenizer = transformers.AutoTokenizer.from_pretrained(model_path)
-    model = transformers.AutoModelForCausalLM.from_pretrained(
-        model_path,
-        torch_dtype=torch.bfloat16,
-        device_map="auto"
-    )
+    # Load model and tokenizer (only if not provided)
+    load_model_here = model is None or tokenizer is None
+    if load_model_here:
+        print(f"Loading model from {model_path}...")
+        tokenizer = transformers.AutoTokenizer.from_pretrained(model_path)
+        model = transformers.AutoModelForCausalLM.from_pretrained(
+            model_path,
+            torch_dtype=torch.bfloat16,
+            device_map="auto"
+        )
+    else:
+        print(f"Using pre-loaded model")
 
     # Setup stopping criteria
     target_sequences = [
@@ -628,6 +636,16 @@ def main():
         print(f"Output directory: {shared_output_dir}")
         print(f"{'='*60}\n")
 
+        # Load model and tokenizer once for all trials
+        print(f"Loading model from {args.model_path} (shared across all trials)...")
+        tokenizer = transformers.AutoTokenizer.from_pretrained(args.model_path)
+        model = transformers.AutoModelForCausalLM.from_pretrained(
+            args.model_path,
+            torch_dtype=torch.bfloat16,
+            device_map="auto"
+        )
+        print(f"Model loaded successfully!\n")
+
         for trial_idx in range(args.trial_num):
             print(f"\n{'='*60}")
             print(f"Starting Trial {trial_idx + 1}/{args.trial_num}")
@@ -644,6 +662,8 @@ def main():
                 max_workers=args.max_workers,
                 num_samples=args.num_samples,
                 use_timestamp=False,  # Don't create timestamp, use shared directory
+                model=model,  # Pass pre-loaded model
+                tokenizer=tokenizer,  # Pass pre-loaded tokenizer
             )
 
             print(f"\n{'='*60}")
