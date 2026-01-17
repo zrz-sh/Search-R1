@@ -1,0 +1,1071 @@
+exist_flag_gt,exist_flag_response,具体日期,具体日期_before_map,举办国家_exact_match,举办国家_exact_match_eval_msg,举办国家_query,举办国家_response,举办场馆_llm_judge,举办场馆_llm_judge_eval_msg,举办场馆_query,举办场馆_response,举办城市_llm_judge,举办城市_llm_judge_eval_msg,举办城市_query,举办城市_response,具体日期_exact_match,具体日期_exact_match_eval_msg,演唱会中文名_llm_judge,演唱会中文名_llm_judge_eval_msg,演唱会中文名_query,演唱会中文名_response,演唱会英文名_llm_judge,演唱会英文名_llm_judge_eval_msg,演唱会英文名_query,演唱会英文名_response
+,,2015年2月1日,2015-02-01,0.0,"exact not match, response: 中国, target: 新加坡",新加坡,中国,0.0,"Let's analyze each idx pair step by step according to the criterion:
+
+Criterion: The response and the target (standard answer) have to be semantically the same or at least approximately so, or refer to the same entity. No need for exact word-to-word matching.
+
+---
+
+**idx_0**  
+- Response: 南京奥体中心 (Nanjing Olympic Sports Center)  
+- Target: 新加坡博览中心 (Singapore Expo Center)  
+- Analysis: These are completely different places in different cities and countries. They do not refer to the same entity or similar entity.  
+- Score: 0
+
+---
+
+**idx_1**  
+- Response: 比尔·格雷厄姆市政礼堂 (Bill Graham Civic Auditorium)  
+- Target: 可口可乐体育馆 (Coca-Cola Coliseum)  
+- Analysis: Different venues, different names, no indication they refer to the same entity.  
+- Score: 0
+
+---
+
+**idx_2**  
+- Response: 云顶云星剧场 (Genting Star Theatre)  
+- Target: 云顶云星剧场 (Genting Star Theatre)  
+- Analysis: Exact same entity.  
+- Score: 1
+
+---
+
+**idx_3**  
+- Response: 广东奥林匹克体育中心 (Guangdong Olympic Sports Center)  
+- Target: 广东奥林匹克体育中心体育场 (Guangdong Olympic Sports Center Stadium)  
+- Analysis: The response is the sports center; the target is the stadium within the sports center. They are closely related, and generally the sports center and the stadium within it can be considered the same entity for this grading purpose. The criterion states ""大致相同或者指向的实体一致即可"", so this counts.  
+- Score: 1
+
+---
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1
+}
+```",新加坡博览中心,南京奥体中心,0.0,"分析过程：
+
+- idx_0  
+  参考答案：新加坡市  
+  回答：南京  
+  分析：两个实体不同，且没有语义上的相似或指向一致，属于错误答案。  
+  评分：0
+
+- idx_1  
+  参考答案：多伦多  
+  回答：旧金山  
+  分析：两个城市不同，分别在加拿大和美国，没有语义相同或指向一致，属于错误答案。  
+  评分：0
+
+- idx_2  
+  参考答案：云顶高原  
+  回答：云顶高原  
+  分析：完全相同，语义一致。  
+  评分：1
+
+- idx_3  
+  参考答案：广东省广州市  
+  回答：广东  
+  分析：回答仅给出省份名称，参考答案给出的是省加市的具体地名。两者试图指向不同的实体，参考答案具体到市，回答仅是省级单位。虽然两者有包含关系，但根据标准，指向实体需大致一致，单独“广东”无法明确代指“广州市”，通常视为不一致。  
+  评分：0
+
+最终评分结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0
+}
+```",新加坡市,南京,1.0,key_match,0.0,"Let's analyze each item according to the criterion:
+
+Criterion:  
+- The meaning should be essentially the same or point to the same entity.  
+- The Chinese name of the concert including ""live"" is acceptable.  
+- No requirement for exact word-for-word match.
+
+---
+
+Item idx_0:
+
+- Response: ""g.e.m.geteverybodymoving演唱会""  
+- Target: '邓紫棋""x.x.x.""世界巡回演唱会'  
+
+Analysis:  
+- Target concert: ""x.x.x."" world tour by 邓紫棋 (G.E.M.).  
+- Response concert: ""geteverybodymoving"" concert by g.e.m.  
+- The response does not match the target concert name (x.x.x.), instead is a different concert name.  
+- Therefore, not the same concert or pointing to the same entity.  
+- Per criterion, the response must be semantically consistent and refer to the same concert name/entity.  
+Score: 0
+
+---
+
+Item idx_1:
+
+- Response: ""queenofhearts世界巡回演唱会""  
+- Target: '邓紫棋""queenofhearts""世界巡回演唱会'  
+
+Analysis:  
+- Response contains the correct concert name ""queenofhearts"" world tour.  
+- Target also has ""queenofhearts"" world tour.  
+- Even though response omits ""邓紫棋"" (the artist's name), the concert name and entity are clear and consistent.  
+- According to criterion, naming is acceptable as long as referring to the same concert/entity.  
+Score: 1
+
+---
+
+Item idx_2:
+
+- Response and Target same as idx_1: both ""queenofhearts世界巡回演唱会"" / '邓紫棋""queenofhearts""世界巡回演唱会'  
+
+Same as above, score: 1
+
+---
+
+Item idx_3:
+
+- Response: ""g.e.m.iamgloria世界巡回演唱会""  
+- Target: '邓紫棋“iamgloria”世界巡回演唱会'  
+
+Analysis:  
+- Response: ""iamgloria"" world tour by g.e.m.  
+- Target: ""iamgloria"" world tour by 邓紫棋  
+- Different way to refer to the same artist (g.e.m. = 邓紫棋) is acceptable; the concert name matches.  
+- Matches the same entity and concert tour.  
+Score: 1
+
+---
+
+Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1
+}
+```","邓紫棋""x.x.x.""世界巡回演唱会",g.e.m.geteverybodymoving演唱会,0.0,"Let's analyze each pair step by step according to the criterion:
+
+Criterion: The response and target need to have roughly the same meaning or refer to the same entity. Exact word-for-word match is not necessary.
+
+---
+
+**idx_0:**
+- Response: g.e.m.geteverybodymovingconcert
+- Target: g.e.m.x.x.x.liveworldtour
+
+Analysis:  
+The response refers to a ""get everybody moving concert"" whereas the target is ""x.x.x live world tour"". These seem to be entirely different events/entities—different titles, and ""concert"" vs ""world tour."" The entities do not match.
+
+Score: 0
+
+---
+
+**idx_1:**
+- Response: queenofheartsworldtour
+- Target: g.e.m.queenofheartsworldtour
+
+Analysis:  
+The response omits the ""g.e.m."" prefix but otherwise matches the target ""queenofheartsworldtour."" This is a minor difference and arguably the entity is the same. This fits the criterion of referring to the same entity, so it should score 1.
+
+Score: 1
+
+---
+
+**idx_2:**
+- Response: queenofheartsworldtour
+- Target: g.e.m.queenofheartsworldtour
+
+Analysis:  
+Same as idx_1. The response matches the core entity ""queenofheartsworldtour"" perfectly.
+
+Score: 1
+
+---
+
+**idx_3:**
+- Response: g.e.m.iamgloriaworldtour
+- Target: g.e.m.iamgloriaworldtour
+
+Analysis:  
+Exact match.
+
+Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1
+}
+```",g.e.m.x.x.x.liveworldtour,g.e.m.geteverybodymovingconcert
+,,2019年3月20日,2019-03-20,0.0,"exact not match, response: 美国, target: 加拿大",加拿大,美国,0.0,"Let's analyze each idx pair step by step according to the criterion:
+
+Criterion: The response and the target (standard answer) have to be semantically the same or at least approximately so, or refer to the same entity. No need for exact word-to-word matching.
+
+---
+
+**idx_0**  
+- Response: 南京奥体中心 (Nanjing Olympic Sports Center)  
+- Target: 新加坡博览中心 (Singapore Expo Center)  
+- Analysis: These are completely different places in different cities and countries. They do not refer to the same entity or similar entity.  
+- Score: 0
+
+---
+
+**idx_1**  
+- Response: 比尔·格雷厄姆市政礼堂 (Bill Graham Civic Auditorium)  
+- Target: 可口可乐体育馆 (Coca-Cola Coliseum)  
+- Analysis: Different venues, different names, no indication they refer to the same entity.  
+- Score: 0
+
+---
+
+**idx_2**  
+- Response: 云顶云星剧场 (Genting Star Theatre)  
+- Target: 云顶云星剧场 (Genting Star Theatre)  
+- Analysis: Exact same entity.  
+- Score: 1
+
+---
+
+**idx_3**  
+- Response: 广东奥林匹克体育中心 (Guangdong Olympic Sports Center)  
+- Target: 广东奥林匹克体育中心体育场 (Guangdong Olympic Sports Center Stadium)  
+- Analysis: The response is the sports center; the target is the stadium within the sports center. They are closely related, and generally the sports center and the stadium within it can be considered the same entity for this grading purpose. The criterion states ""大致相同或者指向的实体一致即可"", so this counts.  
+- Score: 1
+
+---
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1
+}
+```",可口可乐体育馆（coca-colacoliseum）,比尔·格雷厄姆市政礼堂,0.0,"分析过程：
+
+- idx_0  
+  参考答案：新加坡市  
+  回答：南京  
+  分析：两个实体不同，且没有语义上的相似或指向一致，属于错误答案。  
+  评分：0
+
+- idx_1  
+  参考答案：多伦多  
+  回答：旧金山  
+  分析：两个城市不同，分别在加拿大和美国，没有语义相同或指向一致，属于错误答案。  
+  评分：0
+
+- idx_2  
+  参考答案：云顶高原  
+  回答：云顶高原  
+  分析：完全相同，语义一致。  
+  评分：1
+
+- idx_3  
+  参考答案：广东省广州市  
+  回答：广东  
+  分析：回答仅给出省份名称，参考答案给出的是省加市的具体地名。两者试图指向不同的实体，参考答案具体到市，回答仅是省级单位。虽然两者有包含关系，但根据标准，指向实体需大致一致，单独“广东”无法明确代指“广州市”，通常视为不一致。  
+  评分：0
+
+最终评分结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0
+}
+```",多伦多,旧金山,1.0,key_match,1.0,"Let's analyze each item according to the criterion:
+
+Criterion:  
+- The meaning should be essentially the same or point to the same entity.  
+- The Chinese name of the concert including ""live"" is acceptable.  
+- No requirement for exact word-for-word match.
+
+---
+
+Item idx_0:
+
+- Response: ""g.e.m.geteverybodymoving演唱会""  
+- Target: '邓紫棋""x.x.x.""世界巡回演唱会'  
+
+Analysis:  
+- Target concert: ""x.x.x."" world tour by 邓紫棋 (G.E.M.).  
+- Response concert: ""geteverybodymoving"" concert by g.e.m.  
+- The response does not match the target concert name (x.x.x.), instead is a different concert name.  
+- Therefore, not the same concert or pointing to the same entity.  
+- Per criterion, the response must be semantically consistent and refer to the same concert name/entity.  
+Score: 0
+
+---
+
+Item idx_1:
+
+- Response: ""queenofhearts世界巡回演唱会""  
+- Target: '邓紫棋""queenofhearts""世界巡回演唱会'  
+
+Analysis:  
+- Response contains the correct concert name ""queenofhearts"" world tour.  
+- Target also has ""queenofhearts"" world tour.  
+- Even though response omits ""邓紫棋"" (the artist's name), the concert name and entity are clear and consistent.  
+- According to criterion, naming is acceptable as long as referring to the same concert/entity.  
+Score: 1
+
+---
+
+Item idx_2:
+
+- Response and Target same as idx_1: both ""queenofhearts世界巡回演唱会"" / '邓紫棋""queenofhearts""世界巡回演唱会'  
+
+Same as above, score: 1
+
+---
+
+Item idx_3:
+
+- Response: ""g.e.m.iamgloria世界巡回演唱会""  
+- Target: '邓紫棋“iamgloria”世界巡回演唱会'  
+
+Analysis:  
+- Response: ""iamgloria"" world tour by g.e.m.  
+- Target: ""iamgloria"" world tour by 邓紫棋  
+- Different way to refer to the same artist (g.e.m. = 邓紫棋) is acceptable; the concert name matches.  
+- Matches the same entity and concert tour.  
+Score: 1
+
+---
+
+Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1
+}
+```","邓紫棋""queenofhearts""世界巡回演唱会",queenofhearts世界巡回演唱会,1.0,"Let's analyze each pair step by step according to the criterion:
+
+Criterion: The response and target need to have roughly the same meaning or refer to the same entity. Exact word-for-word match is not necessary.
+
+---
+
+**idx_0:**
+- Response: g.e.m.geteverybodymovingconcert
+- Target: g.e.m.x.x.x.liveworldtour
+
+Analysis:  
+The response refers to a ""get everybody moving concert"" whereas the target is ""x.x.x live world tour"". These seem to be entirely different events/entities—different titles, and ""concert"" vs ""world tour."" The entities do not match.
+
+Score: 0
+
+---
+
+**idx_1:**
+- Response: queenofheartsworldtour
+- Target: g.e.m.queenofheartsworldtour
+
+Analysis:  
+The response omits the ""g.e.m."" prefix but otherwise matches the target ""queenofheartsworldtour."" This is a minor difference and arguably the entity is the same. This fits the criterion of referring to the same entity, so it should score 1.
+
+Score: 1
+
+---
+
+**idx_2:**
+- Response: queenofheartsworldtour
+- Target: g.e.m.queenofheartsworldtour
+
+Analysis:  
+Same as idx_1. The response matches the core entity ""queenofheartsworldtour"" perfectly.
+
+Score: 1
+
+---
+
+**idx_3:**
+- Response: g.e.m.iamgloriaworldtour
+- Target: g.e.m.iamgloriaworldtour
+
+Analysis:  
+Exact match.
+
+Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1
+}
+```",g.e.m.queenofheartsworldtour,queenofheartsworldtour
+,,2019年4月5日,2019-04-05,1.0,"exact match, response: 马来西亚, target: 马来西亚",马来西亚,马来西亚,1.0,"Let's analyze each idx pair step by step according to the criterion:
+
+Criterion: The response and the target (standard answer) have to be semantically the same or at least approximately so, or refer to the same entity. No need for exact word-to-word matching.
+
+---
+
+**idx_0**  
+- Response: 南京奥体中心 (Nanjing Olympic Sports Center)  
+- Target: 新加坡博览中心 (Singapore Expo Center)  
+- Analysis: These are completely different places in different cities and countries. They do not refer to the same entity or similar entity.  
+- Score: 0
+
+---
+
+**idx_1**  
+- Response: 比尔·格雷厄姆市政礼堂 (Bill Graham Civic Auditorium)  
+- Target: 可口可乐体育馆 (Coca-Cola Coliseum)  
+- Analysis: Different venues, different names, no indication they refer to the same entity.  
+- Score: 0
+
+---
+
+**idx_2**  
+- Response: 云顶云星剧场 (Genting Star Theatre)  
+- Target: 云顶云星剧场 (Genting Star Theatre)  
+- Analysis: Exact same entity.  
+- Score: 1
+
+---
+
+**idx_3**  
+- Response: 广东奥林匹克体育中心 (Guangdong Olympic Sports Center)  
+- Target: 广东奥林匹克体育中心体育场 (Guangdong Olympic Sports Center Stadium)  
+- Analysis: The response is the sports center; the target is the stadium within the sports center. They are closely related, and generally the sports center and the stadium within it can be considered the same entity for this grading purpose. The criterion states ""大致相同或者指向的实体一致即可"", so this counts.  
+- Score: 1
+
+---
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1
+}
+```",云顶云星剧场,云顶云星剧场,1.0,"分析过程：
+
+- idx_0  
+  参考答案：新加坡市  
+  回答：南京  
+  分析：两个实体不同，且没有语义上的相似或指向一致，属于错误答案。  
+  评分：0
+
+- idx_1  
+  参考答案：多伦多  
+  回答：旧金山  
+  分析：两个城市不同，分别在加拿大和美国，没有语义相同或指向一致，属于错误答案。  
+  评分：0
+
+- idx_2  
+  参考答案：云顶高原  
+  回答：云顶高原  
+  分析：完全相同，语义一致。  
+  评分：1
+
+- idx_3  
+  参考答案：广东省广州市  
+  回答：广东  
+  分析：回答仅给出省份名称，参考答案给出的是省加市的具体地名。两者试图指向不同的实体，参考答案具体到市，回答仅是省级单位。虽然两者有包含关系，但根据标准，指向实体需大致一致，单独“广东”无法明确代指“广州市”，通常视为不一致。  
+  评分：0
+
+最终评分结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0
+}
+```",云顶高原,云顶高原,1.0,key_match,1.0,"Let's analyze each item according to the criterion:
+
+Criterion:  
+- The meaning should be essentially the same or point to the same entity.  
+- The Chinese name of the concert including ""live"" is acceptable.  
+- No requirement for exact word-for-word match.
+
+---
+
+Item idx_0:
+
+- Response: ""g.e.m.geteverybodymoving演唱会""  
+- Target: '邓紫棋""x.x.x.""世界巡回演唱会'  
+
+Analysis:  
+- Target concert: ""x.x.x."" world tour by 邓紫棋 (G.E.M.).  
+- Response concert: ""geteverybodymoving"" concert by g.e.m.  
+- The response does not match the target concert name (x.x.x.), instead is a different concert name.  
+- Therefore, not the same concert or pointing to the same entity.  
+- Per criterion, the response must be semantically consistent and refer to the same concert name/entity.  
+Score: 0
+
+---
+
+Item idx_1:
+
+- Response: ""queenofhearts世界巡回演唱会""  
+- Target: '邓紫棋""queenofhearts""世界巡回演唱会'  
+
+Analysis:  
+- Response contains the correct concert name ""queenofhearts"" world tour.  
+- Target also has ""queenofhearts"" world tour.  
+- Even though response omits ""邓紫棋"" (the artist's name), the concert name and entity are clear and consistent.  
+- According to criterion, naming is acceptable as long as referring to the same concert/entity.  
+Score: 1
+
+---
+
+Item idx_2:
+
+- Response and Target same as idx_1: both ""queenofhearts世界巡回演唱会"" / '邓紫棋""queenofhearts""世界巡回演唱会'  
+
+Same as above, score: 1
+
+---
+
+Item idx_3:
+
+- Response: ""g.e.m.iamgloria世界巡回演唱会""  
+- Target: '邓紫棋“iamgloria”世界巡回演唱会'  
+
+Analysis:  
+- Response: ""iamgloria"" world tour by g.e.m.  
+- Target: ""iamgloria"" world tour by 邓紫棋  
+- Different way to refer to the same artist (g.e.m. = 邓紫棋) is acceptable; the concert name matches.  
+- Matches the same entity and concert tour.  
+Score: 1
+
+---
+
+Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1
+}
+```","邓紫棋""queenofhearts""世界巡回演唱会",queenofhearts世界巡回演唱会,1.0,"Let's analyze each pair step by step according to the criterion:
+
+Criterion: The response and target need to have roughly the same meaning or refer to the same entity. Exact word-for-word match is not necessary.
+
+---
+
+**idx_0:**
+- Response: g.e.m.geteverybodymovingconcert
+- Target: g.e.m.x.x.x.liveworldtour
+
+Analysis:  
+The response refers to a ""get everybody moving concert"" whereas the target is ""x.x.x live world tour"". These seem to be entirely different events/entities—different titles, and ""concert"" vs ""world tour."" The entities do not match.
+
+Score: 0
+
+---
+
+**idx_1:**
+- Response: queenofheartsworldtour
+- Target: g.e.m.queenofheartsworldtour
+
+Analysis:  
+The response omits the ""g.e.m."" prefix but otherwise matches the target ""queenofheartsworldtour."" This is a minor difference and arguably the entity is the same. This fits the criterion of referring to the same entity, so it should score 1.
+
+Score: 1
+
+---
+
+**idx_2:**
+- Response: queenofheartsworldtour
+- Target: g.e.m.queenofheartsworldtour
+
+Analysis:  
+Same as idx_1. The response matches the core entity ""queenofheartsworldtour"" perfectly.
+
+Score: 1
+
+---
+
+**idx_3:**
+- Response: g.e.m.iamgloriaworldtour
+- Target: g.e.m.iamgloriaworldtour
+
+Analysis:  
+Exact match.
+
+Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1
+}
+```",g.e.m.queenofheartsworldtour,queenofheartsworldtour
+,,2023年12月7日,2023-12-07,1.0,"exact match, response: 中国, target: 中国",中国,中国,1.0,"Let's analyze each idx pair step by step according to the criterion:
+
+Criterion: The response and the target (standard answer) have to be semantically the same or at least approximately so, or refer to the same entity. No need for exact word-to-word matching.
+
+---
+
+**idx_0**  
+- Response: 南京奥体中心 (Nanjing Olympic Sports Center)  
+- Target: 新加坡博览中心 (Singapore Expo Center)  
+- Analysis: These are completely different places in different cities and countries. They do not refer to the same entity or similar entity.  
+- Score: 0
+
+---
+
+**idx_1**  
+- Response: 比尔·格雷厄姆市政礼堂 (Bill Graham Civic Auditorium)  
+- Target: 可口可乐体育馆 (Coca-Cola Coliseum)  
+- Analysis: Different venues, different names, no indication they refer to the same entity.  
+- Score: 0
+
+---
+
+**idx_2**  
+- Response: 云顶云星剧场 (Genting Star Theatre)  
+- Target: 云顶云星剧场 (Genting Star Theatre)  
+- Analysis: Exact same entity.  
+- Score: 1
+
+---
+
+**idx_3**  
+- Response: 广东奥林匹克体育中心 (Guangdong Olympic Sports Center)  
+- Target: 广东奥林匹克体育中心体育场 (Guangdong Olympic Sports Center Stadium)  
+- Analysis: The response is the sports center; the target is the stadium within the sports center. They are closely related, and generally the sports center and the stadium within it can be considered the same entity for this grading purpose. The criterion states ""大致相同或者指向的实体一致即可"", so this counts.  
+- Score: 1
+
+---
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1
+}
+```",广东奥林匹克体育中心体育场,广东奥林匹克体育中心,0.0,"分析过程：
+
+- idx_0  
+  参考答案：新加坡市  
+  回答：南京  
+  分析：两个实体不同，且没有语义上的相似或指向一致，属于错误答案。  
+  评分：0
+
+- idx_1  
+  参考答案：多伦多  
+  回答：旧金山  
+  分析：两个城市不同，分别在加拿大和美国，没有语义相同或指向一致，属于错误答案。  
+  评分：0
+
+- idx_2  
+  参考答案：云顶高原  
+  回答：云顶高原  
+  分析：完全相同，语义一致。  
+  评分：1
+
+- idx_3  
+  参考答案：广东省广州市  
+  回答：广东  
+  分析：回答仅给出省份名称，参考答案给出的是省加市的具体地名。两者试图指向不同的实体，参考答案具体到市，回答仅是省级单位。虽然两者有包含关系，但根据标准，指向实体需大致一致，单独“广东”无法明确代指“广州市”，通常视为不一致。  
+  评分：0
+
+最终评分结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0
+}
+```",广东省广州市,广东,1.0,key_match,1.0,"Let's analyze each item according to the criterion:
+
+Criterion:  
+- The meaning should be essentially the same or point to the same entity.  
+- The Chinese name of the concert including ""live"" is acceptable.  
+- No requirement for exact word-for-word match.
+
+---
+
+Item idx_0:
+
+- Response: ""g.e.m.geteverybodymoving演唱会""  
+- Target: '邓紫棋""x.x.x.""世界巡回演唱会'  
+
+Analysis:  
+- Target concert: ""x.x.x."" world tour by 邓紫棋 (G.E.M.).  
+- Response concert: ""geteverybodymoving"" concert by g.e.m.  
+- The response does not match the target concert name (x.x.x.), instead is a different concert name.  
+- Therefore, not the same concert or pointing to the same entity.  
+- Per criterion, the response must be semantically consistent and refer to the same concert name/entity.  
+Score: 0
+
+---
+
+Item idx_1:
+
+- Response: ""queenofhearts世界巡回演唱会""  
+- Target: '邓紫棋""queenofhearts""世界巡回演唱会'  
+
+Analysis:  
+- Response contains the correct concert name ""queenofhearts"" world tour.  
+- Target also has ""queenofhearts"" world tour.  
+- Even though response omits ""邓紫棋"" (the artist's name), the concert name and entity are clear and consistent.  
+- According to criterion, naming is acceptable as long as referring to the same concert/entity.  
+Score: 1
+
+---
+
+Item idx_2:
+
+- Response and Target same as idx_1: both ""queenofhearts世界巡回演唱会"" / '邓紫棋""queenofhearts""世界巡回演唱会'  
+
+Same as above, score: 1
+
+---
+
+Item idx_3:
+
+- Response: ""g.e.m.iamgloria世界巡回演唱会""  
+- Target: '邓紫棋“iamgloria”世界巡回演唱会'  
+
+Analysis:  
+- Response: ""iamgloria"" world tour by g.e.m.  
+- Target: ""iamgloria"" world tour by 邓紫棋  
+- Different way to refer to the same artist (g.e.m. = 邓紫棋) is acceptable; the concert name matches.  
+- Matches the same entity and concert tour.  
+Score: 1
+
+---
+
+Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1
+}
+```",邓紫棋“iamgloria”世界巡回演唱会,g.e.m.iamgloria世界巡回演唱会,1.0,"Let's analyze each pair step by step according to the criterion:
+
+Criterion: The response and target need to have roughly the same meaning or refer to the same entity. Exact word-for-word match is not necessary.
+
+---
+
+**idx_0:**
+- Response: g.e.m.geteverybodymovingconcert
+- Target: g.e.m.x.x.x.liveworldtour
+
+Analysis:  
+The response refers to a ""get everybody moving concert"" whereas the target is ""x.x.x live world tour"". These seem to be entirely different events/entities—different titles, and ""concert"" vs ""world tour."" The entities do not match.
+
+Score: 0
+
+---
+
+**idx_1:**
+- Response: queenofheartsworldtour
+- Target: g.e.m.queenofheartsworldtour
+
+Analysis:  
+The response omits the ""g.e.m."" prefix but otherwise matches the target ""queenofheartsworldtour."" This is a minor difference and arguably the entity is the same. This fits the criterion of referring to the same entity, so it should score 1.
+
+Score: 1
+
+---
+
+**idx_2:**
+- Response: queenofheartsworldtour
+- Target: g.e.m.queenofheartsworldtour
+
+Analysis:  
+Same as idx_1. The response matches the core entity ""queenofheartsworldtour"" perfectly.
+
+Score: 1
+
+---
+
+**idx_3:**
+- Response: g.e.m.iamgloriaworldtour
+- Target: g.e.m.iamgloriaworldtour
+
+Analysis:  
+Exact match.
+
+Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1
+}
+```",g.e.m.iamgloriaworldtour,g.e.m.iamgloriaworldtour
+,1.0,2010-02-01,2010-02-01,,,,中国,,,,铜锣湾,,,,香港,,,,,,g.e.m.backstagelive,,,,g.e.m.backstagelive
+,1.0,2011-02-01,2011-02-01,,,,中国,,,,上海体育场,,,,上海,,,,,,g.e.m.geteverybodymoving演唱会,,,,g.e.m.geteverybodymovingconcert
+1.0,,2011年10月15日,,,,中国,,,,广州体育馆,,,,广东省广州市,,,,,,邓紫棋“geteverybodymoving”世界巡回演唱会,,,,geteverybodymovingconcert,
+1.0,,2011年10月22日,,,,中国,,,,金光综艺馆,,,,澳门特别行政区,,,,,,邓紫棋“geteverybodymoving”世界巡回演唱会,,,,geteverybodymovingconcert,
+1.0,,2011年12月16日,,,,加拿大,,,,伊利莎白女王剧院（queenelizabeththeatre）,,,,温哥华,,,,,,邓紫棋“geteverybodymoving”世界巡回演唱会,,,,geteverybodymovingconcert,
+1.0,,2011年12月19日,,,,加拿大,,,,派拉蒙美食中心（hersheycentre）,,,,多伦多,,,,,,邓紫棋“geteverybodymoving”世界巡回演唱会,,,,geteverybodymovingconcert,
+1.0,,2011年5月14日,,,,中国,,,,香港体育馆（红磡体育馆）,,,,香港特别行政区,,,,,,邓紫棋“geteverybodymoving”世界巡回演唱会,,,,geteverybodymovingconcert,
+1.0,,2011年5月15日,,,,中国,,,,香港体育馆（红磡体育馆）,,,,香港特别行政区,,,,,,邓紫棋“geteverybodymoving”世界巡回演唱会,,,,geteverybodymovingconcert,
+1.0,,2011年5月16日,,,,中国,,,,香港体育馆（红磡体育馆）,,,,香港特别行政区,,,,,,邓紫棋“geteverybodymoving”世界巡回演唱会,,,,geteverybodymovingconcert,
+1.0,,2011年8月27日,,,,澳大利亚,,,,悉尼娱乐中心（sydneyentertainmentcentre）,,,,悉尼,,,,,,邓紫棋“geteverybodymoving”世界巡回演唱会,,,,geteverybodymovingconcert,
+1.0,,2011年9月10日,,,,中国,,,,香港体育馆（红磡体育馆）,,,,香港特别行政区,,,,,,邓紫棋“geteverybodymoving”世界巡回演唱会,,,,geteverybodymovingconcert,
+1.0,,2011年9月9日,,,,中国,,,,香港体育馆（红磡体育馆）,,,,香港特别行政区,,,,,,邓紫棋“geteverybodymoving”世界巡回演唱会,,,,geteverybodymovingconcert,
+,1.0,2012-02-01,2012-02-01,,,,中国,,,,首都体育馆,,,,北京,,,,,,g.e.m.geteverybodymoving演唱会,,,,g.e.m.geteverybodymovingconcert
+1.0,,2012年12月2日,,,,中国,,,,中山纪念堂,,,,广东省广州市,,,,,,邓紫棋“geteverybodymoving”世界巡回演唱会,,,,geteverybodymovingconcert,
+1.0,,2012年4月21日,,,,中国,,,,佛山岭南明珠体育馆,,,,广东省佛山市,,,,,,邓紫棋“geteverybodymoving”世界巡回演唱会,,,,geteverybodymovingconcert,
+1.0,,2012年4月29日,,,,中国,,,,番禺英东体育馆,,,,广东省广州市,,,,,,邓紫棋“geteverybodymoving”世界巡回演唱会,,,,geteverybodymovingconcert,
+1.0,,2012年5月26日,,,,美国,,,,里诺宴会厅（renoballroom）,,,,里诺,,,,,,邓紫棋“geteverybodymoving”世界巡回演唱会,,,,geteverybodymovingconcert,
+,1.0,2013-02-01,2013-02-01,,,,中国,,,,广州体育馆,,,,广州,,,,,,g.e.m.geteverybodymoving演唱会,,,,g.e.m.geteverybodymovingconcert
+1.0,,2013年4月12日,,,,中国,,,,香港体育馆（红磡体育馆）,,,,香港特别行政区,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2013年4月13日,,,,中国,,,,香港体育馆（红磡体育馆）,,,,香港特别行政区,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2013年4月14日,,,,中国,,,,香港体育馆（红磡体育馆）,,,,香港特别行政区,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2013年4月15日,,,,中国,,,,香港体育馆（红磡体育馆）,,,,香港特别行政区,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2013年4月16日,,,,中国,,,,香港体育馆（红磡体育馆）,,,,香港特别行政区,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2013年9月21日,,,,中国,,,,广州体育馆,,,,广东省广州市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+,1.0,2014-02-01,2014-02-01,,,,中国,,,,杭州体育馆,,,,杭州,,,,,,g.e.m.geteverybodymoving演唱会,,,,g.e.m.geteverybodymovingconcert
+1.0,,2014年10月10日,,,,中国,,,,沈阳奥林匹克体育中心,,,,沈阳,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年10月17日,,,,中国,,,,广州国际体育演艺中心,,,,广东省广州市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年10月18日,,,,中国,,,,广州国际体育演艺中心,,,,广东省广州市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年10月19日,,,,中国,,,,广州国际体育演艺中心,,,,广东省广州市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年10月25日,,,,中国,,,,成都市体育中心体育场,,,,四川省成都市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年11月1日,,,,中国,,,,泉州海峡体育中心体育馆,,,,福建省泉州市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年11月22日,,,,中国,,,,广西体育中心体育场,,,,广西壮族自治区南宁市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年11月29日,,,,中国,,,,南昌国际体育中心体育馆,,,,江西省南昌市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年11月8日,,,,中国,,,,南京奥林匹克体育中心体育场,,,,江苏省南京市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年12月6日,,,,中国,,,,济南奥林匹克体育中心体育馆,,,,山东省济南市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年2月13日,,,,中国,,,,佛山岭南明珠体育馆,,,,广东省佛山市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年5月10日,,,,中国,,,,福州海峡国际会展中心,,,,福建省福州市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年5月16日,,,,中国,,,,万事达中心（北京凯迪拉克中心）,,,,北京市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年5月17日,,,,中国,,,,万事达中心（北京凯迪拉克中心）,,,,北京市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年5月1日,,,,中国,,,,金光综艺馆,,,,澳门特别行政区,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年5月24日,,,,中国,,,,武汉体育中心体育馆,,,,湖北省武汉市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年5月2日,,,,中国,,,,金光综艺馆,,,,澳门特别行政区,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年5月31日,,,,中国,,,,湖南国际会展中心,,,,湖南省长沙市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年5月3日,,,,中国,,,,金光综艺馆,,,,澳门特别行政区,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年6月28日,,,,中国,,,,深圳湾体育中心,,,,广东省深圳市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年7月11日,,,,中国,,,,黄龙体育馆,,,,浙江省杭州市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年7月12日,,,,中国,,,,黄龙体育馆,,,,浙江省杭州市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年7月17日,,,,中国,,,,西安曲江国际会展中心b4馆,,,,陕西西安市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年7月19日,,,,中国,,,,哈尔滨国际会展体育中心体育馆,,,,黑龙江省哈尔滨市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年7月23日,,,,中国,,,,大连市体育中心体育馆（中升文化中心）,,,,辽宁省大连市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年7月26日,,,,中国,,,,天津体育馆,,,,天津市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年7月31日,,,,中国,,,,厦门嘉庚体育馆,,,,福建省厦门市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年7月4日,,,,中国,,,,上海梅赛德斯－奔驰文化中心,,,,上海市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年7月5日,,,,中国,,,,上海梅赛德斯－奔驰文化中心,,,,上海市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年7月6日,,,,中国,,,,上海梅赛德斯－奔驰文化中心,,,,上海市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年8月11日,,,,新西兰,,,,trusts体育馆（trustsstadium）,,,,奥克兰,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年8月2日,,,,中国,,,,郑州国际会展中心,,,,河南省郑州市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年8月5日,,,,澳大利亚,,,,珀斯皇冠剧院（crownperth）,,,,珀斯,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年8月7日,,,,澳大利亚,,,,悉尼娱乐中心（sydneyentertainmentcentre）,,,,悉尼,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年8月9日,,,,澳大利亚,,,,墨尔本会展中心（melbourneconventionandexhibitioncentre）,,,,墨尔本,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年10月23日,,,,马来西亚,,,,云顶云星剧场,,,,云顶高原,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年10月24日,,,,马来西亚,,,,云顶云星剧场,,,,云顶高原,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年11月11日,,,,加拿大,,,,加拿大航空中心（aircanadacentre）,,,,多伦多,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年11月15日,,,,美国,,,,保德信中心（prudentialcenter）,,,,纽约,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年11月18日,,,,美国,,,,芝加哥剧院（chicagotheatre）,,,,芝加哥,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年11月22日,,,,英国,,,,温布利体育馆,,,,伦敦,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年11月3日,,,,加拿大,,,,太平洋体育馆（pacificcoliseum）,,,,温哥华,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年11月6日,,,,美国,,,,思爱普中心（sapcenteratsanjose）,,,,圣何塞,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年11月7日,,,,美国,,,,论坛体育馆,,,,洛杉矶,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年1月14日,,,,中国,,,,香港体育馆（红磡体育馆）,,,,香港特别行政区,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年1月15日,,,,中国,,,,香港体育馆（红磡体育馆）,,,,香港特别行政区,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年1月16日,,,,中国,,,,香港体育馆（红磡体育馆）,,,,香港特别行政区,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年1月17日,,,,中国,,,,香港体育馆（红磡体育馆）,,,,香港特别行政区,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年1月18日,,,,中国,,,,香港体育馆（红磡体育馆）,,,,香港特别行政区,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年1月23日,,,,马来西亚,,,,布特拉室内体育馆,,,,吉隆坡,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年1月24日,,,,马来西亚,,,,布特拉室内体育馆,,,,吉隆坡,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年1月30日,,,,新加坡,,,,新加坡博览中心,,,,新加坡市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年1月31日,,,,新加坡,,,,新加坡博览中心,,,,新加坡市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年2月21日,,,,美国,,,,威尼斯人宴会厅（thevenetianlasvegas）,,,,拉斯维加斯,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年3月12日,,,,中国,,,,台北小巨蛋体育馆,,,,台湾省台北市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年3月1日,,,,美国,,,,金神体育馆（mohegansun）,,,,康涅狄格州,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年5月16日,,,,中国,,,,惠州奥林匹克体育场,,,,广东省惠州市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年5月23日,,,,中国,,,,上海体育场,,,,上海市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年5月2日,,,,中国,,,,高雄巨蛋体育馆,,,,台湾省高雄市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年5月30日,,,,中国,,,,合肥滨湖国际会展中心体育馆,,,,安徽省合肥市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年5月9日,,,,中国,,,,重庆国际博览中心（重庆国际会议展览中心）,,,,重庆市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年7月10日,,,,中国,,,,长春五环体育馆,,,,吉林省长春市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年7月18日,,,,中国,,,,东莞篮球中心（东莞东风日產文体中心）,,,,广东省东莞市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年7月25日,,,,中国,,,,山西省体育中心体育馆,,,,山西省太原市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年8月1日,,,,中国,,,,北京工人体育场,,,,北京市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+,1.0,2016-02-01,2016-02-01,,,,中国,,,,苏州体育中心,,,,苏州,,,,,,g.e.m.geteverybodymoving演唱会,,,,g.e.m.geteverybodymovingconcert
+,1.0,2017-02-01,2017-02-01,,,,中国,,,,武汉体育中心,,,,武汉,,,,,,g.e.m.geteverybodymoving演唱会,,,,g.e.m.geteverybodymovingconcert
+1.0,,2017年10月2日,,,,澳大利亚,,,,悉尼国际会议中心,,,,悉尼,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2017年10月5日,,,,澳大利亚,,,,珀斯皇冠剧院（crownperth）,,,,珀斯,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2017年11月18日,,,,马来西亚,,,,亚通体育馆（又名：布特拉室内体育馆）,,,,吉隆坡,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2017年11月25日,,,,中国,,,,郑州国际会展中心,,,,河南省郑州市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2017年12月22日,,,,中国,,,,大连市体育馆（中升文化中心）,,,,辽宁省大连市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2017年12月2日,,,,中国,,,,深圳湾体育中心体育馆,,,,广东省深圳市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2017年12月9日,,,,中国,,,,广西体育中心体育馆,,,,广西壮族自治区南宁市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2017年4月15日,,,,中国,,,,首都体育馆,,,,北京市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2017年4月1日,,,,中国,,,,广州国际体育演艺中心,,,,广东省广州市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2017年4月29日,,,,中国,,,,洛阳新区体育馆,,,,河南省洛阳市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2017年4月2日,,,,中国,,,,广州国际体育演艺中心,,,,广东省广州市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2017年4月8日,,,,中国,,,,南京奥体中心体育馆,,,,江苏省南京市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2017年5月13日,,,,中国,,,,南昌国际体育中心体育馆,,,,江西省南昌市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2017年5月20日,,,,中国,,,,长沙国际会展中心,,,,湖南省长沙市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2017年5月28日,,,,中国,,,,武汉体育中心体育馆,,,,湖北省武汉市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2017年8月12日,,,,新加坡,,,,新加坡室内体育馆,,,,新加坡市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2017年8月13日,,,,新加坡,,,,新加坡室内体育馆,,,,新加坡市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2017年8月26日,,,,中国,,,,合肥滨湖国际会展中心,,,,安徽省合肥市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2017年8月5日,,,,中国,,,,苏州市体育中心体育馆,,,,江苏省苏州市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2017年9月15日,,,,中国,,,,香港体育馆（红磡体育馆）,,,,香港特别行政区,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2017年9月16日,,,,中国,,,,香港体育馆（红磡体育馆）,,,,香港特别行政区,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2017年9月17日,,,,中国,,,,香港体育馆（红磡体育馆）,,,,香港特别行政区,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2017年9月2日,,,,中国,,,,重庆国际博览中心,,,,重庆市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2017年9月30日,,,,澳大利亚,,,,海信球场（墨尔本综合体育馆）,,,,墨尔本,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+,1.0,2018-02-01,2018-02-01,,,,中国,,,,成都体育中心,,,,成都,,,,,,g.e.m.geteverybodymoving演唱会,,,,g.e.m.geteverybodymovingconcert
+1.0,,2018年1月13日,,,,中国,,,,黄龙体育馆,,,,浙江省杭州市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2018年2月24日,,,,中国,,,,金光综艺馆,,,,澳门特别行政区,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2018年3月23日,,,,中国,,,,国立体育大学综合体育馆,,,,台湾省台北市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2018年3月24日,,,,中国,,,,国立体育大学综合体育馆,,,,台湾省台北市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2018年3月25日,,,,中国,,,,国立体育大学综合体育馆,,,,台湾省台北市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2018年4月1日,,,,美国,,,,金神体育馆（mohegansun）,,,,康涅狄格州,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2018年5月26日,,,,中国,,,,东风日产文体中心,,,,广东省东莞市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2018年6月2日,,,,中国,,,,五粮液·成都演艺中心,,,,四川省成都市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2018年6月30日,,,,马来西亚,,,,槟城国际体育馆,,,,槟城州,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2018年7月1日,,,,马来西亚,,,,槟城国际体育馆,,,,槟城州,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2018年7月28日,,,,中国,,,,济南奥林匹克体育中心体育馆,,,,山东省济南市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2018年7月7日,,,,中国,,,,佛山岭南明珠体育馆,,,,广东省佛山市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2018年8月11日,,,,中国,,,,天津体育馆,,,,天津市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2018年8月18日,,,,中国,,,,西安曲江国际会展中心,,,,陕西省西安市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2018年8月4日,,,,中国,,,,梅赛德斯－奔驰文化中心,,,,上海市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2018年8月5日,,,,中国,,,,梅赛德斯－奔驰文化中心,,,,上海市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+,1.0,2019-02-01,2019-02-01,,,,中国,,,,高雄巨蛋,,,,高雄,,,,,,queenofhearts世界巡回演唱会,,,,queenofheartsworldtour
+1.0,,2019年3月15日,,,,加拿大,,,,伊利莎白女王剧院（queenelizabeththeatre）,,,,温哥华,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2019年3月22日,,,,美国,,,,比尔·格雷厄姆市政礼堂,,,,旧金山,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2019年3月9日,,,,中国,,,,金光综艺馆,,,,澳门特别行政区,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2019年4月27日,,,,中国,,,,高雄巨蛋,,,,台湾省高雄市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2019年4月28日,,,,中国,,,,高雄巨蛋,,,,台湾省高雄市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2019年4月6日,,,,马来西亚,,,,云顶云星剧场,,,,云顶高原,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2023年12月23日,,,,中国,,,,广西体育中心主体育场,,,,广西壮族自治区南宁市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2023年12月24日,,,,中国,,,,广西体育中心主体育场,,,,广西壮族自治区南宁市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2023年12月8日,,,,中国,,,,广东奥林匹克体育中心体育场,,,,广东省广州市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2023年12月9日,,,,中国,,,,广东奥林匹克体育中心体育场,,,,广东省广州市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+,1.0,2024-03-02,2024-03-02,,,,中国,,,,合肥奥林匹克体育场,,,,合肥,,,,,,g.e.m.iamgloria世界巡回演唱会,,,,g.e.m.iamgloriaworldtour
+1.0,,2024年10月13日,,,,中国,,,,济南奥林匹克体育中心体育场,,,,山东省济南市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年10月19日,,,,中国,,,,重庆市奥林匹克体育中心体育场,,,,重庆市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年10月20日,,,,中国,,,,重庆市奥林匹克体育中心体育场,,,,重庆市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年10月26日,,,,中国,,,,苏州奥林匹克体育中心体育场,,,,江苏省苏州市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年10月27日,,,,中国,,,,苏州奥林匹克体育中心体育场,,,,江苏省苏州市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年10月6日,,,,中国,,,,武汉体育中心主体育场,,,,湖北省武汉市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年10月7日,,,,中国,,,,武汉体育中心主体育场,,,,湖北省武汉市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年11月10日,,,,中国,,,,南昌国际体育中心体育场,,,,江西省南昌市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年11月15日,,,,中国,,,,杭州奥林匹克体育中心体育场,,,,浙江省杭州市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年11月16日,,,,中国,,,,杭州奥林匹克体育中心体育场,,,,浙江省杭州市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年11月17日,,,,中国,,,,杭州奥林匹克体育中心体育场,,,,浙江省杭州市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年11月30日,,,,中国,,,,湛江奥林匹克体育中心体育场,,,,广东省湛江市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年11月9日,,,,中国,,,,南昌国际体育中心体育场,,,,江西省南昌市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年12月1日,,,,中国,,,,湛江奥林匹克体育中心体育场,,,,广东省湛江市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年12月21日,,,,中国,,,,厦门奥林匹克体育中心白鹭体育场,,,,福建省厦门市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年12月22日,,,,中国,,,,厦门奥林匹克体育中心白鹭体育场,,,,福建省厦门市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年12月28日,,,,中国,,,,惠州奥林匹克体育场,,,,广东省惠州市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年12月29日,,,,中国,,,,惠州奥林匹克体育场,,,,广东省惠州市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年12月31日,,,,中国,,,,惠州奥林匹克体育场,,,,广东省惠州市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年1月20日,,,,中国,,,,泉州海峡体育中心体育场,,,,福建省泉州市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年1月21日,,,,中国,,,,泉州海峡体育中心体育场,,,,福建省泉州市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年1月6日,,,,中国,,,,深圳湾体育中心体育场,,,,广东省深圳市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年1月7日,,,,中国,,,,深圳湾体育中心体育场,,,,广东省深圳市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年1月8日,,,,中国,,,,深圳湾体育中心体育场,,,,广东省深圳市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年3月30日,,,,中国,,,,合肥体育中心体育场,,,,安徽省合肥市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年3月31日,,,,中国,,,,合肥体育中心体育场,,,,安徽省合肥市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年4月12日,,,,中国,,,,长沙贺龙体育中心体育场,,,,湖南省长沙市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年4月13日,,,,中国,,,,长沙贺龙体育中心体育场,,,,湖南省长沙市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年4月14日,,,,中国,,,,长沙贺龙体育中心体育场,,,,湖南省长沙市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年4月18日,,,,中国,,,,佛山世纪莲体育中心体育场,,,,广东省佛山市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年4月19日,,,,中国,,,,佛山世纪莲体育中心体育场,,,,广东省佛山市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年4月20日,,,,中国,,,,佛山世纪莲体育中心体育场,,,,广东省佛山市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年4月21日,,,,中国,,,,佛山世纪莲体育中心体育场,,,,广东省佛山市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年5月10日,,,,中国,,,,大连体育中心体育场,,,,辽宁省大连市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年5月11日,,,,中国,,,,大连体育中心体育场,,,,辽宁省大连市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年5月18日,,,,中国,,,,山西体育中心体育场,,,,山西省太原市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年5月19日,,,,中国,,,,山西体育中心体育场,,,,山西省太原市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年5月24日,,,,中国,,,,上海体育场,,,,上海市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年5月25日,,,,中国,,,,上海体育场,,,,上海市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年5月26日,,,,中国,,,,上海体育场,,,,上海市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年5月27日,,,,中国,,,,上海体育场,,,,上海市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年5月28日,,,,中国,,,,上海体育场,,,,上海市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年5月2日,,,,中国,,,,天津奥林匹克体育中心体育场,,,,天津市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年5月3日,,,,中国,,,,天津奥林匹克体育中心体育场,,,,天津市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年6月15日,,,,中国,,,,青岛市民健身中心体育场,,,,山东省青岛市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年6月16日,,,,中国,,,,青岛市民健身中心体育场,,,,山东省青岛市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年6月1日,,,,中国,,,,东安湖体育公园主体育场,,,,四川省成都市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年6月21日,,,,中国,,,,南京奥林匹克体育中心体育场,,,,江苏省南京市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年6月22日,,,,中国,,,,南京奥林匹克体育中心体育场,,,,江苏省南京市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年6月23日,,,,中国,,,,南京奥林匹克体育中心体育场,,,,江苏省南京市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年6月29日,,,,中国,,,,郑州奥林匹克体育中心体育场,,,,河南省郑州市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年6月2日,,,,中国,,,,东安湖体育公园主体育场,,,,四川省成都市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年6月30日,,,,中国,,,,郑州奥林匹克体育中心体育场,,,,河南省郑州市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年6月3日,,,,中国,,,,东安湖体育公园主体育场,,,,四川省成都市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年7月13日,,,,中国,,,,哈尔滨国际会展体育中心体育场,,,,黑龙江省哈尔滨市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年7月20日,,,,中国,,,,台州市体育中心体育场,,,,浙江省台州市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年7月21日,,,,中国,,,,台州市体育中心体育场,,,,浙江省台州市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年7月27日,,,,中国,,,,呼和浩特体育场,,,,内蒙古自治区呼和浩特市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年7月6日,,,,中国,,,,福州海峡奥林匹克体育中心体育场,,,,福建省福州市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年7月7日,,,,中国,,,,福州海峡奥林匹克体育中心体育场,,,,福建省福州市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年8月10日,,,,中国,,,,银河综艺馆,,,,澳门特别行政区,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年8月11日,,,,中国,,,,银河综艺馆,,,,澳门特别行政区,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年8月22日,,,,中国,,,,国家体育场（鸟巢）,,,,北京市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年8月23日,,,,中国,,,,国家体育场（鸟巢）,,,,北京市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年8月24日,,,,中国,,,,国家体育场（鸟巢）,,,,北京市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年8月25日,,,,中国,,,,国家体育场（鸟巢）,,,,北京市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年8月2日,,,,中国,,,,银河综艺馆,,,,澳门特别行政区,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年8月3日,,,,中国,,,,银河综艺馆,,,,澳门特别行政区,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年8月4日,,,,中国,,,,银河综艺馆,,,,澳门特别行政区,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年8月9日,,,,中国,,,,银河综艺馆,,,,澳门特别行政区,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年9月21日,,,,中国,,,,清远体育中心体育场,,,,广东省清远市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年9月22日,,,,中国,,,,清远体育中心体育场,,,,广东省清远市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年9月27日,,,,中国,,,,西安奥林匹克体育中心体育场,,,,陕西省西安市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年9月28日,,,,中国,,,,西安奥林匹克体育中心体育场,,,,陕西省西安市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年9月7日,,,,中国,,,,衢州体育中心体育场,,,,浙江省衢州市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+,1.0,2025-05-10,2025-05-10,,,,中国,,,,温州体育中心,,,,温州,,,,,,iamgloria2.0巡演,,,,iamgloria2.0tour
+,1.0,2025-05-17,2025-05-17,,,,中国,,,,襄阳体育中心,,,,襄阳,,,,,,iamgloria2.0巡演,,,,iamgloria2.0tour
+,1.0,2025-05-23,2025-05-23,,,,中国,,,,衡阳体育中心,,,,衡阳,,,,,,iamgloria2.0巡演,,,,iamgloria2.0tour
+,1.0,2025-05-31,2025-05-31,,,,中国,,,,武汉体育中心,,,,武汉,,,,,,iamgloria2.0巡演,,,,iamgloria2.0tour
+1.0,,2025年1月11日,,,,中国,,,,肇庆市体育中心体育场,,,,广东省肇庆市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2025年1月12日,,,,中国,,,,肇庆市体育中心体育场,,,,广东省肇庆市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2025年1月21日,,,,法国,,,,巴黎天顶音乐厅（zenithparis-lavillette）,,,,巴黎,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2025年1月24日,,,,英国,,,,温布利体育馆（ovoarenawembly）,,,,伦敦,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2025年2月15日,,,,马来西亚,,,,武吉加里尔国家体育场（nationalstadiumbukitjalil）,,,,吉隆坡,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2025年3月15日,,,,美国,,,,米高梅大花园体育馆（mgmgrandgardenarena）,,,,拉斯维加斯,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2025年3月1日,,,,新加坡,,,,新加坡国家体育场（nationalstadium）,,,,新加坡市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2025年3月22日,,,,美国,,,,大通中心球馆（chasecenter）,,,,旧金山,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2025年3月29日,,,,美国,,,,巴克莱中心球馆（barclayscenter）,,,,纽约,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2025年4月7日,,,,加拿大,,,,可口可乐体育馆（coca-colacoliseum）,,,,多伦多,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,

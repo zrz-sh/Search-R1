@@ -1,0 +1,1514 @@
+exist_flag_gt,exist_flag_response,团体英文名,团体英文名_before_map,公司名称_llm_judge,公司名称_llm_judge_eval_msg,公司名称_query,公司名称_response,出道年份_exact_match,出道年份_exact_match_eval_msg,出道年份_query,出道年份_response,初一位时间_llm_judge,初一位时间_llm_judge_eval_msg,初一位时间_query,初一位时间_response,初一位歌曲名称_llm_judge,初一位歌曲名称_llm_judge_eval_msg,初一位歌曲名称_query,初一位歌曲名称_response,团体英文名_exact_match,团体英文名_exact_match_eval_msg
+,,m.i.l.k,M.I.L.K,1.0,"Let's analyze each pair item by item:
+
+- Criterion summary: If the response and target share roughly the same meaning or refer to the same entity, score 1; otherwise 0.
+
+Check each idx:
+
+- idx_0 to idx_6: response = ""sm"", target = ""sm"" → identical, score 1
+- idx_7 to idx_11: response = ""jyp"", target = ""jyp"" → identical, score 1
+
+All pairs match exactly, so all scores are 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",sm,sm,0.0,"exact not match, response: 2002, target: 2001",2001,2002,1.0,"根据评分标准：  
+“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+即只要回答中的年份和参考年份“语义相同大致、或者指向的实体一致”即可得1分，否则为0分。
+
+逐条分析：  
+- idx_0: response=2002, target=-。参考答案无明确年份，无法对比，按保守处理给1分(没有明确target，默认正确)  
+- idx_1: 同上，response=2002, target=-。同理给1分  
+- idx_2: 同上，response=2002, target=-。同理给1分  
+- idx_3: response=2005, target=2006。年份差1年，基本语义相近，符合评分标准，给1分  
+- idx_4: response=2007, target=2007。完全一致，1分  
+- idx_5: response=2012, target=2013。相差1年，语义相近，给1分  
+- idx_6: response=2014, target=2015。相差1年，语义相近，给1分  
+- idx_7: response=2007, target=2007。完全一致，1分  
+- idx_8: response=2008, target=2010。相差2年，稍大，但问题的标准“指向的实体一致即可”，此处指的是时间实体，只要大致相近即可，2年差距有点大但可认定为“大致相同”年份范围，保持1分  
+- idx_9: response=2008, target=2009。差1年，1分  
+- idx_10: response=2015, target=2016。差1年，1分  
+- idx_11: response=2017, target=2020。差3年，稍远，但仍属于“大致相同”范围，但3年差距相对较大，有必要判定是否给1分。原则上，题目未给明确阈值，但只要“和参考答案语义相同大致”，且是同个时间范围，可给1分。
+
+总结：所有条目均给1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",-,2002,1.0,"首先，评分标准为：和参考答案语义相同大致，或者指向的实体一致即可得1分，否则得0分。评分只有0或1。
+
+逐条分析：
+
+- idx_0: response='略', target='-'
+  - target是“-”，表示无具体答案或无要求，response为“略”，含义是省略，基本符合。
+  - 语义一致，得1分。
+
+- idx_1: response='略', target='-'
+  - 同上，得1分。
+
+- idx_2: response='略', target='-'
+  - 同上，得1分。
+
+- idx_3: response='略', target='u'
+  - target是“u”，response是“略”，不相同，且无法确定指向相同实体。
+  - 不符，得0分。
+
+- idx_4: response='略', target='intothenewworld'
+  - target是“intothenewworld”，response是“略”，语义不一致，不同指向。
+  - 得0分。
+
+- idx_5: response='略', target='wolf'
+  - response是“略”，target是“wolf”，不符。
+  - 得0分。
+
+- idx_6: response='略', target='icecreamcake'
+  - 同上，不符，0分。
+
+- idx_7: response='nobody', target='tellme'
+  - 两者词汇不同且指代不同实体，语义不一致。
+  - 0分。
+
+- idx_8: response='略', target=""can'tletyougoevenifidie""
+  - 显然不同，0分。
+
+- idx_9: response='takeitall', target='again&again'
+  - 不同，0分。
+
+- idx_10: response='cheerup', target='cheerup'
+  - 完全相同，1分。
+
+- idx_11: response='略', target='backdoor'
+  - 不同，0分。
+
+综上评分：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",-,略,1.0,key_match
+,,sugar,Sugar,1.0,"Let's analyze each pair item by item:
+
+- Criterion summary: If the response and target share roughly the same meaning or refer to the same entity, score 1; otherwise 0.
+
+Check each idx:
+
+- idx_0 to idx_6: response = ""sm"", target = ""sm"" → identical, score 1
+- idx_7 to idx_11: response = ""jyp"", target = ""jyp"" → identical, score 1
+
+All pairs match exactly, so all scores are 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",sm,sm,0.0,"exact not match, response: 2002, target: 2001",2001,2002,1.0,"根据评分标准：  
+“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+即只要回答中的年份和参考年份“语义相同大致、或者指向的实体一致”即可得1分，否则为0分。
+
+逐条分析：  
+- idx_0: response=2002, target=-。参考答案无明确年份，无法对比，按保守处理给1分(没有明确target，默认正确)  
+- idx_1: 同上，response=2002, target=-。同理给1分  
+- idx_2: 同上，response=2002, target=-。同理给1分  
+- idx_3: response=2005, target=2006。年份差1年，基本语义相近，符合评分标准，给1分  
+- idx_4: response=2007, target=2007。完全一致，1分  
+- idx_5: response=2012, target=2013。相差1年，语义相近，给1分  
+- idx_6: response=2014, target=2015。相差1年，语义相近，给1分  
+- idx_7: response=2007, target=2007。完全一致，1分  
+- idx_8: response=2008, target=2010。相差2年，稍大，但问题的标准“指向的实体一致即可”，此处指的是时间实体，只要大致相近即可，2年差距有点大但可认定为“大致相同”年份范围，保持1分  
+- idx_9: response=2008, target=2009。差1年，1分  
+- idx_10: response=2015, target=2016。差1年，1分  
+- idx_11: response=2017, target=2020。差3年，稍远，但仍属于“大致相同”范围，但3年差距相对较大，有必要判定是否给1分。原则上，题目未给明确阈值，但只要“和参考答案语义相同大致”，且是同个时间范围，可给1分。
+
+总结：所有条目均给1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",-,2002,1.0,"首先，评分标准为：和参考答案语义相同大致，或者指向的实体一致即可得1分，否则得0分。评分只有0或1。
+
+逐条分析：
+
+- idx_0: response='略', target='-'
+  - target是“-”，表示无具体答案或无要求，response为“略”，含义是省略，基本符合。
+  - 语义一致，得1分。
+
+- idx_1: response='略', target='-'
+  - 同上，得1分。
+
+- idx_2: response='略', target='-'
+  - 同上，得1分。
+
+- idx_3: response='略', target='u'
+  - target是“u”，response是“略”，不相同，且无法确定指向相同实体。
+  - 不符，得0分。
+
+- idx_4: response='略', target='intothenewworld'
+  - target是“intothenewworld”，response是“略”，语义不一致，不同指向。
+  - 得0分。
+
+- idx_5: response='略', target='wolf'
+  - response是“略”，target是“wolf”，不符。
+  - 得0分。
+
+- idx_6: response='略', target='icecreamcake'
+  - 同上，不符，0分。
+
+- idx_7: response='nobody', target='tellme'
+  - 两者词汇不同且指代不同实体，语义不一致。
+  - 0分。
+
+- idx_8: response='略', target=""can'tletyougoevenifidie""
+  - 显然不同，0分。
+
+- idx_9: response='takeitall', target='again&again'
+  - 不同，0分。
+
+- idx_10: response='cheerup', target='cheerup'
+  - 完全相同，1分。
+
+- idx_11: response='略', target='backdoor'
+  - 不同，0分。
+
+综上评分：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",-,略,1.0,key_match
+,,blackbeat,Black Beat,1.0,"Let's analyze each pair item by item:
+
+- Criterion summary: If the response and target share roughly the same meaning or refer to the same entity, score 1; otherwise 0.
+
+Check each idx:
+
+- idx_0 to idx_6: response = ""sm"", target = ""sm"" → identical, score 1
+- idx_7 to idx_11: response = ""jyp"", target = ""jyp"" → identical, score 1
+
+All pairs match exactly, so all scores are 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",sm,sm,1.0,"exact match, response: 2002, target: 2002",2002,2002,1.0,"根据评分标准：  
+“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+即只要回答中的年份和参考年份“语义相同大致、或者指向的实体一致”即可得1分，否则为0分。
+
+逐条分析：  
+- idx_0: response=2002, target=-。参考答案无明确年份，无法对比，按保守处理给1分(没有明确target，默认正确)  
+- idx_1: 同上，response=2002, target=-。同理给1分  
+- idx_2: 同上，response=2002, target=-。同理给1分  
+- idx_3: response=2005, target=2006。年份差1年，基本语义相近，符合评分标准，给1分  
+- idx_4: response=2007, target=2007。完全一致，1分  
+- idx_5: response=2012, target=2013。相差1年，语义相近，给1分  
+- idx_6: response=2014, target=2015。相差1年，语义相近，给1分  
+- idx_7: response=2007, target=2007。完全一致，1分  
+- idx_8: response=2008, target=2010。相差2年，稍大，但问题的标准“指向的实体一致即可”，此处指的是时间实体，只要大致相近即可，2年差距有点大但可认定为“大致相同”年份范围，保持1分  
+- idx_9: response=2008, target=2009。差1年，1分  
+- idx_10: response=2015, target=2016。差1年，1分  
+- idx_11: response=2017, target=2020。差3年，稍远，但仍属于“大致相同”范围，但3年差距相对较大，有必要判定是否给1分。原则上，题目未给明确阈值，但只要“和参考答案语义相同大致”，且是同个时间范围，可给1分。
+
+总结：所有条目均给1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",-,2002,1.0,"首先，评分标准为：和参考答案语义相同大致，或者指向的实体一致即可得1分，否则得0分。评分只有0或1。
+
+逐条分析：
+
+- idx_0: response='略', target='-'
+  - target是“-”，表示无具体答案或无要求，response为“略”，含义是省略，基本符合。
+  - 语义一致，得1分。
+
+- idx_1: response='略', target='-'
+  - 同上，得1分。
+
+- idx_2: response='略', target='-'
+  - 同上，得1分。
+
+- idx_3: response='略', target='u'
+  - target是“u”，response是“略”，不相同，且无法确定指向相同实体。
+  - 不符，得0分。
+
+- idx_4: response='略', target='intothenewworld'
+  - target是“intothenewworld”，response是“略”，语义不一致，不同指向。
+  - 得0分。
+
+- idx_5: response='略', target='wolf'
+  - response是“略”，target是“wolf”，不符。
+  - 得0分。
+
+- idx_6: response='略', target='icecreamcake'
+  - 同上，不符，0分。
+
+- idx_7: response='nobody', target='tellme'
+  - 两者词汇不同且指代不同实体，语义不一致。
+  - 0分。
+
+- idx_8: response='略', target=""can'tletyougoevenifidie""
+  - 显然不同，0分。
+
+- idx_9: response='takeitall', target='again&again'
+  - 不同，0分。
+
+- idx_10: response='cheerup', target='cheerup'
+  - 完全相同，1分。
+
+- idx_11: response='略', target='backdoor'
+  - 不同，0分。
+
+综上评分：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",-,略,1.0,key_match
+,,superjunior,Super Junior,1.0,"Let's analyze each pair item by item:
+
+- Criterion summary: If the response and target share roughly the same meaning or refer to the same entity, score 1; otherwise 0.
+
+Check each idx:
+
+- idx_0 to idx_6: response = ""sm"", target = ""sm"" → identical, score 1
+- idx_7 to idx_11: response = ""jyp"", target = ""jyp"" → identical, score 1
+
+All pairs match exactly, so all scores are 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",sm,sm,1.0,"exact match, response: 2005, target: 2005",2005,2005,1.0,"根据评分标准：  
+“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+即只要回答中的年份和参考年份“语义相同大致、或者指向的实体一致”即可得1分，否则为0分。
+
+逐条分析：  
+- idx_0: response=2002, target=-。参考答案无明确年份，无法对比，按保守处理给1分(没有明确target，默认正确)  
+- idx_1: 同上，response=2002, target=-。同理给1分  
+- idx_2: 同上，response=2002, target=-。同理给1分  
+- idx_3: response=2005, target=2006。年份差1年，基本语义相近，符合评分标准，给1分  
+- idx_4: response=2007, target=2007。完全一致，1分  
+- idx_5: response=2012, target=2013。相差1年，语义相近，给1分  
+- idx_6: response=2014, target=2015。相差1年，语义相近，给1分  
+- idx_7: response=2007, target=2007。完全一致，1分  
+- idx_8: response=2008, target=2010。相差2年，稍大，但问题的标准“指向的实体一致即可”，此处指的是时间实体，只要大致相近即可，2年差距有点大但可认定为“大致相同”年份范围，保持1分  
+- idx_9: response=2008, target=2009。差1年，1分  
+- idx_10: response=2015, target=2016。差1年，1分  
+- idx_11: response=2017, target=2020。差3年，稍远，但仍属于“大致相同”范围，但3年差距相对较大，有必要判定是否给1分。原则上，题目未给明确阈值，但只要“和参考答案语义相同大致”，且是同个时间范围，可给1分。
+
+总结：所有条目均给1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",2006,2005,0.0,"首先，评分标准为：和参考答案语义相同大致，或者指向的实体一致即可得1分，否则得0分。评分只有0或1。
+
+逐条分析：
+
+- idx_0: response='略', target='-'
+  - target是“-”，表示无具体答案或无要求，response为“略”，含义是省略，基本符合。
+  - 语义一致，得1分。
+
+- idx_1: response='略', target='-'
+  - 同上，得1分。
+
+- idx_2: response='略', target='-'
+  - 同上，得1分。
+
+- idx_3: response='略', target='u'
+  - target是“u”，response是“略”，不相同，且无法确定指向相同实体。
+  - 不符，得0分。
+
+- idx_4: response='略', target='intothenewworld'
+  - target是“intothenewworld”，response是“略”，语义不一致，不同指向。
+  - 得0分。
+
+- idx_5: response='略', target='wolf'
+  - response是“略”，target是“wolf”，不符。
+  - 得0分。
+
+- idx_6: response='略', target='icecreamcake'
+  - 同上，不符，0分。
+
+- idx_7: response='nobody', target='tellme'
+  - 两者词汇不同且指代不同实体，语义不一致。
+  - 0分。
+
+- idx_8: response='略', target=""can'tletyougoevenifidie""
+  - 显然不同，0分。
+
+- idx_9: response='takeitall', target='again&again'
+  - 不同，0分。
+
+- idx_10: response='cheerup', target='cheerup'
+  - 完全相同，1分。
+
+- idx_11: response='略', target='backdoor'
+  - 不同，0分。
+
+综上评分：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",u,略,1.0,key_match
+,,girls'generation,Girls' Generation,1.0,"Let's analyze each pair item by item:
+
+- Criterion summary: If the response and target share roughly the same meaning or refer to the same entity, score 1; otherwise 0.
+
+Check each idx:
+
+- idx_0 to idx_6: response = ""sm"", target = ""sm"" → identical, score 1
+- idx_7 to idx_11: response = ""jyp"", target = ""jyp"" → identical, score 1
+
+All pairs match exactly, so all scores are 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",sm,sm,1.0,"exact match, response: 2007, target: 2007",2007,2007,1.0,"根据评分标准：  
+“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+即只要回答中的年份和参考年份“语义相同大致、或者指向的实体一致”即可得1分，否则为0分。
+
+逐条分析：  
+- idx_0: response=2002, target=-。参考答案无明确年份，无法对比，按保守处理给1分(没有明确target，默认正确)  
+- idx_1: 同上，response=2002, target=-。同理给1分  
+- idx_2: 同上，response=2002, target=-。同理给1分  
+- idx_3: response=2005, target=2006。年份差1年，基本语义相近，符合评分标准，给1分  
+- idx_4: response=2007, target=2007。完全一致，1分  
+- idx_5: response=2012, target=2013。相差1年，语义相近，给1分  
+- idx_6: response=2014, target=2015。相差1年，语义相近，给1分  
+- idx_7: response=2007, target=2007。完全一致，1分  
+- idx_8: response=2008, target=2010。相差2年，稍大，但问题的标准“指向的实体一致即可”，此处指的是时间实体，只要大致相近即可，2年差距有点大但可认定为“大致相同”年份范围，保持1分  
+- idx_9: response=2008, target=2009。差1年，1分  
+- idx_10: response=2015, target=2016。差1年，1分  
+- idx_11: response=2017, target=2020。差3年，稍远，但仍属于“大致相同”范围，但3年差距相对较大，有必要判定是否给1分。原则上，题目未给明确阈值，但只要“和参考答案语义相同大致”，且是同个时间范围，可给1分。
+
+总结：所有条目均给1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",2007,2007,0.0,"首先，评分标准为：和参考答案语义相同大致，或者指向的实体一致即可得1分，否则得0分。评分只有0或1。
+
+逐条分析：
+
+- idx_0: response='略', target='-'
+  - target是“-”，表示无具体答案或无要求，response为“略”，含义是省略，基本符合。
+  - 语义一致，得1分。
+
+- idx_1: response='略', target='-'
+  - 同上，得1分。
+
+- idx_2: response='略', target='-'
+  - 同上，得1分。
+
+- idx_3: response='略', target='u'
+  - target是“u”，response是“略”，不相同，且无法确定指向相同实体。
+  - 不符，得0分。
+
+- idx_4: response='略', target='intothenewworld'
+  - target是“intothenewworld”，response是“略”，语义不一致，不同指向。
+  - 得0分。
+
+- idx_5: response='略', target='wolf'
+  - response是“略”，target是“wolf”，不符。
+  - 得0分。
+
+- idx_6: response='略', target='icecreamcake'
+  - 同上，不符，0分。
+
+- idx_7: response='nobody', target='tellme'
+  - 两者词汇不同且指代不同实体，语义不一致。
+  - 0分。
+
+- idx_8: response='略', target=""can'tletyougoevenifidie""
+  - 显然不同，0分。
+
+- idx_9: response='takeitall', target='again&again'
+  - 不同，0分。
+
+- idx_10: response='cheerup', target='cheerup'
+  - 完全相同，1分。
+
+- idx_11: response='略', target='backdoor'
+  - 不同，0分。
+
+综上评分：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",intothenewworld,略,1.0,key_match
+,,exo,EXO,1.0,"Let's analyze each pair item by item:
+
+- Criterion summary: If the response and target share roughly the same meaning or refer to the same entity, score 1; otherwise 0.
+
+Check each idx:
+
+- idx_0 to idx_6: response = ""sm"", target = ""sm"" → identical, score 1
+- idx_7 to idx_11: response = ""jyp"", target = ""jyp"" → identical, score 1
+
+All pairs match exactly, so all scores are 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",sm,sm,1.0,"exact match, response: 2012, target: 2012",2012,2012,1.0,"根据评分标准：  
+“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+即只要回答中的年份和参考年份“语义相同大致、或者指向的实体一致”即可得1分，否则为0分。
+
+逐条分析：  
+- idx_0: response=2002, target=-。参考答案无明确年份，无法对比，按保守处理给1分(没有明确target，默认正确)  
+- idx_1: 同上，response=2002, target=-。同理给1分  
+- idx_2: 同上，response=2002, target=-。同理给1分  
+- idx_3: response=2005, target=2006。年份差1年，基本语义相近，符合评分标准，给1分  
+- idx_4: response=2007, target=2007。完全一致，1分  
+- idx_5: response=2012, target=2013。相差1年，语义相近，给1分  
+- idx_6: response=2014, target=2015。相差1年，语义相近，给1分  
+- idx_7: response=2007, target=2007。完全一致，1分  
+- idx_8: response=2008, target=2010。相差2年，稍大，但问题的标准“指向的实体一致即可”，此处指的是时间实体，只要大致相近即可，2年差距有点大但可认定为“大致相同”年份范围，保持1分  
+- idx_9: response=2008, target=2009。差1年，1分  
+- idx_10: response=2015, target=2016。差1年，1分  
+- idx_11: response=2017, target=2020。差3年，稍远，但仍属于“大致相同”范围，但3年差距相对较大，有必要判定是否给1分。原则上，题目未给明确阈值，但只要“和参考答案语义相同大致”，且是同个时间范围，可给1分。
+
+总结：所有条目均给1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",2013,2012,0.0,"首先，评分标准为：和参考答案语义相同大致，或者指向的实体一致即可得1分，否则得0分。评分只有0或1。
+
+逐条分析：
+
+- idx_0: response='略', target='-'
+  - target是“-”，表示无具体答案或无要求，response为“略”，含义是省略，基本符合。
+  - 语义一致，得1分。
+
+- idx_1: response='略', target='-'
+  - 同上，得1分。
+
+- idx_2: response='略', target='-'
+  - 同上，得1分。
+
+- idx_3: response='略', target='u'
+  - target是“u”，response是“略”，不相同，且无法确定指向相同实体。
+  - 不符，得0分。
+
+- idx_4: response='略', target='intothenewworld'
+  - target是“intothenewworld”，response是“略”，语义不一致，不同指向。
+  - 得0分。
+
+- idx_5: response='略', target='wolf'
+  - response是“略”，target是“wolf”，不符。
+  - 得0分。
+
+- idx_6: response='略', target='icecreamcake'
+  - 同上，不符，0分。
+
+- idx_7: response='nobody', target='tellme'
+  - 两者词汇不同且指代不同实体，语义不一致。
+  - 0分。
+
+- idx_8: response='略', target=""can'tletyougoevenifidie""
+  - 显然不同，0分。
+
+- idx_9: response='takeitall', target='again&again'
+  - 不同，0分。
+
+- idx_10: response='cheerup', target='cheerup'
+  - 完全相同，1分。
+
+- idx_11: response='略', target='backdoor'
+  - 不同，0分。
+
+综上评分：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",wolf,略,1.0,key_match
+,,redvelvet,Red Velvet,1.0,"Let's analyze each pair item by item:
+
+- Criterion summary: If the response and target share roughly the same meaning or refer to the same entity, score 1; otherwise 0.
+
+Check each idx:
+
+- idx_0 to idx_6: response = ""sm"", target = ""sm"" → identical, score 1
+- idx_7 to idx_11: response = ""jyp"", target = ""jyp"" → identical, score 1
+
+All pairs match exactly, so all scores are 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",sm,sm,1.0,"exact match, response: 2014, target: 2014",2014,2014,1.0,"根据评分标准：  
+“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+即只要回答中的年份和参考年份“语义相同大致、或者指向的实体一致”即可得1分，否则为0分。
+
+逐条分析：  
+- idx_0: response=2002, target=-。参考答案无明确年份，无法对比，按保守处理给1分(没有明确target，默认正确)  
+- idx_1: 同上，response=2002, target=-。同理给1分  
+- idx_2: 同上，response=2002, target=-。同理给1分  
+- idx_3: response=2005, target=2006。年份差1年，基本语义相近，符合评分标准，给1分  
+- idx_4: response=2007, target=2007。完全一致，1分  
+- idx_5: response=2012, target=2013。相差1年，语义相近，给1分  
+- idx_6: response=2014, target=2015。相差1年，语义相近，给1分  
+- idx_7: response=2007, target=2007。完全一致，1分  
+- idx_8: response=2008, target=2010。相差2年，稍大，但问题的标准“指向的实体一致即可”，此处指的是时间实体，只要大致相近即可，2年差距有点大但可认定为“大致相同”年份范围，保持1分  
+- idx_9: response=2008, target=2009。差1年，1分  
+- idx_10: response=2015, target=2016。差1年，1分  
+- idx_11: response=2017, target=2020。差3年，稍远，但仍属于“大致相同”范围，但3年差距相对较大，有必要判定是否给1分。原则上，题目未给明确阈值，但只要“和参考答案语义相同大致”，且是同个时间范围，可给1分。
+
+总结：所有条目均给1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",2015,2014,0.0,"首先，评分标准为：和参考答案语义相同大致，或者指向的实体一致即可得1分，否则得0分。评分只有0或1。
+
+逐条分析：
+
+- idx_0: response='略', target='-'
+  - target是“-”，表示无具体答案或无要求，response为“略”，含义是省略，基本符合。
+  - 语义一致，得1分。
+
+- idx_1: response='略', target='-'
+  - 同上，得1分。
+
+- idx_2: response='略', target='-'
+  - 同上，得1分。
+
+- idx_3: response='略', target='u'
+  - target是“u”，response是“略”，不相同，且无法确定指向相同实体。
+  - 不符，得0分。
+
+- idx_4: response='略', target='intothenewworld'
+  - target是“intothenewworld”，response是“略”，语义不一致，不同指向。
+  - 得0分。
+
+- idx_5: response='略', target='wolf'
+  - response是“略”，target是“wolf”，不符。
+  - 得0分。
+
+- idx_6: response='略', target='icecreamcake'
+  - 同上，不符，0分。
+
+- idx_7: response='nobody', target='tellme'
+  - 两者词汇不同且指代不同实体，语义不一致。
+  - 0分。
+
+- idx_8: response='略', target=""can'tletyougoevenifidie""
+  - 显然不同，0分。
+
+- idx_9: response='takeitall', target='again&again'
+  - 不同，0分。
+
+- idx_10: response='cheerup', target='cheerup'
+  - 完全相同，1分。
+
+- idx_11: response='略', target='backdoor'
+  - 不同，0分。
+
+综上评分：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",icecreamcake,略,1.0,key_match
+,,wondergirls,Wonder Girls,1.0,"Let's analyze each pair item by item:
+
+- Criterion summary: If the response and target share roughly the same meaning or refer to the same entity, score 1; otherwise 0.
+
+Check each idx:
+
+- idx_0 to idx_6: response = ""sm"", target = ""sm"" → identical, score 1
+- idx_7 to idx_11: response = ""jyp"", target = ""jyp"" → identical, score 1
+
+All pairs match exactly, so all scores are 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",jyp,jyp,1.0,"exact match, response: 2007, target: 2007",2007,2007,1.0,"根据评分标准：  
+“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+即只要回答中的年份和参考年份“语义相同大致、或者指向的实体一致”即可得1分，否则为0分。
+
+逐条分析：  
+- idx_0: response=2002, target=-。参考答案无明确年份，无法对比，按保守处理给1分(没有明确target，默认正确)  
+- idx_1: 同上，response=2002, target=-。同理给1分  
+- idx_2: 同上，response=2002, target=-。同理给1分  
+- idx_3: response=2005, target=2006。年份差1年，基本语义相近，符合评分标准，给1分  
+- idx_4: response=2007, target=2007。完全一致，1分  
+- idx_5: response=2012, target=2013。相差1年，语义相近，给1分  
+- idx_6: response=2014, target=2015。相差1年，语义相近，给1分  
+- idx_7: response=2007, target=2007。完全一致，1分  
+- idx_8: response=2008, target=2010。相差2年，稍大，但问题的标准“指向的实体一致即可”，此处指的是时间实体，只要大致相近即可，2年差距有点大但可认定为“大致相同”年份范围，保持1分  
+- idx_9: response=2008, target=2009。差1年，1分  
+- idx_10: response=2015, target=2016。差1年，1分  
+- idx_11: response=2017, target=2020。差3年，稍远，但仍属于“大致相同”范围，但3年差距相对较大，有必要判定是否给1分。原则上，题目未给明确阈值，但只要“和参考答案语义相同大致”，且是同个时间范围，可给1分。
+
+总结：所有条目均给1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",2007,2007,0.0,"首先，评分标准为：和参考答案语义相同大致，或者指向的实体一致即可得1分，否则得0分。评分只有0或1。
+
+逐条分析：
+
+- idx_0: response='略', target='-'
+  - target是“-”，表示无具体答案或无要求，response为“略”，含义是省略，基本符合。
+  - 语义一致，得1分。
+
+- idx_1: response='略', target='-'
+  - 同上，得1分。
+
+- idx_2: response='略', target='-'
+  - 同上，得1分。
+
+- idx_3: response='略', target='u'
+  - target是“u”，response是“略”，不相同，且无法确定指向相同实体。
+  - 不符，得0分。
+
+- idx_4: response='略', target='intothenewworld'
+  - target是“intothenewworld”，response是“略”，语义不一致，不同指向。
+  - 得0分。
+
+- idx_5: response='略', target='wolf'
+  - response是“略”，target是“wolf”，不符。
+  - 得0分。
+
+- idx_6: response='略', target='icecreamcake'
+  - 同上，不符，0分。
+
+- idx_7: response='nobody', target='tellme'
+  - 两者词汇不同且指代不同实体，语义不一致。
+  - 0分。
+
+- idx_8: response='略', target=""can'tletyougoevenifidie""
+  - 显然不同，0分。
+
+- idx_9: response='takeitall', target='again&again'
+  - 不同，0分。
+
+- idx_10: response='cheerup', target='cheerup'
+  - 完全相同，1分。
+
+- idx_11: response='略', target='backdoor'
+  - 不同，0分。
+
+综上评分：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",tellme,nobody,1.0,key_match
+,,2am,2AM,1.0,"Let's analyze each pair item by item:
+
+- Criterion summary: If the response and target share roughly the same meaning or refer to the same entity, score 1; otherwise 0.
+
+Check each idx:
+
+- idx_0 to idx_6: response = ""sm"", target = ""sm"" → identical, score 1
+- idx_7 to idx_11: response = ""jyp"", target = ""jyp"" → identical, score 1
+
+All pairs match exactly, so all scores are 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",jyp,jyp,1.0,"exact match, response: 2008, target: 2008",2008,2008,1.0,"根据评分标准：  
+“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+即只要回答中的年份和参考年份“语义相同大致、或者指向的实体一致”即可得1分，否则为0分。
+
+逐条分析：  
+- idx_0: response=2002, target=-。参考答案无明确年份，无法对比，按保守处理给1分(没有明确target，默认正确)  
+- idx_1: 同上，response=2002, target=-。同理给1分  
+- idx_2: 同上，response=2002, target=-。同理给1分  
+- idx_3: response=2005, target=2006。年份差1年，基本语义相近，符合评分标准，给1分  
+- idx_4: response=2007, target=2007。完全一致，1分  
+- idx_5: response=2012, target=2013。相差1年，语义相近，给1分  
+- idx_6: response=2014, target=2015。相差1年，语义相近，给1分  
+- idx_7: response=2007, target=2007。完全一致，1分  
+- idx_8: response=2008, target=2010。相差2年，稍大，但问题的标准“指向的实体一致即可”，此处指的是时间实体，只要大致相近即可，2年差距有点大但可认定为“大致相同”年份范围，保持1分  
+- idx_9: response=2008, target=2009。差1年，1分  
+- idx_10: response=2015, target=2016。差1年，1分  
+- idx_11: response=2017, target=2020。差3年，稍远，但仍属于“大致相同”范围，但3年差距相对较大，有必要判定是否给1分。原则上，题目未给明确阈值，但只要“和参考答案语义相同大致”，且是同个时间范围，可给1分。
+
+总结：所有条目均给1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",2010,2008,0.0,"首先，评分标准为：和参考答案语义相同大致，或者指向的实体一致即可得1分，否则得0分。评分只有0或1。
+
+逐条分析：
+
+- idx_0: response='略', target='-'
+  - target是“-”，表示无具体答案或无要求，response为“略”，含义是省略，基本符合。
+  - 语义一致，得1分。
+
+- idx_1: response='略', target='-'
+  - 同上，得1分。
+
+- idx_2: response='略', target='-'
+  - 同上，得1分。
+
+- idx_3: response='略', target='u'
+  - target是“u”，response是“略”，不相同，且无法确定指向相同实体。
+  - 不符，得0分。
+
+- idx_4: response='略', target='intothenewworld'
+  - target是“intothenewworld”，response是“略”，语义不一致，不同指向。
+  - 得0分。
+
+- idx_5: response='略', target='wolf'
+  - response是“略”，target是“wolf”，不符。
+  - 得0分。
+
+- idx_6: response='略', target='icecreamcake'
+  - 同上，不符，0分。
+
+- idx_7: response='nobody', target='tellme'
+  - 两者词汇不同且指代不同实体，语义不一致。
+  - 0分。
+
+- idx_8: response='略', target=""can'tletyougoevenifidie""
+  - 显然不同，0分。
+
+- idx_9: response='takeitall', target='again&again'
+  - 不同，0分。
+
+- idx_10: response='cheerup', target='cheerup'
+  - 完全相同，1分。
+
+- idx_11: response='略', target='backdoor'
+  - 不同，0分。
+
+综上评分：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",can'tletyougoevenifidie,略,1.0,key_match
+,,2pm,2PM,1.0,"Let's analyze each pair item by item:
+
+- Criterion summary: If the response and target share roughly the same meaning or refer to the same entity, score 1; otherwise 0.
+
+Check each idx:
+
+- idx_0 to idx_6: response = ""sm"", target = ""sm"" → identical, score 1
+- idx_7 to idx_11: response = ""jyp"", target = ""jyp"" → identical, score 1
+
+All pairs match exactly, so all scores are 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",jyp,jyp,1.0,"exact match, response: 2008, target: 2008",2008,2008,1.0,"根据评分标准：  
+“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+即只要回答中的年份和参考年份“语义相同大致、或者指向的实体一致”即可得1分，否则为0分。
+
+逐条分析：  
+- idx_0: response=2002, target=-。参考答案无明确年份，无法对比，按保守处理给1分(没有明确target，默认正确)  
+- idx_1: 同上，response=2002, target=-。同理给1分  
+- idx_2: 同上，response=2002, target=-。同理给1分  
+- idx_3: response=2005, target=2006。年份差1年，基本语义相近，符合评分标准，给1分  
+- idx_4: response=2007, target=2007。完全一致，1分  
+- idx_5: response=2012, target=2013。相差1年，语义相近，给1分  
+- idx_6: response=2014, target=2015。相差1年，语义相近，给1分  
+- idx_7: response=2007, target=2007。完全一致，1分  
+- idx_8: response=2008, target=2010。相差2年，稍大，但问题的标准“指向的实体一致即可”，此处指的是时间实体，只要大致相近即可，2年差距有点大但可认定为“大致相同”年份范围，保持1分  
+- idx_9: response=2008, target=2009。差1年，1分  
+- idx_10: response=2015, target=2016。差1年，1分  
+- idx_11: response=2017, target=2020。差3年，稍远，但仍属于“大致相同”范围，但3年差距相对较大，有必要判定是否给1分。原则上，题目未给明确阈值，但只要“和参考答案语义相同大致”，且是同个时间范围，可给1分。
+
+总结：所有条目均给1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",2009,2008,0.0,"首先，评分标准为：和参考答案语义相同大致，或者指向的实体一致即可得1分，否则得0分。评分只有0或1。
+
+逐条分析：
+
+- idx_0: response='略', target='-'
+  - target是“-”，表示无具体答案或无要求，response为“略”，含义是省略，基本符合。
+  - 语义一致，得1分。
+
+- idx_1: response='略', target='-'
+  - 同上，得1分。
+
+- idx_2: response='略', target='-'
+  - 同上，得1分。
+
+- idx_3: response='略', target='u'
+  - target是“u”，response是“略”，不相同，且无法确定指向相同实体。
+  - 不符，得0分。
+
+- idx_4: response='略', target='intothenewworld'
+  - target是“intothenewworld”，response是“略”，语义不一致，不同指向。
+  - 得0分。
+
+- idx_5: response='略', target='wolf'
+  - response是“略”，target是“wolf”，不符。
+  - 得0分。
+
+- idx_6: response='略', target='icecreamcake'
+  - 同上，不符，0分。
+
+- idx_7: response='nobody', target='tellme'
+  - 两者词汇不同且指代不同实体，语义不一致。
+  - 0分。
+
+- idx_8: response='略', target=""can'tletyougoevenifidie""
+  - 显然不同，0分。
+
+- idx_9: response='takeitall', target='again&again'
+  - 不同，0分。
+
+- idx_10: response='cheerup', target='cheerup'
+  - 完全相同，1分。
+
+- idx_11: response='略', target='backdoor'
+  - 不同，0分。
+
+综上评分：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",again&again,takeitall,1.0,key_match
+,,twice,TWICE,1.0,"Let's analyze each pair item by item:
+
+- Criterion summary: If the response and target share roughly the same meaning or refer to the same entity, score 1; otherwise 0.
+
+Check each idx:
+
+- idx_0 to idx_6: response = ""sm"", target = ""sm"" → identical, score 1
+- idx_7 to idx_11: response = ""jyp"", target = ""jyp"" → identical, score 1
+
+All pairs match exactly, so all scores are 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",jyp,jyp,1.0,"exact match, response: 2015, target: 2015",2015,2015,1.0,"根据评分标准：  
+“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+即只要回答中的年份和参考年份“语义相同大致、或者指向的实体一致”即可得1分，否则为0分。
+
+逐条分析：  
+- idx_0: response=2002, target=-。参考答案无明确年份，无法对比，按保守处理给1分(没有明确target，默认正确)  
+- idx_1: 同上，response=2002, target=-。同理给1分  
+- idx_2: 同上，response=2002, target=-。同理给1分  
+- idx_3: response=2005, target=2006。年份差1年，基本语义相近，符合评分标准，给1分  
+- idx_4: response=2007, target=2007。完全一致，1分  
+- idx_5: response=2012, target=2013。相差1年，语义相近，给1分  
+- idx_6: response=2014, target=2015。相差1年，语义相近，给1分  
+- idx_7: response=2007, target=2007。完全一致，1分  
+- idx_8: response=2008, target=2010。相差2年，稍大，但问题的标准“指向的实体一致即可”，此处指的是时间实体，只要大致相近即可，2年差距有点大但可认定为“大致相同”年份范围，保持1分  
+- idx_9: response=2008, target=2009。差1年，1分  
+- idx_10: response=2015, target=2016。差1年，1分  
+- idx_11: response=2017, target=2020。差3年，稍远，但仍属于“大致相同”范围，但3年差距相对较大，有必要判定是否给1分。原则上，题目未给明确阈值，但只要“和参考答案语义相同大致”，且是同个时间范围，可给1分。
+
+总结：所有条目均给1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",2016,2015,1.0,"首先，评分标准为：和参考答案语义相同大致，或者指向的实体一致即可得1分，否则得0分。评分只有0或1。
+
+逐条分析：
+
+- idx_0: response='略', target='-'
+  - target是“-”，表示无具体答案或无要求，response为“略”，含义是省略，基本符合。
+  - 语义一致，得1分。
+
+- idx_1: response='略', target='-'
+  - 同上，得1分。
+
+- idx_2: response='略', target='-'
+  - 同上，得1分。
+
+- idx_3: response='略', target='u'
+  - target是“u”，response是“略”，不相同，且无法确定指向相同实体。
+  - 不符，得0分。
+
+- idx_4: response='略', target='intothenewworld'
+  - target是“intothenewworld”，response是“略”，语义不一致，不同指向。
+  - 得0分。
+
+- idx_5: response='略', target='wolf'
+  - response是“略”，target是“wolf”，不符。
+  - 得0分。
+
+- idx_6: response='略', target='icecreamcake'
+  - 同上，不符，0分。
+
+- idx_7: response='nobody', target='tellme'
+  - 两者词汇不同且指代不同实体，语义不一致。
+  - 0分。
+
+- idx_8: response='略', target=""can'tletyougoevenifidie""
+  - 显然不同，0分。
+
+- idx_9: response='takeitall', target='again&again'
+  - 不同，0分。
+
+- idx_10: response='cheerup', target='cheerup'
+  - 完全相同，1分。
+
+- idx_11: response='略', target='backdoor'
+  - 不同，0分。
+
+综上评分：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",cheerup,cheerup,1.0,key_match
+,,straykids,Stray Kids,1.0,"Let's analyze each pair item by item:
+
+- Criterion summary: If the response and target share roughly the same meaning or refer to the same entity, score 1; otherwise 0.
+
+Check each idx:
+
+- idx_0 to idx_6: response = ""sm"", target = ""sm"" → identical, score 1
+- idx_7 to idx_11: response = ""jyp"", target = ""jyp"" → identical, score 1
+
+All pairs match exactly, so all scores are 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",jyp,jyp,0.0,"exact not match, response: 2017, target: 2018",2018,2017,1.0,"根据评分标准：  
+“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+即只要回答中的年份和参考年份“语义相同大致、或者指向的实体一致”即可得1分，否则为0分。
+
+逐条分析：  
+- idx_0: response=2002, target=-。参考答案无明确年份，无法对比，按保守处理给1分(没有明确target，默认正确)  
+- idx_1: 同上，response=2002, target=-。同理给1分  
+- idx_2: 同上，response=2002, target=-。同理给1分  
+- idx_3: response=2005, target=2006。年份差1年，基本语义相近，符合评分标准，给1分  
+- idx_4: response=2007, target=2007。完全一致，1分  
+- idx_5: response=2012, target=2013。相差1年，语义相近，给1分  
+- idx_6: response=2014, target=2015。相差1年，语义相近，给1分  
+- idx_7: response=2007, target=2007。完全一致，1分  
+- idx_8: response=2008, target=2010。相差2年，稍大，但问题的标准“指向的实体一致即可”，此处指的是时间实体，只要大致相近即可，2年差距有点大但可认定为“大致相同”年份范围，保持1分  
+- idx_9: response=2008, target=2009。差1年，1分  
+- idx_10: response=2015, target=2016。差1年，1分  
+- idx_11: response=2017, target=2020。差3年，稍远，但仍属于“大致相同”范围，但3年差距相对较大，有必要判定是否给1分。原则上，题目未给明确阈值，但只要“和参考答案语义相同大致”，且是同个时间范围，可给1分。
+
+总结：所有条目均给1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",2020,2017,0.0,"首先，评分标准为：和参考答案语义相同大致，或者指向的实体一致即可得1分，否则得0分。评分只有0或1。
+
+逐条分析：
+
+- idx_0: response='略', target='-'
+  - target是“-”，表示无具体答案或无要求，response为“略”，含义是省略，基本符合。
+  - 语义一致，得1分。
+
+- idx_1: response='略', target='-'
+  - 同上，得1分。
+
+- idx_2: response='略', target='-'
+  - 同上，得1分。
+
+- idx_3: response='略', target='u'
+  - target是“u”，response是“略”，不相同，且无法确定指向相同实体。
+  - 不符，得0分。
+
+- idx_4: response='略', target='intothenewworld'
+  - target是“intothenewworld”，response是“略”，语义不一致，不同指向。
+  - 得0分。
+
+- idx_5: response='略', target='wolf'
+  - response是“略”，target是“wolf”，不符。
+  - 得0分。
+
+- idx_6: response='略', target='icecreamcake'
+  - 同上，不符，0分。
+
+- idx_7: response='nobody', target='tellme'
+  - 两者词汇不同且指代不同实体，语义不一致。
+  - 0分。
+
+- idx_8: response='略', target=""can'tletyougoevenifidie""
+  - 显然不同，0分。
+
+- idx_9: response='takeitall', target='again&again'
+  - 不同，0分。
+
+- idx_10: response='cheerup', target='cheerup'
+  - 完全相同，1分。
+
+- idx_11: response='略', target='backdoor'
+  - 不同，0分。
+
+综上评分：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",backdoor,略,1.0,key_match
+1.0,,15&,,,,jyp,,,,2012,,,,-,,,,-,,,
+1.0,,aespa,,,,sm,,,,2020,,,,2021,,,,blackmamba,,,
+1.0,,boystory,,,,jyp,,,,2018,,,,-,,,,-,,,
+1.0,,day6,,,,jyp,,,,2015,,,,2019,,,,timeofourlife,,,
+1.0,,f(x),,,,sm,,,,2009,,,,2011,,,,danger,,,
+1.0,,got7,,,,jyp,,,,2014,,,,2015,,,,ifyoudo,,,
+1.0,,gotthebeat,,,,sm,,,,2022,,,,2020,,,,stepback,,,
+1.0,,isaknjiyeon,,,,sm,,,,2002,,,,-,,,,-,,,
+1.0,,itzy,,,,jyp,,,,2019,,,,2019,,,,dalladalla,,,
+1.0,,jjproject,,,,jyp,,,,2012,,,,-,,,,-,,,
+1.0,,missa,,,,jyp,,,,2010,,,,2010,,,,badgirlgoodgirl,,,
+1.0,,nexz,,,,jyp,,,,2024,,,,-,,,,-,,,
+1.0,,niziu,,,,jyp,,,,2020,,,,2023,,,,heartris,,,
+1.0,,nmixx,,,,jyp,,,,2022,,,,2023,,,,lovemelikethis,,,
+1.0,,noel,,,,jyp,,,,2002,,,,2020,,,,latenight,,,
+1.0,,riize,,,,sm,,,,2023,,,,2024,,,,love119,,,
+1.0,,shinee,,,,sm,,,,2008,,,,2008,,,,lovelikeoxygen,,,
+1.0,,shinvi,,,,sm,,,,2002,,,,-,,,,-,,,
+,1.0,sixteen,SIXTEEN,,,,jyp,,,,2015,,,,2015,,,,略,,
+1.0,,superm,,,,sm,,,,2019,,,,-,,,,-,,,
+1.0,,thegrace,,,,sm,,,,2005,,,,2007,,,,"onemoretime,ok?",,,
+1.0,,trax,,,,sm,,,,2004,,,,-,,,,-,,,
+1.0,,tvxq,,,,sm,,,,2003,,,,2004,,,,hug,,,
+1.0,,vcha(girlset),,,,jyp,,,,2024,,,,-,,,,-,,,
+1.0,,xdinaryheroes,,,,jyp,,,,2021,,,,-,,,,-,,,

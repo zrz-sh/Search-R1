@@ -1,0 +1,607 @@
+exist_flag_gt,exist_flag_response,作品名称,作品名称_before_map,作品名称_exact_match,作品名称_exact_match_eval_msg,制片国家/地区_llm_judge,制片国家/地区_llm_judge_eval_msg,制片国家/地区_query,制片国家/地区_response,导演_llm_judge,导演_llm_judge_eval_msg,导演_query,导演_response,片长_number_near,片长_number_near_eval_msg,片长_query,片长_response,类型_llm_judge,类型_llm_judge_eval_msg,类型_query,类型_response
+,,小丑,小丑,1.0,key_match,1.0,"分析步骤：
+
+依据评分标准：
+- 标准答案为一个或多个实体，用“/”分隔，表示可接受的答案。
+- 回答的实体属于标准答案中的实体即可得满分1分。
+- 若回答实体与标准答案中的任何一个不一致，则得0分。
+- 不要求字字对应，语义或指向实体一致即可。
+
+逐条分析：
+
+1. idx_0
+   - 回答：美国
+   - 标准答案：美国/加拿大
+   - 回答""美国""包含在标准答案中，因此得1分。
+
+2. idx_1
+   - 回答：美国
+   - 标准答案：美国/巴西/中国大陆
+   - 回答""美国""包含在标准答案中，因此得1分。
+
+3. idx_2
+   - 回答：法国
+   - 标准答案：法国/意大利
+   - 回答""法国""包含在标准答案中，因此得1分。
+
+4. idx_3
+   - 回答：瑞典
+   - 标准答案：瑞典/德国/挪威
+   - 回答""瑞典""包含在标准答案中，因此得1分。
+
+5. idx_4
+   - 回答：瑞典
+   - 标准答案：美国
+   - 回答""瑞典""不包含在标准答案""美国""中，得0分。
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0
+}
+```",美国/加拿大,美国,1.0,"Let me analyze item by item:
+
+- idx_0: response is ""托德·菲利普斯"", target is ""托德·菲利普斯"". Exact match, therefore score = 1.
+- idx_1: response is ""詹姆斯·格雷"", target is ""詹姆斯·格雷"". Exact match, score = 1.
+- idx_2: response is ""罗曼·波兰斯基"", target is ""罗曼·波兰斯基"". Exact match, score = 1.
+- idx_3: response is ""罗伊·安德森"", target is ""罗伊·安德森"". Exact match, score = 1.
+- idx_4: response is ""雅各布·普罗斯"", target is ""史蒂文·索德伯格"". Different entities, no semantic match. Score = 0.
+
+Final scores in JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0
+}
+```",托德·菲利普斯,托德·菲利普斯,1.0,"number near in range 10.0%, response: 122.0, target: 118.0",118,122,0.0,"Let's analyze and score each pair step by step:
+
+---
+
+**idx_0**  
+- Target: 剧情/惊悚/犯罪  
+- Response: 超级英雄电影  
+- Analysis: The target genres are drama/thriller/crime, while the response says superhero movie. The entities and semantic fields are different; superhero movie is distinct from the target genres. It doesn't belong to the subset or same semantic field.  
+- Score: 0
+
+---
+
+**idx_1**  
+- Target: 科幻/冒险 (Science Fiction/Adventure)  
+- Response: 科幻片 (Science Fiction)  
+- Analysis: Response gives one of the genres (科幻) from the target set (科幻/冒险). According to criterion, type answering a subset is acceptable as long as content fits the movie. The response is consistent with target and permissible.  
+- Score: 1
+
+---
+
+**idx_2**  
+- Target: 剧情 (Drama)  
+- Response: 法国电影 (French film)  
+- Analysis: The target is genre (剧情), but the response is nationality or origin (法国电影). The response does not specify genre or semantic equivalent. So, it does not answer the genre, which is the focus here.  
+- Score: 0
+
+---
+
+**idx_3**  
+- Target: 剧情 (Drama)  
+- Response: 剧情片 (Drama film)  
+- Analysis: They are semantically equivalent or very close (type of movie is “剧情片” = drama film). Matches target meaning.  
+- Score: 1
+
+---
+
+**idx_4**  
+- Target: 喜剧/剧情 (Comedy/Drama)  
+- Response: 剧情片 (Drama film)  
+- Analysis: Response is a subset of the target (just剧情), so acceptable by criterion since type is a subset and content matches movie type.  
+- Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1
+}
+```",剧情/惊悚/犯罪,超级英雄电影
+,,星际探索,星际探索,1.0,key_match,1.0,"分析步骤：
+
+依据评分标准：
+- 标准答案为一个或多个实体，用“/”分隔，表示可接受的答案。
+- 回答的实体属于标准答案中的实体即可得满分1分。
+- 若回答实体与标准答案中的任何一个不一致，则得0分。
+- 不要求字字对应，语义或指向实体一致即可。
+
+逐条分析：
+
+1. idx_0
+   - 回答：美国
+   - 标准答案：美国/加拿大
+   - 回答""美国""包含在标准答案中，因此得1分。
+
+2. idx_1
+   - 回答：美国
+   - 标准答案：美国/巴西/中国大陆
+   - 回答""美国""包含在标准答案中，因此得1分。
+
+3. idx_2
+   - 回答：法国
+   - 标准答案：法国/意大利
+   - 回答""法国""包含在标准答案中，因此得1分。
+
+4. idx_3
+   - 回答：瑞典
+   - 标准答案：瑞典/德国/挪威
+   - 回答""瑞典""包含在标准答案中，因此得1分。
+
+5. idx_4
+   - 回答：瑞典
+   - 标准答案：美国
+   - 回答""瑞典""不包含在标准答案""美国""中，得0分。
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0
+}
+```",美国/巴西/中国大陆,美国,1.0,"Let me analyze item by item:
+
+- idx_0: response is ""托德·菲利普斯"", target is ""托德·菲利普斯"". Exact match, therefore score = 1.
+- idx_1: response is ""詹姆斯·格雷"", target is ""詹姆斯·格雷"". Exact match, score = 1.
+- idx_2: response is ""罗曼·波兰斯基"", target is ""罗曼·波兰斯基"". Exact match, score = 1.
+- idx_3: response is ""罗伊·安德森"", target is ""罗伊·安德森"". Exact match, score = 1.
+- idx_4: response is ""雅各布·普罗斯"", target is ""史蒂文·索德伯格"". Different entities, no semantic match. Score = 0.
+
+Final scores in JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0
+}
+```",詹姆斯·格雷,詹姆斯·格雷,1.0,"number near in range 10.0%, response: 128.0, target: 124.0",124,128,1.0,"Let's analyze and score each pair step by step:
+
+---
+
+**idx_0**  
+- Target: 剧情/惊悚/犯罪  
+- Response: 超级英雄电影  
+- Analysis: The target genres are drama/thriller/crime, while the response says superhero movie. The entities and semantic fields are different; superhero movie is distinct from the target genres. It doesn't belong to the subset or same semantic field.  
+- Score: 0
+
+---
+
+**idx_1**  
+- Target: 科幻/冒险 (Science Fiction/Adventure)  
+- Response: 科幻片 (Science Fiction)  
+- Analysis: Response gives one of the genres (科幻) from the target set (科幻/冒险). According to criterion, type answering a subset is acceptable as long as content fits the movie. The response is consistent with target and permissible.  
+- Score: 1
+
+---
+
+**idx_2**  
+- Target: 剧情 (Drama)  
+- Response: 法国电影 (French film)  
+- Analysis: The target is genre (剧情), but the response is nationality or origin (法国电影). The response does not specify genre or semantic equivalent. So, it does not answer the genre, which is the focus here.  
+- Score: 0
+
+---
+
+**idx_3**  
+- Target: 剧情 (Drama)  
+- Response: 剧情片 (Drama film)  
+- Analysis: They are semantically equivalent or very close (type of movie is “剧情片” = drama film). Matches target meaning.  
+- Score: 1
+
+---
+
+**idx_4**  
+- Target: 喜剧/剧情 (Comedy/Drama)  
+- Response: 剧情片 (Drama film)  
+- Analysis: Response is a subset of the target (just剧情), so acceptable by criterion since type is a subset and content matches movie type.  
+- Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1
+}
+```",科幻/冒险,科幻片
+,,我控诉,我控诉,1.0,key_match,1.0,"分析步骤：
+
+依据评分标准：
+- 标准答案为一个或多个实体，用“/”分隔，表示可接受的答案。
+- 回答的实体属于标准答案中的实体即可得满分1分。
+- 若回答实体与标准答案中的任何一个不一致，则得0分。
+- 不要求字字对应，语义或指向实体一致即可。
+
+逐条分析：
+
+1. idx_0
+   - 回答：美国
+   - 标准答案：美国/加拿大
+   - 回答""美国""包含在标准答案中，因此得1分。
+
+2. idx_1
+   - 回答：美国
+   - 标准答案：美国/巴西/中国大陆
+   - 回答""美国""包含在标准答案中，因此得1分。
+
+3. idx_2
+   - 回答：法国
+   - 标准答案：法国/意大利
+   - 回答""法国""包含在标准答案中，因此得1分。
+
+4. idx_3
+   - 回答：瑞典
+   - 标准答案：瑞典/德国/挪威
+   - 回答""瑞典""包含在标准答案中，因此得1分。
+
+5. idx_4
+   - 回答：瑞典
+   - 标准答案：美国
+   - 回答""瑞典""不包含在标准答案""美国""中，得0分。
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0
+}
+```",法国/意大利,法国,1.0,"Let me analyze item by item:
+
+- idx_0: response is ""托德·菲利普斯"", target is ""托德·菲利普斯"". Exact match, therefore score = 1.
+- idx_1: response is ""詹姆斯·格雷"", target is ""詹姆斯·格雷"". Exact match, score = 1.
+- idx_2: response is ""罗曼·波兰斯基"", target is ""罗曼·波兰斯基"". Exact match, score = 1.
+- idx_3: response is ""罗伊·安德森"", target is ""罗伊·安德森"". Exact match, score = 1.
+- idx_4: response is ""雅各布·普罗斯"", target is ""史蒂文·索德伯格"". Different entities, no semantic match. Score = 0.
+
+Final scores in JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0
+}
+```",罗曼·波兰斯基,罗曼·波兰斯基,0.0,"number not near, response: 114.0, target: 132.0",132,114,0.0,"Let's analyze and score each pair step by step:
+
+---
+
+**idx_0**  
+- Target: 剧情/惊悚/犯罪  
+- Response: 超级英雄电影  
+- Analysis: The target genres are drama/thriller/crime, while the response says superhero movie. The entities and semantic fields are different; superhero movie is distinct from the target genres. It doesn't belong to the subset or same semantic field.  
+- Score: 0
+
+---
+
+**idx_1**  
+- Target: 科幻/冒险 (Science Fiction/Adventure)  
+- Response: 科幻片 (Science Fiction)  
+- Analysis: Response gives one of the genres (科幻) from the target set (科幻/冒险). According to criterion, type answering a subset is acceptable as long as content fits the movie. The response is consistent with target and permissible.  
+- Score: 1
+
+---
+
+**idx_2**  
+- Target: 剧情 (Drama)  
+- Response: 法国电影 (French film)  
+- Analysis: The target is genre (剧情), but the response is nationality or origin (法国电影). The response does not specify genre or semantic equivalent. So, it does not answer the genre, which is the focus here.  
+- Score: 0
+
+---
+
+**idx_3**  
+- Target: 剧情 (Drama)  
+- Response: 剧情片 (Drama film)  
+- Analysis: They are semantically equivalent or very close (type of movie is “剧情片” = drama film). Matches target meaning.  
+- Score: 1
+
+---
+
+**idx_4**  
+- Target: 喜剧/剧情 (Comedy/Drama)  
+- Response: 剧情片 (Drama film)  
+- Analysis: Response is a subset of the target (just剧情), so acceptable by criterion since type is a subset and content matches movie type.  
+- Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1
+}
+```",剧情,法国电影
+,,关于无尽,关于无尽,1.0,key_match,1.0,"分析步骤：
+
+依据评分标准：
+- 标准答案为一个或多个实体，用“/”分隔，表示可接受的答案。
+- 回答的实体属于标准答案中的实体即可得满分1分。
+- 若回答实体与标准答案中的任何一个不一致，则得0分。
+- 不要求字字对应，语义或指向实体一致即可。
+
+逐条分析：
+
+1. idx_0
+   - 回答：美国
+   - 标准答案：美国/加拿大
+   - 回答""美国""包含在标准答案中，因此得1分。
+
+2. idx_1
+   - 回答：美国
+   - 标准答案：美国/巴西/中国大陆
+   - 回答""美国""包含在标准答案中，因此得1分。
+
+3. idx_2
+   - 回答：法国
+   - 标准答案：法国/意大利
+   - 回答""法国""包含在标准答案中，因此得1分。
+
+4. idx_3
+   - 回答：瑞典
+   - 标准答案：瑞典/德国/挪威
+   - 回答""瑞典""包含在标准答案中，因此得1分。
+
+5. idx_4
+   - 回答：瑞典
+   - 标准答案：美国
+   - 回答""瑞典""不包含在标准答案""美国""中，得0分。
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0
+}
+```",瑞典/德国/挪威,瑞典,1.0,"Let me analyze item by item:
+
+- idx_0: response is ""托德·菲利普斯"", target is ""托德·菲利普斯"". Exact match, therefore score = 1.
+- idx_1: response is ""詹姆斯·格雷"", target is ""詹姆斯·格雷"". Exact match, score = 1.
+- idx_2: response is ""罗曼·波兰斯基"", target is ""罗曼·波兰斯基"". Exact match, score = 1.
+- idx_3: response is ""罗伊·安德森"", target is ""罗伊·安德森"". Exact match, score = 1.
+- idx_4: response is ""雅各布·普罗斯"", target is ""史蒂文·索德伯格"". Different entities, no semantic match. Score = 0.
+
+Final scores in JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0
+}
+```",罗伊·安德森,罗伊·安德森,0.0,"number not near, response: 131.0, target: 76.0",76,131,1.0,"Let's analyze and score each pair step by step:
+
+---
+
+**idx_0**  
+- Target: 剧情/惊悚/犯罪  
+- Response: 超级英雄电影  
+- Analysis: The target genres are drama/thriller/crime, while the response says superhero movie. The entities and semantic fields are different; superhero movie is distinct from the target genres. It doesn't belong to the subset or same semantic field.  
+- Score: 0
+
+---
+
+**idx_1**  
+- Target: 科幻/冒险 (Science Fiction/Adventure)  
+- Response: 科幻片 (Science Fiction)  
+- Analysis: Response gives one of the genres (科幻) from the target set (科幻/冒险). According to criterion, type answering a subset is acceptable as long as content fits the movie. The response is consistent with target and permissible.  
+- Score: 1
+
+---
+
+**idx_2**  
+- Target: 剧情 (Drama)  
+- Response: 法国电影 (French film)  
+- Analysis: The target is genre (剧情), but the response is nationality or origin (法国电影). The response does not specify genre or semantic equivalent. So, it does not answer the genre, which is the focus here.  
+- Score: 0
+
+---
+
+**idx_3**  
+- Target: 剧情 (Drama)  
+- Response: 剧情片 (Drama film)  
+- Analysis: They are semantically equivalent or very close (type of movie is “剧情片” = drama film). Matches target meaning.  
+- Score: 1
+
+---
+
+**idx_4**  
+- Target: 喜剧/剧情 (Comedy/Drama)  
+- Response: 剧情片 (Drama film)  
+- Analysis: Response is a subset of the target (just剧情), so acceptable by criterion since type is a subset and content matches movie type.  
+- Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1
+}
+```",剧情,剧情片
+,,自助洗衣店,自助洗衣店,1.0,key_match,0.0,"分析步骤：
+
+依据评分标准：
+- 标准答案为一个或多个实体，用“/”分隔，表示可接受的答案。
+- 回答的实体属于标准答案中的实体即可得满分1分。
+- 若回答实体与标准答案中的任何一个不一致，则得0分。
+- 不要求字字对应，语义或指向实体一致即可。
+
+逐条分析：
+
+1. idx_0
+   - 回答：美国
+   - 标准答案：美国/加拿大
+   - 回答""美国""包含在标准答案中，因此得1分。
+
+2. idx_1
+   - 回答：美国
+   - 标准答案：美国/巴西/中国大陆
+   - 回答""美国""包含在标准答案中，因此得1分。
+
+3. idx_2
+   - 回答：法国
+   - 标准答案：法国/意大利
+   - 回答""法国""包含在标准答案中，因此得1分。
+
+4. idx_3
+   - 回答：瑞典
+   - 标准答案：瑞典/德国/挪威
+   - 回答""瑞典""包含在标准答案中，因此得1分。
+
+5. idx_4
+   - 回答：瑞典
+   - 标准答案：美国
+   - 回答""瑞典""不包含在标准答案""美国""中，得0分。
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0
+}
+```",美国,瑞典,0.0,"Let me analyze item by item:
+
+- idx_0: response is ""托德·菲利普斯"", target is ""托德·菲利普斯"". Exact match, therefore score = 1.
+- idx_1: response is ""詹姆斯·格雷"", target is ""詹姆斯·格雷"". Exact match, score = 1.
+- idx_2: response is ""罗曼·波兰斯基"", target is ""罗曼·波兰斯基"". Exact match, score = 1.
+- idx_3: response is ""罗伊·安德森"", target is ""罗伊·安德森"". Exact match, score = 1.
+- idx_4: response is ""雅各布·普罗斯"", target is ""史蒂文·索德伯格"". Different entities, no semantic match. Score = 0.
+
+Final scores in JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0
+}
+```",史蒂文·索德伯格,雅各布·普罗斯,1.0,"number near in range 10.0%, response: 101.0, target: 96.0",96,101,1.0,"Let's analyze and score each pair step by step:
+
+---
+
+**idx_0**  
+- Target: 剧情/惊悚/犯罪  
+- Response: 超级英雄电影  
+- Analysis: The target genres are drama/thriller/crime, while the response says superhero movie. The entities and semantic fields are different; superhero movie is distinct from the target genres. It doesn't belong to the subset or same semantic field.  
+- Score: 0
+
+---
+
+**idx_1**  
+- Target: 科幻/冒险 (Science Fiction/Adventure)  
+- Response: 科幻片 (Science Fiction)  
+- Analysis: Response gives one of the genres (科幻) from the target set (科幻/冒险). According to criterion, type answering a subset is acceptable as long as content fits the movie. The response is consistent with target and permissible.  
+- Score: 1
+
+---
+
+**idx_2**  
+- Target: 剧情 (Drama)  
+- Response: 法国电影 (French film)  
+- Analysis: The target is genre (剧情), but the response is nationality or origin (法国电影). The response does not specify genre or semantic equivalent. So, it does not answer the genre, which is the focus here.  
+- Score: 0
+
+---
+
+**idx_3**  
+- Target: 剧情 (Drama)  
+- Response: 剧情片 (Drama film)  
+- Analysis: They are semantically equivalent or very close (type of movie is “剧情片” = drama film). Matches target meaning.  
+- Score: 1
+
+---
+
+**idx_4**  
+- Target: 喜剧/剧情 (Comedy/Drama)  
+- Response: 剧情片 (Drama film)  
+- Analysis: Response is a subset of the target (just剧情), so acceptable by criterion since type is a subset and content matches movie type.  
+- Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1
+}
+```",喜剧/剧情,剧情片
+1.0,,世界的胜利,,,,,,法国/意大利,,,,罗贝尔·盖迪吉昂,,,,107,,,,剧情,
+1.0,,乳牙,,,,,,澳大利亚,,,,香农·墨菲,,,,120,,,,剧情/喜剧,
+1.0,,兰心大剧院,,,,,,中国大陆,,,,娄烨,,,,126,,,,剧情,
+1.0,,厄玛,,,,,,智利,,,,帕布罗·拉雷恩,,,,102,,,,剧情/爱情/音乐,
+1.0,,婚姻故事,,,,,,英国/美国,,,,诺亚·鲍姆巴赫,,,,135,,,,剧情/爱情,
+1.0,,完美候选人,,,,,,沙特阿拉伯/德国,,,,海法·曼苏尔,,,,101,,,,剧情,
+1.0,,庄园,,,,,,葡萄牙/法国,,,,蒂亚戈·盖吉思,,,,164,,,,剧情,
+1.0,,真相,,,,,,法国/日本,,,,是枝裕和,,,,106,,,,剧情,
+1.0,,等待野蛮人,,,,,,意大利/美国,,,,西罗·格拉,,,,112,,,,剧情,
+1.0,,继园台七号,,,,,,中国香港/中国大陆,,,,杨凡,,,,125,,,,动画,
+1.0,,荣誉之客,,,,,,加拿大,,,,阿托姆·伊戈扬,,,,104,,,,剧情,
+1.0,,被涂污的鸟,,,,,,捷克/斯洛伐克/乌克兰,,,,瓦茨拉夫·马尔豪尔,,,,169,,,,剧情/战争,
+1.0,,非常市长,,,,,,意大利,,,,马里奥·马尔托内,,,,118,,,,剧情,
+1.0,,马丁·伊登,,,,,,意大利/法国/德国,,,,皮耶特罗·马切罗,,,,129,,,,剧情,
+1.0,,黄蜂网络,,,,,,法国/西班牙/比利时/巴西,,,,奥利维耶·阿萨亚斯,,,,123,,,,惊悚,
+1.0,,黑手党不再是曾经,,,,,,意大利,,,,弗兰科·马雷斯科,,,,107,,,,纪录片,

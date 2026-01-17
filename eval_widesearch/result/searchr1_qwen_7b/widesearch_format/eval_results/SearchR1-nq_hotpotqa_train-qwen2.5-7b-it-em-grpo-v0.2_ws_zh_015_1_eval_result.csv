@@ -1,0 +1,134 @@
+exist_flag_gt,exist_flag_response,任务名称,任务名称_before_map,任务名称_exact_match,任务名称_exact_match_eval_msg,任务时长_llm_judge,任务时长_llm_judge_eval_msg,任务时长_query,任务时长_response,发射地点_llm_judge,发射地点_llm_judge_eval_msg,发射地点_query,发射地点_response,发射时间_llm_judge,发射时间_llm_judge_eval_msg,发射时间_query,发射时间_response,着陆地点_llm_judge,着陆地点_llm_judge_eval_msg,着陆地点_query,着陆地点_response,着陆时间_llm_judge,着陆时间_llm_judge_eval_msg,着陆时间_query,着陆时间_response,航天员姓名_llm_judge,航天员姓名_llm_judge_eval_msg,航天员姓名_query,航天员姓名_response
+,,神舟二十号,神舟二十号,1.0,key_match,0.0,"First, let's carefully analyze the given information:
+
+- Standard answers:
+  - idx_0: '--' (This likely means there is no specific target answer for idx_0.)
+  
+- Responses to grade:
+  - idx_0: '一个月' (which means ""one month"")
+
+- Grading criterion:
+  - The meaning should be roughly the same or the entities referred to should be consistent.
+  - For task duration, an error within one minute is allowed.
+  - Scores only 0 or 1.
+
+Analysis:
+- Since the target answer for idx_0 is '--', it implies that either no specific answer is expected or no target answer to compare with.
+- The response ""一个月"" (one month) is a valid time duration, but since the target is '--' (no target), there is no basis to determine correctness.
+- Usually, when the target is '--', it means either the question is not applicable or no correct answer is defined.
+  
+Therefore, based on the criterion, we cannot mark the answer correct or incorrect relative to a missing target. Usually, without a target answer, the response should be scored as 0 because it is not aligned with any known correct answer or the task cannot be evaluated.
+
+Final conclusion:
+- idx_0: score = 0
+
+```json
+{
+    ""idx_0"": 0
+}
+```",--,一个月,1.0,"分析过程：
+
+- 标准答案：酒泉卫星发射中心  
+- 评估回答：酒泉卫星发射中心  
+- 对比：两者完全一致，语义相同，指向完全相同的实体。  
+
+根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可”，本回答完全符合标准答案。  
+
+评分结果：1  
+
+```json
+{
+    ""idx_0"": 1
+}
+```",酒泉卫星发射中心,酒泉卫星发射中心,0.0,"Let's analyze the given pair according to the grading criterion:
+
+Criterion:
+- The response and the reference answer should have roughly the same meaning or refer to the same entity.
+- Exact word-for-word matching is not necessary.
+- The key is semantic similarity or referencing the same entity.
+
+Given data:
+- idx_0:  
+  - Reference answer: ""2025年4月24日17时17分31.441秒""  
+  - Response: ""2025年4月15日08时07分""  
+
+Analysis:
+- The reference date/time is April 24, 2025, 17:17:31.441 seconds.
+- The response date/time is April 15, 2025, 08:07 (no seconds).
+- Both specify a date and time, but the response differs in day, hour, minute, and lacks seconds detail.
+- The entities referenced (dates and times) are different.
+- Since they do not point to the same date/time moment, they are not semantically equivalent or pointing to the same entity.
+
+Conclusion:
+- According to the criterion, the response is not semantically equivalent and does not refer to the same entity.
+- Score: 0
+
+```json
+{
+  ""idx_0"": 0
+}
+```",2025年4月24日17时17分31.441秒,2025年4月15日08时07分,1.0,"分析过程：
+- 标准答案为“东风着陆场”。
+- 评分项的回答为“东风着陆场”。
+- 根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可”，此处两者完全一致，语义和指向实体均相同。
+
+结论：该回答完全正确，得分为1。
+
+```json
+{
+    ""idx_0"": 1
+}
+```",东风着陆场,东风着陆场,0.0,"分析过程：
+
+- 标准答案（idx_0）：“2025年10月”
+- 需要评分的回答（idx_0）：“2025年5月15日08时07分”
+
+判定依据：
+- 给定的评分标准说明，只要语义大致相同，或者指向的实体一致，即可得满分。
+- 标准答案给出的是某一具体年份的某个月份“2025年10月”。
+- 回答给出的日期是“2025年5月15日08时07分”，明确属于“2025年5月”的具体时间点。
+- 两者指向的时间实体不同：一个是十月，一个是五月。
+- 不同月份代表不同的时间段，语义并不一致。
+
+因此，该回答未能指向与标准答案相同的时间实体，语义不相符，得分0。
+
+```json
+{
+  ""idx_0"": 0
+}
+```",2025年10月,2025年5月15日08时07分,1.0,"Let's analyze the provided items step by step according to the grading criterion:
+
+- Criterion: The response should have the same or approximately the same meaning as the standard answer, or point to the same entities. Exact word-for-word match is not required.
+
+Given:
+
+- Standard answer (idx_0): ""陈冬、陈中瑞、王杰""
+- Response (idx_0): ""陈冬、陈中瑞、王杰""
+
+Analysis:
+
+- The response exactly matches the standard answer.
+- They refer to the same entities.
+- Therefore, the response meets the criterion and should receive full score.
+
+Final score for idx_0: 1
+
+```json
+{
+    ""idx_0"": 1
+}
+```",陈冬、陈中瑞、王杰,陈冬、陈中瑞、王杰
+1.0,,神舟七号,,,,,,2天20小时27分,,,,酒泉卫星发射中心,,,,2008年9月25日21时10分04.988秒,,,,四子王旗着陆场,,,,2008年9月28日17时38分,,,,翟志刚、刘伯明、景海鹏,
+1.0,,神舟九号,,,,,,12天15小时25分钟24秒钟,,,,酒泉卫星发射中心,,,,2012年6月16日18时37分24.558秒,,,,四子王旗着陆场,,,,2012年6月29日10时03分,,,,景海鹏、刘旺、刘洋,
+1.0,,神舟五号,,,,,,21小时22分钟45秒,,,,酒泉卫星发射中心,,,,2003年10月15日09时00分03.497秒,,,,四子王旗着陆场,,,,2003年10月16日06时22分48秒,,,,杨利伟,
+1.0,,神舟六号,,,,,,4天19小时32分钟46秒钟,,,,酒泉卫星发射中心,,,,2005年10月12日09时00分03.583秒,,,,四子王旗着陆场,,,,2005年10月17日04时33分,,,,费俊龙、聂海胜,
+1.0,,神舟十一号,,,,,,32天6小时又29分,,,,酒泉卫星发射中心,,,,2016年10月17日07时30分31.409秒,,,,四子王旗着陆场,,,,2016年11月18日13时59分,,,,景海鹏、陈冬,
+1.0,,神舟十七号,,,,,,187天6小时又32分,,,,酒泉卫星发射中心,,,,2023年10月26日11时14分02.491秒,,,,东风着陆场,,,,2024年4月30日17时46分,,,,汤洪波、唐胜杰、江新林,
+1.0,,神舟十三号,,,,,,182天9小时又32分,,,,酒泉卫星发射中心,,,,2021年10月16日00时23分56.469秒,,,,东风着陆场,,,,2022年4月16日09时56分,,,,翟志刚、王亚平、叶光富,
+1.0,,神舟十九号,,,,,,182天8小时又41分,,,,酒泉卫星发射中心,,,,2024年10月30日04时27分34.469秒,,,,东风着陆场,,,,2025年4月30日13时08分,,,,蔡旭哲、宋令东、王浩泽,
+1.0,,神舟十二号,,,,,,92天4小时又11分,,,,酒泉卫星发射中心,,,,2021年6月17日09时22分31.693秒,,,,东风着陆场,,,,2021年9月17日13时34分,,,,聂海胜、刘伯明、汤洪波,
+1.0,,神舟十五号,,,,,,186天7小时又24分,,,,酒泉卫星发射中心,,,,2022年11月29日23时08分17.457秒,,,,东风着陆场,,,,2023年6月4日06时33分,,,,费俊龙、邓清明、张陆,
+1.0,,神舟十八号,,,,,,192天4小时25分,,,,酒泉卫星发射中心,,,,2024年4月25日20时59分00.079秒,,,,东风着陆场,,,,2024年11月4日01时24分,,,,叶光富、李聪、李广苏,
+1.0,,神舟十六号,,,,,,153天22小时又40分,,,,酒泉卫星发射中心,,,,2023年5月30日09时31分13.480秒,,,,东风着陆场,,,,2023年10月31日08时11分,,,,景海鹏、朱杨柱、桂海潮,
+1.0,,神舟十号,,,,,,14天14小时又29分,,,,酒泉卫星发射中心,,,,2013年6月11日17时38分02.666秒,,,,四子王旗着陆场,,,,2013年6月26日08时07分,,,,聂海胜、张晓光、王亚平,
+1.0,,神舟十四号,,,,,,182天9小时又24分,,,,酒泉卫星发射中心,,,,2022年6月5日10时44分10.460秒,,,,东风着陆场,,,,2022年12月4日20时09分,,,,陈冬、刘洋、蔡旭哲,

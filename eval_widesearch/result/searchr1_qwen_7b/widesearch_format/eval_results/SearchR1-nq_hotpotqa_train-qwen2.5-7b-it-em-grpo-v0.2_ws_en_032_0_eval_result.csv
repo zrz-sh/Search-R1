@@ -1,0 +1,292 @@
+exist_flag_gt,exist_flag_response,linenumber,linenumber_before_map,linename_llm_judge,linename_llm_judge_eval_msg,linename_query,linename_response,linenumber_exact_match,linenumber_exact_match_eval_msg,termini_llm_judge,termini_llm_judge_eval_msg,termini_query,termini_response,totalstations_exact_match,totalstations_exact_match_eval_msg,totalstations_query,totalstations_response
+,,t1,T1,0.0,"Let's analyze each pair carefully according to the criterion:
+
+Criterion:
+- The answers need not be word-for-word but must have approximately the same semantics or point to the same entity.
+
+Pairs:
+
+1. idx_0:  
+   - Response: ""green""  
+   - Target: ""northshore&westernlines""  
+   Analysis: The response ""green"" is a color and the target mentions specific train lines. There is no semantic equivalence or pointing to the same entity.  
+   Score: 0
+
+2. idx_1:  
+   - Response: ""green""  
+   - Target: ""leppington&innerwestline""  
+   Analysis: Same as above, ""green"" is color, target is specific train lines. No semantic similarity.  
+   Score: 0
+
+3. idx_2:  
+   - Response: ""green""  
+   - Target: ""liverpool&innerwestline""  
+   Analysis: Same reasoning as above. No semantic similarity.  
+   Score: 0
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0
+}
+```",northshore&westernlines,green,1.0,key_match,0.0,"Let's analyze each item before scoring:
+
+---
+
+**idx_0**  
+- Response: ""townhall&bankstown""  
+- Target: ""berowra/emuplains/richmond""  
+
+Analysis:  
+The response lists ""townhall"" and ""bankstown"" while the target mentions ""berowra"", ""emuplains"", and ""richmond"". These are different place names and do not reference the same entities or semantics. No approximate semantic match or same entity is found.
+
+Score: 0
+
+---
+
+**idx_1**  
+- Response: ""central&blacktown""  
+- Target: ""citycircle/parramatta/leppington""  
+
+Analysis:  
+Target includes ""citycircle"", ""parramatta"", and ""leppington"". Response includes ""central"" and ""blacktown"".  
+- ""central"" is a well-known station in the city circle loop, which might relate indirectly to ""citycircle.""  
+- However, the response does not mention ""parramatta"" or ""leppington.""  
+Considering ""central"" could stand for one element of the ""citycircle,"" but the response lacks other elements. The criterion says approximately the same semantics are sufficient or pointing to the same entities.  
+
+Since ""citycircle"" is a concept of multiple stations arranged in a loop, and ""central"" is a key station in that loop, arguably the response partially points to the same semantic entity, but ""blacktown"" is unrelated. We have two entities in the response, only one partially matches the target concept; the other does not. Does this qualify for a full score? Likely not, since the criterion requires approximate semantic similarity or pointing to the same entity, but one part (""blacktown"") is unrelated, and ""parramatta"" and ""leppington"" are missing. This suggests incomplete match.
+
+Since scoring is binary (0 or 1), and the response only partially matches, score 0.
+
+---
+
+**idx_2**  
+- Response: ""central&parramatta""  
+- Target: ""citycircle/liverpoolstation""  
+
+Analysis:  
+Target mentions ""citycircle"" and ""liverpoolstation"". Response has ""central"" and ""parramatta"".  
+- ""central"" is part of citycircle.  
+- ""parramatta"" is a station on the network but different from ""liverpoolstation"".  
+
+""central"" matches one semantic entity ""citycircle"" approximately. ""parramatta"" does not match ""liverpoolstation."" The criterion allows approximate similarity or pointing to the same entity; partial matching is not defined clearly, but partial overlap may be enough.
+
+Is having one semantic equivalent out of two enough for a full score? The answers and responses do not need a word-for-word match, but the response must capture the semantics intended.
+
+Again, binary scoring, so if the semantics match closely enough. Here, ""central"" = ""citycircle"" is a good semantic match, though ""parramatta"" does not relate to ""liverpoolstation."" The target list mentions two stations or concepts; the response includes two stations, but only one matches.
+
+Based on the criterion, approximate same semantics are sufficient. I interpret this as the response needing to represent roughly the same set of stations/entities. Here the response represents ""central"" (same as citycircle) and ""parramatta,"" unrelated to the ""liverpoolstation."" The target is ""citycircle"" and ""liverpoolstation"" (two entities). The response only matches one entity.
+
+On balance, since the response includes a key station representing citycircle and one unrelated station, the score should be 0.
+
+---
+
+### Final scoring in JSON format:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0
+}
+```",berowra/emuplains/richmond,townhall&bankstown,0.0,"exact not match, response: 50, target: 56",56,50
+,,t2,T2,0.0,"Let's analyze each pair carefully according to the criterion:
+
+Criterion:
+- The answers need not be word-for-word but must have approximately the same semantics or point to the same entity.
+
+Pairs:
+
+1. idx_0:  
+   - Response: ""green""  
+   - Target: ""northshore&westernlines""  
+   Analysis: The response ""green"" is a color and the target mentions specific train lines. There is no semantic equivalence or pointing to the same entity.  
+   Score: 0
+
+2. idx_1:  
+   - Response: ""green""  
+   - Target: ""leppington&innerwestline""  
+   Analysis: Same as above, ""green"" is color, target is specific train lines. No semantic similarity.  
+   Score: 0
+
+3. idx_2:  
+   - Response: ""green""  
+   - Target: ""liverpool&innerwestline""  
+   Analysis: Same reasoning as above. No semantic similarity.  
+   Score: 0
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0
+}
+```",leppington&innerwestline,green,1.0,key_match,0.0,"Let's analyze each item before scoring:
+
+---
+
+**idx_0**  
+- Response: ""townhall&bankstown""  
+- Target: ""berowra/emuplains/richmond""  
+
+Analysis:  
+The response lists ""townhall"" and ""bankstown"" while the target mentions ""berowra"", ""emuplains"", and ""richmond"". These are different place names and do not reference the same entities or semantics. No approximate semantic match or same entity is found.
+
+Score: 0
+
+---
+
+**idx_1**  
+- Response: ""central&blacktown""  
+- Target: ""citycircle/parramatta/leppington""  
+
+Analysis:  
+Target includes ""citycircle"", ""parramatta"", and ""leppington"". Response includes ""central"" and ""blacktown"".  
+- ""central"" is a well-known station in the city circle loop, which might relate indirectly to ""citycircle.""  
+- However, the response does not mention ""parramatta"" or ""leppington.""  
+Considering ""central"" could stand for one element of the ""citycircle,"" but the response lacks other elements. The criterion says approximately the same semantics are sufficient or pointing to the same entities.  
+
+Since ""citycircle"" is a concept of multiple stations arranged in a loop, and ""central"" is a key station in that loop, arguably the response partially points to the same semantic entity, but ""blacktown"" is unrelated. We have two entities in the response, only one partially matches the target concept; the other does not. Does this qualify for a full score? Likely not, since the criterion requires approximate semantic similarity or pointing to the same entity, but one part (""blacktown"") is unrelated, and ""parramatta"" and ""leppington"" are missing. This suggests incomplete match.
+
+Since scoring is binary (0 or 1), and the response only partially matches, score 0.
+
+---
+
+**idx_2**  
+- Response: ""central&parramatta""  
+- Target: ""citycircle/liverpoolstation""  
+
+Analysis:  
+Target mentions ""citycircle"" and ""liverpoolstation"". Response has ""central"" and ""parramatta"".  
+- ""central"" is part of citycircle.  
+- ""parramatta"" is a station on the network but different from ""liverpoolstation"".  
+
+""central"" matches one semantic entity ""citycircle"" approximately. ""parramatta"" does not match ""liverpoolstation."" The criterion allows approximate similarity or pointing to the same entity; partial matching is not defined clearly, but partial overlap may be enough.
+
+Is having one semantic equivalent out of two enough for a full score? The answers and responses do not need a word-for-word match, but the response must capture the semantics intended.
+
+Again, binary scoring, so if the semantics match closely enough. Here, ""central"" = ""citycircle"" is a good semantic match, though ""parramatta"" does not relate to ""liverpoolstation."" The target list mentions two stations or concepts; the response includes two stations, but only one matches.
+
+Based on the criterion, approximate same semantics are sufficient. I interpret this as the response needing to represent roughly the same set of stations/entities. Here the response represents ""central"" (same as citycircle) and ""parramatta,"" unrelated to the ""liverpoolstation."" The target is ""citycircle"" and ""liverpoolstation"" (two entities). The response only matches one entity.
+
+On balance, since the response includes a key station representing citycircle and one unrelated station, the score should be 0.
+
+---
+
+### Final scoring in JSON format:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0
+}
+```",citycircle/parramatta/leppington,central&blacktown,0.0,"exact not match, response: 45, target: 37",37,45
+,,t3,T3,0.0,"Let's analyze each pair carefully according to the criterion:
+
+Criterion:
+- The answers need not be word-for-word but must have approximately the same semantics or point to the same entity.
+
+Pairs:
+
+1. idx_0:  
+   - Response: ""green""  
+   - Target: ""northshore&westernlines""  
+   Analysis: The response ""green"" is a color and the target mentions specific train lines. There is no semantic equivalence or pointing to the same entity.  
+   Score: 0
+
+2. idx_1:  
+   - Response: ""green""  
+   - Target: ""leppington&innerwestline""  
+   Analysis: Same as above, ""green"" is color, target is specific train lines. No semantic similarity.  
+   Score: 0
+
+3. idx_2:  
+   - Response: ""green""  
+   - Target: ""liverpool&innerwestline""  
+   Analysis: Same reasoning as above. No semantic similarity.  
+   Score: 0
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0
+}
+```",liverpool&innerwestline,green,1.0,key_match,0.0,"Let's analyze each item before scoring:
+
+---
+
+**idx_0**  
+- Response: ""townhall&bankstown""  
+- Target: ""berowra/emuplains/richmond""  
+
+Analysis:  
+The response lists ""townhall"" and ""bankstown"" while the target mentions ""berowra"", ""emuplains"", and ""richmond"". These are different place names and do not reference the same entities or semantics. No approximate semantic match or same entity is found.
+
+Score: 0
+
+---
+
+**idx_1**  
+- Response: ""central&blacktown""  
+- Target: ""citycircle/parramatta/leppington""  
+
+Analysis:  
+Target includes ""citycircle"", ""parramatta"", and ""leppington"". Response includes ""central"" and ""blacktown"".  
+- ""central"" is a well-known station in the city circle loop, which might relate indirectly to ""citycircle.""  
+- However, the response does not mention ""parramatta"" or ""leppington.""  
+Considering ""central"" could stand for one element of the ""citycircle,"" but the response lacks other elements. The criterion says approximately the same semantics are sufficient or pointing to the same entities.  
+
+Since ""citycircle"" is a concept of multiple stations arranged in a loop, and ""central"" is a key station in that loop, arguably the response partially points to the same semantic entity, but ""blacktown"" is unrelated. We have two entities in the response, only one partially matches the target concept; the other does not. Does this qualify for a full score? Likely not, since the criterion requires approximate semantic similarity or pointing to the same entity, but one part (""blacktown"") is unrelated, and ""parramatta"" and ""leppington"" are missing. This suggests incomplete match.
+
+Since scoring is binary (0 or 1), and the response only partially matches, score 0.
+
+---
+
+**idx_2**  
+- Response: ""central&parramatta""  
+- Target: ""citycircle/liverpoolstation""  
+
+Analysis:  
+Target mentions ""citycircle"" and ""liverpoolstation"". Response has ""central"" and ""parramatta"".  
+- ""central"" is part of citycircle.  
+- ""parramatta"" is a station on the network but different from ""liverpoolstation"".  
+
+""central"" matches one semantic entity ""citycircle"" approximately. ""parramatta"" does not match ""liverpoolstation."" The criterion allows approximate similarity or pointing to the same entity; partial matching is not defined clearly, but partial overlap may be enough.
+
+Is having one semantic equivalent out of two enough for a full score? The answers and responses do not need a word-for-word match, but the response must capture the semantics intended.
+
+Again, binary scoring, so if the semantics match closely enough. Here, ""central"" = ""citycircle"" is a good semantic match, though ""parramatta"" does not relate to ""liverpoolstation."" The target list mentions two stations or concepts; the response includes two stations, but only one matches.
+
+Based on the criterion, approximate same semantics are sufficient. I interpret this as the response needing to represent roughly the same set of stations/entities. Here the response represents ""central"" (same as citycircle) and ""parramatta,"" unrelated to the ""liverpoolstation."" The target is ""citycircle"" and ""liverpoolstation"" (two entities). The response only matches one entity.
+
+On balance, since the response includes a key station representing citycircle and one unrelated station, the score should be 0.
+
+---
+
+### Final scoring in JSON format:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0
+}
+```",citycircle/liverpoolstation,central&parramatta,0.0,"exact not match, response: 40, target: 30",30,40
+,1.0,blue,Blue,,,,blue,,,,,,central&hurstville,,,,35
+1.0,,m1,,,,metronorthwest&bankstown,,,,,,sydenham/tallawong,,,,21,
+,1.0,orange,Orange,,,,orange,,,,,,central&hurstville,,,,30
+1.0,,t4,,,,easternsuburbs&illawarraline,,,,,,bondijunction/cronullastation/waterfall,,,,33,
+1.0,,t5,,,,cumberlandline,,,,,,leppington/richmond,,,,30,
+1.0,,t6,,,,lidcombe&bankstownline,,,,,,bankstown/lidcombe,,,,6,
+1.0,,t7,,,,olympicparkline,,,,,,lidcombe/olympicpark,,,,2,
+1.0,,t8,,,,airport&southline,,,,,,central/macarthurstation,,,,34,
+1.0,,t9,,,,northernline,,,,,,gordon/hornsby,,,,31,

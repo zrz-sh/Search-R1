@@ -1,0 +1,2817 @@
+exist_flag_gt,exist_flag_response,世界遗产名称,世界遗产名称_before_map,列入年份,列入年份_before_map,世界遗产名称_exact_match,世界遗产名称_exact_match_eval_msg,列入年份_exact_match,列入年份_exact_match_eval_msg,所在省份（直辖市/自治区）_llm_judge,所在省份（直辖市/自治区）_llm_judge_eval_msg,所在省份（直辖市/自治区）_query,所在省份（直辖市/自治区）_response,遗产类别_llm_judge,遗产类别_llm_judge_eval_msg,遗产类别_query,遗产类别_response
+,,泰山,泰山,1987年,1987,1.0,key_match,1.0,key_match,1.0,"Let's analyze each pair one by one based on the criterion: the response is correct if it has the same or roughly equivalent semantic meaning or refers to the same entity as the target.
+
+---
+
+**idx_0:**  
+Response: 山东  
+Target: 山东省  
+Analysis: ""山东"" is commonly used as shorthand for ""山东省,"" referring to the same entity.  
+Score: 1
+
+---
+
+**idx_1:**  
+Response: 安徽  
+Target: 安徽省  
+Analysis: Same as above, ""安徽"" refers to ""安徽省.""  
+Score: 1
+
+---
+
+**idx_2:**  
+Response: 四川  
+Target: 四川省  
+Analysis: Same reasoning applies.  
+Score: 1
+
+---
+
+**idx_3:**  
+Response: 四川  
+Target: 四川省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_4:**  
+Response: 湖南  
+Target: 湖南省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_5:**  
+Response: 湖南  
+Target: 湖南省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_6:**  
+Response: 四川  
+Target: 四川省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_7:**  
+Response: 福建  
+Target: 福建省、江西省  
+Analysis: Response mentions only ""福建,"" missing ""江西省,"" which is part of the target.  
+Given criterion states ""semantic same or entity aligns,"" missing part means response isn't fully correct.  
+Score: 0
+
+---
+
+**idx_8:**  
+Response: 云南  
+Target: 云南省  
+Analysis: ""云南"" refers to ""云南省.""  
+Score: 1
+
+---
+
+**idx_9:**  
+Response: 贵州、云南、广西、重庆、四川  
+Target: 云南省、贵州省、重庆市  
+Analysis:  
+- Response includes 贵州, which matches 贵州省.  
+- 云南 matches 云南省.  
+- 重庆 matches 重庆市.  
+- Response adds 广西 and 四川 which are not in target (presence of extra entities is not penalized per criterion).  
+- Target includes only these three; all are present in response.  
+Hence response points to the same entities plus extras, so acceptable.  
+Score: 1
+
+---
+
+**idx_10:**  
+Response: 广东、福建、江西、湖南、贵州、浙江  
+Target: 广东省、浙江省、江西省、福建省、湖南省、贵州省  
+Analysis: All provinces in target appear in response, just without 省 suffix. According to criterion, this is acceptable.  
+Score: 1
+
+---
+
+**idx_11:**  
+Response: 江西  
+Target: 江西省  
+Analysis: Same reasoning as before.  
+Score: 1
+
+---
+
+**idx_12:**  
+Response: 新疆  
+Target: 新疆维吾尔自治区  
+Analysis: ""新疆"" is frequently used as shorthand for ""新疆维吾尔自治区.""  
+Score: 1
+
+---
+
+**idx_13:**  
+Response: 湖北  
+Target: 湖北省  
+Analysis: Same shorthand reasoning.  
+Score: 1
+
+---
+
+**idx_14:**  
+Response: 青海  
+Target: 青海省  
+Analysis: Same shorthand reasoning.  
+Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1
+}
+```",山东省,山东,1.0,"首先，查看判定标准：
+
+- 只要语义大致相同或指向实体一致即可，完全不要求逐字对应。
+- 分数只有0或1，1表示完全正确，0表示不正确。
+
+接着逐条分析：
+
+- 参照答案：  
+  idx 0,1,6,7的答案为“文化自然混合遗产”  
+  其余idx的答案均为“自然遗产”
+
+- 回答的情况：  
+  idx 0,1,6,7的回答是“自然、文化混合遗产”，与“文化自然混合遗产”语义相同，仅顺序不同，依标准视为同义，可以给1分。  
+  其它idx均为“自然遗产”，与标准答案完全一致，可以给1分。
+
+结论：所有idx的回答都与标准答案语义一致，全部给1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1
+}
+```",文化自然混合遗产,自然、文化混合遗产
+,,黄山,黄山,1990年,1990,1.0,key_match,1.0,key_match,1.0,"Let's analyze each pair one by one based on the criterion: the response is correct if it has the same or roughly equivalent semantic meaning or refers to the same entity as the target.
+
+---
+
+**idx_0:**  
+Response: 山东  
+Target: 山东省  
+Analysis: ""山东"" is commonly used as shorthand for ""山东省,"" referring to the same entity.  
+Score: 1
+
+---
+
+**idx_1:**  
+Response: 安徽  
+Target: 安徽省  
+Analysis: Same as above, ""安徽"" refers to ""安徽省.""  
+Score: 1
+
+---
+
+**idx_2:**  
+Response: 四川  
+Target: 四川省  
+Analysis: Same reasoning applies.  
+Score: 1
+
+---
+
+**idx_3:**  
+Response: 四川  
+Target: 四川省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_4:**  
+Response: 湖南  
+Target: 湖南省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_5:**  
+Response: 湖南  
+Target: 湖南省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_6:**  
+Response: 四川  
+Target: 四川省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_7:**  
+Response: 福建  
+Target: 福建省、江西省  
+Analysis: Response mentions only ""福建,"" missing ""江西省,"" which is part of the target.  
+Given criterion states ""semantic same or entity aligns,"" missing part means response isn't fully correct.  
+Score: 0
+
+---
+
+**idx_8:**  
+Response: 云南  
+Target: 云南省  
+Analysis: ""云南"" refers to ""云南省.""  
+Score: 1
+
+---
+
+**idx_9:**  
+Response: 贵州、云南、广西、重庆、四川  
+Target: 云南省、贵州省、重庆市  
+Analysis:  
+- Response includes 贵州, which matches 贵州省.  
+- 云南 matches 云南省.  
+- 重庆 matches 重庆市.  
+- Response adds 广西 and 四川 which are not in target (presence of extra entities is not penalized per criterion).  
+- Target includes only these three; all are present in response.  
+Hence response points to the same entities plus extras, so acceptable.  
+Score: 1
+
+---
+
+**idx_10:**  
+Response: 广东、福建、江西、湖南、贵州、浙江  
+Target: 广东省、浙江省、江西省、福建省、湖南省、贵州省  
+Analysis: All provinces in target appear in response, just without 省 suffix. According to criterion, this is acceptable.  
+Score: 1
+
+---
+
+**idx_11:**  
+Response: 江西  
+Target: 江西省  
+Analysis: Same reasoning as before.  
+Score: 1
+
+---
+
+**idx_12:**  
+Response: 新疆  
+Target: 新疆维吾尔自治区  
+Analysis: ""新疆"" is frequently used as shorthand for ""新疆维吾尔自治区.""  
+Score: 1
+
+---
+
+**idx_13:**  
+Response: 湖北  
+Target: 湖北省  
+Analysis: Same shorthand reasoning.  
+Score: 1
+
+---
+
+**idx_14:**  
+Response: 青海  
+Target: 青海省  
+Analysis: Same shorthand reasoning.  
+Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1
+}
+```",安徽省,安徽,1.0,"首先，查看判定标准：
+
+- 只要语义大致相同或指向实体一致即可，完全不要求逐字对应。
+- 分数只有0或1，1表示完全正确，0表示不正确。
+
+接着逐条分析：
+
+- 参照答案：  
+  idx 0,1,6,7的答案为“文化自然混合遗产”  
+  其余idx的答案均为“自然遗产”
+
+- 回答的情况：  
+  idx 0,1,6,7的回答是“自然、文化混合遗产”，与“文化自然混合遗产”语义相同，仅顺序不同，依标准视为同义，可以给1分。  
+  其它idx均为“自然遗产”，与标准答案完全一致，可以给1分。
+
+结论：所有idx的回答都与标准答案语义一致，全部给1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1
+}
+```",文化自然混合遗产,自然、文化混合遗产
+,,九寨沟风景名胜区,九寨沟,1992年,1992,1.0,key_match,1.0,key_match,1.0,"Let's analyze each pair one by one based on the criterion: the response is correct if it has the same or roughly equivalent semantic meaning or refers to the same entity as the target.
+
+---
+
+**idx_0:**  
+Response: 山东  
+Target: 山东省  
+Analysis: ""山东"" is commonly used as shorthand for ""山东省,"" referring to the same entity.  
+Score: 1
+
+---
+
+**idx_1:**  
+Response: 安徽  
+Target: 安徽省  
+Analysis: Same as above, ""安徽"" refers to ""安徽省.""  
+Score: 1
+
+---
+
+**idx_2:**  
+Response: 四川  
+Target: 四川省  
+Analysis: Same reasoning applies.  
+Score: 1
+
+---
+
+**idx_3:**  
+Response: 四川  
+Target: 四川省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_4:**  
+Response: 湖南  
+Target: 湖南省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_5:**  
+Response: 湖南  
+Target: 湖南省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_6:**  
+Response: 四川  
+Target: 四川省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_7:**  
+Response: 福建  
+Target: 福建省、江西省  
+Analysis: Response mentions only ""福建,"" missing ""江西省,"" which is part of the target.  
+Given criterion states ""semantic same or entity aligns,"" missing part means response isn't fully correct.  
+Score: 0
+
+---
+
+**idx_8:**  
+Response: 云南  
+Target: 云南省  
+Analysis: ""云南"" refers to ""云南省.""  
+Score: 1
+
+---
+
+**idx_9:**  
+Response: 贵州、云南、广西、重庆、四川  
+Target: 云南省、贵州省、重庆市  
+Analysis:  
+- Response includes 贵州, which matches 贵州省.  
+- 云南 matches 云南省.  
+- 重庆 matches 重庆市.  
+- Response adds 广西 and 四川 which are not in target (presence of extra entities is not penalized per criterion).  
+- Target includes only these three; all are present in response.  
+Hence response points to the same entities plus extras, so acceptable.  
+Score: 1
+
+---
+
+**idx_10:**  
+Response: 广东、福建、江西、湖南、贵州、浙江  
+Target: 广东省、浙江省、江西省、福建省、湖南省、贵州省  
+Analysis: All provinces in target appear in response, just without 省 suffix. According to criterion, this is acceptable.  
+Score: 1
+
+---
+
+**idx_11:**  
+Response: 江西  
+Target: 江西省  
+Analysis: Same reasoning as before.  
+Score: 1
+
+---
+
+**idx_12:**  
+Response: 新疆  
+Target: 新疆维吾尔自治区  
+Analysis: ""新疆"" is frequently used as shorthand for ""新疆维吾尔自治区.""  
+Score: 1
+
+---
+
+**idx_13:**  
+Response: 湖北  
+Target: 湖北省  
+Analysis: Same shorthand reasoning.  
+Score: 1
+
+---
+
+**idx_14:**  
+Response: 青海  
+Target: 青海省  
+Analysis: Same shorthand reasoning.  
+Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1
+}
+```",四川省,四川,1.0,"首先，查看判定标准：
+
+- 只要语义大致相同或指向实体一致即可，完全不要求逐字对应。
+- 分数只有0或1，1表示完全正确，0表示不正确。
+
+接着逐条分析：
+
+- 参照答案：  
+  idx 0,1,6,7的答案为“文化自然混合遗产”  
+  其余idx的答案均为“自然遗产”
+
+- 回答的情况：  
+  idx 0,1,6,7的回答是“自然、文化混合遗产”，与“文化自然混合遗产”语义相同，仅顺序不同，依标准视为同义，可以给1分。  
+  其它idx均为“自然遗产”，与标准答案完全一致，可以给1分。
+
+结论：所有idx的回答都与标准答案语义一致，全部给1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1
+}
+```",自然遗产,自然遗产
+,,黄龙风景名胜区,黄龙,1992年,1992,1.0,key_match,1.0,key_match,1.0,"Let's analyze each pair one by one based on the criterion: the response is correct if it has the same or roughly equivalent semantic meaning or refers to the same entity as the target.
+
+---
+
+**idx_0:**  
+Response: 山东  
+Target: 山东省  
+Analysis: ""山东"" is commonly used as shorthand for ""山东省,"" referring to the same entity.  
+Score: 1
+
+---
+
+**idx_1:**  
+Response: 安徽  
+Target: 安徽省  
+Analysis: Same as above, ""安徽"" refers to ""安徽省.""  
+Score: 1
+
+---
+
+**idx_2:**  
+Response: 四川  
+Target: 四川省  
+Analysis: Same reasoning applies.  
+Score: 1
+
+---
+
+**idx_3:**  
+Response: 四川  
+Target: 四川省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_4:**  
+Response: 湖南  
+Target: 湖南省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_5:**  
+Response: 湖南  
+Target: 湖南省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_6:**  
+Response: 四川  
+Target: 四川省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_7:**  
+Response: 福建  
+Target: 福建省、江西省  
+Analysis: Response mentions only ""福建,"" missing ""江西省,"" which is part of the target.  
+Given criterion states ""semantic same or entity aligns,"" missing part means response isn't fully correct.  
+Score: 0
+
+---
+
+**idx_8:**  
+Response: 云南  
+Target: 云南省  
+Analysis: ""云南"" refers to ""云南省.""  
+Score: 1
+
+---
+
+**idx_9:**  
+Response: 贵州、云南、广西、重庆、四川  
+Target: 云南省、贵州省、重庆市  
+Analysis:  
+- Response includes 贵州, which matches 贵州省.  
+- 云南 matches 云南省.  
+- 重庆 matches 重庆市.  
+- Response adds 广西 and 四川 which are not in target (presence of extra entities is not penalized per criterion).  
+- Target includes only these three; all are present in response.  
+Hence response points to the same entities plus extras, so acceptable.  
+Score: 1
+
+---
+
+**idx_10:**  
+Response: 广东、福建、江西、湖南、贵州、浙江  
+Target: 广东省、浙江省、江西省、福建省、湖南省、贵州省  
+Analysis: All provinces in target appear in response, just without 省 suffix. According to criterion, this is acceptable.  
+Score: 1
+
+---
+
+**idx_11:**  
+Response: 江西  
+Target: 江西省  
+Analysis: Same reasoning as before.  
+Score: 1
+
+---
+
+**idx_12:**  
+Response: 新疆  
+Target: 新疆维吾尔自治区  
+Analysis: ""新疆"" is frequently used as shorthand for ""新疆维吾尔自治区.""  
+Score: 1
+
+---
+
+**idx_13:**  
+Response: 湖北  
+Target: 湖北省  
+Analysis: Same shorthand reasoning.  
+Score: 1
+
+---
+
+**idx_14:**  
+Response: 青海  
+Target: 青海省  
+Analysis: Same shorthand reasoning.  
+Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1
+}
+```",四川省,四川,1.0,"首先，查看判定标准：
+
+- 只要语义大致相同或指向实体一致即可，完全不要求逐字对应。
+- 分数只有0或1，1表示完全正确，0表示不正确。
+
+接着逐条分析：
+
+- 参照答案：  
+  idx 0,1,6,7的答案为“文化自然混合遗产”  
+  其余idx的答案均为“自然遗产”
+
+- 回答的情况：  
+  idx 0,1,6,7的回答是“自然、文化混合遗产”，与“文化自然混合遗产”语义相同，仅顺序不同，依标准视为同义，可以给1分。  
+  其它idx均为“自然遗产”，与标准答案完全一致，可以给1分。
+
+结论：所有idx的回答都与标准答案语义一致，全部给1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1
+}
+```",自然遗产,自然遗产
+,,武陵源风景名胜区,张家界,1992年,1992,1.0,key_match,1.0,key_match,1.0,"Let's analyze each pair one by one based on the criterion: the response is correct if it has the same or roughly equivalent semantic meaning or refers to the same entity as the target.
+
+---
+
+**idx_0:**  
+Response: 山东  
+Target: 山东省  
+Analysis: ""山东"" is commonly used as shorthand for ""山东省,"" referring to the same entity.  
+Score: 1
+
+---
+
+**idx_1:**  
+Response: 安徽  
+Target: 安徽省  
+Analysis: Same as above, ""安徽"" refers to ""安徽省.""  
+Score: 1
+
+---
+
+**idx_2:**  
+Response: 四川  
+Target: 四川省  
+Analysis: Same reasoning applies.  
+Score: 1
+
+---
+
+**idx_3:**  
+Response: 四川  
+Target: 四川省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_4:**  
+Response: 湖南  
+Target: 湖南省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_5:**  
+Response: 湖南  
+Target: 湖南省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_6:**  
+Response: 四川  
+Target: 四川省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_7:**  
+Response: 福建  
+Target: 福建省、江西省  
+Analysis: Response mentions only ""福建,"" missing ""江西省,"" which is part of the target.  
+Given criterion states ""semantic same or entity aligns,"" missing part means response isn't fully correct.  
+Score: 0
+
+---
+
+**idx_8:**  
+Response: 云南  
+Target: 云南省  
+Analysis: ""云南"" refers to ""云南省.""  
+Score: 1
+
+---
+
+**idx_9:**  
+Response: 贵州、云南、广西、重庆、四川  
+Target: 云南省、贵州省、重庆市  
+Analysis:  
+- Response includes 贵州, which matches 贵州省.  
+- 云南 matches 云南省.  
+- 重庆 matches 重庆市.  
+- Response adds 广西 and 四川 which are not in target (presence of extra entities is not penalized per criterion).  
+- Target includes only these three; all are present in response.  
+Hence response points to the same entities plus extras, so acceptable.  
+Score: 1
+
+---
+
+**idx_10:**  
+Response: 广东、福建、江西、湖南、贵州、浙江  
+Target: 广东省、浙江省、江西省、福建省、湖南省、贵州省  
+Analysis: All provinces in target appear in response, just without 省 suffix. According to criterion, this is acceptable.  
+Score: 1
+
+---
+
+**idx_11:**  
+Response: 江西  
+Target: 江西省  
+Analysis: Same reasoning as before.  
+Score: 1
+
+---
+
+**idx_12:**  
+Response: 新疆  
+Target: 新疆维吾尔自治区  
+Analysis: ""新疆"" is frequently used as shorthand for ""新疆维吾尔自治区.""  
+Score: 1
+
+---
+
+**idx_13:**  
+Response: 湖北  
+Target: 湖北省  
+Analysis: Same shorthand reasoning.  
+Score: 1
+
+---
+
+**idx_14:**  
+Response: 青海  
+Target: 青海省  
+Analysis: Same shorthand reasoning.  
+Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1
+}
+```",湖南省,湖南,1.0,"首先，查看判定标准：
+
+- 只要语义大致相同或指向实体一致即可，完全不要求逐字对应。
+- 分数只有0或1，1表示完全正确，0表示不正确。
+
+接着逐条分析：
+
+- 参照答案：  
+  idx 0,1,6,7的答案为“文化自然混合遗产”  
+  其余idx的答案均为“自然遗产”
+
+- 回答的情况：  
+  idx 0,1,6,7的回答是“自然、文化混合遗产”，与“文化自然混合遗产”语义相同，仅顺序不同，依标准视为同义，可以给1分。  
+  其它idx均为“自然遗产”，与标准答案完全一致，可以给1分。
+
+结论：所有idx的回答都与标准答案语义一致，全部给1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1
+}
+```",自然遗产,自然遗产
+,,武陵源风景名胜区,武陵源,1992年,1992,1.0,key_match,1.0,key_match,1.0,"Let's analyze each pair one by one based on the criterion: the response is correct if it has the same or roughly equivalent semantic meaning or refers to the same entity as the target.
+
+---
+
+**idx_0:**  
+Response: 山东  
+Target: 山东省  
+Analysis: ""山东"" is commonly used as shorthand for ""山东省,"" referring to the same entity.  
+Score: 1
+
+---
+
+**idx_1:**  
+Response: 安徽  
+Target: 安徽省  
+Analysis: Same as above, ""安徽"" refers to ""安徽省.""  
+Score: 1
+
+---
+
+**idx_2:**  
+Response: 四川  
+Target: 四川省  
+Analysis: Same reasoning applies.  
+Score: 1
+
+---
+
+**idx_3:**  
+Response: 四川  
+Target: 四川省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_4:**  
+Response: 湖南  
+Target: 湖南省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_5:**  
+Response: 湖南  
+Target: 湖南省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_6:**  
+Response: 四川  
+Target: 四川省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_7:**  
+Response: 福建  
+Target: 福建省、江西省  
+Analysis: Response mentions only ""福建,"" missing ""江西省,"" which is part of the target.  
+Given criterion states ""semantic same or entity aligns,"" missing part means response isn't fully correct.  
+Score: 0
+
+---
+
+**idx_8:**  
+Response: 云南  
+Target: 云南省  
+Analysis: ""云南"" refers to ""云南省.""  
+Score: 1
+
+---
+
+**idx_9:**  
+Response: 贵州、云南、广西、重庆、四川  
+Target: 云南省、贵州省、重庆市  
+Analysis:  
+- Response includes 贵州, which matches 贵州省.  
+- 云南 matches 云南省.  
+- 重庆 matches 重庆市.  
+- Response adds 广西 and 四川 which are not in target (presence of extra entities is not penalized per criterion).  
+- Target includes only these three; all are present in response.  
+Hence response points to the same entities plus extras, so acceptable.  
+Score: 1
+
+---
+
+**idx_10:**  
+Response: 广东、福建、江西、湖南、贵州、浙江  
+Target: 广东省、浙江省、江西省、福建省、湖南省、贵州省  
+Analysis: All provinces in target appear in response, just without 省 suffix. According to criterion, this is acceptable.  
+Score: 1
+
+---
+
+**idx_11:**  
+Response: 江西  
+Target: 江西省  
+Analysis: Same reasoning as before.  
+Score: 1
+
+---
+
+**idx_12:**  
+Response: 新疆  
+Target: 新疆维吾尔自治区  
+Analysis: ""新疆"" is frequently used as shorthand for ""新疆维吾尔自治区.""  
+Score: 1
+
+---
+
+**idx_13:**  
+Response: 湖北  
+Target: 湖北省  
+Analysis: Same shorthand reasoning.  
+Score: 1
+
+---
+
+**idx_14:**  
+Response: 青海  
+Target: 青海省  
+Analysis: Same shorthand reasoning.  
+Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1
+}
+```",湖南省,湖南,1.0,"首先，查看判定标准：
+
+- 只要语义大致相同或指向实体一致即可，完全不要求逐字对应。
+- 分数只有0或1，1表示完全正确，0表示不正确。
+
+接着逐条分析：
+
+- 参照答案：  
+  idx 0,1,6,7的答案为“文化自然混合遗产”  
+  其余idx的答案均为“自然遗产”
+
+- 回答的情况：  
+  idx 0,1,6,7的回答是“自然、文化混合遗产”，与“文化自然混合遗产”语义相同，仅顺序不同，依标准视为同义，可以给1分。  
+  其它idx均为“自然遗产”，与标准答案完全一致，可以给1分。
+
+结论：所有idx的回答都与标准答案语义一致，全部给1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1
+}
+```",自然遗产,自然遗产
+,,峨眉山风景名胜区，含乐山大佛风景区,峨眉山-乐山大佛,1996年,1996,1.0,key_match,1.0,key_match,1.0,"Let's analyze each pair one by one based on the criterion: the response is correct if it has the same or roughly equivalent semantic meaning or refers to the same entity as the target.
+
+---
+
+**idx_0:**  
+Response: 山东  
+Target: 山东省  
+Analysis: ""山东"" is commonly used as shorthand for ""山东省,"" referring to the same entity.  
+Score: 1
+
+---
+
+**idx_1:**  
+Response: 安徽  
+Target: 安徽省  
+Analysis: Same as above, ""安徽"" refers to ""安徽省.""  
+Score: 1
+
+---
+
+**idx_2:**  
+Response: 四川  
+Target: 四川省  
+Analysis: Same reasoning applies.  
+Score: 1
+
+---
+
+**idx_3:**  
+Response: 四川  
+Target: 四川省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_4:**  
+Response: 湖南  
+Target: 湖南省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_5:**  
+Response: 湖南  
+Target: 湖南省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_6:**  
+Response: 四川  
+Target: 四川省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_7:**  
+Response: 福建  
+Target: 福建省、江西省  
+Analysis: Response mentions only ""福建,"" missing ""江西省,"" which is part of the target.  
+Given criterion states ""semantic same or entity aligns,"" missing part means response isn't fully correct.  
+Score: 0
+
+---
+
+**idx_8:**  
+Response: 云南  
+Target: 云南省  
+Analysis: ""云南"" refers to ""云南省.""  
+Score: 1
+
+---
+
+**idx_9:**  
+Response: 贵州、云南、广西、重庆、四川  
+Target: 云南省、贵州省、重庆市  
+Analysis:  
+- Response includes 贵州, which matches 贵州省.  
+- 云南 matches 云南省.  
+- 重庆 matches 重庆市.  
+- Response adds 广西 and 四川 which are not in target (presence of extra entities is not penalized per criterion).  
+- Target includes only these three; all are present in response.  
+Hence response points to the same entities plus extras, so acceptable.  
+Score: 1
+
+---
+
+**idx_10:**  
+Response: 广东、福建、江西、湖南、贵州、浙江  
+Target: 广东省、浙江省、江西省、福建省、湖南省、贵州省  
+Analysis: All provinces in target appear in response, just without 省 suffix. According to criterion, this is acceptable.  
+Score: 1
+
+---
+
+**idx_11:**  
+Response: 江西  
+Target: 江西省  
+Analysis: Same reasoning as before.  
+Score: 1
+
+---
+
+**idx_12:**  
+Response: 新疆  
+Target: 新疆维吾尔自治区  
+Analysis: ""新疆"" is frequently used as shorthand for ""新疆维吾尔自治区.""  
+Score: 1
+
+---
+
+**idx_13:**  
+Response: 湖北  
+Target: 湖北省  
+Analysis: Same shorthand reasoning.  
+Score: 1
+
+---
+
+**idx_14:**  
+Response: 青海  
+Target: 青海省  
+Analysis: Same shorthand reasoning.  
+Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1
+}
+```",四川省,四川,1.0,"首先，查看判定标准：
+
+- 只要语义大致相同或指向实体一致即可，完全不要求逐字对应。
+- 分数只有0或1，1表示完全正确，0表示不正确。
+
+接着逐条分析：
+
+- 参照答案：  
+  idx 0,1,6,7的答案为“文化自然混合遗产”  
+  其余idx的答案均为“自然遗产”
+
+- 回答的情况：  
+  idx 0,1,6,7的回答是“自然、文化混合遗产”，与“文化自然混合遗产”语义相同，仅顺序不同，依标准视为同义，可以给1分。  
+  其它idx均为“自然遗产”，与标准答案完全一致，可以给1分。
+
+结论：所有idx的回答都与标准答案语义一致，全部给1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1
+}
+```",文化自然混合遗产,自然、文化混合遗产
+,,武夷山,武夷山,1999年,1999,1.0,key_match,1.0,key_match,0.0,"Let's analyze each pair one by one based on the criterion: the response is correct if it has the same or roughly equivalent semantic meaning or refers to the same entity as the target.
+
+---
+
+**idx_0:**  
+Response: 山东  
+Target: 山东省  
+Analysis: ""山东"" is commonly used as shorthand for ""山东省,"" referring to the same entity.  
+Score: 1
+
+---
+
+**idx_1:**  
+Response: 安徽  
+Target: 安徽省  
+Analysis: Same as above, ""安徽"" refers to ""安徽省.""  
+Score: 1
+
+---
+
+**idx_2:**  
+Response: 四川  
+Target: 四川省  
+Analysis: Same reasoning applies.  
+Score: 1
+
+---
+
+**idx_3:**  
+Response: 四川  
+Target: 四川省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_4:**  
+Response: 湖南  
+Target: 湖南省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_5:**  
+Response: 湖南  
+Target: 湖南省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_6:**  
+Response: 四川  
+Target: 四川省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_7:**  
+Response: 福建  
+Target: 福建省、江西省  
+Analysis: Response mentions only ""福建,"" missing ""江西省,"" which is part of the target.  
+Given criterion states ""semantic same or entity aligns,"" missing part means response isn't fully correct.  
+Score: 0
+
+---
+
+**idx_8:**  
+Response: 云南  
+Target: 云南省  
+Analysis: ""云南"" refers to ""云南省.""  
+Score: 1
+
+---
+
+**idx_9:**  
+Response: 贵州、云南、广西、重庆、四川  
+Target: 云南省、贵州省、重庆市  
+Analysis:  
+- Response includes 贵州, which matches 贵州省.  
+- 云南 matches 云南省.  
+- 重庆 matches 重庆市.  
+- Response adds 广西 and 四川 which are not in target (presence of extra entities is not penalized per criterion).  
+- Target includes only these three; all are present in response.  
+Hence response points to the same entities plus extras, so acceptable.  
+Score: 1
+
+---
+
+**idx_10:**  
+Response: 广东、福建、江西、湖南、贵州、浙江  
+Target: 广东省、浙江省、江西省、福建省、湖南省、贵州省  
+Analysis: All provinces in target appear in response, just without 省 suffix. According to criterion, this is acceptable.  
+Score: 1
+
+---
+
+**idx_11:**  
+Response: 江西  
+Target: 江西省  
+Analysis: Same reasoning as before.  
+Score: 1
+
+---
+
+**idx_12:**  
+Response: 新疆  
+Target: 新疆维吾尔自治区  
+Analysis: ""新疆"" is frequently used as shorthand for ""新疆维吾尔自治区.""  
+Score: 1
+
+---
+
+**idx_13:**  
+Response: 湖北  
+Target: 湖北省  
+Analysis: Same shorthand reasoning.  
+Score: 1
+
+---
+
+**idx_14:**  
+Response: 青海  
+Target: 青海省  
+Analysis: Same shorthand reasoning.  
+Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1
+}
+```",福建省、江西省,福建,1.0,"首先，查看判定标准：
+
+- 只要语义大致相同或指向实体一致即可，完全不要求逐字对应。
+- 分数只有0或1，1表示完全正确，0表示不正确。
+
+接着逐条分析：
+
+- 参照答案：  
+  idx 0,1,6,7的答案为“文化自然混合遗产”  
+  其余idx的答案均为“自然遗产”
+
+- 回答的情况：  
+  idx 0,1,6,7的回答是“自然、文化混合遗产”，与“文化自然混合遗产”语义相同，仅顺序不同，依标准视为同义，可以给1分。  
+  其它idx均为“自然遗产”，与标准答案完全一致，可以给1分。
+
+结论：所有idx的回答都与标准答案语义一致，全部给1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1
+}
+```",文化自然混合遗产,自然、文化混合遗产
+,,云南三江并流保护区,三江并流,2003年,2003,1.0,key_match,1.0,key_match,1.0,"Let's analyze each pair one by one based on the criterion: the response is correct if it has the same or roughly equivalent semantic meaning or refers to the same entity as the target.
+
+---
+
+**idx_0:**  
+Response: 山东  
+Target: 山东省  
+Analysis: ""山东"" is commonly used as shorthand for ""山东省,"" referring to the same entity.  
+Score: 1
+
+---
+
+**idx_1:**  
+Response: 安徽  
+Target: 安徽省  
+Analysis: Same as above, ""安徽"" refers to ""安徽省.""  
+Score: 1
+
+---
+
+**idx_2:**  
+Response: 四川  
+Target: 四川省  
+Analysis: Same reasoning applies.  
+Score: 1
+
+---
+
+**idx_3:**  
+Response: 四川  
+Target: 四川省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_4:**  
+Response: 湖南  
+Target: 湖南省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_5:**  
+Response: 湖南  
+Target: 湖南省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_6:**  
+Response: 四川  
+Target: 四川省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_7:**  
+Response: 福建  
+Target: 福建省、江西省  
+Analysis: Response mentions only ""福建,"" missing ""江西省,"" which is part of the target.  
+Given criterion states ""semantic same or entity aligns,"" missing part means response isn't fully correct.  
+Score: 0
+
+---
+
+**idx_8:**  
+Response: 云南  
+Target: 云南省  
+Analysis: ""云南"" refers to ""云南省.""  
+Score: 1
+
+---
+
+**idx_9:**  
+Response: 贵州、云南、广西、重庆、四川  
+Target: 云南省、贵州省、重庆市  
+Analysis:  
+- Response includes 贵州, which matches 贵州省.  
+- 云南 matches 云南省.  
+- 重庆 matches 重庆市.  
+- Response adds 广西 and 四川 which are not in target (presence of extra entities is not penalized per criterion).  
+- Target includes only these three; all are present in response.  
+Hence response points to the same entities plus extras, so acceptable.  
+Score: 1
+
+---
+
+**idx_10:**  
+Response: 广东、福建、江西、湖南、贵州、浙江  
+Target: 广东省、浙江省、江西省、福建省、湖南省、贵州省  
+Analysis: All provinces in target appear in response, just without 省 suffix. According to criterion, this is acceptable.  
+Score: 1
+
+---
+
+**idx_11:**  
+Response: 江西  
+Target: 江西省  
+Analysis: Same reasoning as before.  
+Score: 1
+
+---
+
+**idx_12:**  
+Response: 新疆  
+Target: 新疆维吾尔自治区  
+Analysis: ""新疆"" is frequently used as shorthand for ""新疆维吾尔自治区.""  
+Score: 1
+
+---
+
+**idx_13:**  
+Response: 湖北  
+Target: 湖北省  
+Analysis: Same shorthand reasoning.  
+Score: 1
+
+---
+
+**idx_14:**  
+Response: 青海  
+Target: 青海省  
+Analysis: Same shorthand reasoning.  
+Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1
+}
+```",云南省,云南,1.0,"首先，查看判定标准：
+
+- 只要语义大致相同或指向实体一致即可，完全不要求逐字对应。
+- 分数只有0或1，1表示完全正确，0表示不正确。
+
+接着逐条分析：
+
+- 参照答案：  
+  idx 0,1,6,7的答案为“文化自然混合遗产”  
+  其余idx的答案均为“自然遗产”
+
+- 回答的情况：  
+  idx 0,1,6,7的回答是“自然、文化混合遗产”，与“文化自然混合遗产”语义相同，仅顺序不同，依标准视为同义，可以给1分。  
+  其它idx均为“自然遗产”，与标准答案完全一致，可以给1分。
+
+结论：所有idx的回答都与标准答案语义一致，全部给1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1
+}
+```",自然遗产,自然遗产
+,,中国南方喀斯特（第一期）,中国南方喀斯特,2007年,2007,1.0,key_match,1.0,key_match,1.0,"Let's analyze each pair one by one based on the criterion: the response is correct if it has the same or roughly equivalent semantic meaning or refers to the same entity as the target.
+
+---
+
+**idx_0:**  
+Response: 山东  
+Target: 山东省  
+Analysis: ""山东"" is commonly used as shorthand for ""山东省,"" referring to the same entity.  
+Score: 1
+
+---
+
+**idx_1:**  
+Response: 安徽  
+Target: 安徽省  
+Analysis: Same as above, ""安徽"" refers to ""安徽省.""  
+Score: 1
+
+---
+
+**idx_2:**  
+Response: 四川  
+Target: 四川省  
+Analysis: Same reasoning applies.  
+Score: 1
+
+---
+
+**idx_3:**  
+Response: 四川  
+Target: 四川省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_4:**  
+Response: 湖南  
+Target: 湖南省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_5:**  
+Response: 湖南  
+Target: 湖南省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_6:**  
+Response: 四川  
+Target: 四川省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_7:**  
+Response: 福建  
+Target: 福建省、江西省  
+Analysis: Response mentions only ""福建,"" missing ""江西省,"" which is part of the target.  
+Given criterion states ""semantic same or entity aligns,"" missing part means response isn't fully correct.  
+Score: 0
+
+---
+
+**idx_8:**  
+Response: 云南  
+Target: 云南省  
+Analysis: ""云南"" refers to ""云南省.""  
+Score: 1
+
+---
+
+**idx_9:**  
+Response: 贵州、云南、广西、重庆、四川  
+Target: 云南省、贵州省、重庆市  
+Analysis:  
+- Response includes 贵州, which matches 贵州省.  
+- 云南 matches 云南省.  
+- 重庆 matches 重庆市.  
+- Response adds 广西 and 四川 which are not in target (presence of extra entities is not penalized per criterion).  
+- Target includes only these three; all are present in response.  
+Hence response points to the same entities plus extras, so acceptable.  
+Score: 1
+
+---
+
+**idx_10:**  
+Response: 广东、福建、江西、湖南、贵州、浙江  
+Target: 广东省、浙江省、江西省、福建省、湖南省、贵州省  
+Analysis: All provinces in target appear in response, just without 省 suffix. According to criterion, this is acceptable.  
+Score: 1
+
+---
+
+**idx_11:**  
+Response: 江西  
+Target: 江西省  
+Analysis: Same reasoning as before.  
+Score: 1
+
+---
+
+**idx_12:**  
+Response: 新疆  
+Target: 新疆维吾尔自治区  
+Analysis: ""新疆"" is frequently used as shorthand for ""新疆维吾尔自治区.""  
+Score: 1
+
+---
+
+**idx_13:**  
+Response: 湖北  
+Target: 湖北省  
+Analysis: Same shorthand reasoning.  
+Score: 1
+
+---
+
+**idx_14:**  
+Response: 青海  
+Target: 青海省  
+Analysis: Same shorthand reasoning.  
+Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1
+}
+```",云南省、贵州省、重庆市,贵州、云南、广西、重庆、四川,1.0,"首先，查看判定标准：
+
+- 只要语义大致相同或指向实体一致即可，完全不要求逐字对应。
+- 分数只有0或1，1表示完全正确，0表示不正确。
+
+接着逐条分析：
+
+- 参照答案：  
+  idx 0,1,6,7的答案为“文化自然混合遗产”  
+  其余idx的答案均为“自然遗产”
+
+- 回答的情况：  
+  idx 0,1,6,7的回答是“自然、文化混合遗产”，与“文化自然混合遗产”语义相同，仅顺序不同，依标准视为同义，可以给1分。  
+  其它idx均为“自然遗产”，与标准答案完全一致，可以给1分。
+
+结论：所有idx的回答都与标准答案语义一致，全部给1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1
+}
+```",自然遗产,自然遗产
+,,中国丹霞,丹霞地貌,2010年,2010,1.0,key_match,1.0,key_match,1.0,"Let's analyze each pair one by one based on the criterion: the response is correct if it has the same or roughly equivalent semantic meaning or refers to the same entity as the target.
+
+---
+
+**idx_0:**  
+Response: 山东  
+Target: 山东省  
+Analysis: ""山东"" is commonly used as shorthand for ""山东省,"" referring to the same entity.  
+Score: 1
+
+---
+
+**idx_1:**  
+Response: 安徽  
+Target: 安徽省  
+Analysis: Same as above, ""安徽"" refers to ""安徽省.""  
+Score: 1
+
+---
+
+**idx_2:**  
+Response: 四川  
+Target: 四川省  
+Analysis: Same reasoning applies.  
+Score: 1
+
+---
+
+**idx_3:**  
+Response: 四川  
+Target: 四川省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_4:**  
+Response: 湖南  
+Target: 湖南省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_5:**  
+Response: 湖南  
+Target: 湖南省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_6:**  
+Response: 四川  
+Target: 四川省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_7:**  
+Response: 福建  
+Target: 福建省、江西省  
+Analysis: Response mentions only ""福建,"" missing ""江西省,"" which is part of the target.  
+Given criterion states ""semantic same or entity aligns,"" missing part means response isn't fully correct.  
+Score: 0
+
+---
+
+**idx_8:**  
+Response: 云南  
+Target: 云南省  
+Analysis: ""云南"" refers to ""云南省.""  
+Score: 1
+
+---
+
+**idx_9:**  
+Response: 贵州、云南、广西、重庆、四川  
+Target: 云南省、贵州省、重庆市  
+Analysis:  
+- Response includes 贵州, which matches 贵州省.  
+- 云南 matches 云南省.  
+- 重庆 matches 重庆市.  
+- Response adds 广西 and 四川 which are not in target (presence of extra entities is not penalized per criterion).  
+- Target includes only these three; all are present in response.  
+Hence response points to the same entities plus extras, so acceptable.  
+Score: 1
+
+---
+
+**idx_10:**  
+Response: 广东、福建、江西、湖南、贵州、浙江  
+Target: 广东省、浙江省、江西省、福建省、湖南省、贵州省  
+Analysis: All provinces in target appear in response, just without 省 suffix. According to criterion, this is acceptable.  
+Score: 1
+
+---
+
+**idx_11:**  
+Response: 江西  
+Target: 江西省  
+Analysis: Same reasoning as before.  
+Score: 1
+
+---
+
+**idx_12:**  
+Response: 新疆  
+Target: 新疆维吾尔自治区  
+Analysis: ""新疆"" is frequently used as shorthand for ""新疆维吾尔自治区.""  
+Score: 1
+
+---
+
+**idx_13:**  
+Response: 湖北  
+Target: 湖北省  
+Analysis: Same shorthand reasoning.  
+Score: 1
+
+---
+
+**idx_14:**  
+Response: 青海  
+Target: 青海省  
+Analysis: Same shorthand reasoning.  
+Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1
+}
+```",广东省、浙江省、江西省、福建省、湖南省、贵州省,广东、福建、江西、湖南、贵州、浙江,1.0,"首先，查看判定标准：
+
+- 只要语义大致相同或指向实体一致即可，完全不要求逐字对应。
+- 分数只有0或1，1表示完全正确，0表示不正确。
+
+接着逐条分析：
+
+- 参照答案：  
+  idx 0,1,6,7的答案为“文化自然混合遗产”  
+  其余idx的答案均为“自然遗产”
+
+- 回答的情况：  
+  idx 0,1,6,7的回答是“自然、文化混合遗产”，与“文化自然混合遗产”语义相同，仅顺序不同，依标准视为同义，可以给1分。  
+  其它idx均为“自然遗产”，与标准答案完全一致，可以给1分。
+
+结论：所有idx的回答都与标准答案语义一致，全部给1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1
+}
+```",自然遗产,自然遗产
+,,上饶市三清山风景名胜区,三清山,2008年,2008,1.0,key_match,1.0,key_match,1.0,"Let's analyze each pair one by one based on the criterion: the response is correct if it has the same or roughly equivalent semantic meaning or refers to the same entity as the target.
+
+---
+
+**idx_0:**  
+Response: 山东  
+Target: 山东省  
+Analysis: ""山东"" is commonly used as shorthand for ""山东省,"" referring to the same entity.  
+Score: 1
+
+---
+
+**idx_1:**  
+Response: 安徽  
+Target: 安徽省  
+Analysis: Same as above, ""安徽"" refers to ""安徽省.""  
+Score: 1
+
+---
+
+**idx_2:**  
+Response: 四川  
+Target: 四川省  
+Analysis: Same reasoning applies.  
+Score: 1
+
+---
+
+**idx_3:**  
+Response: 四川  
+Target: 四川省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_4:**  
+Response: 湖南  
+Target: 湖南省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_5:**  
+Response: 湖南  
+Target: 湖南省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_6:**  
+Response: 四川  
+Target: 四川省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_7:**  
+Response: 福建  
+Target: 福建省、江西省  
+Analysis: Response mentions only ""福建,"" missing ""江西省,"" which is part of the target.  
+Given criterion states ""semantic same or entity aligns,"" missing part means response isn't fully correct.  
+Score: 0
+
+---
+
+**idx_8:**  
+Response: 云南  
+Target: 云南省  
+Analysis: ""云南"" refers to ""云南省.""  
+Score: 1
+
+---
+
+**idx_9:**  
+Response: 贵州、云南、广西、重庆、四川  
+Target: 云南省、贵州省、重庆市  
+Analysis:  
+- Response includes 贵州, which matches 贵州省.  
+- 云南 matches 云南省.  
+- 重庆 matches 重庆市.  
+- Response adds 广西 and 四川 which are not in target (presence of extra entities is not penalized per criterion).  
+- Target includes only these three; all are present in response.  
+Hence response points to the same entities plus extras, so acceptable.  
+Score: 1
+
+---
+
+**idx_10:**  
+Response: 广东、福建、江西、湖南、贵州、浙江  
+Target: 广东省、浙江省、江西省、福建省、湖南省、贵州省  
+Analysis: All provinces in target appear in response, just without 省 suffix. According to criterion, this is acceptable.  
+Score: 1
+
+---
+
+**idx_11:**  
+Response: 江西  
+Target: 江西省  
+Analysis: Same reasoning as before.  
+Score: 1
+
+---
+
+**idx_12:**  
+Response: 新疆  
+Target: 新疆维吾尔自治区  
+Analysis: ""新疆"" is frequently used as shorthand for ""新疆维吾尔自治区.""  
+Score: 1
+
+---
+
+**idx_13:**  
+Response: 湖北  
+Target: 湖北省  
+Analysis: Same shorthand reasoning.  
+Score: 1
+
+---
+
+**idx_14:**  
+Response: 青海  
+Target: 青海省  
+Analysis: Same shorthand reasoning.  
+Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1
+}
+```",江西省,江西,1.0,"首先，查看判定标准：
+
+- 只要语义大致相同或指向实体一致即可，完全不要求逐字对应。
+- 分数只有0或1，1表示完全正确，0表示不正确。
+
+接着逐条分析：
+
+- 参照答案：  
+  idx 0,1,6,7的答案为“文化自然混合遗产”  
+  其余idx的答案均为“自然遗产”
+
+- 回答的情况：  
+  idx 0,1,6,7的回答是“自然、文化混合遗产”，与“文化自然混合遗产”语义相同，仅顺序不同，依标准视为同义，可以给1分。  
+  其它idx均为“自然遗产”，与标准答案完全一致，可以给1分。
+
+结论：所有idx的回答都与标准答案语义一致，全部给1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1
+}
+```",自然遗产,自然遗产
+,,天山山脉,天山,2013年,2013,1.0,key_match,1.0,key_match,1.0,"Let's analyze each pair one by one based on the criterion: the response is correct if it has the same or roughly equivalent semantic meaning or refers to the same entity as the target.
+
+---
+
+**idx_0:**  
+Response: 山东  
+Target: 山东省  
+Analysis: ""山东"" is commonly used as shorthand for ""山东省,"" referring to the same entity.  
+Score: 1
+
+---
+
+**idx_1:**  
+Response: 安徽  
+Target: 安徽省  
+Analysis: Same as above, ""安徽"" refers to ""安徽省.""  
+Score: 1
+
+---
+
+**idx_2:**  
+Response: 四川  
+Target: 四川省  
+Analysis: Same reasoning applies.  
+Score: 1
+
+---
+
+**idx_3:**  
+Response: 四川  
+Target: 四川省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_4:**  
+Response: 湖南  
+Target: 湖南省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_5:**  
+Response: 湖南  
+Target: 湖南省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_6:**  
+Response: 四川  
+Target: 四川省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_7:**  
+Response: 福建  
+Target: 福建省、江西省  
+Analysis: Response mentions only ""福建,"" missing ""江西省,"" which is part of the target.  
+Given criterion states ""semantic same or entity aligns,"" missing part means response isn't fully correct.  
+Score: 0
+
+---
+
+**idx_8:**  
+Response: 云南  
+Target: 云南省  
+Analysis: ""云南"" refers to ""云南省.""  
+Score: 1
+
+---
+
+**idx_9:**  
+Response: 贵州、云南、广西、重庆、四川  
+Target: 云南省、贵州省、重庆市  
+Analysis:  
+- Response includes 贵州, which matches 贵州省.  
+- 云南 matches 云南省.  
+- 重庆 matches 重庆市.  
+- Response adds 广西 and 四川 which are not in target (presence of extra entities is not penalized per criterion).  
+- Target includes only these three; all are present in response.  
+Hence response points to the same entities plus extras, so acceptable.  
+Score: 1
+
+---
+
+**idx_10:**  
+Response: 广东、福建、江西、湖南、贵州、浙江  
+Target: 广东省、浙江省、江西省、福建省、湖南省、贵州省  
+Analysis: All provinces in target appear in response, just without 省 suffix. According to criterion, this is acceptable.  
+Score: 1
+
+---
+
+**idx_11:**  
+Response: 江西  
+Target: 江西省  
+Analysis: Same reasoning as before.  
+Score: 1
+
+---
+
+**idx_12:**  
+Response: 新疆  
+Target: 新疆维吾尔自治区  
+Analysis: ""新疆"" is frequently used as shorthand for ""新疆维吾尔自治区.""  
+Score: 1
+
+---
+
+**idx_13:**  
+Response: 湖北  
+Target: 湖北省  
+Analysis: Same shorthand reasoning.  
+Score: 1
+
+---
+
+**idx_14:**  
+Response: 青海  
+Target: 青海省  
+Analysis: Same shorthand reasoning.  
+Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1
+}
+```",新疆维吾尔自治区,新疆,1.0,"首先，查看判定标准：
+
+- 只要语义大致相同或指向实体一致即可，完全不要求逐字对应。
+- 分数只有0或1，1表示完全正确，0表示不正确。
+
+接着逐条分析：
+
+- 参照答案：  
+  idx 0,1,6,7的答案为“文化自然混合遗产”  
+  其余idx的答案均为“自然遗产”
+
+- 回答的情况：  
+  idx 0,1,6,7的回答是“自然、文化混合遗产”，与“文化自然混合遗产”语义相同，仅顺序不同，依标准视为同义，可以给1分。  
+  其它idx均为“自然遗产”，与标准答案完全一致，可以给1分。
+
+结论：所有idx的回答都与标准答案语义一致，全部给1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1
+}
+```",自然遗产,自然遗产
+,,神农架国家森林公园,神农架,2016年,2016,1.0,key_match,1.0,key_match,1.0,"Let's analyze each pair one by one based on the criterion: the response is correct if it has the same or roughly equivalent semantic meaning or refers to the same entity as the target.
+
+---
+
+**idx_0:**  
+Response: 山东  
+Target: 山东省  
+Analysis: ""山东"" is commonly used as shorthand for ""山东省,"" referring to the same entity.  
+Score: 1
+
+---
+
+**idx_1:**  
+Response: 安徽  
+Target: 安徽省  
+Analysis: Same as above, ""安徽"" refers to ""安徽省.""  
+Score: 1
+
+---
+
+**idx_2:**  
+Response: 四川  
+Target: 四川省  
+Analysis: Same reasoning applies.  
+Score: 1
+
+---
+
+**idx_3:**  
+Response: 四川  
+Target: 四川省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_4:**  
+Response: 湖南  
+Target: 湖南省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_5:**  
+Response: 湖南  
+Target: 湖南省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_6:**  
+Response: 四川  
+Target: 四川省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_7:**  
+Response: 福建  
+Target: 福建省、江西省  
+Analysis: Response mentions only ""福建,"" missing ""江西省,"" which is part of the target.  
+Given criterion states ""semantic same or entity aligns,"" missing part means response isn't fully correct.  
+Score: 0
+
+---
+
+**idx_8:**  
+Response: 云南  
+Target: 云南省  
+Analysis: ""云南"" refers to ""云南省.""  
+Score: 1
+
+---
+
+**idx_9:**  
+Response: 贵州、云南、广西、重庆、四川  
+Target: 云南省、贵州省、重庆市  
+Analysis:  
+- Response includes 贵州, which matches 贵州省.  
+- 云南 matches 云南省.  
+- 重庆 matches 重庆市.  
+- Response adds 广西 and 四川 which are not in target (presence of extra entities is not penalized per criterion).  
+- Target includes only these three; all are present in response.  
+Hence response points to the same entities plus extras, so acceptable.  
+Score: 1
+
+---
+
+**idx_10:**  
+Response: 广东、福建、江西、湖南、贵州、浙江  
+Target: 广东省、浙江省、江西省、福建省、湖南省、贵州省  
+Analysis: All provinces in target appear in response, just without 省 suffix. According to criterion, this is acceptable.  
+Score: 1
+
+---
+
+**idx_11:**  
+Response: 江西  
+Target: 江西省  
+Analysis: Same reasoning as before.  
+Score: 1
+
+---
+
+**idx_12:**  
+Response: 新疆  
+Target: 新疆维吾尔自治区  
+Analysis: ""新疆"" is frequently used as shorthand for ""新疆维吾尔自治区.""  
+Score: 1
+
+---
+
+**idx_13:**  
+Response: 湖北  
+Target: 湖北省  
+Analysis: Same shorthand reasoning.  
+Score: 1
+
+---
+
+**idx_14:**  
+Response: 青海  
+Target: 青海省  
+Analysis: Same shorthand reasoning.  
+Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1
+}
+```",湖北省,湖北,1.0,"首先，查看判定标准：
+
+- 只要语义大致相同或指向实体一致即可，完全不要求逐字对应。
+- 分数只有0或1，1表示完全正确，0表示不正确。
+
+接着逐条分析：
+
+- 参照答案：  
+  idx 0,1,6,7的答案为“文化自然混合遗产”  
+  其余idx的答案均为“自然遗产”
+
+- 回答的情况：  
+  idx 0,1,6,7的回答是“自然、文化混合遗产”，与“文化自然混合遗产”语义相同，仅顺序不同，依标准视为同义，可以给1分。  
+  其它idx均为“自然遗产”，与标准答案完全一致，可以给1分。
+
+结论：所有idx的回答都与标准答案语义一致，全部给1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1
+}
+```",自然遗产,自然遗产
+,,青海可可西里,青海可可西里,2017年,2017,1.0,key_match,1.0,key_match,1.0,"Let's analyze each pair one by one based on the criterion: the response is correct if it has the same or roughly equivalent semantic meaning or refers to the same entity as the target.
+
+---
+
+**idx_0:**  
+Response: 山东  
+Target: 山东省  
+Analysis: ""山东"" is commonly used as shorthand for ""山东省,"" referring to the same entity.  
+Score: 1
+
+---
+
+**idx_1:**  
+Response: 安徽  
+Target: 安徽省  
+Analysis: Same as above, ""安徽"" refers to ""安徽省.""  
+Score: 1
+
+---
+
+**idx_2:**  
+Response: 四川  
+Target: 四川省  
+Analysis: Same reasoning applies.  
+Score: 1
+
+---
+
+**idx_3:**  
+Response: 四川  
+Target: 四川省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_4:**  
+Response: 湖南  
+Target: 湖南省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_5:**  
+Response: 湖南  
+Target: 湖南省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_6:**  
+Response: 四川  
+Target: 四川省  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_7:**  
+Response: 福建  
+Target: 福建省、江西省  
+Analysis: Response mentions only ""福建,"" missing ""江西省,"" which is part of the target.  
+Given criterion states ""semantic same or entity aligns,"" missing part means response isn't fully correct.  
+Score: 0
+
+---
+
+**idx_8:**  
+Response: 云南  
+Target: 云南省  
+Analysis: ""云南"" refers to ""云南省.""  
+Score: 1
+
+---
+
+**idx_9:**  
+Response: 贵州、云南、广西、重庆、四川  
+Target: 云南省、贵州省、重庆市  
+Analysis:  
+- Response includes 贵州, which matches 贵州省.  
+- 云南 matches 云南省.  
+- 重庆 matches 重庆市.  
+- Response adds 广西 and 四川 which are not in target (presence of extra entities is not penalized per criterion).  
+- Target includes only these three; all are present in response.  
+Hence response points to the same entities plus extras, so acceptable.  
+Score: 1
+
+---
+
+**idx_10:**  
+Response: 广东、福建、江西、湖南、贵州、浙江  
+Target: 广东省、浙江省、江西省、福建省、湖南省、贵州省  
+Analysis: All provinces in target appear in response, just without 省 suffix. According to criterion, this is acceptable.  
+Score: 1
+
+---
+
+**idx_11:**  
+Response: 江西  
+Target: 江西省  
+Analysis: Same reasoning as before.  
+Score: 1
+
+---
+
+**idx_12:**  
+Response: 新疆  
+Target: 新疆维吾尔自治区  
+Analysis: ""新疆"" is frequently used as shorthand for ""新疆维吾尔自治区.""  
+Score: 1
+
+---
+
+**idx_13:**  
+Response: 湖北  
+Target: 湖北省  
+Analysis: Same shorthand reasoning.  
+Score: 1
+
+---
+
+**idx_14:**  
+Response: 青海  
+Target: 青海省  
+Analysis: Same shorthand reasoning.  
+Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1
+}
+```",青海省,青海,1.0,"首先，查看判定标准：
+
+- 只要语义大致相同或指向实体一致即可，完全不要求逐字对应。
+- 分数只有0或1，1表示完全正确，0表示不正确。
+
+接着逐条分析：
+
+- 参照答案：  
+  idx 0,1,6,7的答案为“文化自然混合遗产”  
+  其余idx的答案均为“自然遗产”
+
+- 回答的情况：  
+  idx 0,1,6,7的回答是“自然、文化混合遗产”，与“文化自然混合遗产”语义相同，仅顺序不同，依标准视为同义，可以给1分。  
+  其它idx均为“自然遗产”，与标准答案完全一致，可以给1分。
+
+结论：所有idx的回答都与标准答案语义一致，全部给1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1
+}
+```",自然遗产,自然遗产
+,1.0,鼓浪屿,鼓浪屿,1997,1997,,,,,,,,福建,,,,自然遗产
+1.0,,四川大熊猫栖息地,,2006年,,,,,,,,四川省,,,,自然遗产,
+,1.0,金佛山,金佛山,2007年,2007,,,,,,,,重庆,,,,自然遗产
+,1.0,长白山,长白山,2009,2009,,,,,,,,吉林,,,,自然遗产
+1.0,,澄江生物群,,2012年,,,,,,,,云南省,,,,自然遗产,
+1.0,,中国南方喀斯特（第二期）,,2014年,,,,,,,,广西壮族自治区、贵州、重庆,,,,自然遗产,
+1.0,,梵净山,,2018年,,,,,,,,贵州省,,,,自然遗产,
+1.0,,中国黄（渤）海候鸟栖息地（第一期）,,2019年,,,,,,,,江苏省,,,,自然遗产,
+,1.0,海南热带雨林,海南热带雨林,2021,2021,,,,,,,,海南,,,,自然遗产
+1.0,,中国黄（渤）海候鸟栖息地（第二期）,,2024年,,,,,,,,河北省、辽宁省、上海市、山东省,,,,自然遗产,
+1.0,,巴丹吉林沙漠-沙山湖泊群,,2024年,,,,,,,,内蒙古自治区,,,,自然遗产,

@@ -1,0 +1,440 @@
+exist_flag_gt,exist_flag_response,发布日期,发布日期_before_map,cpu制造工艺_exact_match,cpu制造工艺_exact_match_eval_msg,cpu制造工艺_query,cpu制造工艺_response,cpu核心数_exact_match,cpu核心数_exact_match_eval_msg,cpu核心数_query,cpu核心数_response,出厂搭载系统_llm_judge,出厂搭载系统_llm_judge_eval_msg,出厂搭载系统_query,出厂搭载系统_response,分辨率_llm_judge,分辨率_llm_judge_eval_msg,分辨率_query,分辨率_response,发布日期_exact_match,发布日期_exact_match_eval_msg,发布时的售价_exact_match,发布时的售价_exact_match_eval_msg,发布时的售价_query,发布时的售价_response,存储空间大小_exact_match,存储空间大小_exact_match_eval_msg,存储空间大小_query,存储空间大小_response,屏幕尺寸_llm_judge,屏幕尺寸_llm_judge_eval_msg,屏幕尺寸_query,屏幕尺寸_response,手机cpu型号_llm_judge,手机cpu型号_llm_judge_eval_msg,手机cpu型号_query,手机cpu型号_response,手机型号_llm_judge,手机型号_llm_judge_eval_msg,手机型号_query,手机型号_response,手机处理器品牌_llm_judge,手机处理器品牌_llm_judge_eval_msg,手机处理器品牌_query,手机处理器品牌_response,最高像素_llm_judge,最高像素_llm_judge_eval_msg,最高像素_query,最高像素_response,电池容量_llm_judge,电池容量_llm_judge_eval_msg,电池容量_query,电池容量_response,运行内存大小_exact_match,运行内存大小_exact_match_eval_msg,运行内存大小_query,运行内存大小_response
+,,2021-10-28,2021-11-11,0.0,"exact not match, response: 5nm, target: 6nm",6nm,5nm,0.0,"exact not match, response: 6核, target: 8核",8核,6核,0.0,"Let's analyze each item according to the provided criteria:
+
+- Criterion: The response and the target answer must be semantically the same or refer to the same entity. No need for exact word-to-word matching.
+
+---
+
+**Item idx_0:**
+
+- Response: ""android11""
+- Target: ""miui12.5""
+
+Analysis:  
+""android11"" and ""miui12.5"" are different versions and different entities. Android 11 is an operating system version by Google; MIUI 12.5 is a Xiaomi custom skin (UI) based on Android versions mentioned separately. They are not equivalent or referring to the same entity. So this does not meet the criteria.
+
+Score: 0
+
+---
+
+**Item idx_1:**
+
+- Response: ""android11""
+- Target: ""miui12""
+
+Analysis:  
+Same as above: Android 11 vs MIUI 12. Different entities (Android vs Xiaomi UI layer). They do not refer to the same entity or a semantically equivalent answer.
+
+Score: 0
+
+---
+
+### Final scoring output:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0
+}
+```",miui12.5,android11,1.0,"First, analyze each pair according to the criterion:
+
+Criterion: The response should be semantically the same or point to the same entity as the target to be scored 1. It does not require word-for-word matching.
+
+Item idx_0:  
+- Response: ""2400x1080""  
+- Target: ""2400x1080""  
+- The response and the target are exactly the same.  
+- Score: 1
+
+Item idx_1:  
+- Response: ""2400x1080""  
+- Target: ""2400x1080""  
+- The response and the target are exactly the same.  
+- Score: 1
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1
+}
+```",2400x1080,2400x1080,1.0,key_match,0.0,"exact not match, response: 1599元, target: 1199元",1199元,1599元,1.0,"exact match, response: 128gb, target: 128gb",128gb,128gb,1.0,"Let's analyze each item according to the criterion:
+
+Criterion: The answer should have the same or close meaning, or refer to the same entity, without requiring word-for-word matching.
+
+- idx_0:
+  - Response: ""6.67英寸""
+  - Target: ""6.6英寸""
+  - Analysis: Although these are very close numbers, 6.67 and 6.6 are not exactly the same and might refer to different screen sizes. The criterion allows close approximation or same meaning, but is 6.67 close enough to 6.6? Generally, a difference of 0.07 inch in screen size is perceptible and thus the entities differ.
+  - Verdict: The entities are similar but not the same. Since the criterion states ""大致或者指向的实体一致即可"" (""roughly same or pointing to the same entity""), this slight difference might be acceptable if we interpret the response as indicating the same object (screen size).
+
+  However, the question is whether this difference is considered ""approximately equal"" enough. ""6.67英寸"" vs ""6.6英寸"" differs by 0.07 inch.
+
+  The reference answer is strictly ""6.6英寸,"" the response is ""6.67英寸."" Generally in screen sizes, these are different models or mentions.
+
+  The criterion is permissive, ""roughly the same or pointing to the same entity.""
+
+  Since the difference is very small and both refer to screen size in inches, it's reasonable to accept this as the same entity for scoring.
+
+- idx_1:
+  - Response: ""6.67英寸""
+  - Target: ""6.67英寸""
+  - Analysis: Exactly the same.
+  - Verdict: Score 1.
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1
+}
+```",6.6英寸,6.67英寸,0.0,"Step-by-step analysis:
+
+- idx_0:
+  - Response: ""snapdragon695""
+  - Target: ""天玑810""
+  - Analysis: The response and the target are two different chipsets: ""天玑810"" (Dimensity 810) is a MediaTek chipset, whereas ""snapdragon695"" is a Qualcomm Snapdragon chipset. They do not refer to the same entity or the same semantics. So, score should be 0.
+
+- idx_1:
+  - Response: ""snapdragon870""
+  - Target: ""骁龙870""
+  - Analysis: ""骁龙"" is the Chinese name for Snapdragon. ""骁龙870"" translates to ""Snapdragon 870"", so the response and target refer to the same entity, and semantics are consistent. According to the criterion, this counts as correct. Score 1.
+
+Final scores:
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1
+}
+```",天玑810,snapdragon695,0.0,"分析过程：
+
+1. idx_0：
+- 标准答案：redminote115g
+- 回答：redminote11pro
+- 语义对比：回答中“redminote11pro”与标准答案“redminote115g”型号名称相似，都属于Redmi Note 11系列，但型号不同，后者明确带“5G”字样。题目规则中提到手机型号多答或少答5G不扣分，但型号本身不完全一致，是否视为“指向的实体一致”？
+- 由于“redminote11pro”和“redminote115g”为不同型号（pro与5g版本），语义上不完全一致，也不指向同一实体，严格上是不同手机型号。
+- 题目中说“和参考答案语义相同大致、或者指向的实体一致即可”，这里型号不同，不算指向同一实体，故扣分为0。
+
+2. idx_1：
+- 标准答案：redmik40
+- 回答：redmik40
+- 完全一致，语义一致，指向同一实体，记1分。
+
+综合以上分析，评分结果如下：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1
+}
+```",redminote115g,redminote11pro,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion:
+- The answer and response should be semantically approximately the same or refer to the same entity.
+- Exact wording is not necessary.
+
+---
+
+**idx_0:**
+
+- Response: ""qualcomm""
+- Target: ""联发科"" (MediaTek in English)
+- Analysis: Qualcomm and MediaTek are two different companies; they are competitors in the chip manufacturing industry. They are not semantically the same or referring to the same entity.
+- Score: 0
+
+**idx_1:**
+
+- Response: ""qualcomm""
+- Target: ""高通"" 
+- Note: ""高通"" is the Chinese name for Qualcomm.
+- Analysis: The response ""qualcomm"" and target ""高通"" refer to the same entity. Semantically the same as per the criterion.
+- Score: 1
+
+---
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1
+}
+```",联发科,qualcomm,0.0,"Analysis:
+
+- idx_0:  
+  - Response: ""48mp""  
+  - Target: ""5000万像素"" (which means 50 million pixels)  
+  - 48mp means 48 million pixels, while 5000万 means 50 million pixels. The numbers do not match (48 vs 50). From the criteria, answers must have the same or roughly the same semantic meaning or point to the same entity. Here, 48mp is different from 50mp, so they do not refer to the same number/entity.  
+  - Conclusion: score 0.
+
+- idx_1:  
+  - Response: ""48mp""  
+  - Target: ""4800万像素"" (48 million pixels)  
+  - ""48mp"" and ""4800万像素"" both mean 48 million pixels. They are semantically the same.  
+  - Conclusion: score 1.
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1
+}
+```",5000万像素,48mp,0.0,"Let's analyze each pair according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+This means if the response and the target refer to essentially the same entity/meaning, the answer can be given a full score.
+
+---
+
+**idx_0**:  
+- Target: ""5000mah电池（典型值）"" – means a 5000mAh battery (typical value).  
+- Response: ""4500mah"" – means a 4500mAh battery.  
+- Analysis: The response gives a different number for the battery capacity (4500 vs 5000). These are different entities in capacity. This is not ""大致"" the same value, given the difference amounts to about 10% less, which is material for battery capacity.  
+- According to the criterion, the response must be roughly equivalent or point to the same entity. Here, they are different numbers, so they don't ""point to the same entity.""  
+- Conclusion: score 0.
+
+---
+
+**idx_1**:  
+- Target: ""4520mah（typ）"" – 4520mAh (typical).  
+- Response: ""4520mah"" – exact number without specifying typical.  
+- Analysis: The response clearly refers to the same capacity value as the target. The omission of ""(typ)"" is minor and doesn't change the entity referred to.  
+- According to the criterion, this is acceptable.  
+- Conclusion: score 1.
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1
+}
+```",5000mah电池（典型值）,4500mah,0.0,"exact not match, response: 8gb, target: 4gb",4gb,8gb
+,,2021-02-25,2021-03-02,0.0,"exact not match, response: 5nm, target: 7nm",7nm,5nm,1.0,"exact match, response: 8核, target: 8核",8核,8核,0.0,"Let's analyze each item according to the provided criteria:
+
+- Criterion: The response and the target answer must be semantically the same or refer to the same entity. No need for exact word-to-word matching.
+
+---
+
+**Item idx_0:**
+
+- Response: ""android11""
+- Target: ""miui12.5""
+
+Analysis:  
+""android11"" and ""miui12.5"" are different versions and different entities. Android 11 is an operating system version by Google; MIUI 12.5 is a Xiaomi custom skin (UI) based on Android versions mentioned separately. They are not equivalent or referring to the same entity. So this does not meet the criteria.
+
+Score: 0
+
+---
+
+**Item idx_1:**
+
+- Response: ""android11""
+- Target: ""miui12""
+
+Analysis:  
+Same as above: Android 11 vs MIUI 12. Different entities (Android vs Xiaomi UI layer). They do not refer to the same entity or a semantically equivalent answer.
+
+Score: 0
+
+---
+
+### Final scoring output:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0
+}
+```",miui12,android11,1.0,"First, analyze each pair according to the criterion:
+
+Criterion: The response should be semantically the same or point to the same entity as the target to be scored 1. It does not require word-for-word matching.
+
+Item idx_0:  
+- Response: ""2400x1080""  
+- Target: ""2400x1080""  
+- The response and the target are exactly the same.  
+- Score: 1
+
+Item idx_1:  
+- Response: ""2400x1080""  
+- Target: ""2400x1080""  
+- The response and the target are exactly the same.  
+- Score: 1
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1
+}
+```",2400x1080,2400x1080,1.0,key_match,1.0,"exact match, response: 1999元, target: 1999元",1999元,1999元,1.0,"exact match, response: 128gb, target: 128gb",128gb,128gb,1.0,"Let's analyze each item according to the criterion:
+
+Criterion: The answer should have the same or close meaning, or refer to the same entity, without requiring word-for-word matching.
+
+- idx_0:
+  - Response: ""6.67英寸""
+  - Target: ""6.6英寸""
+  - Analysis: Although these are very close numbers, 6.67 and 6.6 are not exactly the same and might refer to different screen sizes. The criterion allows close approximation or same meaning, but is 6.67 close enough to 6.6? Generally, a difference of 0.07 inch in screen size is perceptible and thus the entities differ.
+  - Verdict: The entities are similar but not the same. Since the criterion states ""大致或者指向的实体一致即可"" (""roughly same or pointing to the same entity""), this slight difference might be acceptable if we interpret the response as indicating the same object (screen size).
+
+  However, the question is whether this difference is considered ""approximately equal"" enough. ""6.67英寸"" vs ""6.6英寸"" differs by 0.07 inch.
+
+  The reference answer is strictly ""6.6英寸,"" the response is ""6.67英寸."" Generally in screen sizes, these are different models or mentions.
+
+  The criterion is permissive, ""roughly the same or pointing to the same entity.""
+
+  Since the difference is very small and both refer to screen size in inches, it's reasonable to accept this as the same entity for scoring.
+
+- idx_1:
+  - Response: ""6.67英寸""
+  - Target: ""6.67英寸""
+  - Analysis: Exactly the same.
+  - Verdict: Score 1.
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1
+}
+```",6.67英寸,6.67英寸,1.0,"Step-by-step analysis:
+
+- idx_0:
+  - Response: ""snapdragon695""
+  - Target: ""天玑810""
+  - Analysis: The response and the target are two different chipsets: ""天玑810"" (Dimensity 810) is a MediaTek chipset, whereas ""snapdragon695"" is a Qualcomm Snapdragon chipset. They do not refer to the same entity or the same semantics. So, score should be 0.
+
+- idx_1:
+  - Response: ""snapdragon870""
+  - Target: ""骁龙870""
+  - Analysis: ""骁龙"" is the Chinese name for Snapdragon. ""骁龙870"" translates to ""Snapdragon 870"", so the response and target refer to the same entity, and semantics are consistent. According to the criterion, this counts as correct. Score 1.
+
+Final scores:
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1
+}
+```",骁龙870,snapdragon870,1.0,"分析过程：
+
+1. idx_0：
+- 标准答案：redminote115g
+- 回答：redminote11pro
+- 语义对比：回答中“redminote11pro”与标准答案“redminote115g”型号名称相似，都属于Redmi Note 11系列，但型号不同，后者明确带“5G”字样。题目规则中提到手机型号多答或少答5G不扣分，但型号本身不完全一致，是否视为“指向的实体一致”？
+- 由于“redminote11pro”和“redminote115g”为不同型号（pro与5g版本），语义上不完全一致，也不指向同一实体，严格上是不同手机型号。
+- 题目中说“和参考答案语义相同大致、或者指向的实体一致即可”，这里型号不同，不算指向同一实体，故扣分为0。
+
+2. idx_1：
+- 标准答案：redmik40
+- 回答：redmik40
+- 完全一致，语义一致，指向同一实体，记1分。
+
+综合以上分析，评分结果如下：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1
+}
+```",redmik40,redmik40,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion:
+- The answer and response should be semantically approximately the same or refer to the same entity.
+- Exact wording is not necessary.
+
+---
+
+**idx_0:**
+
+- Response: ""qualcomm""
+- Target: ""联发科"" (MediaTek in English)
+- Analysis: Qualcomm and MediaTek are two different companies; they are competitors in the chip manufacturing industry. They are not semantically the same or referring to the same entity.
+- Score: 0
+
+**idx_1:**
+
+- Response: ""qualcomm""
+- Target: ""高通"" 
+- Note: ""高通"" is the Chinese name for Qualcomm.
+- Analysis: The response ""qualcomm"" and target ""高通"" refer to the same entity. Semantically the same as per the criterion.
+- Score: 1
+
+---
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1
+}
+```",高通,qualcomm,1.0,"Analysis:
+
+- idx_0:  
+  - Response: ""48mp""  
+  - Target: ""5000万像素"" (which means 50 million pixels)  
+  - 48mp means 48 million pixels, while 5000万 means 50 million pixels. The numbers do not match (48 vs 50). From the criteria, answers must have the same or roughly the same semantic meaning or point to the same entity. Here, 48mp is different from 50mp, so they do not refer to the same number/entity.  
+  - Conclusion: score 0.
+
+- idx_1:  
+  - Response: ""48mp""  
+  - Target: ""4800万像素"" (48 million pixels)  
+  - ""48mp"" and ""4800万像素"" both mean 48 million pixels. They are semantically the same.  
+  - Conclusion: score 1.
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1
+}
+```",4800万像素,48mp,1.0,"Let's analyze each pair according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+This means if the response and the target refer to essentially the same entity/meaning, the answer can be given a full score.
+
+---
+
+**idx_0**:  
+- Target: ""5000mah电池（典型值）"" – means a 5000mAh battery (typical value).  
+- Response: ""4500mah"" – means a 4500mAh battery.  
+- Analysis: The response gives a different number for the battery capacity (4500 vs 5000). These are different entities in capacity. This is not ""大致"" the same value, given the difference amounts to about 10% less, which is material for battery capacity.  
+- According to the criterion, the response must be roughly equivalent or point to the same entity. Here, they are different numbers, so they don't ""point to the same entity.""  
+- Conclusion: score 0.
+
+---
+
+**idx_1**:  
+- Target: ""4520mah（typ）"" – 4520mAh (typical).  
+- Response: ""4520mah"" – exact number without specifying typical.  
+- Analysis: The response clearly refers to the same capacity value as the target. The omission of ""(typ)"" is minor and doesn't change the entity referred to.  
+- According to the criterion, this is acceptable.  
+- Conclusion: score 1.
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1
+}
+```",4520mah（typ）,4520mah,0.0,"exact not match, response: 8gb, target: 6gb",6gb,8gb
+1.0,,2015-08-13,,,,28nm,,,,8核,,,,miui7,,,,1920x1080,,,,,,799元,,,,16gb,,,,5.5英寸,,,,heliox10,,,,红米note2,,,,联发科,,,,1300万像素,,,,3060mah,,,,2gb,
+1.0,,2015-11-24,,,,28nm,,,,8核,,,,miui7,,,,1920x1080,,,,,,899元,,,,16gb,,,,5.5英寸,,,,heliox10,,,,红米note3,,,,联发科,,,,1300万像素,,,,4000mah/4050mah(typ),,,,2gb,
+1.0,,2016-08-25,,,,20nm,,,,10核,,,,miui8,,,,1920x1080,,,,,,899元,,,,16gb,,,,5.5英寸,,,,heliox20,,,,红米note4,,,,联发科,,,,1300万像素,,,,4100mah(typ),,,,2gb,
+1.0,,2018-03-16,,,,14nm,,,,8核,,,,miui9,,,,2160x1080,,,,,,1099元,,,,32gb,,,,5.99英寸,,,,骁龙636,,,,红米note5,,,,高通,,,,1300万像素,,,,4000mah（typ）/3900mah（min）,,,,3gb,
+1.0,,2019-01-10,,,,14nm,,,,8核,,,,miui10,,,,2340x1080,,,,,,999元,,,,32gb,,,,6.3英寸,,,,骁龙660,,,,红米note7,,,,高通,,,,4800万像素,,,,4000mah（typ）/3900mah（min）,,,,3gb,
+1.0,,2019-05-28,,,,8nm,,,,8核,,,,miui10,,,,2340x1080,,,,,,1999元,,,,64gb,,,,6.39英寸,,,,骁龙730,,,,redmik20,,,,高通,,,,4800万像素,,,,4000mah（typ）/3900mah（min）,,,,6gb,
+1.0,,2019-08-29,,,,11nm,,,,8核,,,,miui10,,,,2340x1080,,,,,,999元,,,,64gb,,,,6.3英寸,,,,骁龙665,,,,redminote8,,,,高通,,,,4800万像素,,,,4000mah(typ)/3900mah(min),,,,4gb,
+1.0,,2019-12-10,,,,7nm,,,,8核,,,,miui11,,,,2400x1080,,,,,,1999元,,,,64gb,,,,6.67英寸,,,,骁龙765g,,,,redmik305g,,,,高通,,,,6400万像素,,,,4500mah（typ）,,,,6gb,
+1.0,,2020-11-26,,,,7nm,,,,8核,,,,miui12,,,,2340x1080,,,,,,1299元,,,,128gb,,,,6.53英寸,,,,天玑800u,,,,redminote95g,,,,联发科,,,,4800万像素,,,,5000mah,,,,6gb,
+1.0,,2021-05-26,,,,7nm,,,,8核,,,,miui12,,,,2400x1080,,,,,,1099元,,,,128gb,,,,6.5英寸,,,,天玑700,,,,redminote10,,,,联发科,,,,4800万像素,,,,5000mah（典型值）,,,,4gb,
+1.0,,2022-03-17,,,,5nm,,,,8核,,,,miui13,,,,3200x1440,,,,,,2399元,,,,128gb,,,,6.67英寸,,,,天玑8100,,,,redmik50,,,,联发科,,,,4800万像素,,,,5500mah（typ）,,,,8gb,
+1.0,,2022-10-27,,,,6nm,,,,8核,,,,miui13,,,,2400x1080,,,,,,1199元,,,,128gb,,,,6.67英寸,,,,骁龙4gen1,,,,redminote12,,,,高通,,,,4800万像素,,,,5000mah电池（典型值）,,,,4gb,
+1.0,,2022-12-27,,,,4nm,,,,8核,,,,miui14,,,,3200x1440,,,,,,2499元,,,,128gb,,,,6.67英寸,,,,骁龙8+gen1,,,,redmik60,,,,高通,,,,6400万像素,,,,5500mah（typ）,,,,8gb,
+1.0,,2023-09-11,,,,6nm,,,,8核,,,,miui14,,,,2400x1080,,,,,,1099元,,,,128gb,,,,6.67英寸,,,,天玑6080,,,,redminote13,,,,联发科,,,,1亿像素,,,,5000mah,,,,6gb,
+1.0,,2023-11-29,,,,4nm,,,,8核,,,,小米澎湃os,,,,3200x1440,,,,,,2499元,,,,256gb,,,,6.67英寸,,,,骁龙8gen2,,,,redmik70,,,,高通,,,,5000万像素,,,,5000mah（typ）,,,,12gb,
+1.0,,2024-09-26,,,,6nm,,,,8核,,,,小米澎湃os,,,,2400x1080,,,,,,1199元,,,,128gb,,,,6.67英寸,,,,天玑7025-ultra,,,,redminote145g,,,,联发科,,,,5000万像素,,,,5110mah（typ）/5010mah（min）,,,,6gb,
+1.0,,2024-11-27,,,,4nm,,,,8核,,,,xiaomihyperos2,,,,3200x1440,,,,,,2499元,,,,256gb,,,,6.67英寸,,,,骁龙8gen3,,,,redmik80,,,,高通,,,,5000万像素,,,,6550mah（typ）/6410mah（min）,,,,12gb,

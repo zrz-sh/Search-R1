@@ -1,0 +1,1245 @@
+awardtype,awardtype_before_map,exist_flag_gt,exist_flag_response,awardtype_exact_match,awardtype_exact_match_eval_msg,bodystyle_llm_judge,bodystyle_llm_judge_eval_msg,bodystyle_query,bodystyle_response,doors_exact_match,doors_exact_match_eval_msg,doors_query,doors_response,drivetrain(s)_llm_judge,drivetrain(s)_llm_judge_eval_msg,drivetrain(s)_query,drivetrain(s)_response,drivingexperiencescore2025_exact_match,drivingexperiencescore2025_exact_match_eval_msg,drivingexperiencescore2025_query,drivingexperiencescore2025_response,fueltype(s)_llm_judge,fueltype(s)_llm_judge_eval_msg,fueltype(s)_query,fueltype(s)_response,majortrims_llm_judge,majortrims_llm_judge_eval_msg,majortrims_query,majortrims_response,model_llm_judge,model_llm_judge_eval_msg,model_query,model_response,overallratings2025_exact_match,overallratings2025_exact_match_eval_msg,overallratings2025_query,overallratings2025_response,passengers_exact_match,passengers_exact_match_eval_msg,passengers_query,passengers_response,quality&reliabilityscore2025_exact_match,quality&reliabilityscore2025_exact_match_eval_msg,quality&reliabilityscore2025_query,quality&reliabilityscore2025_response,resalevaluescore2025_exact_match,resalevaluescore2025_exact_match_eval_msg,resalevaluescore2025_query,resalevaluescore2025_response,vehiclemake_llm_judge,vehiclemake_llm_judge_eval_msg,vehiclemake_query,vehiclemake_response,year_exact_match,year_exact_match_eval_msg,year_query,year_response
+compactcar,Compact Car,,,1.0,key_match,1.0,"Let's analyze each pair item by item according to the criterion:
+
+Criterion:  
+- Semantics need to be approximately the same as the reference answer or point to the same entity. No need for word-for-word match.
+
+---
+
+**idx_0:**  
+- response: ""sedan""  
+- target: ""sedan""  
+Analysis: The response matches the target exactly and thus points to the same entity.  
+Score: 1
+
+**idx_1:**  
+- response: ""sedan""  
+- target: ""sedan""  
+Analysis: Exact match, same entity.  
+Score: 1
+
+**idx_2:**  
+- response: ""suv""  
+- target: ""suv""  
+Analysis: Exact match.  
+Score: 1
+
+**idx_3:**  
+- response: ""suv""  
+- target: ""suv""  
+Analysis: Exact match.  
+Score: 1
+
+---
+
+Final Scores:  
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1
+}
+```",sedan,sedan,1.0,"exact match, response: 4, target: 4",4,4,1.0,"Let's analyze each idx one by one according to the criterion:
+
+---
+
+**idx_0**  
+- Response: ""fwd""  
+- Target: ""fwd""  
+- Analysis: Exact match, semantics fully correspond.  
+- Score: 1
+
+---
+
+**idx_1**  
+- Response: ""rwd/fwd""  
+- Target: ""rwd/awd""  
+- Analysis: Both responses share ""rwd,"" but the other term differs ""fwd"" vs ""awd."" Since the criterion requires approximate semantic equivalence or pointing to the same entity, ""fwd"" and ""awd"" are different drivetrain types. Thus, the response does not sufficiently cover the target.  
+- Score: 0
+
+---
+
+**idx_2**  
+- Response: ""awd""  
+- Target: ""rwd/awd""  
+- Analysis: The target includes ""rwd"" or ""awd."" The response provides ""awd"" only, which is one of the options in the target. Since semantics approximate the same set, the response is acceptable as it points to the same entity ""awd,"" which is part of the target.  
+- Score: 1
+
+---
+
+**idx_3**  
+- Response: ""fwd/awd""  
+- Target: ""fwd/awd""  
+- Analysis: Exact match.  
+- Score: 1
+
+---
+
+### Final JSON output:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1
+}
+```",fwd,fwd,0.0,"exact not match, response: 85, target: 77",77,85,0.0,"Let's analyze each pair of response and target answer based on the criterion:
+
+Criterion summary:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- When the reference contains ""hybrid"" (e.g., ""plug-in hybrid""), the response must include ""hybrid"" to be acceptable.  
+- Scoring is 0 or 1 only.
+
+---
+
+### idx_0
+- Target: ""gasoline, hybrid""  
+  Contains ""hybrid"", so response must contain ""hybrid"" or a synonym pointing to the same entity.  
+- Response: ""gas""  
+  ""Gas"" here likely means ""gasoline"", which covers the first part of the target.  
+  Does not mention ""hybrid,"" so does not cover the second part.  
+- According to criterion, presence of ""hybrid"" is necessary when in the reference answer. The response misses it.  
+- Thus, score = 0.
+
+### idx_1
+- Target: ""gasoline, hybrid""  
+- Response: ""gas""  
+- Same as idx_0, missing ""hybrid"".  
+- Score = 0.
+
+### idx_2
+- Target: ""gasoline, mild-hybrid""  
+- Response: ""gas""  
+- Target contains ""hybrid"" (mild-hybrid), so response must mention ""hybrid"" in some form.  
+- ""gas"" does not mention hybrid at all.  
+- Score = 0.
+
+### idx_3
+- Target: ""gasoline, hybrid""  
+- Response: ""gas""  
+- Again, missing ""hybrid"" in response.  
+- Score = 0.
+
+---
+
+### Final results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0
+}
+```
+","gasoline,hybrid",gas,1.0,"Let's analyze each idx item by item according to the grading criterion:
+
+Criterion:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.""
+
+---
+
+### idx_0  
+- Response: ""se,le,xle,touring""  
+- Target: ""l,le,se,xle,xse,apexedition,hybridle/se""
+
+Analysis:  
+- Target includes: l, le, se, xle, xse, apexedition, hybridle/se  
+- Response includes: se, le, xle, touring  
+
+Comparing response with target:  
+- ""se"" matches ""se"" in target  
+- ""le"" matches ""le""  
+- ""xle"" matches ""xle""  
+- ""touring"" is NOT mentioned in target (extra) but the criterion does not penalize extra words unless strictly unrelated; having an extra item is not explicitly disallowed in the criterion.  
+- Target has more variants (l, xse, apexedition, hybridle/se) not mentioned by response, but the response covers many of the core entities listed.
+
+Since many core entities are mentioned, response approximates the target sufficiently.
+
+Score: 1
+
+---
+
+### idx_1  
+- Response: ""sdrive330i,m340ixdrive""  
+- Target: ""330i,330e(phev),m340i""
+
+Analysis:  
+- Target entities are ""330i"", ""330e(phev)"", ""m340i""  
+- Response entities are ""sdrive330i"" and ""m340ixdrive""  
+
+""sdrive330i"" clearly points to ""330i"" with added prefix ""sdrive"" indicating drivetrain variant. Similarly ""m340ixdrive"" corresponds to ""m340i"" variant with ""xdrive"". Both responses seem to refer to the same base models as in targets.
+
+""330e(phev)"" is a target component missing in the response, but the criterion says approximate semantics or same entity is sufficient, completeness is not strictly required as a must-have.
+
+Since response entities correctly point to base vehicle models in target, this is acceptable.
+
+Score: 1
+
+---
+
+### idx_2  
+- Response: ""awd""  
+- Target: ""glc300,glc3004matic,amgglc43""
+
+Analysis:  
+- Target contains specific car models: glc300, glc3004matic, amgglc43  
+- Response is ""awd""  
+
+""aw d"" (all-wheel drive) is a drivetrain type, not a specific vehicle model. The target is a list of vehicle models. The response is not the same entity nor an approximate semantic equivalent. The response does not point to the same entity as the target does.
+
+Therefore, ""awd"" is not an approximate match or referring to same entities as in target. This means the response is incorrect.
+
+Score: 0
+
+---
+
+### idx_3  
+- Response: ""sel,selpremium,limited""  
+- Target: ""le,xle,xlepremium,adventure,trdoff-road,limited,hybridxle/limited""
+
+Analysis:  
+- Response: sel, selpremium, limited  
+- Target: le, xle, xlepremium, adventure, trdoff-road, limited, hybridxle/limited
+
+Comparing the sets:
+
+- ""limited"" appears in both response and target → matches  
+- ""sel"" and ""selpremium"" do NOT appear in target; target has ""le"", ""xle"", ""xlepremium"" instead  
+- Response uses ""sel""/""selpremium"" while target uses ""le""/""xle""/""xlepremium"" which are different trim levels or entities.
+
+""sel"" is a trim level commonly used by some manufacturers but different from ""le"" ""xle"" etc. These indicate different entities.
+
+Only one match: ""limited""
+
+Is this sufficient to count as approximate semantic equivalence? No. The response points mostly to different entities than the target in terms of trims.
+
+Hence score is 0.
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0
+}
+```
+","l,le,se,xle,xse,apexedition,hybridle/se","se,le,xle,touring",1.0,"Let's analyze each pair step by step:
+
+- idx_0:  
+  Response: ""corolla""  
+  Target: ""corolla""  
+  The response exactly matches the target. According to the criteria, this is a complete match.  
+  Score: 1
+
+- idx_1:  
+  Response: ""3series""  
+  Target: ""3series""  
+  Exact match again, so the semantics are clearly the same.  
+  Score: 1
+
+- idx_2:  
+  Response: ""rdx""  
+  Target: ""glc""  
+  These refer to different entities (RDX is an Acura model, GLC is a Mercedes-Benz), so semantics do not match.  
+  Score: 0
+
+- idx_3:  
+  Response: ""escape""  
+  Target: ""rav4""  
+  These are different car models by different manufacturers (Ford Escape vs Toyota RAV4), so semantics do not match.  
+  Score: 0
+
+Final scoring output:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0
+}
+```",corolla,corolla,0.0,"exact not match, response: 4.0, target: 80.0",80.0,4.0,1.0,"exact match, response: 5, target: 5",5,5,0.0,"exact not match, response: 88, target: 85",85,88,0.0,"exact not match, response: 86, target: 75",75,86,1.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion: 
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+- No need for word-for-word correspondence.
+- Basically, the response should identify the same entity as the target.
+
+---
+
+**idx_0**:  
+- Response: ""toyota""  
+- Target: ""toyota""  
+They match exactly.  
+Score: 1
+
+**idx_1**:  
+- Response: ""bmw""  
+- Target: ""bmw""  
+They match exactly.  
+Score: 1
+
+**idx_2**:  
+- Response: ""acura""  
+- Target: ""mercedes-benz""  
+These are two different car brands. No semantic equivalence.  
+Score: 0
+
+**idx_3**:  
+- Response: ""ford""  
+- Target: ""toyota""  
+Different car brands, no equivalence.  
+Score: 0
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0
+}
+```",toyota,toyota,1.0,"exact match, response: 2022, target: 2022",2022,2022
+compactpremiumcar,Compact Premium Car,,,1.0,key_match,1.0,"Let's analyze each pair item by item according to the criterion:
+
+Criterion:  
+- Semantics need to be approximately the same as the reference answer or point to the same entity. No need for word-for-word match.
+
+---
+
+**idx_0:**  
+- response: ""sedan""  
+- target: ""sedan""  
+Analysis: The response matches the target exactly and thus points to the same entity.  
+Score: 1
+
+**idx_1:**  
+- response: ""sedan""  
+- target: ""sedan""  
+Analysis: Exact match, same entity.  
+Score: 1
+
+**idx_2:**  
+- response: ""suv""  
+- target: ""suv""  
+Analysis: Exact match.  
+Score: 1
+
+**idx_3:**  
+- response: ""suv""  
+- target: ""suv""  
+Analysis: Exact match.  
+Score: 1
+
+---
+
+Final Scores:  
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1
+}
+```",sedan,sedan,1.0,"exact match, response: 4, target: 4",4,4,0.0,"Let's analyze each idx one by one according to the criterion:
+
+---
+
+**idx_0**  
+- Response: ""fwd""  
+- Target: ""fwd""  
+- Analysis: Exact match, semantics fully correspond.  
+- Score: 1
+
+---
+
+**idx_1**  
+- Response: ""rwd/fwd""  
+- Target: ""rwd/awd""  
+- Analysis: Both responses share ""rwd,"" but the other term differs ""fwd"" vs ""awd."" Since the criterion requires approximate semantic equivalence or pointing to the same entity, ""fwd"" and ""awd"" are different drivetrain types. Thus, the response does not sufficiently cover the target.  
+- Score: 0
+
+---
+
+**idx_2**  
+- Response: ""awd""  
+- Target: ""rwd/awd""  
+- Analysis: The target includes ""rwd"" or ""awd."" The response provides ""awd"" only, which is one of the options in the target. Since semantics approximate the same set, the response is acceptable as it points to the same entity ""awd,"" which is part of the target.  
+- Score: 1
+
+---
+
+**idx_3**  
+- Response: ""fwd/awd""  
+- Target: ""fwd/awd""  
+- Analysis: Exact match.  
+- Score: 1
+
+---
+
+### Final JSON output:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1
+}
+```",rwd/awd,rwd/fwd,0.0,"exact not match, response: 89, target: 81",81,89,0.0,"Let's analyze each pair of response and target answer based on the criterion:
+
+Criterion summary:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- When the reference contains ""hybrid"" (e.g., ""plug-in hybrid""), the response must include ""hybrid"" to be acceptable.  
+- Scoring is 0 or 1 only.
+
+---
+
+### idx_0
+- Target: ""gasoline, hybrid""  
+  Contains ""hybrid"", so response must contain ""hybrid"" or a synonym pointing to the same entity.  
+- Response: ""gas""  
+  ""Gas"" here likely means ""gasoline"", which covers the first part of the target.  
+  Does not mention ""hybrid,"" so does not cover the second part.  
+- According to criterion, presence of ""hybrid"" is necessary when in the reference answer. The response misses it.  
+- Thus, score = 0.
+
+### idx_1
+- Target: ""gasoline, hybrid""  
+- Response: ""gas""  
+- Same as idx_0, missing ""hybrid"".  
+- Score = 0.
+
+### idx_2
+- Target: ""gasoline, mild-hybrid""  
+- Response: ""gas""  
+- Target contains ""hybrid"" (mild-hybrid), so response must mention ""hybrid"" in some form.  
+- ""gas"" does not mention hybrid at all.  
+- Score = 0.
+
+### idx_3
+- Target: ""gasoline, hybrid""  
+- Response: ""gas""  
+- Again, missing ""hybrid"" in response.  
+- Score = 0.
+
+---
+
+### Final results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0
+}
+```
+","gasoline,hybrid",gas,1.0,"Let's analyze each idx item by item according to the grading criterion:
+
+Criterion:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.""
+
+---
+
+### idx_0  
+- Response: ""se,le,xle,touring""  
+- Target: ""l,le,se,xle,xse,apexedition,hybridle/se""
+
+Analysis:  
+- Target includes: l, le, se, xle, xse, apexedition, hybridle/se  
+- Response includes: se, le, xle, touring  
+
+Comparing response with target:  
+- ""se"" matches ""se"" in target  
+- ""le"" matches ""le""  
+- ""xle"" matches ""xle""  
+- ""touring"" is NOT mentioned in target (extra) but the criterion does not penalize extra words unless strictly unrelated; having an extra item is not explicitly disallowed in the criterion.  
+- Target has more variants (l, xse, apexedition, hybridle/se) not mentioned by response, but the response covers many of the core entities listed.
+
+Since many core entities are mentioned, response approximates the target sufficiently.
+
+Score: 1
+
+---
+
+### idx_1  
+- Response: ""sdrive330i,m340ixdrive""  
+- Target: ""330i,330e(phev),m340i""
+
+Analysis:  
+- Target entities are ""330i"", ""330e(phev)"", ""m340i""  
+- Response entities are ""sdrive330i"" and ""m340ixdrive""  
+
+""sdrive330i"" clearly points to ""330i"" with added prefix ""sdrive"" indicating drivetrain variant. Similarly ""m340ixdrive"" corresponds to ""m340i"" variant with ""xdrive"". Both responses seem to refer to the same base models as in targets.
+
+""330e(phev)"" is a target component missing in the response, but the criterion says approximate semantics or same entity is sufficient, completeness is not strictly required as a must-have.
+
+Since response entities correctly point to base vehicle models in target, this is acceptable.
+
+Score: 1
+
+---
+
+### idx_2  
+- Response: ""awd""  
+- Target: ""glc300,glc3004matic,amgglc43""
+
+Analysis:  
+- Target contains specific car models: glc300, glc3004matic, amgglc43  
+- Response is ""awd""  
+
+""aw d"" (all-wheel drive) is a drivetrain type, not a specific vehicle model. The target is a list of vehicle models. The response is not the same entity nor an approximate semantic equivalent. The response does not point to the same entity as the target does.
+
+Therefore, ""awd"" is not an approximate match or referring to same entities as in target. This means the response is incorrect.
+
+Score: 0
+
+---
+
+### idx_3  
+- Response: ""sel,selpremium,limited""  
+- Target: ""le,xle,xlepremium,adventure,trdoff-road,limited,hybridxle/limited""
+
+Analysis:  
+- Response: sel, selpremium, limited  
+- Target: le, xle, xlepremium, adventure, trdoff-road, limited, hybridxle/limited
+
+Comparing the sets:
+
+- ""limited"" appears in both response and target → matches  
+- ""sel"" and ""selpremium"" do NOT appear in target; target has ""le"", ""xle"", ""xlepremium"" instead  
+- Response uses ""sel""/""selpremium"" while target uses ""le""/""xle""/""xlepremium"" which are different trim levels or entities.
+
+""sel"" is a trim level commonly used by some manufacturers but different from ""le"" ""xle"" etc. These indicate different entities.
+
+Only one match: ""limited""
+
+Is this sufficient to count as approximate semantic equivalence? No. The response points mostly to different entities than the target in terms of trims.
+
+Hence score is 0.
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0
+}
+```
+","330i,330e(phev),m340i","sdrive330i,m340ixdrive",1.0,"Let's analyze each pair step by step:
+
+- idx_0:  
+  Response: ""corolla""  
+  Target: ""corolla""  
+  The response exactly matches the target. According to the criteria, this is a complete match.  
+  Score: 1
+
+- idx_1:  
+  Response: ""3series""  
+  Target: ""3series""  
+  Exact match again, so the semantics are clearly the same.  
+  Score: 1
+
+- idx_2:  
+  Response: ""rdx""  
+  Target: ""glc""  
+  These refer to different entities (RDX is an Acura model, GLC is a Mercedes-Benz), so semantics do not match.  
+  Score: 0
+
+- idx_3:  
+  Response: ""escape""  
+  Target: ""rav4""  
+  These are different car models by different manufacturers (Ford Escape vs Toyota RAV4), so semantics do not match.  
+  Score: 0
+
+Final scoring output:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0
+}
+```",3series,3series,0.0,"exact not match, response: 4.1, target: 81.0",81.0,4.1,1.0,"exact match, response: 5, target: 5",5,5,0.0,"exact not match, response: 87, target: 81",81,87,0.0,"exact not match, response: 87, target: 83",83,87,1.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion: 
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+- No need for word-for-word correspondence.
+- Basically, the response should identify the same entity as the target.
+
+---
+
+**idx_0**:  
+- Response: ""toyota""  
+- Target: ""toyota""  
+They match exactly.  
+Score: 1
+
+**idx_1**:  
+- Response: ""bmw""  
+- Target: ""bmw""  
+They match exactly.  
+Score: 1
+
+**idx_2**:  
+- Response: ""acura""  
+- Target: ""mercedes-benz""  
+These are two different car brands. No semantic equivalence.  
+Score: 0
+
+**idx_3**:  
+- Response: ""ford""  
+- Target: ""toyota""  
+Different car brands, no equivalence.  
+Score: 0
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0
+}
+```",bmw,bmw,1.0,"exact match, response: 2022, target: 2022",2022,2022
+compactpremiumsuv,Compact Premium SUV,,,1.0,key_match,1.0,"Let's analyze each pair item by item according to the criterion:
+
+Criterion:  
+- Semantics need to be approximately the same as the reference answer or point to the same entity. No need for word-for-word match.
+
+---
+
+**idx_0:**  
+- response: ""sedan""  
+- target: ""sedan""  
+Analysis: The response matches the target exactly and thus points to the same entity.  
+Score: 1
+
+**idx_1:**  
+- response: ""sedan""  
+- target: ""sedan""  
+Analysis: Exact match, same entity.  
+Score: 1
+
+**idx_2:**  
+- response: ""suv""  
+- target: ""suv""  
+Analysis: Exact match.  
+Score: 1
+
+**idx_3:**  
+- response: ""suv""  
+- target: ""suv""  
+Analysis: Exact match.  
+Score: 1
+
+---
+
+Final Scores:  
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1
+}
+```",suv,suv,0.0,"exact not match, response: 5, target: 4",4,5,1.0,"Let's analyze each idx one by one according to the criterion:
+
+---
+
+**idx_0**  
+- Response: ""fwd""  
+- Target: ""fwd""  
+- Analysis: Exact match, semantics fully correspond.  
+- Score: 1
+
+---
+
+**idx_1**  
+- Response: ""rwd/fwd""  
+- Target: ""rwd/awd""  
+- Analysis: Both responses share ""rwd,"" but the other term differs ""fwd"" vs ""awd."" Since the criterion requires approximate semantic equivalence or pointing to the same entity, ""fwd"" and ""awd"" are different drivetrain types. Thus, the response does not sufficiently cover the target.  
+- Score: 0
+
+---
+
+**idx_2**  
+- Response: ""awd""  
+- Target: ""rwd/awd""  
+- Analysis: The target includes ""rwd"" or ""awd."" The response provides ""awd"" only, which is one of the options in the target. Since semantics approximate the same set, the response is acceptable as it points to the same entity ""awd,"" which is part of the target.  
+- Score: 1
+
+---
+
+**idx_3**  
+- Response: ""fwd/awd""  
+- Target: ""fwd/awd""  
+- Analysis: Exact match.  
+- Score: 1
+
+---
+
+### Final JSON output:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1
+}
+```",rwd/awd,awd,0.0,"exact not match, response: 88, target: 79",79,88,0.0,"Let's analyze each pair of response and target answer based on the criterion:
+
+Criterion summary:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- When the reference contains ""hybrid"" (e.g., ""plug-in hybrid""), the response must include ""hybrid"" to be acceptable.  
+- Scoring is 0 or 1 only.
+
+---
+
+### idx_0
+- Target: ""gasoline, hybrid""  
+  Contains ""hybrid"", so response must contain ""hybrid"" or a synonym pointing to the same entity.  
+- Response: ""gas""  
+  ""Gas"" here likely means ""gasoline"", which covers the first part of the target.  
+  Does not mention ""hybrid,"" so does not cover the second part.  
+- According to criterion, presence of ""hybrid"" is necessary when in the reference answer. The response misses it.  
+- Thus, score = 0.
+
+### idx_1
+- Target: ""gasoline, hybrid""  
+- Response: ""gas""  
+- Same as idx_0, missing ""hybrid"".  
+- Score = 0.
+
+### idx_2
+- Target: ""gasoline, mild-hybrid""  
+- Response: ""gas""  
+- Target contains ""hybrid"" (mild-hybrid), so response must mention ""hybrid"" in some form.  
+- ""gas"" does not mention hybrid at all.  
+- Score = 0.
+
+### idx_3
+- Target: ""gasoline, hybrid""  
+- Response: ""gas""  
+- Again, missing ""hybrid"" in response.  
+- Score = 0.
+
+---
+
+### Final results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0
+}
+```
+","gasoline,mild-hybrid",gas,0.0,"Let's analyze each idx item by item according to the grading criterion:
+
+Criterion:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.""
+
+---
+
+### idx_0  
+- Response: ""se,le,xle,touring""  
+- Target: ""l,le,se,xle,xse,apexedition,hybridle/se""
+
+Analysis:  
+- Target includes: l, le, se, xle, xse, apexedition, hybridle/se  
+- Response includes: se, le, xle, touring  
+
+Comparing response with target:  
+- ""se"" matches ""se"" in target  
+- ""le"" matches ""le""  
+- ""xle"" matches ""xle""  
+- ""touring"" is NOT mentioned in target (extra) but the criterion does not penalize extra words unless strictly unrelated; having an extra item is not explicitly disallowed in the criterion.  
+- Target has more variants (l, xse, apexedition, hybridle/se) not mentioned by response, but the response covers many of the core entities listed.
+
+Since many core entities are mentioned, response approximates the target sufficiently.
+
+Score: 1
+
+---
+
+### idx_1  
+- Response: ""sdrive330i,m340ixdrive""  
+- Target: ""330i,330e(phev),m340i""
+
+Analysis:  
+- Target entities are ""330i"", ""330e(phev)"", ""m340i""  
+- Response entities are ""sdrive330i"" and ""m340ixdrive""  
+
+""sdrive330i"" clearly points to ""330i"" with added prefix ""sdrive"" indicating drivetrain variant. Similarly ""m340ixdrive"" corresponds to ""m340i"" variant with ""xdrive"". Both responses seem to refer to the same base models as in targets.
+
+""330e(phev)"" is a target component missing in the response, but the criterion says approximate semantics or same entity is sufficient, completeness is not strictly required as a must-have.
+
+Since response entities correctly point to base vehicle models in target, this is acceptable.
+
+Score: 1
+
+---
+
+### idx_2  
+- Response: ""awd""  
+- Target: ""glc300,glc3004matic,amgglc43""
+
+Analysis:  
+- Target contains specific car models: glc300, glc3004matic, amgglc43  
+- Response is ""awd""  
+
+""aw d"" (all-wheel drive) is a drivetrain type, not a specific vehicle model. The target is a list of vehicle models. The response is not the same entity nor an approximate semantic equivalent. The response does not point to the same entity as the target does.
+
+Therefore, ""awd"" is not an approximate match or referring to same entities as in target. This means the response is incorrect.
+
+Score: 0
+
+---
+
+### idx_3  
+- Response: ""sel,selpremium,limited""  
+- Target: ""le,xle,xlepremium,adventure,trdoff-road,limited,hybridxle/limited""
+
+Analysis:  
+- Response: sel, selpremium, limited  
+- Target: le, xle, xlepremium, adventure, trdoff-road, limited, hybridxle/limited
+
+Comparing the sets:
+
+- ""limited"" appears in both response and target → matches  
+- ""sel"" and ""selpremium"" do NOT appear in target; target has ""le"", ""xle"", ""xlepremium"" instead  
+- Response uses ""sel""/""selpremium"" while target uses ""le""/""xle""/""xlepremium"" which are different trim levels or entities.
+
+""sel"" is a trim level commonly used by some manufacturers but different from ""le"" ""xle"" etc. These indicate different entities.
+
+Only one match: ""limited""
+
+Is this sufficient to count as approximate semantic equivalence? No. The response points mostly to different entities than the target in terms of trims.
+
+Hence score is 0.
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0
+}
+```
+","glc300,glc3004matic,amgglc43",awd,0.0,"Let's analyze each pair step by step:
+
+- idx_0:  
+  Response: ""corolla""  
+  Target: ""corolla""  
+  The response exactly matches the target. According to the criteria, this is a complete match.  
+  Score: 1
+
+- idx_1:  
+  Response: ""3series""  
+  Target: ""3series""  
+  Exact match again, so the semantics are clearly the same.  
+  Score: 1
+
+- idx_2:  
+  Response: ""rdx""  
+  Target: ""glc""  
+  These refer to different entities (RDX is an Acura model, GLC is a Mercedes-Benz), so semantics do not match.  
+  Score: 0
+
+- idx_3:  
+  Response: ""escape""  
+  Target: ""rav4""  
+  These are different car models by different manufacturers (Ford Escape vs Toyota RAV4), so semantics do not match.  
+  Score: 0
+
+Final scoring output:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0
+}
+```",glc,rdx,0.0,"exact not match, response: 4.2, target: 79.0",79.0,4.2,1.0,"exact match, response: 5, target: 5",5,5,0.0,"exact not match, response: 88, target: 81",81,88,0.0,"exact not match, response: 87, target: 75",75,87,0.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion: 
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+- No need for word-for-word correspondence.
+- Basically, the response should identify the same entity as the target.
+
+---
+
+**idx_0**:  
+- Response: ""toyota""  
+- Target: ""toyota""  
+They match exactly.  
+Score: 1
+
+**idx_1**:  
+- Response: ""bmw""  
+- Target: ""bmw""  
+They match exactly.  
+Score: 1
+
+**idx_2**:  
+- Response: ""acura""  
+- Target: ""mercedes-benz""  
+These are two different car brands. No semantic equivalence.  
+Score: 0
+
+**idx_3**:  
+- Response: ""ford""  
+- Target: ""toyota""  
+Different car brands, no equivalence.  
+Score: 0
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0
+}
+```",mercedes-benz,acura,1.0,"exact match, response: 2022, target: 2022",2022,2022
+compactsuv,Compact SUV,,,1.0,key_match,1.0,"Let's analyze each pair item by item according to the criterion:
+
+Criterion:  
+- Semantics need to be approximately the same as the reference answer or point to the same entity. No need for word-for-word match.
+
+---
+
+**idx_0:**  
+- response: ""sedan""  
+- target: ""sedan""  
+Analysis: The response matches the target exactly and thus points to the same entity.  
+Score: 1
+
+**idx_1:**  
+- response: ""sedan""  
+- target: ""sedan""  
+Analysis: Exact match, same entity.  
+Score: 1
+
+**idx_2:**  
+- response: ""suv""  
+- target: ""suv""  
+Analysis: Exact match.  
+Score: 1
+
+**idx_3:**  
+- response: ""suv""  
+- target: ""suv""  
+Analysis: Exact match.  
+Score: 1
+
+---
+
+Final Scores:  
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1
+}
+```",suv,suv,0.0,"exact not match, response: 5, target: 4",4,5,1.0,"Let's analyze each idx one by one according to the criterion:
+
+---
+
+**idx_0**  
+- Response: ""fwd""  
+- Target: ""fwd""  
+- Analysis: Exact match, semantics fully correspond.  
+- Score: 1
+
+---
+
+**idx_1**  
+- Response: ""rwd/fwd""  
+- Target: ""rwd/awd""  
+- Analysis: Both responses share ""rwd,"" but the other term differs ""fwd"" vs ""awd."" Since the criterion requires approximate semantic equivalence or pointing to the same entity, ""fwd"" and ""awd"" are different drivetrain types. Thus, the response does not sufficiently cover the target.  
+- Score: 0
+
+---
+
+**idx_2**  
+- Response: ""awd""  
+- Target: ""rwd/awd""  
+- Analysis: The target includes ""rwd"" or ""awd."" The response provides ""awd"" only, which is one of the options in the target. Since semantics approximate the same set, the response is acceptable as it points to the same entity ""awd,"" which is part of the target.  
+- Score: 1
+
+---
+
+**idx_3**  
+- Response: ""fwd/awd""  
+- Target: ""fwd/awd""  
+- Analysis: Exact match.  
+- Score: 1
+
+---
+
+### Final JSON output:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1
+}
+```",fwd/awd,fwd/awd,0.0,"exact not match, response: 87, target: 81",81,87,0.0,"Let's analyze each pair of response and target answer based on the criterion:
+
+Criterion summary:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- When the reference contains ""hybrid"" (e.g., ""plug-in hybrid""), the response must include ""hybrid"" to be acceptable.  
+- Scoring is 0 or 1 only.
+
+---
+
+### idx_0
+- Target: ""gasoline, hybrid""  
+  Contains ""hybrid"", so response must contain ""hybrid"" or a synonym pointing to the same entity.  
+- Response: ""gas""  
+  ""Gas"" here likely means ""gasoline"", which covers the first part of the target.  
+  Does not mention ""hybrid,"" so does not cover the second part.  
+- According to criterion, presence of ""hybrid"" is necessary when in the reference answer. The response misses it.  
+- Thus, score = 0.
+
+### idx_1
+- Target: ""gasoline, hybrid""  
+- Response: ""gas""  
+- Same as idx_0, missing ""hybrid"".  
+- Score = 0.
+
+### idx_2
+- Target: ""gasoline, mild-hybrid""  
+- Response: ""gas""  
+- Target contains ""hybrid"" (mild-hybrid), so response must mention ""hybrid"" in some form.  
+- ""gas"" does not mention hybrid at all.  
+- Score = 0.
+
+### idx_3
+- Target: ""gasoline, hybrid""  
+- Response: ""gas""  
+- Again, missing ""hybrid"" in response.  
+- Score = 0.
+
+---
+
+### Final results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0
+}
+```
+","gasoline,hybrid",gas,0.0,"Let's analyze each idx item by item according to the grading criterion:
+
+Criterion:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.""
+
+---
+
+### idx_0  
+- Response: ""se,le,xle,touring""  
+- Target: ""l,le,se,xle,xse,apexedition,hybridle/se""
+
+Analysis:  
+- Target includes: l, le, se, xle, xse, apexedition, hybridle/se  
+- Response includes: se, le, xle, touring  
+
+Comparing response with target:  
+- ""se"" matches ""se"" in target  
+- ""le"" matches ""le""  
+- ""xle"" matches ""xle""  
+- ""touring"" is NOT mentioned in target (extra) but the criterion does not penalize extra words unless strictly unrelated; having an extra item is not explicitly disallowed in the criterion.  
+- Target has more variants (l, xse, apexedition, hybridle/se) not mentioned by response, but the response covers many of the core entities listed.
+
+Since many core entities are mentioned, response approximates the target sufficiently.
+
+Score: 1
+
+---
+
+### idx_1  
+- Response: ""sdrive330i,m340ixdrive""  
+- Target: ""330i,330e(phev),m340i""
+
+Analysis:  
+- Target entities are ""330i"", ""330e(phev)"", ""m340i""  
+- Response entities are ""sdrive330i"" and ""m340ixdrive""  
+
+""sdrive330i"" clearly points to ""330i"" with added prefix ""sdrive"" indicating drivetrain variant. Similarly ""m340ixdrive"" corresponds to ""m340i"" variant with ""xdrive"". Both responses seem to refer to the same base models as in targets.
+
+""330e(phev)"" is a target component missing in the response, but the criterion says approximate semantics or same entity is sufficient, completeness is not strictly required as a must-have.
+
+Since response entities correctly point to base vehicle models in target, this is acceptable.
+
+Score: 1
+
+---
+
+### idx_2  
+- Response: ""awd""  
+- Target: ""glc300,glc3004matic,amgglc43""
+
+Analysis:  
+- Target contains specific car models: glc300, glc3004matic, amgglc43  
+- Response is ""awd""  
+
+""aw d"" (all-wheel drive) is a drivetrain type, not a specific vehicle model. The target is a list of vehicle models. The response is not the same entity nor an approximate semantic equivalent. The response does not point to the same entity as the target does.
+
+Therefore, ""awd"" is not an approximate match or referring to same entities as in target. This means the response is incorrect.
+
+Score: 0
+
+---
+
+### idx_3  
+- Response: ""sel,selpremium,limited""  
+- Target: ""le,xle,xlepremium,adventure,trdoff-road,limited,hybridxle/limited""
+
+Analysis:  
+- Response: sel, selpremium, limited  
+- Target: le, xle, xlepremium, adventure, trdoff-road, limited, hybridxle/limited
+
+Comparing the sets:
+
+- ""limited"" appears in both response and target → matches  
+- ""sel"" and ""selpremium"" do NOT appear in target; target has ""le"", ""xle"", ""xlepremium"" instead  
+- Response uses ""sel""/""selpremium"" while target uses ""le""/""xle""/""xlepremium"" which are different trim levels or entities.
+
+""sel"" is a trim level commonly used by some manufacturers but different from ""le"" ""xle"" etc. These indicate different entities.
+
+Only one match: ""limited""
+
+Is this sufficient to count as approximate semantic equivalence? No. The response points mostly to different entities than the target in terms of trims.
+
+Hence score is 0.
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0
+}
+```
+","le,xle,xlepremium,adventure,trdoff-road,limited,hybridxle/limited","sel,selpremium,limited",0.0,"Let's analyze each pair step by step:
+
+- idx_0:  
+  Response: ""corolla""  
+  Target: ""corolla""  
+  The response exactly matches the target. According to the criteria, this is a complete match.  
+  Score: 1
+
+- idx_1:  
+  Response: ""3series""  
+  Target: ""3series""  
+  Exact match again, so the semantics are clearly the same.  
+  Score: 1
+
+- idx_2:  
+  Response: ""rdx""  
+  Target: ""glc""  
+  These refer to different entities (RDX is an Acura model, GLC is a Mercedes-Benz), so semantics do not match.  
+  Score: 0
+
+- idx_3:  
+  Response: ""escape""  
+  Target: ""rav4""  
+  These are different car models by different manufacturers (Ford Escape vs Toyota RAV4), so semantics do not match.  
+  Score: 0
+
+Final scoring output:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0
+}
+```",rav4,escape,0.0,"exact not match, response: 4.0, target: 79.0",79.0,4.0,1.0,"exact match, response: 5, target: 5",5,5,0.0,"exact not match, response: 86, target: 81",81,86,0.0,"exact not match, response: 85, target: 75",75,85,0.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion: 
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+- No need for word-for-word correspondence.
+- Basically, the response should identify the same entity as the target.
+
+---
+
+**idx_0**:  
+- Response: ""toyota""  
+- Target: ""toyota""  
+They match exactly.  
+Score: 1
+
+**idx_1**:  
+- Response: ""bmw""  
+- Target: ""bmw""  
+They match exactly.  
+Score: 1
+
+**idx_2**:  
+- Response: ""acura""  
+- Target: ""mercedes-benz""  
+These are two different car brands. No semantic equivalence.  
+Score: 0
+
+**idx_3**:  
+- Response: ""ford""  
+- Target: ""toyota""  
+Different car brands, no equivalence.  
+Score: 0
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0
+}
+```",toyota,ford,1.0,"exact match, response: 2022, target: 2022",2022,2022

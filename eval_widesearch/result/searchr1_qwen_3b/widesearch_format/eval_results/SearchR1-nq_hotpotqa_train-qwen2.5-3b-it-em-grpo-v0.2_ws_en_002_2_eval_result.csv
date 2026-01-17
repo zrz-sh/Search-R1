@@ -1,0 +1,2088 @@
+brand,brand_before_map,exist_flag_gt,exist_flag_response,product,product_before_map,abv%_llm_judge,abv%_llm_judge_eval_msg,abv%_query,abv%_response,brand_exact_match,brand_exact_match_eval_msg,category_llm_judge,category_llm_judge_eval_msg,category_query,category_response,packsize(bottle)_llm_judge,packsize(bottle)_llm_judge_eval_msg,packsize(bottle)_query,packsize(bottle)_response,product_exact_match,product_exact_match_eval_msg,sub-category_llm_judge,sub-category_llm_judge_eval_msg,sub-category_query,sub-category_response
+johnniewalker,Johnnie Walker,,,blacklabel,Johnnie Walker Black Label,1.0,"Let's analyze each pair of response and target according to the given criterion:
+
+- Criterion: The semantics are approximately the same or point to the same entity. No need for word-for-word correspondence.
+- Scoring: 0 or 1 only.
+
+---
+
+**idx_0**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: ""40"" and ""40.0%"" clearly point to the same numeric value (40) and imply the same percentage. The omission of the decimal and percent sign does not change the essential meaning semantically.  
+Score: 1
+
+---
+
+**idx_1**  
+Response: ""40""  
+Target: ""43.0%""  
+Analysis: The response ""40"" differs from the target ""43.0%"". Numerically they are not the same. According to the criterion, the semantics must be approximately the same or point to the same entity. Here, ""40"" does not point to ""43.0"".  
+Score: 0
+
+---
+
+**idx_2**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as idx_0, same numeric value and meaning, just decimal and percent sign omitted.  
+Score: 1
+
+---
+
+**idx_3**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as idx_0 and idx_2.  
+Score: 1
+
+---
+
+**idx_4**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_5**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_6**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_7**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+Now, assemble the final scores in JSON format.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",40.0%,40,1.0,key_match,1.0,"Let's analyze each response versus its target according to the criterion:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+### idx_0 to idx_3:
+- **Target:** ""whisky""  
+- **Response:** ""blendedscotchwhisky""
+
+Analysis:  
+- ""blendedscotchwhisky"" is a compound term combining ""blended,"" ""scotch,"" and ""whisky.""  
+- It clearly points to a type of whisky.  
+- The criterion states that approximate semantic equivalence or pointing to the same entity suffices.  
+- Since ""blendedscotchwhisky"" is a specific type of whisky, it should be accepted as correct.  
+
+Score: **1**
+
+---
+
+### idx_4 to idx_7:
+- **Target:** ""vodka""  
+- **Response:** ""vodka""
+
+Analysis:  
+- The response matches exactly the target.  
+
+Score: **1**
+
+---
+
+### Final scoring JSON output:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```
+",whisky,blendedscotchwhisky,1.0,"Let's analyze each pair step by step according to the criterion:
+
+Criterion summary:  
+- The semantics should be approximately the same or point to the same entity.  
+- Different regions have wines of different specifications, so the capacity does not need to be exactly matched. This suggests that a small difference in volume (like 70cl vs 750ml) is acceptable since 70cl is effectively 700ml, close to 750ml, and thus considered approximately the same entity.
+
+Note also that 1cl = 10ml, so 70cl = 700ml. The target answers are mostly 750ml, except idx_3 (700ml) and idx_4 (multiple sizes).
+
+Now let's check each idx:
+
+- idx_0:  
+  response = 70cl → 700ml approx  
+  target = 750ml  
+  700ml vs 750ml is close and the criterion says approximately same semantics okay.  
+  Score: 1
+
+- idx_1:  
+  Same as idx_0, 70cl vs 750ml → 1
+
+- idx_2:  
+  Same as idx_0, 70cl vs 750ml → 1
+
+- idx_3:  
+  response = 70cl (700ml)  
+  target = 700ml  
+  Exactly the same volume here.  
+  Score:1
+
+- idx_4:  
+  response = 70cl (700ml)  
+  target = multiple values: 50ml/200ml/375ml/750ml/1000ml/1750ml  
+  700ml is close to 750ml in the target list, so response points to the same entity.  
+  Score:1
+
+- idx_5:  
+  70cl vs 750ml → same as idx_0, accepted → 1
+
+- idx_6:  
+  70cl vs 750ml → 1
+
+- idx_7:  
+  70cl vs 750ml → 1
+
+All responses roughly match or approximate their targets well within the accepted range.
+
+---
+
+### Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",750ml,70cl,1.0,key_match,0.0,"Let's analyze each pair step by step according to the criterion:
+
+Criterion summary:  
+- The semantics need to be approximately the same or point to the same entity.  
+- No need for word-for-word match.  
+- The response can be broader than the target. For example, for vodka, both NA or premium vodka is accepted.
+
+---
+
+### Analysis of each pair:
+
+**idx_0**  
+- Response: ""core""  
+- Target: ""blendedscotchwhisky""  
+- ""core"" is a very generic term and does not specifically indicate ""blended scotch whisky"" or even a type of spirit. It does not convey the same entity or approximate semantics.  
+- Result: 0
+
+**idx_1**  
+- Same as idx_0, same reasoning and result.  
+- Result: 0
+
+**idx_2**  
+- Same as idx_0, same reasoning and result.  
+- Result: 0
+
+**idx_3**  
+- Same as idx_0, same reasoning and result.  
+- Result: 0
+
+**idx_4**  
+- Response: ""core""  
+- Target: ""frenchvodka""  
+- ""core"" does not point to ""french vodka"" or even vodka in general. There's no semantic equivalence.  
+- Result: 0
+
+**idx_5**  
+- Response: ""core""  
+- Target: ""premiumvodka""  
+- Although ""core"" is general, the criterion states that a broader response of vodka is accepted if the target is premium vodka. But ""core"" does not explicitly imply vodka or anything at all. It's just an adjective and gives no specific type or entity matching.  
+- Result: 0
+
+**idx_6**  
+- Same as idx_5 above.  
+- Result: 0
+
+**idx_7**  
+- Same as idx_5 above.  
+- Result: 0
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```
+",blendedscotchwhisky,core
+johnniewalker,Johnnie Walker,,,greenlabel,Johnnie Walker Green Label,0.0,"Let's analyze each pair of response and target according to the given criterion:
+
+- Criterion: The semantics are approximately the same or point to the same entity. No need for word-for-word correspondence.
+- Scoring: 0 or 1 only.
+
+---
+
+**idx_0**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: ""40"" and ""40.0%"" clearly point to the same numeric value (40) and imply the same percentage. The omission of the decimal and percent sign does not change the essential meaning semantically.  
+Score: 1
+
+---
+
+**idx_1**  
+Response: ""40""  
+Target: ""43.0%""  
+Analysis: The response ""40"" differs from the target ""43.0%"". Numerically they are not the same. According to the criterion, the semantics must be approximately the same or point to the same entity. Here, ""40"" does not point to ""43.0"".  
+Score: 0
+
+---
+
+**idx_2**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as idx_0, same numeric value and meaning, just decimal and percent sign omitted.  
+Score: 1
+
+---
+
+**idx_3**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as idx_0 and idx_2.  
+Score: 1
+
+---
+
+**idx_4**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_5**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_6**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_7**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+Now, assemble the final scores in JSON format.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",43.0%,40,1.0,key_match,1.0,"Let's analyze each response versus its target according to the criterion:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+### idx_0 to idx_3:
+- **Target:** ""whisky""  
+- **Response:** ""blendedscotchwhisky""
+
+Analysis:  
+- ""blendedscotchwhisky"" is a compound term combining ""blended,"" ""scotch,"" and ""whisky.""  
+- It clearly points to a type of whisky.  
+- The criterion states that approximate semantic equivalence or pointing to the same entity suffices.  
+- Since ""blendedscotchwhisky"" is a specific type of whisky, it should be accepted as correct.  
+
+Score: **1**
+
+---
+
+### idx_4 to idx_7:
+- **Target:** ""vodka""  
+- **Response:** ""vodka""
+
+Analysis:  
+- The response matches exactly the target.  
+
+Score: **1**
+
+---
+
+### Final scoring JSON output:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```
+",whisky,blendedscotchwhisky,1.0,"Let's analyze each pair step by step according to the criterion:
+
+Criterion summary:  
+- The semantics should be approximately the same or point to the same entity.  
+- Different regions have wines of different specifications, so the capacity does not need to be exactly matched. This suggests that a small difference in volume (like 70cl vs 750ml) is acceptable since 70cl is effectively 700ml, close to 750ml, and thus considered approximately the same entity.
+
+Note also that 1cl = 10ml, so 70cl = 700ml. The target answers are mostly 750ml, except idx_3 (700ml) and idx_4 (multiple sizes).
+
+Now let's check each idx:
+
+- idx_0:  
+  response = 70cl → 700ml approx  
+  target = 750ml  
+  700ml vs 750ml is close and the criterion says approximately same semantics okay.  
+  Score: 1
+
+- idx_1:  
+  Same as idx_0, 70cl vs 750ml → 1
+
+- idx_2:  
+  Same as idx_0, 70cl vs 750ml → 1
+
+- idx_3:  
+  response = 70cl (700ml)  
+  target = 700ml  
+  Exactly the same volume here.  
+  Score:1
+
+- idx_4:  
+  response = 70cl (700ml)  
+  target = multiple values: 50ml/200ml/375ml/750ml/1000ml/1750ml  
+  700ml is close to 750ml in the target list, so response points to the same entity.  
+  Score:1
+
+- idx_5:  
+  70cl vs 750ml → same as idx_0, accepted → 1
+
+- idx_6:  
+  70cl vs 750ml → 1
+
+- idx_7:  
+  70cl vs 750ml → 1
+
+All responses roughly match or approximate their targets well within the accepted range.
+
+---
+
+### Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",750ml,70cl,1.0,key_match,0.0,"Let's analyze each pair step by step according to the criterion:
+
+Criterion summary:  
+- The semantics need to be approximately the same or point to the same entity.  
+- No need for word-for-word match.  
+- The response can be broader than the target. For example, for vodka, both NA or premium vodka is accepted.
+
+---
+
+### Analysis of each pair:
+
+**idx_0**  
+- Response: ""core""  
+- Target: ""blendedscotchwhisky""  
+- ""core"" is a very generic term and does not specifically indicate ""blended scotch whisky"" or even a type of spirit. It does not convey the same entity or approximate semantics.  
+- Result: 0
+
+**idx_1**  
+- Same as idx_0, same reasoning and result.  
+- Result: 0
+
+**idx_2**  
+- Same as idx_0, same reasoning and result.  
+- Result: 0
+
+**idx_3**  
+- Same as idx_0, same reasoning and result.  
+- Result: 0
+
+**idx_4**  
+- Response: ""core""  
+- Target: ""frenchvodka""  
+- ""core"" does not point to ""french vodka"" or even vodka in general. There's no semantic equivalence.  
+- Result: 0
+
+**idx_5**  
+- Response: ""core""  
+- Target: ""premiumvodka""  
+- Although ""core"" is general, the criterion states that a broader response of vodka is accepted if the target is premium vodka. But ""core"" does not explicitly imply vodka or anything at all. It's just an adjective and gives no specific type or entity matching.  
+- Result: 0
+
+**idx_6**  
+- Same as idx_5 above.  
+- Result: 0
+
+**idx_7**  
+- Same as idx_5 above.  
+- Result: 0
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```
+",blendedscotchwhisky,core
+chivasregal,Chivas Regal,,,12years,Chivas Regal 12 Years Old,1.0,"Let's analyze each pair of response and target according to the given criterion:
+
+- Criterion: The semantics are approximately the same or point to the same entity. No need for word-for-word correspondence.
+- Scoring: 0 or 1 only.
+
+---
+
+**idx_0**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: ""40"" and ""40.0%"" clearly point to the same numeric value (40) and imply the same percentage. The omission of the decimal and percent sign does not change the essential meaning semantically.  
+Score: 1
+
+---
+
+**idx_1**  
+Response: ""40""  
+Target: ""43.0%""  
+Analysis: The response ""40"" differs from the target ""43.0%"". Numerically they are not the same. According to the criterion, the semantics must be approximately the same or point to the same entity. Here, ""40"" does not point to ""43.0"".  
+Score: 0
+
+---
+
+**idx_2**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as idx_0, same numeric value and meaning, just decimal and percent sign omitted.  
+Score: 1
+
+---
+
+**idx_3**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as idx_0 and idx_2.  
+Score: 1
+
+---
+
+**idx_4**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_5**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_6**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_7**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+Now, assemble the final scores in JSON format.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",40.0%,40,1.0,key_match,1.0,"Let's analyze each response versus its target according to the criterion:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+### idx_0 to idx_3:
+- **Target:** ""whisky""  
+- **Response:** ""blendedscotchwhisky""
+
+Analysis:  
+- ""blendedscotchwhisky"" is a compound term combining ""blended,"" ""scotch,"" and ""whisky.""  
+- It clearly points to a type of whisky.  
+- The criterion states that approximate semantic equivalence or pointing to the same entity suffices.  
+- Since ""blendedscotchwhisky"" is a specific type of whisky, it should be accepted as correct.  
+
+Score: **1**
+
+---
+
+### idx_4 to idx_7:
+- **Target:** ""vodka""  
+- **Response:** ""vodka""
+
+Analysis:  
+- The response matches exactly the target.  
+
+Score: **1**
+
+---
+
+### Final scoring JSON output:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```
+",whisky,blendedscotchwhisky,1.0,"Let's analyze each pair step by step according to the criterion:
+
+Criterion summary:  
+- The semantics should be approximately the same or point to the same entity.  
+- Different regions have wines of different specifications, so the capacity does not need to be exactly matched. This suggests that a small difference in volume (like 70cl vs 750ml) is acceptable since 70cl is effectively 700ml, close to 750ml, and thus considered approximately the same entity.
+
+Note also that 1cl = 10ml, so 70cl = 700ml. The target answers are mostly 750ml, except idx_3 (700ml) and idx_4 (multiple sizes).
+
+Now let's check each idx:
+
+- idx_0:  
+  response = 70cl → 700ml approx  
+  target = 750ml  
+  700ml vs 750ml is close and the criterion says approximately same semantics okay.  
+  Score: 1
+
+- idx_1:  
+  Same as idx_0, 70cl vs 750ml → 1
+
+- idx_2:  
+  Same as idx_0, 70cl vs 750ml → 1
+
+- idx_3:  
+  response = 70cl (700ml)  
+  target = 700ml  
+  Exactly the same volume here.  
+  Score:1
+
+- idx_4:  
+  response = 70cl (700ml)  
+  target = multiple values: 50ml/200ml/375ml/750ml/1000ml/1750ml  
+  700ml is close to 750ml in the target list, so response points to the same entity.  
+  Score:1
+
+- idx_5:  
+  70cl vs 750ml → same as idx_0, accepted → 1
+
+- idx_6:  
+  70cl vs 750ml → 1
+
+- idx_7:  
+  70cl vs 750ml → 1
+
+All responses roughly match or approximate their targets well within the accepted range.
+
+---
+
+### Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",750ml,70cl,1.0,key_match,0.0,"Let's analyze each pair step by step according to the criterion:
+
+Criterion summary:  
+- The semantics need to be approximately the same or point to the same entity.  
+- No need for word-for-word match.  
+- The response can be broader than the target. For example, for vodka, both NA or premium vodka is accepted.
+
+---
+
+### Analysis of each pair:
+
+**idx_0**  
+- Response: ""core""  
+- Target: ""blendedscotchwhisky""  
+- ""core"" is a very generic term and does not specifically indicate ""blended scotch whisky"" or even a type of spirit. It does not convey the same entity or approximate semantics.  
+- Result: 0
+
+**idx_1**  
+- Same as idx_0, same reasoning and result.  
+- Result: 0
+
+**idx_2**  
+- Same as idx_0, same reasoning and result.  
+- Result: 0
+
+**idx_3**  
+- Same as idx_0, same reasoning and result.  
+- Result: 0
+
+**idx_4**  
+- Response: ""core""  
+- Target: ""frenchvodka""  
+- ""core"" does not point to ""french vodka"" or even vodka in general. There's no semantic equivalence.  
+- Result: 0
+
+**idx_5**  
+- Response: ""core""  
+- Target: ""premiumvodka""  
+- Although ""core"" is general, the criterion states that a broader response of vodka is accepted if the target is premium vodka. But ""core"" does not explicitly imply vodka or anything at all. It's just an adjective and gives no specific type or entity matching.  
+- Result: 0
+
+**idx_6**  
+- Same as idx_5 above.  
+- Result: 0
+
+**idx_7**  
+- Same as idx_5 above.  
+- Result: 0
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```
+",blendedscotchwhisky,core
+chivasregal,Chivas Regal,,,mizunara,Chivas Mizunara,1.0,"Let's analyze each pair of response and target according to the given criterion:
+
+- Criterion: The semantics are approximately the same or point to the same entity. No need for word-for-word correspondence.
+- Scoring: 0 or 1 only.
+
+---
+
+**idx_0**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: ""40"" and ""40.0%"" clearly point to the same numeric value (40) and imply the same percentage. The omission of the decimal and percent sign does not change the essential meaning semantically.  
+Score: 1
+
+---
+
+**idx_1**  
+Response: ""40""  
+Target: ""43.0%""  
+Analysis: The response ""40"" differs from the target ""43.0%"". Numerically they are not the same. According to the criterion, the semantics must be approximately the same or point to the same entity. Here, ""40"" does not point to ""43.0"".  
+Score: 0
+
+---
+
+**idx_2**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as idx_0, same numeric value and meaning, just decimal and percent sign omitted.  
+Score: 1
+
+---
+
+**idx_3**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as idx_0 and idx_2.  
+Score: 1
+
+---
+
+**idx_4**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_5**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_6**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_7**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+Now, assemble the final scores in JSON format.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",40.0%,40,1.0,key_match,1.0,"Let's analyze each response versus its target according to the criterion:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+### idx_0 to idx_3:
+- **Target:** ""whisky""  
+- **Response:** ""blendedscotchwhisky""
+
+Analysis:  
+- ""blendedscotchwhisky"" is a compound term combining ""blended,"" ""scotch,"" and ""whisky.""  
+- It clearly points to a type of whisky.  
+- The criterion states that approximate semantic equivalence or pointing to the same entity suffices.  
+- Since ""blendedscotchwhisky"" is a specific type of whisky, it should be accepted as correct.  
+
+Score: **1**
+
+---
+
+### idx_4 to idx_7:
+- **Target:** ""vodka""  
+- **Response:** ""vodka""
+
+Analysis:  
+- The response matches exactly the target.  
+
+Score: **1**
+
+---
+
+### Final scoring JSON output:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```
+",whisky,blendedscotchwhisky,1.0,"Let's analyze each pair step by step according to the criterion:
+
+Criterion summary:  
+- The semantics should be approximately the same or point to the same entity.  
+- Different regions have wines of different specifications, so the capacity does not need to be exactly matched. This suggests that a small difference in volume (like 70cl vs 750ml) is acceptable since 70cl is effectively 700ml, close to 750ml, and thus considered approximately the same entity.
+
+Note also that 1cl = 10ml, so 70cl = 700ml. The target answers are mostly 750ml, except idx_3 (700ml) and idx_4 (multiple sizes).
+
+Now let's check each idx:
+
+- idx_0:  
+  response = 70cl → 700ml approx  
+  target = 750ml  
+  700ml vs 750ml is close and the criterion says approximately same semantics okay.  
+  Score: 1
+
+- idx_1:  
+  Same as idx_0, 70cl vs 750ml → 1
+
+- idx_2:  
+  Same as idx_0, 70cl vs 750ml → 1
+
+- idx_3:  
+  response = 70cl (700ml)  
+  target = 700ml  
+  Exactly the same volume here.  
+  Score:1
+
+- idx_4:  
+  response = 70cl (700ml)  
+  target = multiple values: 50ml/200ml/375ml/750ml/1000ml/1750ml  
+  700ml is close to 750ml in the target list, so response points to the same entity.  
+  Score:1
+
+- idx_5:  
+  70cl vs 750ml → same as idx_0, accepted → 1
+
+- idx_6:  
+  70cl vs 750ml → 1
+
+- idx_7:  
+  70cl vs 750ml → 1
+
+All responses roughly match or approximate their targets well within the accepted range.
+
+---
+
+### Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",700ml,70cl,1.0,key_match,0.0,"Let's analyze each pair step by step according to the criterion:
+
+Criterion summary:  
+- The semantics need to be approximately the same or point to the same entity.  
+- No need for word-for-word match.  
+- The response can be broader than the target. For example, for vodka, both NA or premium vodka is accepted.
+
+---
+
+### Analysis of each pair:
+
+**idx_0**  
+- Response: ""core""  
+- Target: ""blendedscotchwhisky""  
+- ""core"" is a very generic term and does not specifically indicate ""blended scotch whisky"" or even a type of spirit. It does not convey the same entity or approximate semantics.  
+- Result: 0
+
+**idx_1**  
+- Same as idx_0, same reasoning and result.  
+- Result: 0
+
+**idx_2**  
+- Same as idx_0, same reasoning and result.  
+- Result: 0
+
+**idx_3**  
+- Same as idx_0, same reasoning and result.  
+- Result: 0
+
+**idx_4**  
+- Response: ""core""  
+- Target: ""frenchvodka""  
+- ""core"" does not point to ""french vodka"" or even vodka in general. There's no semantic equivalence.  
+- Result: 0
+
+**idx_5**  
+- Response: ""core""  
+- Target: ""premiumvodka""  
+- Although ""core"" is general, the criterion states that a broader response of vodka is accepted if the target is premium vodka. But ""core"" does not explicitly imply vodka or anything at all. It's just an adjective and gives no specific type or entity matching.  
+- Result: 0
+
+**idx_6**  
+- Same as idx_5 above.  
+- Result: 0
+
+**idx_7**  
+- Same as idx_5 above.  
+- Result: 0
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```
+",blendedscotchwhisky,core
+greygoose,Grey Goose,,,greygoosevodka,Grey Goose Vodka,1.0,"Let's analyze each pair of response and target according to the given criterion:
+
+- Criterion: The semantics are approximately the same or point to the same entity. No need for word-for-word correspondence.
+- Scoring: 0 or 1 only.
+
+---
+
+**idx_0**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: ""40"" and ""40.0%"" clearly point to the same numeric value (40) and imply the same percentage. The omission of the decimal and percent sign does not change the essential meaning semantically.  
+Score: 1
+
+---
+
+**idx_1**  
+Response: ""40""  
+Target: ""43.0%""  
+Analysis: The response ""40"" differs from the target ""43.0%"". Numerically they are not the same. According to the criterion, the semantics must be approximately the same or point to the same entity. Here, ""40"" does not point to ""43.0"".  
+Score: 0
+
+---
+
+**idx_2**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as idx_0, same numeric value and meaning, just decimal and percent sign omitted.  
+Score: 1
+
+---
+
+**idx_3**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as idx_0 and idx_2.  
+Score: 1
+
+---
+
+**idx_4**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_5**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_6**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_7**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+Now, assemble the final scores in JSON format.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",40.0%,40,1.0,key_match,1.0,"Let's analyze each response versus its target according to the criterion:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+### idx_0 to idx_3:
+- **Target:** ""whisky""  
+- **Response:** ""blendedscotchwhisky""
+
+Analysis:  
+- ""blendedscotchwhisky"" is a compound term combining ""blended,"" ""scotch,"" and ""whisky.""  
+- It clearly points to a type of whisky.  
+- The criterion states that approximate semantic equivalence or pointing to the same entity suffices.  
+- Since ""blendedscotchwhisky"" is a specific type of whisky, it should be accepted as correct.  
+
+Score: **1**
+
+---
+
+### idx_4 to idx_7:
+- **Target:** ""vodka""  
+- **Response:** ""vodka""
+
+Analysis:  
+- The response matches exactly the target.  
+
+Score: **1**
+
+---
+
+### Final scoring JSON output:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```
+",vodka,vodka,1.0,"Let's analyze each pair step by step according to the criterion:
+
+Criterion summary:  
+- The semantics should be approximately the same or point to the same entity.  
+- Different regions have wines of different specifications, so the capacity does not need to be exactly matched. This suggests that a small difference in volume (like 70cl vs 750ml) is acceptable since 70cl is effectively 700ml, close to 750ml, and thus considered approximately the same entity.
+
+Note also that 1cl = 10ml, so 70cl = 700ml. The target answers are mostly 750ml, except idx_3 (700ml) and idx_4 (multiple sizes).
+
+Now let's check each idx:
+
+- idx_0:  
+  response = 70cl → 700ml approx  
+  target = 750ml  
+  700ml vs 750ml is close and the criterion says approximately same semantics okay.  
+  Score: 1
+
+- idx_1:  
+  Same as idx_0, 70cl vs 750ml → 1
+
+- idx_2:  
+  Same as idx_0, 70cl vs 750ml → 1
+
+- idx_3:  
+  response = 70cl (700ml)  
+  target = 700ml  
+  Exactly the same volume here.  
+  Score:1
+
+- idx_4:  
+  response = 70cl (700ml)  
+  target = multiple values: 50ml/200ml/375ml/750ml/1000ml/1750ml  
+  700ml is close to 750ml in the target list, so response points to the same entity.  
+  Score:1
+
+- idx_5:  
+  70cl vs 750ml → same as idx_0, accepted → 1
+
+- idx_6:  
+  70cl vs 750ml → 1
+
+- idx_7:  
+  70cl vs 750ml → 1
+
+All responses roughly match or approximate their targets well within the accepted range.
+
+---
+
+### Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",50ml/200ml/375ml/750ml/1000ml/1750ml,70cl,1.0,key_match,0.0,"Let's analyze each pair step by step according to the criterion:
+
+Criterion summary:  
+- The semantics need to be approximately the same or point to the same entity.  
+- No need for word-for-word match.  
+- The response can be broader than the target. For example, for vodka, both NA or premium vodka is accepted.
+
+---
+
+### Analysis of each pair:
+
+**idx_0**  
+- Response: ""core""  
+- Target: ""blendedscotchwhisky""  
+- ""core"" is a very generic term and does not specifically indicate ""blended scotch whisky"" or even a type of spirit. It does not convey the same entity or approximate semantics.  
+- Result: 0
+
+**idx_1**  
+- Same as idx_0, same reasoning and result.  
+- Result: 0
+
+**idx_2**  
+- Same as idx_0, same reasoning and result.  
+- Result: 0
+
+**idx_3**  
+- Same as idx_0, same reasoning and result.  
+- Result: 0
+
+**idx_4**  
+- Response: ""core""  
+- Target: ""frenchvodka""  
+- ""core"" does not point to ""french vodka"" or even vodka in general. There's no semantic equivalence.  
+- Result: 0
+
+**idx_5**  
+- Response: ""core""  
+- Target: ""premiumvodka""  
+- Although ""core"" is general, the criterion states that a broader response of vodka is accepted if the target is premium vodka. But ""core"" does not explicitly imply vodka or anything at all. It's just an adjective and gives no specific type or entity matching.  
+- Result: 0
+
+**idx_6**  
+- Same as idx_5 above.  
+- Result: 0
+
+**idx_7**  
+- Same as idx_5 above.  
+- Result: 0
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```
+",frenchvodka,core
+absolut,Absolut Vodka,,,absolutvodka,Absolut Cran•Apple™,1.0,"Let's analyze each pair of response and target according to the given criterion:
+
+- Criterion: The semantics are approximately the same or point to the same entity. No need for word-for-word correspondence.
+- Scoring: 0 or 1 only.
+
+---
+
+**idx_0**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: ""40"" and ""40.0%"" clearly point to the same numeric value (40) and imply the same percentage. The omission of the decimal and percent sign does not change the essential meaning semantically.  
+Score: 1
+
+---
+
+**idx_1**  
+Response: ""40""  
+Target: ""43.0%""  
+Analysis: The response ""40"" differs from the target ""43.0%"". Numerically they are not the same. According to the criterion, the semantics must be approximately the same or point to the same entity. Here, ""40"" does not point to ""43.0"".  
+Score: 0
+
+---
+
+**idx_2**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as idx_0, same numeric value and meaning, just decimal and percent sign omitted.  
+Score: 1
+
+---
+
+**idx_3**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as idx_0 and idx_2.  
+Score: 1
+
+---
+
+**idx_4**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_5**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_6**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_7**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+Now, assemble the final scores in JSON format.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",40.0%,40,1.0,key_match,1.0,"Let's analyze each response versus its target according to the criterion:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+### idx_0 to idx_3:
+- **Target:** ""whisky""  
+- **Response:** ""blendedscotchwhisky""
+
+Analysis:  
+- ""blendedscotchwhisky"" is a compound term combining ""blended,"" ""scotch,"" and ""whisky.""  
+- It clearly points to a type of whisky.  
+- The criterion states that approximate semantic equivalence or pointing to the same entity suffices.  
+- Since ""blendedscotchwhisky"" is a specific type of whisky, it should be accepted as correct.  
+
+Score: **1**
+
+---
+
+### idx_4 to idx_7:
+- **Target:** ""vodka""  
+- **Response:** ""vodka""
+
+Analysis:  
+- The response matches exactly the target.  
+
+Score: **1**
+
+---
+
+### Final scoring JSON output:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```
+",vodka,vodka,1.0,"Let's analyze each pair step by step according to the criterion:
+
+Criterion summary:  
+- The semantics should be approximately the same or point to the same entity.  
+- Different regions have wines of different specifications, so the capacity does not need to be exactly matched. This suggests that a small difference in volume (like 70cl vs 750ml) is acceptable since 70cl is effectively 700ml, close to 750ml, and thus considered approximately the same entity.
+
+Note also that 1cl = 10ml, so 70cl = 700ml. The target answers are mostly 750ml, except idx_3 (700ml) and idx_4 (multiple sizes).
+
+Now let's check each idx:
+
+- idx_0:  
+  response = 70cl → 700ml approx  
+  target = 750ml  
+  700ml vs 750ml is close and the criterion says approximately same semantics okay.  
+  Score: 1
+
+- idx_1:  
+  Same as idx_0, 70cl vs 750ml → 1
+
+- idx_2:  
+  Same as idx_0, 70cl vs 750ml → 1
+
+- idx_3:  
+  response = 70cl (700ml)  
+  target = 700ml  
+  Exactly the same volume here.  
+  Score:1
+
+- idx_4:  
+  response = 70cl (700ml)  
+  target = multiple values: 50ml/200ml/375ml/750ml/1000ml/1750ml  
+  700ml is close to 750ml in the target list, so response points to the same entity.  
+  Score:1
+
+- idx_5:  
+  70cl vs 750ml → same as idx_0, accepted → 1
+
+- idx_6:  
+  70cl vs 750ml → 1
+
+- idx_7:  
+  70cl vs 750ml → 1
+
+All responses roughly match or approximate their targets well within the accepted range.
+
+---
+
+### Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",750ml,70cl,1.0,key_match,0.0,"Let's analyze each pair step by step according to the criterion:
+
+Criterion summary:  
+- The semantics need to be approximately the same or point to the same entity.  
+- No need for word-for-word match.  
+- The response can be broader than the target. For example, for vodka, both NA or premium vodka is accepted.
+
+---
+
+### Analysis of each pair:
+
+**idx_0**  
+- Response: ""core""  
+- Target: ""blendedscotchwhisky""  
+- ""core"" is a very generic term and does not specifically indicate ""blended scotch whisky"" or even a type of spirit. It does not convey the same entity or approximate semantics.  
+- Result: 0
+
+**idx_1**  
+- Same as idx_0, same reasoning and result.  
+- Result: 0
+
+**idx_2**  
+- Same as idx_0, same reasoning and result.  
+- Result: 0
+
+**idx_3**  
+- Same as idx_0, same reasoning and result.  
+- Result: 0
+
+**idx_4**  
+- Response: ""core""  
+- Target: ""frenchvodka""  
+- ""core"" does not point to ""french vodka"" or even vodka in general. There's no semantic equivalence.  
+- Result: 0
+
+**idx_5**  
+- Response: ""core""  
+- Target: ""premiumvodka""  
+- Although ""core"" is general, the criterion states that a broader response of vodka is accepted if the target is premium vodka. But ""core"" does not explicitly imply vodka or anything at all. It's just an adjective and gives no specific type or entity matching.  
+- Result: 0
+
+**idx_6**  
+- Same as idx_5 above.  
+- Result: 0
+
+**idx_7**  
+- Same as idx_5 above.  
+- Result: 0
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```
+",premiumvodka,core
+absolut,Absolut Vodka,,,absolutvodka,Absolut Cran•Cherry™,1.0,"Let's analyze each pair of response and target according to the given criterion:
+
+- Criterion: The semantics are approximately the same or point to the same entity. No need for word-for-word correspondence.
+- Scoring: 0 or 1 only.
+
+---
+
+**idx_0**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: ""40"" and ""40.0%"" clearly point to the same numeric value (40) and imply the same percentage. The omission of the decimal and percent sign does not change the essential meaning semantically.  
+Score: 1
+
+---
+
+**idx_1**  
+Response: ""40""  
+Target: ""43.0%""  
+Analysis: The response ""40"" differs from the target ""43.0%"". Numerically they are not the same. According to the criterion, the semantics must be approximately the same or point to the same entity. Here, ""40"" does not point to ""43.0"".  
+Score: 0
+
+---
+
+**idx_2**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as idx_0, same numeric value and meaning, just decimal and percent sign omitted.  
+Score: 1
+
+---
+
+**idx_3**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as idx_0 and idx_2.  
+Score: 1
+
+---
+
+**idx_4**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_5**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_6**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_7**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+Now, assemble the final scores in JSON format.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",40.0%,40,1.0,key_match,1.0,"Let's analyze each response versus its target according to the criterion:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+### idx_0 to idx_3:
+- **Target:** ""whisky""  
+- **Response:** ""blendedscotchwhisky""
+
+Analysis:  
+- ""blendedscotchwhisky"" is a compound term combining ""blended,"" ""scotch,"" and ""whisky.""  
+- It clearly points to a type of whisky.  
+- The criterion states that approximate semantic equivalence or pointing to the same entity suffices.  
+- Since ""blendedscotchwhisky"" is a specific type of whisky, it should be accepted as correct.  
+
+Score: **1**
+
+---
+
+### idx_4 to idx_7:
+- **Target:** ""vodka""  
+- **Response:** ""vodka""
+
+Analysis:  
+- The response matches exactly the target.  
+
+Score: **1**
+
+---
+
+### Final scoring JSON output:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```
+",vodka,vodka,1.0,"Let's analyze each pair step by step according to the criterion:
+
+Criterion summary:  
+- The semantics should be approximately the same or point to the same entity.  
+- Different regions have wines of different specifications, so the capacity does not need to be exactly matched. This suggests that a small difference in volume (like 70cl vs 750ml) is acceptable since 70cl is effectively 700ml, close to 750ml, and thus considered approximately the same entity.
+
+Note also that 1cl = 10ml, so 70cl = 700ml. The target answers are mostly 750ml, except idx_3 (700ml) and idx_4 (multiple sizes).
+
+Now let's check each idx:
+
+- idx_0:  
+  response = 70cl → 700ml approx  
+  target = 750ml  
+  700ml vs 750ml is close and the criterion says approximately same semantics okay.  
+  Score: 1
+
+- idx_1:  
+  Same as idx_0, 70cl vs 750ml → 1
+
+- idx_2:  
+  Same as idx_0, 70cl vs 750ml → 1
+
+- idx_3:  
+  response = 70cl (700ml)  
+  target = 700ml  
+  Exactly the same volume here.  
+  Score:1
+
+- idx_4:  
+  response = 70cl (700ml)  
+  target = multiple values: 50ml/200ml/375ml/750ml/1000ml/1750ml  
+  700ml is close to 750ml in the target list, so response points to the same entity.  
+  Score:1
+
+- idx_5:  
+  70cl vs 750ml → same as idx_0, accepted → 1
+
+- idx_6:  
+  70cl vs 750ml → 1
+
+- idx_7:  
+  70cl vs 750ml → 1
+
+All responses roughly match or approximate their targets well within the accepted range.
+
+---
+
+### Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",750ml,70cl,1.0,key_match,0.0,"Let's analyze each pair step by step according to the criterion:
+
+Criterion summary:  
+- The semantics need to be approximately the same or point to the same entity.  
+- No need for word-for-word match.  
+- The response can be broader than the target. For example, for vodka, both NA or premium vodka is accepted.
+
+---
+
+### Analysis of each pair:
+
+**idx_0**  
+- Response: ""core""  
+- Target: ""blendedscotchwhisky""  
+- ""core"" is a very generic term and does not specifically indicate ""blended scotch whisky"" or even a type of spirit. It does not convey the same entity or approximate semantics.  
+- Result: 0
+
+**idx_1**  
+- Same as idx_0, same reasoning and result.  
+- Result: 0
+
+**idx_2**  
+- Same as idx_0, same reasoning and result.  
+- Result: 0
+
+**idx_3**  
+- Same as idx_0, same reasoning and result.  
+- Result: 0
+
+**idx_4**  
+- Response: ""core""  
+- Target: ""frenchvodka""  
+- ""core"" does not point to ""french vodka"" or even vodka in general. There's no semantic equivalence.  
+- Result: 0
+
+**idx_5**  
+- Response: ""core""  
+- Target: ""premiumvodka""  
+- Although ""core"" is general, the criterion states that a broader response of vodka is accepted if the target is premium vodka. But ""core"" does not explicitly imply vodka or anything at all. It's just an adjective and gives no specific type or entity matching.  
+- Result: 0
+
+**idx_6**  
+- Same as idx_5 above.  
+- Result: 0
+
+**idx_7**  
+- Same as idx_5 above.  
+- Result: 0
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```
+",premiumvodka,core
+absolut,Absolut Vodka,,,absolutvodka,Absolut Cran•Pomegranate™,1.0,"Let's analyze each pair of response and target according to the given criterion:
+
+- Criterion: The semantics are approximately the same or point to the same entity. No need for word-for-word correspondence.
+- Scoring: 0 or 1 only.
+
+---
+
+**idx_0**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: ""40"" and ""40.0%"" clearly point to the same numeric value (40) and imply the same percentage. The omission of the decimal and percent sign does not change the essential meaning semantically.  
+Score: 1
+
+---
+
+**idx_1**  
+Response: ""40""  
+Target: ""43.0%""  
+Analysis: The response ""40"" differs from the target ""43.0%"". Numerically they are not the same. According to the criterion, the semantics must be approximately the same or point to the same entity. Here, ""40"" does not point to ""43.0"".  
+Score: 0
+
+---
+
+**idx_2**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as idx_0, same numeric value and meaning, just decimal and percent sign omitted.  
+Score: 1
+
+---
+
+**idx_3**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as idx_0 and idx_2.  
+Score: 1
+
+---
+
+**idx_4**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_5**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_6**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+**idx_7**  
+Response: ""40""  
+Target: ""40.0%""  
+Analysis: Same as above.  
+Score: 1
+
+---
+
+Now, assemble the final scores in JSON format.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",40.0%,40,1.0,key_match,1.0,"Let's analyze each response versus its target according to the criterion:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+### idx_0 to idx_3:
+- **Target:** ""whisky""  
+- **Response:** ""blendedscotchwhisky""
+
+Analysis:  
+- ""blendedscotchwhisky"" is a compound term combining ""blended,"" ""scotch,"" and ""whisky.""  
+- It clearly points to a type of whisky.  
+- The criterion states that approximate semantic equivalence or pointing to the same entity suffices.  
+- Since ""blendedscotchwhisky"" is a specific type of whisky, it should be accepted as correct.  
+
+Score: **1**
+
+---
+
+### idx_4 to idx_7:
+- **Target:** ""vodka""  
+- **Response:** ""vodka""
+
+Analysis:  
+- The response matches exactly the target.  
+
+Score: **1**
+
+---
+
+### Final scoring JSON output:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```
+",vodka,vodka,1.0,"Let's analyze each pair step by step according to the criterion:
+
+Criterion summary:  
+- The semantics should be approximately the same or point to the same entity.  
+- Different regions have wines of different specifications, so the capacity does not need to be exactly matched. This suggests that a small difference in volume (like 70cl vs 750ml) is acceptable since 70cl is effectively 700ml, close to 750ml, and thus considered approximately the same entity.
+
+Note also that 1cl = 10ml, so 70cl = 700ml. The target answers are mostly 750ml, except idx_3 (700ml) and idx_4 (multiple sizes).
+
+Now let's check each idx:
+
+- idx_0:  
+  response = 70cl → 700ml approx  
+  target = 750ml  
+  700ml vs 750ml is close and the criterion says approximately same semantics okay.  
+  Score: 1
+
+- idx_1:  
+  Same as idx_0, 70cl vs 750ml → 1
+
+- idx_2:  
+  Same as idx_0, 70cl vs 750ml → 1
+
+- idx_3:  
+  response = 70cl (700ml)  
+  target = 700ml  
+  Exactly the same volume here.  
+  Score:1
+
+- idx_4:  
+  response = 70cl (700ml)  
+  target = multiple values: 50ml/200ml/375ml/750ml/1000ml/1750ml  
+  700ml is close to 750ml in the target list, so response points to the same entity.  
+  Score:1
+
+- idx_5:  
+  70cl vs 750ml → same as idx_0, accepted → 1
+
+- idx_6:  
+  70cl vs 750ml → 1
+
+- idx_7:  
+  70cl vs 750ml → 1
+
+All responses roughly match or approximate their targets well within the accepted range.
+
+---
+
+### Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",750ml,70cl,1.0,key_match,0.0,"Let's analyze each pair step by step according to the criterion:
+
+Criterion summary:  
+- The semantics need to be approximately the same or point to the same entity.  
+- No need for word-for-word match.  
+- The response can be broader than the target. For example, for vodka, both NA or premium vodka is accepted.
+
+---
+
+### Analysis of each pair:
+
+**idx_0**  
+- Response: ""core""  
+- Target: ""blendedscotchwhisky""  
+- ""core"" is a very generic term and does not specifically indicate ""blended scotch whisky"" or even a type of spirit. It does not convey the same entity or approximate semantics.  
+- Result: 0
+
+**idx_1**  
+- Same as idx_0, same reasoning and result.  
+- Result: 0
+
+**idx_2**  
+- Same as idx_0, same reasoning and result.  
+- Result: 0
+
+**idx_3**  
+- Same as idx_0, same reasoning and result.  
+- Result: 0
+
+**idx_4**  
+- Response: ""core""  
+- Target: ""frenchvodka""  
+- ""core"" does not point to ""french vodka"" or even vodka in general. There's no semantic equivalence.  
+- Result: 0
+
+**idx_5**  
+- Response: ""core""  
+- Target: ""premiumvodka""  
+- Although ""core"" is general, the criterion states that a broader response of vodka is accepted if the target is premium vodka. But ""core"" does not explicitly imply vodka or anything at all. It's just an adjective and gives no specific type or entity matching.  
+- Result: 0
+
+**idx_6**  
+- Same as idx_5 above.  
+- Result: 0
+
+**idx_7**  
+- Same as idx_5 above.  
+- Result: 0
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```
+",premiumvodka,core
+absolut,,1.0,,elyx,,,,42.3%,,,,,,vodka,,,,750ml/1000ml/1750ml,,,,,,premiumvodka,
+bacardi,,1.0,,añejocuatro,,,,40.0%,,,,,,rum,,,,750ml,,,,,,darkrum,
+bacardi,Bacardi,,1.0,bacardiblue,Bacardi Blue,,,,40,,,,,,rum,,,,70cl,,,,,,core
+bacardi,Bacardi,,1.0,bacardicoconut,Bacardi Coconut,,,,40,,,,,,rum,,,,70cl,,,,,,core
+bacardi,Bacardi,,1.0,bacardilimon,Bacardi Limon,,,,40,,,,,,rum,,,,70cl,,,,,,core
+bacardi,Bacardi,,1.0,bacardimango,Bacardi Mango,,,,40,,,,,,rum,,,,70cl,,,,,,core
+bacardi,Bacardi,,1.0,bacardipassionfruit,Bacardi Passionfruit,,,,40,,,,,,rum,,,,70cl,,,,,,core
+bacardi,Bacardi,,1.0,bacardipeach,Bacardi Peach,,,,40,,,,,,rum,,,,70cl,,,,,,core
+bacardi,Bacardi,,1.0,bacardiraspberry,Bacardi Raspberry,,,,40,,,,,,rum,,,,70cl,,,,,,core
+bacardi,Bacardi,,1.0,bacardiraspberrylemonade,Bacardi Raspberry Lemonade,,,,40,,,,,,rum,,,,70cl,,,,,,core
+bacardi,Bacardi,,1.0,bacardiraspberrylime,Bacardi Raspberry Lime,,,,40,,,,,,rum,,,,70cl,,,,,,core
+bacardi,Bacardi,,1.0,bacardiraspberrylimemango,Bacardi Raspberry Lime Mango,,,,40,,,,,,rum,,,,70cl,,,,,,core
+bacardi,Bacardi,,1.0,bacardiraspberrymango,Bacardi Raspberry Mango,,,,40,,,,,,rum,,,,70cl,,,,,,core
+bacardi,Bacardi,,1.0,bacardiraspberryorange,Bacardi Raspberry Orange,,,,40,,,,,,rum,,,,70cl,,,,,,core
+bacardi,Bacardi,,1.0,bacardiraspberryraspberry,Bacardi Raspberry Raspberry,,,,40,,,,,,rum,,,,70cl,,,,,,core
+bacardi,Bacardi,,1.0,bacardiraspberryraspberrylime,Bacardi Raspberry Raspberry Lime,,,,40,,,,,,rum,,,,70cl,,,,,,core
+bacardi,Bacardi,,1.0,bacardiraspberryraspberrylimeorange,Bacardi Raspberry Raspberry Lime Orange,,,,40,,,,,,rum,,,,70cl,,,,,,core
+bacardi,Bacardi,,1.0,bacardiraspberryraspberrymango,Bacardi Raspberry Raspberry Mango,,,,40,,,,,,rum,,,,70cl,,,,,,core
+bacardi,Bacardi,,1.0,bacardiraspberryraspberryorange,Bacardi Raspberry Raspberry Orange,,,,40,,,,,,rum,,,,70cl,,,,,,core
+bacardi,Bacardi,,1.0,bacardiraspberryraspberryraspberry,Bacardi Raspberry Raspberry Raspberry,,,,40,,,,,,rum,,,,70cl,,,,,,core
+bacardi,Bacardi,,1.0,bacardiraspberryraspberryraspberryorange,Bacardi Raspberry Raspberry Raspberry Orange,,,,40,,,,,,rum,,,,70cl,,,,,,core
+bacardi,Bacardi,,1.0,bacardistrawberry,Bacardi Strawberry,,,,40,,,,,,rum,,,,70cl,,,,,,core
+bacardi,,1.0,,black,,,,40.0%,,,,,,rum,,,,750ml,,,,,,darkrum,
+bacardi,,1.0,,flavored,,,,35.0%,,,,,,rum,,,,750ml,,,,,,flavoredrum,
+bacardi,,1.0,,gold,,,,40.0%,,,,,,rum,,,,750ml,,,,,,goldrum,
+bacardi,,1.0,,granreservadiez,,,,40.0%,,,,,,rum,,,,750ml,,,,,,darkrum,
+bacardi,,1.0,,granreservalimitada,,,,40.0%,,,,,,rum,,,,750ml,,,,,,darkrum,
+bacardi,,1.0,,readytodrinkcocktails,,,,5.9%,,,,,,cocktail,,,,355ml,,,,,,/,
+bacardi,,1.0,,readytoservecocktails,,,,12.5%,,,,,,cocktail,,,,1.75l,,,,,,/,
+bacardi,,1.0,,reservaocho,,,,40.0%,,,,,,rum,,,,750ml,,,,,,darkrum,
+bacardi,,1.0,,sevillianorange,,,,45.0%,,,,,,rum,,,,750ml,,,,,,darkrum,
+bacardi,,1.0,,spiced,,,,35.0%,,,,,,rum,,,,750ml,,,,,,spicedrum,
+bacardi,,1.0,,superior,,,,40.0%,,,,,,rum,,,,750ml,,,,,,whiterum,
+chivasregal,,1.0,,18years,,,,40.0%,,,,,,whisky,,,,700ml/750ml,,,,,,blendedscotchwhisky,
+chivasregal,,1.0,,25years,,,,40.0%,,,,,,whisky,,,,700ml,,,,,,blendedscotchwhisky,
+chivasregal,,1.0,,extra,,,,40.0%,,,,,,whisky,,,,700ml,,,,,,blendedscotchwhisky,
+chivasregal,,1.0,,theicon,,,,40.0%,,,,,,whisky,,,,700ml,,,,,,blendedscotchwhisky,
+chivasregal,,1.0,,ultis,,,,40.0%,,,,,,whisky,,,,700ml,,,,,,blendedscotchwhisky,
+chivasregal,,1.0,,xv,,,,40.0%,,,,,,whisky,,,,700ml,,,,,,blendedscotchwhisky,
+greygoose,,1.0,,altius,,,,40.0%,,,,,,vodka,,,,700ml/1750ml,,,,,,premiumvodka,
+greygoose,,1.0,,classicmartinicocktail,,,,35.0%,,,,,,cocktail,,,,375ml,,,,,,/,
+johnniewalker,,1.0,,&sonskinggeorgev.,,,,43.0%,,,,,,whisky,,,,750ml,,,,,,blendedscotchwhisky,
+johnniewalker,,1.0,,aged18years(ex-platinum),,,,40.0%,,,,,,whisky,,,,750ml,,,,,,blendedscotchwhisky,
+johnniewalker,,1.0,,blonde,,,,40.0%,,,,,,whisky,,,,750ml,,,,,,blendedscotchwhisky,
+johnniewalker,,1.0,,bluelabel,,,,40.0%,,,,,,whisky,,,,750ml,,,,,,blendedscotchwhisky,
+johnniewalker,,1.0,,doubleblacklabel,,,,40.0%,,,,,,whisky,,,,750ml,,,,,,blendedscotchwhisky,
+johnniewalker,,1.0,,goldlabelreserve,,,,40.0%,,,,,,whisky,,,,750ml,,,,,,blendedscotchwhisky,
+johnniewalker,,1.0,,highrye,,,,45.0%,,,,,,whisky,,,,750ml,,,,,,blendedscotchwhisky,
+johnniewalker,,1.0,,redlabel,,,,40.0%,,,,,,whisky,,,,750ml,,,,,,blendedscotchwhisky,
+smirnoff,,1.0,,no.21,,,,40.0%,,,,,,vodka,,,,750ml,,,,,,premiumvodka,
+smirnoff,,1.0,,no.27,,,,45.2%,,,,,,vodka,,,,750ml,,,,,,premiumvodka,
+smirnoff,,1.0,,no.57,,,,50.0%,,,,,,vodka,,,,750ml,,,,,,premiumvodka,
+smirnoff,Smirnoff,,1.0,smirnofforiginal,Smirnoff Original,,,,40,,,,,,vodka,,,,70cl,,,,,,core
+smirnoff,Smirnoff,,1.0,smirnoffpeach,Smirnoff Peach,,,,40,,,,,,vodka,,,,70cl,,,,,,core
+smirnoff,Smirnoff,,1.0,smirnoffstrawberry,Smirnoff Strawberry,,,,40,,,,,,vodka,,,,70cl,,,,,,core

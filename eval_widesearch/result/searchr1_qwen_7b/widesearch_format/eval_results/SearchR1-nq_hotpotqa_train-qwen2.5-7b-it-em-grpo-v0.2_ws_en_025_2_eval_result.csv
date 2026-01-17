@@ -1,0 +1,145 @@
+clinic,clinic_before_map,exist_flag_gt,exist_flag_response,clinic_exact_match,clinic_exact_match_eval_msg,county_exact_match,county_exact_match_eval_msg,county_query,county_response,fulladdress_llm_judge,fulladdress_llm_judge_eval_msg,fulladdress_query,fulladdress_response,phonenumber_exact_match,phonenumber_exact_match_eval_msg,phonenumber_query,phonenumber_response,saturdayoperationhours_llm_judge,saturdayoperationhours_llm_judge_eval_msg,saturdayoperationhours_query,saturdayoperationhours_response
+plannedparenthood-fultonstreethealthcenter,Fulton Street Health Center,,,1.0,key_match,1.0,"exact match, response: fresno, target: fresno",fresno,fresno,0.0,"Let's analyze each item step by step according to the given grading criteria.
+
+---
+
+**idx_0**  
+- Target: ""650n.fultonstreet,fresno,ca93728""  
+- Response: ""2364fultonst,fresno,ca93728""  
+
+Analysis:  
+- Both responses are addresses in Fresno, CA, with the same ZIP code 93728.  
+- However, the street numbers are completely different (650n vs 2364).  
+- The street names are similar but not identical (""fultonstreet"" vs ""fultonst"") — this is acceptable as per the criteria since it is semantically the same street.  
+- The street number is a critical part of an address; different numbers indicate different locations. Because of this difference in street number, these two are not the same address and do not point to the same entity.
+
+Verdict: 0
+
+---
+
+**idx_1**  
+- Target: ""165northclarkstreet,fresno,ca93701""  
+- Response: ""165nclarkst,fresno,ca93701""  
+
+Analysis:  
+- The street number is identical (165).  
+- ""northclarkstreet"" vs ""nclarkst"" — ""n"" is a common abbreviation for ""north"" and ""st"" is abbreviation for ""street"".  
+- The city and ZIP code are the same.  
+- According to the grading criteria, it is sufficient if semantics are approximately the same or point to the same entity. The response here matches the target address precisely in meaning, just abbreviated.  
+
+Verdict: 1
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1
+}
+```","650n.fultonstreet,fresno,ca93728","2364fultonst,fresno,ca93728",0.0,"exact not match, response: (559)237-0847, target: (559)488-4900",(559)488-4900,(559)237-0847,0.0,"Let's analyze each index pair step-by-step according to the criterion:
+
+Criterion summary:  
+- The response needs to have approximately the same semantics or point to the same entity as the standard answer.  
+- Word-for-word correspondence is not required.  
+- The scoring range is binary: 0 (incorrect) or 1 (correct).  
+
+---
+
+### idx_0
+- Target answer: ""8am-4:30pm""  
+- Response answer: ""notprovided""  
+- Analysis: The response ""notprovided"" does not match or even approximately match the given target time range. It essentially means no answer or missing answer, so the semantics do not align with the reference.  
+- Judgment: 0
+
+### idx_1
+- Target answer: ""closed""  
+- Response answer: ""notprovided""  
+- Analysis: Again, ""notprovided"" does not match the target ""closed,"" so it fails the semantic similarity criterion.  
+- Judgment: 0
+
+---
+
+### Final scoring results in JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0
+}
+```",8am-4:30pm,notprovided
+fpawomen'shealth-fresno,FPA Women's Health - Fresno,,,1.0,key_match,1.0,"exact match, response: fresno, target: fresno",fresno,fresno,1.0,"Let's analyze each item step by step according to the given grading criteria.
+
+---
+
+**idx_0**  
+- Target: ""650n.fultonstreet,fresno,ca93728""  
+- Response: ""2364fultonst,fresno,ca93728""  
+
+Analysis:  
+- Both responses are addresses in Fresno, CA, with the same ZIP code 93728.  
+- However, the street numbers are completely different (650n vs 2364).  
+- The street names are similar but not identical (""fultonstreet"" vs ""fultonst"") — this is acceptable as per the criteria since it is semantically the same street.  
+- The street number is a critical part of an address; different numbers indicate different locations. Because of this difference in street number, these two are not the same address and do not point to the same entity.
+
+Verdict: 0
+
+---
+
+**idx_1**  
+- Target: ""165northclarkstreet,fresno,ca93701""  
+- Response: ""165nclarkst,fresno,ca93701""  
+
+Analysis:  
+- The street number is identical (165).  
+- ""northclarkstreet"" vs ""nclarkst"" — ""n"" is a common abbreviation for ""north"" and ""st"" is abbreviation for ""street"".  
+- The city and ZIP code are the same.  
+- According to the grading criteria, it is sufficient if semantics are approximately the same or point to the same entity. The response here matches the target address precisely in meaning, just abbreviated.  
+
+Verdict: 1
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1
+}
+```","165northclarkstreet,fresno,ca93701","165nclarkst,fresno,ca93701",1.0,"exact match, response: (559)233-8657, target: (559)233-8657",(559)233-8657,(559)233-8657,0.0,"Let's analyze each index pair step-by-step according to the criterion:
+
+Criterion summary:  
+- The response needs to have approximately the same semantics or point to the same entity as the standard answer.  
+- Word-for-word correspondence is not required.  
+- The scoring range is binary: 0 (incorrect) or 1 (correct).  
+
+---
+
+### idx_0
+- Target answer: ""8am-4:30pm""  
+- Response answer: ""notprovided""  
+- Analysis: The response ""notprovided"" does not match or even approximately match the given target time range. It essentially means no answer or missing answer, so the semantics do not align with the reference.  
+- Judgment: 0
+
+### idx_1
+- Target answer: ""closed""  
+- Response answer: ""notprovided""  
+- Analysis: Again, ""notprovided"" does not match the target ""closed,"" so it fails the semantic similarity criterion.  
+- Judgment: 0
+
+---
+
+### Final scoring results in JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0
+}
+```",closed,notprovided
+fpawomen'shealth-tulare,,1.0,,,,,,tulare,,,,"1068ncherrystreet,tulare,ca93274",,,,(559)233-0990,,,,closed,
+plannedparenthood-familyfirsthealthcenter,,1.0,,,,,,fresno,,,,"6095n.1ststreet,fresno,ca93710",,,,(559)446-1515,,,,closed,
+plannedparenthood-maderahealthcenter,,1.0,,,,,,madera,,,,"500e.almondave,#1,madera,ca93637",,,,(559)675-1133,,,,closed,
+plannedparenthood-mercedhealthcenter,,1.0,,,,,,merced,,,,"3166collinsdrive,merced,ca95348",,,,(209)723-7751,,,,closed,

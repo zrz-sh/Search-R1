@@ -1,0 +1,365 @@
+exist_flag_gt,exist_flag_response,发生场所(学校),发生场所(学校)_before_map,案件发生日期,案件发生日期_before_map,凶手姓名_llm_judge,凶手姓名_llm_judge_eval_msg,凶手姓名_query,凶手姓名_response,凶手年龄(行凶时)_llm_judge,凶手年龄(行凶时)_llm_judge_eval_msg,凶手年龄(行凶时)_query,凶手年龄(行凶时)_response,凶手结局_llm_judge,凶手结局_llm_judge_eval_msg,凶手结局_query,凶手结局_response,凶手身份_llm_judge,凶手身份_llm_judge_eval_msg,凶手身份_query,凶手身份_response,发生场所(学校)_exact_match,发生场所(学校)_exact_match_eval_msg,所在州_llm_judge,所在州_llm_judge_eval_msg,所在州_query,所在州_response,案件发生日期_exact_match,案件发生日期_exact_match_eval_msg,死亡人数_number_near,死亡人数_number_near_eval_msg,死亡人数_query,死亡人数_response
+,,丰盛生命基督教学校,丰盛生命基督教学校,2024/12/17,2024/12/16,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- The response should be roughly semantically equal or refer to the same entity as the target.  
+- Exact word-for-word matching is not required.
+
+---
+
+**idx_0:**  
+- Response: “娜奥米·佩雷斯” (Naomi Perez)  
+- Target: “娜塔莉·鲁普诺（natalierupnow）” (Natalie Lupnow)  
+- Analysis: The two names are different persons. No indication they refer to the same entity.  
+- Conclusion: score = 0
+
+**idx_1:**  
+- Response: “贝勒·卡特” (Baylor Carter)  
+- Target: “萨尔瓦多·拉莫斯” (Salvador Ramos)  
+- Analysis: Different people with different names. No semantic matching or same referent.  
+- Conclusion: score = 0
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0
+}
+```",娜塔莉·鲁普诺（natalierupnow）,娜奥米·佩雷斯,1.0,"Let me analyze each pair according to the criterion:
+
+- Criterion: The response should have roughly the same meaning as the standard answer, or at least point to the same entity. Exact wording is not required.
+
+1. idx_0:  
+   - Response: ""15""  
+   - Target: ""15""  
+   - Analysis: Both are exactly the same number. Clearly they refer to the same entity.  
+   - Score: 1
+
+2. idx_1:  
+   - Response: ""18""  
+   - Target: ""18""  
+   - Analysis: Both are exactly the same number. They have the same meaning and refer to the same entity.  
+   - Score: 1
+
+Final scores:  
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1
+}
+```",15,15,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion:  
+- The answer and response need to have roughly the same meaning or point to the same entity.  
+- Exact wording is not required.
+
+---
+
+**idx_0**  
+- Response: ""被捕"" (arrested)  
+- Target: ""自杀身亡"" (committed suicide)  
+- Analysis:  
+  ""被捕"" means ""was arrested"" which is a very different outcome than ""committed suicide"". These are clearly different facts/entities.  
+  Hence, they do NOT have roughly the same semantics.
+
+Score: 0
+
+---
+
+**idx_1**  
+- Response: ""自杀"" (suicide)  
+- Target: ""被击毙"" (killed by shooting)  
+- Analysis:  
+  ""自杀"" means ""committed suicide""; ""被击毙"" means ""was shot dead by someone else"".  
+  They are different causes of death, and distinctly different entities/events. Therefore, no equivalence.
+
+Score: 0
+
+---
+
+### Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0
+}
+```
+",自杀身亡,被捕,1.0,"Let's analyze each pair step by step according to the given criterion:
+
+Criterion: 
+- The response should have a meaning roughly the same as the standard answer or point to the same entity.
+- Exact wording is not necessary.
+
+---
+
+**idx_0**  
+- Standard answer (target): ""是该校学生"" (is a student of the school)  
+- Response: ""学生"" (student)  
+- Analysis: The response ""学生"" means ""student,"" which is a subset of the meaning in the target ""is a student of the school."" Although the target is more specific, the response can be considered to point to the same entity (student). The criterion allows for rough semantic equivalence or pointing to the same entity. Thus, this response is acceptable as correct.  
+- Score: 1
+
+---
+
+**idx_1**  
+- Standard answer (target): ""当地高中生"" (local high school students)  
+- Response: ""未提供"" (not provided)  
+- Analysis: The response means ""not provided,"" which does not convey the same semantic content as ""local high school students."" It certainly does not point to the same entity or have roughly the same meaning.  
+- Score: 0
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0
+}
+```",是该校学生,学生,1.0,key_match,1.0,"First, let's analyze each response against the corresponding target according to the grading criteria:
+
+Criterion:  
+- The meaning must be roughly the same or point to the same entity. Exact character-by-character matching is not required.  
+- Differences due to translation variations are allowed.
+
+---
+
+**idx_0**  
+- Response: ""威斯康辛州""  
+- Target: ""威斯康星州""  
+Analysis:  
+These two names are very close and both refer to the same US state: Wisconsin. The difference is in the last character ""辛"" vs ""星"". This is a minor difference and does not affect identifying the entity ""Wisconsin state"".  
+According to the criterion, they are considered the same entity with minor translation difference allowed.  
+Score: 1
+
+---
+
+**idx_1**  
+- Response: ""德克萨斯州""  
+- Target: ""得克萨斯州""  
+Analysis:  
+These are again two slightly different renderings of ""Texas"". The difference is ""德"" vs ""得"" at the first character. Both refer to the same state ""Texas"".  
+Since the criterion allows minor translation differences, this is acceptable.  
+Score: 1
+
+---
+
+Final scoring results:  
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1
+}
+```",威斯康星州,威斯康辛州,1.0,key_match,0.0,"number not near, response: 3.0, target: 2.0",2,3
+,,尤瓦尔迪罗布小学,罗布小学,2022/05/24,2024/5/24,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- The response should be roughly semantically equal or refer to the same entity as the target.  
+- Exact word-for-word matching is not required.
+
+---
+
+**idx_0:**  
+- Response: “娜奥米·佩雷斯” (Naomi Perez)  
+- Target: “娜塔莉·鲁普诺（natalierupnow）” (Natalie Lupnow)  
+- Analysis: The two names are different persons. No indication they refer to the same entity.  
+- Conclusion: score = 0
+
+**idx_1:**  
+- Response: “贝勒·卡特” (Baylor Carter)  
+- Target: “萨尔瓦多·拉莫斯” (Salvador Ramos)  
+- Analysis: Different people with different names. No semantic matching or same referent.  
+- Conclusion: score = 0
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0
+}
+```",萨尔瓦多·拉莫斯,贝勒·卡特,1.0,"Let me analyze each pair according to the criterion:
+
+- Criterion: The response should have roughly the same meaning as the standard answer, or at least point to the same entity. Exact wording is not required.
+
+1. idx_0:  
+   - Response: ""15""  
+   - Target: ""15""  
+   - Analysis: Both are exactly the same number. Clearly they refer to the same entity.  
+   - Score: 1
+
+2. idx_1:  
+   - Response: ""18""  
+   - Target: ""18""  
+   - Analysis: Both are exactly the same number. They have the same meaning and refer to the same entity.  
+   - Score: 1
+
+Final scores:  
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1
+}
+```",18,18,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion:  
+- The answer and response need to have roughly the same meaning or point to the same entity.  
+- Exact wording is not required.
+
+---
+
+**idx_0**  
+- Response: ""被捕"" (arrested)  
+- Target: ""自杀身亡"" (committed suicide)  
+- Analysis:  
+  ""被捕"" means ""was arrested"" which is a very different outcome than ""committed suicide"". These are clearly different facts/entities.  
+  Hence, they do NOT have roughly the same semantics.
+
+Score: 0
+
+---
+
+**idx_1**  
+- Response: ""自杀"" (suicide)  
+- Target: ""被击毙"" (killed by shooting)  
+- Analysis:  
+  ""自杀"" means ""committed suicide""; ""被击毙"" means ""was shot dead by someone else"".  
+  They are different causes of death, and distinctly different entities/events. Therefore, no equivalence.
+
+Score: 0
+
+---
+
+### Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0
+}
+```
+",被击毙,自杀,0.0,"Let's analyze each pair step by step according to the given criterion:
+
+Criterion: 
+- The response should have a meaning roughly the same as the standard answer or point to the same entity.
+- Exact wording is not necessary.
+
+---
+
+**idx_0**  
+- Standard answer (target): ""是该校学生"" (is a student of the school)  
+- Response: ""学生"" (student)  
+- Analysis: The response ""学生"" means ""student,"" which is a subset of the meaning in the target ""is a student of the school."" Although the target is more specific, the response can be considered to point to the same entity (student). The criterion allows for rough semantic equivalence or pointing to the same entity. Thus, this response is acceptable as correct.  
+- Score: 1
+
+---
+
+**idx_1**  
+- Standard answer (target): ""当地高中生"" (local high school students)  
+- Response: ""未提供"" (not provided)  
+- Analysis: The response means ""not provided,"" which does not convey the same semantic content as ""local high school students."" It certainly does not point to the same entity or have roughly the same meaning.  
+- Score: 0
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0
+}
+```",当地高中生,未提供,1.0,key_match,1.0,"First, let's analyze each response against the corresponding target according to the grading criteria:
+
+Criterion:  
+- The meaning must be roughly the same or point to the same entity. Exact character-by-character matching is not required.  
+- Differences due to translation variations are allowed.
+
+---
+
+**idx_0**  
+- Response: ""威斯康辛州""  
+- Target: ""威斯康星州""  
+Analysis:  
+These two names are very close and both refer to the same US state: Wisconsin. The difference is in the last character ""辛"" vs ""星"". This is a minor difference and does not affect identifying the entity ""Wisconsin state"".  
+According to the criterion, they are considered the same entity with minor translation difference allowed.  
+Score: 1
+
+---
+
+**idx_1**  
+- Response: ""德克萨斯州""  
+- Target: ""得克萨斯州""  
+Analysis:  
+These are again two slightly different renderings of ""Texas"". The difference is ""德"" vs ""得"" at the first character. Both refer to the same state ""Texas"".  
+Since the criterion allows minor translation differences, this is acceptable.  
+Score: 1
+
+---
+
+Final scoring results:  
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1
+}
+```",得克萨斯州,德克萨斯州,1.0,key_match,1.0,"number near in range 10.0%, response: 20.0, target: 21.0",21,20
+1.0,,阿拉巴马大学亨茨维尔分校,,2010/02/12,,,,艾米·毕肖普,,,,44,,,,被逮捕,,,,学校女老师,,,,,,阿拉巴马,,,,,,3,
+1.0,,米拉德南部高中,,2011/01/05,,,,小罗伯特・巴特勒,,,,17,,,,自杀身亡,,,,该校学生,,,,,,内布拉斯加州,,,,,,1,
+1.0,,圣何塞州立大学,,2011/05/10,,,,拿破仑·拉瓦里亚斯·卡利吉兰,,,,54,,,,自杀身亡,,,,即将毕业的商科学生的丈夫,,,,,,加利福尼亚州,,,,,,2,
+1.0,,弗吉尼亚理工大学,,2011/12/08,,,,罗斯・特鲁伊特・阿什利,,,,22,,,,自杀身亡,,,,雷德福大学工商管理专业的在职学生,,,,,,弗吉尼亚州,,,,,,1,
+1.0,,查顿高中,,2012/02/27,,,,t.j.雷恩(t.j.lane),,,,17,,,,终身监禁不得假释,,,,莱克学院学生,,,,,,俄亥俄州,,,,,,3,
+1.0,,美国俄亥俄州一所中学,,2012/02/27,,,,"托马斯thomasmichael""t.j.""laneiii",,,,17,,,,被警方拘押,,,,学生,,,,,,俄亥俄州,,,,,,3,
+1.0,,奥伊科斯大学,,2012/04/02,,,,吴丸（onegoh）,,,,43,,,,自首,,,,韩裔男子，原在该校学习护理,,,,,,加州,,,,,,7,
+1.0,,美国加利福尼亚州一所私立教会学校,,2012/04/12,,,,高旺（onegoh）,,,,43,,,,向警方自首,,,,韩裔美国人,,,,,,加利福尼亚州,,,,,,7,
+1.0,,德州农工大学,,2012/08/13,,,,托马斯·卡菲尔（thomascaffall）,,,,35,,,,被枪毙,,,,精神病患者,,,,,,得克萨斯州,,,,,,3,
+1.0,,桑迪胡克小学,,2012/12/14,,,,亚当·兰扎,,,,20,,,,自杀身亡,,,,其母亲是桑迪·胡克小学的教师,,,,,,康涅狄格州,,,,,,26,
+1.0,,哈泽德社区与技术学院,,2013/01/15,,,,尚未提供,,,,尚未提供,,,,尚未提供,,,,尚未提供,,,,,,肯塔基州,,,,,,2,
+1.0,,圣莫尼卡学院,,2013/06/07,,,,约翰·扎维里（johnzawahri）,,,,23,,,,被击毙,,,,白人男子,,,,,,加利福尼亚州,,,,,,5,
+1.0,,美国内华达sparks中学,,2013/10/21,,,,josereyes,,,,12,,,,自杀,,,,学生,,,,,,内华达州,,,,,,1,
+1.0,,普渡大学,,2014/01/21,,,,科迪·卡曾斯,,,,23,,,,自首/判处65年监禁,,,,卡曾斯是迈尔与另一名教授合开课程《数位系统设计入门》的助教,,,,,,印第安纳州,,,,,,1,
+1.0,,南卡罗来纳州立大学,,2014/01/24,,,,尚未提供,,,,尚未提供,,,,尚未提供,,,,尚未提供,,,,,,南卡罗来纳州,,,,,,1,
+1.0,,加州大学圣塔芭芭拉分校,,2014/05/23,,,,艾略特·罗杰,,,,22,,,,自杀,,,,穆斯林,,,,,,加利福尼亚州,,,,,,7,
+1.0,,西雅图太平洋大学,,2014/06/05,,,,阿伦·伊巴拉,,,,26,,,,在金恩郡监狱看押,,,,不是该校学生,,,,,,华盛顿州,,,,,,1,
+1.0,,美国西北部俄勒冈州雷诺兹中学,,2014/06/10,,,,尚未提供,,,,尚未提供,,,,死亡,,,,尚未提供,,,,,,俄勒冈州,,,,,,1,
+1.0,,美国西北部华盛顿州西雅图市以北的marysville-pilchuck中学,,2014/10/24,,,,jaylenrayfryberg,,,,15,,,,自杀,,,,学生,,,,,,华盛顿州,,,,,,4,
+1.0,,安普夸社区学院,,2015/10/01,,,,克里斯托夫（克里斯）·哈珀·默瑟,,,,26,,,,自杀,,,,是该校学生,,,,,,俄勒冈州,,,,,,9,
+1.0,,北亚利桑那大学,,2015/10/09,,,,史蒂芬·琼斯,,,,18,,,,被警方拘留,,,,该校新生,,,,,,亚利桑那州,,,,,,1,
+1.0,,汤维尔小学,,2016/09/28,,,,杰西·奥斯本（jesseosborne）,,,,14,,,,监狱服刑，不得假释,,,,尚不清楚,,,,,,南卡罗来纳州,,,,,,2,
+1.0,,加利福尼亚州圣贝纳迪诺北园小学,,2017/04/10,,,,塞德里克·安德森（cedricanderson）,,,,53,,,,自杀身亡,,,,男性,,,,,,加利福尼亚州,,,,,,2,
+1.0,,北湖学院,,2017/05/03,,,,亚德里安·托里斯（adrianvictortorres）,,,,23,,,,开枪自杀,,,,学生,,,,,,得克萨斯州,,,,,,1,
+1.0,,佛里曼高中,,2017/09/13,,,,克莱布·夏普（calebsharpe）,,,,15,,,,25年监禁,,,,学生,,,,,,华盛顿州,,,,,,1,
+1.0,,阿兹特克高中,,2017/12/07,,,,尚未提供,,,,尚未提供,,,,死亡,,,,同校学生,,,,,,新墨西哥州,,,,,,2,
+1.0,,马歇尔高级中学,,2018/01/23,,,,加比·帕克（gabeparker）,,,,15,,,,被捕,,,,高中学生,,,,,,肯塔基州,,,,,,2,
+1.0,,帕克兰道格拉斯高中,,2018/02/14,,,,尼古拉斯·克鲁兹,,,,19,,,,终身监禁且不得假释,,,,曾在该校就读，后被开除,,,,,,佛罗里达州,,,,,,17,
+1.0,,中密歇根大学,,2018/03/02,,,,jamesericdavisjr.,,,,19,,,,在逃,,,,该大学大二学生,,,,,,密歇根州,,,,,,2,
+1.0,,霍里曼高中（huffmanhighschool）,,2018/03/07,,,,michaeljeromebarber,,,,17,,,,尚未提供,,,,尚未提供,,,,,,阿拉巴马州,,,,,,1,
+1.0,,圣达菲高中,,2018/05/18,,,,迪米特里奥斯,,,,17,,,,被逮捕,,,,是该校学生,,,,,,得克萨斯州,,,,,,10,
+1.0,,奥本大学,,2018/09/09,,,,尚未提供,,,,尚未提供,,,,尚未提供,,,,尚未提供,,,,,,亚拉巴马州,,,,,,1,
+1.0,,巴特勒高中,,2018/10/29,,,,尚未提供,,,,尚未提供,,,,被逮捕,,,,同校学生,,,,,,北卡罗来纳州,,,,,,1,
+1.0,,美国北卡罗来纳大学夏洛特分校,,2019/04/30,,,,特里斯坦·安德鲁·特雷尔（trystanandrewterrell）,,,,22,,,,被捕,,,,尚未提供,,,,,,北卡罗来纳州,,,,,,2,
+1.0,,高地牧场stem学校,,2019/05/07,,,,德文·埃里克森（devonerickson）、亚力克·麦金尼（alecmckinney）,,,,18,,,,被拘捕,,,,该校学生,,,,,,科罗拉多州,,,,,,1,
+1.0,,索格斯高中,,2019/11/14,,,,纳撒尼尔·伯豪,,,,16,,,,自杀身亡,,,,亚裔学生,,,,,,加利福尼亚州,,,,,,2,
+1.0,,农工大学康莫斯分校的宿舍楼内,,2020/02/03,,,,雅克⋅德肖恩⋅史密斯,,,,21,,,,逮捕了嫌疑人,,,,尚不清楚,,,,,,得克萨斯州,,,,,,2,
+1.0,,诺克斯维尔市一所高中,,2021/04/12,,,,尚未提供,,,,尚未提供,,,,被击毙,,,,尚未提供,,,,,,田纳西州,,,,,,1,
+1.0,,格兰布林州立大学,,2021/10/17,,,,尚未提供,,,,尚未提供,,,,尚未提供,,,,尚未提供,,,,,,路易斯安那州,,,,,,1,
+1.0,,美国密歇根州牛津一所中学,,2021/11/30,,,,伊森·克伦布利（ethancrumbley）,,,,15,,,,终身监禁、不得保释,,,,学生,,,,,,密歇根州,,,,,,4,
+1.0,,弗吉尼亚桥水学院bridgewatercollegeinvirginia,,2022/02/01,,,,亚历山大·卡贝尔（alexanderwyattcampbell）,,,,27,,,,已被拘留,,,,尚未提供,,,,,,弗吉尼亚州,,,,,,2,
+1.0,,首府得梅因市东部高中,,2022/03/07,,,,凯文·马丁内斯、丹尼尔·埃尔南德斯,,,,16、18,,,,20年监禁、尚未提供,,,,尚未提供,,,,,,艾奥瓦州/爱荷华州,,,,,,1,
+1.0,,新奥尔良的泽维尔大学,,2022/05/31,,,,尚未提供,,,,尚未提供,,,,拘留了相关嫌疑人,,,,尚未提供,,,,,,路易斯安那州,,,,,,1,
+1.0,,奥克兰学校,,2022/09/28,,,,多名枪手,,,,尚未提供,,,,至少2名枪手在逃,,,,枪击案与帮派有关,,,,,,加利福尼亚州,,,,,,1,
+1.0,,麦克莱恩高中,,2022/09/30,,,,尚未提供,,,,17,,,,追捕,,,,非洲裔男性,,,,,,俄克拉荷马州,,,,,,1,
+1.0,,中央视觉与表演艺术高中,,2022/10/24,,,,奥兰多·哈里斯,,,,19,,,,被击毙,,,,该学校毕业学生,,,,,,密苏里州,,,,,,2,
+1.0,,弗吉尼亚大学,,2022/11/13,,,,克里斯托弗·达内尔·琼斯,,,,22,,,,被逮捕,,,,是该校学生,,,,,,弗吉尼亚州,,,,,,3,
+1.0,,密歇根州立大学,,2023/02/13,,,,安东尼·迈克瑞（anthonydwaynemcrae）,,,,43,,,,大概死于自伤,,,,非裔男性,,,,,,密歇根州,,,,,,3,
+1.0,,圣约学校,,2023/03/27,,,,奥黛丽·黑尔,,,,28,,,,被击毙,,,,纳什维尔居民，曾就读于事发学校,,,,,,田纳西州,,,,,,6,
+1.0,,罗斯州立学院,,2023/04/24,,,,布兰登·莫里塞特（brandonmorrissette）,,,,30,,,,逮捕了嫌疑人,,,,尚未提供,,,,,,俄克拉何马州,,,,,,1,
+1.0,,北卡罗莱纳大学教堂山分校考迪尔实验室,,2023/08/28,,,,齐太磊,,,,34,,,,被警方拘留,,,,华人博士生,,,,,,北卡罗来纳州,,,,,,1,
+1.0,,伍斯特州立大学,,2023/10/28,,,,kevinrodriguez,,,,18,,,,一名嫌疑人已被逮捕,,,,非该校学生,,,,,,马萨诸塞州,,,,,,1,
+1.0,,内华达大学拉斯维加斯分校,,2023/12/06,,,,安东尼·波利托,,,,67,,,,被击毙,,,,大学教授,,,,,,内达华州,,,,,,3,
+1.0,,佩里高中,,2024/01/04,,,,迪伦·杰西·巴特勒,,,,17,,,,开枪自毙,,,,该校学生,,,,,,艾奥瓦州,,,,,,1,
+1.0,,特拉华州立大学,,2024/04/21,,,,"destryjones,damienhinson",,,,20&18,,,,被起诉,,,,尚未提供,,,,,,特拉华州,,,,,,1,
+1.0,,阿巴拉契高中,,2024/09/04,,,,科尔特·格雷（coltgray）,,,,14,,,,嫌疑人被逮捕，并将被视作成年人接受审讯,,,,是该校学生,,,,,,佐治亚州,,,,,,4,
+1.0,,塔斯基吉大学,,2024/11/10,,,,雅克兹·迈里克(jaquezmyrick),,,,25,,,,面临非法持有机关枪的联邦指控,,,,尚未提供,,,,,,亚拉巴马州,,,,,,1,
+,1.0,阿巴拉契高中,阿帕拉奇高中,2024/5/4,2024/5/4,,,,马修·埃文斯,,,,18,,,,被捕,,,,未提供,,,,,,佐治亚州,,,,,,4

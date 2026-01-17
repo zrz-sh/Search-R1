@@ -1,0 +1,1717 @@
+exist_flag_gt,exist_flag_response,年度,年度_before_map,排名,排名_before_map,姓名（中文）_llm_judge,姓名（中文）_llm_judge_eval_msg,姓名（中文）_query,姓名（中文）_response,姓名（英文）_llm_judge,姓名（英文）_llm_judge_eval_msg,姓名（英文）_query,姓名（英文）_response,年度_exact_match,年度_exact_match_eval_msg,排名_exact_match,排名_exact_match_eval_msg,财富值（亿美元）_number_near,财富值（亿美元）_number_near_eval_msg,财富值（亿美元）_query,财富值（亿美元）_response,财富来源_llm_judge,财富来源_llm_judge_eval_msg,财富来源_query,财富来源_response
+,,2019,2019,1,1,1.0,"分析过程及判定标准：
+
+根据给定的判分标准：  
+- 如果回答内容与参考答案语义相同、指向的实体一致，则得1分。  
+- 姓名的音译存在差异的情况下也可得1分，但此处无此类问题。  
+- 只要回答的实体名称与参考答案完全匹配或指向同一实体即为正确。
+
+逐项分析：  
+
+- idx_0: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_1: 回答“比尔·盖茨”，参考“比尔·盖茨”，一致，1分。  
+- idx_2: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_3: 回答“比尔·盖茨”，参考“比尔·盖茨”，一致，1分。  
+- idx_4: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_5: 回答“埃隆·马斯克”，参考“埃隆·马斯克”，一致，1分。  
+- idx_6: 回答“埃隆·马斯克”，参考“埃隆·马斯克”，一致，1分。  
+- idx_7: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_8: 回答“伯纳德·阿尔诺及家族”，参考“伯纳德·阿尔诺及家族”，一致，1分。  
+- idx_9: 回答“埃隆·马斯克”，参考“埃隆·马斯克”，一致，1分。  
+- idx_10: 回答“伯纳德·阿尔诺及家族”，参考“伯纳德·阿尔诺及家族”，一致，1分。  
+- idx_11: 回答“杰夫·贝索斯”，参考“埃隆·马斯克”，不一致，0分。
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",杰夫·贝索斯,杰夫·贝索斯,1.0,"分析过程：
+
+根据给定标准答案和响应，评分标准为：
+
+- 只要响应与标准答案语义相同或指向相同实体即可得分1
+- 不需要字字对应
+- 评分只有0或1
+
+对应项一一分析：
+
+- idx_0: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_1: response ""billgates"" vs target ""billgates"" —— 完全一致，得1分
+- idx_2: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_3: response ""billgates"" vs target ""billgates"" —— 完全一致，得1分
+- idx_4: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_5: response ""elonmusk"" vs target ""elonmusk"" —— 完全一致，得1分
+- idx_6: response ""elonmusk"" vs target ""elonmusk"" —— 完全一致，得1分
+- idx_7: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_8: response ""bernardarnault&family"" vs target ""bernardarnault&family"" —— 完全一致，得1分
+- idx_9: response ""elonmusk"" vs target ""elonmusk"" —— 完全一致，得1分
+- idx_10: response ""bernardarnault&family"" vs target ""bernardarnault&family"" —— 完全一致，得1分
+- idx_11: response ""jeffbezos"" vs target ""elonmusk"" —— 不一致，实体不同，得0分
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",jeffbezos,jeffbezos,1.0,key_match,1.0,key_match,1.0,"number near in range 5.0%, response: 1310.0, target: 1310.0",1310,1310,1.0,"分析过程如下：
+
+评分标准是：只要回答与参考答案语义相同或指向实体一致，即判定为正确，得分1；否则得分0。
+
+逐条分析：
+
+- idx_0: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_1: response = “微软”，target = “微软”  
+  指向实体完全一致，得分1。
+
+- idx_2: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_3: response = “微软”，target = “微软”  
+  指向实体完全一致，得分1。
+
+- idx_4: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_5: response = “特斯拉、spacex”，target = “特斯拉、spacex”  
+  完全一致，得分1。
+
+- idx_6: response = “特斯拉、spacex”，target = “特斯拉、spacex”  
+  完全一致，得分1。
+
+- idx_7: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_8: response = “lvmh集团”，target = “lvmh”  
+  “lvmh集团”与“lvmh”指向同一实体，语义一致，得分1。
+
+- idx_9: response = “特斯拉、spacex”，target = “特斯拉”  
+  回答多了一个实体spacex，但只要含有目标实体特斯拉，语义一致，无需字字对应，得分1。
+
+- idx_10: response = “lvmh集团”，target = “lvmh”  
+  同idx_8，得分1。
+
+- idx_11: response = “亚马逊”，target = “特斯拉、spacex”  
+  “亚马逊”与“特斯拉、spacex”实体不一致，语义不符，得分0。
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",亚马逊,亚马逊
+,,2019,2019,2,2,1.0,"分析过程及判定标准：
+
+根据给定的判分标准：  
+- 如果回答内容与参考答案语义相同、指向的实体一致，则得1分。  
+- 姓名的音译存在差异的情况下也可得1分，但此处无此类问题。  
+- 只要回答的实体名称与参考答案完全匹配或指向同一实体即为正确。
+
+逐项分析：  
+
+- idx_0: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_1: 回答“比尔·盖茨”，参考“比尔·盖茨”，一致，1分。  
+- idx_2: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_3: 回答“比尔·盖茨”，参考“比尔·盖茨”，一致，1分。  
+- idx_4: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_5: 回答“埃隆·马斯克”，参考“埃隆·马斯克”，一致，1分。  
+- idx_6: 回答“埃隆·马斯克”，参考“埃隆·马斯克”，一致，1分。  
+- idx_7: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_8: 回答“伯纳德·阿尔诺及家族”，参考“伯纳德·阿尔诺及家族”，一致，1分。  
+- idx_9: 回答“埃隆·马斯克”，参考“埃隆·马斯克”，一致，1分。  
+- idx_10: 回答“伯纳德·阿尔诺及家族”，参考“伯纳德·阿尔诺及家族”，一致，1分。  
+- idx_11: 回答“杰夫·贝索斯”，参考“埃隆·马斯克”，不一致，0分。
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",比尔·盖茨,比尔·盖茨,1.0,"分析过程：
+
+根据给定标准答案和响应，评分标准为：
+
+- 只要响应与标准答案语义相同或指向相同实体即可得分1
+- 不需要字字对应
+- 评分只有0或1
+
+对应项一一分析：
+
+- idx_0: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_1: response ""billgates"" vs target ""billgates"" —— 完全一致，得1分
+- idx_2: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_3: response ""billgates"" vs target ""billgates"" —— 完全一致，得1分
+- idx_4: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_5: response ""elonmusk"" vs target ""elonmusk"" —— 完全一致，得1分
+- idx_6: response ""elonmusk"" vs target ""elonmusk"" —— 完全一致，得1分
+- idx_7: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_8: response ""bernardarnault&family"" vs target ""bernardarnault&family"" —— 完全一致，得1分
+- idx_9: response ""elonmusk"" vs target ""elonmusk"" —— 完全一致，得1分
+- idx_10: response ""bernardarnault&family"" vs target ""bernardarnault&family"" —— 完全一致，得1分
+- idx_11: response ""jeffbezos"" vs target ""elonmusk"" —— 不一致，实体不同，得0分
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",billgates,billgates,1.0,key_match,1.0,key_match,1.0,"number near in range 5.0%, response: 965.0, target: 965.0",965,965,1.0,"分析过程如下：
+
+评分标准是：只要回答与参考答案语义相同或指向实体一致，即判定为正确，得分1；否则得分0。
+
+逐条分析：
+
+- idx_0: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_1: response = “微软”，target = “微软”  
+  指向实体完全一致，得分1。
+
+- idx_2: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_3: response = “微软”，target = “微软”  
+  指向实体完全一致，得分1。
+
+- idx_4: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_5: response = “特斯拉、spacex”，target = “特斯拉、spacex”  
+  完全一致，得分1。
+
+- idx_6: response = “特斯拉、spacex”，target = “特斯拉、spacex”  
+  完全一致，得分1。
+
+- idx_7: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_8: response = “lvmh集团”，target = “lvmh”  
+  “lvmh集团”与“lvmh”指向同一实体，语义一致，得分1。
+
+- idx_9: response = “特斯拉、spacex”，target = “特斯拉”  
+  回答多了一个实体spacex，但只要含有目标实体特斯拉，语义一致，无需字字对应，得分1。
+
+- idx_10: response = “lvmh集团”，target = “lvmh”  
+  同idx_8，得分1。
+
+- idx_11: response = “亚马逊”，target = “特斯拉、spacex”  
+  “亚马逊”与“特斯拉、spacex”实体不一致，语义不符，得分0。
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",微软,微软
+,,2020,2020,1,1,1.0,"分析过程及判定标准：
+
+根据给定的判分标准：  
+- 如果回答内容与参考答案语义相同、指向的实体一致，则得1分。  
+- 姓名的音译存在差异的情况下也可得1分，但此处无此类问题。  
+- 只要回答的实体名称与参考答案完全匹配或指向同一实体即为正确。
+
+逐项分析：  
+
+- idx_0: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_1: 回答“比尔·盖茨”，参考“比尔·盖茨”，一致，1分。  
+- idx_2: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_3: 回答“比尔·盖茨”，参考“比尔·盖茨”，一致，1分。  
+- idx_4: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_5: 回答“埃隆·马斯克”，参考“埃隆·马斯克”，一致，1分。  
+- idx_6: 回答“埃隆·马斯克”，参考“埃隆·马斯克”，一致，1分。  
+- idx_7: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_8: 回答“伯纳德·阿尔诺及家族”，参考“伯纳德·阿尔诺及家族”，一致，1分。  
+- idx_9: 回答“埃隆·马斯克”，参考“埃隆·马斯克”，一致，1分。  
+- idx_10: 回答“伯纳德·阿尔诺及家族”，参考“伯纳德·阿尔诺及家族”，一致，1分。  
+- idx_11: 回答“杰夫·贝索斯”，参考“埃隆·马斯克”，不一致，0分。
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",杰夫·贝索斯,杰夫·贝索斯,1.0,"分析过程：
+
+根据给定标准答案和响应，评分标准为：
+
+- 只要响应与标准答案语义相同或指向相同实体即可得分1
+- 不需要字字对应
+- 评分只有0或1
+
+对应项一一分析：
+
+- idx_0: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_1: response ""billgates"" vs target ""billgates"" —— 完全一致，得1分
+- idx_2: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_3: response ""billgates"" vs target ""billgates"" —— 完全一致，得1分
+- idx_4: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_5: response ""elonmusk"" vs target ""elonmusk"" —— 完全一致，得1分
+- idx_6: response ""elonmusk"" vs target ""elonmusk"" —— 完全一致，得1分
+- idx_7: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_8: response ""bernardarnault&family"" vs target ""bernardarnault&family"" —— 完全一致，得1分
+- idx_9: response ""elonmusk"" vs target ""elonmusk"" —— 完全一致，得1分
+- idx_10: response ""bernardarnault&family"" vs target ""bernardarnault&family"" —— 完全一致，得1分
+- idx_11: response ""jeffbezos"" vs target ""elonmusk"" —— 不一致，实体不同，得0分
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",jeffbezos,jeffbezos,1.0,key_match,1.0,key_match,0.0,"number not near, response: 1770.0, target: 1130.0",1130,1770,1.0,"分析过程如下：
+
+评分标准是：只要回答与参考答案语义相同或指向实体一致，即判定为正确，得分1；否则得分0。
+
+逐条分析：
+
+- idx_0: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_1: response = “微软”，target = “微软”  
+  指向实体完全一致，得分1。
+
+- idx_2: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_3: response = “微软”，target = “微软”  
+  指向实体完全一致，得分1。
+
+- idx_4: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_5: response = “特斯拉、spacex”，target = “特斯拉、spacex”  
+  完全一致，得分1。
+
+- idx_6: response = “特斯拉、spacex”，target = “特斯拉、spacex”  
+  完全一致，得分1。
+
+- idx_7: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_8: response = “lvmh集团”，target = “lvmh”  
+  “lvmh集团”与“lvmh”指向同一实体，语义一致，得分1。
+
+- idx_9: response = “特斯拉、spacex”，target = “特斯拉”  
+  回答多了一个实体spacex，但只要含有目标实体特斯拉，语义一致，无需字字对应，得分1。
+
+- idx_10: response = “lvmh集团”，target = “lvmh”  
+  同idx_8，得分1。
+
+- idx_11: response = “亚马逊”，target = “特斯拉、spacex”  
+  “亚马逊”与“特斯拉、spacex”实体不一致，语义不符，得分0。
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",亚马逊,亚马逊
+,,2020,2020,2,2,1.0,"分析过程及判定标准：
+
+根据给定的判分标准：  
+- 如果回答内容与参考答案语义相同、指向的实体一致，则得1分。  
+- 姓名的音译存在差异的情况下也可得1分，但此处无此类问题。  
+- 只要回答的实体名称与参考答案完全匹配或指向同一实体即为正确。
+
+逐项分析：  
+
+- idx_0: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_1: 回答“比尔·盖茨”，参考“比尔·盖茨”，一致，1分。  
+- idx_2: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_3: 回答“比尔·盖茨”，参考“比尔·盖茨”，一致，1分。  
+- idx_4: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_5: 回答“埃隆·马斯克”，参考“埃隆·马斯克”，一致，1分。  
+- idx_6: 回答“埃隆·马斯克”，参考“埃隆·马斯克”，一致，1分。  
+- idx_7: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_8: 回答“伯纳德·阿尔诺及家族”，参考“伯纳德·阿尔诺及家族”，一致，1分。  
+- idx_9: 回答“埃隆·马斯克”，参考“埃隆·马斯克”，一致，1分。  
+- idx_10: 回答“伯纳德·阿尔诺及家族”，参考“伯纳德·阿尔诺及家族”，一致，1分。  
+- idx_11: 回答“杰夫·贝索斯”，参考“埃隆·马斯克”，不一致，0分。
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",比尔·盖茨,比尔·盖茨,1.0,"分析过程：
+
+根据给定标准答案和响应，评分标准为：
+
+- 只要响应与标准答案语义相同或指向相同实体即可得分1
+- 不需要字字对应
+- 评分只有0或1
+
+对应项一一分析：
+
+- idx_0: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_1: response ""billgates"" vs target ""billgates"" —— 完全一致，得1分
+- idx_2: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_3: response ""billgates"" vs target ""billgates"" —— 完全一致，得1分
+- idx_4: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_5: response ""elonmusk"" vs target ""elonmusk"" —— 完全一致，得1分
+- idx_6: response ""elonmusk"" vs target ""elonmusk"" —— 完全一致，得1分
+- idx_7: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_8: response ""bernardarnault&family"" vs target ""bernardarnault&family"" —— 完全一致，得1分
+- idx_9: response ""elonmusk"" vs target ""elonmusk"" —— 完全一致，得1分
+- idx_10: response ""bernardarnault&family"" vs target ""bernardarnault&family"" —— 完全一致，得1分
+- idx_11: response ""jeffbezos"" vs target ""elonmusk"" —— 不一致，实体不同，得0分
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",billgates,billgates,1.0,key_match,1.0,key_match,0.0,"number not near, response: 1280.0, target: 980.0",980,1280,1.0,"分析过程如下：
+
+评分标准是：只要回答与参考答案语义相同或指向实体一致，即判定为正确，得分1；否则得分0。
+
+逐条分析：
+
+- idx_0: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_1: response = “微软”，target = “微软”  
+  指向实体完全一致，得分1。
+
+- idx_2: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_3: response = “微软”，target = “微软”  
+  指向实体完全一致，得分1。
+
+- idx_4: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_5: response = “特斯拉、spacex”，target = “特斯拉、spacex”  
+  完全一致，得分1。
+
+- idx_6: response = “特斯拉、spacex”，target = “特斯拉、spacex”  
+  完全一致，得分1。
+
+- idx_7: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_8: response = “lvmh集团”，target = “lvmh”  
+  “lvmh集团”与“lvmh”指向同一实体，语义一致，得分1。
+
+- idx_9: response = “特斯拉、spacex”，target = “特斯拉”  
+  回答多了一个实体spacex，但只要含有目标实体特斯拉，语义一致，无需字字对应，得分1。
+
+- idx_10: response = “lvmh集团”，target = “lvmh”  
+  同idx_8，得分1。
+
+- idx_11: response = “亚马逊”，target = “特斯拉、spacex”  
+  “亚马逊”与“特斯拉、spacex”实体不一致，语义不符，得分0。
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",微软,微软
+,,2021,2021,1,1,1.0,"分析过程及判定标准：
+
+根据给定的判分标准：  
+- 如果回答内容与参考答案语义相同、指向的实体一致，则得1分。  
+- 姓名的音译存在差异的情况下也可得1分，但此处无此类问题。  
+- 只要回答的实体名称与参考答案完全匹配或指向同一实体即为正确。
+
+逐项分析：  
+
+- idx_0: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_1: 回答“比尔·盖茨”，参考“比尔·盖茨”，一致，1分。  
+- idx_2: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_3: 回答“比尔·盖茨”，参考“比尔·盖茨”，一致，1分。  
+- idx_4: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_5: 回答“埃隆·马斯克”，参考“埃隆·马斯克”，一致，1分。  
+- idx_6: 回答“埃隆·马斯克”，参考“埃隆·马斯克”，一致，1分。  
+- idx_7: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_8: 回答“伯纳德·阿尔诺及家族”，参考“伯纳德·阿尔诺及家族”，一致，1分。  
+- idx_9: 回答“埃隆·马斯克”，参考“埃隆·马斯克”，一致，1分。  
+- idx_10: 回答“伯纳德·阿尔诺及家族”，参考“伯纳德·阿尔诺及家族”，一致，1分。  
+- idx_11: 回答“杰夫·贝索斯”，参考“埃隆·马斯克”，不一致，0分。
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",杰夫·贝索斯,杰夫·贝索斯,1.0,"分析过程：
+
+根据给定标准答案和响应，评分标准为：
+
+- 只要响应与标准答案语义相同或指向相同实体即可得分1
+- 不需要字字对应
+- 评分只有0或1
+
+对应项一一分析：
+
+- idx_0: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_1: response ""billgates"" vs target ""billgates"" —— 完全一致，得1分
+- idx_2: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_3: response ""billgates"" vs target ""billgates"" —— 完全一致，得1分
+- idx_4: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_5: response ""elonmusk"" vs target ""elonmusk"" —— 完全一致，得1分
+- idx_6: response ""elonmusk"" vs target ""elonmusk"" —— 完全一致，得1分
+- idx_7: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_8: response ""bernardarnault&family"" vs target ""bernardarnault&family"" —— 完全一致，得1分
+- idx_9: response ""elonmusk"" vs target ""elonmusk"" —— 完全一致，得1分
+- idx_10: response ""bernardarnault&family"" vs target ""bernardarnault&family"" —— 完全一致，得1分
+- idx_11: response ""jeffbezos"" vs target ""elonmusk"" —— 不一致，实体不同，得0分
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",jeffbezos,jeffbezos,1.0,key_match,1.0,key_match,1.0,"number near in range 5.0%, response: 1770.0, target: 1770.0",1770,1770,1.0,"分析过程如下：
+
+评分标准是：只要回答与参考答案语义相同或指向实体一致，即判定为正确，得分1；否则得分0。
+
+逐条分析：
+
+- idx_0: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_1: response = “微软”，target = “微软”  
+  指向实体完全一致，得分1。
+
+- idx_2: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_3: response = “微软”，target = “微软”  
+  指向实体完全一致，得分1。
+
+- idx_4: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_5: response = “特斯拉、spacex”，target = “特斯拉、spacex”  
+  完全一致，得分1。
+
+- idx_6: response = “特斯拉、spacex”，target = “特斯拉、spacex”  
+  完全一致，得分1。
+
+- idx_7: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_8: response = “lvmh集团”，target = “lvmh”  
+  “lvmh集团”与“lvmh”指向同一实体，语义一致，得分1。
+
+- idx_9: response = “特斯拉、spacex”，target = “特斯拉”  
+  回答多了一个实体spacex，但只要含有目标实体特斯拉，语义一致，无需字字对应，得分1。
+
+- idx_10: response = “lvmh集团”，target = “lvmh”  
+  同idx_8，得分1。
+
+- idx_11: response = “亚马逊”，target = “特斯拉、spacex”  
+  “亚马逊”与“特斯拉、spacex”实体不一致，语义不符，得分0。
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",亚马逊,亚马逊
+,,2021,2021,2,2,1.0,"分析过程及判定标准：
+
+根据给定的判分标准：  
+- 如果回答内容与参考答案语义相同、指向的实体一致，则得1分。  
+- 姓名的音译存在差异的情况下也可得1分，但此处无此类问题。  
+- 只要回答的实体名称与参考答案完全匹配或指向同一实体即为正确。
+
+逐项分析：  
+
+- idx_0: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_1: 回答“比尔·盖茨”，参考“比尔·盖茨”，一致，1分。  
+- idx_2: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_3: 回答“比尔·盖茨”，参考“比尔·盖茨”，一致，1分。  
+- idx_4: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_5: 回答“埃隆·马斯克”，参考“埃隆·马斯克”，一致，1分。  
+- idx_6: 回答“埃隆·马斯克”，参考“埃隆·马斯克”，一致，1分。  
+- idx_7: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_8: 回答“伯纳德·阿尔诺及家族”，参考“伯纳德·阿尔诺及家族”，一致，1分。  
+- idx_9: 回答“埃隆·马斯克”，参考“埃隆·马斯克”，一致，1分。  
+- idx_10: 回答“伯纳德·阿尔诺及家族”，参考“伯纳德·阿尔诺及家族”，一致，1分。  
+- idx_11: 回答“杰夫·贝索斯”，参考“埃隆·马斯克”，不一致，0分。
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",埃隆·马斯克,埃隆·马斯克,1.0,"分析过程：
+
+根据给定标准答案和响应，评分标准为：
+
+- 只要响应与标准答案语义相同或指向相同实体即可得分1
+- 不需要字字对应
+- 评分只有0或1
+
+对应项一一分析：
+
+- idx_0: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_1: response ""billgates"" vs target ""billgates"" —— 完全一致，得1分
+- idx_2: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_3: response ""billgates"" vs target ""billgates"" —— 完全一致，得1分
+- idx_4: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_5: response ""elonmusk"" vs target ""elonmusk"" —— 完全一致，得1分
+- idx_6: response ""elonmusk"" vs target ""elonmusk"" —— 完全一致，得1分
+- idx_7: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_8: response ""bernardarnault&family"" vs target ""bernardarnault&family"" —— 完全一致，得1分
+- idx_9: response ""elonmusk"" vs target ""elonmusk"" —— 完全一致，得1分
+- idx_10: response ""bernardarnault&family"" vs target ""bernardarnault&family"" —— 完全一致，得1分
+- idx_11: response ""jeffbezos"" vs target ""elonmusk"" —— 不一致，实体不同，得0分
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",elonmusk,elonmusk,1.0,key_match,1.0,key_match,1.0,"number near in range 5.0%, response: 1510.0, target: 1510.0",1510,1510,1.0,"分析过程如下：
+
+评分标准是：只要回答与参考答案语义相同或指向实体一致，即判定为正确，得分1；否则得分0。
+
+逐条分析：
+
+- idx_0: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_1: response = “微软”，target = “微软”  
+  指向实体完全一致，得分1。
+
+- idx_2: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_3: response = “微软”，target = “微软”  
+  指向实体完全一致，得分1。
+
+- idx_4: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_5: response = “特斯拉、spacex”，target = “特斯拉、spacex”  
+  完全一致，得分1。
+
+- idx_6: response = “特斯拉、spacex”，target = “特斯拉、spacex”  
+  完全一致，得分1。
+
+- idx_7: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_8: response = “lvmh集团”，target = “lvmh”  
+  “lvmh集团”与“lvmh”指向同一实体，语义一致，得分1。
+
+- idx_9: response = “特斯拉、spacex”，target = “特斯拉”  
+  回答多了一个实体spacex，但只要含有目标实体特斯拉，语义一致，无需字字对应，得分1。
+
+- idx_10: response = “lvmh集团”，target = “lvmh”  
+  同idx_8，得分1。
+
+- idx_11: response = “亚马逊”，target = “特斯拉、spacex”  
+  “亚马逊”与“特斯拉、spacex”实体不一致，语义不符，得分0。
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",特斯拉、spacex,特斯拉、spacex
+,,2022,2022,1,1,1.0,"分析过程及判定标准：
+
+根据给定的判分标准：  
+- 如果回答内容与参考答案语义相同、指向的实体一致，则得1分。  
+- 姓名的音译存在差异的情况下也可得1分，但此处无此类问题。  
+- 只要回答的实体名称与参考答案完全匹配或指向同一实体即为正确。
+
+逐项分析：  
+
+- idx_0: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_1: 回答“比尔·盖茨”，参考“比尔·盖茨”，一致，1分。  
+- idx_2: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_3: 回答“比尔·盖茨”，参考“比尔·盖茨”，一致，1分。  
+- idx_4: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_5: 回答“埃隆·马斯克”，参考“埃隆·马斯克”，一致，1分。  
+- idx_6: 回答“埃隆·马斯克”，参考“埃隆·马斯克”，一致，1分。  
+- idx_7: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_8: 回答“伯纳德·阿尔诺及家族”，参考“伯纳德·阿尔诺及家族”，一致，1分。  
+- idx_9: 回答“埃隆·马斯克”，参考“埃隆·马斯克”，一致，1分。  
+- idx_10: 回答“伯纳德·阿尔诺及家族”，参考“伯纳德·阿尔诺及家族”，一致，1分。  
+- idx_11: 回答“杰夫·贝索斯”，参考“埃隆·马斯克”，不一致，0分。
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",埃隆·马斯克,埃隆·马斯克,1.0,"分析过程：
+
+根据给定标准答案和响应，评分标准为：
+
+- 只要响应与标准答案语义相同或指向相同实体即可得分1
+- 不需要字字对应
+- 评分只有0或1
+
+对应项一一分析：
+
+- idx_0: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_1: response ""billgates"" vs target ""billgates"" —— 完全一致，得1分
+- idx_2: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_3: response ""billgates"" vs target ""billgates"" —— 完全一致，得1分
+- idx_4: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_5: response ""elonmusk"" vs target ""elonmusk"" —— 完全一致，得1分
+- idx_6: response ""elonmusk"" vs target ""elonmusk"" —— 完全一致，得1分
+- idx_7: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_8: response ""bernardarnault&family"" vs target ""bernardarnault&family"" —— 完全一致，得1分
+- idx_9: response ""elonmusk"" vs target ""elonmusk"" —— 完全一致，得1分
+- idx_10: response ""bernardarnault&family"" vs target ""bernardarnault&family"" —— 完全一致，得1分
+- idx_11: response ""jeffbezos"" vs target ""elonmusk"" —— 不一致，实体不同，得0分
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",elonmusk,elonmusk,1.0,key_match,1.0,key_match,1.0,"number near in range 5.0%, response: 2190.0, target: 2190.0",2190,2190,1.0,"分析过程如下：
+
+评分标准是：只要回答与参考答案语义相同或指向实体一致，即判定为正确，得分1；否则得分0。
+
+逐条分析：
+
+- idx_0: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_1: response = “微软”，target = “微软”  
+  指向实体完全一致，得分1。
+
+- idx_2: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_3: response = “微软”，target = “微软”  
+  指向实体完全一致，得分1。
+
+- idx_4: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_5: response = “特斯拉、spacex”，target = “特斯拉、spacex”  
+  完全一致，得分1。
+
+- idx_6: response = “特斯拉、spacex”，target = “特斯拉、spacex”  
+  完全一致，得分1。
+
+- idx_7: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_8: response = “lvmh集团”，target = “lvmh”  
+  “lvmh集团”与“lvmh”指向同一实体，语义一致，得分1。
+
+- idx_9: response = “特斯拉、spacex”，target = “特斯拉”  
+  回答多了一个实体spacex，但只要含有目标实体特斯拉，语义一致，无需字字对应，得分1。
+
+- idx_10: response = “lvmh集团”，target = “lvmh”  
+  同idx_8，得分1。
+
+- idx_11: response = “亚马逊”，target = “特斯拉、spacex”  
+  “亚马逊”与“特斯拉、spacex”实体不一致，语义不符，得分0。
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",特斯拉、spacex,特斯拉、spacex
+,,2022,2022,2,2,1.0,"分析过程及判定标准：
+
+根据给定的判分标准：  
+- 如果回答内容与参考答案语义相同、指向的实体一致，则得1分。  
+- 姓名的音译存在差异的情况下也可得1分，但此处无此类问题。  
+- 只要回答的实体名称与参考答案完全匹配或指向同一实体即为正确。
+
+逐项分析：  
+
+- idx_0: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_1: 回答“比尔·盖茨”，参考“比尔·盖茨”，一致，1分。  
+- idx_2: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_3: 回答“比尔·盖茨”，参考“比尔·盖茨”，一致，1分。  
+- idx_4: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_5: 回答“埃隆·马斯克”，参考“埃隆·马斯克”，一致，1分。  
+- idx_6: 回答“埃隆·马斯克”，参考“埃隆·马斯克”，一致，1分。  
+- idx_7: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_8: 回答“伯纳德·阿尔诺及家族”，参考“伯纳德·阿尔诺及家族”，一致，1分。  
+- idx_9: 回答“埃隆·马斯克”，参考“埃隆·马斯克”，一致，1分。  
+- idx_10: 回答“伯纳德·阿尔诺及家族”，参考“伯纳德·阿尔诺及家族”，一致，1分。  
+- idx_11: 回答“杰夫·贝索斯”，参考“埃隆·马斯克”，不一致，0分。
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",杰夫·贝索斯,杰夫·贝索斯,1.0,"分析过程：
+
+根据给定标准答案和响应，评分标准为：
+
+- 只要响应与标准答案语义相同或指向相同实体即可得分1
+- 不需要字字对应
+- 评分只有0或1
+
+对应项一一分析：
+
+- idx_0: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_1: response ""billgates"" vs target ""billgates"" —— 完全一致，得1分
+- idx_2: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_3: response ""billgates"" vs target ""billgates"" —— 完全一致，得1分
+- idx_4: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_5: response ""elonmusk"" vs target ""elonmusk"" —— 完全一致，得1分
+- idx_6: response ""elonmusk"" vs target ""elonmusk"" —— 完全一致，得1分
+- idx_7: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_8: response ""bernardarnault&family"" vs target ""bernardarnault&family"" —— 完全一致，得1分
+- idx_9: response ""elonmusk"" vs target ""elonmusk"" —— 完全一致，得1分
+- idx_10: response ""bernardarnault&family"" vs target ""bernardarnault&family"" —— 完全一致，得1分
+- idx_11: response ""jeffbezos"" vs target ""elonmusk"" —— 不一致，实体不同，得0分
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",jeffbezos,jeffbezos,1.0,key_match,1.0,key_match,1.0,"number near in range 5.0%, response: 1710.0, target: 1710.0",1710,1710,1.0,"分析过程如下：
+
+评分标准是：只要回答与参考答案语义相同或指向实体一致，即判定为正确，得分1；否则得分0。
+
+逐条分析：
+
+- idx_0: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_1: response = “微软”，target = “微软”  
+  指向实体完全一致，得分1。
+
+- idx_2: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_3: response = “微软”，target = “微软”  
+  指向实体完全一致，得分1。
+
+- idx_4: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_5: response = “特斯拉、spacex”，target = “特斯拉、spacex”  
+  完全一致，得分1。
+
+- idx_6: response = “特斯拉、spacex”，target = “特斯拉、spacex”  
+  完全一致，得分1。
+
+- idx_7: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_8: response = “lvmh集团”，target = “lvmh”  
+  “lvmh集团”与“lvmh”指向同一实体，语义一致，得分1。
+
+- idx_9: response = “特斯拉、spacex”，target = “特斯拉”  
+  回答多了一个实体spacex，但只要含有目标实体特斯拉，语义一致，无需字字对应，得分1。
+
+- idx_10: response = “lvmh集团”，target = “lvmh”  
+  同idx_8，得分1。
+
+- idx_11: response = “亚马逊”，target = “特斯拉、spacex”  
+  “亚马逊”与“特斯拉、spacex”实体不一致，语义不符，得分0。
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",亚马逊,亚马逊
+,,2023,2023,1,1,1.0,"分析过程及判定标准：
+
+根据给定的判分标准：  
+- 如果回答内容与参考答案语义相同、指向的实体一致，则得1分。  
+- 姓名的音译存在差异的情况下也可得1分，但此处无此类问题。  
+- 只要回答的实体名称与参考答案完全匹配或指向同一实体即为正确。
+
+逐项分析：  
+
+- idx_0: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_1: 回答“比尔·盖茨”，参考“比尔·盖茨”，一致，1分。  
+- idx_2: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_3: 回答“比尔·盖茨”，参考“比尔·盖茨”，一致，1分。  
+- idx_4: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_5: 回答“埃隆·马斯克”，参考“埃隆·马斯克”，一致，1分。  
+- idx_6: 回答“埃隆·马斯克”，参考“埃隆·马斯克”，一致，1分。  
+- idx_7: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_8: 回答“伯纳德·阿尔诺及家族”，参考“伯纳德·阿尔诺及家族”，一致，1分。  
+- idx_9: 回答“埃隆·马斯克”，参考“埃隆·马斯克”，一致，1分。  
+- idx_10: 回答“伯纳德·阿尔诺及家族”，参考“伯纳德·阿尔诺及家族”，一致，1分。  
+- idx_11: 回答“杰夫·贝索斯”，参考“埃隆·马斯克”，不一致，0分。
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",伯纳德·阿尔诺及家族,伯纳德·阿尔诺及家族,1.0,"分析过程：
+
+根据给定标准答案和响应，评分标准为：
+
+- 只要响应与标准答案语义相同或指向相同实体即可得分1
+- 不需要字字对应
+- 评分只有0或1
+
+对应项一一分析：
+
+- idx_0: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_1: response ""billgates"" vs target ""billgates"" —— 完全一致，得1分
+- idx_2: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_3: response ""billgates"" vs target ""billgates"" —— 完全一致，得1分
+- idx_4: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_5: response ""elonmusk"" vs target ""elonmusk"" —— 完全一致，得1分
+- idx_6: response ""elonmusk"" vs target ""elonmusk"" —— 完全一致，得1分
+- idx_7: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_8: response ""bernardarnault&family"" vs target ""bernardarnault&family"" —— 完全一致，得1分
+- idx_9: response ""elonmusk"" vs target ""elonmusk"" —— 完全一致，得1分
+- idx_10: response ""bernardarnault&family"" vs target ""bernardarnault&family"" —— 完全一致，得1分
+- idx_11: response ""jeffbezos"" vs target ""elonmusk"" —— 不一致，实体不同，得0分
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",bernardarnault&family,bernardarnault&family,1.0,key_match,1.0,key_match,1.0,"number near in range 5.0%, response: 2110.0, target: 2110.0",2110,2110,1.0,"分析过程如下：
+
+评分标准是：只要回答与参考答案语义相同或指向实体一致，即判定为正确，得分1；否则得分0。
+
+逐条分析：
+
+- idx_0: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_1: response = “微软”，target = “微软”  
+  指向实体完全一致，得分1。
+
+- idx_2: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_3: response = “微软”，target = “微软”  
+  指向实体完全一致，得分1。
+
+- idx_4: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_5: response = “特斯拉、spacex”，target = “特斯拉、spacex”  
+  完全一致，得分1。
+
+- idx_6: response = “特斯拉、spacex”，target = “特斯拉、spacex”  
+  完全一致，得分1。
+
+- idx_7: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_8: response = “lvmh集团”，target = “lvmh”  
+  “lvmh集团”与“lvmh”指向同一实体，语义一致，得分1。
+
+- idx_9: response = “特斯拉、spacex”，target = “特斯拉”  
+  回答多了一个实体spacex，但只要含有目标实体特斯拉，语义一致，无需字字对应，得分1。
+
+- idx_10: response = “lvmh集团”，target = “lvmh”  
+  同idx_8，得分1。
+
+- idx_11: response = “亚马逊”，target = “特斯拉、spacex”  
+  “亚马逊”与“特斯拉、spacex”实体不一致，语义不符，得分0。
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",lvmh,lvmh集团
+,,2023,2023,2,2,1.0,"分析过程及判定标准：
+
+根据给定的判分标准：  
+- 如果回答内容与参考答案语义相同、指向的实体一致，则得1分。  
+- 姓名的音译存在差异的情况下也可得1分，但此处无此类问题。  
+- 只要回答的实体名称与参考答案完全匹配或指向同一实体即为正确。
+
+逐项分析：  
+
+- idx_0: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_1: 回答“比尔·盖茨”，参考“比尔·盖茨”，一致，1分。  
+- idx_2: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_3: 回答“比尔·盖茨”，参考“比尔·盖茨”，一致，1分。  
+- idx_4: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_5: 回答“埃隆·马斯克”，参考“埃隆·马斯克”，一致，1分。  
+- idx_6: 回答“埃隆·马斯克”，参考“埃隆·马斯克”，一致，1分。  
+- idx_7: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_8: 回答“伯纳德·阿尔诺及家族”，参考“伯纳德·阿尔诺及家族”，一致，1分。  
+- idx_9: 回答“埃隆·马斯克”，参考“埃隆·马斯克”，一致，1分。  
+- idx_10: 回答“伯纳德·阿尔诺及家族”，参考“伯纳德·阿尔诺及家族”，一致，1分。  
+- idx_11: 回答“杰夫·贝索斯”，参考“埃隆·马斯克”，不一致，0分。
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",埃隆·马斯克,埃隆·马斯克,1.0,"分析过程：
+
+根据给定标准答案和响应，评分标准为：
+
+- 只要响应与标准答案语义相同或指向相同实体即可得分1
+- 不需要字字对应
+- 评分只有0或1
+
+对应项一一分析：
+
+- idx_0: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_1: response ""billgates"" vs target ""billgates"" —— 完全一致，得1分
+- idx_2: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_3: response ""billgates"" vs target ""billgates"" —— 完全一致，得1分
+- idx_4: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_5: response ""elonmusk"" vs target ""elonmusk"" —— 完全一致，得1分
+- idx_6: response ""elonmusk"" vs target ""elonmusk"" —— 完全一致，得1分
+- idx_7: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_8: response ""bernardarnault&family"" vs target ""bernardarnault&family"" —— 完全一致，得1分
+- idx_9: response ""elonmusk"" vs target ""elonmusk"" —— 完全一致，得1分
+- idx_10: response ""bernardarnault&family"" vs target ""bernardarnault&family"" —— 完全一致，得1分
+- idx_11: response ""jeffbezos"" vs target ""elonmusk"" —— 不一致，实体不同，得0分
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",elonmusk,elonmusk,1.0,key_match,1.0,key_match,1.0,"number near in range 5.0%, response: 1880.0, target: 1800.0",1800,1880,1.0,"分析过程如下：
+
+评分标准是：只要回答与参考答案语义相同或指向实体一致，即判定为正确，得分1；否则得分0。
+
+逐条分析：
+
+- idx_0: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_1: response = “微软”，target = “微软”  
+  指向实体完全一致，得分1。
+
+- idx_2: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_3: response = “微软”，target = “微软”  
+  指向实体完全一致，得分1。
+
+- idx_4: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_5: response = “特斯拉、spacex”，target = “特斯拉、spacex”  
+  完全一致，得分1。
+
+- idx_6: response = “特斯拉、spacex”，target = “特斯拉、spacex”  
+  完全一致，得分1。
+
+- idx_7: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_8: response = “lvmh集团”，target = “lvmh”  
+  “lvmh集团”与“lvmh”指向同一实体，语义一致，得分1。
+
+- idx_9: response = “特斯拉、spacex”，target = “特斯拉”  
+  回答多了一个实体spacex，但只要含有目标实体特斯拉，语义一致，无需字字对应，得分1。
+
+- idx_10: response = “lvmh集团”，target = “lvmh”  
+  同idx_8，得分1。
+
+- idx_11: response = “亚马逊”，target = “特斯拉、spacex”  
+  “亚马逊”与“特斯拉、spacex”实体不一致，语义不符，得分0。
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",特斯拉,特斯拉、spacex
+,,2024,2024,1,1,1.0,"分析过程及判定标准：
+
+根据给定的判分标准：  
+- 如果回答内容与参考答案语义相同、指向的实体一致，则得1分。  
+- 姓名的音译存在差异的情况下也可得1分，但此处无此类问题。  
+- 只要回答的实体名称与参考答案完全匹配或指向同一实体即为正确。
+
+逐项分析：  
+
+- idx_0: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_1: 回答“比尔·盖茨”，参考“比尔·盖茨”，一致，1分。  
+- idx_2: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_3: 回答“比尔·盖茨”，参考“比尔·盖茨”，一致，1分。  
+- idx_4: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_5: 回答“埃隆·马斯克”，参考“埃隆·马斯克”，一致，1分。  
+- idx_6: 回答“埃隆·马斯克”，参考“埃隆·马斯克”，一致，1分。  
+- idx_7: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_8: 回答“伯纳德·阿尔诺及家族”，参考“伯纳德·阿尔诺及家族”，一致，1分。  
+- idx_9: 回答“埃隆·马斯克”，参考“埃隆·马斯克”，一致，1分。  
+- idx_10: 回答“伯纳德·阿尔诺及家族”，参考“伯纳德·阿尔诺及家族”，一致，1分。  
+- idx_11: 回答“杰夫·贝索斯”，参考“埃隆·马斯克”，不一致，0分。
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",伯纳德·阿尔诺及家族,伯纳德·阿尔诺及家族,1.0,"分析过程：
+
+根据给定标准答案和响应，评分标准为：
+
+- 只要响应与标准答案语义相同或指向相同实体即可得分1
+- 不需要字字对应
+- 评分只有0或1
+
+对应项一一分析：
+
+- idx_0: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_1: response ""billgates"" vs target ""billgates"" —— 完全一致，得1分
+- idx_2: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_3: response ""billgates"" vs target ""billgates"" —— 完全一致，得1分
+- idx_4: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_5: response ""elonmusk"" vs target ""elonmusk"" —— 完全一致，得1分
+- idx_6: response ""elonmusk"" vs target ""elonmusk"" —— 完全一致，得1分
+- idx_7: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_8: response ""bernardarnault&family"" vs target ""bernardarnault&family"" —— 完全一致，得1分
+- idx_9: response ""elonmusk"" vs target ""elonmusk"" —— 完全一致，得1分
+- idx_10: response ""bernardarnault&family"" vs target ""bernardarnault&family"" —— 完全一致，得1分
+- idx_11: response ""jeffbezos"" vs target ""elonmusk"" —— 不一致，实体不同，得0分
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",bernardarnault&family,bernardarnault&family,1.0,key_match,1.0,key_match,0.0,"number not near, response: 2110.0, target: 2330.0",2330,2110,1.0,"分析过程如下：
+
+评分标准是：只要回答与参考答案语义相同或指向实体一致，即判定为正确，得分1；否则得分0。
+
+逐条分析：
+
+- idx_0: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_1: response = “微软”，target = “微软”  
+  指向实体完全一致，得分1。
+
+- idx_2: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_3: response = “微软”，target = “微软”  
+  指向实体完全一致，得分1。
+
+- idx_4: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_5: response = “特斯拉、spacex”，target = “特斯拉、spacex”  
+  完全一致，得分1。
+
+- idx_6: response = “特斯拉、spacex”，target = “特斯拉、spacex”  
+  完全一致，得分1。
+
+- idx_7: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_8: response = “lvmh集团”，target = “lvmh”  
+  “lvmh集团”与“lvmh”指向同一实体，语义一致，得分1。
+
+- idx_9: response = “特斯拉、spacex”，target = “特斯拉”  
+  回答多了一个实体spacex，但只要含有目标实体特斯拉，语义一致，无需字字对应，得分1。
+
+- idx_10: response = “lvmh集团”，target = “lvmh”  
+  同idx_8，得分1。
+
+- idx_11: response = “亚马逊”，target = “特斯拉、spacex”  
+  “亚马逊”与“特斯拉、spacex”实体不一致，语义不符，得分0。
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",lvmh,lvmh集团
+,,2024,2024,2,2,0.0,"分析过程及判定标准：
+
+根据给定的判分标准：  
+- 如果回答内容与参考答案语义相同、指向的实体一致，则得1分。  
+- 姓名的音译存在差异的情况下也可得1分，但此处无此类问题。  
+- 只要回答的实体名称与参考答案完全匹配或指向同一实体即为正确。
+
+逐项分析：  
+
+- idx_0: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_1: 回答“比尔·盖茨”，参考“比尔·盖茨”，一致，1分。  
+- idx_2: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_3: 回答“比尔·盖茨”，参考“比尔·盖茨”，一致，1分。  
+- idx_4: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_5: 回答“埃隆·马斯克”，参考“埃隆·马斯克”，一致，1分。  
+- idx_6: 回答“埃隆·马斯克”，参考“埃隆·马斯克”，一致，1分。  
+- idx_7: 回答“杰夫·贝索斯”，参考“杰夫·贝索斯”，一致，1分。  
+- idx_8: 回答“伯纳德·阿尔诺及家族”，参考“伯纳德·阿尔诺及家族”，一致，1分。  
+- idx_9: 回答“埃隆·马斯克”，参考“埃隆·马斯克”，一致，1分。  
+- idx_10: 回答“伯纳德·阿尔诺及家族”，参考“伯纳德·阿尔诺及家族”，一致，1分。  
+- idx_11: 回答“杰夫·贝索斯”，参考“埃隆·马斯克”，不一致，0分。
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",埃隆·马斯克,杰夫·贝索斯,0.0,"分析过程：
+
+根据给定标准答案和响应，评分标准为：
+
+- 只要响应与标准答案语义相同或指向相同实体即可得分1
+- 不需要字字对应
+- 评分只有0或1
+
+对应项一一分析：
+
+- idx_0: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_1: response ""billgates"" vs target ""billgates"" —— 完全一致，得1分
+- idx_2: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_3: response ""billgates"" vs target ""billgates"" —— 完全一致，得1分
+- idx_4: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_5: response ""elonmusk"" vs target ""elonmusk"" —— 完全一致，得1分
+- idx_6: response ""elonmusk"" vs target ""elonmusk"" —— 完全一致，得1分
+- idx_7: response ""jeffbezos"" vs target ""jeffbezos"" —— 完全一致，得1分
+- idx_8: response ""bernardarnault&family"" vs target ""bernardarnault&family"" —— 完全一致，得1分
+- idx_9: response ""elonmusk"" vs target ""elonmusk"" —— 完全一致，得1分
+- idx_10: response ""bernardarnault&family"" vs target ""bernardarnault&family"" —— 完全一致，得1分
+- idx_11: response ""jeffbezos"" vs target ""elonmusk"" —— 不一致，实体不同，得0分
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",elonmusk,jeffbezos,1.0,key_match,1.0,key_match,0.0,"number not near, response: 1820.0, target: 1950.0",1950,1820,0.0,"分析过程如下：
+
+评分标准是：只要回答与参考答案语义相同或指向实体一致，即判定为正确，得分1；否则得分0。
+
+逐条分析：
+
+- idx_0: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_1: response = “微软”，target = “微软”  
+  指向实体完全一致，得分1。
+
+- idx_2: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_3: response = “微软”，target = “微软”  
+  指向实体完全一致，得分1。
+
+- idx_4: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_5: response = “特斯拉、spacex”，target = “特斯拉、spacex”  
+  完全一致，得分1。
+
+- idx_6: response = “特斯拉、spacex”，target = “特斯拉、spacex”  
+  完全一致，得分1。
+
+- idx_7: response = “亚马逊”，target = “亚马逊”  
+  指向实体完全一致，得分1。
+
+- idx_8: response = “lvmh集团”，target = “lvmh”  
+  “lvmh集团”与“lvmh”指向同一实体，语义一致，得分1。
+
+- idx_9: response = “特斯拉、spacex”，target = “特斯拉”  
+  回答多了一个实体spacex，但只要含有目标实体特斯拉，语义一致，无需字字对应，得分1。
+
+- idx_10: response = “lvmh集团”，target = “lvmh”  
+  同idx_8，得分1。
+
+- idx_11: response = “亚马逊”，target = “特斯拉、spacex”  
+  “亚马逊”与“特斯拉、spacex”实体不一致，语义不符，得分0。
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 0
+}
+```",特斯拉、spacex,亚马逊
+1.0,,2019,,10,,,,拉里·佩奇,,,,larrypage,,,,,,,,508,,,,谷歌,
+1.0,,2019,,3,,,,沃伦·巴菲特,,,,warrenbuffett,,,,,,,,825,,,,伯克希尔哈撒韦,
+1.0,,2019,,4,,,,伯纳德·阿诺特,,,,bernardarnault,,,,,,,,760,,,,奢侈品,
+1.0,,2019,,5,,,,卡洛斯·斯利姆·埃卢,,,,carlosslimhelu,,,,,,,,640,,,,电信,
+1.0,,2019,,6,,,,阿曼西奥·奥特加,,,,amancioortega,,,,,,,,627,,,,zara,
+1.0,,2019,,7,,,,拉里·埃里森,,,,larryellison,,,,,,,,625,,,,软件,
+1.0,,2019,,8,,,,马克·扎克伯格,,,,markzuckerberg,,,,,,,,623,,,,facebook,
+1.0,,2019,,9,,,,迈克尔·布隆伯格,,,,michaelbloomberg,,,,,,,,555,,,,彭博,
+1.0,,2020,,10,,,,罗伯·沃尔顿,,,,robwalton,,,,,,,,541,,,,沃尔玛,
+1.0,,2020,,3,,,,伯纳德·阿尔诺及家族,,,,bernardarnault&family,,,,,,,,760,,,,lvmh,
+1.0,,2020,,4,,,,沃伦·巴菲特,,,,warrenbuffett,,,,,,,,675,,,,伯克希尔哈撒韦,
+1.0,,2020,,5,,,,拉里·埃里森,,,,larryellison,,,,,,,,590,,,,软件,
+1.0,,2020,,6,,,,阿曼西奥·奥特加,,,,amancioortega,,,,,,,,551,,,,zara,
+1.0,,2020,,7,,,,马克·扎克伯格,,,,markzuckerberg,,,,,,,,547,,,,facebook,
+1.0,,2020,,8,,,,吉姆·沃尔顿,,,,jimwalton,,,,,,,,546,,,,沃尔玛,
+1.0,,2020,,9,,,,艾丽斯·沃尔顿,,,,alicewalton,,,,,,,,544,,,,沃尔玛,
+1.0,,2021,,10,,,,穆克什·安巴尼,,,,mukeshambani,,,,,,,,845,,,,多元化经营,
+1.0,,2021,,3,,,,伯纳德·阿尔诺及家族,,,,bernardarnault&family,,,,,,,,1500,,,,lvmh,
+1.0,,2021,,4,,,,比尔·盖茨,,,,billgates,,,,,,,,1240,,,,微软,
+1.0,,2021,,5,,,,马克·扎克伯格,,,,markzuckerberg,,,,,,,,970,,,,facebook,
+1.0,,2021,,6,,,,沃伦·巴菲特,,,,warrenbuffett,,,,,,,,960,,,,伯克希尔哈撒韦,
+1.0,,2021,,7,,,,拉里·埃里森,,,,larryellison,,,,,,,,930,,,,软件,
+1.0,,2021,,8,,,,拉里·佩奇,,,,larrypage,,,,,,,,915,,,,谷歌,
+1.0,,2021,,9,,,,谢尔盖·布林,,,,sergeybrin,,,,,,,,890,,,,谷歌,
+1.0,,2022,,10,,,,穆克什·安巴尼,,,,mukeshambani,,,,,,,,907,,,,多元化经营,
+1.0,,2022,,3,,,,伯纳德·阿尔诺及家族,,,,bernardarnault&family,,,,,,,,1580,,,,lvmh,
+1.0,,2022,,4,,,,比尔·盖茨,,,,billgates,,,,,,,,1290,,,,微软,
+1.0,,2022,,5,,,,沃伦·巴菲特,,,,warrenbuffett,,,,,,,,1180,,,,伯克希尔哈撒韦,
+1.0,,2022,,6,,,,拉里·佩奇,,,,larrypage,,,,,,,,1110,,,,谷歌,
+1.0,,2022,,7,,,,谢尔盖·布林,,,,sergeybrin,,,,,,,,1070,,,,谷歌,
+1.0,,2022,,8,,,,拉里·埃里森,,,,larryellison,,,,,,,,1060,,,,软件,
+1.0,,2022,,9,,,,史蒂夫·鲍尔默,,,,steveballmer,,,,,,,,914,,,,微软,
+1.0,,2023,,10,,,,史蒂夫·鲍尔默,,,,steveballmer,,,,,,,,807,,,,微软,
+1.0,,2023,,3,,,,杰夫·贝索斯,,,,jeffbezos,,,,,,,,1140,,,,亚马逊,
+1.0,,2023,,4,,,,拉里·埃里森,,,,larryellison,,,,,,,,1070,,,,甲骨文,
+1.0,,2023,,5,,,,沃伦·巴菲特,,,,warrenbuffett,,,,,,,,1060,,,,伯克希尔哈撒韦,
+1.0,,2023,,6,,,,比尔·盖茨,,,,billgates,,,,,,,,1040,,,,微软,
+1.0,,2023,,7,,,,迈克尔·布隆伯格,,,,michaelbloomberg,,,,,,,,945,,,,彭博公司,
+1.0,,2023,,8,,,,卡洛斯·斯利姆·埃卢及家族,,,,carlosslimhelufamily,,,,,,,,930,,,,电信,
+1.0,,2023,,9,,,,穆克什·安巴尼,,,,mukeshambani,,,,,,,,834,,,,多元化经营,
+1.0,,2024,,10,,,,拉里·佩奇,,,,larrypage,,,,,,,,1140,,,,谷歌,
+1.0,,2024,,3,,,,杰夫·贝索斯,,,,jeffbezos,,,,,,,,1940,,,,亚马逊,
+1.0,,2024,,4,,,,马克·扎克伯格,,,,markzuckerberg,,,,,,,,1770,,,,meta,
+1.0,,2024,,5,,,,拉里·埃里森,,,,larryellison,,,,,,,,1410,,,,甲骨文,
+1.0,,2024,,6,,,,沃伦·巴菲特,,,,warrenbuffett,,,,,,,,1330,,,,伯克希尔哈撒韦,
+1.0,,2024,,7,,,,比尔·盖茨,,,,billgates,,,,,,,,1280,,,,微软,
+1.0,,2024,,8,,,,史蒂夫·鲍尔默,,,,steveballmer,,,,,,,,1210,,,,微软,
+1.0,,2024,,9,,,,穆克什·安巴尼,,,,mukeshambani,,,,,,,,1160,,,,多元化经营,

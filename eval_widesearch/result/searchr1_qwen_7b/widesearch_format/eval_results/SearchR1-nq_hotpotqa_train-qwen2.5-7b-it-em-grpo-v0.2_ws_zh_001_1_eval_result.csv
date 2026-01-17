@@ -1,0 +1,2941 @@
+exist_flag_gt,exist_flag_response,国家,国家_before_map,电影名,电影名_before_map,国家_exact_match,国家_exact_match_eval_msg,导演_llm_judge,导演_llm_judge_eval_msg,导演_query,导演_response,年份_exact_match,年份_exact_match_eval_msg,年份_query,年份_response,本国累计票房收益_number_near,本国累计票房收益_number_near_eval_msg,本国累计票房收益_query,本国累计票房收益_response,电影名_exact_match,电影名_exact_match_eval_msg,电影类型_llm_judge,电影类型_llm_judge_eval_msg,电影类型_query,电影类型_response
+,,中国,中国,八佰,八佰,1.0,key_match,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion:  
+- The answer can be considered correct if it is semantically the same or refers to the same entity as the standard answer.  
+- A subset of the target is acceptable if no extraneous content included.  
+- Must refer to the same person or entity.  
+
+---
+
+### Analysis:
+
+- idx_0: response '吴京' vs target '管虎'  
+  Completely different persons. Incorrect. Score = 0
+
+- idx_1: response '陈凯歌' vs target '宁浩'  
+  Different persons. Score = 0
+
+- idx_2: response '田晓鹏' vs target '程腾、李炜'  
+  Different people. Score = 0
+
+- idx_3: response 'j·j·艾布拉姆斯' vs target '艾布拉姆斯'  
+  ""j·j·艾布拉姆斯"" = full name, ""艾布拉姆斯"" likely the same person. Acceptable. Score = 1
+
+- idx_4: response '陈凯歌' vs target '陈凯歌、徐克、林超贤'  
+  Response is subset of target, no extra content. Acceptable. Score = 1
+
+- idx_5: response '陈思诚' vs target '贾玲'  
+  Different persons. Score = 0
+
+- idx_6: response '徐峥' vs target '陈思诚'  
+  Different persons. Score = 0
+
+- idx_7: response '陈凯歌' vs target '吴京、章子怡、徐峥、沈腾'  
+  Different people. Score = 0
+
+- idx_8: response '林诣彬' vs target '林诣彬'  
+  Exact match. Score = 1
+
+- idx_9: response '杰克·施瑞曼' vs target '乔·沃茨'  
+  Different persons. Score = 0
+
+- idx_10: response '吴京' vs target '徐克、黄建新、秦天柱'  
+  Different people. Score = 0
+
+- idx_11: response '孙皓' vs target '张吃鱼'  
+  Different people. Score = 0
+
+- idx_12: response '托尼·斯科特' vs target '约瑟夫·科辛斯基'  
+  Different persons. Score = 0
+
+---
+
+### Final scores in JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0
+}
+```",管虎,吴京,1.0,"exact match, response: 2020, target: 2020",2020,2020,0.0,"number not near, response: 15.1, target: 31.1",31.1,15.1,1.0,key_match,1.0,"We have pairs of responses and target (standard) answers for movie genres or types. The criterion says:
+
+- It is enough if the response has roughly the same meaning or points to the same entity.
+- It is enough to provide a subset of the types from the reference answer.
+- Official or authoritative types are also considered correct.
+- Responding with only one sub-type from the reference is considered correct.
+- Other reasonable types are also accepted.
+
+The scoring is binary: 0 or 1.
+
+Let me analyze each pair:
+
+---
+
+**idx_0:**  
+Response: ""剧情""  
+Target: ""剧情战争历史""  
+- Response ""剧情"" is a subset of the three types.  
+- Satisfies criterion: subset OK.  
+=> score 1
+
+---
+
+**idx_1:**  
+Response: ""喜剧""  
+Target: ""剧情喜剧""  
+- Response ""喜剧"" is part of target ""剧情喜剧"".  
+- Subset OK.  
+=> score 1
+
+---
+
+**idx_2:**  
+Response: ""动画""  
+Target: ""奇幻动画动作冒险剧情""  
+- Response ""动画"" is part of the target multi-genre.  
+- Subset OK.  
+=> score 1
+
+---
+
+**idx_3:**  
+Response: ""科幻""  
+Target: ""科幻动作冒险""  
+- Response ""科幻"" is clearly part of target.  
+- Subset OK.  
+=> score 1
+
+---
+
+**idx_4:**  
+Response: ""剧情""  
+Target: ""剧情战争历史""  
+- Same as idx_0, subset OK.  
+=> score 1
+
+---
+
+**idx_5:**  
+Response: ""喜剧""  
+Target: ""喜剧家庭奇幻剧情""  
+- ""喜剧"" is one part of target.  
+- Satisfies criterion.  
+=> score 1
+
+---
+
+**idx_6:**  
+Response: ""喜剧""  
+Target: ""喜剧悬疑动作""  
+- ""喜剧"" is part of target.  
+- OK.  
+=> score 1
+
+---
+
+**idx_7:**  
+Response: ""剧情""  
+Target: ""剧情战争文艺""  
+- ""剧情"" is part of target.  
+- OK.  
+=> score 1
+
+---
+
+**idx_8:**  
+Response: ""动作""  
+Target: ""动作犯罪剧情""  
+- ""动作"" subset of target.  
+- OK.  
+=> score 1
+
+---
+
+**idx_9:**  
+Response: ""超级英雄""  
+Target: ""科幻奇幻动作冒险""  
+- ""超级英雄"" is not in target explicitly.  
+- Is ""超级英雄"" a sub-genre or reasonable reasonable type under ""科幻奇幻动作冒险""?  
+- ""超级英雄"" can be considered a distinct type or subgenre related to sci-fi/fantasy/action.  
+- The criterion says ""答出其中一个子集其他类型内容合理也视为正确"" - other reasonable types also OK.  
+- ""超级英雄"" is a recognized subgenre related to sci-fi, fantasy, and action stories. So considered reasonable.  
+=> score 1
+
+---
+
+**idx_10:**  
+Response: ""剧情""  
+Target: ""历史战争剧情""  
+- ""剧情"" subset OK.  
+=> score 1
+
+---
+
+**idx_11:**  
+Response: ""喜剧""  
+Target: ""喜剧科幻""  
+- ""喜剧"" subset OK.  
+=> score 1
+
+---
+
+**idx_12:**  
+Response: ""动作""  
+Target: ""动作""  
+- Exact match.  
+=> score 1
+
+---
+
+All responses meet the criteria: either a subset of the target genres or a reasonable related genre.
+
+---
+
+Final Scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1
+}
+```",剧情战争历史,剧情
+,,中国,中国,我和我的家乡,我和我的家乡,1.0,key_match,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion:  
+- The answer can be considered correct if it is semantically the same or refers to the same entity as the standard answer.  
+- A subset of the target is acceptable if no extraneous content included.  
+- Must refer to the same person or entity.  
+
+---
+
+### Analysis:
+
+- idx_0: response '吴京' vs target '管虎'  
+  Completely different persons. Incorrect. Score = 0
+
+- idx_1: response '陈凯歌' vs target '宁浩'  
+  Different persons. Score = 0
+
+- idx_2: response '田晓鹏' vs target '程腾、李炜'  
+  Different people. Score = 0
+
+- idx_3: response 'j·j·艾布拉姆斯' vs target '艾布拉姆斯'  
+  ""j·j·艾布拉姆斯"" = full name, ""艾布拉姆斯"" likely the same person. Acceptable. Score = 1
+
+- idx_4: response '陈凯歌' vs target '陈凯歌、徐克、林超贤'  
+  Response is subset of target, no extra content. Acceptable. Score = 1
+
+- idx_5: response '陈思诚' vs target '贾玲'  
+  Different persons. Score = 0
+
+- idx_6: response '徐峥' vs target '陈思诚'  
+  Different persons. Score = 0
+
+- idx_7: response '陈凯歌' vs target '吴京、章子怡、徐峥、沈腾'  
+  Different people. Score = 0
+
+- idx_8: response '林诣彬' vs target '林诣彬'  
+  Exact match. Score = 1
+
+- idx_9: response '杰克·施瑞曼' vs target '乔·沃茨'  
+  Different persons. Score = 0
+
+- idx_10: response '吴京' vs target '徐克、黄建新、秦天柱'  
+  Different people. Score = 0
+
+- idx_11: response '孙皓' vs target '张吃鱼'  
+  Different people. Score = 0
+
+- idx_12: response '托尼·斯科特' vs target '约瑟夫·科辛斯基'  
+  Different persons. Score = 0
+
+---
+
+### Final scores in JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0
+}
+```",宁浩,陈凯歌,1.0,"exact match, response: 2020, target: 2020",2020,2020,0.0,"number not near, response: 7.2, target: 28.3",28.3,7.2,1.0,key_match,1.0,"We have pairs of responses and target (standard) answers for movie genres or types. The criterion says:
+
+- It is enough if the response has roughly the same meaning or points to the same entity.
+- It is enough to provide a subset of the types from the reference answer.
+- Official or authoritative types are also considered correct.
+- Responding with only one sub-type from the reference is considered correct.
+- Other reasonable types are also accepted.
+
+The scoring is binary: 0 or 1.
+
+Let me analyze each pair:
+
+---
+
+**idx_0:**  
+Response: ""剧情""  
+Target: ""剧情战争历史""  
+- Response ""剧情"" is a subset of the three types.  
+- Satisfies criterion: subset OK.  
+=> score 1
+
+---
+
+**idx_1:**  
+Response: ""喜剧""  
+Target: ""剧情喜剧""  
+- Response ""喜剧"" is part of target ""剧情喜剧"".  
+- Subset OK.  
+=> score 1
+
+---
+
+**idx_2:**  
+Response: ""动画""  
+Target: ""奇幻动画动作冒险剧情""  
+- Response ""动画"" is part of the target multi-genre.  
+- Subset OK.  
+=> score 1
+
+---
+
+**idx_3:**  
+Response: ""科幻""  
+Target: ""科幻动作冒险""  
+- Response ""科幻"" is clearly part of target.  
+- Subset OK.  
+=> score 1
+
+---
+
+**idx_4:**  
+Response: ""剧情""  
+Target: ""剧情战争历史""  
+- Same as idx_0, subset OK.  
+=> score 1
+
+---
+
+**idx_5:**  
+Response: ""喜剧""  
+Target: ""喜剧家庭奇幻剧情""  
+- ""喜剧"" is one part of target.  
+- Satisfies criterion.  
+=> score 1
+
+---
+
+**idx_6:**  
+Response: ""喜剧""  
+Target: ""喜剧悬疑动作""  
+- ""喜剧"" is part of target.  
+- OK.  
+=> score 1
+
+---
+
+**idx_7:**  
+Response: ""剧情""  
+Target: ""剧情战争文艺""  
+- ""剧情"" is part of target.  
+- OK.  
+=> score 1
+
+---
+
+**idx_8:**  
+Response: ""动作""  
+Target: ""动作犯罪剧情""  
+- ""动作"" subset of target.  
+- OK.  
+=> score 1
+
+---
+
+**idx_9:**  
+Response: ""超级英雄""  
+Target: ""科幻奇幻动作冒险""  
+- ""超级英雄"" is not in target explicitly.  
+- Is ""超级英雄"" a sub-genre or reasonable reasonable type under ""科幻奇幻动作冒险""?  
+- ""超级英雄"" can be considered a distinct type or subgenre related to sci-fi/fantasy/action.  
+- The criterion says ""答出其中一个子集其他类型内容合理也视为正确"" - other reasonable types also OK.  
+- ""超级英雄"" is a recognized subgenre related to sci-fi, fantasy, and action stories. So considered reasonable.  
+=> score 1
+
+---
+
+**idx_10:**  
+Response: ""剧情""  
+Target: ""历史战争剧情""  
+- ""剧情"" subset OK.  
+=> score 1
+
+---
+
+**idx_11:**  
+Response: ""喜剧""  
+Target: ""喜剧科幻""  
+- ""喜剧"" subset OK.  
+=> score 1
+
+---
+
+**idx_12:**  
+Response: ""动作""  
+Target: ""动作""  
+- Exact match.  
+=> score 1
+
+---
+
+All responses meet the criteria: either a subset of the target genres or a reasonable related genre.
+
+---
+
+Final Scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1
+}
+```",剧情喜剧,喜剧
+,,中国,中国,姜子牙,姜子牙,1.0,key_match,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion:  
+- The answer can be considered correct if it is semantically the same or refers to the same entity as the standard answer.  
+- A subset of the target is acceptable if no extraneous content included.  
+- Must refer to the same person or entity.  
+
+---
+
+### Analysis:
+
+- idx_0: response '吴京' vs target '管虎'  
+  Completely different persons. Incorrect. Score = 0
+
+- idx_1: response '陈凯歌' vs target '宁浩'  
+  Different persons. Score = 0
+
+- idx_2: response '田晓鹏' vs target '程腾、李炜'  
+  Different people. Score = 0
+
+- idx_3: response 'j·j·艾布拉姆斯' vs target '艾布拉姆斯'  
+  ""j·j·艾布拉姆斯"" = full name, ""艾布拉姆斯"" likely the same person. Acceptable. Score = 1
+
+- idx_4: response '陈凯歌' vs target '陈凯歌、徐克、林超贤'  
+  Response is subset of target, no extra content. Acceptable. Score = 1
+
+- idx_5: response '陈思诚' vs target '贾玲'  
+  Different persons. Score = 0
+
+- idx_6: response '徐峥' vs target '陈思诚'  
+  Different persons. Score = 0
+
+- idx_7: response '陈凯歌' vs target '吴京、章子怡、徐峥、沈腾'  
+  Different people. Score = 0
+
+- idx_8: response '林诣彬' vs target '林诣彬'  
+  Exact match. Score = 1
+
+- idx_9: response '杰克·施瑞曼' vs target '乔·沃茨'  
+  Different persons. Score = 0
+
+- idx_10: response '吴京' vs target '徐克、黄建新、秦天柱'  
+  Different people. Score = 0
+
+- idx_11: response '孙皓' vs target '张吃鱼'  
+  Different people. Score = 0
+
+- idx_12: response '托尼·斯科特' vs target '约瑟夫·科辛斯基'  
+  Different persons. Score = 0
+
+---
+
+### Final scores in JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0
+}
+```",程腾、李炜,田晓鹏,1.0,"exact match, response: 2020, target: 2020",2020,2020,0.0,"number not near, response: 6.6, target: 16.0",16.0,6.6,1.0,key_match,1.0,"We have pairs of responses and target (standard) answers for movie genres or types. The criterion says:
+
+- It is enough if the response has roughly the same meaning or points to the same entity.
+- It is enough to provide a subset of the types from the reference answer.
+- Official or authoritative types are also considered correct.
+- Responding with only one sub-type from the reference is considered correct.
+- Other reasonable types are also accepted.
+
+The scoring is binary: 0 or 1.
+
+Let me analyze each pair:
+
+---
+
+**idx_0:**  
+Response: ""剧情""  
+Target: ""剧情战争历史""  
+- Response ""剧情"" is a subset of the three types.  
+- Satisfies criterion: subset OK.  
+=> score 1
+
+---
+
+**idx_1:**  
+Response: ""喜剧""  
+Target: ""剧情喜剧""  
+- Response ""喜剧"" is part of target ""剧情喜剧"".  
+- Subset OK.  
+=> score 1
+
+---
+
+**idx_2:**  
+Response: ""动画""  
+Target: ""奇幻动画动作冒险剧情""  
+- Response ""动画"" is part of the target multi-genre.  
+- Subset OK.  
+=> score 1
+
+---
+
+**idx_3:**  
+Response: ""科幻""  
+Target: ""科幻动作冒险""  
+- Response ""科幻"" is clearly part of target.  
+- Subset OK.  
+=> score 1
+
+---
+
+**idx_4:**  
+Response: ""剧情""  
+Target: ""剧情战争历史""  
+- Same as idx_0, subset OK.  
+=> score 1
+
+---
+
+**idx_5:**  
+Response: ""喜剧""  
+Target: ""喜剧家庭奇幻剧情""  
+- ""喜剧"" is one part of target.  
+- Satisfies criterion.  
+=> score 1
+
+---
+
+**idx_6:**  
+Response: ""喜剧""  
+Target: ""喜剧悬疑动作""  
+- ""喜剧"" is part of target.  
+- OK.  
+=> score 1
+
+---
+
+**idx_7:**  
+Response: ""剧情""  
+Target: ""剧情战争文艺""  
+- ""剧情"" is part of target.  
+- OK.  
+=> score 1
+
+---
+
+**idx_8:**  
+Response: ""动作""  
+Target: ""动作犯罪剧情""  
+- ""动作"" subset of target.  
+- OK.  
+=> score 1
+
+---
+
+**idx_9:**  
+Response: ""超级英雄""  
+Target: ""科幻奇幻动作冒险""  
+- ""超级英雄"" is not in target explicitly.  
+- Is ""超级英雄"" a sub-genre or reasonable reasonable type under ""科幻奇幻动作冒险""?  
+- ""超级英雄"" can be considered a distinct type or subgenre related to sci-fi/fantasy/action.  
+- The criterion says ""答出其中一个子集其他类型内容合理也视为正确"" - other reasonable types also OK.  
+- ""超级英雄"" is a recognized subgenre related to sci-fi, fantasy, and action stories. So considered reasonable.  
+=> score 1
+
+---
+
+**idx_10:**  
+Response: ""剧情""  
+Target: ""历史战争剧情""  
+- ""剧情"" subset OK.  
+=> score 1
+
+---
+
+**idx_11:**  
+Response: ""喜剧""  
+Target: ""喜剧科幻""  
+- ""喜剧"" subset OK.  
+=> score 1
+
+---
+
+**idx_12:**  
+Response: ""动作""  
+Target: ""动作""  
+- Exact match.  
+=> score 1
+
+---
+
+All responses meet the criteria: either a subset of the target genres or a reasonable related genre.
+
+---
+
+Final Scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1
+}
+```",奇幻动画动作冒险剧情,动画
+,,美国,美国,星际大战：天行者崛起,星球大战：天行者的崛起,1.0,key_match,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion:  
+- The answer can be considered correct if it is semantically the same or refers to the same entity as the standard answer.  
+- A subset of the target is acceptable if no extraneous content included.  
+- Must refer to the same person or entity.  
+
+---
+
+### Analysis:
+
+- idx_0: response '吴京' vs target '管虎'  
+  Completely different persons. Incorrect. Score = 0
+
+- idx_1: response '陈凯歌' vs target '宁浩'  
+  Different persons. Score = 0
+
+- idx_2: response '田晓鹏' vs target '程腾、李炜'  
+  Different people. Score = 0
+
+- idx_3: response 'j·j·艾布拉姆斯' vs target '艾布拉姆斯'  
+  ""j·j·艾布拉姆斯"" = full name, ""艾布拉姆斯"" likely the same person. Acceptable. Score = 1
+
+- idx_4: response '陈凯歌' vs target '陈凯歌、徐克、林超贤'  
+  Response is subset of target, no extra content. Acceptable. Score = 1
+
+- idx_5: response '陈思诚' vs target '贾玲'  
+  Different persons. Score = 0
+
+- idx_6: response '徐峥' vs target '陈思诚'  
+  Different persons. Score = 0
+
+- idx_7: response '陈凯歌' vs target '吴京、章子怡、徐峥、沈腾'  
+  Different people. Score = 0
+
+- idx_8: response '林诣彬' vs target '林诣彬'  
+  Exact match. Score = 1
+
+- idx_9: response '杰克·施瑞曼' vs target '乔·沃茨'  
+  Different persons. Score = 0
+
+- idx_10: response '吴京' vs target '徐克、黄建新、秦天柱'  
+  Different people. Score = 0
+
+- idx_11: response '孙皓' vs target '张吃鱼'  
+  Different people. Score = 0
+
+- idx_12: response '托尼·斯科特' vs target '约瑟夫·科辛斯基'  
+  Different persons. Score = 0
+
+---
+
+### Final scores in JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0
+}
+```",艾布拉姆斯,j·j·艾布拉姆斯,1.0,"exact match, response: 2020, target: 2020",2020,2020,0.0,"number not near, response: 10.1, target: 5.2",5.2,10.1,1.0,key_match,1.0,"We have pairs of responses and target (standard) answers for movie genres or types. The criterion says:
+
+- It is enough if the response has roughly the same meaning or points to the same entity.
+- It is enough to provide a subset of the types from the reference answer.
+- Official or authoritative types are also considered correct.
+- Responding with only one sub-type from the reference is considered correct.
+- Other reasonable types are also accepted.
+
+The scoring is binary: 0 or 1.
+
+Let me analyze each pair:
+
+---
+
+**idx_0:**  
+Response: ""剧情""  
+Target: ""剧情战争历史""  
+- Response ""剧情"" is a subset of the three types.  
+- Satisfies criterion: subset OK.  
+=> score 1
+
+---
+
+**idx_1:**  
+Response: ""喜剧""  
+Target: ""剧情喜剧""  
+- Response ""喜剧"" is part of target ""剧情喜剧"".  
+- Subset OK.  
+=> score 1
+
+---
+
+**idx_2:**  
+Response: ""动画""  
+Target: ""奇幻动画动作冒险剧情""  
+- Response ""动画"" is part of the target multi-genre.  
+- Subset OK.  
+=> score 1
+
+---
+
+**idx_3:**  
+Response: ""科幻""  
+Target: ""科幻动作冒险""  
+- Response ""科幻"" is clearly part of target.  
+- Subset OK.  
+=> score 1
+
+---
+
+**idx_4:**  
+Response: ""剧情""  
+Target: ""剧情战争历史""  
+- Same as idx_0, subset OK.  
+=> score 1
+
+---
+
+**idx_5:**  
+Response: ""喜剧""  
+Target: ""喜剧家庭奇幻剧情""  
+- ""喜剧"" is one part of target.  
+- Satisfies criterion.  
+=> score 1
+
+---
+
+**idx_6:**  
+Response: ""喜剧""  
+Target: ""喜剧悬疑动作""  
+- ""喜剧"" is part of target.  
+- OK.  
+=> score 1
+
+---
+
+**idx_7:**  
+Response: ""剧情""  
+Target: ""剧情战争文艺""  
+- ""剧情"" is part of target.  
+- OK.  
+=> score 1
+
+---
+
+**idx_8:**  
+Response: ""动作""  
+Target: ""动作犯罪剧情""  
+- ""动作"" subset of target.  
+- OK.  
+=> score 1
+
+---
+
+**idx_9:**  
+Response: ""超级英雄""  
+Target: ""科幻奇幻动作冒险""  
+- ""超级英雄"" is not in target explicitly.  
+- Is ""超级英雄"" a sub-genre or reasonable reasonable type under ""科幻奇幻动作冒险""?  
+- ""超级英雄"" can be considered a distinct type or subgenre related to sci-fi/fantasy/action.  
+- The criterion says ""答出其中一个子集其他类型内容合理也视为正确"" - other reasonable types also OK.  
+- ""超级英雄"" is a recognized subgenre related to sci-fi, fantasy, and action stories. So considered reasonable.  
+=> score 1
+
+---
+
+**idx_10:**  
+Response: ""剧情""  
+Target: ""历史战争剧情""  
+- ""剧情"" subset OK.  
+=> score 1
+
+---
+
+**idx_11:**  
+Response: ""喜剧""  
+Target: ""喜剧科幻""  
+- ""喜剧"" subset OK.  
+=> score 1
+
+---
+
+**idx_12:**  
+Response: ""动作""  
+Target: ""动作""  
+- Exact match.  
+=> score 1
+
+---
+
+All responses meet the criteria: either a subset of the target genres or a reasonable related genre.
+
+---
+
+Final Scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1
+}
+```",科幻动作冒险,科幻
+,,中国,中国,长津湖,长津湖,1.0,key_match,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion:  
+- The answer can be considered correct if it is semantically the same or refers to the same entity as the standard answer.  
+- A subset of the target is acceptable if no extraneous content included.  
+- Must refer to the same person or entity.  
+
+---
+
+### Analysis:
+
+- idx_0: response '吴京' vs target '管虎'  
+  Completely different persons. Incorrect. Score = 0
+
+- idx_1: response '陈凯歌' vs target '宁浩'  
+  Different persons. Score = 0
+
+- idx_2: response '田晓鹏' vs target '程腾、李炜'  
+  Different people. Score = 0
+
+- idx_3: response 'j·j·艾布拉姆斯' vs target '艾布拉姆斯'  
+  ""j·j·艾布拉姆斯"" = full name, ""艾布拉姆斯"" likely the same person. Acceptable. Score = 1
+
+- idx_4: response '陈凯歌' vs target '陈凯歌、徐克、林超贤'  
+  Response is subset of target, no extra content. Acceptable. Score = 1
+
+- idx_5: response '陈思诚' vs target '贾玲'  
+  Different persons. Score = 0
+
+- idx_6: response '徐峥' vs target '陈思诚'  
+  Different persons. Score = 0
+
+- idx_7: response '陈凯歌' vs target '吴京、章子怡、徐峥、沈腾'  
+  Different people. Score = 0
+
+- idx_8: response '林诣彬' vs target '林诣彬'  
+  Exact match. Score = 1
+
+- idx_9: response '杰克·施瑞曼' vs target '乔·沃茨'  
+  Different persons. Score = 0
+
+- idx_10: response '吴京' vs target '徐克、黄建新、秦天柱'  
+  Different people. Score = 0
+
+- idx_11: response '孙皓' vs target '张吃鱼'  
+  Different people. Score = 0
+
+- idx_12: response '托尼·斯科特' vs target '约瑟夫·科辛斯基'  
+  Different persons. Score = 0
+
+---
+
+### Final scores in JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0
+}
+```",陈凯歌、徐克、林超贤,陈凯歌,1.0,"exact match, response: 2021, target: 2021",2021,2021,1.0,"number near in range 10.0%, response: 57.5, target: 57.7",57.7,57.5,1.0,key_match,1.0,"We have pairs of responses and target (standard) answers for movie genres or types. The criterion says:
+
+- It is enough if the response has roughly the same meaning or points to the same entity.
+- It is enough to provide a subset of the types from the reference answer.
+- Official or authoritative types are also considered correct.
+- Responding with only one sub-type from the reference is considered correct.
+- Other reasonable types are also accepted.
+
+The scoring is binary: 0 or 1.
+
+Let me analyze each pair:
+
+---
+
+**idx_0:**  
+Response: ""剧情""  
+Target: ""剧情战争历史""  
+- Response ""剧情"" is a subset of the three types.  
+- Satisfies criterion: subset OK.  
+=> score 1
+
+---
+
+**idx_1:**  
+Response: ""喜剧""  
+Target: ""剧情喜剧""  
+- Response ""喜剧"" is part of target ""剧情喜剧"".  
+- Subset OK.  
+=> score 1
+
+---
+
+**idx_2:**  
+Response: ""动画""  
+Target: ""奇幻动画动作冒险剧情""  
+- Response ""动画"" is part of the target multi-genre.  
+- Subset OK.  
+=> score 1
+
+---
+
+**idx_3:**  
+Response: ""科幻""  
+Target: ""科幻动作冒险""  
+- Response ""科幻"" is clearly part of target.  
+- Subset OK.  
+=> score 1
+
+---
+
+**idx_4:**  
+Response: ""剧情""  
+Target: ""剧情战争历史""  
+- Same as idx_0, subset OK.  
+=> score 1
+
+---
+
+**idx_5:**  
+Response: ""喜剧""  
+Target: ""喜剧家庭奇幻剧情""  
+- ""喜剧"" is one part of target.  
+- Satisfies criterion.  
+=> score 1
+
+---
+
+**idx_6:**  
+Response: ""喜剧""  
+Target: ""喜剧悬疑动作""  
+- ""喜剧"" is part of target.  
+- OK.  
+=> score 1
+
+---
+
+**idx_7:**  
+Response: ""剧情""  
+Target: ""剧情战争文艺""  
+- ""剧情"" is part of target.  
+- OK.  
+=> score 1
+
+---
+
+**idx_8:**  
+Response: ""动作""  
+Target: ""动作犯罪剧情""  
+- ""动作"" subset of target.  
+- OK.  
+=> score 1
+
+---
+
+**idx_9:**  
+Response: ""超级英雄""  
+Target: ""科幻奇幻动作冒险""  
+- ""超级英雄"" is not in target explicitly.  
+- Is ""超级英雄"" a sub-genre or reasonable reasonable type under ""科幻奇幻动作冒险""?  
+- ""超级英雄"" can be considered a distinct type or subgenre related to sci-fi/fantasy/action.  
+- The criterion says ""答出其中一个子集其他类型内容合理也视为正确"" - other reasonable types also OK.  
+- ""超级英雄"" is a recognized subgenre related to sci-fi, fantasy, and action stories. So considered reasonable.  
+=> score 1
+
+---
+
+**idx_10:**  
+Response: ""剧情""  
+Target: ""历史战争剧情""  
+- ""剧情"" subset OK.  
+=> score 1
+
+---
+
+**idx_11:**  
+Response: ""喜剧""  
+Target: ""喜剧科幻""  
+- ""喜剧"" subset OK.  
+=> score 1
+
+---
+
+**idx_12:**  
+Response: ""动作""  
+Target: ""动作""  
+- Exact match.  
+=> score 1
+
+---
+
+All responses meet the criteria: either a subset of the target genres or a reasonable related genre.
+
+---
+
+Final Scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1
+}
+```",剧情战争历史,剧情
+,,中国,中国,你好，李焕英,你好，李焕英,1.0,key_match,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion:  
+- The answer can be considered correct if it is semantically the same or refers to the same entity as the standard answer.  
+- A subset of the target is acceptable if no extraneous content included.  
+- Must refer to the same person or entity.  
+
+---
+
+### Analysis:
+
+- idx_0: response '吴京' vs target '管虎'  
+  Completely different persons. Incorrect. Score = 0
+
+- idx_1: response '陈凯歌' vs target '宁浩'  
+  Different persons. Score = 0
+
+- idx_2: response '田晓鹏' vs target '程腾、李炜'  
+  Different people. Score = 0
+
+- idx_3: response 'j·j·艾布拉姆斯' vs target '艾布拉姆斯'  
+  ""j·j·艾布拉姆斯"" = full name, ""艾布拉姆斯"" likely the same person. Acceptable. Score = 1
+
+- idx_4: response '陈凯歌' vs target '陈凯歌、徐克、林超贤'  
+  Response is subset of target, no extra content. Acceptable. Score = 1
+
+- idx_5: response '陈思诚' vs target '贾玲'  
+  Different persons. Score = 0
+
+- idx_6: response '徐峥' vs target '陈思诚'  
+  Different persons. Score = 0
+
+- idx_7: response '陈凯歌' vs target '吴京、章子怡、徐峥、沈腾'  
+  Different people. Score = 0
+
+- idx_8: response '林诣彬' vs target '林诣彬'  
+  Exact match. Score = 1
+
+- idx_9: response '杰克·施瑞曼' vs target '乔·沃茨'  
+  Different persons. Score = 0
+
+- idx_10: response '吴京' vs target '徐克、黄建新、秦天柱'  
+  Different people. Score = 0
+
+- idx_11: response '孙皓' vs target '张吃鱼'  
+  Different people. Score = 0
+
+- idx_12: response '托尼·斯科特' vs target '约瑟夫·科辛斯基'  
+  Different persons. Score = 0
+
+---
+
+### Final scores in JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0
+}
+```",贾玲,陈思诚,1.0,"exact match, response: 2021, target: 2021",2021,2021,1.0,"number near in range 10.0%, response: 54.1, target: 54.1",54.1,54.1,1.0,key_match,1.0,"We have pairs of responses and target (standard) answers for movie genres or types. The criterion says:
+
+- It is enough if the response has roughly the same meaning or points to the same entity.
+- It is enough to provide a subset of the types from the reference answer.
+- Official or authoritative types are also considered correct.
+- Responding with only one sub-type from the reference is considered correct.
+- Other reasonable types are also accepted.
+
+The scoring is binary: 0 or 1.
+
+Let me analyze each pair:
+
+---
+
+**idx_0:**  
+Response: ""剧情""  
+Target: ""剧情战争历史""  
+- Response ""剧情"" is a subset of the three types.  
+- Satisfies criterion: subset OK.  
+=> score 1
+
+---
+
+**idx_1:**  
+Response: ""喜剧""  
+Target: ""剧情喜剧""  
+- Response ""喜剧"" is part of target ""剧情喜剧"".  
+- Subset OK.  
+=> score 1
+
+---
+
+**idx_2:**  
+Response: ""动画""  
+Target: ""奇幻动画动作冒险剧情""  
+- Response ""动画"" is part of the target multi-genre.  
+- Subset OK.  
+=> score 1
+
+---
+
+**idx_3:**  
+Response: ""科幻""  
+Target: ""科幻动作冒险""  
+- Response ""科幻"" is clearly part of target.  
+- Subset OK.  
+=> score 1
+
+---
+
+**idx_4:**  
+Response: ""剧情""  
+Target: ""剧情战争历史""  
+- Same as idx_0, subset OK.  
+=> score 1
+
+---
+
+**idx_5:**  
+Response: ""喜剧""  
+Target: ""喜剧家庭奇幻剧情""  
+- ""喜剧"" is one part of target.  
+- Satisfies criterion.  
+=> score 1
+
+---
+
+**idx_6:**  
+Response: ""喜剧""  
+Target: ""喜剧悬疑动作""  
+- ""喜剧"" is part of target.  
+- OK.  
+=> score 1
+
+---
+
+**idx_7:**  
+Response: ""剧情""  
+Target: ""剧情战争文艺""  
+- ""剧情"" is part of target.  
+- OK.  
+=> score 1
+
+---
+
+**idx_8:**  
+Response: ""动作""  
+Target: ""动作犯罪剧情""  
+- ""动作"" subset of target.  
+- OK.  
+=> score 1
+
+---
+
+**idx_9:**  
+Response: ""超级英雄""  
+Target: ""科幻奇幻动作冒险""  
+- ""超级英雄"" is not in target explicitly.  
+- Is ""超级英雄"" a sub-genre or reasonable reasonable type under ""科幻奇幻动作冒险""?  
+- ""超级英雄"" can be considered a distinct type or subgenre related to sci-fi/fantasy/action.  
+- The criterion says ""答出其中一个子集其他类型内容合理也视为正确"" - other reasonable types also OK.  
+- ""超级英雄"" is a recognized subgenre related to sci-fi, fantasy, and action stories. So considered reasonable.  
+=> score 1
+
+---
+
+**idx_10:**  
+Response: ""剧情""  
+Target: ""历史战争剧情""  
+- ""剧情"" subset OK.  
+=> score 1
+
+---
+
+**idx_11:**  
+Response: ""喜剧""  
+Target: ""喜剧科幻""  
+- ""喜剧"" subset OK.  
+=> score 1
+
+---
+
+**idx_12:**  
+Response: ""动作""  
+Target: ""动作""  
+- Exact match.  
+=> score 1
+
+---
+
+All responses meet the criteria: either a subset of the target genres or a reasonable related genre.
+
+---
+
+Final Scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1
+}
+```",喜剧家庭奇幻剧情,喜剧
+,,中国,中国,唐人街探案3,唐人街探案3,1.0,key_match,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion:  
+- The answer can be considered correct if it is semantically the same or refers to the same entity as the standard answer.  
+- A subset of the target is acceptable if no extraneous content included.  
+- Must refer to the same person or entity.  
+
+---
+
+### Analysis:
+
+- idx_0: response '吴京' vs target '管虎'  
+  Completely different persons. Incorrect. Score = 0
+
+- idx_1: response '陈凯歌' vs target '宁浩'  
+  Different persons. Score = 0
+
+- idx_2: response '田晓鹏' vs target '程腾、李炜'  
+  Different people. Score = 0
+
+- idx_3: response 'j·j·艾布拉姆斯' vs target '艾布拉姆斯'  
+  ""j·j·艾布拉姆斯"" = full name, ""艾布拉姆斯"" likely the same person. Acceptable. Score = 1
+
+- idx_4: response '陈凯歌' vs target '陈凯歌、徐克、林超贤'  
+  Response is subset of target, no extra content. Acceptable. Score = 1
+
+- idx_5: response '陈思诚' vs target '贾玲'  
+  Different persons. Score = 0
+
+- idx_6: response '徐峥' vs target '陈思诚'  
+  Different persons. Score = 0
+
+- idx_7: response '陈凯歌' vs target '吴京、章子怡、徐峥、沈腾'  
+  Different people. Score = 0
+
+- idx_8: response '林诣彬' vs target '林诣彬'  
+  Exact match. Score = 1
+
+- idx_9: response '杰克·施瑞曼' vs target '乔·沃茨'  
+  Different persons. Score = 0
+
+- idx_10: response '吴京' vs target '徐克、黄建新、秦天柱'  
+  Different people. Score = 0
+
+- idx_11: response '孙皓' vs target '张吃鱼'  
+  Different people. Score = 0
+
+- idx_12: response '托尼·斯科特' vs target '约瑟夫·科辛斯基'  
+  Different persons. Score = 0
+
+---
+
+### Final scores in JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0
+}
+```",陈思诚,徐峥,1.0,"exact match, response: 2021, target: 2021",2021,2021,1.0,"number near in range 10.0%, response: 45.1, target: 45.2",45.2,45.1,1.0,key_match,1.0,"We have pairs of responses and target (standard) answers for movie genres or types. The criterion says:
+
+- It is enough if the response has roughly the same meaning or points to the same entity.
+- It is enough to provide a subset of the types from the reference answer.
+- Official or authoritative types are also considered correct.
+- Responding with only one sub-type from the reference is considered correct.
+- Other reasonable types are also accepted.
+
+The scoring is binary: 0 or 1.
+
+Let me analyze each pair:
+
+---
+
+**idx_0:**  
+Response: ""剧情""  
+Target: ""剧情战争历史""  
+- Response ""剧情"" is a subset of the three types.  
+- Satisfies criterion: subset OK.  
+=> score 1
+
+---
+
+**idx_1:**  
+Response: ""喜剧""  
+Target: ""剧情喜剧""  
+- Response ""喜剧"" is part of target ""剧情喜剧"".  
+- Subset OK.  
+=> score 1
+
+---
+
+**idx_2:**  
+Response: ""动画""  
+Target: ""奇幻动画动作冒险剧情""  
+- Response ""动画"" is part of the target multi-genre.  
+- Subset OK.  
+=> score 1
+
+---
+
+**idx_3:**  
+Response: ""科幻""  
+Target: ""科幻动作冒险""  
+- Response ""科幻"" is clearly part of target.  
+- Subset OK.  
+=> score 1
+
+---
+
+**idx_4:**  
+Response: ""剧情""  
+Target: ""剧情战争历史""  
+- Same as idx_0, subset OK.  
+=> score 1
+
+---
+
+**idx_5:**  
+Response: ""喜剧""  
+Target: ""喜剧家庭奇幻剧情""  
+- ""喜剧"" is one part of target.  
+- Satisfies criterion.  
+=> score 1
+
+---
+
+**idx_6:**  
+Response: ""喜剧""  
+Target: ""喜剧悬疑动作""  
+- ""喜剧"" is part of target.  
+- OK.  
+=> score 1
+
+---
+
+**idx_7:**  
+Response: ""剧情""  
+Target: ""剧情战争文艺""  
+- ""剧情"" is part of target.  
+- OK.  
+=> score 1
+
+---
+
+**idx_8:**  
+Response: ""动作""  
+Target: ""动作犯罪剧情""  
+- ""动作"" subset of target.  
+- OK.  
+=> score 1
+
+---
+
+**idx_9:**  
+Response: ""超级英雄""  
+Target: ""科幻奇幻动作冒险""  
+- ""超级英雄"" is not in target explicitly.  
+- Is ""超级英雄"" a sub-genre or reasonable reasonable type under ""科幻奇幻动作冒险""?  
+- ""超级英雄"" can be considered a distinct type or subgenre related to sci-fi/fantasy/action.  
+- The criterion says ""答出其中一个子集其他类型内容合理也视为正确"" - other reasonable types also OK.  
+- ""超级英雄"" is a recognized subgenre related to sci-fi, fantasy, and action stories. So considered reasonable.  
+=> score 1
+
+---
+
+**idx_10:**  
+Response: ""剧情""  
+Target: ""历史战争剧情""  
+- ""剧情"" subset OK.  
+=> score 1
+
+---
+
+**idx_11:**  
+Response: ""喜剧""  
+Target: ""喜剧科幻""  
+- ""喜剧"" subset OK.  
+=> score 1
+
+---
+
+**idx_12:**  
+Response: ""动作""  
+Target: ""动作""  
+- Exact match.  
+=> score 1
+
+---
+
+All responses meet the criteria: either a subset of the target genres or a reasonable related genre.
+
+---
+
+Final Scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1
+}
+```",喜剧悬疑动作,喜剧
+,,中国,中国,我和我的父辈,我和我的父辈,1.0,key_match,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion:  
+- The answer can be considered correct if it is semantically the same or refers to the same entity as the standard answer.  
+- A subset of the target is acceptable if no extraneous content included.  
+- Must refer to the same person or entity.  
+
+---
+
+### Analysis:
+
+- idx_0: response '吴京' vs target '管虎'  
+  Completely different persons. Incorrect. Score = 0
+
+- idx_1: response '陈凯歌' vs target '宁浩'  
+  Different persons. Score = 0
+
+- idx_2: response '田晓鹏' vs target '程腾、李炜'  
+  Different people. Score = 0
+
+- idx_3: response 'j·j·艾布拉姆斯' vs target '艾布拉姆斯'  
+  ""j·j·艾布拉姆斯"" = full name, ""艾布拉姆斯"" likely the same person. Acceptable. Score = 1
+
+- idx_4: response '陈凯歌' vs target '陈凯歌、徐克、林超贤'  
+  Response is subset of target, no extra content. Acceptable. Score = 1
+
+- idx_5: response '陈思诚' vs target '贾玲'  
+  Different persons. Score = 0
+
+- idx_6: response '徐峥' vs target '陈思诚'  
+  Different persons. Score = 0
+
+- idx_7: response '陈凯歌' vs target '吴京、章子怡、徐峥、沈腾'  
+  Different people. Score = 0
+
+- idx_8: response '林诣彬' vs target '林诣彬'  
+  Exact match. Score = 1
+
+- idx_9: response '杰克·施瑞曼' vs target '乔·沃茨'  
+  Different persons. Score = 0
+
+- idx_10: response '吴京' vs target '徐克、黄建新、秦天柱'  
+  Different people. Score = 0
+
+- idx_11: response '孙皓' vs target '张吃鱼'  
+  Different people. Score = 0
+
+- idx_12: response '托尼·斯科特' vs target '约瑟夫·科辛斯基'  
+  Different persons. Score = 0
+
+---
+
+### Final scores in JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0
+}
+```",吴京、章子怡、徐峥、沈腾,陈凯歌,1.0,"exact match, response: 2021, target: 2021",2021,2021,1.0,"number near in range 10.0%, response: 14.8, target: 14.8",14.8,14.8,1.0,key_match,1.0,"We have pairs of responses and target (standard) answers for movie genres or types. The criterion says:
+
+- It is enough if the response has roughly the same meaning or points to the same entity.
+- It is enough to provide a subset of the types from the reference answer.
+- Official or authoritative types are also considered correct.
+- Responding with only one sub-type from the reference is considered correct.
+- Other reasonable types are also accepted.
+
+The scoring is binary: 0 or 1.
+
+Let me analyze each pair:
+
+---
+
+**idx_0:**  
+Response: ""剧情""  
+Target: ""剧情战争历史""  
+- Response ""剧情"" is a subset of the three types.  
+- Satisfies criterion: subset OK.  
+=> score 1
+
+---
+
+**idx_1:**  
+Response: ""喜剧""  
+Target: ""剧情喜剧""  
+- Response ""喜剧"" is part of target ""剧情喜剧"".  
+- Subset OK.  
+=> score 1
+
+---
+
+**idx_2:**  
+Response: ""动画""  
+Target: ""奇幻动画动作冒险剧情""  
+- Response ""动画"" is part of the target multi-genre.  
+- Subset OK.  
+=> score 1
+
+---
+
+**idx_3:**  
+Response: ""科幻""  
+Target: ""科幻动作冒险""  
+- Response ""科幻"" is clearly part of target.  
+- Subset OK.  
+=> score 1
+
+---
+
+**idx_4:**  
+Response: ""剧情""  
+Target: ""剧情战争历史""  
+- Same as idx_0, subset OK.  
+=> score 1
+
+---
+
+**idx_5:**  
+Response: ""喜剧""  
+Target: ""喜剧家庭奇幻剧情""  
+- ""喜剧"" is one part of target.  
+- Satisfies criterion.  
+=> score 1
+
+---
+
+**idx_6:**  
+Response: ""喜剧""  
+Target: ""喜剧悬疑动作""  
+- ""喜剧"" is part of target.  
+- OK.  
+=> score 1
+
+---
+
+**idx_7:**  
+Response: ""剧情""  
+Target: ""剧情战争文艺""  
+- ""剧情"" is part of target.  
+- OK.  
+=> score 1
+
+---
+
+**idx_8:**  
+Response: ""动作""  
+Target: ""动作犯罪剧情""  
+- ""动作"" subset of target.  
+- OK.  
+=> score 1
+
+---
+
+**idx_9:**  
+Response: ""超级英雄""  
+Target: ""科幻奇幻动作冒险""  
+- ""超级英雄"" is not in target explicitly.  
+- Is ""超级英雄"" a sub-genre or reasonable reasonable type under ""科幻奇幻动作冒险""?  
+- ""超级英雄"" can be considered a distinct type or subgenre related to sci-fi/fantasy/action.  
+- The criterion says ""答出其中一个子集其他类型内容合理也视为正确"" - other reasonable types also OK.  
+- ""超级英雄"" is a recognized subgenre related to sci-fi, fantasy, and action stories. So considered reasonable.  
+=> score 1
+
+---
+
+**idx_10:**  
+Response: ""剧情""  
+Target: ""历史战争剧情""  
+- ""剧情"" subset OK.  
+=> score 1
+
+---
+
+**idx_11:**  
+Response: ""喜剧""  
+Target: ""喜剧科幻""  
+- ""喜剧"" subset OK.  
+=> score 1
+
+---
+
+**idx_12:**  
+Response: ""动作""  
+Target: ""动作""  
+- Exact match.  
+=> score 1
+
+---
+
+All responses meet the criteria: either a subset of the target genres or a reasonable related genre.
+
+---
+
+Final Scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1
+}
+```",剧情战争文艺,剧情
+,,中国,中国,速度与激情9,速度与激情9,1.0,key_match,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion:  
+- The answer can be considered correct if it is semantically the same or refers to the same entity as the standard answer.  
+- A subset of the target is acceptable if no extraneous content included.  
+- Must refer to the same person or entity.  
+
+---
+
+### Analysis:
+
+- idx_0: response '吴京' vs target '管虎'  
+  Completely different persons. Incorrect. Score = 0
+
+- idx_1: response '陈凯歌' vs target '宁浩'  
+  Different persons. Score = 0
+
+- idx_2: response '田晓鹏' vs target '程腾、李炜'  
+  Different people. Score = 0
+
+- idx_3: response 'j·j·艾布拉姆斯' vs target '艾布拉姆斯'  
+  ""j·j·艾布拉姆斯"" = full name, ""艾布拉姆斯"" likely the same person. Acceptable. Score = 1
+
+- idx_4: response '陈凯歌' vs target '陈凯歌、徐克、林超贤'  
+  Response is subset of target, no extra content. Acceptable. Score = 1
+
+- idx_5: response '陈思诚' vs target '贾玲'  
+  Different persons. Score = 0
+
+- idx_6: response '徐峥' vs target '陈思诚'  
+  Different persons. Score = 0
+
+- idx_7: response '陈凯歌' vs target '吴京、章子怡、徐峥、沈腾'  
+  Different people. Score = 0
+
+- idx_8: response '林诣彬' vs target '林诣彬'  
+  Exact match. Score = 1
+
+- idx_9: response '杰克·施瑞曼' vs target '乔·沃茨'  
+  Different persons. Score = 0
+
+- idx_10: response '吴京' vs target '徐克、黄建新、秦天柱'  
+  Different people. Score = 0
+
+- idx_11: response '孙皓' vs target '张吃鱼'  
+  Different people. Score = 0
+
+- idx_12: response '托尼·斯科特' vs target '约瑟夫·科辛斯基'  
+  Different persons. Score = 0
+
+---
+
+### Final scores in JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0
+}
+```",林诣彬,林诣彬,1.0,"exact match, response: 2021, target: 2021",2021,2021,0.0,"number not near, response: 45.1, target: 13.9",13.9,45.1,1.0,key_match,1.0,"We have pairs of responses and target (standard) answers for movie genres or types. The criterion says:
+
+- It is enough if the response has roughly the same meaning or points to the same entity.
+- It is enough to provide a subset of the types from the reference answer.
+- Official or authoritative types are also considered correct.
+- Responding with only one sub-type from the reference is considered correct.
+- Other reasonable types are also accepted.
+
+The scoring is binary: 0 or 1.
+
+Let me analyze each pair:
+
+---
+
+**idx_0:**  
+Response: ""剧情""  
+Target: ""剧情战争历史""  
+- Response ""剧情"" is a subset of the three types.  
+- Satisfies criterion: subset OK.  
+=> score 1
+
+---
+
+**idx_1:**  
+Response: ""喜剧""  
+Target: ""剧情喜剧""  
+- Response ""喜剧"" is part of target ""剧情喜剧"".  
+- Subset OK.  
+=> score 1
+
+---
+
+**idx_2:**  
+Response: ""动画""  
+Target: ""奇幻动画动作冒险剧情""  
+- Response ""动画"" is part of the target multi-genre.  
+- Subset OK.  
+=> score 1
+
+---
+
+**idx_3:**  
+Response: ""科幻""  
+Target: ""科幻动作冒险""  
+- Response ""科幻"" is clearly part of target.  
+- Subset OK.  
+=> score 1
+
+---
+
+**idx_4:**  
+Response: ""剧情""  
+Target: ""剧情战争历史""  
+- Same as idx_0, subset OK.  
+=> score 1
+
+---
+
+**idx_5:**  
+Response: ""喜剧""  
+Target: ""喜剧家庭奇幻剧情""  
+- ""喜剧"" is one part of target.  
+- Satisfies criterion.  
+=> score 1
+
+---
+
+**idx_6:**  
+Response: ""喜剧""  
+Target: ""喜剧悬疑动作""  
+- ""喜剧"" is part of target.  
+- OK.  
+=> score 1
+
+---
+
+**idx_7:**  
+Response: ""剧情""  
+Target: ""剧情战争文艺""  
+- ""剧情"" is part of target.  
+- OK.  
+=> score 1
+
+---
+
+**idx_8:**  
+Response: ""动作""  
+Target: ""动作犯罪剧情""  
+- ""动作"" subset of target.  
+- OK.  
+=> score 1
+
+---
+
+**idx_9:**  
+Response: ""超级英雄""  
+Target: ""科幻奇幻动作冒险""  
+- ""超级英雄"" is not in target explicitly.  
+- Is ""超级英雄"" a sub-genre or reasonable reasonable type under ""科幻奇幻动作冒险""?  
+- ""超级英雄"" can be considered a distinct type or subgenre related to sci-fi/fantasy/action.  
+- The criterion says ""答出其中一个子集其他类型内容合理也视为正确"" - other reasonable types also OK.  
+- ""超级英雄"" is a recognized subgenre related to sci-fi, fantasy, and action stories. So considered reasonable.  
+=> score 1
+
+---
+
+**idx_10:**  
+Response: ""剧情""  
+Target: ""历史战争剧情""  
+- ""剧情"" subset OK.  
+=> score 1
+
+---
+
+**idx_11:**  
+Response: ""喜剧""  
+Target: ""喜剧科幻""  
+- ""喜剧"" subset OK.  
+=> score 1
+
+---
+
+**idx_12:**  
+Response: ""动作""  
+Target: ""动作""  
+- Exact match.  
+=> score 1
+
+---
+
+All responses meet the criteria: either a subset of the target genres or a reasonable related genre.
+
+---
+
+Final Scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1
+}
+```",动作犯罪剧情,动作
+,,美国,美国,蜘蛛侠：英雄无归,蜘蛛侠：英雄无归,1.0,key_match,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion:  
+- The answer can be considered correct if it is semantically the same or refers to the same entity as the standard answer.  
+- A subset of the target is acceptable if no extraneous content included.  
+- Must refer to the same person or entity.  
+
+---
+
+### Analysis:
+
+- idx_0: response '吴京' vs target '管虎'  
+  Completely different persons. Incorrect. Score = 0
+
+- idx_1: response '陈凯歌' vs target '宁浩'  
+  Different persons. Score = 0
+
+- idx_2: response '田晓鹏' vs target '程腾、李炜'  
+  Different people. Score = 0
+
+- idx_3: response 'j·j·艾布拉姆斯' vs target '艾布拉姆斯'  
+  ""j·j·艾布拉姆斯"" = full name, ""艾布拉姆斯"" likely the same person. Acceptable. Score = 1
+
+- idx_4: response '陈凯歌' vs target '陈凯歌、徐克、林超贤'  
+  Response is subset of target, no extra content. Acceptable. Score = 1
+
+- idx_5: response '陈思诚' vs target '贾玲'  
+  Different persons. Score = 0
+
+- idx_6: response '徐峥' vs target '陈思诚'  
+  Different persons. Score = 0
+
+- idx_7: response '陈凯歌' vs target '吴京、章子怡、徐峥、沈腾'  
+  Different people. Score = 0
+
+- idx_8: response '林诣彬' vs target '林诣彬'  
+  Exact match. Score = 1
+
+- idx_9: response '杰克·施瑞曼' vs target '乔·沃茨'  
+  Different persons. Score = 0
+
+- idx_10: response '吴京' vs target '徐克、黄建新、秦天柱'  
+  Different people. Score = 0
+
+- idx_11: response '孙皓' vs target '张吃鱼'  
+  Different people. Score = 0
+
+- idx_12: response '托尼·斯科特' vs target '约瑟夫·科辛斯基'  
+  Different persons. Score = 0
+
+---
+
+### Final scores in JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0
+}
+```",乔·沃茨,杰克·施瑞曼,1.0,"exact match, response: 2021, target: 2021",2021,2021,0.0,"number not near, response: 5.72, target: 8.0",8.0,5.72,1.0,key_match,1.0,"We have pairs of responses and target (standard) answers for movie genres or types. The criterion says:
+
+- It is enough if the response has roughly the same meaning or points to the same entity.
+- It is enough to provide a subset of the types from the reference answer.
+- Official or authoritative types are also considered correct.
+- Responding with only one sub-type from the reference is considered correct.
+- Other reasonable types are also accepted.
+
+The scoring is binary: 0 or 1.
+
+Let me analyze each pair:
+
+---
+
+**idx_0:**  
+Response: ""剧情""  
+Target: ""剧情战争历史""  
+- Response ""剧情"" is a subset of the three types.  
+- Satisfies criterion: subset OK.  
+=> score 1
+
+---
+
+**idx_1:**  
+Response: ""喜剧""  
+Target: ""剧情喜剧""  
+- Response ""喜剧"" is part of target ""剧情喜剧"".  
+- Subset OK.  
+=> score 1
+
+---
+
+**idx_2:**  
+Response: ""动画""  
+Target: ""奇幻动画动作冒险剧情""  
+- Response ""动画"" is part of the target multi-genre.  
+- Subset OK.  
+=> score 1
+
+---
+
+**idx_3:**  
+Response: ""科幻""  
+Target: ""科幻动作冒险""  
+- Response ""科幻"" is clearly part of target.  
+- Subset OK.  
+=> score 1
+
+---
+
+**idx_4:**  
+Response: ""剧情""  
+Target: ""剧情战争历史""  
+- Same as idx_0, subset OK.  
+=> score 1
+
+---
+
+**idx_5:**  
+Response: ""喜剧""  
+Target: ""喜剧家庭奇幻剧情""  
+- ""喜剧"" is one part of target.  
+- Satisfies criterion.  
+=> score 1
+
+---
+
+**idx_6:**  
+Response: ""喜剧""  
+Target: ""喜剧悬疑动作""  
+- ""喜剧"" is part of target.  
+- OK.  
+=> score 1
+
+---
+
+**idx_7:**  
+Response: ""剧情""  
+Target: ""剧情战争文艺""  
+- ""剧情"" is part of target.  
+- OK.  
+=> score 1
+
+---
+
+**idx_8:**  
+Response: ""动作""  
+Target: ""动作犯罪剧情""  
+- ""动作"" subset of target.  
+- OK.  
+=> score 1
+
+---
+
+**idx_9:**  
+Response: ""超级英雄""  
+Target: ""科幻奇幻动作冒险""  
+- ""超级英雄"" is not in target explicitly.  
+- Is ""超级英雄"" a sub-genre or reasonable reasonable type under ""科幻奇幻动作冒险""?  
+- ""超级英雄"" can be considered a distinct type or subgenre related to sci-fi/fantasy/action.  
+- The criterion says ""答出其中一个子集其他类型内容合理也视为正确"" - other reasonable types also OK.  
+- ""超级英雄"" is a recognized subgenre related to sci-fi, fantasy, and action stories. So considered reasonable.  
+=> score 1
+
+---
+
+**idx_10:**  
+Response: ""剧情""  
+Target: ""历史战争剧情""  
+- ""剧情"" subset OK.  
+=> score 1
+
+---
+
+**idx_11:**  
+Response: ""喜剧""  
+Target: ""喜剧科幻""  
+- ""喜剧"" subset OK.  
+=> score 1
+
+---
+
+**idx_12:**  
+Response: ""动作""  
+Target: ""动作""  
+- Exact match.  
+=> score 1
+
+---
+
+All responses meet the criteria: either a subset of the target genres or a reasonable related genre.
+
+---
+
+Final Scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1
+}
+```",科幻奇幻动作冒险,超级英雄
+,,中国,中国,长津湖之水门桥,长津湖之水门桥,1.0,key_match,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion:  
+- The answer can be considered correct if it is semantically the same or refers to the same entity as the standard answer.  
+- A subset of the target is acceptable if no extraneous content included.  
+- Must refer to the same person or entity.  
+
+---
+
+### Analysis:
+
+- idx_0: response '吴京' vs target '管虎'  
+  Completely different persons. Incorrect. Score = 0
+
+- idx_1: response '陈凯歌' vs target '宁浩'  
+  Different persons. Score = 0
+
+- idx_2: response '田晓鹏' vs target '程腾、李炜'  
+  Different people. Score = 0
+
+- idx_3: response 'j·j·艾布拉姆斯' vs target '艾布拉姆斯'  
+  ""j·j·艾布拉姆斯"" = full name, ""艾布拉姆斯"" likely the same person. Acceptable. Score = 1
+
+- idx_4: response '陈凯歌' vs target '陈凯歌、徐克、林超贤'  
+  Response is subset of target, no extra content. Acceptable. Score = 1
+
+- idx_5: response '陈思诚' vs target '贾玲'  
+  Different persons. Score = 0
+
+- idx_6: response '徐峥' vs target '陈思诚'  
+  Different persons. Score = 0
+
+- idx_7: response '陈凯歌' vs target '吴京、章子怡、徐峥、沈腾'  
+  Different people. Score = 0
+
+- idx_8: response '林诣彬' vs target '林诣彬'  
+  Exact match. Score = 1
+
+- idx_9: response '杰克·施瑞曼' vs target '乔·沃茨'  
+  Different persons. Score = 0
+
+- idx_10: response '吴京' vs target '徐克、黄建新、秦天柱'  
+  Different people. Score = 0
+
+- idx_11: response '孙皓' vs target '张吃鱼'  
+  Different people. Score = 0
+
+- idx_12: response '托尼·斯科特' vs target '约瑟夫·科辛斯基'  
+  Different persons. Score = 0
+
+---
+
+### Final scores in JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0
+}
+```",徐克、黄建新、秦天柱,吴京,1.0,"exact match, response: 2022, target: 2022",2022,2022,1.0,"number near in range 10.0%, response: 40.6, target: 40.7",40.7,40.6,1.0,key_match,1.0,"We have pairs of responses and target (standard) answers for movie genres or types. The criterion says:
+
+- It is enough if the response has roughly the same meaning or points to the same entity.
+- It is enough to provide a subset of the types from the reference answer.
+- Official or authoritative types are also considered correct.
+- Responding with only one sub-type from the reference is considered correct.
+- Other reasonable types are also accepted.
+
+The scoring is binary: 0 or 1.
+
+Let me analyze each pair:
+
+---
+
+**idx_0:**  
+Response: ""剧情""  
+Target: ""剧情战争历史""  
+- Response ""剧情"" is a subset of the three types.  
+- Satisfies criterion: subset OK.  
+=> score 1
+
+---
+
+**idx_1:**  
+Response: ""喜剧""  
+Target: ""剧情喜剧""  
+- Response ""喜剧"" is part of target ""剧情喜剧"".  
+- Subset OK.  
+=> score 1
+
+---
+
+**idx_2:**  
+Response: ""动画""  
+Target: ""奇幻动画动作冒险剧情""  
+- Response ""动画"" is part of the target multi-genre.  
+- Subset OK.  
+=> score 1
+
+---
+
+**idx_3:**  
+Response: ""科幻""  
+Target: ""科幻动作冒险""  
+- Response ""科幻"" is clearly part of target.  
+- Subset OK.  
+=> score 1
+
+---
+
+**idx_4:**  
+Response: ""剧情""  
+Target: ""剧情战争历史""  
+- Same as idx_0, subset OK.  
+=> score 1
+
+---
+
+**idx_5:**  
+Response: ""喜剧""  
+Target: ""喜剧家庭奇幻剧情""  
+- ""喜剧"" is one part of target.  
+- Satisfies criterion.  
+=> score 1
+
+---
+
+**idx_6:**  
+Response: ""喜剧""  
+Target: ""喜剧悬疑动作""  
+- ""喜剧"" is part of target.  
+- OK.  
+=> score 1
+
+---
+
+**idx_7:**  
+Response: ""剧情""  
+Target: ""剧情战争文艺""  
+- ""剧情"" is part of target.  
+- OK.  
+=> score 1
+
+---
+
+**idx_8:**  
+Response: ""动作""  
+Target: ""动作犯罪剧情""  
+- ""动作"" subset of target.  
+- OK.  
+=> score 1
+
+---
+
+**idx_9:**  
+Response: ""超级英雄""  
+Target: ""科幻奇幻动作冒险""  
+- ""超级英雄"" is not in target explicitly.  
+- Is ""超级英雄"" a sub-genre or reasonable reasonable type under ""科幻奇幻动作冒险""?  
+- ""超级英雄"" can be considered a distinct type or subgenre related to sci-fi/fantasy/action.  
+- The criterion says ""答出其中一个子集其他类型内容合理也视为正确"" - other reasonable types also OK.  
+- ""超级英雄"" is a recognized subgenre related to sci-fi, fantasy, and action stories. So considered reasonable.  
+=> score 1
+
+---
+
+**idx_10:**  
+Response: ""剧情""  
+Target: ""历史战争剧情""  
+- ""剧情"" subset OK.  
+=> score 1
+
+---
+
+**idx_11:**  
+Response: ""喜剧""  
+Target: ""喜剧科幻""  
+- ""喜剧"" subset OK.  
+=> score 1
+
+---
+
+**idx_12:**  
+Response: ""动作""  
+Target: ""动作""  
+- Exact match.  
+=> score 1
+
+---
+
+All responses meet the criteria: either a subset of the target genres or a reasonable related genre.
+
+---
+
+Final Scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1
+}
+```",历史战争剧情,剧情
+,,中国,中国,独行月球,独行月球,1.0,key_match,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion:  
+- The answer can be considered correct if it is semantically the same or refers to the same entity as the standard answer.  
+- A subset of the target is acceptable if no extraneous content included.  
+- Must refer to the same person or entity.  
+
+---
+
+### Analysis:
+
+- idx_0: response '吴京' vs target '管虎'  
+  Completely different persons. Incorrect. Score = 0
+
+- idx_1: response '陈凯歌' vs target '宁浩'  
+  Different persons. Score = 0
+
+- idx_2: response '田晓鹏' vs target '程腾、李炜'  
+  Different people. Score = 0
+
+- idx_3: response 'j·j·艾布拉姆斯' vs target '艾布拉姆斯'  
+  ""j·j·艾布拉姆斯"" = full name, ""艾布拉姆斯"" likely the same person. Acceptable. Score = 1
+
+- idx_4: response '陈凯歌' vs target '陈凯歌、徐克、林超贤'  
+  Response is subset of target, no extra content. Acceptable. Score = 1
+
+- idx_5: response '陈思诚' vs target '贾玲'  
+  Different persons. Score = 0
+
+- idx_6: response '徐峥' vs target '陈思诚'  
+  Different persons. Score = 0
+
+- idx_7: response '陈凯歌' vs target '吴京、章子怡、徐峥、沈腾'  
+  Different people. Score = 0
+
+- idx_8: response '林诣彬' vs target '林诣彬'  
+  Exact match. Score = 1
+
+- idx_9: response '杰克·施瑞曼' vs target '乔·沃茨'  
+  Different persons. Score = 0
+
+- idx_10: response '吴京' vs target '徐克、黄建新、秦天柱'  
+  Different people. Score = 0
+
+- idx_11: response '孙皓' vs target '张吃鱼'  
+  Different people. Score = 0
+
+- idx_12: response '托尼·斯科特' vs target '约瑟夫·科辛斯基'  
+  Different persons. Score = 0
+
+---
+
+### Final scores in JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0
+}
+```",张吃鱼,孙皓,1.0,"exact match, response: 2022, target: 2022",2022,2022,0.0,"number not near, response: 12.6, target: 31.0",31.0,12.6,1.0,key_match,1.0,"We have pairs of responses and target (standard) answers for movie genres or types. The criterion says:
+
+- It is enough if the response has roughly the same meaning or points to the same entity.
+- It is enough to provide a subset of the types from the reference answer.
+- Official or authoritative types are also considered correct.
+- Responding with only one sub-type from the reference is considered correct.
+- Other reasonable types are also accepted.
+
+The scoring is binary: 0 or 1.
+
+Let me analyze each pair:
+
+---
+
+**idx_0:**  
+Response: ""剧情""  
+Target: ""剧情战争历史""  
+- Response ""剧情"" is a subset of the three types.  
+- Satisfies criterion: subset OK.  
+=> score 1
+
+---
+
+**idx_1:**  
+Response: ""喜剧""  
+Target: ""剧情喜剧""  
+- Response ""喜剧"" is part of target ""剧情喜剧"".  
+- Subset OK.  
+=> score 1
+
+---
+
+**idx_2:**  
+Response: ""动画""  
+Target: ""奇幻动画动作冒险剧情""  
+- Response ""动画"" is part of the target multi-genre.  
+- Subset OK.  
+=> score 1
+
+---
+
+**idx_3:**  
+Response: ""科幻""  
+Target: ""科幻动作冒险""  
+- Response ""科幻"" is clearly part of target.  
+- Subset OK.  
+=> score 1
+
+---
+
+**idx_4:**  
+Response: ""剧情""  
+Target: ""剧情战争历史""  
+- Same as idx_0, subset OK.  
+=> score 1
+
+---
+
+**idx_5:**  
+Response: ""喜剧""  
+Target: ""喜剧家庭奇幻剧情""  
+- ""喜剧"" is one part of target.  
+- Satisfies criterion.  
+=> score 1
+
+---
+
+**idx_6:**  
+Response: ""喜剧""  
+Target: ""喜剧悬疑动作""  
+- ""喜剧"" is part of target.  
+- OK.  
+=> score 1
+
+---
+
+**idx_7:**  
+Response: ""剧情""  
+Target: ""剧情战争文艺""  
+- ""剧情"" is part of target.  
+- OK.  
+=> score 1
+
+---
+
+**idx_8:**  
+Response: ""动作""  
+Target: ""动作犯罪剧情""  
+- ""动作"" subset of target.  
+- OK.  
+=> score 1
+
+---
+
+**idx_9:**  
+Response: ""超级英雄""  
+Target: ""科幻奇幻动作冒险""  
+- ""超级英雄"" is not in target explicitly.  
+- Is ""超级英雄"" a sub-genre or reasonable reasonable type under ""科幻奇幻动作冒险""?  
+- ""超级英雄"" can be considered a distinct type or subgenre related to sci-fi/fantasy/action.  
+- The criterion says ""答出其中一个子集其他类型内容合理也视为正确"" - other reasonable types also OK.  
+- ""超级英雄"" is a recognized subgenre related to sci-fi, fantasy, and action stories. So considered reasonable.  
+=> score 1
+
+---
+
+**idx_10:**  
+Response: ""剧情""  
+Target: ""历史战争剧情""  
+- ""剧情"" subset OK.  
+=> score 1
+
+---
+
+**idx_11:**  
+Response: ""喜剧""  
+Target: ""喜剧科幻""  
+- ""喜剧"" subset OK.  
+=> score 1
+
+---
+
+**idx_12:**  
+Response: ""动作""  
+Target: ""动作""  
+- Exact match.  
+=> score 1
+
+---
+
+All responses meet the criteria: either a subset of the target genres or a reasonable related genre.
+
+---
+
+Final Scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1
+}
+```",喜剧科幻,喜剧
+,,美国,美国,壮志凌云2：独行侠,壮志凌云2：独行侠,1.0,key_match,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion:  
+- The answer can be considered correct if it is semantically the same or refers to the same entity as the standard answer.  
+- A subset of the target is acceptable if no extraneous content included.  
+- Must refer to the same person or entity.  
+
+---
+
+### Analysis:
+
+- idx_0: response '吴京' vs target '管虎'  
+  Completely different persons. Incorrect. Score = 0
+
+- idx_1: response '陈凯歌' vs target '宁浩'  
+  Different persons. Score = 0
+
+- idx_2: response '田晓鹏' vs target '程腾、李炜'  
+  Different people. Score = 0
+
+- idx_3: response 'j·j·艾布拉姆斯' vs target '艾布拉姆斯'  
+  ""j·j·艾布拉姆斯"" = full name, ""艾布拉姆斯"" likely the same person. Acceptable. Score = 1
+
+- idx_4: response '陈凯歌' vs target '陈凯歌、徐克、林超贤'  
+  Response is subset of target, no extra content. Acceptable. Score = 1
+
+- idx_5: response '陈思诚' vs target '贾玲'  
+  Different persons. Score = 0
+
+- idx_6: response '徐峥' vs target '陈思诚'  
+  Different persons. Score = 0
+
+- idx_7: response '陈凯歌' vs target '吴京、章子怡、徐峥、沈腾'  
+  Different people. Score = 0
+
+- idx_8: response '林诣彬' vs target '林诣彬'  
+  Exact match. Score = 1
+
+- idx_9: response '杰克·施瑞曼' vs target '乔·沃茨'  
+  Different persons. Score = 0
+
+- idx_10: response '吴京' vs target '徐克、黄建新、秦天柱'  
+  Different people. Score = 0
+
+- idx_11: response '孙皓' vs target '张吃鱼'  
+  Different people. Score = 0
+
+- idx_12: response '托尼·斯科特' vs target '约瑟夫·科辛斯基'  
+  Different persons. Score = 0
+
+---
+
+### Final scores in JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0
+}
+```",约瑟夫·科辛斯基,托尼·斯科特,1.0,"exact match, response: 2022, target: 2022",2022,2022,0.0,"number not near, response: 9.1, target: 7.2",7.2,9.1,1.0,key_match,1.0,"We have pairs of responses and target (standard) answers for movie genres or types. The criterion says:
+
+- It is enough if the response has roughly the same meaning or points to the same entity.
+- It is enough to provide a subset of the types from the reference answer.
+- Official or authoritative types are also considered correct.
+- Responding with only one sub-type from the reference is considered correct.
+- Other reasonable types are also accepted.
+
+The scoring is binary: 0 or 1.
+
+Let me analyze each pair:
+
+---
+
+**idx_0:**  
+Response: ""剧情""  
+Target: ""剧情战争历史""  
+- Response ""剧情"" is a subset of the three types.  
+- Satisfies criterion: subset OK.  
+=> score 1
+
+---
+
+**idx_1:**  
+Response: ""喜剧""  
+Target: ""剧情喜剧""  
+- Response ""喜剧"" is part of target ""剧情喜剧"".  
+- Subset OK.  
+=> score 1
+
+---
+
+**idx_2:**  
+Response: ""动画""  
+Target: ""奇幻动画动作冒险剧情""  
+- Response ""动画"" is part of the target multi-genre.  
+- Subset OK.  
+=> score 1
+
+---
+
+**idx_3:**  
+Response: ""科幻""  
+Target: ""科幻动作冒险""  
+- Response ""科幻"" is clearly part of target.  
+- Subset OK.  
+=> score 1
+
+---
+
+**idx_4:**  
+Response: ""剧情""  
+Target: ""剧情战争历史""  
+- Same as idx_0, subset OK.  
+=> score 1
+
+---
+
+**idx_5:**  
+Response: ""喜剧""  
+Target: ""喜剧家庭奇幻剧情""  
+- ""喜剧"" is one part of target.  
+- Satisfies criterion.  
+=> score 1
+
+---
+
+**idx_6:**  
+Response: ""喜剧""  
+Target: ""喜剧悬疑动作""  
+- ""喜剧"" is part of target.  
+- OK.  
+=> score 1
+
+---
+
+**idx_7:**  
+Response: ""剧情""  
+Target: ""剧情战争文艺""  
+- ""剧情"" is part of target.  
+- OK.  
+=> score 1
+
+---
+
+**idx_8:**  
+Response: ""动作""  
+Target: ""动作犯罪剧情""  
+- ""动作"" subset of target.  
+- OK.  
+=> score 1
+
+---
+
+**idx_9:**  
+Response: ""超级英雄""  
+Target: ""科幻奇幻动作冒险""  
+- ""超级英雄"" is not in target explicitly.  
+- Is ""超级英雄"" a sub-genre or reasonable reasonable type under ""科幻奇幻动作冒险""?  
+- ""超级英雄"" can be considered a distinct type or subgenre related to sci-fi/fantasy/action.  
+- The criterion says ""答出其中一个子集其他类型内容合理也视为正确"" - other reasonable types also OK.  
+- ""超级英雄"" is a recognized subgenre related to sci-fi, fantasy, and action stories. So considered reasonable.  
+=> score 1
+
+---
+
+**idx_10:**  
+Response: ""剧情""  
+Target: ""历史战争剧情""  
+- ""剧情"" subset OK.  
+=> score 1
+
+---
+
+**idx_11:**  
+Response: ""喜剧""  
+Target: ""喜剧科幻""  
+- ""喜剧"" subset OK.  
+=> score 1
+
+---
+
+**idx_12:**  
+Response: ""动作""  
+Target: ""动作""  
+- Exact match.  
+=> score 1
+
+---
+
+All responses meet the criteria: either a subset of the target genres or a reasonable related genre.
+
+---
+
+Final Scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1
+}
+```",动作,动作
+1.0,,中国,,万里归途,,,,,,饶晓志,,,,2022,,,,15.9,,,,,,剧情战争,
+1.0,,中国,,人生大事,,,,,,刘江江,,,,2022,,,,17.1,,,,,,剧情家庭,
+1.0,,中国,,夺冠,,,,,,陈可辛,,,,2020,,,,8.4,,,,,,运动、剧情,
+1.0,,中国,,孤注一掷,,,,,,申奥,,,,2023,,,,38.5,,,,,,犯罪剧情,
+1.0,,中国,,封神第一部：朝歌风云,,,,,,乌尔善,,,,2023,,,,26.3,,,,,,神话动作史诗战争奇幻古装,
+1.0,,中国,,抓娃娃,,,,,,闫非、彭大魔,,,,2024,,,,33.3,,,,,,喜剧剧情,
+,1.0,中国,中国,拆弹专家2,拆弹专家2,,,,,,郑保瑞,,,,2020,,,,6.2,,,,,,动作
+1.0,,中国,,流浪地球2,,,,,,郭帆,,,,2023,,,,40.3,,,,,,科幻冒险灾难,
+1.0,,中国,,消失的她,,,,,,崔睿、刘翔,,,,2023,,,,35.2,,,,,,悬疑剧情犯罪,
+1.0,,中国,,满江红,,,,,,张艺谋,,,,2023,,,,45.4,,,,,,喜剧悬疑剧情,
+1.0,,中国,,热辣滚烫,,,,,,贾玲,,,,2024,,,,34.2,,,,,,喜剧励志剧情,
+1.0,,中国,,熊出没·逆转时空,,,,,,林汇达,,,,2024,,,,19.8,,,,,,动画喜剧科幻,
+1.0,,中国,,第二十条,,,,,,张艺谋,,,,2024,,,,24.3,,,,,,喜剧剧情家庭,
+1.0,,中国,,这个杀手不太冷静,,,,,,邢文雄,,,,2022,,,,26.3,,,,,,喜剧,
+,1.0,中国,中国,送你一朵小红花,送你一朵小红花,,,,,,张冀,,,,2020,,,,7.2,,,,,,剧情
+1.0,,中国,,金刚川,,,,,,管虎、郭帆、路阳,,,,2020,,,,11.2,,,,,,剧情战争历史,
+1.0,,中国,,飞驰人生2,,,,,,韩寒,,,,2024,,,,33.6,,,,,,喜剧冒险运动,
+1.0,,美国,,1917,,,,,,萨姆·门德斯,,,,2020,,,,1.6,,,,,,战争剧情,
+1.0,,美国,,侏罗纪世界3,,,,,,科林·特莱沃若,,,,2022,,,,3.8,,,,,,动作科幻惊悚冒险,
+1.0,,美国,,刺猬索尼克,,,,,,杰夫·福勒,,,,2020,,,,1.5,,,,,,喜剧动作科幻,
+1.0,,美国,,勇敢者游戏2,,,,,,杰克·卡斯丹,,,,2020,,,,3.2,,,,,,喜剧动作奇幻,
+1.0,,美国,,头脑特工队2,,,,,,凯尔西·曼,,,,2024,,,,6.5,,,,,,动画剧情喜剧奇幻冒险,
+1.0,,美国,,奇异博士2：疯狂多元宇宙,,,,,,山姆·雷米,,,,2022,,,,4.1,,,,,,动作科幻恐怖奇幻冒险,
+1.0,,美国,,奥本海默,,,,,,克里斯托弗·诺兰,,,,2023,,,,3.3,,,,,,人物剧情传记历史,
+1.0,,美国,,尚气与十环传奇,,,,,,德斯汀·克里顿,,,,2021,,,,2.2,,,,,,动作科幻奇幻冒险,
+,1.0,美国,美国,数据未列出,数据未列出,,,,,,数据未列出,,,,2023,,,,NULL,,,,,,数据未列出
+1.0,,美国,,死侍与金刚狼,,,,,,肖恩·利维,,,,2024,,,,6.4,,,,,,喜剧动作科幻,
+1.0,,美国,,毒液2,,,,,,安迪·瑟金斯,,,,2021,,,,2.1,,,,,,动作科幻惊悚,
+1.0,,美国,,海洋奇缘2,,,,,,小戴夫·德里克、杰森·汉德、达娜·莱杜克斯·米勒,,,,2024,,,,4.6,,,,,,喜剧奇幻动画歌舞冒险,
+1.0,,美国,,神偷奶爸4,,,,,,克里斯·雷纳德、帕特里克·德拉吉,,,,2024,,,,3.6,,,,,,喜剧动画冒险,
+1.0,,美国,,绝地战警,,,,,,阿迪尔·埃尔·阿比,,,,2020,,,,2.0,,,,,,喜剧动作犯罪,
+1.0,,美国,,芭比,,,,,,格蕾塔·葛韦格,,,,2023,,,,6.4,,,,,,奇幻喜剧冒险,
+1.0,,美国,,蜘蛛侠：纵横宇宙,,,,,,乔伊姆·多斯·桑托斯、凯普·鲍尔斯、贾斯汀·汤普森,,,,2023,,,,3.8,,,,,,喜剧动作科幻动画奇幻冒险,
+1.0,,美国,,超级马里奥兄弟大电影,,,,,,亚伦·霍瓦斯、迈克尔·杰勒尼克,,,,2023,,,,5.7,,,,,,喜剧爱情科幻动画奇幻冒险,
+1.0,,美国,,速度与激情9,,,,,,林诣彬,,,,2021,,,,1.7,,,,,,动作犯罪剧情,
+1.0,,美国,,银河护卫队3,,,,,,詹姆斯·古恩,,,,2023,,,,3.6,,,,,,喜剧动作科幻惊悚冒险,
+,1.0,美国,美国,长津湖,长津湖,,,,,,李安,,,,2021,,,,1.7,,,,,,剧情
+1.0,,美国,,阿凡达2：水之道,,,,,,詹姆斯·卡梅隆,,,,2022,,,,6.8,,,,,,科幻动作冒险,
+1.0,,美国,,魔法坏女巫,,,,,,朱浩伟,,,,2024,,,,4.7,,,,,,爱情歌舞奇幻,
+1.0,,美国,,黑寡妇,,,,,,凯特·绍特兰,,,,2021,,,,1.8,,,,,,科幻动作冒险,
+1.0,,美国,,黑豹2：瓦坎达万岁,,,,,,瑞恩·库格勒,,,,2022,,,,4.5,,,,,,剧情动作科幻惊悚奇幻冒险,

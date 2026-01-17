@@ -1,0 +1,365 @@
+exist_flag_gt,exist_flag_response,title,title_before_map,director_llm_judge,director_llm_judge_eval_msg,director_query,director_response,genre_llm_judge,genre_llm_judge_eval_msg,genre_query,genre_response,leadactor/actress_llm_judge,leadactor/actress_llm_judge_eval_msg,leadactor/actress_query,leadactor/actress_response,releaseyear_exact_match,releaseyear_exact_match_eval_msg,releaseyear_query,releaseyear_response,title_exact_match,title_exact_match_eval_msg,totaladmissions_number_near,totaladmissions_number_near_eval_msg,totaladmissions_query,totaladmissions_response,totalboxoffice(billionsofkrw)_number_near,totalboxoffice(billionsofkrw)_number_near_eval_msg,totalboxoffice(billionsofkrw)_query,totalboxoffice(billionsofkrw)_response
+,,snowpiercer,Snowpiercer,1.0,"Let's analyze each pair step by step according to the criterion:
+
+Criterion summary:  
+- The answer is considered correct if the semantics are approximately the same or they point to the same entity.  
+- No requirement for exact word-for-word matching.
+
+---
+
+**idx_0**  
+- Response: ""bongjoon-ho""  
+- Target: ""bongjoon-ho""  
+Analysis: The response exactly matches the target.  
+Score: 1
+
+---
+
+**idx_1**  
+- Response: ""bongjoon-ho""  
+- Target: ""yeonsang-ho""  
+Analysis: The two strings are different and do not point to the same entity. Names are different, so semantics are different.  
+Score: 0
+
+---
+
+**idx_2**  
+- Response: ""anthonyrusso""  
+- Target: ""anthonyrusso&joerusso""  
+Analysis: The target lists two entities (""anthonyrusso"" and ""joerusso""). The response only has ""anthonyrusso"". Criterion says it is sufficient if semantics approximately the same or point to the same entity. Here response includes one entity out of two. It is partial coverage but the criterion does not specify partial credit or partial match; score has to be 0 or 1. Since the response matches one of the entities pointed out in the target, it can be considered pointing to the same entity partially. Does that qualify for full credit?  
+The criterion states ""It is sufficient if the semantics are approximately the same or if they point to the same entity."" In this case, response points to one out of two entities in the target. The semantics are not fully the same, but roughly overlapping. Since no partial scoring allowed, the question is, is partial overlap sufficient? The criterion does not explicitly say partial match equates to 1. So to be conservative and strict, partial matching less than the full meaning likely should get 0, because the semantics are not approximately the same (the target includes more entities, so not fully covered).
+
+Therefore, score: 0
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0
+}
+```",bongjoon-ho,bongjoon-ho,0.0,"Let's analyze each pair:
+
+1. idx_0  
+   - Response: ""sci-fi""  
+   - Target: ""actionsci-fi""  
+   Analysis: The target combines ""action"" and ""sci-fi"". The response ""sci-fi"" is part of the target but does not include ""action"". However, the criterion states ""It is sufficient if the semantics are approximately the same or if they point to the same entity."" Since ""sci-fi"" is part of the combined genre ""actionsci-fi,"" the semantics partly overlap, but the ""action"" part is missing, which might be important. The response does not capture the full target but captures half of it. The criterion mentions approximate semantics are sufficient but doesn't specify partial credit. Since ""actionsci-fi"" is a combination of two genres, and the response only captures one of them, the semantics are related but not completely the same. Given the scoring only allows 0 or 1, we consider if the partial match is enough. Since the scoring rule says semantics approximately the same are sufficient, and here it's a partial overlap that identifies one of the two genres, I lean towards scoring this 0 because the response misses half the genre label.
+
+2. idx_1  
+   - Response: ""horror""  
+   - Target: ""disasterthriller""  
+   Analysis: The target ""disasterthriller"" indicates a disaster and thriller genre combination. ""Horror"" is a different genre, typically involving fear, supernatural or gruesome elements, which is not the same as disaster or thriller. The semantics do not point to the same entity or approximate the same genre. Hence, score is 0.
+
+3. idx_2  
+   - Response: ""action""  
+   - Target: ""sci-fi""  
+   Analysis: Action and sci-fi are distinct genres, although sometimes they can overlap, that is not the given target. The response does not approximate the target or point to the same entity. Score is 0.
+
+Final scoring:
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0
+}
+```",actionsci-fi,sci-fi,1.0,"Let's analyze each item one by one according to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for word-for-word correspondence.
+
+---
+
+**idx_0**  
+- Response: ""chrisevans""  
+- Target: ""chrisevans,songkang-ho,tchrisevansn,jamiebell,edharris""  
+- Analysis: The response ""chrisevans"" appears exactly in the target list. This meets the criterion as the response points to an entity in the reference answer.  
+- Score: 1
+
+---
+
+**idx_1**  
+- Response: ""songkang-ho""  
+- Target: ""gongyoo,jungyu-mi,kimsu-an,kimeui-sung,madong-seok,choiwoo-shik""  
+- Analysis: The response ""songkang-ho"" does not appear in the target list at all, so it does not point to the same entity or an approximate semantic equivalent  
+- Score: 0
+
+---
+
+**idx_2**  
+- Response: ""chrishemsworth""  
+- Target: ""robertdowneyjr.,chrisevans,chrishemsworth,markruffalo,scarlettjohansson,jeremyrenner,paulrudd,brielarson,doncheadle,karengillan,joshbrolin""  
+- Analysis: The response ""chrishemsworth"" is exactly in the target list. This satisfies the criterion.  
+- Score: 1
+
+---
+
+### Final scoring in JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1
+}
+```","chrisevans,songkang-ho,tchrisevansn,jamiebell,edharris",chrisevans,0.0,"exact not match, response: 2012, target: 2013",2013,2012,1.0,key_match,0.0,"number not near, response: 150.0, target: 9341572.0",9341572,150,0.0,"number not near, response: 1.0, target: 67.0",67.0,1.0
+,,traintobusan,Train to Busan,0.0,"Let's analyze each pair step by step according to the criterion:
+
+Criterion summary:  
+- The answer is considered correct if the semantics are approximately the same or they point to the same entity.  
+- No requirement for exact word-for-word matching.
+
+---
+
+**idx_0**  
+- Response: ""bongjoon-ho""  
+- Target: ""bongjoon-ho""  
+Analysis: The response exactly matches the target.  
+Score: 1
+
+---
+
+**idx_1**  
+- Response: ""bongjoon-ho""  
+- Target: ""yeonsang-ho""  
+Analysis: The two strings are different and do not point to the same entity. Names are different, so semantics are different.  
+Score: 0
+
+---
+
+**idx_2**  
+- Response: ""anthonyrusso""  
+- Target: ""anthonyrusso&joerusso""  
+Analysis: The target lists two entities (""anthonyrusso"" and ""joerusso""). The response only has ""anthonyrusso"". Criterion says it is sufficient if semantics approximately the same or point to the same entity. Here response includes one entity out of two. It is partial coverage but the criterion does not specify partial credit or partial match; score has to be 0 or 1. Since the response matches one of the entities pointed out in the target, it can be considered pointing to the same entity partially. Does that qualify for full credit?  
+The criterion states ""It is sufficient if the semantics are approximately the same or if they point to the same entity."" In this case, response points to one out of two entities in the target. The semantics are not fully the same, but roughly overlapping. Since no partial scoring allowed, the question is, is partial overlap sufficient? The criterion does not explicitly say partial match equates to 1. So to be conservative and strict, partial matching less than the full meaning likely should get 0, because the semantics are not approximately the same (the target includes more entities, so not fully covered).
+
+Therefore, score: 0
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0
+}
+```",yeonsang-ho,bongjoon-ho,0.0,"Let's analyze each pair:
+
+1. idx_0  
+   - Response: ""sci-fi""  
+   - Target: ""actionsci-fi""  
+   Analysis: The target combines ""action"" and ""sci-fi"". The response ""sci-fi"" is part of the target but does not include ""action"". However, the criterion states ""It is sufficient if the semantics are approximately the same or if they point to the same entity."" Since ""sci-fi"" is part of the combined genre ""actionsci-fi,"" the semantics partly overlap, but the ""action"" part is missing, which might be important. The response does not capture the full target but captures half of it. The criterion mentions approximate semantics are sufficient but doesn't specify partial credit. Since ""actionsci-fi"" is a combination of two genres, and the response only captures one of them, the semantics are related but not completely the same. Given the scoring only allows 0 or 1, we consider if the partial match is enough. Since the scoring rule says semantics approximately the same are sufficient, and here it's a partial overlap that identifies one of the two genres, I lean towards scoring this 0 because the response misses half the genre label.
+
+2. idx_1  
+   - Response: ""horror""  
+   - Target: ""disasterthriller""  
+   Analysis: The target ""disasterthriller"" indicates a disaster and thriller genre combination. ""Horror"" is a different genre, typically involving fear, supernatural or gruesome elements, which is not the same as disaster or thriller. The semantics do not point to the same entity or approximate the same genre. Hence, score is 0.
+
+3. idx_2  
+   - Response: ""action""  
+   - Target: ""sci-fi""  
+   Analysis: Action and sci-fi are distinct genres, although sometimes they can overlap, that is not the given target. The response does not approximate the target or point to the same entity. Score is 0.
+
+Final scoring:
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0
+}
+```",disasterthriller,horror,0.0,"Let's analyze each item one by one according to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for word-for-word correspondence.
+
+---
+
+**idx_0**  
+- Response: ""chrisevans""  
+- Target: ""chrisevans,songkang-ho,tchrisevansn,jamiebell,edharris""  
+- Analysis: The response ""chrisevans"" appears exactly in the target list. This meets the criterion as the response points to an entity in the reference answer.  
+- Score: 1
+
+---
+
+**idx_1**  
+- Response: ""songkang-ho""  
+- Target: ""gongyoo,jungyu-mi,kimsu-an,kimeui-sung,madong-seok,choiwoo-shik""  
+- Analysis: The response ""songkang-ho"" does not appear in the target list at all, so it does not point to the same entity or an approximate semantic equivalent  
+- Score: 0
+
+---
+
+**idx_2**  
+- Response: ""chrishemsworth""  
+- Target: ""robertdowneyjr.,chrisevans,chrishemsworth,markruffalo,scarlettjohansson,jeremyrenner,paulrudd,brielarson,doncheadle,karengillan,joshbrolin""  
+- Analysis: The response ""chrishemsworth"" is exactly in the target list. This satisfies the criterion.  
+- Score: 1
+
+---
+
+### Final scoring in JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1
+}
+```","gongyoo,jungyu-mi,kimsu-an,kimeui-sung,madong-seok,choiwoo-shik",songkang-ho,0.0,"exact not match, response: 2013, target: 2016",2016,2013,1.0,key_match,0.0,"number not near, response: 170.0, target: 11565479.0",11565479,170,0.0,"number not near, response: 1.0, target: 93.0",93.0,1.0
+,,avengers:endgame,Avengers: Endgame,0.0,"Let's analyze each pair step by step according to the criterion:
+
+Criterion summary:  
+- The answer is considered correct if the semantics are approximately the same or they point to the same entity.  
+- No requirement for exact word-for-word matching.
+
+---
+
+**idx_0**  
+- Response: ""bongjoon-ho""  
+- Target: ""bongjoon-ho""  
+Analysis: The response exactly matches the target.  
+Score: 1
+
+---
+
+**idx_1**  
+- Response: ""bongjoon-ho""  
+- Target: ""yeonsang-ho""  
+Analysis: The two strings are different and do not point to the same entity. Names are different, so semantics are different.  
+Score: 0
+
+---
+
+**idx_2**  
+- Response: ""anthonyrusso""  
+- Target: ""anthonyrusso&joerusso""  
+Analysis: The target lists two entities (""anthonyrusso"" and ""joerusso""). The response only has ""anthonyrusso"". Criterion says it is sufficient if semantics approximately the same or point to the same entity. Here response includes one entity out of two. It is partial coverage but the criterion does not specify partial credit or partial match; score has to be 0 or 1. Since the response matches one of the entities pointed out in the target, it can be considered pointing to the same entity partially. Does that qualify for full credit?  
+The criterion states ""It is sufficient if the semantics are approximately the same or if they point to the same entity."" In this case, response points to one out of two entities in the target. The semantics are not fully the same, but roughly overlapping. Since no partial scoring allowed, the question is, is partial overlap sufficient? The criterion does not explicitly say partial match equates to 1. So to be conservative and strict, partial matching less than the full meaning likely should get 0, because the semantics are not approximately the same (the target includes more entities, so not fully covered).
+
+Therefore, score: 0
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0
+}
+```",anthonyrusso&joerusso,anthonyrusso,0.0,"Let's analyze each pair:
+
+1. idx_0  
+   - Response: ""sci-fi""  
+   - Target: ""actionsci-fi""  
+   Analysis: The target combines ""action"" and ""sci-fi"". The response ""sci-fi"" is part of the target but does not include ""action"". However, the criterion states ""It is sufficient if the semantics are approximately the same or if they point to the same entity."" Since ""sci-fi"" is part of the combined genre ""actionsci-fi,"" the semantics partly overlap, but the ""action"" part is missing, which might be important. The response does not capture the full target but captures half of it. The criterion mentions approximate semantics are sufficient but doesn't specify partial credit. Since ""actionsci-fi"" is a combination of two genres, and the response only captures one of them, the semantics are related but not completely the same. Given the scoring only allows 0 or 1, we consider if the partial match is enough. Since the scoring rule says semantics approximately the same are sufficient, and here it's a partial overlap that identifies one of the two genres, I lean towards scoring this 0 because the response misses half the genre label.
+
+2. idx_1  
+   - Response: ""horror""  
+   - Target: ""disasterthriller""  
+   Analysis: The target ""disasterthriller"" indicates a disaster and thriller genre combination. ""Horror"" is a different genre, typically involving fear, supernatural or gruesome elements, which is not the same as disaster or thriller. The semantics do not point to the same entity or approximate the same genre. Hence, score is 0.
+
+3. idx_2  
+   - Response: ""action""  
+   - Target: ""sci-fi""  
+   Analysis: Action and sci-fi are distinct genres, although sometimes they can overlap, that is not the given target. The response does not approximate the target or point to the same entity. Score is 0.
+
+Final scoring:
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0
+}
+```",sci-fi,action,1.0,"Let's analyze each item one by one according to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for word-for-word correspondence.
+
+---
+
+**idx_0**  
+- Response: ""chrisevans""  
+- Target: ""chrisevans,songkang-ho,tchrisevansn,jamiebell,edharris""  
+- Analysis: The response ""chrisevans"" appears exactly in the target list. This meets the criterion as the response points to an entity in the reference answer.  
+- Score: 1
+
+---
+
+**idx_1**  
+- Response: ""songkang-ho""  
+- Target: ""gongyoo,jungyu-mi,kimsu-an,kimeui-sung,madong-seok,choiwoo-shik""  
+- Analysis: The response ""songkang-ho"" does not appear in the target list at all, so it does not point to the same entity or an approximate semantic equivalent  
+- Score: 0
+
+---
+
+**idx_2**  
+- Response: ""chrishemsworth""  
+- Target: ""robertdowneyjr.,chrisevans,chrishemsworth,markruffalo,scarlettjohansson,jeremyrenner,paulrudd,brielarson,doncheadle,karengillan,joshbrolin""  
+- Analysis: The response ""chrishemsworth"" is exactly in the target list. This satisfies the criterion.  
+- Score: 1
+
+---
+
+### Final scoring in JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1
+}
+```","robertdowneyjr.,chrisevans,chrishemsworth,markruffalo,scarlettjohansson,jeremyrenner,paulrudd,brielarson,doncheadle,karengillan,joshbrolin",chrishemsworth,1.0,"exact match, response: 2019, target: 2019",2019,2019,1.0,key_match,0.0,"number not near, response: 280.0, target: 13934592.0",13934592,280,0.0,"number not near, response: 2.0, target: 122.0",122.0,2.0
+1.0,,12.12:theday,,,,kimseong-su,,,,drama,,,,"hwangjung-min,jungwoo-sung,leesung-min",,,,2023,,,,,,13128419,,,,118.0,
+,1.0,aladdin,Aladdin,,,,guyritchie,,,,fantasy,,,,menamassoud,,,,2022,,,,,,160,,,,1.0
+1.0,,alongwiththegods:thelast49days,,,,kimyong-hwa,,,,fantasy,,,,"hajung-woo,juji-hoon,kimhyang-gi,madong-seok,kimdong-wook,leejung-jae",,,,2018,,,,,,12274996,,,,102.0,
+1.0,,alongwiththegods:thetwoworlds,,,,kimyong-hwa,,,,fantasy,,,,"hajung-woo,chatae-hyun,juji-hoon,kimhyang-gi",,,,2017,,,,,,8539495,,,,68.0,
+1.0,,assassination,,,,choidong-hoon,,,,action,,,,"junji-hyun,leejung-jae,hajung-woo",,,,2015,,,,,,12705700,,,,98.0,
+1.0,,ataxidriver,,,,janghoon,,,,drama,,,,"songkang-ho,thomaskretschmann,yoohae-jin,ryujun-yeol",,,,2017,,,,,,12186327,,,,95.0,
+1.0,,avatar:thewayofwater,,,,jamescameron,,,,sci-fi,,,,"samworthington,zoesaldana,sigourneyweaver",,,,2022,,,,,,10805065,,,,90.0,
+1.0,,avengers:ageofultron,,,,josswhedon,,,,sci-fiadventure,,,,"robertdowneyjr.,chrishemsworth,markruffalo,chrisevans,scarlettjohansson,jeremyrenner",,,,2015,,,,,,10494499,,,,88.0,
+1.0,,avengers:infinitywar,,,,"anthonyrusso,joerusso",,,,sci-fiaction,,,,"robertdowneyjr.,joshbrolin,chrisevans",,,,2018,,,,,,11211880,,,,99.0,
+1.0,,aviolentprosecutor,,,,leeil-hyung,,,,crimecomedy,,,,"hwangjung-min,kangdong-won",,,,2016,,,,,,9707158,,,,77.0,
+1.0,,bohemianrhapsody,,,,bryansinger,,,,musicbiography,,,,"ramimalek,lucyboynton,gwilymlee,benhardy",,,,2018,,,,,,9224582,,,,80.0,
+1.0,,captainamerica:civilwar,,,,"anthonyrusso,joerusso",,,,sci-fiaction,,,,"chrisevans,robertdowneyjr.,scarlettjohansson,sebastianstan,anthonymackie",,,,2016,,,,,,8677249,,,,72.0,
+1.0,,confidentialassignment,,,,kimsung-hoon,,,,action,,,,"hyunbin,yoohae-jin,kimjoo-hyuk,imyoon-ah,leedong-hwi",,,,2017,,,,,,7817446,,,,63.0,
+1.0,,deliverusfromevil,,,,hongwon-chan,,,,action,,,,"hwangjung-min,leejung-jae,parkjung-min,parkso-yi,choihee-seo",,,,2020,,,,,,4357873,,,,38.0,
+1.0,,elemental,,,,petersohn,,,,animation,,,,"leahlewis,mamoudouathie",,,,2023,,,,,,7241486,,,,69.0,
+1.0,,escapefrommogadishu,,,,ryooseung-wan,,,,action,,,,"kimyoon-seok,join-sung",,,,2021,,,,,,3613984,,,,34.0,
+1.0,,eternals,,,,chloézhao,,,,actionfantasy,,,,"gemmachan,richardmadden,angelinajolie,salmahayek,kitharington,kumailnanjiani,liamchugh,briantyreehenry,laurenridloff,barrykeoghan,madong-seok",,,,2021,,,,,,3050132,,,,31.0,
+1.0,,exhuma,,,,jangjae-hyun,,,,thriller,,,,"choimin-sik,kimgo-eun,leedo-hyun,yoohae-jin,seo-joonhong",,,,2024,,,,,,11914784,,,,119.0,
+1.0,,extremejob,,,,leebyung-hun,,,,comedy,,,,"ryuseung-ryong,leedong-hwi,leehani,seon-kyujin,gongmyung",,,,2019,,,,,,16265618,,,,139.0,
+1.0,,frozen,,,,"chrisbuck,jenniferlee",,,,animation,,,,"kristenbell,idinamenzel,jonathangroff,joshgad,santinofontana",,,,2014,,,,,,10296101,,,,82.0,
+1.0,,frozen2,,,,"chrisbuck,jenniferlee",,,,animation,,,,"kristenbell,idinamenzel,jonathangroff,joshgad",,,,2019,,,,,,13369064,,,,111.0,
+1.0,,inception,,,,christophernolan,,,,sci-fiaction,,,,"leonardodicaprio,marioncotillard,josephgordon-levitt,elliotpage,tomhardy",,,,2010,,,,,,5872548,,,,43.0,
+1.0,,insideout2,,,,kelseymann,,,,fantasyanimation,,,,"amypoehler,dianelane,phyllissmith,lewisblack",,,,2024,,,,,,8799611,,,,77.0,
+1.0,,interstellar,,,,christophernolan,,,,sci-fi,,,,"matthewmcconaughey,annehathaway,jessicachastain",,,,2014,,,,,,10105249,,,,80.0,
+1.0,,masquerade,,,,chochang-min,,,,historical,,,,"leebyung-hun,yooseung-ryong,hanhyo-joo",,,,2012,,,,,,12.128419,,,,87.0,
+,1.0,minari,Minari,,,,leeisaacchung,,,,drama,,,,stevenyeun,,,,2020,,,,,,120,,,,1.0
+1.0,,miracleincellno.7,,,,leehwan-kyung,,,,comedy,,,,"ryuseung-ryong,kalso-won,jungjin-young,parkshin-hye",,,,2013,,,,,,12812186,,,,91.0,
+,1.0,oncewewereus,Once We Were Us,,,,kimyong-hwan,,,,drama,,,,choimin-sik,,,,2021,,,,,,150,,,,1.0
+1.0,,peninsula,,,,yeonsang-ho,,,,actionthriller,,,,"kangdong-won,leejung-hyun",,,,2020,,,,,,3812954,,,,33.0,
+,1.0,rampage,Rampage,,,,parkshin-hye,,,,action,,,,leebyung-hun,,,,2011,,,,,,180,,,,1.5
+1.0,,secretreunion,,,,janghoon,,,,action,,,,"kangdong-won,songkang-ho",,,,2010,,,,,,5507106,,,,40.0,
+1.0,,spider-man:nowayhome,,,,jonwatts,,,,actionsci-fi,,,,"tomholland,zendayacoleman,benedictcumberbatch",,,,2021,,,,,,5560940,,,,55.0,
+1.0,,sunny,,,,kanghyeong-cheol,,,,comedy,,,,"shimeun-kyung,kangso-ra,kimmin-young,minhyo-rin",,,,2011,,,,,,7375110,,,,54.0,
+1.0,,theadmiral:roaringcurrents,,,,kimhan-min,,,,historicalwar,,,,"choimin-sik,ryuseung-ryong,chojin-woong,jingoo,leejung-hyun",,,,2014,,,,,,17616461,,,,135.0,
+1.0,,theavengers,,,,josswhedon,,,,sci-fi,,,,"robertdowneyjr.,chrisevans,markruffalo,chrishemsworth,scarlettjohansson,jeremyrenner,tomhiddleston,samuell.jackson,clarkgregg,cobiesmulders",,,,2012,,,,,,7087184,,,,59.0,
+1.0,,thefacereader,,,,hanjae-rim,,,,historicaldrama,,,,"songkang-ho,kimhye-soo,leejung-jae",,,,2013,,,,,,9134586,,,,66.0,
+,1.0,thehost,The Host,,,,bongjoon-ho,,,,sci-fi,,,,songkang-ho,,,,2010,,,,,,140,,,,1.0
+1.0,,themanfromnowhere,,,,leejeong-beom,,,,action,,,,"wonbin,kimsae-ron",,,,2010,,,,,,6282774,,,,47.0,
+1.0,,themanstandingnext,,,,woomin-ho,,,,drama,,,,"leebyung-hun,leesung-min,kwakdo-won,leeheejun",,,,2020,,,,,,4750917,,,,41.0,
+1.0,,theroundup,,,,leesang-yong,,,,crimeaction,,,,"madong-seok,sonsuk-ku",,,,2022,,,,,,12693415,,,,131.0,
+1.0,,theroundup:nowayout,,,,leesang-yong,,,,crimeaction,,,,"madong-seok,leejoon-hyuk,takahiroaoki",,,,2023,,,,,,10682813,,,,106.0,
+1.0,,theroundup:punishment,,,,heomyung-haeng,,,,crime,,,,"madong-seok,kimmoo-yeol,leedong-hwi,parkji-hwan",,,,2024,,,,,,11502928,,,,115.0,
+1.0,,thethieves,,,,choidong-hoon,,,,crimeaction,,,,"kimyoon-seok,kimhye-soo,leejung-jae,junji-hyun,simonyam,kimhae-sook,ohdal-su,kimsoo-hyun,derektsang",,,,2012,,,,,,12984701,,,,93.0,
+,1.0,todaynighttheworldlovedisappearsouthkorea,Today Night the World Love Disappear South Korea,,,,jeonji-yun,,,,romance,,,,hanhyo-joo,,,,2023,,,,,,170,,,,1.0
+1.0,,topgun:maverick,,,,josephkosinski,,,,action,,,,"tomcruise,jenniferconnelly,milesteller,jonhamm,valkilmer",,,,2022,,,,,,8239497,,,,87.0,
+1.0,,transformers:darkofthemoon,,,,michaelbay,,,,sci-fiaction,,,,"shialabeouf,joshduhamel,johnturturro,tyresegibson,rosiehuntington-whiteley",,,,2011,,,,,,7790434,,,,74.0,
+1.0,,veteran,,,,ryooseung-wan,,,,action,,,,"hwangjung-min,yooah-in,yoohae-jin,ohdal-su",,,,2015,,,,,,13414009,,,,105.0,
+1.0,,warofthearrows,,,,kimhan-min,,,,historicalaction,,,,"parkhae-il,moonchae-won,ryuseung-ryong",,,,2011,,,,,,7459974,,,,55.0,
+,1.0,zootopia2,Zootopia 2,,,,byronhoward,,,,animation,,,,ginnifergoodwin,,,,2024,,,,,,180,,,,1.0

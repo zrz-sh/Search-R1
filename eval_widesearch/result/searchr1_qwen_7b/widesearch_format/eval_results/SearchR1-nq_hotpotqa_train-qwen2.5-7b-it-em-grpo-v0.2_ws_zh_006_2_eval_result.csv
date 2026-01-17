@@ -1,0 +1,2586 @@
+exist_flag_gt,exist_flag_response,产品名称,产品名称_before_map,产品名称_exact_match,产品名称_exact_match_eval_msg,产品系列_llm_judge,产品系列_llm_judge_eval_msg,产品系列_query,产品系列_response,品牌_exact_match,品牌_exact_match_eval_msg,品牌_query,品牌_response,规格(/瓶)_llm_judge,规格(/瓶)_llm_judge_eval_msg,规格(/瓶)_query,规格(/瓶)_response,酒精度_llm_judge,酒精度_llm_judge_eval_msg,酒精度_query,酒精度_response,香型_exact_match,香型_exact_match_eval_msg,香型_query,香型_response
+,,陈年贵州茅台酒（80）,茅台酒（80年）,1.0,key_match,0.0,"分析步骤：
+
+根据判分准则：
+- 和参考答案语义大致相同或指向的实体一致即视为正确，分数为1；
+- 不要求字字对应，产品系列、产品名称有差异或缺失可能也无影响，只要指向一致即可；
+- 反之，分数为0。
+
+具体分析每组：
+
+idx_0:
+- response: ""系列""
+- target: ""陈年贵州茅台酒系列""
+- response仅泛指“系列”，但目标是特定系列
+- 根据准则，语义大致相同或指向实体一致即可，“系列”只是个泛指词，不特指“陈年贵州茅台酒系列”，语义过于宽泛，无法说明是该系列
+- 评分：0
+
+idx_1:
+- 同idx_0，情况相同
+- 评分：0
+
+idx_2:
+- 同idx_0，情况相同
+- 评分：0
+
+idx_3:
+- 同idx_0，情况相同
+- 评分：0
+
+idx_4:
+- response: ""系列""
+- target: ""飞天贵州茅台酒系列""
+- 同上，“系列”泛指，不特指“飞天贵州茅台酒系列”
+- 评分：0
+
+idx_5:
+- 同idx_4
+- 评分：0
+
+idx_6:
+- 同idx_4
+- 评分：0
+
+idx_7:
+- response: ""年轻化""
+- target: ""五粮液系列""
+- “年轻化”和“五粮液系列”语义不同，前者描述产品定位或风格，后者为具体产品系列名
+- 不一致
+- 评分：0
+
+idx_8:
+- response: ""年轻化""
+- target: ""果酒系列""
+- 同上，不是指同一实体
+- 评分：0
+
+idx_9:
+- response: ""系列""
+- target: ""国窖1573系列""
+- “系列”泛指，不特指“国窖1573系列”
+- 评分：0
+
+总结：所有response均较泛，没有明确指向目标系列名称或语义；只有标注系列的单词“系列”不被视为等同特定系列名称；“年轻化”与系列名不符，评分均为0。
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",陈年贵州茅台酒系列,系列,1.0,"exact match, response: 贵州茅台, target: 贵州茅台",贵州茅台,贵州茅台,0.0,"First, I analyze each pair according to the provided criterion:
+
+Criterion:  
+- ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+  (The response and the reference answer should be roughly semantically equivalent or refer to the same entity. Exact word-to-word match is not required.)
+
+---
+
+**idx_0**  
+- Response: '/'  
+- Target: '500ml'  
+- '/' does not convey '500ml' or a semantically equivalent quantity.  
+- Does not meet the criterion → score 0
+
+**idx_1**  
+- Same as idx_0 → score 0
+
+**idx_2**  
+- Same as idx_0 → score 0
+
+**idx_3**  
+- Same as idx_0 → score 0
+
+**idx_4**  
+- Response: '500ml'  
+- Target: '500ml'  
+- Exact match → score 1
+
+**idx_5**  
+- Response: '/'  
+- Target: '500ml'  
+- '/' does not convey meaning → 0
+
+**idx_6**  
+- Same as idx_5 → 0
+
+**idx_7**  
+- Response: '500ml'  
+- Target: '500ml'  
+- Match → 1
+
+**idx_8**  
+- Response: '/'  
+- Target: '650ml'  
+- '/' no semantic content → 0
+
+**idx_9**  
+- Response: '500ml'  
+- Target: '50ml/100ml/250ml/375ml/500ml/750ml/1.5l/3l'  
+- Target contains multiple valid volume options including '500ml' which the response exactly matches one of them → acceptable → 1
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 1
+}
+```",500ml,/,0.0,"Let's analyze each item according to the criterion:
+- The response and the target need to be semantically roughly the same or point to the same entity.
+- No need for exact wording, but the meaning or indicated entity should match.
+- Response can only get 0 or 1.
+
+---
+
+**idx_0**  
+- Response: ""/""
+- Target: ""52%vol""  
+- ""/"" means no answer or irrelevant. No match.  
+- Score: 0
+
+**idx_1**  
+- Response: ""/""
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_2**  
+- Response: ""/""
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_3**  
+- Response: ""/""
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_4**  
+- Response: ""53度""  
+- Target: ""53%vol""  
+- The target is ""53%vol"" indicating alcohol volume, response is ""53度"" (53 degrees) which commonly is used in Chinese to denote alcohol content (degree = %vol). Semantic entity is the same.  
+- Score: 1
+
+**idx_5**  
+- Response: ""/""  
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_6**  
+- Response: ""/""  
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_7**  
+- Response: ""39度""  
+- Target: ""39%vol""  
+- Same analysis as idx_4: ""度"" = degrees, often means %vol for alcohol. Same entity.  
+- Score: 1
+
+**idx_8**  
+- Response: ""/""  
+- Target: ""10%vol""  
+- No answer, no match.  
+- Score: 0
+
+**idx_9**  
+- Response: ""52度""  
+- Target: ""38%vol、43%vol、46%vol、52%vol""  
+- The target references multiple levels: 38%, 43%, 46%, and 52% volume. The response only states ""52度"".  
+- Since ""52度"" corresponds exactly to one of the target values (""52%vol""), the response covers one of the given target entities, so it matches partially. The criterion does not specify partial matching for multiple targets; it just requires semantic match or entity match.  
+- Since one of the target values is ""52%vol"" and response is ""52度"", they do semantically match in at least one entity. So accept.  
+- Score: 1
+
+---
+
+Final grading results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1
+}
+```",52%vol,/,0.0,"exact not match, response: 浓香, target: 酱香型",酱香型,浓香
+,,陈年贵州茅台酒（50）,茅台酒（50年）,1.0,key_match,0.0,"分析步骤：
+
+根据判分准则：
+- 和参考答案语义大致相同或指向的实体一致即视为正确，分数为1；
+- 不要求字字对应，产品系列、产品名称有差异或缺失可能也无影响，只要指向一致即可；
+- 反之，分数为0。
+
+具体分析每组：
+
+idx_0:
+- response: ""系列""
+- target: ""陈年贵州茅台酒系列""
+- response仅泛指“系列”，但目标是特定系列
+- 根据准则，语义大致相同或指向实体一致即可，“系列”只是个泛指词，不特指“陈年贵州茅台酒系列”，语义过于宽泛，无法说明是该系列
+- 评分：0
+
+idx_1:
+- 同idx_0，情况相同
+- 评分：0
+
+idx_2:
+- 同idx_0，情况相同
+- 评分：0
+
+idx_3:
+- 同idx_0，情况相同
+- 评分：0
+
+idx_4:
+- response: ""系列""
+- target: ""飞天贵州茅台酒系列""
+- 同上，“系列”泛指，不特指“飞天贵州茅台酒系列”
+- 评分：0
+
+idx_5:
+- 同idx_4
+- 评分：0
+
+idx_6:
+- 同idx_4
+- 评分：0
+
+idx_7:
+- response: ""年轻化""
+- target: ""五粮液系列""
+- “年轻化”和“五粮液系列”语义不同，前者描述产品定位或风格，后者为具体产品系列名
+- 不一致
+- 评分：0
+
+idx_8:
+- response: ""年轻化""
+- target: ""果酒系列""
+- 同上，不是指同一实体
+- 评分：0
+
+idx_9:
+- response: ""系列""
+- target: ""国窖1573系列""
+- “系列”泛指，不特指“国窖1573系列”
+- 评分：0
+
+总结：所有response均较泛，没有明确指向目标系列名称或语义；只有标注系列的单词“系列”不被视为等同特定系列名称；“年轻化”与系列名不符，评分均为0。
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",陈年贵州茅台酒系列,系列,1.0,"exact match, response: 贵州茅台, target: 贵州茅台",贵州茅台,贵州茅台,0.0,"First, I analyze each pair according to the provided criterion:
+
+Criterion:  
+- ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+  (The response and the reference answer should be roughly semantically equivalent or refer to the same entity. Exact word-to-word match is not required.)
+
+---
+
+**idx_0**  
+- Response: '/'  
+- Target: '500ml'  
+- '/' does not convey '500ml' or a semantically equivalent quantity.  
+- Does not meet the criterion → score 0
+
+**idx_1**  
+- Same as idx_0 → score 0
+
+**idx_2**  
+- Same as idx_0 → score 0
+
+**idx_3**  
+- Same as idx_0 → score 0
+
+**idx_4**  
+- Response: '500ml'  
+- Target: '500ml'  
+- Exact match → score 1
+
+**idx_5**  
+- Response: '/'  
+- Target: '500ml'  
+- '/' does not convey meaning → 0
+
+**idx_6**  
+- Same as idx_5 → 0
+
+**idx_7**  
+- Response: '500ml'  
+- Target: '500ml'  
+- Match → 1
+
+**idx_8**  
+- Response: '/'  
+- Target: '650ml'  
+- '/' no semantic content → 0
+
+**idx_9**  
+- Response: '500ml'  
+- Target: '50ml/100ml/250ml/375ml/500ml/750ml/1.5l/3l'  
+- Target contains multiple valid volume options including '500ml' which the response exactly matches one of them → acceptable → 1
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 1
+}
+```",500ml,/,0.0,"Let's analyze each item according to the criterion:
+- The response and the target need to be semantically roughly the same or point to the same entity.
+- No need for exact wording, but the meaning or indicated entity should match.
+- Response can only get 0 or 1.
+
+---
+
+**idx_0**  
+- Response: ""/""
+- Target: ""52%vol""  
+- ""/"" means no answer or irrelevant. No match.  
+- Score: 0
+
+**idx_1**  
+- Response: ""/""
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_2**  
+- Response: ""/""
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_3**  
+- Response: ""/""
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_4**  
+- Response: ""53度""  
+- Target: ""53%vol""  
+- The target is ""53%vol"" indicating alcohol volume, response is ""53度"" (53 degrees) which commonly is used in Chinese to denote alcohol content (degree = %vol). Semantic entity is the same.  
+- Score: 1
+
+**idx_5**  
+- Response: ""/""  
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_6**  
+- Response: ""/""  
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_7**  
+- Response: ""39度""  
+- Target: ""39%vol""  
+- Same analysis as idx_4: ""度"" = degrees, often means %vol for alcohol. Same entity.  
+- Score: 1
+
+**idx_8**  
+- Response: ""/""  
+- Target: ""10%vol""  
+- No answer, no match.  
+- Score: 0
+
+**idx_9**  
+- Response: ""52度""  
+- Target: ""38%vol、43%vol、46%vol、52%vol""  
+- The target references multiple levels: 38%, 43%, 46%, and 52% volume. The response only states ""52度"".  
+- Since ""52度"" corresponds exactly to one of the target values (""52%vol""), the response covers one of the given target entities, so it matches partially. The criterion does not specify partial matching for multiple targets; it just requires semantic match or entity match.  
+- Since one of the target values is ""52%vol"" and response is ""52度"", they do semantically match in at least one entity. So accept.  
+- Score: 1
+
+---
+
+Final grading results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1
+}
+```",53%vol,/,0.0,"exact not match, response: 浓香, target: 酱香型",酱香型,浓香
+,,陈年贵州茅台酒（30）,茅台酒（30年）,1.0,key_match,0.0,"分析步骤：
+
+根据判分准则：
+- 和参考答案语义大致相同或指向的实体一致即视为正确，分数为1；
+- 不要求字字对应，产品系列、产品名称有差异或缺失可能也无影响，只要指向一致即可；
+- 反之，分数为0。
+
+具体分析每组：
+
+idx_0:
+- response: ""系列""
+- target: ""陈年贵州茅台酒系列""
+- response仅泛指“系列”，但目标是特定系列
+- 根据准则，语义大致相同或指向实体一致即可，“系列”只是个泛指词，不特指“陈年贵州茅台酒系列”，语义过于宽泛，无法说明是该系列
+- 评分：0
+
+idx_1:
+- 同idx_0，情况相同
+- 评分：0
+
+idx_2:
+- 同idx_0，情况相同
+- 评分：0
+
+idx_3:
+- 同idx_0，情况相同
+- 评分：0
+
+idx_4:
+- response: ""系列""
+- target: ""飞天贵州茅台酒系列""
+- 同上，“系列”泛指，不特指“飞天贵州茅台酒系列”
+- 评分：0
+
+idx_5:
+- 同idx_4
+- 评分：0
+
+idx_6:
+- 同idx_4
+- 评分：0
+
+idx_7:
+- response: ""年轻化""
+- target: ""五粮液系列""
+- “年轻化”和“五粮液系列”语义不同，前者描述产品定位或风格，后者为具体产品系列名
+- 不一致
+- 评分：0
+
+idx_8:
+- response: ""年轻化""
+- target: ""果酒系列""
+- 同上，不是指同一实体
+- 评分：0
+
+idx_9:
+- response: ""系列""
+- target: ""国窖1573系列""
+- “系列”泛指，不特指“国窖1573系列”
+- 评分：0
+
+总结：所有response均较泛，没有明确指向目标系列名称或语义；只有标注系列的单词“系列”不被视为等同特定系列名称；“年轻化”与系列名不符，评分均为0。
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",陈年贵州茅台酒系列,系列,1.0,"exact match, response: 贵州茅台, target: 贵州茅台",贵州茅台,贵州茅台,0.0,"First, I analyze each pair according to the provided criterion:
+
+Criterion:  
+- ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+  (The response and the reference answer should be roughly semantically equivalent or refer to the same entity. Exact word-to-word match is not required.)
+
+---
+
+**idx_0**  
+- Response: '/'  
+- Target: '500ml'  
+- '/' does not convey '500ml' or a semantically equivalent quantity.  
+- Does not meet the criterion → score 0
+
+**idx_1**  
+- Same as idx_0 → score 0
+
+**idx_2**  
+- Same as idx_0 → score 0
+
+**idx_3**  
+- Same as idx_0 → score 0
+
+**idx_4**  
+- Response: '500ml'  
+- Target: '500ml'  
+- Exact match → score 1
+
+**idx_5**  
+- Response: '/'  
+- Target: '500ml'  
+- '/' does not convey meaning → 0
+
+**idx_6**  
+- Same as idx_5 → 0
+
+**idx_7**  
+- Response: '500ml'  
+- Target: '500ml'  
+- Match → 1
+
+**idx_8**  
+- Response: '/'  
+- Target: '650ml'  
+- '/' no semantic content → 0
+
+**idx_9**  
+- Response: '500ml'  
+- Target: '50ml/100ml/250ml/375ml/500ml/750ml/1.5l/3l'  
+- Target contains multiple valid volume options including '500ml' which the response exactly matches one of them → acceptable → 1
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 1
+}
+```",500ml,/,0.0,"Let's analyze each item according to the criterion:
+- The response and the target need to be semantically roughly the same or point to the same entity.
+- No need for exact wording, but the meaning or indicated entity should match.
+- Response can only get 0 or 1.
+
+---
+
+**idx_0**  
+- Response: ""/""
+- Target: ""52%vol""  
+- ""/"" means no answer or irrelevant. No match.  
+- Score: 0
+
+**idx_1**  
+- Response: ""/""
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_2**  
+- Response: ""/""
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_3**  
+- Response: ""/""
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_4**  
+- Response: ""53度""  
+- Target: ""53%vol""  
+- The target is ""53%vol"" indicating alcohol volume, response is ""53度"" (53 degrees) which commonly is used in Chinese to denote alcohol content (degree = %vol). Semantic entity is the same.  
+- Score: 1
+
+**idx_5**  
+- Response: ""/""  
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_6**  
+- Response: ""/""  
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_7**  
+- Response: ""39度""  
+- Target: ""39%vol""  
+- Same analysis as idx_4: ""度"" = degrees, often means %vol for alcohol. Same entity.  
+- Score: 1
+
+**idx_8**  
+- Response: ""/""  
+- Target: ""10%vol""  
+- No answer, no match.  
+- Score: 0
+
+**idx_9**  
+- Response: ""52度""  
+- Target: ""38%vol、43%vol、46%vol、52%vol""  
+- The target references multiple levels: 38%, 43%, 46%, and 52% volume. The response only states ""52度"".  
+- Since ""52度"" corresponds exactly to one of the target values (""52%vol""), the response covers one of the given target entities, so it matches partially. The criterion does not specify partial matching for multiple targets; it just requires semantic match or entity match.  
+- Since one of the target values is ""52%vol"" and response is ""52度"", they do semantically match in at least one entity. So accept.  
+- Score: 1
+
+---
+
+Final grading results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1
+}
+```",53%vol,/,0.0,"exact not match, response: 浓香, target: 酱香型",酱香型,浓香
+,,陈年贵州茅台酒（15）,茅台酒（15年）,1.0,key_match,0.0,"分析步骤：
+
+根据判分准则：
+- 和参考答案语义大致相同或指向的实体一致即视为正确，分数为1；
+- 不要求字字对应，产品系列、产品名称有差异或缺失可能也无影响，只要指向一致即可；
+- 反之，分数为0。
+
+具体分析每组：
+
+idx_0:
+- response: ""系列""
+- target: ""陈年贵州茅台酒系列""
+- response仅泛指“系列”，但目标是特定系列
+- 根据准则，语义大致相同或指向实体一致即可，“系列”只是个泛指词，不特指“陈年贵州茅台酒系列”，语义过于宽泛，无法说明是该系列
+- 评分：0
+
+idx_1:
+- 同idx_0，情况相同
+- 评分：0
+
+idx_2:
+- 同idx_0，情况相同
+- 评分：0
+
+idx_3:
+- 同idx_0，情况相同
+- 评分：0
+
+idx_4:
+- response: ""系列""
+- target: ""飞天贵州茅台酒系列""
+- 同上，“系列”泛指，不特指“飞天贵州茅台酒系列”
+- 评分：0
+
+idx_5:
+- 同idx_4
+- 评分：0
+
+idx_6:
+- 同idx_4
+- 评分：0
+
+idx_7:
+- response: ""年轻化""
+- target: ""五粮液系列""
+- “年轻化”和“五粮液系列”语义不同，前者描述产品定位或风格，后者为具体产品系列名
+- 不一致
+- 评分：0
+
+idx_8:
+- response: ""年轻化""
+- target: ""果酒系列""
+- 同上，不是指同一实体
+- 评分：0
+
+idx_9:
+- response: ""系列""
+- target: ""国窖1573系列""
+- “系列”泛指，不特指“国窖1573系列”
+- 评分：0
+
+总结：所有response均较泛，没有明确指向目标系列名称或语义；只有标注系列的单词“系列”不被视为等同特定系列名称；“年轻化”与系列名不符，评分均为0。
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",陈年贵州茅台酒系列,系列,1.0,"exact match, response: 贵州茅台, target: 贵州茅台",贵州茅台,贵州茅台,0.0,"First, I analyze each pair according to the provided criterion:
+
+Criterion:  
+- ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+  (The response and the reference answer should be roughly semantically equivalent or refer to the same entity. Exact word-to-word match is not required.)
+
+---
+
+**idx_0**  
+- Response: '/'  
+- Target: '500ml'  
+- '/' does not convey '500ml' or a semantically equivalent quantity.  
+- Does not meet the criterion → score 0
+
+**idx_1**  
+- Same as idx_0 → score 0
+
+**idx_2**  
+- Same as idx_0 → score 0
+
+**idx_3**  
+- Same as idx_0 → score 0
+
+**idx_4**  
+- Response: '500ml'  
+- Target: '500ml'  
+- Exact match → score 1
+
+**idx_5**  
+- Response: '/'  
+- Target: '500ml'  
+- '/' does not convey meaning → 0
+
+**idx_6**  
+- Same as idx_5 → 0
+
+**idx_7**  
+- Response: '500ml'  
+- Target: '500ml'  
+- Match → 1
+
+**idx_8**  
+- Response: '/'  
+- Target: '650ml'  
+- '/' no semantic content → 0
+
+**idx_9**  
+- Response: '500ml'  
+- Target: '50ml/100ml/250ml/375ml/500ml/750ml/1.5l/3l'  
+- Target contains multiple valid volume options including '500ml' which the response exactly matches one of them → acceptable → 1
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 1
+}
+```",500ml,/,0.0,"Let's analyze each item according to the criterion:
+- The response and the target need to be semantically roughly the same or point to the same entity.
+- No need for exact wording, but the meaning or indicated entity should match.
+- Response can only get 0 or 1.
+
+---
+
+**idx_0**  
+- Response: ""/""
+- Target: ""52%vol""  
+- ""/"" means no answer or irrelevant. No match.  
+- Score: 0
+
+**idx_1**  
+- Response: ""/""
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_2**  
+- Response: ""/""
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_3**  
+- Response: ""/""
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_4**  
+- Response: ""53度""  
+- Target: ""53%vol""  
+- The target is ""53%vol"" indicating alcohol volume, response is ""53度"" (53 degrees) which commonly is used in Chinese to denote alcohol content (degree = %vol). Semantic entity is the same.  
+- Score: 1
+
+**idx_5**  
+- Response: ""/""  
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_6**  
+- Response: ""/""  
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_7**  
+- Response: ""39度""  
+- Target: ""39%vol""  
+- Same analysis as idx_4: ""度"" = degrees, often means %vol for alcohol. Same entity.  
+- Score: 1
+
+**idx_8**  
+- Response: ""/""  
+- Target: ""10%vol""  
+- No answer, no match.  
+- Score: 0
+
+**idx_9**  
+- Response: ""52度""  
+- Target: ""38%vol、43%vol、46%vol、52%vol""  
+- The target references multiple levels: 38%, 43%, 46%, and 52% volume. The response only states ""52度"".  
+- Since ""52度"" corresponds exactly to one of the target values (""52%vol""), the response covers one of the given target entities, so it matches partially. The criterion does not specify partial matching for multiple targets; it just requires semantic match or entity match.  
+- Since one of the target values is ""52%vol"" and response is ""52度"", they do semantically match in at least one entity. So accept.  
+- Score: 1
+
+---
+
+Final grading results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1
+}
+```",53%vol,/,0.0,"exact not match, response: 浓香, target: 酱香型",酱香型,浓香
+,,贵州茅台酒（飞天）,茅台酒（飞天）,1.0,key_match,0.0,"分析步骤：
+
+根据判分准则：
+- 和参考答案语义大致相同或指向的实体一致即视为正确，分数为1；
+- 不要求字字对应，产品系列、产品名称有差异或缺失可能也无影响，只要指向一致即可；
+- 反之，分数为0。
+
+具体分析每组：
+
+idx_0:
+- response: ""系列""
+- target: ""陈年贵州茅台酒系列""
+- response仅泛指“系列”，但目标是特定系列
+- 根据准则，语义大致相同或指向实体一致即可，“系列”只是个泛指词，不特指“陈年贵州茅台酒系列”，语义过于宽泛，无法说明是该系列
+- 评分：0
+
+idx_1:
+- 同idx_0，情况相同
+- 评分：0
+
+idx_2:
+- 同idx_0，情况相同
+- 评分：0
+
+idx_3:
+- 同idx_0，情况相同
+- 评分：0
+
+idx_4:
+- response: ""系列""
+- target: ""飞天贵州茅台酒系列""
+- 同上，“系列”泛指，不特指“飞天贵州茅台酒系列”
+- 评分：0
+
+idx_5:
+- 同idx_4
+- 评分：0
+
+idx_6:
+- 同idx_4
+- 评分：0
+
+idx_7:
+- response: ""年轻化""
+- target: ""五粮液系列""
+- “年轻化”和“五粮液系列”语义不同，前者描述产品定位或风格，后者为具体产品系列名
+- 不一致
+- 评分：0
+
+idx_8:
+- response: ""年轻化""
+- target: ""果酒系列""
+- 同上，不是指同一实体
+- 评分：0
+
+idx_9:
+- response: ""系列""
+- target: ""国窖1573系列""
+- “系列”泛指，不特指“国窖1573系列”
+- 评分：0
+
+总结：所有response均较泛，没有明确指向目标系列名称或语义；只有标注系列的单词“系列”不被视为等同特定系列名称；“年轻化”与系列名不符，评分均为0。
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",飞天贵州茅台酒系列,系列,1.0,"exact match, response: 贵州茅台, target: 贵州茅台",贵州茅台,贵州茅台,1.0,"First, I analyze each pair according to the provided criterion:
+
+Criterion:  
+- ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+  (The response and the reference answer should be roughly semantically equivalent or refer to the same entity. Exact word-to-word match is not required.)
+
+---
+
+**idx_0**  
+- Response: '/'  
+- Target: '500ml'  
+- '/' does not convey '500ml' or a semantically equivalent quantity.  
+- Does not meet the criterion → score 0
+
+**idx_1**  
+- Same as idx_0 → score 0
+
+**idx_2**  
+- Same as idx_0 → score 0
+
+**idx_3**  
+- Same as idx_0 → score 0
+
+**idx_4**  
+- Response: '500ml'  
+- Target: '500ml'  
+- Exact match → score 1
+
+**idx_5**  
+- Response: '/'  
+- Target: '500ml'  
+- '/' does not convey meaning → 0
+
+**idx_6**  
+- Same as idx_5 → 0
+
+**idx_7**  
+- Response: '500ml'  
+- Target: '500ml'  
+- Match → 1
+
+**idx_8**  
+- Response: '/'  
+- Target: '650ml'  
+- '/' no semantic content → 0
+
+**idx_9**  
+- Response: '500ml'  
+- Target: '50ml/100ml/250ml/375ml/500ml/750ml/1.5l/3l'  
+- Target contains multiple valid volume options including '500ml' which the response exactly matches one of them → acceptable → 1
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 1
+}
+```",500ml,500ml,1.0,"Let's analyze each item according to the criterion:
+- The response and the target need to be semantically roughly the same or point to the same entity.
+- No need for exact wording, but the meaning or indicated entity should match.
+- Response can only get 0 or 1.
+
+---
+
+**idx_0**  
+- Response: ""/""
+- Target: ""52%vol""  
+- ""/"" means no answer or irrelevant. No match.  
+- Score: 0
+
+**idx_1**  
+- Response: ""/""
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_2**  
+- Response: ""/""
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_3**  
+- Response: ""/""
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_4**  
+- Response: ""53度""  
+- Target: ""53%vol""  
+- The target is ""53%vol"" indicating alcohol volume, response is ""53度"" (53 degrees) which commonly is used in Chinese to denote alcohol content (degree = %vol). Semantic entity is the same.  
+- Score: 1
+
+**idx_5**  
+- Response: ""/""  
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_6**  
+- Response: ""/""  
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_7**  
+- Response: ""39度""  
+- Target: ""39%vol""  
+- Same analysis as idx_4: ""度"" = degrees, often means %vol for alcohol. Same entity.  
+- Score: 1
+
+**idx_8**  
+- Response: ""/""  
+- Target: ""10%vol""  
+- No answer, no match.  
+- Score: 0
+
+**idx_9**  
+- Response: ""52度""  
+- Target: ""38%vol、43%vol、46%vol、52%vol""  
+- The target references multiple levels: 38%, 43%, 46%, and 52% volume. The response only states ""52度"".  
+- Since ""52度"" corresponds exactly to one of the target values (""52%vol""), the response covers one of the given target entities, so it matches partially. The criterion does not specify partial matching for multiple targets; it just requires semantic match or entity match.  
+- Since one of the target values is ""52%vol"" and response is ""52度"", they do semantically match in at least one entity. So accept.  
+- Score: 1
+
+---
+
+Final grading results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1
+}
+```",53%vol,53度,0.0,"exact not match, response: 浓香, target: 酱香型",酱香型,浓香
+,,贵州茅台酒（五星）,茅台酒（五星）,1.0,key_match,0.0,"分析步骤：
+
+根据判分准则：
+- 和参考答案语义大致相同或指向的实体一致即视为正确，分数为1；
+- 不要求字字对应，产品系列、产品名称有差异或缺失可能也无影响，只要指向一致即可；
+- 反之，分数为0。
+
+具体分析每组：
+
+idx_0:
+- response: ""系列""
+- target: ""陈年贵州茅台酒系列""
+- response仅泛指“系列”，但目标是特定系列
+- 根据准则，语义大致相同或指向实体一致即可，“系列”只是个泛指词，不特指“陈年贵州茅台酒系列”，语义过于宽泛，无法说明是该系列
+- 评分：0
+
+idx_1:
+- 同idx_0，情况相同
+- 评分：0
+
+idx_2:
+- 同idx_0，情况相同
+- 评分：0
+
+idx_3:
+- 同idx_0，情况相同
+- 评分：0
+
+idx_4:
+- response: ""系列""
+- target: ""飞天贵州茅台酒系列""
+- 同上，“系列”泛指，不特指“飞天贵州茅台酒系列”
+- 评分：0
+
+idx_5:
+- 同idx_4
+- 评分：0
+
+idx_6:
+- 同idx_4
+- 评分：0
+
+idx_7:
+- response: ""年轻化""
+- target: ""五粮液系列""
+- “年轻化”和“五粮液系列”语义不同，前者描述产品定位或风格，后者为具体产品系列名
+- 不一致
+- 评分：0
+
+idx_8:
+- response: ""年轻化""
+- target: ""果酒系列""
+- 同上，不是指同一实体
+- 评分：0
+
+idx_9:
+- response: ""系列""
+- target: ""国窖1573系列""
+- “系列”泛指，不特指“国窖1573系列”
+- 评分：0
+
+总结：所有response均较泛，没有明确指向目标系列名称或语义；只有标注系列的单词“系列”不被视为等同特定系列名称；“年轻化”与系列名不符，评分均为0。
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",飞天贵州茅台酒系列,系列,1.0,"exact match, response: 贵州茅台, target: 贵州茅台",贵州茅台,贵州茅台,0.0,"First, I analyze each pair according to the provided criterion:
+
+Criterion:  
+- ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+  (The response and the reference answer should be roughly semantically equivalent or refer to the same entity. Exact word-to-word match is not required.)
+
+---
+
+**idx_0**  
+- Response: '/'  
+- Target: '500ml'  
+- '/' does not convey '500ml' or a semantically equivalent quantity.  
+- Does not meet the criterion → score 0
+
+**idx_1**  
+- Same as idx_0 → score 0
+
+**idx_2**  
+- Same as idx_0 → score 0
+
+**idx_3**  
+- Same as idx_0 → score 0
+
+**idx_4**  
+- Response: '500ml'  
+- Target: '500ml'  
+- Exact match → score 1
+
+**idx_5**  
+- Response: '/'  
+- Target: '500ml'  
+- '/' does not convey meaning → 0
+
+**idx_6**  
+- Same as idx_5 → 0
+
+**idx_7**  
+- Response: '500ml'  
+- Target: '500ml'  
+- Match → 1
+
+**idx_8**  
+- Response: '/'  
+- Target: '650ml'  
+- '/' no semantic content → 0
+
+**idx_9**  
+- Response: '500ml'  
+- Target: '50ml/100ml/250ml/375ml/500ml/750ml/1.5l/3l'  
+- Target contains multiple valid volume options including '500ml' which the response exactly matches one of them → acceptable → 1
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 1
+}
+```",500ml,/,0.0,"Let's analyze each item according to the criterion:
+- The response and the target need to be semantically roughly the same or point to the same entity.
+- No need for exact wording, but the meaning or indicated entity should match.
+- Response can only get 0 or 1.
+
+---
+
+**idx_0**  
+- Response: ""/""
+- Target: ""52%vol""  
+- ""/"" means no answer or irrelevant. No match.  
+- Score: 0
+
+**idx_1**  
+- Response: ""/""
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_2**  
+- Response: ""/""
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_3**  
+- Response: ""/""
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_4**  
+- Response: ""53度""  
+- Target: ""53%vol""  
+- The target is ""53%vol"" indicating alcohol volume, response is ""53度"" (53 degrees) which commonly is used in Chinese to denote alcohol content (degree = %vol). Semantic entity is the same.  
+- Score: 1
+
+**idx_5**  
+- Response: ""/""  
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_6**  
+- Response: ""/""  
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_7**  
+- Response: ""39度""  
+- Target: ""39%vol""  
+- Same analysis as idx_4: ""度"" = degrees, often means %vol for alcohol. Same entity.  
+- Score: 1
+
+**idx_8**  
+- Response: ""/""  
+- Target: ""10%vol""  
+- No answer, no match.  
+- Score: 0
+
+**idx_9**  
+- Response: ""52度""  
+- Target: ""38%vol、43%vol、46%vol、52%vol""  
+- The target references multiple levels: 38%, 43%, 46%, and 52% volume. The response only states ""52度"".  
+- Since ""52度"" corresponds exactly to one of the target values (""52%vol""), the response covers one of the given target entities, so it matches partially. The criterion does not specify partial matching for multiple targets; it just requires semantic match or entity match.  
+- Since one of the target values is ""52%vol"" and response is ""52度"", they do semantically match in at least one entity. So accept.  
+- Score: 1
+
+---
+
+Final grading results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1
+}
+```",53%vol,/,0.0,"exact not match, response: 浓香, target: 酱香型",酱香型,浓香
+,,贵州茅台酒（珍品）,茅台酒（珍品）,1.0,key_match,0.0,"分析步骤：
+
+根据判分准则：
+- 和参考答案语义大致相同或指向的实体一致即视为正确，分数为1；
+- 不要求字字对应，产品系列、产品名称有差异或缺失可能也无影响，只要指向一致即可；
+- 反之，分数为0。
+
+具体分析每组：
+
+idx_0:
+- response: ""系列""
+- target: ""陈年贵州茅台酒系列""
+- response仅泛指“系列”，但目标是特定系列
+- 根据准则，语义大致相同或指向实体一致即可，“系列”只是个泛指词，不特指“陈年贵州茅台酒系列”，语义过于宽泛，无法说明是该系列
+- 评分：0
+
+idx_1:
+- 同idx_0，情况相同
+- 评分：0
+
+idx_2:
+- 同idx_0，情况相同
+- 评分：0
+
+idx_3:
+- 同idx_0，情况相同
+- 评分：0
+
+idx_4:
+- response: ""系列""
+- target: ""飞天贵州茅台酒系列""
+- 同上，“系列”泛指，不特指“飞天贵州茅台酒系列”
+- 评分：0
+
+idx_5:
+- 同idx_4
+- 评分：0
+
+idx_6:
+- 同idx_4
+- 评分：0
+
+idx_7:
+- response: ""年轻化""
+- target: ""五粮液系列""
+- “年轻化”和“五粮液系列”语义不同，前者描述产品定位或风格，后者为具体产品系列名
+- 不一致
+- 评分：0
+
+idx_8:
+- response: ""年轻化""
+- target: ""果酒系列""
+- 同上，不是指同一实体
+- 评分：0
+
+idx_9:
+- response: ""系列""
+- target: ""国窖1573系列""
+- “系列”泛指，不特指“国窖1573系列”
+- 评分：0
+
+总结：所有response均较泛，没有明确指向目标系列名称或语义；只有标注系列的单词“系列”不被视为等同特定系列名称；“年轻化”与系列名不符，评分均为0。
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",飞天贵州茅台酒系列,系列,1.0,"exact match, response: 贵州茅台, target: 贵州茅台",贵州茅台,贵州茅台,0.0,"First, I analyze each pair according to the provided criterion:
+
+Criterion:  
+- ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+  (The response and the reference answer should be roughly semantically equivalent or refer to the same entity. Exact word-to-word match is not required.)
+
+---
+
+**idx_0**  
+- Response: '/'  
+- Target: '500ml'  
+- '/' does not convey '500ml' or a semantically equivalent quantity.  
+- Does not meet the criterion → score 0
+
+**idx_1**  
+- Same as idx_0 → score 0
+
+**idx_2**  
+- Same as idx_0 → score 0
+
+**idx_3**  
+- Same as idx_0 → score 0
+
+**idx_4**  
+- Response: '500ml'  
+- Target: '500ml'  
+- Exact match → score 1
+
+**idx_5**  
+- Response: '/'  
+- Target: '500ml'  
+- '/' does not convey meaning → 0
+
+**idx_6**  
+- Same as idx_5 → 0
+
+**idx_7**  
+- Response: '500ml'  
+- Target: '500ml'  
+- Match → 1
+
+**idx_8**  
+- Response: '/'  
+- Target: '650ml'  
+- '/' no semantic content → 0
+
+**idx_9**  
+- Response: '500ml'  
+- Target: '50ml/100ml/250ml/375ml/500ml/750ml/1.5l/3l'  
+- Target contains multiple valid volume options including '500ml' which the response exactly matches one of them → acceptable → 1
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 1
+}
+```",500ml,/,0.0,"Let's analyze each item according to the criterion:
+- The response and the target need to be semantically roughly the same or point to the same entity.
+- No need for exact wording, but the meaning or indicated entity should match.
+- Response can only get 0 or 1.
+
+---
+
+**idx_0**  
+- Response: ""/""
+- Target: ""52%vol""  
+- ""/"" means no answer or irrelevant. No match.  
+- Score: 0
+
+**idx_1**  
+- Response: ""/""
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_2**  
+- Response: ""/""
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_3**  
+- Response: ""/""
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_4**  
+- Response: ""53度""  
+- Target: ""53%vol""  
+- The target is ""53%vol"" indicating alcohol volume, response is ""53度"" (53 degrees) which commonly is used in Chinese to denote alcohol content (degree = %vol). Semantic entity is the same.  
+- Score: 1
+
+**idx_5**  
+- Response: ""/""  
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_6**  
+- Response: ""/""  
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_7**  
+- Response: ""39度""  
+- Target: ""39%vol""  
+- Same analysis as idx_4: ""度"" = degrees, often means %vol for alcohol. Same entity.  
+- Score: 1
+
+**idx_8**  
+- Response: ""/""  
+- Target: ""10%vol""  
+- No answer, no match.  
+- Score: 0
+
+**idx_9**  
+- Response: ""52度""  
+- Target: ""38%vol、43%vol、46%vol、52%vol""  
+- The target references multiple levels: 38%, 43%, 46%, and 52% volume. The response only states ""52度"".  
+- Since ""52度"" corresponds exactly to one of the target values (""52%vol""), the response covers one of the given target entities, so it matches partially. The criterion does not specify partial matching for multiple targets; it just requires semantic match or entity match.  
+- Since one of the target values is ""52%vol"" and response is ""52度"", they do semantically match in at least one entity. So accept.  
+- Score: 1
+
+---
+
+Final grading results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1
+}
+```",53%vol,/,0.0,"exact not match, response: 浓香, target: 酱香型",酱香型,浓香
+,,39度五粮液,五粮液39度,1.0,key_match,0.0,"分析步骤：
+
+根据判分准则：
+- 和参考答案语义大致相同或指向的实体一致即视为正确，分数为1；
+- 不要求字字对应，产品系列、产品名称有差异或缺失可能也无影响，只要指向一致即可；
+- 反之，分数为0。
+
+具体分析每组：
+
+idx_0:
+- response: ""系列""
+- target: ""陈年贵州茅台酒系列""
+- response仅泛指“系列”，但目标是特定系列
+- 根据准则，语义大致相同或指向实体一致即可，“系列”只是个泛指词，不特指“陈年贵州茅台酒系列”，语义过于宽泛，无法说明是该系列
+- 评分：0
+
+idx_1:
+- 同idx_0，情况相同
+- 评分：0
+
+idx_2:
+- 同idx_0，情况相同
+- 评分：0
+
+idx_3:
+- 同idx_0，情况相同
+- 评分：0
+
+idx_4:
+- response: ""系列""
+- target: ""飞天贵州茅台酒系列""
+- 同上，“系列”泛指，不特指“飞天贵州茅台酒系列”
+- 评分：0
+
+idx_5:
+- 同idx_4
+- 评分：0
+
+idx_6:
+- 同idx_4
+- 评分：0
+
+idx_7:
+- response: ""年轻化""
+- target: ""五粮液系列""
+- “年轻化”和“五粮液系列”语义不同，前者描述产品定位或风格，后者为具体产品系列名
+- 不一致
+- 评分：0
+
+idx_8:
+- response: ""年轻化""
+- target: ""果酒系列""
+- 同上，不是指同一实体
+- 评分：0
+
+idx_9:
+- response: ""系列""
+- target: ""国窖1573系列""
+- “系列”泛指，不特指“国窖1573系列”
+- 评分：0
+
+总结：所有response均较泛，没有明确指向目标系列名称或语义；只有标注系列的单词“系列”不被视为等同特定系列名称；“年轻化”与系列名不符，评分均为0。
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",五粮液系列,年轻化,1.0,"exact match, response: 五粮液, target: 五粮液",五粮液,五粮液,1.0,"First, I analyze each pair according to the provided criterion:
+
+Criterion:  
+- ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+  (The response and the reference answer should be roughly semantically equivalent or refer to the same entity. Exact word-to-word match is not required.)
+
+---
+
+**idx_0**  
+- Response: '/'  
+- Target: '500ml'  
+- '/' does not convey '500ml' or a semantically equivalent quantity.  
+- Does not meet the criterion → score 0
+
+**idx_1**  
+- Same as idx_0 → score 0
+
+**idx_2**  
+- Same as idx_0 → score 0
+
+**idx_3**  
+- Same as idx_0 → score 0
+
+**idx_4**  
+- Response: '500ml'  
+- Target: '500ml'  
+- Exact match → score 1
+
+**idx_5**  
+- Response: '/'  
+- Target: '500ml'  
+- '/' does not convey meaning → 0
+
+**idx_6**  
+- Same as idx_5 → 0
+
+**idx_7**  
+- Response: '500ml'  
+- Target: '500ml'  
+- Match → 1
+
+**idx_8**  
+- Response: '/'  
+- Target: '650ml'  
+- '/' no semantic content → 0
+
+**idx_9**  
+- Response: '500ml'  
+- Target: '50ml/100ml/250ml/375ml/500ml/750ml/1.5l/3l'  
+- Target contains multiple valid volume options including '500ml' which the response exactly matches one of them → acceptable → 1
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 1
+}
+```",500ml,500ml,1.0,"Let's analyze each item according to the criterion:
+- The response and the target need to be semantically roughly the same or point to the same entity.
+- No need for exact wording, but the meaning or indicated entity should match.
+- Response can only get 0 or 1.
+
+---
+
+**idx_0**  
+- Response: ""/""
+- Target: ""52%vol""  
+- ""/"" means no answer or irrelevant. No match.  
+- Score: 0
+
+**idx_1**  
+- Response: ""/""
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_2**  
+- Response: ""/""
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_3**  
+- Response: ""/""
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_4**  
+- Response: ""53度""  
+- Target: ""53%vol""  
+- The target is ""53%vol"" indicating alcohol volume, response is ""53度"" (53 degrees) which commonly is used in Chinese to denote alcohol content (degree = %vol). Semantic entity is the same.  
+- Score: 1
+
+**idx_5**  
+- Response: ""/""  
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_6**  
+- Response: ""/""  
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_7**  
+- Response: ""39度""  
+- Target: ""39%vol""  
+- Same analysis as idx_4: ""度"" = degrees, often means %vol for alcohol. Same entity.  
+- Score: 1
+
+**idx_8**  
+- Response: ""/""  
+- Target: ""10%vol""  
+- No answer, no match.  
+- Score: 0
+
+**idx_9**  
+- Response: ""52度""  
+- Target: ""38%vol、43%vol、46%vol、52%vol""  
+- The target references multiple levels: 38%, 43%, 46%, and 52% volume. The response only states ""52度"".  
+- Since ""52度"" corresponds exactly to one of the target values (""52%vol""), the response covers one of the given target entities, so it matches partially. The criterion does not specify partial matching for multiple targets; it just requires semantic match or entity match.  
+- Since one of the target values is ""52%vol"" and response is ""52度"", they do semantically match in at least one entity. So accept.  
+- Score: 1
+
+---
+
+Final grading results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1
+}
+```",39%vol,39度,0.0,"exact not match, response: 浓香, target: 浓香型",浓香型,浓香
+,,仙林牌青梅酒,五粮液青梅酒,1.0,key_match,0.0,"分析步骤：
+
+根据判分准则：
+- 和参考答案语义大致相同或指向的实体一致即视为正确，分数为1；
+- 不要求字字对应，产品系列、产品名称有差异或缺失可能也无影响，只要指向一致即可；
+- 反之，分数为0。
+
+具体分析每组：
+
+idx_0:
+- response: ""系列""
+- target: ""陈年贵州茅台酒系列""
+- response仅泛指“系列”，但目标是特定系列
+- 根据准则，语义大致相同或指向实体一致即可，“系列”只是个泛指词，不特指“陈年贵州茅台酒系列”，语义过于宽泛，无法说明是该系列
+- 评分：0
+
+idx_1:
+- 同idx_0，情况相同
+- 评分：0
+
+idx_2:
+- 同idx_0，情况相同
+- 评分：0
+
+idx_3:
+- 同idx_0，情况相同
+- 评分：0
+
+idx_4:
+- response: ""系列""
+- target: ""飞天贵州茅台酒系列""
+- 同上，“系列”泛指，不特指“飞天贵州茅台酒系列”
+- 评分：0
+
+idx_5:
+- 同idx_4
+- 评分：0
+
+idx_6:
+- 同idx_4
+- 评分：0
+
+idx_7:
+- response: ""年轻化""
+- target: ""五粮液系列""
+- “年轻化”和“五粮液系列”语义不同，前者描述产品定位或风格，后者为具体产品系列名
+- 不一致
+- 评分：0
+
+idx_8:
+- response: ""年轻化""
+- target: ""果酒系列""
+- 同上，不是指同一实体
+- 评分：0
+
+idx_9:
+- response: ""系列""
+- target: ""国窖1573系列""
+- “系列”泛指，不特指“国窖1573系列”
+- 评分：0
+
+总结：所有response均较泛，没有明确指向目标系列名称或语义；只有标注系列的单词“系列”不被视为等同特定系列名称；“年轻化”与系列名不符，评分均为0。
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",果酒系列,年轻化,1.0,"exact match, response: 五粮液, target: 五粮液",五粮液,五粮液,0.0,"First, I analyze each pair according to the provided criterion:
+
+Criterion:  
+- ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+  (The response and the reference answer should be roughly semantically equivalent or refer to the same entity. Exact word-to-word match is not required.)
+
+---
+
+**idx_0**  
+- Response: '/'  
+- Target: '500ml'  
+- '/' does not convey '500ml' or a semantically equivalent quantity.  
+- Does not meet the criterion → score 0
+
+**idx_1**  
+- Same as idx_0 → score 0
+
+**idx_2**  
+- Same as idx_0 → score 0
+
+**idx_3**  
+- Same as idx_0 → score 0
+
+**idx_4**  
+- Response: '500ml'  
+- Target: '500ml'  
+- Exact match → score 1
+
+**idx_5**  
+- Response: '/'  
+- Target: '500ml'  
+- '/' does not convey meaning → 0
+
+**idx_6**  
+- Same as idx_5 → 0
+
+**idx_7**  
+- Response: '500ml'  
+- Target: '500ml'  
+- Match → 1
+
+**idx_8**  
+- Response: '/'  
+- Target: '650ml'  
+- '/' no semantic content → 0
+
+**idx_9**  
+- Response: '500ml'  
+- Target: '50ml/100ml/250ml/375ml/500ml/750ml/1.5l/3l'  
+- Target contains multiple valid volume options including '500ml' which the response exactly matches one of them → acceptable → 1
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 1
+}
+```",650ml,/,0.0,"Let's analyze each item according to the criterion:
+- The response and the target need to be semantically roughly the same or point to the same entity.
+- No need for exact wording, but the meaning or indicated entity should match.
+- Response can only get 0 or 1.
+
+---
+
+**idx_0**  
+- Response: ""/""
+- Target: ""52%vol""  
+- ""/"" means no answer or irrelevant. No match.  
+- Score: 0
+
+**idx_1**  
+- Response: ""/""
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_2**  
+- Response: ""/""
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_3**  
+- Response: ""/""
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_4**  
+- Response: ""53度""  
+- Target: ""53%vol""  
+- The target is ""53%vol"" indicating alcohol volume, response is ""53度"" (53 degrees) which commonly is used in Chinese to denote alcohol content (degree = %vol). Semantic entity is the same.  
+- Score: 1
+
+**idx_5**  
+- Response: ""/""  
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_6**  
+- Response: ""/""  
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_7**  
+- Response: ""39度""  
+- Target: ""39%vol""  
+- Same analysis as idx_4: ""度"" = degrees, often means %vol for alcohol. Same entity.  
+- Score: 1
+
+**idx_8**  
+- Response: ""/""  
+- Target: ""10%vol""  
+- No answer, no match.  
+- Score: 0
+
+**idx_9**  
+- Response: ""52度""  
+- Target: ""38%vol、43%vol、46%vol、52%vol""  
+- The target references multiple levels: 38%, 43%, 46%, and 52% volume. The response only states ""52度"".  
+- Since ""52度"" corresponds exactly to one of the target values (""52%vol""), the response covers one of the given target entities, so it matches partially. The criterion does not specify partial matching for multiple targets; it just requires semantic match or entity match.  
+- Since one of the target values is ""52%vol"" and response is ""52度"", they do semantically match in at least one entity. So accept.  
+- Score: 1
+
+---
+
+Final grading results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1
+}
+```",10%vol,/,0.0,"exact not match, response: 果香, target: 果酒",果酒,果香
+,,国窖1573经典装,国窖1573,1.0,key_match,0.0,"分析步骤：
+
+根据判分准则：
+- 和参考答案语义大致相同或指向的实体一致即视为正确，分数为1；
+- 不要求字字对应，产品系列、产品名称有差异或缺失可能也无影响，只要指向一致即可；
+- 反之，分数为0。
+
+具体分析每组：
+
+idx_0:
+- response: ""系列""
+- target: ""陈年贵州茅台酒系列""
+- response仅泛指“系列”，但目标是特定系列
+- 根据准则，语义大致相同或指向实体一致即可，“系列”只是个泛指词，不特指“陈年贵州茅台酒系列”，语义过于宽泛，无法说明是该系列
+- 评分：0
+
+idx_1:
+- 同idx_0，情况相同
+- 评分：0
+
+idx_2:
+- 同idx_0，情况相同
+- 评分：0
+
+idx_3:
+- 同idx_0，情况相同
+- 评分：0
+
+idx_4:
+- response: ""系列""
+- target: ""飞天贵州茅台酒系列""
+- 同上，“系列”泛指，不特指“飞天贵州茅台酒系列”
+- 评分：0
+
+idx_5:
+- 同idx_4
+- 评分：0
+
+idx_6:
+- 同idx_4
+- 评分：0
+
+idx_7:
+- response: ""年轻化""
+- target: ""五粮液系列""
+- “年轻化”和“五粮液系列”语义不同，前者描述产品定位或风格，后者为具体产品系列名
+- 不一致
+- 评分：0
+
+idx_8:
+- response: ""年轻化""
+- target: ""果酒系列""
+- 同上，不是指同一实体
+- 评分：0
+
+idx_9:
+- response: ""系列""
+- target: ""国窖1573系列""
+- “系列”泛指，不特指“国窖1573系列”
+- 评分：0
+
+总结：所有response均较泛，没有明确指向目标系列名称或语义；只有标注系列的单词“系列”不被视为等同特定系列名称；“年轻化”与系列名不符，评分均为0。
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",国窖1573系列,系列,1.0,"exact match, response: 泸州老窖, target: 泸州老窖",泸州老窖,泸州老窖,1.0,"First, I analyze each pair according to the provided criterion:
+
+Criterion:  
+- ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+  (The response and the reference answer should be roughly semantically equivalent or refer to the same entity. Exact word-to-word match is not required.)
+
+---
+
+**idx_0**  
+- Response: '/'  
+- Target: '500ml'  
+- '/' does not convey '500ml' or a semantically equivalent quantity.  
+- Does not meet the criterion → score 0
+
+**idx_1**  
+- Same as idx_0 → score 0
+
+**idx_2**  
+- Same as idx_0 → score 0
+
+**idx_3**  
+- Same as idx_0 → score 0
+
+**idx_4**  
+- Response: '500ml'  
+- Target: '500ml'  
+- Exact match → score 1
+
+**idx_5**  
+- Response: '/'  
+- Target: '500ml'  
+- '/' does not convey meaning → 0
+
+**idx_6**  
+- Same as idx_5 → 0
+
+**idx_7**  
+- Response: '500ml'  
+- Target: '500ml'  
+- Match → 1
+
+**idx_8**  
+- Response: '/'  
+- Target: '650ml'  
+- '/' no semantic content → 0
+
+**idx_9**  
+- Response: '500ml'  
+- Target: '50ml/100ml/250ml/375ml/500ml/750ml/1.5l/3l'  
+- Target contains multiple valid volume options including '500ml' which the response exactly matches one of them → acceptable → 1
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 1
+}
+```",50ml/100ml/250ml/375ml/500ml/750ml/1.5l/3l,500ml,1.0,"Let's analyze each item according to the criterion:
+- The response and the target need to be semantically roughly the same or point to the same entity.
+- No need for exact wording, but the meaning or indicated entity should match.
+- Response can only get 0 or 1.
+
+---
+
+**idx_0**  
+- Response: ""/""
+- Target: ""52%vol""  
+- ""/"" means no answer or irrelevant. No match.  
+- Score: 0
+
+**idx_1**  
+- Response: ""/""
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_2**  
+- Response: ""/""
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_3**  
+- Response: ""/""
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_4**  
+- Response: ""53度""  
+- Target: ""53%vol""  
+- The target is ""53%vol"" indicating alcohol volume, response is ""53度"" (53 degrees) which commonly is used in Chinese to denote alcohol content (degree = %vol). Semantic entity is the same.  
+- Score: 1
+
+**idx_5**  
+- Response: ""/""  
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_6**  
+- Response: ""/""  
+- Target: ""53%vol""  
+- No answer. No match.  
+- Score: 0
+
+**idx_7**  
+- Response: ""39度""  
+- Target: ""39%vol""  
+- Same analysis as idx_4: ""度"" = degrees, often means %vol for alcohol. Same entity.  
+- Score: 1
+
+**idx_8**  
+- Response: ""/""  
+- Target: ""10%vol""  
+- No answer, no match.  
+- Score: 0
+
+**idx_9**  
+- Response: ""52度""  
+- Target: ""38%vol、43%vol、46%vol、52%vol""  
+- The target references multiple levels: 38%, 43%, 46%, and 52% volume. The response only states ""52度"".  
+- Since ""52度"" corresponds exactly to one of the target values (""52%vol""), the response covers one of the given target entities, so it matches partially. The criterion does not specify partial matching for multiple targets; it just requires semantic match or entity match.  
+- Since one of the target values is ""52%vol"" and response is ""52度"", they do semantically match in at least one entity. So accept.  
+- Score: 1
+
+---
+
+Final grading results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1
+}
+```",38%vol、43%vol、46%vol、52%vol,52度,0.0,"exact not match, response: 浓香, target: 浓香型",浓香型,浓香
+1.0,,"""18""五粮液礼盒",,,,,,五粮液系列,,,,五粮液,,,,500ml,,,,56%vol,,,,浓香型,
+1.0,,"""33""五粮液礼盒",,,,,,五粮液系列,,,,五粮液,,,,500ml,,,,56%vol,,,,浓香型,
+1.0,,12.18,,,,,,12.18系列,,,,五粮液,,,,375ml/500ml,,,,39%vol45%vol52%vol,,,,浓香型,
+1.0,,1995专卖店酒,,,,,,专卖店酒系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,42度五粮液,,,,,,五粮液系列,,,,五粮液,,,,500ml,,,,42%vol,,,,浓香型,
+1.0,,43%vol贵州茅台酒,,,,,,低度贵州茅台酒系列,,,,贵州茅台,,,,500ml,,,,43%vol,,,,酱香型,
+1.0,,45度五粮液,,,,,,五粮液系列,,,,五粮液,,,,500ml,,,,45%vol,,,,浓香型,
+1.0,,48度五粮液,,,,,,五粮液系列,,,,五粮液,,,,500ml,,,,48%vol,,,,浓香型,
+1.0,,52度五粮液,,,,,,五粮液系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,52度茗酿萃绿,,,,,,养生酒系列,,,,泸州老窖,,,,500ml,,,,52%vol,,,,茶香型,
+1.0,,55度五粮液,,,,,,五粮液系列,,,,五粮液,,,,500ml,,,,55%vol,,,,浓香型,
+1.0,,55度金标五粮液,,,,,,五粮液系列,,,,五粮液,,,,1000ml,,,,55%vol,,,,浓香型,
+1.0,,60度五粮液,,,,,,五粮液系列,,,,五粮液,,,,500ml,,,,60%vol,,,,浓香型,
+1.0,,68度五粮液,,,,,,五粮液系列,,,,五粮液,,,,1000ml,,,,68%vol,,,,浓香型,
+1.0,,99亚洲干红,,,,,,果酒系列,,,,五粮液,,,,750ml,,,,12%vol,,,,果酒,
+1.0,,一帆风顺,,,,,,五粮液系列,,,,五粮液,,,,480ml,,,,52%vol,,,,浓香型,
+1.0,,一马当先,,,,,,五粮液系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,万事如意·天和运,,,,,,完事如意系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,万事如意·心如意,,,,,,完事如意系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,万事如意·精致,,,,,,完事如意系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,专卖店95纪念酒,,,,,,专卖店酒系列,,,,五粮液,,,,500ml,,,,50%vol,,,,浓香型,
+1.0,,东方龙·红装201,,,,,,东方龙系列,,,,五粮液,,,,500ml,,,,42%vol/52%vol,,,,浓香型,
+1.0,,东方龙·绿装201,,,,,,东方龙系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,东方龙·金装201,,,,,,东方龙系列,,,,五粮液,,,,500ml,,,,42%vol/52%vol,,,,浓香型,
+1.0,,五湖液·中国红,,,,,,五湖液系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,五湖液·二钻,,,,,,五湖液系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,五湖液·和禧,,,,,,五湖液系列,,,,五粮液,,,,500ml,,,,42%vol/52%vol,,,,浓香型,
+1.0,,五粮人家·中原版,,,,,,五粮人家系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,五粮人家·云南版,,,,,,五粮人家系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,五粮人家·人文系列（浙江）,,,,,,五粮人家系列,,,,五粮液,,,,500ml,,,,39%vol/42%vol/52%vol,,,,浓香型,
+1.0,,五粮人家·关东版,,,,,,五粮人家系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,五粮人家·地理系列（浙江）,,,,,,五粮人家系列,,,,五粮液,,,,500ml,,,,39%vol/42%vol/52%vol,,,,浓香型,
+1.0,,五粮人家·山东文化焕新系列,,,,,,五粮人家系列,,,,五粮液,,,,500ml,,,,39%vol/42%vol/52%vol,,,,浓香型,
+1.0,,五粮人家·巴蜀版,,,,,,五粮人家系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,五粮人家·河北系列,,,,,,五粮人家系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,五粮人家·燕京版,,,,,,五粮人家系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,五粮人家·齐鲁版,,,,,,五粮人家系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,五粮人家·龙年纪念礼盒,,,,,,五粮人家系列,,,,五粮液,,,,100ml5,,,,52%vol,,,,浓香型,
+1.0,,五粮印象·水晶装,,,,,,五粮印象系列,,,,五粮液,,,,500ml,,,,39%vol/52%vol,,,,浓香型,
+1.0,,五粮印象·鸿运当头,,,,,,五粮印象系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,五粮坊·紫越,,,,,,五粮坊系列,,,,五粮液,,,,500ml,,,,42%vol/52%vol,,,,浓香型,
+1.0,,五粮坊·红典,,,,,,五粮坊系列,,,,五粮液,,,,500ml,,,,42%vol/52%vol,,,,浓香型,
+1.0,,五粮坊·青蕴,,,,,,五粮坊系列,,,,五粮液,,,,500ml,,,,42%vol/52%vol,,,,浓香型,
+1.0,,五粮头曲·十周年感恩版,,,,,,五粮头曲系列,,,,五粮液,,,,500ml,,,,39%vol/42%vol/52%vol,,,,浓香型,
+1.0,,五粮头曲·钻石版,,,,,,五粮头曲系列,,,,五粮液,,,,500ml,,,,39%vol/42%vol/52%vol,,,,浓香型,
+1.0,,五粮头曲·鸿运版,,,,,,五粮头曲系列,,,,五粮液,,,,500ml,,,,39%vol/42%vol/52%vol,,,,浓香型,
+1.0,,五粮好客/商务系列/水晶版（221）,,,,,,五粮好客系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,五粮春·96精品,,,,,,五粮春系列,,,,五粮液,,,,500ml,,,,45%vol,,,,浓香型,
+1.0,,五粮春·一代,,,,,,五粮春系列,,,,五粮液,,,,500ml,,,,35%vol/45%vol/50%vol,,,,浓香型,
+1.0,,五粮春·二代,,,,,,五粮春系列,,,,五粮液,,,,500ml,,,,45%vol/52%vol,,,,浓香型,
+1.0,,五粮春·名门,,,,,,五粮春系列,,,,五粮液,,,,500ml,,,,45%vol/52%vol,,,,浓香型,
+1.0,,五粮春·和美,,,,,,五粮春系列,,,,五粮液,,,,500ml,,,,45%vol/52%vol,,,,浓香型,
+1.0,,五粮浓香/生肖系列/壬寅虎年(礼盒装211),,,,,,五粮浓香生肖酒系列,,,,五粮液,,,,888ml,,,,52%vol,,,,浓香型,
+1.0,,五粮浓香/生肖系列/甲辰龙年(礼盒装231),,,,,,五粮浓香生肖酒系列,,,,五粮液,,,,888ml,,,,52%vol,,,,浓香型,
+1.0,,五粮浓香/生肖系列/癸卯兔年(礼盒装221),,,,,,五粮浓香生肖酒系列,,,,五粮液,,,,888ml,,,,52%vol,,,,浓香型,
+1.0,,五粮浓香/生肖系列/辛丑牛年(201),,,,,,五粮浓香生肖酒系列,,,,五粮液,,,,888ml,,,,52%vol,,,,浓香型,
+1.0,,五粮液·1618,,,,,,五粮液系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,五粮液·丁酉鸡年纪念酒,,,,,,五粮液系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,五粮液·千里江山图,,,,,,五粮液系列,,,,五粮液,,,,5000ml,,,,70%vol,,,,浓香型,
+1.0,,五粮液·千里江山图1.5l,,,,,,五粮液系列,,,,五粮液,,,,1500ml,,,,52%vol,,,,浓香型,
+1.0,,五粮液·酒王酒,,,,,,五粮液系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,五粮液·酒神酒,,,,,,五粮液系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,五粮液·金壁圣宴,,,,,,五粮液系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,五粮液·鉴赏,,,,,,五粮液系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,五粮液十二生肖套装纪念版,,,,,,五粮液十二生肖套装纪念版系列,,,,五粮液,,,,6000ml,,,,52%vol,,,,浓香型,
+1.0,,五粮液礼鉴藏品经典版,,,,,,五粮液系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,五粮液礼鉴藏品鎏金版,,,,,,五粮液系列,,,,五粮液,,,,450ml,,,,52%vol,,,,浓香型,
+1.0,,五粮液礼鉴藏品铂金版,,,,,,五粮液系列,,,,五粮液,,,,450ml,,,,52%vol,,,,浓香型,
+1.0,,五粮液缘定晶生-天鹅版,,,,,,五粮液系列,,,,五粮液,,,,520ml,,,,52%vol,,,,浓香型,
+1.0,,五粮液缘定晶生-戒指版,,,,,,五粮液系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,五粮液金樽,,,,,,五粮液系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,五粮特曲·十周年纪念版,,,,,,五粮特曲系列,,,,五粮液,,,,500ml,,,,39%vol/42%vol/52%vol,,,,浓香型,
+1.0,,五粮特曲·普通装系列,,,,,,五粮特曲系列,,,,五粮液,,,,500ml,,,,39%vol/42%vol/52%vol,,,,浓香型,
+1.0,,五粮特曲·珍品,,,,,,五粮特曲系列,,,,五粮液,,,,500ml,,,,39%vol/42%vol/52%vol,,,,浓香型,
+1.0,,五粮特曲·皇冠版,,,,,,五粮特曲系列,,,,五粮液,,,,500ml,,,,39%vol/42%vol/52%vol,,,,浓香型,
+1.0,,五粮特曲·精品系列,,,,,,五粮特曲系列,,,,五粮液,,,,500ml,,,,39%vol/42%vol/52%vol,,,,浓香型,
+1.0,,五粮特曲·金彩版,,,,,,五粮特曲系列,,,,五粮液,,,,500ml,,,,39%vol/42%vol/52%vol,,,,浓香型,
+1.0,,五粮盛世/盛世系列/（盛世1号231）,,,,,,五粮盛世系列,,,,五粮液,,,,500ml,,,,42%vol/52%vol,,,,浓香型,
+1.0,,五粮盛世/盛世系列/（盛世2号231）,,,,,,五粮盛世系列,,,,五粮液,,,,500ml,,,,42%vol/52%vol,,,,浓香型,
+1.0,,五粮盛世/酒悦系列/(水晶231),,,,,,五粮盛世系列,,,,五粮液,,,,500ml,,,,42%vol/52%vol,,,,浓香型,
+1.0,,五粮福·和,,,,,,五粮福系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,五粮福·天,,,,,,五粮福系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,五粮福·福系列,,,,,,五粮福系列,,,,五粮液,,,,500ml,,,,45%vol/52%vol,,,,浓香型,
+1.0,,五粮精酿·天禄献瑞,,,,,,五粮精酿系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,五粮精酿·尊酿,,,,,,五粮精酿系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,五粮精酿·拉丝金,,,,,,五粮精酿系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,五粮醇·醇品系列,,,,,,五粮醇系列,,,,五粮液,,,,500ml,,,,42%vol/50%vol,,,,浓香型,
+1.0,,五粮醇·醇香系列/玫瑰金,,,,,,五粮醇系列,,,,五粮液,,,,500ml,,,,40%vol/50%vol,,,,浓香型,
+1.0,,五粮醇·醇香系列/香红装,,,,,,五粮醇系列,,,,五粮液,,,,500ml,,,,35%vol/40%vol/50%vol,,,,浓香型,
+1.0,,五粮醇·醇香系列/香金装,,,,,,五粮醇系列,,,,五粮液,,,,500ml,,,,40%vol/50%vol,,,,浓香型,
+1.0,,五粮金樽·橙冠,,,,,,五粮金樽系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,五粮金樽·蓝樽,,,,,,五粮金樽系列,,,,五粮液,,,,500ml,,,,42%vol/52%vol,,,,浓香型,
+1.0,,五粮金樽·金六棱,,,,,,五粮金樽系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,五粮陈·和顺,,,,,,五粮陈系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,五粮陈·岁月,,,,,,五粮陈系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,五粮陈·时光,,,,,,五粮陈系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,五粮陈·致祥,,,,,,五粮陈系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,五粮韵·初心,,,,,,五粮韵系列,,,,五粮液,,,,500ml,,,,39%vol/45%vol/52%vol,,,,浓香型,
+1.0,,五粮韵·水晶韵,,,,,,五粮韵系列,,,,五粮液,,,,500ml,,,,42%vol/52%vol,,,,浓香型,
+1.0,,五粮韵·翡翠韵,,,,,,五粮韵系列,,,,五粮液,,,,500ml,,,,42%vol/52%vol,,,,浓香型,
+1.0,,五粮韵·蓝宝石韵,,,,,,五粮韵系列,,,,五粮液,,,,500ml,,,,42%vol/52%vol,,,,浓香型,
+1.0,,亚洲干红,,,,,,果酒系列,,,,五粮液,,,,750ml,,,,11%vol,,,,果酒,
+1.0,,亚洲干红酒,,,,,,果酒系列,,,,五粮液,,,,750ml,,,,12%vol,,,,果酒,
+1.0,,亚洲干红酒蓝标,,,,,,果酒系列,,,,五粮液,,,,750ml,,,,12%vol,,,,果酒,
+1.0,,仙林30度冰酒,,,,,,果酒系列,,,,五粮液,,,,550ml,,,,30%vol,,,,果酒,
+1.0,,仙林牌樱桃酒,,,,,,果酒系列,,,,五粮液,,,,500ml,,,,12%vol,,,,果酒,
+1.0,,仰天长啸,,,,,,五粮液系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,冰珀43,,,,,,果酒系列,,,,五粮液,,,,700ml,,,,43%vol,,,,果酒,
+1.0,,友酒·友尊,,,,,,友酒系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,友酒·友道,,,,,,友酒系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,友酒·特渠,,,,,,友酒系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,囍·名著四珍文化纪念酒,,,,,,囍系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,囍·癸卯（兔）年纪念酒,,,,,,囍系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,囍·祥瑞添福文化酒,,,,,,囍系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,国窖1573·heartpanda熊猫酒,,,,,,国窖1573系列,,,,泸州老窖,,,,1l,,,,52%vol,,,,浓香型,
+1.0,,国窖1573·heartpanda熊猫酒（2019汉儿版）,,,,,,国窖1573系列,,,,泸州老窖,,,,100ml,,,,52%vol,,,,浓香型,
+1.0,,国窖1573·中国品味,,,,,,国窖1573系列,,,,泸州老窖,,,,500ml,,,,38%vol、52%vol,,,,浓香型,
+1.0,,国窖1573·乾坤酒堡,,,,,,定制酒系列,,,,泸州老窖,,,,1000ml,,,,52%vol,,,,浓香型,
+1.0,,国窖1573·品味艺之道,,,,,,定制酒系列,,,,泸州老窖,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,国窖1573·国宝红,,,,,,国窖1573系列,,,,泸州老窖,,,,500ml,,,,38%vol、52%vol,,,,浓香型,
+1.0,,国窖1573·孔子诞辰纪念酒,,,,,,国窖1573系列,,,,泸州老窖,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,国窖1573·广州塔酒,,,,,,国窖1573系列,,,,泸州老窖,,,,600ml,,,,53%vol,,,,浓香型,
+1.0,,国窖1573·红瓷瓶,,,,,,国窖1573系列,,,,泸州老窖,,,,500ml,,,,33%vol、53%vol,,,,浓香型,
+1.0,,国窖1573·雁塔祈福盛世长安,,,,,,国窖1573系列,,,,泸州老窖,,,,600ml,,,,52%vol,,,,浓香型,
+1.0,,国窖1573·鸿运568,,,,,,国窖1573系列,,,,泸州老窖,,,,500ml,,,,38%vol、52%vol,,,,浓香型,
+1.0,,国窖1573如意灵蛇,,,,,,定制酒系列,,,,泸州老窖,,,,1.537l,,,,55%vol,,,,浓香型,
+1.0,,国窖1573定制酒·共赏,,,,,,定制酒系列,,,,泸州老窖,,,,1l,,,,52%vol,,,,浓香型,
+1.0,,国窖1573定制酒·时尚装,,,,,,定制酒系列,,,,泸州老窖,,,,500ml,,,,38%vol、42%vol、53%vol,,,,浓香型,
+1.0,,国鼎红盒,,,,,,保健酒系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,国鼎绿盒,,,,,,保健酒系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,圣裴迪诺,,,,,,果酒系列,,,,五粮液,,,,750ml,,,,12%vol,,,,/,
+1.0,,天子酒（电购131）,,,,,,真龙天子系列,,,,五粮液,,,,500ml6,,,,52%vol,,,,浓香型,
+1.0,,定制酒·喜宴装,,,,,,定制酒系列,,,,泸州老窖,,,,500ml,,,,38%vol、42%vol、52%vol,,,,浓香型,
+1.0,,定制酒·大坛定制红运开怀,,,,,,定制酒系列,,,,泸州老窖,,,,2.5l,,,,52%vol,,,,浓香型,
+1.0,,定制酒·常德桃花源,,,,,,定制酒系列,,,,泸州老窖,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,密鉴/名片系列/(密赏231),,,,,,密鉴系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,密鉴/洞藏系列/(秘藏231),,,,,,密鉴系列,,,,五粮液,,,,5l/15l/50l,,,,60%vol,,,,浓香型,
+1.0,,富贵吉祥·精致,,,,,,富贵吉祥系列,,,,五粮液,,,,500ml,,,,38%vol/42%vol/52%vol,,,,浓香型,
+1.0,,富贵吉祥·金装,,,,,,富贵吉祥系列,,,,五粮液,,,,500ml,,,,39%vol/52%vol,,,,浓香型,
+1.0,,尊-双尊,,,,,,尊系列,,,,五粮液,,,,1000ml,,,,52%vol,,,,浓香型,
+1.0,,尊-尊贤,,,,,,尊系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,尊酒·龙印套酒,,,,,,尊系列,,,,五粮液,,,,500ml4,,,,52%vol,,,,浓香型,
+1.0,,尖庄·1911,,,,,,尖庄酒系列,,,,五粮液,,,,500ml,,,,38%vol/42%vol/52%vol,,,,浓香型,
+1.0,,尖庄·大光,,,,,,尖庄酒系列,,,,五粮液,,,,500ml,,,,38%vol/42%vol/52%vol,,,,浓香型,
+1.0,,尖庄·小庄,,,,,,尖庄酒系列,,,,五粮液,,,,100ml,,,,38%vol/42%vol/52%vol,,,,浓香型,
+1.0,,尖庄·精盒,,,,,,尖庄酒系列,,,,五粮液,,,,500ml,,,,38%vol/42%vol/52%vol,,,,浓香型,
+1.0,,尖庄·红优,,,,,,尖庄酒系列,,,,五粮液,,,,500ml,,,,38%vol/42%vol/52%vol,,,,浓香型,
+1.0,,尖庄·荣光,,,,,,尖庄酒系列,,,,五粮液,,,,100ml/500ml,,,,38%vol/42%vol/52%vol,,,,浓香型,
+1.0,,尖庄·荣耀,,,,,,尖庄酒系列,,,,五粮液,,,,500ml,,,,38%vol/42%vol/52%vol,,,,浓香型,
+1.0,,尖庄·高光,,,,,,尖庄酒系列,,,,五粮液,,,,500ml,,,,38%vol/42%vol/52%vol,,,,浓香型,
+1.0,,巴拿马金奖纪念酒,,,,,,五粮液系列,,,,五粮液,,,,500ml,,,,60%vol,,,,浓香型,
+1.0,,庞提斐拉,,,,,,果酒系列,,,,五粮液,,,,750ml,,,,12%vol,,,,/,
+1.0,,春夏秋冬·书画双绝酒礼盒装,,,,,,春夏秋冬酒系列,,,,五粮液,,,,500ml23,,,,52%vol,,,,浓香型,
+1.0,,春夏秋冬·二十四节气酒,,,,,,春夏秋冬酒系列,,,,五粮液,,,,500ml24,,,,52%vol,,,,浓香型,
+1.0,,春夏秋冬·民族颂,,,,,,春夏秋冬酒系列,,,,五粮液,,,,500ml6,,,,52%vol,,,,浓香型,
+1.0,,李梅梅青梅果酒,,,,,,新酒业系列,,,,泸州老窖,,,,330ml,,,,12%vol,,,,/,
+1.0,,梅子酒,,,,,,梅子酒系列,,,,五粮液,,,,500ml,,,,38%vol,,,,浓香型,
+1.0,,歪嘴酒,,,,,,保健酒系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,汉酱酒,,,,,,酱香系列酒,,,,贵州茅台,,,,500ml,,,,51%vol,,,,酱香型,
+1.0,,泸州红·红漫天,,,,,,养生酒系列,,,,泸州老窖,,,,500ml,,,,42%vol、52%vol,,,,浓香型,
+1.0,,泸州红·红酝,,,,,,养生酒系列,,,,泸州老窖,,,,500ml,,,,42%vol、52%vol,,,,浓香型,
+1.0,,泸州老窖1952,,,,,,1952系列,,,,泸州老窖,,,,500ml,,,,38%vol、43%vol、52%vol,,,,浓香型,
+1.0,,泸州老窖2017年鸡年生肖纪念酒,,,,,,定制酒系列,,,,泸州老窖,,,,1.088l,,,,52%vol,,,,浓香型,
+1.0,,泸州老窖2018年狗年生肖纪念酒,,,,,,定制酒系列,,,,泸州老窖,,,,1.088l,,,,52%vol,,,,浓香型,
+1.0,,泸州老窖2019年猪年生肖纪念酒,,,,,,定制酒系列,,,,泸州老窖,,,,1.199l,,,,52%vol,,,,浓香型,
+1.0,,泸州老窖2020年鼠年生肖纪念酒,,,,,,定制酒系列,,,,泸州老窖,,,,1.2l,,,,52%vol,,,,浓香型,
+1.0,,泸州老窖2021年牛年生肖纪念酒,,,,,,定制酒系列,,,,泸州老窖,,,,1.066l,,,,52%vol,,,,浓香型,
+1.0,,泸州老窖2022年虎年生肖纪念酒,,,,,,定制酒系列,,,,泸州老窖,,,,1.2l,,,,52%vol,,,,浓香型,
+1.0,,泸州老窖2023年兔年生肖纪念酒,,,,,,定制酒系列,,,,泸州老窖,,,,1.2l,,,,52%vol,,,,浓香型,
+1.0,,泸州老窖2024年龙年生肖纪念酒,,,,,,定制酒系列,,,,泸州老窖,,,,1.2l,,,,52%vol,,,,浓香型,
+1.0,,泸州老窖2025年蛇年生肖纪念酒,,,,,,定制酒系列,,,,泸州老窖,,,,1.088l,,,,52%vol,,,,浓香型,
+1.0,,泸州老窖·三人炫悟炫,,,,,,定制酒系列,,,,泸州老窖,,,,500ml,,,,38%vol、52%vol,,,,浓香型,
+1.0,,泸州老窖·三人炫红运开怀,,,,,,定制酒系列,,,,泸州老窖,,,,500ml,,,,38%vol、52%vol,,,,浓香型,
+1.0,,泸州老窖·三人炫藏炫,,,,,,定制酒系列,,,,泸州老窖,,,,500ml,,,,38%vol、52%vol,,,,浓香型,
+1.0,,泸州老窖·三人炫观炫,,,,,,定制酒系列,,,,泸州老窖,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,泸州老窖·国窖1573龙藏天酿,,,,,,定制酒系列,,,,泸州老窖,,,,1.573l,,,,56%vol,,,,浓香型,
+1.0,,泸州老窖•国仙中式果酿酒花之影,,,,,,新酒业系列,,,,泸州老窖,,,,500ml,,,,12%vol,,,,/,
+1.0,,泸州老窖•国仙中式果酿酒风之清,,,,,,新酒业系列,,,,泸州老窖,,,,500ml,,,,12%vol,,,,/,
+1.0,,泸州老窖六年窖头曲,,,,,,头曲系列,,,,泸州老窖,,,,500ml,,,,52%vol、42%vol、38%vol、33%vol,,,,浓香型,
+1.0,,泸州老窖滋补大曲375ml装,,,,,,养生酒系列,,,,泸州老窖,,,,375ml6,,,,38%vol,,,,浓香型,
+1.0,,泸州老窖滋补大曲500ml装,,,,,,养生酒系列,,,,泸州老窖,,,,500ml6,,,,38%vol,,,,浓香型,
+1.0,,泸州老窖特曲,,,,,,特曲系列,,,,泸州老窖,,,,250ml/500ml,,,,52%vol、45%vol、42%vol、38%vol,,,,浓香型,
+1.0,,泸州老窖特曲60版,,,,,,特曲系列,,,,泸州老窖,,,,500ml,,,,38%vol、43%vol、52%vol,,,,浓香型,
+1.0,,泸州老窖特曲80版,,,,,,特曲系列,,,,泸州老窖,,,,500ml,,,,38%vol、43%vol、52%vol,,,,浓香型,
+1.0,,泸州老窖特曲•晶彩,,,,,,特曲系列,,,,泸州老窖,,,,500ml,,,,38%vol、42%vol、52%vol,,,,浓香型,
+1.0,,泸州老窖特曲•纪念版,,,,,,特曲系列,,,,泸州老窖,,,,500ml,,,,38%vol、42%vol、52%vol,,,,浓香型,
+1.0,,泸州老窖精品头曲,,,,,,头曲系列,,,,泸州老窖,,,,500ml,,,,38%vol、42%vol、52%vol,,,,浓香型,
+1.0,,泸州老窖老头曲,,,,,,头曲系列,,,,泸州老窖,,,,500ml,,,,52%vol、42%vol、38%vol、33%vol,,,,浓香型,
+1.0,,火爆·冠军系列,,,,,,火爆酒系列,,,,五粮液,,,,5100ml,,,,42%vol/52%vol,,,,浓香型,
+1.0,,火爆·小酒系列,,,,,,火爆酒系列,,,,五粮液,,,,100ml,,,,33%vol/42%vol/58%vol/70%vol,,,,浓香型,
+1.0,,火爆·篮球系列,,,,,,火爆酒系列,,,,五粮液,,,,500ml,,,,42%vol/52%vol,,,,浓香型,
+1.0,,火爆·羽毛球系列,,,,,,火爆酒系列,,,,五粮液,,,,500ml,,,,42%vol/52%vol,,,,浓香型,
+1.0,,火爆·金球系列,,,,,,火爆酒系列,,,,五粮液,,,,500ml/1500ml,,,,42%vol/52%vol/58%vol,,,,浓香型,
+1.0,,熊猫酒,,,,,,五粮液系列,,,,五粮液,,,,250ml,,,,52%vol,,,,浓香型,
+1.0,,熊猫酒陈酿,,,,,,五粮液系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,玉·佳酿系列,,,,,,玉系列,,,,五粮液,,,,500ml,,,,42%vol/52%vol,,,,浓香型,
+1.0,,玉·双龙戏珠,,,,,,玉系列,,,,五粮液,,,,1000ml,,,,52%vol,,,,浓香型,
+1.0,,玉·金镶玉,,,,,,玉系列,,,,五粮液,,,,750ml,,,,52%vol,,,,浓香型,
+1.0,,玖真宝（百年好合）,,,,,,保健酒系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,现代人·敬未来（礼盒）,,,,,,现代人系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,现代人·敬未来（蓝）,,,,,,现代人系列,,,,五粮液,,,,500ml,,,,42%vol/52%vol,,,,浓香型,
+1.0,,现代人·荣耀蓝,,,,,,现代人系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,珍品玉露（水晶装）,,,,,,保健酒系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,珍品艺术品五粮液,,,,,,五粮液系列,,,,五粮液,,,,3000ml,,,,54%vol,,,,浓香型,
+1.0,,珍感觉金品,,,,,,保健酒系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,百家宴·万家乐,,,,,,百家宴酒系列,,,,五粮液,,,,500ml,,,,39%vol42%vol52%vol,,,,浓香型,
+1.0,,百家宴·红禧,,,,,,百家宴酒系列,,,,五粮液,,,,500ml,,,,39%vol42%vol52%vol,,,,浓香型,
+1.0,,百家宴·金福,,,,,,百家宴酒系列,,,,五粮液,,,,500ml,,,,39%vol42%vol52%vol,,,,浓香型,
+1.0,,百年泸州老窖窖龄30年,,,,,,窖龄酒系列,,,,泸州老窖,,,,500ml,,,,38%vol、43%vol、52%vol,,,,浓香型,
+1.0,,百年泸州老窖窖龄60年,,,,,,窖龄酒系列,,,,泸州老窖,,,,500ml,,,,38%vol、43%vol、52%vol,,,,浓香型,
+1.0,,百年泸州老窖窖龄90年,,,,,,窖龄酒系列,,,,泸州老窖,,,,500ml,,,,38%vol、43%vol、52%vol,,,,浓香型,
+1.0,,百调ipa精酿啤酒,,,,,,新酒业系列,,,,泸州老窖,,,,750ml,,,,≥8.3%vol,,,,/,
+1.0,,百调专业版酒,,,,,,新酒业系列,,,,泸州老窖,,,,700ml,,,,40%vol,,,,/,
+1.0,,百调猕猴桃蒸馏酒,,,,,,新酒业系列,,,,泸州老窖,,,,700ml,,,,39%vol,,,,/,
+1.0,,百调精酿啤酒639,,,,,,新酒业系列,,,,泸州老窖,,,,639ml,,,,≥4.1%vol,,,,/,
+1.0,,百调精酿啤酒980,,,,,,新酒业系列,,,,泸州老窖,,,,980ml,,,,≥4.1%vol,,,,/,
+1.0,,百调精酿啤酒宴席版,,,,,,新酒业系列,,,,泸州老窖,,,,980ml,,,,≥4.1%vol,,,,/,
+1.0,,百调精酿啤酒黑金版,,,,,,新酒业系列,,,,泸州老窖,,,,980ml,,,,≥4.5%vol,,,,/,
+1.0,,百调精酿小麦白啤,,,,,,新酒业系列,,,,泸州老窖,,,,500ml,,,,≥3.5%vol,,,,/,
+1.0,,百调葡萄蒸馏酒,,,,,,新酒业系列,,,,泸州老窖,,,,700ml,,,,39%vol,,,,/,
+1.0,,百调＆同道大叔12星座酒,,,,,,新酒业系列,,,,泸州老窖,,,,100ml,,,,40%vol,,,,/,
+1.0,,百鸟朝凤·至淳,,,,,,百鸟朝凤系列,,,,五粮液,,,,500ml,,,,42%vol/52%vol,,,,浓香型,
+1.0,,百鸟朝凤·至精,,,,,,百鸟朝凤系列,,,,五粮液,,,,500ml,,,,42%vol/52%vol,,,,浓香型,
+1.0,,百鸟朝凤·至美,,,,,,百鸟朝凤系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,真龙天子·传奇酒,,,,,,真龙天子系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,真龙天子·盛世酒,,,,,,真龙天子系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,真龙天子·至尊龙邮酒,,,,,,真龙天子系列,,,,五粮液,,,,750ml,,,,52%vol,,,,浓香型,
+1.0,,祝君鹏程万里,,,,,,五粮液系列,,,,五粮液,,,,480ml,,,,52%vol,,,,浓香型,
+1.0,,福禄寿禧·水静,,,,,,福禄寿禧系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,禛酒,,,,,,保健酒系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,经典五粮液10,,,,,,五粮液系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,经典五粮液20,,,,,,五粮液系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,经典五粮液30,,,,,,五粮液系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,经典五粮液50,,,,,,五粮液系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,自园春,,,,,,保健酒系列,,,,五粮液,,,,500ml,,,,42%vol,,,,浓香型,
+1.0,,茅台1935,,,,,,酱香系列酒,,,,贵州茅台,,,,500ml,,,,53%vol,,,,酱香型,
+1.0,,茅台王子酒（酱香经典）,,,,,,酱香系列酒,,,,贵州茅台,,,,500ml,,,,53%vol,,,,酱香型,
+1.0,,茅台王子酒（金王子）,,,,,,酱香系列酒,,,,贵州茅台,,,,500ml,,,,53%vol,,,,酱香型,
+1.0,,茅台迎宾酒（紫）,,,,,,酱香系列酒,,,,贵州茅台,,,,500ml,,,,53%vol,,,,酱香型,
+1.0,,茗酿,,,,,,养生酒系列,,,,泸州老窖,,,,500ml,,,,40.8%vol、50.8%vol,,,,茶香型,
+1.0,,茗酿·欢彩,,,,,,养生酒系列,,,,泸州老窖,,,,500ml,,,,40.8%vol、50.8%vol,,,,茶香型,
+1.0,,茗酿茶香型酒,,,,,,养生酒系列,,,,泸州老窖,,,,500ml,,,,40.8%vol、50.8%vol,,,,茶香型,
+1.0,,豪华五粮液,,,,,,五粮液系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,财富人生·典藏,,,,,,财富人生系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,财富人生·奢藏,,,,,,财富人生系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,财富人生·蓝钻,,,,,,财富人生系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,贵州大曲壬寅虎年,,,,,,酱香系列酒,,,,贵州茅台,,,,2.5l,,,,53%vol,,,,酱香型,
+1.0,,贵州茅台酒（i茅台）,,,,,,飞天贵州茅台酒系列,,,,贵州茅台,,,,100ml,,,,53%vol,,,,酱香型,
+1.0,,贵州茅台酒（乙巳蛇年）,,,,,,飞天贵州茅台酒系列,,,,贵州茅台,,,,500ml,,,,53%vol,,,,酱香型,
+1.0,,贵州茅台酒（喜宴）,,,,,,低度贵州茅台酒系列,,,,贵州茅台,,,,500ml,,,,43%vol,,,,酱香型,
+1.0,,贵州茅台酒（笙月飞天）,,,,,,飞天贵州茅台酒系列,,,,贵州茅台,,,,500ml,,,,53%vol,,,,酱香型,
+1.0,,贵州茅台酒（精品）,,,,,,飞天贵州茅台酒系列,,,,贵州茅台,,,,500ml,,,,53%vol,,,,酱香型,
+1.0,,贵州茅台酒（走进希腊）,,,,,,走进系列,,,,贵州茅台,,,,350ml/700ml,,,,53%vol,,,,酱香型,
+1.0,,贵州茅台酒（走进意大利）,,,,,,走进系列,,,,贵州茅台,,,,350ml/700ml,,,,53%vol,,,,酱香型,
+1.0,,贵州茅台酒（走进日本）,,,,,,走进系列,,,,贵州茅台,,,,375ml/750ml,,,,53%vol,,,,酱香型,
+1.0,,贵州茅台酒（走进法国）,,,,,,走进系列,,,,贵州茅台,,,,350ml/700ml,,,,53%vol,,,,酱香型,
+1.0,,贵州茅台酒（走进英国）,,,,,,走进系列,,,,贵州茅台,,,,350ml/700ml,,,,53%vol,,,,酱香型,
+1.0,,酒中八仙,,,,,,酒中八仙系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,金榜题名,,,,,,五粮液系列,,,,五粮液,,,,480ml,,,,52%vol,,,,浓香型,
+1.0,,金玉满堂,,,,,,五粮液系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,金碧辉煌/经典系列/（单支皮盒221）,,,,,,金碧辉煌系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,金碧辉煌/经典系列/（单支红221）,,,,,,金碧辉煌系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,金碧辉煌/经典系列/（双支红221）,,,,,,金碧辉煌系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,金装五粮液,,,,,,五粮液系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,
+1.0,,金谷春,,,,,,金谷春系列,,,,五粮液,,,,750ml,,,,52%vol,,,,浓香型,
+1.0,,阿塔贝拉,,,,,,果酒系列,,,,五粮液,,,,750ml,,,,12%vol,,,,/,
+1.0,,雄酒,,,,,,保健酒系列,,,,五粮液,,,,125ml,,,,35%vol,,,,浓香型,
+1.0,,高光,,,,,,高光系列,,,,泸州老窖,,,,500ml,,,,38%vol、40.9%vol、52%vol,,,,浓香型,
+1.0,,黄标亚洲,,,,,,果酒系列,,,,五粮液,,,,750ml,,,,12%vol,,,,/,
+1.0,,黄金牌露酒,,,,,,保健酒系列,,,,五粮液,,,,480ml,,,,39%vol,,,,浓香型,
+1.0,,黄金贵宾酒,,,,,,保健酒系列,,,,五粮液,,,,480ml,,,,52%vol,,,,浓香型,
+1.0,,黑盖,,,,,,黑盖系列,,,,泸州老窖,,,,125ml/250ml/500ml,,,,42%vol、52%vol,,,,浓香型,
+1.0,,齐物论人参酒,,,,,,保健酒系列,,,,五粮液,,,,360ml,,,,52%vol,,,,浓香型,
+1.0,,龙年纪念酒,,,,,,五粮液系列,,,,五粮液,,,,1000ml,,,,72%vol,,,,浓香型,
+1.0,,龙虎酒,,,,,,保健酒系列,,,,五粮液,,,,500ml,,,,52%vol,,,,浓香型,

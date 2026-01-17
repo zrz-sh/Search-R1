@@ -1,0 +1,1797 @@
+exist_flag_gt,exist_flag_response,university,university_before_map,2025ukguardianrankings_exact_match,2025ukguardianrankings_exact_match_eval_msg,2025ukguardianrankings_query,2025ukguardianrankings_response,2026qsworldrankings_exact_match,2026qsworldrankings_exact_match_eval_msg,2026qsworldrankings_query,2026qsworldrankings_response,foundingyear_exact_match,foundingyear_exact_match_eval_msg,foundingyear_query,foundingyear_response,governingbody_llm_judge,governingbody_llm_judge_eval_msg,governingbody_query,governingbody_response,officialwebsiteaddress_llm_judge,officialwebsiteaddress_llm_judge_eval_msg,officialwebsiteaddress_query,officialwebsiteaddress_response,university_exact_match,university_exact_match_eval_msg
+,,universityofbirmingham,University of Birmingham,0.0,"exact not match, response: 22, target: 36",36,22,0.0,"exact not match, response: 42, target: 76",76,42,1.0,"exact match, response: 1900, target: 1900",1900,1900,1.0,"Let's analyze each item according to the criterion:
+
+Criterion summary: The response is correct if the semantics approximate the reference answer or point to the same entity. No need for word-for-word match.
+
+---
+
+**idx_0:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Analysis: ""council"" is a shorter form but the same entity as ""universitycouncil"". According to the criterion, approximate semantics pointing to the same entity suffice.  
+Score: 1
+
+---
+
+**idx_1:**  
+- Response: ""regenthouse,universitycouncil""  
+- Target: ""theregenthouse""  
+Analysis: The response answers ""regenthouse"" which matches ""theregenthouse"". The extra entity ""universitycouncil"" is not penalized as per the criterion (no mention of penalties for extra responses). The main entity is present.  
+Score: 1
+
+---
+
+**idx_2:**  
+- Response: ""council""  
+- Target: ""theuniversitycourt""  
+Analysis: ""council"" and ""universitycourt"" are different entities, not semantically the same. ""Council"" is generic or points to ""university council"" but target is ""university court"". Different entities.  
+Score: 0
+
+---
+
+**idx_3:**  
+- Response: ""council""  
+- Target: ""universitycourt""  
+Same as idx_2. Different entities.  
+Score: 0
+
+---
+
+**idx_4:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0.  
+Score: 1
+
+---
+
+**idx_5:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0.  
+Score: 1
+
+---
+
+**idx_6:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0.  
+Score: 1
+
+---
+
+**idx_7:**  
+- Response: ""generalassembly,council""  
+- Target: ""theboardofgovernors""  
+Analysis: ""general assembly"", ""council"", and ""board of governors"" are distinct entities. The response does not include ""board of governors"" or a synonym. This is a mismatch.  
+Score: 0
+
+---
+
+**idx_8:**  
+- Response: ""congregation,universitycouncil,privycouncil""  
+- Target: ""universitycouncil""  
+The response contains ""universitycouncil"" explicitly, which matches the target. Extra entities are acceptable.  
+Score: 1
+
+---
+
+**idx_9:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0  
+Score: 1
+
+---
+
+**idx_10:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0  
+Score: 1
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1
+}
+```",universitycouncil,council,1.0,"Let's analyze each pair item by item:
+
+- idx_0: response = ""https://www.birmingham.ac.uk/"", target = ""https://www.birmingham.ac.uk/""  
+  Exact match, so score = 1.
+
+- idx_1: response = ""https://www.cam.ac.uk/"", target = ""https://www.cam.ac.uk/""  
+  Exact match, so score = 1.
+
+- idx_2: response = ""https://www.ed.ac.uk/"", target = ""https://www.ed.ac.uk/""  
+  Exact match, so score = 1.
+
+- idx_3: response = ""https://www.gla.ac.uk/"", target = ""https://gla.ac.uk/""  
+  Difference is ""www."" in response URL but not in target. According to criteria, semantics approximately the same or point to the same entity is sufficient. Here the domain is the same, so score = 1.
+
+- idx_4: response = ""https://www.imperial.ac.uk/"", target = ""https://imperial.ac.uk/""  
+  Same situation as idx_3, difference only in the ""www."", which is negligible. Score = 1.
+
+- idx_5: response = ""https://www.leeds.ac.uk/"", target = ""https://leeds.ac.uk/""  
+  Same as above, semantics effectively the same. Score = 1.
+
+- idx_6: response = ""https://www.liverpool.ac.uk/"", target = ""https://liverpool.ac.uk/""  
+  Same as above, score = 1.
+
+- idx_7: response = ""https://www.manchester.ac.uk/"", target = ""https://manchester.ac.uk/""  
+  Same as above, score = 1.
+
+- idx_8: response = ""https://www.ox.ac.uk/"", target = ""https://ox.ac.uk/""  
+  Same as above, score = 1.
+
+- idx_9: response = ""https://www.shef.ac.uk/"", target = ""https://sheffield.ac.uk/""  
+  This is different: the response domain is ""shef.ac.uk"" while the target is ""sheffield.ac.uk"". They are distinct domain names, so not pointing to the same entity. Score = 0.
+
+- idx_10: response = ""https://www.warwick.ac.uk/"", target = ""https://warwick.ac.uk/""  
+  Same as above for ""www."" difference only. Score = 1.
+
+Final scores:  
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1
+}
+```",https://www.birmingham.ac.uk/,https://www.birmingham.ac.uk/,1.0,key_match
+,,universityofcambridge,University of Cambridge,0.0,"exact not match, response: 1, target: 3",3,1,1.0,"exact match, response: 6, target: 6",6,6,1.0,"exact match, response: 1209, target: 1209",1209,1209,1.0,"Let's analyze each item according to the criterion:
+
+Criterion summary: The response is correct if the semantics approximate the reference answer or point to the same entity. No need for word-for-word match.
+
+---
+
+**idx_0:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Analysis: ""council"" is a shorter form but the same entity as ""universitycouncil"". According to the criterion, approximate semantics pointing to the same entity suffice.  
+Score: 1
+
+---
+
+**idx_1:**  
+- Response: ""regenthouse,universitycouncil""  
+- Target: ""theregenthouse""  
+Analysis: The response answers ""regenthouse"" which matches ""theregenthouse"". The extra entity ""universitycouncil"" is not penalized as per the criterion (no mention of penalties for extra responses). The main entity is present.  
+Score: 1
+
+---
+
+**idx_2:**  
+- Response: ""council""  
+- Target: ""theuniversitycourt""  
+Analysis: ""council"" and ""universitycourt"" are different entities, not semantically the same. ""Council"" is generic or points to ""university council"" but target is ""university court"". Different entities.  
+Score: 0
+
+---
+
+**idx_3:**  
+- Response: ""council""  
+- Target: ""universitycourt""  
+Same as idx_2. Different entities.  
+Score: 0
+
+---
+
+**idx_4:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0.  
+Score: 1
+
+---
+
+**idx_5:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0.  
+Score: 1
+
+---
+
+**idx_6:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0.  
+Score: 1
+
+---
+
+**idx_7:**  
+- Response: ""generalassembly,council""  
+- Target: ""theboardofgovernors""  
+Analysis: ""general assembly"", ""council"", and ""board of governors"" are distinct entities. The response does not include ""board of governors"" or a synonym. This is a mismatch.  
+Score: 0
+
+---
+
+**idx_8:**  
+- Response: ""congregation,universitycouncil,privycouncil""  
+- Target: ""universitycouncil""  
+The response contains ""universitycouncil"" explicitly, which matches the target. Extra entities are acceptable.  
+Score: 1
+
+---
+
+**idx_9:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0  
+Score: 1
+
+---
+
+**idx_10:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0  
+Score: 1
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1
+}
+```",theregenthouse,"regenthouse,universitycouncil",1.0,"Let's analyze each pair item by item:
+
+- idx_0: response = ""https://www.birmingham.ac.uk/"", target = ""https://www.birmingham.ac.uk/""  
+  Exact match, so score = 1.
+
+- idx_1: response = ""https://www.cam.ac.uk/"", target = ""https://www.cam.ac.uk/""  
+  Exact match, so score = 1.
+
+- idx_2: response = ""https://www.ed.ac.uk/"", target = ""https://www.ed.ac.uk/""  
+  Exact match, so score = 1.
+
+- idx_3: response = ""https://www.gla.ac.uk/"", target = ""https://gla.ac.uk/""  
+  Difference is ""www."" in response URL but not in target. According to criteria, semantics approximately the same or point to the same entity is sufficient. Here the domain is the same, so score = 1.
+
+- idx_4: response = ""https://www.imperial.ac.uk/"", target = ""https://imperial.ac.uk/""  
+  Same situation as idx_3, difference only in the ""www."", which is negligible. Score = 1.
+
+- idx_5: response = ""https://www.leeds.ac.uk/"", target = ""https://leeds.ac.uk/""  
+  Same as above, semantics effectively the same. Score = 1.
+
+- idx_6: response = ""https://www.liverpool.ac.uk/"", target = ""https://liverpool.ac.uk/""  
+  Same as above, score = 1.
+
+- idx_7: response = ""https://www.manchester.ac.uk/"", target = ""https://manchester.ac.uk/""  
+  Same as above, score = 1.
+
+- idx_8: response = ""https://www.ox.ac.uk/"", target = ""https://ox.ac.uk/""  
+  Same as above, score = 1.
+
+- idx_9: response = ""https://www.shef.ac.uk/"", target = ""https://sheffield.ac.uk/""  
+  This is different: the response domain is ""shef.ac.uk"" while the target is ""sheffield.ac.uk"". They are distinct domain names, so not pointing to the same entity. Score = 0.
+
+- idx_10: response = ""https://www.warwick.ac.uk/"", target = ""https://warwick.ac.uk/""  
+  Same as above for ""www."" difference only. Score = 1.
+
+Final scores:  
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1
+}
+```",https://www.cam.ac.uk/,https://www.cam.ac.uk/,1.0,key_match
+,,universityofedinburgh,University of Edinburgh,0.0,"exact not match, response: 11, target: 15",15,11,0.0,"exact not match, response: 40, target: 34",34,40,1.0,"exact match, response: 1582, target: 1582",1582,1582,0.0,"Let's analyze each item according to the criterion:
+
+Criterion summary: The response is correct if the semantics approximate the reference answer or point to the same entity. No need for word-for-word match.
+
+---
+
+**idx_0:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Analysis: ""council"" is a shorter form but the same entity as ""universitycouncil"". According to the criterion, approximate semantics pointing to the same entity suffice.  
+Score: 1
+
+---
+
+**idx_1:**  
+- Response: ""regenthouse,universitycouncil""  
+- Target: ""theregenthouse""  
+Analysis: The response answers ""regenthouse"" which matches ""theregenthouse"". The extra entity ""universitycouncil"" is not penalized as per the criterion (no mention of penalties for extra responses). The main entity is present.  
+Score: 1
+
+---
+
+**idx_2:**  
+- Response: ""council""  
+- Target: ""theuniversitycourt""  
+Analysis: ""council"" and ""universitycourt"" are different entities, not semantically the same. ""Council"" is generic or points to ""university council"" but target is ""university court"". Different entities.  
+Score: 0
+
+---
+
+**idx_3:**  
+- Response: ""council""  
+- Target: ""universitycourt""  
+Same as idx_2. Different entities.  
+Score: 0
+
+---
+
+**idx_4:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0.  
+Score: 1
+
+---
+
+**idx_5:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0.  
+Score: 1
+
+---
+
+**idx_6:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0.  
+Score: 1
+
+---
+
+**idx_7:**  
+- Response: ""generalassembly,council""  
+- Target: ""theboardofgovernors""  
+Analysis: ""general assembly"", ""council"", and ""board of governors"" are distinct entities. The response does not include ""board of governors"" or a synonym. This is a mismatch.  
+Score: 0
+
+---
+
+**idx_8:**  
+- Response: ""congregation,universitycouncil,privycouncil""  
+- Target: ""universitycouncil""  
+The response contains ""universitycouncil"" explicitly, which matches the target. Extra entities are acceptable.  
+Score: 1
+
+---
+
+**idx_9:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0  
+Score: 1
+
+---
+
+**idx_10:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0  
+Score: 1
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1
+}
+```",theuniversitycourt,council,1.0,"Let's analyze each pair item by item:
+
+- idx_0: response = ""https://www.birmingham.ac.uk/"", target = ""https://www.birmingham.ac.uk/""  
+  Exact match, so score = 1.
+
+- idx_1: response = ""https://www.cam.ac.uk/"", target = ""https://www.cam.ac.uk/""  
+  Exact match, so score = 1.
+
+- idx_2: response = ""https://www.ed.ac.uk/"", target = ""https://www.ed.ac.uk/""  
+  Exact match, so score = 1.
+
+- idx_3: response = ""https://www.gla.ac.uk/"", target = ""https://gla.ac.uk/""  
+  Difference is ""www."" in response URL but not in target. According to criteria, semantics approximately the same or point to the same entity is sufficient. Here the domain is the same, so score = 1.
+
+- idx_4: response = ""https://www.imperial.ac.uk/"", target = ""https://imperial.ac.uk/""  
+  Same situation as idx_3, difference only in the ""www."", which is negligible. Score = 1.
+
+- idx_5: response = ""https://www.leeds.ac.uk/"", target = ""https://leeds.ac.uk/""  
+  Same as above, semantics effectively the same. Score = 1.
+
+- idx_6: response = ""https://www.liverpool.ac.uk/"", target = ""https://liverpool.ac.uk/""  
+  Same as above, score = 1.
+
+- idx_7: response = ""https://www.manchester.ac.uk/"", target = ""https://manchester.ac.uk/""  
+  Same as above, score = 1.
+
+- idx_8: response = ""https://www.ox.ac.uk/"", target = ""https://ox.ac.uk/""  
+  Same as above, score = 1.
+
+- idx_9: response = ""https://www.shef.ac.uk/"", target = ""https://sheffield.ac.uk/""  
+  This is different: the response domain is ""shef.ac.uk"" while the target is ""sheffield.ac.uk"". They are distinct domain names, so not pointing to the same entity. Score = 0.
+
+- idx_10: response = ""https://www.warwick.ac.uk/"", target = ""https://warwick.ac.uk/""  
+  Same as above for ""www."" difference only. Score = 1.
+
+Final scores:  
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1
+}
+```",https://www.ed.ac.uk/,https://www.ed.ac.uk/,1.0,key_match
+,,universityofglasgow,University of Glasgow,0.0,"exact not match, response: 27, target: 14",14,27,0.0,"exact not match, response: 44, target: 79",79,44,1.0,"exact match, response: 1451, target: 1451",1451,1451,0.0,"Let's analyze each item according to the criterion:
+
+Criterion summary: The response is correct if the semantics approximate the reference answer or point to the same entity. No need for word-for-word match.
+
+---
+
+**idx_0:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Analysis: ""council"" is a shorter form but the same entity as ""universitycouncil"". According to the criterion, approximate semantics pointing to the same entity suffice.  
+Score: 1
+
+---
+
+**idx_1:**  
+- Response: ""regenthouse,universitycouncil""  
+- Target: ""theregenthouse""  
+Analysis: The response answers ""regenthouse"" which matches ""theregenthouse"". The extra entity ""universitycouncil"" is not penalized as per the criterion (no mention of penalties for extra responses). The main entity is present.  
+Score: 1
+
+---
+
+**idx_2:**  
+- Response: ""council""  
+- Target: ""theuniversitycourt""  
+Analysis: ""council"" and ""universitycourt"" are different entities, not semantically the same. ""Council"" is generic or points to ""university council"" but target is ""university court"". Different entities.  
+Score: 0
+
+---
+
+**idx_3:**  
+- Response: ""council""  
+- Target: ""universitycourt""  
+Same as idx_2. Different entities.  
+Score: 0
+
+---
+
+**idx_4:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0.  
+Score: 1
+
+---
+
+**idx_5:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0.  
+Score: 1
+
+---
+
+**idx_6:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0.  
+Score: 1
+
+---
+
+**idx_7:**  
+- Response: ""generalassembly,council""  
+- Target: ""theboardofgovernors""  
+Analysis: ""general assembly"", ""council"", and ""board of governors"" are distinct entities. The response does not include ""board of governors"" or a synonym. This is a mismatch.  
+Score: 0
+
+---
+
+**idx_8:**  
+- Response: ""congregation,universitycouncil,privycouncil""  
+- Target: ""universitycouncil""  
+The response contains ""universitycouncil"" explicitly, which matches the target. Extra entities are acceptable.  
+Score: 1
+
+---
+
+**idx_9:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0  
+Score: 1
+
+---
+
+**idx_10:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0  
+Score: 1
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1
+}
+```",universitycourt,council,1.0,"Let's analyze each pair item by item:
+
+- idx_0: response = ""https://www.birmingham.ac.uk/"", target = ""https://www.birmingham.ac.uk/""  
+  Exact match, so score = 1.
+
+- idx_1: response = ""https://www.cam.ac.uk/"", target = ""https://www.cam.ac.uk/""  
+  Exact match, so score = 1.
+
+- idx_2: response = ""https://www.ed.ac.uk/"", target = ""https://www.ed.ac.uk/""  
+  Exact match, so score = 1.
+
+- idx_3: response = ""https://www.gla.ac.uk/"", target = ""https://gla.ac.uk/""  
+  Difference is ""www."" in response URL but not in target. According to criteria, semantics approximately the same or point to the same entity is sufficient. Here the domain is the same, so score = 1.
+
+- idx_4: response = ""https://www.imperial.ac.uk/"", target = ""https://imperial.ac.uk/""  
+  Same situation as idx_3, difference only in the ""www."", which is negligible. Score = 1.
+
+- idx_5: response = ""https://www.leeds.ac.uk/"", target = ""https://leeds.ac.uk/""  
+  Same as above, semantics effectively the same. Score = 1.
+
+- idx_6: response = ""https://www.liverpool.ac.uk/"", target = ""https://liverpool.ac.uk/""  
+  Same as above, score = 1.
+
+- idx_7: response = ""https://www.manchester.ac.uk/"", target = ""https://manchester.ac.uk/""  
+  Same as above, score = 1.
+
+- idx_8: response = ""https://www.ox.ac.uk/"", target = ""https://ox.ac.uk/""  
+  Same as above, score = 1.
+
+- idx_9: response = ""https://www.shef.ac.uk/"", target = ""https://sheffield.ac.uk/""  
+  This is different: the response domain is ""shef.ac.uk"" while the target is ""sheffield.ac.uk"". They are distinct domain names, so not pointing to the same entity. Score = 0.
+
+- idx_10: response = ""https://www.warwick.ac.uk/"", target = ""https://warwick.ac.uk/""  
+  Same as above for ""www."" difference only. Score = 1.
+
+Final scores:  
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1
+}
+```",https://gla.ac.uk/,https://www.gla.ac.uk/,1.0,key_match
+,,imperialcollegelondon,Imperial College London,1.0,"exact match, response: 5, target: 5",5,5,1.0,"exact match, response: 2, target: 2",2,2,1.0,"exact match, response: 1907, target: 1907",1907,1907,1.0,"Let's analyze each item according to the criterion:
+
+Criterion summary: The response is correct if the semantics approximate the reference answer or point to the same entity. No need for word-for-word match.
+
+---
+
+**idx_0:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Analysis: ""council"" is a shorter form but the same entity as ""universitycouncil"". According to the criterion, approximate semantics pointing to the same entity suffice.  
+Score: 1
+
+---
+
+**idx_1:**  
+- Response: ""regenthouse,universitycouncil""  
+- Target: ""theregenthouse""  
+Analysis: The response answers ""regenthouse"" which matches ""theregenthouse"". The extra entity ""universitycouncil"" is not penalized as per the criterion (no mention of penalties for extra responses). The main entity is present.  
+Score: 1
+
+---
+
+**idx_2:**  
+- Response: ""council""  
+- Target: ""theuniversitycourt""  
+Analysis: ""council"" and ""universitycourt"" are different entities, not semantically the same. ""Council"" is generic or points to ""university council"" but target is ""university court"". Different entities.  
+Score: 0
+
+---
+
+**idx_3:**  
+- Response: ""council""  
+- Target: ""universitycourt""  
+Same as idx_2. Different entities.  
+Score: 0
+
+---
+
+**idx_4:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0.  
+Score: 1
+
+---
+
+**idx_5:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0.  
+Score: 1
+
+---
+
+**idx_6:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0.  
+Score: 1
+
+---
+
+**idx_7:**  
+- Response: ""generalassembly,council""  
+- Target: ""theboardofgovernors""  
+Analysis: ""general assembly"", ""council"", and ""board of governors"" are distinct entities. The response does not include ""board of governors"" or a synonym. This is a mismatch.  
+Score: 0
+
+---
+
+**idx_8:**  
+- Response: ""congregation,universitycouncil,privycouncil""  
+- Target: ""universitycouncil""  
+The response contains ""universitycouncil"" explicitly, which matches the target. Extra entities are acceptable.  
+Score: 1
+
+---
+
+**idx_9:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0  
+Score: 1
+
+---
+
+**idx_10:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0  
+Score: 1
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1
+}
+```",universitycouncil,council,1.0,"Let's analyze each pair item by item:
+
+- idx_0: response = ""https://www.birmingham.ac.uk/"", target = ""https://www.birmingham.ac.uk/""  
+  Exact match, so score = 1.
+
+- idx_1: response = ""https://www.cam.ac.uk/"", target = ""https://www.cam.ac.uk/""  
+  Exact match, so score = 1.
+
+- idx_2: response = ""https://www.ed.ac.uk/"", target = ""https://www.ed.ac.uk/""  
+  Exact match, so score = 1.
+
+- idx_3: response = ""https://www.gla.ac.uk/"", target = ""https://gla.ac.uk/""  
+  Difference is ""www."" in response URL but not in target. According to criteria, semantics approximately the same or point to the same entity is sufficient. Here the domain is the same, so score = 1.
+
+- idx_4: response = ""https://www.imperial.ac.uk/"", target = ""https://imperial.ac.uk/""  
+  Same situation as idx_3, difference only in the ""www."", which is negligible. Score = 1.
+
+- idx_5: response = ""https://www.leeds.ac.uk/"", target = ""https://leeds.ac.uk/""  
+  Same as above, semantics effectively the same. Score = 1.
+
+- idx_6: response = ""https://www.liverpool.ac.uk/"", target = ""https://liverpool.ac.uk/""  
+  Same as above, score = 1.
+
+- idx_7: response = ""https://www.manchester.ac.uk/"", target = ""https://manchester.ac.uk/""  
+  Same as above, score = 1.
+
+- idx_8: response = ""https://www.ox.ac.uk/"", target = ""https://ox.ac.uk/""  
+  Same as above, score = 1.
+
+- idx_9: response = ""https://www.shef.ac.uk/"", target = ""https://sheffield.ac.uk/""  
+  This is different: the response domain is ""shef.ac.uk"" while the target is ""sheffield.ac.uk"". They are distinct domain names, so not pointing to the same entity. Score = 0.
+
+- idx_10: response = ""https://www.warwick.ac.uk/"", target = ""https://warwick.ac.uk/""  
+  Same as above for ""www."" difference only. Score = 1.
+
+Final scores:  
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1
+}
+```",https://imperial.ac.uk/,https://www.imperial.ac.uk/,1.0,key_match
+,,universityofleeds,University of Leeds,1.0,"exact match, response: 37, target: 37",37,37,0.0,"exact not match, response: 47, target: 86",86,47,1.0,"exact match, response: 1904, target: 1904",1904,1904,1.0,"Let's analyze each item according to the criterion:
+
+Criterion summary: The response is correct if the semantics approximate the reference answer or point to the same entity. No need for word-for-word match.
+
+---
+
+**idx_0:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Analysis: ""council"" is a shorter form but the same entity as ""universitycouncil"". According to the criterion, approximate semantics pointing to the same entity suffice.  
+Score: 1
+
+---
+
+**idx_1:**  
+- Response: ""regenthouse,universitycouncil""  
+- Target: ""theregenthouse""  
+Analysis: The response answers ""regenthouse"" which matches ""theregenthouse"". The extra entity ""universitycouncil"" is not penalized as per the criterion (no mention of penalties for extra responses). The main entity is present.  
+Score: 1
+
+---
+
+**idx_2:**  
+- Response: ""council""  
+- Target: ""theuniversitycourt""  
+Analysis: ""council"" and ""universitycourt"" are different entities, not semantically the same. ""Council"" is generic or points to ""university council"" but target is ""university court"". Different entities.  
+Score: 0
+
+---
+
+**idx_3:**  
+- Response: ""council""  
+- Target: ""universitycourt""  
+Same as idx_2. Different entities.  
+Score: 0
+
+---
+
+**idx_4:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0.  
+Score: 1
+
+---
+
+**idx_5:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0.  
+Score: 1
+
+---
+
+**idx_6:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0.  
+Score: 1
+
+---
+
+**idx_7:**  
+- Response: ""generalassembly,council""  
+- Target: ""theboardofgovernors""  
+Analysis: ""general assembly"", ""council"", and ""board of governors"" are distinct entities. The response does not include ""board of governors"" or a synonym. This is a mismatch.  
+Score: 0
+
+---
+
+**idx_8:**  
+- Response: ""congregation,universitycouncil,privycouncil""  
+- Target: ""universitycouncil""  
+The response contains ""universitycouncil"" explicitly, which matches the target. Extra entities are acceptable.  
+Score: 1
+
+---
+
+**idx_9:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0  
+Score: 1
+
+---
+
+**idx_10:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0  
+Score: 1
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1
+}
+```",universitycouncil,council,1.0,"Let's analyze each pair item by item:
+
+- idx_0: response = ""https://www.birmingham.ac.uk/"", target = ""https://www.birmingham.ac.uk/""  
+  Exact match, so score = 1.
+
+- idx_1: response = ""https://www.cam.ac.uk/"", target = ""https://www.cam.ac.uk/""  
+  Exact match, so score = 1.
+
+- idx_2: response = ""https://www.ed.ac.uk/"", target = ""https://www.ed.ac.uk/""  
+  Exact match, so score = 1.
+
+- idx_3: response = ""https://www.gla.ac.uk/"", target = ""https://gla.ac.uk/""  
+  Difference is ""www."" in response URL but not in target. According to criteria, semantics approximately the same or point to the same entity is sufficient. Here the domain is the same, so score = 1.
+
+- idx_4: response = ""https://www.imperial.ac.uk/"", target = ""https://imperial.ac.uk/""  
+  Same situation as idx_3, difference only in the ""www."", which is negligible. Score = 1.
+
+- idx_5: response = ""https://www.leeds.ac.uk/"", target = ""https://leeds.ac.uk/""  
+  Same as above, semantics effectively the same. Score = 1.
+
+- idx_6: response = ""https://www.liverpool.ac.uk/"", target = ""https://liverpool.ac.uk/""  
+  Same as above, score = 1.
+
+- idx_7: response = ""https://www.manchester.ac.uk/"", target = ""https://manchester.ac.uk/""  
+  Same as above, score = 1.
+
+- idx_8: response = ""https://www.ox.ac.uk/"", target = ""https://ox.ac.uk/""  
+  Same as above, score = 1.
+
+- idx_9: response = ""https://www.shef.ac.uk/"", target = ""https://sheffield.ac.uk/""  
+  This is different: the response domain is ""shef.ac.uk"" while the target is ""sheffield.ac.uk"". They are distinct domain names, so not pointing to the same entity. Score = 0.
+
+- idx_10: response = ""https://www.warwick.ac.uk/"", target = ""https://warwick.ac.uk/""  
+  Same as above for ""www."" difference only. Score = 1.
+
+Final scores:  
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1
+}
+```",https://leeds.ac.uk/,https://www.leeds.ac.uk/,1.0,key_match
+,,universityofliverpool,University of Liverpool,0.0,"exact not match, response: 43, target: 27",27,43,0.0,"exact not match, response: 49, target: 147",147,49,0.0,"exact not match, response: 1881, target: 1903",1903,1881,1.0,"Let's analyze each item according to the criterion:
+
+Criterion summary: The response is correct if the semantics approximate the reference answer or point to the same entity. No need for word-for-word match.
+
+---
+
+**idx_0:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Analysis: ""council"" is a shorter form but the same entity as ""universitycouncil"". According to the criterion, approximate semantics pointing to the same entity suffice.  
+Score: 1
+
+---
+
+**idx_1:**  
+- Response: ""regenthouse,universitycouncil""  
+- Target: ""theregenthouse""  
+Analysis: The response answers ""regenthouse"" which matches ""theregenthouse"". The extra entity ""universitycouncil"" is not penalized as per the criterion (no mention of penalties for extra responses). The main entity is present.  
+Score: 1
+
+---
+
+**idx_2:**  
+- Response: ""council""  
+- Target: ""theuniversitycourt""  
+Analysis: ""council"" and ""universitycourt"" are different entities, not semantically the same. ""Council"" is generic or points to ""university council"" but target is ""university court"". Different entities.  
+Score: 0
+
+---
+
+**idx_3:**  
+- Response: ""council""  
+- Target: ""universitycourt""  
+Same as idx_2. Different entities.  
+Score: 0
+
+---
+
+**idx_4:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0.  
+Score: 1
+
+---
+
+**idx_5:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0.  
+Score: 1
+
+---
+
+**idx_6:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0.  
+Score: 1
+
+---
+
+**idx_7:**  
+- Response: ""generalassembly,council""  
+- Target: ""theboardofgovernors""  
+Analysis: ""general assembly"", ""council"", and ""board of governors"" are distinct entities. The response does not include ""board of governors"" or a synonym. This is a mismatch.  
+Score: 0
+
+---
+
+**idx_8:**  
+- Response: ""congregation,universitycouncil,privycouncil""  
+- Target: ""universitycouncil""  
+The response contains ""universitycouncil"" explicitly, which matches the target. Extra entities are acceptable.  
+Score: 1
+
+---
+
+**idx_9:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0  
+Score: 1
+
+---
+
+**idx_10:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0  
+Score: 1
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1
+}
+```",universitycouncil,council,1.0,"Let's analyze each pair item by item:
+
+- idx_0: response = ""https://www.birmingham.ac.uk/"", target = ""https://www.birmingham.ac.uk/""  
+  Exact match, so score = 1.
+
+- idx_1: response = ""https://www.cam.ac.uk/"", target = ""https://www.cam.ac.uk/""  
+  Exact match, so score = 1.
+
+- idx_2: response = ""https://www.ed.ac.uk/"", target = ""https://www.ed.ac.uk/""  
+  Exact match, so score = 1.
+
+- idx_3: response = ""https://www.gla.ac.uk/"", target = ""https://gla.ac.uk/""  
+  Difference is ""www."" in response URL but not in target. According to criteria, semantics approximately the same or point to the same entity is sufficient. Here the domain is the same, so score = 1.
+
+- idx_4: response = ""https://www.imperial.ac.uk/"", target = ""https://imperial.ac.uk/""  
+  Same situation as idx_3, difference only in the ""www."", which is negligible. Score = 1.
+
+- idx_5: response = ""https://www.leeds.ac.uk/"", target = ""https://leeds.ac.uk/""  
+  Same as above, semantics effectively the same. Score = 1.
+
+- idx_6: response = ""https://www.liverpool.ac.uk/"", target = ""https://liverpool.ac.uk/""  
+  Same as above, score = 1.
+
+- idx_7: response = ""https://www.manchester.ac.uk/"", target = ""https://manchester.ac.uk/""  
+  Same as above, score = 1.
+
+- idx_8: response = ""https://www.ox.ac.uk/"", target = ""https://ox.ac.uk/""  
+  Same as above, score = 1.
+
+- idx_9: response = ""https://www.shef.ac.uk/"", target = ""https://sheffield.ac.uk/""  
+  This is different: the response domain is ""shef.ac.uk"" while the target is ""sheffield.ac.uk"". They are distinct domain names, so not pointing to the same entity. Score = 0.
+
+- idx_10: response = ""https://www.warwick.ac.uk/"", target = ""https://warwick.ac.uk/""  
+  Same as above for ""www."" difference only. Score = 1.
+
+Final scores:  
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1
+}
+```",https://liverpool.ac.uk/,https://www.liverpool.ac.uk/,1.0,key_match
+,,universityofmanchester,University of Manchester,0.0,"exact not match, response: 7, target: 31",31,7,0.0,"exact not match, response: 34, target: 35",35,34,1.0,"exact match, response: 2004, target: 2004",2004,2004,0.0,"Let's analyze each item according to the criterion:
+
+Criterion summary: The response is correct if the semantics approximate the reference answer or point to the same entity. No need for word-for-word match.
+
+---
+
+**idx_0:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Analysis: ""council"" is a shorter form but the same entity as ""universitycouncil"". According to the criterion, approximate semantics pointing to the same entity suffice.  
+Score: 1
+
+---
+
+**idx_1:**  
+- Response: ""regenthouse,universitycouncil""  
+- Target: ""theregenthouse""  
+Analysis: The response answers ""regenthouse"" which matches ""theregenthouse"". The extra entity ""universitycouncil"" is not penalized as per the criterion (no mention of penalties for extra responses). The main entity is present.  
+Score: 1
+
+---
+
+**idx_2:**  
+- Response: ""council""  
+- Target: ""theuniversitycourt""  
+Analysis: ""council"" and ""universitycourt"" are different entities, not semantically the same. ""Council"" is generic or points to ""university council"" but target is ""university court"". Different entities.  
+Score: 0
+
+---
+
+**idx_3:**  
+- Response: ""council""  
+- Target: ""universitycourt""  
+Same as idx_2. Different entities.  
+Score: 0
+
+---
+
+**idx_4:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0.  
+Score: 1
+
+---
+
+**idx_5:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0.  
+Score: 1
+
+---
+
+**idx_6:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0.  
+Score: 1
+
+---
+
+**idx_7:**  
+- Response: ""generalassembly,council""  
+- Target: ""theboardofgovernors""  
+Analysis: ""general assembly"", ""council"", and ""board of governors"" are distinct entities. The response does not include ""board of governors"" or a synonym. This is a mismatch.  
+Score: 0
+
+---
+
+**idx_8:**  
+- Response: ""congregation,universitycouncil,privycouncil""  
+- Target: ""universitycouncil""  
+The response contains ""universitycouncil"" explicitly, which matches the target. Extra entities are acceptable.  
+Score: 1
+
+---
+
+**idx_9:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0  
+Score: 1
+
+---
+
+**idx_10:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0  
+Score: 1
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1
+}
+```",theboardofgovernors,"generalassembly,council",1.0,"Let's analyze each pair item by item:
+
+- idx_0: response = ""https://www.birmingham.ac.uk/"", target = ""https://www.birmingham.ac.uk/""  
+  Exact match, so score = 1.
+
+- idx_1: response = ""https://www.cam.ac.uk/"", target = ""https://www.cam.ac.uk/""  
+  Exact match, so score = 1.
+
+- idx_2: response = ""https://www.ed.ac.uk/"", target = ""https://www.ed.ac.uk/""  
+  Exact match, so score = 1.
+
+- idx_3: response = ""https://www.gla.ac.uk/"", target = ""https://gla.ac.uk/""  
+  Difference is ""www."" in response URL but not in target. According to criteria, semantics approximately the same or point to the same entity is sufficient. Here the domain is the same, so score = 1.
+
+- idx_4: response = ""https://www.imperial.ac.uk/"", target = ""https://imperial.ac.uk/""  
+  Same situation as idx_3, difference only in the ""www."", which is negligible. Score = 1.
+
+- idx_5: response = ""https://www.leeds.ac.uk/"", target = ""https://leeds.ac.uk/""  
+  Same as above, semantics effectively the same. Score = 1.
+
+- idx_6: response = ""https://www.liverpool.ac.uk/"", target = ""https://liverpool.ac.uk/""  
+  Same as above, score = 1.
+
+- idx_7: response = ""https://www.manchester.ac.uk/"", target = ""https://manchester.ac.uk/""  
+  Same as above, score = 1.
+
+- idx_8: response = ""https://www.ox.ac.uk/"", target = ""https://ox.ac.uk/""  
+  Same as above, score = 1.
+
+- idx_9: response = ""https://www.shef.ac.uk/"", target = ""https://sheffield.ac.uk/""  
+  This is different: the response domain is ""shef.ac.uk"" while the target is ""sheffield.ac.uk"". They are distinct domain names, so not pointing to the same entity. Score = 0.
+
+- idx_10: response = ""https://www.warwick.ac.uk/"", target = ""https://warwick.ac.uk/""  
+  Same as above for ""www."" difference only. Score = 1.
+
+Final scores:  
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1
+}
+```",https://manchester.ac.uk/,https://www.manchester.ac.uk/,1.0,key_match
+,,universityofoxford,University of Oxford,1.0,"exact match, response: 1, target: 1",1,1,0.0,"exact not match, response: 1, target: 4",4,1,0.0,"exact not match, response: 1243, target: 1096",1096,1243,1.0,"Let's analyze each item according to the criterion:
+
+Criterion summary: The response is correct if the semantics approximate the reference answer or point to the same entity. No need for word-for-word match.
+
+---
+
+**idx_0:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Analysis: ""council"" is a shorter form but the same entity as ""universitycouncil"". According to the criterion, approximate semantics pointing to the same entity suffice.  
+Score: 1
+
+---
+
+**idx_1:**  
+- Response: ""regenthouse,universitycouncil""  
+- Target: ""theregenthouse""  
+Analysis: The response answers ""regenthouse"" which matches ""theregenthouse"". The extra entity ""universitycouncil"" is not penalized as per the criterion (no mention of penalties for extra responses). The main entity is present.  
+Score: 1
+
+---
+
+**idx_2:**  
+- Response: ""council""  
+- Target: ""theuniversitycourt""  
+Analysis: ""council"" and ""universitycourt"" are different entities, not semantically the same. ""Council"" is generic or points to ""university council"" but target is ""university court"". Different entities.  
+Score: 0
+
+---
+
+**idx_3:**  
+- Response: ""council""  
+- Target: ""universitycourt""  
+Same as idx_2. Different entities.  
+Score: 0
+
+---
+
+**idx_4:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0.  
+Score: 1
+
+---
+
+**idx_5:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0.  
+Score: 1
+
+---
+
+**idx_6:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0.  
+Score: 1
+
+---
+
+**idx_7:**  
+- Response: ""generalassembly,council""  
+- Target: ""theboardofgovernors""  
+Analysis: ""general assembly"", ""council"", and ""board of governors"" are distinct entities. The response does not include ""board of governors"" or a synonym. This is a mismatch.  
+Score: 0
+
+---
+
+**idx_8:**  
+- Response: ""congregation,universitycouncil,privycouncil""  
+- Target: ""universitycouncil""  
+The response contains ""universitycouncil"" explicitly, which matches the target. Extra entities are acceptable.  
+Score: 1
+
+---
+
+**idx_9:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0  
+Score: 1
+
+---
+
+**idx_10:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0  
+Score: 1
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1
+}
+```",universitycouncil,"congregation,universitycouncil,privycouncil",1.0,"Let's analyze each pair item by item:
+
+- idx_0: response = ""https://www.birmingham.ac.uk/"", target = ""https://www.birmingham.ac.uk/""  
+  Exact match, so score = 1.
+
+- idx_1: response = ""https://www.cam.ac.uk/"", target = ""https://www.cam.ac.uk/""  
+  Exact match, so score = 1.
+
+- idx_2: response = ""https://www.ed.ac.uk/"", target = ""https://www.ed.ac.uk/""  
+  Exact match, so score = 1.
+
+- idx_3: response = ""https://www.gla.ac.uk/"", target = ""https://gla.ac.uk/""  
+  Difference is ""www."" in response URL but not in target. According to criteria, semantics approximately the same or point to the same entity is sufficient. Here the domain is the same, so score = 1.
+
+- idx_4: response = ""https://www.imperial.ac.uk/"", target = ""https://imperial.ac.uk/""  
+  Same situation as idx_3, difference only in the ""www."", which is negligible. Score = 1.
+
+- idx_5: response = ""https://www.leeds.ac.uk/"", target = ""https://leeds.ac.uk/""  
+  Same as above, semantics effectively the same. Score = 1.
+
+- idx_6: response = ""https://www.liverpool.ac.uk/"", target = ""https://liverpool.ac.uk/""  
+  Same as above, score = 1.
+
+- idx_7: response = ""https://www.manchester.ac.uk/"", target = ""https://manchester.ac.uk/""  
+  Same as above, score = 1.
+
+- idx_8: response = ""https://www.ox.ac.uk/"", target = ""https://ox.ac.uk/""  
+  Same as above, score = 1.
+
+- idx_9: response = ""https://www.shef.ac.uk/"", target = ""https://sheffield.ac.uk/""  
+  This is different: the response domain is ""shef.ac.uk"" while the target is ""sheffield.ac.uk"". They are distinct domain names, so not pointing to the same entity. Score = 0.
+
+- idx_10: response = ""https://www.warwick.ac.uk/"", target = ""https://warwick.ac.uk/""  
+  Same as above for ""www."" difference only. Score = 1.
+
+Final scores:  
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1
+}
+```",https://ox.ac.uk/,https://www.ox.ac.uk/,1.0,key_match
+,,universityofsheffield,University of Sheffield,0.0,"exact not match, response: 40, target: 20",20,40,0.0,"exact not match, response: 48, target: 92",92,48,1.0,"exact match, response: 1905, target: 1905",1905,1905,1.0,"Let's analyze each item according to the criterion:
+
+Criterion summary: The response is correct if the semantics approximate the reference answer or point to the same entity. No need for word-for-word match.
+
+---
+
+**idx_0:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Analysis: ""council"" is a shorter form but the same entity as ""universitycouncil"". According to the criterion, approximate semantics pointing to the same entity suffice.  
+Score: 1
+
+---
+
+**idx_1:**  
+- Response: ""regenthouse,universitycouncil""  
+- Target: ""theregenthouse""  
+Analysis: The response answers ""regenthouse"" which matches ""theregenthouse"". The extra entity ""universitycouncil"" is not penalized as per the criterion (no mention of penalties for extra responses). The main entity is present.  
+Score: 1
+
+---
+
+**idx_2:**  
+- Response: ""council""  
+- Target: ""theuniversitycourt""  
+Analysis: ""council"" and ""universitycourt"" are different entities, not semantically the same. ""Council"" is generic or points to ""university council"" but target is ""university court"". Different entities.  
+Score: 0
+
+---
+
+**idx_3:**  
+- Response: ""council""  
+- Target: ""universitycourt""  
+Same as idx_2. Different entities.  
+Score: 0
+
+---
+
+**idx_4:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0.  
+Score: 1
+
+---
+
+**idx_5:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0.  
+Score: 1
+
+---
+
+**idx_6:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0.  
+Score: 1
+
+---
+
+**idx_7:**  
+- Response: ""generalassembly,council""  
+- Target: ""theboardofgovernors""  
+Analysis: ""general assembly"", ""council"", and ""board of governors"" are distinct entities. The response does not include ""board of governors"" or a synonym. This is a mismatch.  
+Score: 0
+
+---
+
+**idx_8:**  
+- Response: ""congregation,universitycouncil,privycouncil""  
+- Target: ""universitycouncil""  
+The response contains ""universitycouncil"" explicitly, which matches the target. Extra entities are acceptable.  
+Score: 1
+
+---
+
+**idx_9:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0  
+Score: 1
+
+---
+
+**idx_10:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0  
+Score: 1
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1
+}
+```",universitycouncil,council,0.0,"Let's analyze each pair item by item:
+
+- idx_0: response = ""https://www.birmingham.ac.uk/"", target = ""https://www.birmingham.ac.uk/""  
+  Exact match, so score = 1.
+
+- idx_1: response = ""https://www.cam.ac.uk/"", target = ""https://www.cam.ac.uk/""  
+  Exact match, so score = 1.
+
+- idx_2: response = ""https://www.ed.ac.uk/"", target = ""https://www.ed.ac.uk/""  
+  Exact match, so score = 1.
+
+- idx_3: response = ""https://www.gla.ac.uk/"", target = ""https://gla.ac.uk/""  
+  Difference is ""www."" in response URL but not in target. According to criteria, semantics approximately the same or point to the same entity is sufficient. Here the domain is the same, so score = 1.
+
+- idx_4: response = ""https://www.imperial.ac.uk/"", target = ""https://imperial.ac.uk/""  
+  Same situation as idx_3, difference only in the ""www."", which is negligible. Score = 1.
+
+- idx_5: response = ""https://www.leeds.ac.uk/"", target = ""https://leeds.ac.uk/""  
+  Same as above, semantics effectively the same. Score = 1.
+
+- idx_6: response = ""https://www.liverpool.ac.uk/"", target = ""https://liverpool.ac.uk/""  
+  Same as above, score = 1.
+
+- idx_7: response = ""https://www.manchester.ac.uk/"", target = ""https://manchester.ac.uk/""  
+  Same as above, score = 1.
+
+- idx_8: response = ""https://www.ox.ac.uk/"", target = ""https://ox.ac.uk/""  
+  Same as above, score = 1.
+
+- idx_9: response = ""https://www.shef.ac.uk/"", target = ""https://sheffield.ac.uk/""  
+  This is different: the response domain is ""shef.ac.uk"" while the target is ""sheffield.ac.uk"". They are distinct domain names, so not pointing to the same entity. Score = 0.
+
+- idx_10: response = ""https://www.warwick.ac.uk/"", target = ""https://warwick.ac.uk/""  
+  Same as above for ""www."" difference only. Score = 1.
+
+Final scores:  
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1
+}
+```",https://sheffield.ac.uk/,https://www.shef.ac.uk/,1.0,key_match
+,,universityofwarwick,University of Warwick,0.0,"exact not match, response: 33, target: 8",8,33,0.0,"exact not match, response: 45, target: 74",74,45,1.0,"exact match, response: 1965, target: 1965",1965,1965,1.0,"Let's analyze each item according to the criterion:
+
+Criterion summary: The response is correct if the semantics approximate the reference answer or point to the same entity. No need for word-for-word match.
+
+---
+
+**idx_0:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Analysis: ""council"" is a shorter form but the same entity as ""universitycouncil"". According to the criterion, approximate semantics pointing to the same entity suffice.  
+Score: 1
+
+---
+
+**idx_1:**  
+- Response: ""regenthouse,universitycouncil""  
+- Target: ""theregenthouse""  
+Analysis: The response answers ""regenthouse"" which matches ""theregenthouse"". The extra entity ""universitycouncil"" is not penalized as per the criterion (no mention of penalties for extra responses). The main entity is present.  
+Score: 1
+
+---
+
+**idx_2:**  
+- Response: ""council""  
+- Target: ""theuniversitycourt""  
+Analysis: ""council"" and ""universitycourt"" are different entities, not semantically the same. ""Council"" is generic or points to ""university council"" but target is ""university court"". Different entities.  
+Score: 0
+
+---
+
+**idx_3:**  
+- Response: ""council""  
+- Target: ""universitycourt""  
+Same as idx_2. Different entities.  
+Score: 0
+
+---
+
+**idx_4:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0.  
+Score: 1
+
+---
+
+**idx_5:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0.  
+Score: 1
+
+---
+
+**idx_6:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0.  
+Score: 1
+
+---
+
+**idx_7:**  
+- Response: ""generalassembly,council""  
+- Target: ""theboardofgovernors""  
+Analysis: ""general assembly"", ""council"", and ""board of governors"" are distinct entities. The response does not include ""board of governors"" or a synonym. This is a mismatch.  
+Score: 0
+
+---
+
+**idx_8:**  
+- Response: ""congregation,universitycouncil,privycouncil""  
+- Target: ""universitycouncil""  
+The response contains ""universitycouncil"" explicitly, which matches the target. Extra entities are acceptable.  
+Score: 1
+
+---
+
+**idx_9:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0  
+Score: 1
+
+---
+
+**idx_10:**  
+- Response: ""council""  
+- Target: ""universitycouncil""  
+Same as idx_0  
+Score: 1
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1
+}
+```",universitycouncil,council,1.0,"Let's analyze each pair item by item:
+
+- idx_0: response = ""https://www.birmingham.ac.uk/"", target = ""https://www.birmingham.ac.uk/""  
+  Exact match, so score = 1.
+
+- idx_1: response = ""https://www.cam.ac.uk/"", target = ""https://www.cam.ac.uk/""  
+  Exact match, so score = 1.
+
+- idx_2: response = ""https://www.ed.ac.uk/"", target = ""https://www.ed.ac.uk/""  
+  Exact match, so score = 1.
+
+- idx_3: response = ""https://www.gla.ac.uk/"", target = ""https://gla.ac.uk/""  
+  Difference is ""www."" in response URL but not in target. According to criteria, semantics approximately the same or point to the same entity is sufficient. Here the domain is the same, so score = 1.
+
+- idx_4: response = ""https://www.imperial.ac.uk/"", target = ""https://imperial.ac.uk/""  
+  Same situation as idx_3, difference only in the ""www."", which is negligible. Score = 1.
+
+- idx_5: response = ""https://www.leeds.ac.uk/"", target = ""https://leeds.ac.uk/""  
+  Same as above, semantics effectively the same. Score = 1.
+
+- idx_6: response = ""https://www.liverpool.ac.uk/"", target = ""https://liverpool.ac.uk/""  
+  Same as above, score = 1.
+
+- idx_7: response = ""https://www.manchester.ac.uk/"", target = ""https://manchester.ac.uk/""  
+  Same as above, score = 1.
+
+- idx_8: response = ""https://www.ox.ac.uk/"", target = ""https://ox.ac.uk/""  
+  Same as above, score = 1.
+
+- idx_9: response = ""https://www.shef.ac.uk/"", target = ""https://sheffield.ac.uk/""  
+  This is different: the response domain is ""shef.ac.uk"" while the target is ""sheffield.ac.uk"". They are distinct domain names, so not pointing to the same entity. Score = 0.
+
+- idx_10: response = ""https://www.warwick.ac.uk/"", target = ""https://warwick.ac.uk/""  
+  Same as above for ""www."" difference only. Score = 1.
+
+Final scores:  
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1
+}
+```",https://warwick.ac.uk/,https://www.warwick.ac.uk/,1.0,key_match
+1.0,,cardiffuniversity,,,,46,,,,181,,,,1883,,,,universitycouncil,,,,https://www.cardiff.ac.uk/,,,
+1.0,,durhamuniversity,,,,6,,,,94,,,,1832,,,,universitycouncil,,,,https://dur.ac.uk/,,,
+1.0,,king'scollegelondon,,,,28,,,,31,,,,1829,,,,universitycouncil,,,,https://kcl.ac.uk/,,,
+1.0,,newcastleuniversity,,,,63,,,,137,,,,1834,,,,universitycouncil,,,,https://ncl.ac.uk/,,,
+1.0,,queen'suniversitybelfast,,,,43,,,,199,,,,1845,,,,"universitysenate,(universitycommittee)",,,,https://qub.ac.uk/,,,
+1.0,,queenmaryuniversityoflondon,,,,74,,,,110,,,,1887,,,,universitycouncil,,,,https://qmul.ac.uk/,,,
+1.0,,thelondonschoolofeconomicsandpoliticalscience,,,,4,,,,56,,,,1895,,,,universitycouncil,,,,https://lse.ac.uk/,,,
+1.0,,universitycollegelondon,,,,9,,,,9,,,,1826,,,,universitycouncil,,,,https://ucl.ac.uk/,,,
+,1.0,universityofbath,University of Bath,,,,44,,,,50,,,,1966,,,,council,,,,https://www.bath.ac.uk/,,
+1.0,,universityofbristol,,,,16,,,,51,,,,1909,,,,boardoftrustees,,,,https://bristol.ac.uk/,,,
+1.0,,universityofexeter,,,,18,,,,155,,,,1955,,,,universitycouncil,,,,https://www.exeter.ac.uk/,,,
+1.0,,universityofnottingham,,,,62,,,,97,,,,1948,,,,universitycouncil,,,,https://nottingham.ac.uk/,,,
+1.0,,universityofsouthampton,,,,22,,,,87,,,,1952,,,,universitycouncil,,,,https://southampton.ac.uk/,,,
+1.0,,universityofyork,,,,25,,,,169,,,,1963,,,,universitycouncil,,,,https://york.ac.uk/,,,

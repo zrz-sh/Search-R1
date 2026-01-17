@@ -1,0 +1,334 @@
+exist_flag_gt,exist_flag_response,所属联赛,所属联赛_before_map,赛季,赛季_before_map,mvp球员_llm_judge,mvp球员_llm_judge_eval_msg,mvp球员_query,mvp球员_response,冠军俱乐部名称_llm_judge,冠军俱乐部名称_llm_judge_eval_msg,冠军俱乐部名称_query,冠军俱乐部名称_response,所属俱乐部_llm_judge,所属俱乐部_llm_judge_eval_msg,所属俱乐部_query,所属俱乐部_response,所属联赛_exact_match,所属联赛_exact_match_eval_msg,评分_number_near,评分_number_near_eval_msg,评分_query,评分_response,赛季_exact_match,赛季_exact_match_eval_msg
+,,西班牙足球甲级联赛,西甲,2022-23,2022-23,0.0,"首先，我们根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+对每一个idx进行分析：
+
+- idx_0  
+  - response: 莱万多夫斯基  
+  - target: 安托万·格列兹曼  
+  - 判断：两者为不同的足球运动员实体，尽管都是著名球员，但实体不一致，语义不相同，故得分0。
+
+- idx_1  
+  - response: 鲁本·迪亚斯  
+  - target: 哈里·凯恩  
+  - 判断：同样为不同的球员实体，语义不相同，得分0。
+
+- idx_2  
+  - response: 凯文·德布劳内  
+  - target: 凯文·德布劳内  
+  - 判断：完全一致，得分1。
+
+所以最终得分为：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1
+}
+```",安托万·格列兹曼,莱万多夫斯基,1.0,"分析过程：
+
+1. idx_0：
+- 参考答案（target）是“巴塞罗那”
+- 回答（response）是“巴塞罗那”
+- 语义完全一致
+- 根据评分标准，得1分
+
+2. idx_1：
+- 参考答案是“曼彻斯特城”
+- 回答是“曼城”
+- “曼城”是“曼彻斯特城”的常用简称，属于指向同一实体
+- 根据评分标准，属于语义大致相同，得1分
+
+3. idx_2：
+- 参考答案是“曼彻斯特城”
+- 回答是“曼城”
+- 同上，语义一致
+- 得1分
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```",巴塞罗那,巴塞罗那,0.0,"Let's analyze each pair one by one according to the criterion:
+
+Criterion summary:  
+- The response must be semantically similar or refer to the same entity as the target.  
+- It does not need to match word-for-word.
+
+---
+
+### idx_0
+- Response: ""巴塞罗那"" (Barcelona)  
+- Target: ""马德里竞技"" (Atlético Madrid)  
+
+Are these the same entity or semantically similar?  
+No. Barcelona and Atlético Madrid are different football clubs. This is clearly incorrect.
+
+Score: 0
+
+---
+
+### idx_1
+- Response: ""曼城"" (Man City)  
+- Target: ""托特纳姆热刺"" (Tottenham Hotspur)  
+
+Are these the same or semantically similar?  
+No. Manchester City and Tottenham Hotspur are two different football clubs.
+
+Score: 0
+
+---
+
+### idx_2
+- Response: ""曼城"" (abbreviation for Manchester City)  
+- Target: ""曼彻斯特城"" (Manchester City)  
+
+Are these the same or semantically similar?  
+Yes. ""曼城"" is a well-known short form for ""曼彻斯特城"".
+
+Score: 1
+
+---
+
+### Final scoring result
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1
+}
+```",‌马德里竞技,巴塞罗那,1.0,key_match,0.0,"number not convertable, response: None, target: 7.74",7.74,NULL,1.0,key_match
+,,英格兰足球超级联赛,英超,2020-21,2020-21,0.0,"首先，我们根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+对每一个idx进行分析：
+
+- idx_0  
+  - response: 莱万多夫斯基  
+  - target: 安托万·格列兹曼  
+  - 判断：两者为不同的足球运动员实体，尽管都是著名球员，但实体不一致，语义不相同，故得分0。
+
+- idx_1  
+  - response: 鲁本·迪亚斯  
+  - target: 哈里·凯恩  
+  - 判断：同样为不同的球员实体，语义不相同，得分0。
+
+- idx_2  
+  - response: 凯文·德布劳内  
+  - target: 凯文·德布劳内  
+  - 判断：完全一致，得分1。
+
+所以最终得分为：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1
+}
+```",哈里·凯恩,鲁本·迪亚斯,1.0,"分析过程：
+
+1. idx_0：
+- 参考答案（target）是“巴塞罗那”
+- 回答（response）是“巴塞罗那”
+- 语义完全一致
+- 根据评分标准，得1分
+
+2. idx_1：
+- 参考答案是“曼彻斯特城”
+- 回答是“曼城”
+- “曼城”是“曼彻斯特城”的常用简称，属于指向同一实体
+- 根据评分标准，属于语义大致相同，得1分
+
+3. idx_2：
+- 参考答案是“曼彻斯特城”
+- 回答是“曼城”
+- 同上，语义一致
+- 得1分
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```",曼彻斯特城,曼城,0.0,"Let's analyze each pair one by one according to the criterion:
+
+Criterion summary:  
+- The response must be semantically similar or refer to the same entity as the target.  
+- It does not need to match word-for-word.
+
+---
+
+### idx_0
+- Response: ""巴塞罗那"" (Barcelona)  
+- Target: ""马德里竞技"" (Atlético Madrid)  
+
+Are these the same entity or semantically similar?  
+No. Barcelona and Atlético Madrid are different football clubs. This is clearly incorrect.
+
+Score: 0
+
+---
+
+### idx_1
+- Response: ""曼城"" (Man City)  
+- Target: ""托特纳姆热刺"" (Tottenham Hotspur)  
+
+Are these the same or semantically similar?  
+No. Manchester City and Tottenham Hotspur are two different football clubs.
+
+Score: 0
+
+---
+
+### idx_2
+- Response: ""曼城"" (abbreviation for Manchester City)  
+- Target: ""曼彻斯特城"" (Manchester City)  
+
+Are these the same or semantically similar?  
+Yes. ""曼城"" is a well-known short form for ""曼彻斯特城"".
+
+Score: 1
+
+---
+
+### Final scoring result
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1
+}
+```",‌托特纳姆热刺,曼城,1.0,key_match,0.0,"number not convertable, response: None, target: 7.63",7.63,NULL,1.0,key_match
+,,英格兰足球超级联赛,英超,2021-22,2021-22,1.0,"首先，我们根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+对每一个idx进行分析：
+
+- idx_0  
+  - response: 莱万多夫斯基  
+  - target: 安托万·格列兹曼  
+  - 判断：两者为不同的足球运动员实体，尽管都是著名球员，但实体不一致，语义不相同，故得分0。
+
+- idx_1  
+  - response: 鲁本·迪亚斯  
+  - target: 哈里·凯恩  
+  - 判断：同样为不同的球员实体，语义不相同，得分0。
+
+- idx_2  
+  - response: 凯文·德布劳内  
+  - target: 凯文·德布劳内  
+  - 判断：完全一致，得分1。
+
+所以最终得分为：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1
+}
+```",凯文·德布劳内,凯文·德布劳内,1.0,"分析过程：
+
+1. idx_0：
+- 参考答案（target）是“巴塞罗那”
+- 回答（response）是“巴塞罗那”
+- 语义完全一致
+- 根据评分标准，得1分
+
+2. idx_1：
+- 参考答案是“曼彻斯特城”
+- 回答是“曼城”
+- “曼城”是“曼彻斯特城”的常用简称，属于指向同一实体
+- 根据评分标准，属于语义大致相同，得1分
+
+3. idx_2：
+- 参考答案是“曼彻斯特城”
+- 回答是“曼城”
+- 同上，语义一致
+- 得1分
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```",曼彻斯特城,曼城,1.0,"Let's analyze each pair one by one according to the criterion:
+
+Criterion summary:  
+- The response must be semantically similar or refer to the same entity as the target.  
+- It does not need to match word-for-word.
+
+---
+
+### idx_0
+- Response: ""巴塞罗那"" (Barcelona)  
+- Target: ""马德里竞技"" (Atlético Madrid)  
+
+Are these the same entity or semantically similar?  
+No. Barcelona and Atlético Madrid are different football clubs. This is clearly incorrect.
+
+Score: 0
+
+---
+
+### idx_1
+- Response: ""曼城"" (Man City)  
+- Target: ""托特纳姆热刺"" (Tottenham Hotspur)  
+
+Are these the same or semantically similar?  
+No. Manchester City and Tottenham Hotspur are two different football clubs.
+
+Score: 0
+
+---
+
+### idx_2
+- Response: ""曼城"" (abbreviation for Manchester City)  
+- Target: ""曼彻斯特城"" (Manchester City)  
+
+Are these the same or semantically similar?  
+Yes. ""曼城"" is a well-known short form for ""曼彻斯特城"".
+
+Score: 1
+
+---
+
+### Final scoring result
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1
+}
+```",曼彻斯特城,曼城,1.0,key_match,0.0,"number not convertable, response: None, target: 7.78",7.78,NULL,1.0,key_match
+1.0,,德国足球甲级联赛,,2020-21,,,,罗伯特·莱万多夫斯基,,,,拜仁慕尼黑,,,,拜仁慕尼黑,,,,,,7.83,,,
+1.0,,意大利足球甲级联赛,,2020-21,,,,洛伦佐·因西涅,,,,国际米兰,,,,那不勒斯,,,,,,7.55,,,
+1.0,,法国足球甲级联赛,,2020-21,,,,孟菲斯·德佩,,,,里尔,,,,奥林匹克里昂,,,,,,7.59,,,
+1.0,,西班牙足球甲级联赛,,2020-21,,,,利昂内尔·梅西,,,,马德里竞技,,,,巴塞罗那,,,,,,8.33,,,
+1.0,,德国足球甲级联赛,,2021-22,,,,‌约书亚·基米希,,,,拜仁慕尼黑,,,,拜仁慕尼黑,,,,,,7.79,,,
+1.0,,意大利足球甲级联赛,,2021-22,,,,多梅尼科·贝拉尔迪,,,,ac米兰,,,,萨索洛,,,,,,7.59,,,
+1.0,,法国足球甲级联赛,,2021-22,,,,基利安·姆巴佩,,,,巴黎圣日耳曼,,,,巴黎圣日耳曼,,,,,,7.77,,,
+1.0,,西班牙足球甲级联赛,,2021-22,,,,卡里姆·本泽马,,,,皇家马德里,,,,皇家马德里,,,,,,7.73,,,
+1.0,,德国足球甲级联赛,,2022-23,,,,‌约书亚·基米希,,,,拜仁慕尼黑,,,,拜仁慕尼黑,,,,,,7.73,,,
+1.0,,意大利足球甲级联赛,,2022-23,,,,科哈坎·恰尔汗奥卢,,,,那不勒斯,,,,国际米兰,,,,,,7.31,,,
+1.0,,法国足球甲级联赛,,2022-23,,,,利昂内尔·梅西,,,,巴黎圣日耳曼,,,,巴黎圣日耳曼,,,,,,8.11,,,
+1.0,,英格兰足球超级联赛,,2022-23,,,,凯文·德布劳内,,,,曼彻斯特城,,,,曼彻斯特城,,,,,,7.78,,,
+,1.0,待查,待查,2023-24,2023-24,,,,nan,,,,nan,,,,nan,,,,,,NULL,,
+1.0,,德国足球甲级联赛,,2023-24,,,,哈里·凯恩,,,,勒沃库森,,,,拜仁慕尼黑,,,,,,7.76,,,
+1.0,,意大利足球甲级联赛,,2023-24,,,,科哈坎·恰尔汗奥卢,,,,国际米兰,,,,国际米兰,,,,,,7.68,,,
+1.0,,法国足球甲级联赛,,2023-24,,,,基利安·姆巴佩,,,,巴黎圣日耳曼,,,,巴黎圣日耳曼,,,,,,7.89,,,
+1.0,,英格兰足球超级联赛,,2023-24,,,,罗德里戈·埃尔南德斯·卡斯坎特,,,,曼彻斯特城,,,,曼彻斯特城,,,,,,8.01,,,
+1.0,,西班牙足球甲级联赛,,2023-24,,,,祖德·贝林厄姆,,,,皇家马德里,,,,皇家马德里,,,,,,8.05,,,
+,1.0,待查,待查,2024-25,2024-25,,,,nan,,,,nan,,,,nan,,,,,,NULL,,
+1.0,,德国足球甲级联赛,,2024-25,,,,‌约书亚·基米希,,,,拜仁慕尼黑,,,,拜仁慕尼黑,,,,,,7.91,,,
+1.0,,意大利足球甲级联赛,,2024-25,,,,马蒂亚·扎卡尼,,,,那不勒斯,,,,‌拉齐奥,,,,,,7.34,,,
+1.0,,法国足球甲级联赛,,2024-25,,,,‌阿什拉夫·哈基米,,,,巴黎圣日耳曼,,,,巴黎圣日耳曼,,,,,,7.76,,,
+1.0,,英格兰足球超级联赛,,2024-25,,,,穆罕默德·萨拉赫,,,,利物浦,,,,利物浦,,,,,,7.78,,,
+1.0,,西班牙足球甲级联赛,,2024-25,,,,拉斐尔·迪亚斯·贝洛利,,,,巴塞罗那,,,,巴塞罗那,,,,,,7.8,,,

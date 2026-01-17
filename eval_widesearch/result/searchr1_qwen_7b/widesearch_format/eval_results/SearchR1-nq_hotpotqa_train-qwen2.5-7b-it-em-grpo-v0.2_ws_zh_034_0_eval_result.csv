@@ -1,0 +1,586 @@
+exist_flag_gt,exist_flag_response,公司名称,公司名称_before_map,2024归母净利润（元）_number_near,2024归母净利润（元）_number_near_eval_msg,2024归母净利润（元）_query,2024归母净利润（元）_response,2024毛利率_number_near,2024毛利率_number_near_eval_msg,2024毛利率_query,2024毛利率_response,2024研发费用（元）_number_near,2024研发费用（元）_number_near_eval_msg,2024研发费用（元）_query,2024研发费用（元）_response,2024营业收入（元）_number_near,2024营业收入（元）_number_near_eval_msg,2024营业收入（元）_query,2024营业收入（元）_response,上市日期_exact_match,上市日期_exact_match_eval_msg,上市日期_query,上市日期_response,上市板块_llm_judge,上市板块_llm_judge_eval_msg,上市板块_query,上市板块_response,主营业务_llm_judge,主营业务_llm_judge_eval_msg,主营业务_query,主营业务_response,公司名称_exact_match,公司名称_exact_match_eval_msg,募集资金总额（元）_number_near,募集资金总额（元）_number_near_eval_msg,募集资金总额（元）_query,募集资金总额（元）_response,股票代码_exact_match,股票代码_exact_match_eval_msg,股票代码_query,股票代码_response,首发价格（元/股）_exact_match,首发价格（元/股）_exact_match_eval_msg,首发价格（元/股）_query,首发价格（元/股）_response
+,,海昇药业,海昇药业,1.0,"number near in range 5.0%, response: 50750000.0, target: 50750223.4",50750223.40,50750000,1.0,"number near in range 5.0%, response: 0.385, target: 0.39990000000000003",39.99%,38.50%,0.0,"number not near, response: 1200000.0, target: 9577097.56",9577097.56,1200000,1.0,"number near in range 5.0%, response: 166000000.0, target: 166209055.55",166209055.55,166000000,0.0,"exact not match, response: 2024年03月28日, target: 2024年2月2日",2024年2月2日,2024年03月28日,1.0,"分析步骤：
+
+1. idx_0  
+   - 参考答案：北京证券交易所  
+   - 回答：北交所  
+   - 分析：“北交所”是“北京证券交易所”的简称，语义一致，符合“简称和全称都可以”的标准。  
+   - 评分：1
+
+2. idx_1  
+   - 参考答案：深圳证券交易所（创业板）  
+   - 回答：创业板  
+   - 分析：“创业板”是深圳证券交易所的一个板块，指向的实体一致，且“简称和全称都可以”，语义相符。  
+   - 评分：1
+
+3. idx_2  
+   - 参考答案：上海证券交易所主板  
+   - 回答：上交所主板  
+   - 分析：“上交所”是“上海证券交易所”的简称，且均说明“主板”，两者语义一致。  
+   - 评分：1
+
+4. idx_3  
+   - 参考答案：上海证券交易所科创板  
+   - 回答：科创板  
+   - 分析：“科创板”是“上海证券交易所科创板”的简称，符合“简称和全称都可以”，语义一致。  
+   - 评分：1
+
+5. idx_4  
+   - 参考答案：上海证券交易所主板  
+   - 回答：上交所主板  
+   - 分析同idx_2，简称与全称对应，语义一致。  
+   - 评分：1
+
+综上，所有回答与对应参考答案语义一致或指向的实体相同，均符合打分标准。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",北京证券交易所,北交所,0.0,"Let's analyze each response against its target according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(Meaning the response can be roughly semantically equivalent or refer to the same entity without needing exact wording.)
+
+---
+
+### idx_0  
+- Target: ""兽药原料药、医药原料药及中间体的研发、生产和销售""  
+- Response: ""农药兽药""  
+Analysis:  
+- Target specifies ""veterinary drug raw materials, pharmaceutical raw materials and intermediates"" in R&D, production, and sales.  
+- Response only mentions ""农药兽药"" (pesticides and veterinary drugs).  
+- ""农药"" (pesticide) is not in the target at all; target focuses on raw materials for veterinary and medical drugs, no mention of pesticides.  
+- Partial overlap only for ""兽药"" (veterinary drugs). But since ""农药"" is spurious and target is more specific about the raw materials and intermediates not simply veterinary drugs, this is a mismatch.  
+- The semantics do not match sufficiently.  
+Score: 0
+
+---
+
+### idx_1  
+- Target: ""口腔修复材料的研发、生产和销售;口腔数字化设备的设计和销售""  
+- Response: ""口腔材料及相关设备的生产和销售""  
+Analysis:  
+- Target: development, production, and sales of oral repair materials + design and sales of oral digital equipment.  
+- Response: production and sales of oral materials and related equipment.  
+- “口腔材料及相关设备” is broader but overlaps with both components of the target (materials and digital equipment).  
+- Response missing ""研发"" and ""设计"" but criterion says semantic equivalence or same entity is sufficient, not exact wording.  
+- The response does cover the entities involved.  
+Score: 1
+
+---
+
+### idx_2  
+- Target: ""外用药的研发、生产和销售""  
+- Response: ""外用药的研发、生产和销售""  
+Analysis:  
+- Exact match.  
+Score: 1
+
+---
+
+### idx_3  
+- Target: ""生物医药非临床研究服务为主的综合研发服务（cro）""  
+- Response: ""生物医药cro服务""  
+Analysis:  
+- Target refers to bio-pharma nonclinical research services mainly, labeled CRO services.  
+- Response says ""biopharma CRO services.""  
+- The response matches the target entity and meaning.  
+Score: 1
+
+---
+
+### idx_4  
+- Target: ""医用敷料等一次性医疗器械及消毒卫生用品研发、生产和销售""  
+- Response: ""医疗器械及相关产品的研发、生产和销售""  
+Analysis:  
+- Target specifies disposable medical devices (like medical dressings) and disinfectant hygiene products.  
+- Response says medical devices and related products' R&D, production, and sales.  
+- ""医疗器械"" is contained in the target's ""一次性医疗器械"", and ""相关产品"" could cover disinfectant hygiene products but less specific. However, per criterion, semantic approximate match is allowed.  
+- Broad but inclusive.  
+Score: 1
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1
+}
+```",兽药原料药、医药原料药及中间体的研发、生产和销售,农药兽药,1.0,key_match,1.0,"number near in range 5.0%, response: 398000000.0, target: 398000000.0",398000000.00,398000000,1.0,"exact match, response: 870656, target: 870656",870656,870656,0.0,"exact not match, response: 4.0, target: 19.9",19.9,4.0
+,,爱迪特,爱迪特,0.0,"number not near, response: 142000000.0, target: 150491664.18",150491664.18,142000000,0.0,"number not near, response: 0.4, target: 0.5294",52.94%,40.00%,1.0,"number near in range 5.0%, response: 47361900.0, target: 47361902.27",47361902.27,47361900,1.0,"number near in range 5.0%, response: 888165246.91, target: 888165246.91",888165246.91,888165246.91,0.0,"exact not match, response: 2024年06月26日, target: 2024年6月26日",2024年6月26日,2024年06月26日,1.0,"分析步骤：
+
+1. idx_0  
+   - 参考答案：北京证券交易所  
+   - 回答：北交所  
+   - 分析：“北交所”是“北京证券交易所”的简称，语义一致，符合“简称和全称都可以”的标准。  
+   - 评分：1
+
+2. idx_1  
+   - 参考答案：深圳证券交易所（创业板）  
+   - 回答：创业板  
+   - 分析：“创业板”是深圳证券交易所的一个板块，指向的实体一致，且“简称和全称都可以”，语义相符。  
+   - 评分：1
+
+3. idx_2  
+   - 参考答案：上海证券交易所主板  
+   - 回答：上交所主板  
+   - 分析：“上交所”是“上海证券交易所”的简称，且均说明“主板”，两者语义一致。  
+   - 评分：1
+
+4. idx_3  
+   - 参考答案：上海证券交易所科创板  
+   - 回答：科创板  
+   - 分析：“科创板”是“上海证券交易所科创板”的简称，符合“简称和全称都可以”，语义一致。  
+   - 评分：1
+
+5. idx_4  
+   - 参考答案：上海证券交易所主板  
+   - 回答：上交所主板  
+   - 分析同idx_2，简称与全称对应，语义一致。  
+   - 评分：1
+
+综上，所有回答与对应参考答案语义一致或指向的实体相同，均符合打分标准。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",深圳证券交易所（创业板）,创业板,1.0,"Let's analyze each response against its target according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(Meaning the response can be roughly semantically equivalent or refer to the same entity without needing exact wording.)
+
+---
+
+### idx_0  
+- Target: ""兽药原料药、医药原料药及中间体的研发、生产和销售""  
+- Response: ""农药兽药""  
+Analysis:  
+- Target specifies ""veterinary drug raw materials, pharmaceutical raw materials and intermediates"" in R&D, production, and sales.  
+- Response only mentions ""农药兽药"" (pesticides and veterinary drugs).  
+- ""农药"" (pesticide) is not in the target at all; target focuses on raw materials for veterinary and medical drugs, no mention of pesticides.  
+- Partial overlap only for ""兽药"" (veterinary drugs). But since ""农药"" is spurious and target is more specific about the raw materials and intermediates not simply veterinary drugs, this is a mismatch.  
+- The semantics do not match sufficiently.  
+Score: 0
+
+---
+
+### idx_1  
+- Target: ""口腔修复材料的研发、生产和销售;口腔数字化设备的设计和销售""  
+- Response: ""口腔材料及相关设备的生产和销售""  
+Analysis:  
+- Target: development, production, and sales of oral repair materials + design and sales of oral digital equipment.  
+- Response: production and sales of oral materials and related equipment.  
+- “口腔材料及相关设备” is broader but overlaps with both components of the target (materials and digital equipment).  
+- Response missing ""研发"" and ""设计"" but criterion says semantic equivalence or same entity is sufficient, not exact wording.  
+- The response does cover the entities involved.  
+Score: 1
+
+---
+
+### idx_2  
+- Target: ""外用药的研发、生产和销售""  
+- Response: ""外用药的研发、生产和销售""  
+Analysis:  
+- Exact match.  
+Score: 1
+
+---
+
+### idx_3  
+- Target: ""生物医药非临床研究服务为主的综合研发服务（cro）""  
+- Response: ""生物医药cro服务""  
+Analysis:  
+- Target refers to bio-pharma nonclinical research services mainly, labeled CRO services.  
+- Response says ""biopharma CRO services.""  
+- The response matches the target entity and meaning.  
+Score: 1
+
+---
+
+### idx_4  
+- Target: ""医用敷料等一次性医疗器械及消毒卫生用品研发、生产和销售""  
+- Response: ""医疗器械及相关产品的研发、生产和销售""  
+Analysis:  
+- Target specifies disposable medical devices (like medical dressings) and disinfectant hygiene products.  
+- Response says medical devices and related products' R&D, production, and sales.  
+- ""医疗器械"" is contained in the target's ""一次性医疗器械"", and ""相关产品"" could cover disinfectant hygiene products but less specific. However, per criterion, semantic approximate match is allowed.  
+- Broad but inclusive.  
+Score: 1
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1
+}
+```",口腔修复材料的研发、生产和销售;口腔数字化设备的设计和销售,口腔材料及相关设备的生产和销售,1.0,key_match,0.0,"number not near, response: 150000000.0, target: 855370700.0",855370700.00,150000000,1.0,"exact match, response: 301580, target: 301580",301580,301580,0.0,"exact not match, response: 28.0, target: 44.95",44.95,28.0
+,,小方制药,小方制药,1.0,"number near in range 5.0%, response: 205000000.0, target: 205271095.5",205271095.50,205000000,0.0,"number not near, response: 0.5, target: 0.6559",65.59%,50.00%,0.0,"number not near, response: 3200000.0, target: 15105418.01",15105418.01,3200000,1.0,"number near in range 5.0%, response: 475000000.0, target: 474228256.26",474228256.26,475000000,0.0,"exact not match, response: 2024年08月15日, target: 2024年8月26日",2024年8月26日,2024年08月15日,1.0,"分析步骤：
+
+1. idx_0  
+   - 参考答案：北京证券交易所  
+   - 回答：北交所  
+   - 分析：“北交所”是“北京证券交易所”的简称，语义一致，符合“简称和全称都可以”的标准。  
+   - 评分：1
+
+2. idx_1  
+   - 参考答案：深圳证券交易所（创业板）  
+   - 回答：创业板  
+   - 分析：“创业板”是深圳证券交易所的一个板块，指向的实体一致，且“简称和全称都可以”，语义相符。  
+   - 评分：1
+
+3. idx_2  
+   - 参考答案：上海证券交易所主板  
+   - 回答：上交所主板  
+   - 分析：“上交所”是“上海证券交易所”的简称，且均说明“主板”，两者语义一致。  
+   - 评分：1
+
+4. idx_3  
+   - 参考答案：上海证券交易所科创板  
+   - 回答：科创板  
+   - 分析：“科创板”是“上海证券交易所科创板”的简称，符合“简称和全称都可以”，语义一致。  
+   - 评分：1
+
+5. idx_4  
+   - 参考答案：上海证券交易所主板  
+   - 回答：上交所主板  
+   - 分析同idx_2，简称与全称对应，语义一致。  
+   - 评分：1
+
+综上，所有回答与对应参考答案语义一致或指向的实体相同，均符合打分标准。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",上海证券交易所主板,上交所主板,1.0,"Let's analyze each response against its target according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(Meaning the response can be roughly semantically equivalent or refer to the same entity without needing exact wording.)
+
+---
+
+### idx_0  
+- Target: ""兽药原料药、医药原料药及中间体的研发、生产和销售""  
+- Response: ""农药兽药""  
+Analysis:  
+- Target specifies ""veterinary drug raw materials, pharmaceutical raw materials and intermediates"" in R&D, production, and sales.  
+- Response only mentions ""农药兽药"" (pesticides and veterinary drugs).  
+- ""农药"" (pesticide) is not in the target at all; target focuses on raw materials for veterinary and medical drugs, no mention of pesticides.  
+- Partial overlap only for ""兽药"" (veterinary drugs). But since ""农药"" is spurious and target is more specific about the raw materials and intermediates not simply veterinary drugs, this is a mismatch.  
+- The semantics do not match sufficiently.  
+Score: 0
+
+---
+
+### idx_1  
+- Target: ""口腔修复材料的研发、生产和销售;口腔数字化设备的设计和销售""  
+- Response: ""口腔材料及相关设备的生产和销售""  
+Analysis:  
+- Target: development, production, and sales of oral repair materials + design and sales of oral digital equipment.  
+- Response: production and sales of oral materials and related equipment.  
+- “口腔材料及相关设备” is broader but overlaps with both components of the target (materials and digital equipment).  
+- Response missing ""研发"" and ""设计"" but criterion says semantic equivalence or same entity is sufficient, not exact wording.  
+- The response does cover the entities involved.  
+Score: 1
+
+---
+
+### idx_2  
+- Target: ""外用药的研发、生产和销售""  
+- Response: ""外用药的研发、生产和销售""  
+Analysis:  
+- Exact match.  
+Score: 1
+
+---
+
+### idx_3  
+- Target: ""生物医药非临床研究服务为主的综合研发服务（cro）""  
+- Response: ""生物医药cro服务""  
+Analysis:  
+- Target refers to bio-pharma nonclinical research services mainly, labeled CRO services.  
+- Response says ""biopharma CRO services.""  
+- The response matches the target entity and meaning.  
+Score: 1
+
+---
+
+### idx_4  
+- Target: ""医用敷料等一次性医疗器械及消毒卫生用品研发、生产和销售""  
+- Response: ""医疗器械及相关产品的研发、生产和销售""  
+Analysis:  
+- Target specifies disposable medical devices (like medical dressings) and disinfectant hygiene products.  
+- Response says medical devices and related products' R&D, production, and sales.  
+- ""医疗器械"" is contained in the target's ""一次性医疗器械"", and ""相关产品"" could cover disinfectant hygiene products but less specific. However, per criterion, semantic approximate match is allowed.  
+- Broad but inclusive.  
+Score: 1
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1
+}
+```",外用药的研发、生产和销售,外用药的研发、生产和销售,1.0,key_match,0.0,"number not near, response: 671767870.24, target: 498800000.0",498800000.00,671767870.24,1.0,"exact match, response: 603207, target: 603207",603207,603207,0.0,"exact not match, response: 15.0, target: 12.47",12.47,15.0
+,,益诺思,益诺思,0.0,"number not near, response: 156000000.0, target: 147775836.46",147775836.46,156000000,0.0,"number not near, response: 0.43, target: 0.3357",33.57%,43.00%,0.0,"number not near, response: 20000000.0, target: 60532495.25",60532495.25,20000000,0.0,"number not near, response: 747000000.0, target: 1141669402.29",1141669402.29,747000000,0.0,"exact not match, response: 2024年06月26日, target: 2024年9月3日",2024年9月3日,2024年06月26日,1.0,"分析步骤：
+
+1. idx_0  
+   - 参考答案：北京证券交易所  
+   - 回答：北交所  
+   - 分析：“北交所”是“北京证券交易所”的简称，语义一致，符合“简称和全称都可以”的标准。  
+   - 评分：1
+
+2. idx_1  
+   - 参考答案：深圳证券交易所（创业板）  
+   - 回答：创业板  
+   - 分析：“创业板”是深圳证券交易所的一个板块，指向的实体一致，且“简称和全称都可以”，语义相符。  
+   - 评分：1
+
+3. idx_2  
+   - 参考答案：上海证券交易所主板  
+   - 回答：上交所主板  
+   - 分析：“上交所”是“上海证券交易所”的简称，且均说明“主板”，两者语义一致。  
+   - 评分：1
+
+4. idx_3  
+   - 参考答案：上海证券交易所科创板  
+   - 回答：科创板  
+   - 分析：“科创板”是“上海证券交易所科创板”的简称，符合“简称和全称都可以”，语义一致。  
+   - 评分：1
+
+5. idx_4  
+   - 参考答案：上海证券交易所主板  
+   - 回答：上交所主板  
+   - 分析同idx_2，简称与全称对应，语义一致。  
+   - 评分：1
+
+综上，所有回答与对应参考答案语义一致或指向的实体相同，均符合打分标准。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",上海证券交易所科创板,科创板,1.0,"Let's analyze each response against its target according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(Meaning the response can be roughly semantically equivalent or refer to the same entity without needing exact wording.)
+
+---
+
+### idx_0  
+- Target: ""兽药原料药、医药原料药及中间体的研发、生产和销售""  
+- Response: ""农药兽药""  
+Analysis:  
+- Target specifies ""veterinary drug raw materials, pharmaceutical raw materials and intermediates"" in R&D, production, and sales.  
+- Response only mentions ""农药兽药"" (pesticides and veterinary drugs).  
+- ""农药"" (pesticide) is not in the target at all; target focuses on raw materials for veterinary and medical drugs, no mention of pesticides.  
+- Partial overlap only for ""兽药"" (veterinary drugs). But since ""农药"" is spurious and target is more specific about the raw materials and intermediates not simply veterinary drugs, this is a mismatch.  
+- The semantics do not match sufficiently.  
+Score: 0
+
+---
+
+### idx_1  
+- Target: ""口腔修复材料的研发、生产和销售;口腔数字化设备的设计和销售""  
+- Response: ""口腔材料及相关设备的生产和销售""  
+Analysis:  
+- Target: development, production, and sales of oral repair materials + design and sales of oral digital equipment.  
+- Response: production and sales of oral materials and related equipment.  
+- “口腔材料及相关设备” is broader but overlaps with both components of the target (materials and digital equipment).  
+- Response missing ""研发"" and ""设计"" but criterion says semantic equivalence or same entity is sufficient, not exact wording.  
+- The response does cover the entities involved.  
+Score: 1
+
+---
+
+### idx_2  
+- Target: ""外用药的研发、生产和销售""  
+- Response: ""外用药的研发、生产和销售""  
+Analysis:  
+- Exact match.  
+Score: 1
+
+---
+
+### idx_3  
+- Target: ""生物医药非临床研究服务为主的综合研发服务（cro）""  
+- Response: ""生物医药cro服务""  
+Analysis:  
+- Target refers to bio-pharma nonclinical research services mainly, labeled CRO services.  
+- Response says ""biopharma CRO services.""  
+- The response matches the target entity and meaning.  
+Score: 1
+
+---
+
+### idx_4  
+- Target: ""医用敷料等一次性医疗器械及消毒卫生用品研发、生产和销售""  
+- Response: ""医疗器械及相关产品的研发、生产和销售""  
+Analysis:  
+- Target specifies disposable medical devices (like medical dressings) and disinfectant hygiene products.  
+- Response says medical devices and related products' R&D, production, and sales.  
+- ""医疗器械"" is contained in the target's ""一次性医疗器械"", and ""相关产品"" could cover disinfectant hygiene products but less specific. However, per criterion, semantic approximate match is allowed.  
+- Broad but inclusive.  
+Score: 1
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1
+}
+```",生物医药非临床研究服务为主的综合研发服务（cro）,生物医药cro服务,1.0,key_match,1.0,"number near in range 5.0%, response: 671767870.24, target: 671767900.0",671767900.00,671767870.24,1.0,"exact match, response: 688710, target: 688710",688710,688710,0.0,"exact not match, response: 40.0, target: 19.06",19.06,40.0
+,,健尔康,健尔康,0.0,"number not near, response: 61000000.0, target: 120218925.03",120218925.03,61000000,0.0,"number not near, response: 0.45, target: 0.23070000000000002",23.07%,45.00%,1.0,"number near in range 5.0%, response: 40720470.3, target: 40720470.3",40720470.30,40720470.30,0.0,"number not near, response: 505000000.0, target: 1045764120.28",1045764120.28,505000000,0.0,"exact not match, response: 2024年11月07日, target: 2024年11月7日",2024年11月7日,2024年11月07日,1.0,"分析步骤：
+
+1. idx_0  
+   - 参考答案：北京证券交易所  
+   - 回答：北交所  
+   - 分析：“北交所”是“北京证券交易所”的简称，语义一致，符合“简称和全称都可以”的标准。  
+   - 评分：1
+
+2. idx_1  
+   - 参考答案：深圳证券交易所（创业板）  
+   - 回答：创业板  
+   - 分析：“创业板”是深圳证券交易所的一个板块，指向的实体一致，且“简称和全称都可以”，语义相符。  
+   - 评分：1
+
+3. idx_2  
+   - 参考答案：上海证券交易所主板  
+   - 回答：上交所主板  
+   - 分析：“上交所”是“上海证券交易所”的简称，且均说明“主板”，两者语义一致。  
+   - 评分：1
+
+4. idx_3  
+   - 参考答案：上海证券交易所科创板  
+   - 回答：科创板  
+   - 分析：“科创板”是“上海证券交易所科创板”的简称，符合“简称和全称都可以”，语义一致。  
+   - 评分：1
+
+5. idx_4  
+   - 参考答案：上海证券交易所主板  
+   - 回答：上交所主板  
+   - 分析同idx_2，简称与全称对应，语义一致。  
+   - 评分：1
+
+综上，所有回答与对应参考答案语义一致或指向的实体相同，均符合打分标准。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",上海证券交易所主板,上交所主板,1.0,"Let's analyze each response against its target according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(Meaning the response can be roughly semantically equivalent or refer to the same entity without needing exact wording.)
+
+---
+
+### idx_0  
+- Target: ""兽药原料药、医药原料药及中间体的研发、生产和销售""  
+- Response: ""农药兽药""  
+Analysis:  
+- Target specifies ""veterinary drug raw materials, pharmaceutical raw materials and intermediates"" in R&D, production, and sales.  
+- Response only mentions ""农药兽药"" (pesticides and veterinary drugs).  
+- ""农药"" (pesticide) is not in the target at all; target focuses on raw materials for veterinary and medical drugs, no mention of pesticides.  
+- Partial overlap only for ""兽药"" (veterinary drugs). But since ""农药"" is spurious and target is more specific about the raw materials and intermediates not simply veterinary drugs, this is a mismatch.  
+- The semantics do not match sufficiently.  
+Score: 0
+
+---
+
+### idx_1  
+- Target: ""口腔修复材料的研发、生产和销售;口腔数字化设备的设计和销售""  
+- Response: ""口腔材料及相关设备的生产和销售""  
+Analysis:  
+- Target: development, production, and sales of oral repair materials + design and sales of oral digital equipment.  
+- Response: production and sales of oral materials and related equipment.  
+- “口腔材料及相关设备” is broader but overlaps with both components of the target (materials and digital equipment).  
+- Response missing ""研发"" and ""设计"" but criterion says semantic equivalence or same entity is sufficient, not exact wording.  
+- The response does cover the entities involved.  
+Score: 1
+
+---
+
+### idx_2  
+- Target: ""外用药的研发、生产和销售""  
+- Response: ""外用药的研发、生产和销售""  
+Analysis:  
+- Exact match.  
+Score: 1
+
+---
+
+### idx_3  
+- Target: ""生物医药非临床研究服务为主的综合研发服务（cro）""  
+- Response: ""生物医药cro服务""  
+Analysis:  
+- Target refers to bio-pharma nonclinical research services mainly, labeled CRO services.  
+- Response says ""biopharma CRO services.""  
+- The response matches the target entity and meaning.  
+Score: 1
+
+---
+
+### idx_4  
+- Target: ""医用敷料等一次性医疗器械及消毒卫生用品研发、生产和销售""  
+- Response: ""医疗器械及相关产品的研发、生产和销售""  
+Analysis:  
+- Target specifies disposable medical devices (like medical dressings) and disinfectant hygiene products.  
+- Response says medical devices and related products' R&D, production, and sales.  
+- ""医疗器械"" is contained in the target's ""一次性医疗器械"", and ""相关产品"" could cover disinfectant hygiene products but less specific. However, per criterion, semantic approximate match is allowed.  
+- Broad but inclusive.  
+Score: 1
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1
+}
+```",医用敷料等一次性医疗器械及消毒卫生用品研发、生产和销售,医疗器械及相关产品的研发、生产和销售,1.0,key_match,0.0,"number not near, response: 300000000.0, target: 439500000.0",439500000.00,300000000,1.0,"exact match, response: 603205, target: 603205",603205,603205,0.0,"exact not match, response: 12.0, target: 14.65",14.65,12.0

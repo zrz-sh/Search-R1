@@ -1,0 +1,1392 @@
+exist_flag_gt,exist_flag_response,reactorname,reactorname_before_map,commercialoperationdate_date_near,commercialoperationdate_date_near_eval_msg,commercialoperationdate_query,commercialoperationdate_response,constructionstartyear_exact_match,constructionstartyear_exact_match_eval_msg,constructionstartyear_query,constructionstartyear_response,country_llm_judge,country_llm_judge_eval_msg,country_query,country_response,currentstatus_llm_judge,currentstatus_llm_judge_eval_msg,currentstatus_query,currentstatus_response,firstgridconnectiondate_date_near,firstgridconnectiondate_date_near_eval_msg,firstgridconnectiondate_query,firstgridconnectiondate_response,netcapacity(mw)_number_near,netcapacity(mw)_number_near_eval_msg,netcapacity(mw)_query,netcapacity(mw)_response,reactorname_exact_match,reactorname_exact_match_eval_msg,reactortype_llm_judge,reactortype_llm_judge_eval_msg,reactortype_query,reactortype_response
+,,saeul2(shin-kori-4),Shin Kori 4,0.0,"date not near, response: 2017-12-01 00:00:00, target: 2019-08-29 00:00:00",2019-08-29,2017-12-01,0.0,"exact not match, response: 2013, target: 2009",2009,2013,1.0,"Let's analyze each pair of response and target according to the criterion:
+
+Criterion summary:  
+- Semantics should approximately match.  
+- It is sufficient if they point to the same entity.  
+- No need for exact wording.
+
+---
+
+**idx_0**  
+Response: ""southkorea""  
+Target: ""southkorea""  
+Analysis: exact match, same entity.  
+Score: 1
+
+**idx_1**  
+Response: ""china""  
+Target: ""china""  
+Analysis: exact match, same entity.  
+Score: 1
+
+**idx_2**  
+Response: ""china""  
+Target: ""china""  
+Analysis: exact match, same entity.  
+Score: 1
+
+**idx_3**  
+Response: ""china""  
+Target: ""china""  
+Analysis: exact match, same entity.  
+Score: 1
+
+**idx_4**  
+Response: ""china""  
+Target: ""china""  
+Analysis: exact match, same entity.  
+Score: 1
+
+**idx_5**  
+Response: ""china""  
+Target: ""china""  
+Analysis: exact match, same entity.  
+Score: 1
+
+**idx_6**  
+Response: ""china""  
+Target: ""china""  
+Analysis: exact match, same entity.  
+Score: 1
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1
+}
+```",southkorea,southkorea,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- Semantics just need to be approximately the same or point to the same entity.  
+- No need for exact word-for-word match.
+
+Analysis by idx:
+
+- idx_0: response = ""operational"", target = ""operational""  
+  Same word and same meaning → score 1
+
+- idx_1: response = ""operational"", target = ""operational""  
+  Same word and meaning → score 1
+
+- idx_2: response = ""operational"", target = ""operational""  
+  Same → score 1
+
+- idx_3: response = ""operational"", target = ""operational""  
+  Same → score 1
+
+- idx_4: response = ""operational"", target = ""operational""  
+  Same → score 1
+
+- idx_5: response = ""operational"", target = ""operational""  
+  Same → score 1
+
+- idx_6: response = ""operational"", target = ""operational""  
+  Same → score 1
+
+All responses match perfectly with the target answers.
+
+Final scoring result in JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1
+}
+```",operational,operational,0.0,"date not near, response: 2017-12-01 00:00:00, target: 2019-04-22 00:00:00",2019-04-22,2017-12-01,1.0,"number near in range 5.0%, response: 1400.0, target: 1392.0",1392,1400,1.0,key_match,1.0,"Let's analyze each pair step-by-step according to the criterion:
+
+Criterion summary:  
+- The answer is considered correct if the semantics are approximately the same or if they point to the same entity.  
+- No need for exact word-for-word match.  
+
+---
+
+**idx_0**  
+- Response: ""apr-1400""  
+- Target: ""apr-1400pwr""  
+Analysis:  
+The response ""apr-1400"" matches the ""apr-1400"" part of the target ""apr-1400pwr"". The suffix ""pwr"" might refer to a power plant or power version, but broadly they refer to the APR-1400 reactor type. Semantically, this is a match for the reactor model/entity.  
+Score: 1
+
+---
+
+**idx_1**  
+- Response: ""pwr""  
+- Target: ""eprpwr""  
+Analysis:  
+Response is a substring of the target, but ""pwr"" alone is too generic and does not identify the specific entity ""eprpwr"" (European Pressurized Reactor power plant). ""pwr"" just means pressurized water reactor in general, but does not specify to ""eprpwr"". The semantics do not pinpoint the same entity, so not sufficient.  
+Score: 0
+
+---
+
+**idx_2**  
+- Same as idx_1  
+- Same analysis: ""pwr"" vs ""eprpwr"" – too generic.  
+Score: 0
+
+---
+
+**idx_3**  
+- Response: ""pwr""  
+- Target: ""vver-1000/428m(aes-91)""  
+Analysis:  
+Target is a specific nuclear power plant type: VVER-1000/428M (AES-91 design). Response ""pwr"" is too generic, doesn't refer to the specific entity. Semantics differ.  
+Score: 0
+
+---
+
+**idx_4**  
+- Same as idx_3  
+- Same analysis.  
+Score: 0
+
+---
+
+**idx_5**  
+- Response: ""pwr""  
+- Target: ""acpr-1000pwr""  
+Analysis:  
+Target is a specific plant or reactor model: ACPR-1000pwr. Response ""pwr"" is generic, not pinpointing the same entity.  
+Score: 0
+
+---
+
+**idx_6**  
+- Same as idx_5  
+- Same analysis.  
+Score: 0
+
+---
+
+### Final scoring JSON output:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",apr-1400pwr,apr-1400
+,,taishan-1,Taishan-1,0.0,"date not near, response: 2014-06-29 00:00:00, target: 2018-12-13 00:00:00",2018-12-13,2014-06-29,1.0,"exact match, response: 2009, target: 2009",2009,2009,1.0,"Let's analyze each pair of response and target according to the criterion:
+
+Criterion summary:  
+- Semantics should approximately match.  
+- It is sufficient if they point to the same entity.  
+- No need for exact wording.
+
+---
+
+**idx_0**  
+Response: ""southkorea""  
+Target: ""southkorea""  
+Analysis: exact match, same entity.  
+Score: 1
+
+**idx_1**  
+Response: ""china""  
+Target: ""china""  
+Analysis: exact match, same entity.  
+Score: 1
+
+**idx_2**  
+Response: ""china""  
+Target: ""china""  
+Analysis: exact match, same entity.  
+Score: 1
+
+**idx_3**  
+Response: ""china""  
+Target: ""china""  
+Analysis: exact match, same entity.  
+Score: 1
+
+**idx_4**  
+Response: ""china""  
+Target: ""china""  
+Analysis: exact match, same entity.  
+Score: 1
+
+**idx_5**  
+Response: ""china""  
+Target: ""china""  
+Analysis: exact match, same entity.  
+Score: 1
+
+**idx_6**  
+Response: ""china""  
+Target: ""china""  
+Analysis: exact match, same entity.  
+Score: 1
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1
+}
+```",china,china,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- Semantics just need to be approximately the same or point to the same entity.  
+- No need for exact word-for-word match.
+
+Analysis by idx:
+
+- idx_0: response = ""operational"", target = ""operational""  
+  Same word and same meaning → score 1
+
+- idx_1: response = ""operational"", target = ""operational""  
+  Same word and meaning → score 1
+
+- idx_2: response = ""operational"", target = ""operational""  
+  Same → score 1
+
+- idx_3: response = ""operational"", target = ""operational""  
+  Same → score 1
+
+- idx_4: response = ""operational"", target = ""operational""  
+  Same → score 1
+
+- idx_5: response = ""operational"", target = ""operational""  
+  Same → score 1
+
+- idx_6: response = ""operational"", target = ""operational""  
+  Same → score 1
+
+All responses match perfectly with the target answers.
+
+Final scoring result in JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1
+}
+```",operational,operational,0.0,"date not near, response: 2014-06-29 00:00:00, target: 2018-06-29 00:00:00",2018-06-29,2014-06-29,0.0,"number not near, response: 1250.0, target: 1660.0",1660,1250,1.0,key_match,0.0,"Let's analyze each pair step-by-step according to the criterion:
+
+Criterion summary:  
+- The answer is considered correct if the semantics are approximately the same or if they point to the same entity.  
+- No need for exact word-for-word match.  
+
+---
+
+**idx_0**  
+- Response: ""apr-1400""  
+- Target: ""apr-1400pwr""  
+Analysis:  
+The response ""apr-1400"" matches the ""apr-1400"" part of the target ""apr-1400pwr"". The suffix ""pwr"" might refer to a power plant or power version, but broadly they refer to the APR-1400 reactor type. Semantically, this is a match for the reactor model/entity.  
+Score: 1
+
+---
+
+**idx_1**  
+- Response: ""pwr""  
+- Target: ""eprpwr""  
+Analysis:  
+Response is a substring of the target, but ""pwr"" alone is too generic and does not identify the specific entity ""eprpwr"" (European Pressurized Reactor power plant). ""pwr"" just means pressurized water reactor in general, but does not specify to ""eprpwr"". The semantics do not pinpoint the same entity, so not sufficient.  
+Score: 0
+
+---
+
+**idx_2**  
+- Same as idx_1  
+- Same analysis: ""pwr"" vs ""eprpwr"" – too generic.  
+Score: 0
+
+---
+
+**idx_3**  
+- Response: ""pwr""  
+- Target: ""vver-1000/428m(aes-91)""  
+Analysis:  
+Target is a specific nuclear power plant type: VVER-1000/428M (AES-91 design). Response ""pwr"" is too generic, doesn't refer to the specific entity. Semantics differ.  
+Score: 0
+
+---
+
+**idx_4**  
+- Same as idx_3  
+- Same analysis.  
+Score: 0
+
+---
+
+**idx_5**  
+- Response: ""pwr""  
+- Target: ""acpr-1000pwr""  
+Analysis:  
+Target is a specific plant or reactor model: ACPR-1000pwr. Response ""pwr"" is generic, not pinpointing the same entity.  
+Score: 0
+
+---
+
+**idx_6**  
+- Same as idx_5  
+- Same analysis.  
+Score: 0
+
+---
+
+### Final scoring JSON output:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",eprpwr,pwr
+,,taishan-2,Taishan-2,0.0,"date not near, response: 2018-08-27 00:00:00, target: 2019-09-07 00:00:00",2019-09-07,2018-08-27,1.0,"exact match, response: 2010, target: 2010",2010,2010,1.0,"Let's analyze each pair of response and target according to the criterion:
+
+Criterion summary:  
+- Semantics should approximately match.  
+- It is sufficient if they point to the same entity.  
+- No need for exact wording.
+
+---
+
+**idx_0**  
+Response: ""southkorea""  
+Target: ""southkorea""  
+Analysis: exact match, same entity.  
+Score: 1
+
+**idx_1**  
+Response: ""china""  
+Target: ""china""  
+Analysis: exact match, same entity.  
+Score: 1
+
+**idx_2**  
+Response: ""china""  
+Target: ""china""  
+Analysis: exact match, same entity.  
+Score: 1
+
+**idx_3**  
+Response: ""china""  
+Target: ""china""  
+Analysis: exact match, same entity.  
+Score: 1
+
+**idx_4**  
+Response: ""china""  
+Target: ""china""  
+Analysis: exact match, same entity.  
+Score: 1
+
+**idx_5**  
+Response: ""china""  
+Target: ""china""  
+Analysis: exact match, same entity.  
+Score: 1
+
+**idx_6**  
+Response: ""china""  
+Target: ""china""  
+Analysis: exact match, same entity.  
+Score: 1
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1
+}
+```",china,china,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- Semantics just need to be approximately the same or point to the same entity.  
+- No need for exact word-for-word match.
+
+Analysis by idx:
+
+- idx_0: response = ""operational"", target = ""operational""  
+  Same word and same meaning → score 1
+
+- idx_1: response = ""operational"", target = ""operational""  
+  Same word and meaning → score 1
+
+- idx_2: response = ""operational"", target = ""operational""  
+  Same → score 1
+
+- idx_3: response = ""operational"", target = ""operational""  
+  Same → score 1
+
+- idx_4: response = ""operational"", target = ""operational""  
+  Same → score 1
+
+- idx_5: response = ""operational"", target = ""operational""  
+  Same → score 1
+
+- idx_6: response = ""operational"", target = ""operational""  
+  Same → score 1
+
+All responses match perfectly with the target answers.
+
+Final scoring result in JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1
+}
+```",operational,operational,0.0,"date not near, response: 2018-08-27 00:00:00, target: 2019-06-25 00:00:00",2019-06-25,2018-08-27,0.0,"number not near, response: 1250.0, target: 1660.0",1660,1250,1.0,key_match,0.0,"Let's analyze each pair step-by-step according to the criterion:
+
+Criterion summary:  
+- The answer is considered correct if the semantics are approximately the same or if they point to the same entity.  
+- No need for exact word-for-word match.  
+
+---
+
+**idx_0**  
+- Response: ""apr-1400""  
+- Target: ""apr-1400pwr""  
+Analysis:  
+The response ""apr-1400"" matches the ""apr-1400"" part of the target ""apr-1400pwr"". The suffix ""pwr"" might refer to a power plant or power version, but broadly they refer to the APR-1400 reactor type. Semantically, this is a match for the reactor model/entity.  
+Score: 1
+
+---
+
+**idx_1**  
+- Response: ""pwr""  
+- Target: ""eprpwr""  
+Analysis:  
+Response is a substring of the target, but ""pwr"" alone is too generic and does not identify the specific entity ""eprpwr"" (European Pressurized Reactor power plant). ""pwr"" just means pressurized water reactor in general, but does not specify to ""eprpwr"". The semantics do not pinpoint the same entity, so not sufficient.  
+Score: 0
+
+---
+
+**idx_2**  
+- Same as idx_1  
+- Same analysis: ""pwr"" vs ""eprpwr"" – too generic.  
+Score: 0
+
+---
+
+**idx_3**  
+- Response: ""pwr""  
+- Target: ""vver-1000/428m(aes-91)""  
+Analysis:  
+Target is a specific nuclear power plant type: VVER-1000/428M (AES-91 design). Response ""pwr"" is too generic, doesn't refer to the specific entity. Semantics differ.  
+Score: 0
+
+---
+
+**idx_4**  
+- Same as idx_3  
+- Same analysis.  
+Score: 0
+
+---
+
+**idx_5**  
+- Response: ""pwr""  
+- Target: ""acpr-1000pwr""  
+Analysis:  
+Target is a specific plant or reactor model: ACPR-1000pwr. Response ""pwr"" is generic, not pinpointing the same entity.  
+Score: 0
+
+---
+
+**idx_6**  
+- Same as idx_5  
+- Same analysis.  
+Score: 0
+
+---
+
+### Final scoring JSON output:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",eprpwr,pwr
+,,tianwan-3,Tianwan-3,0.0,"date not near, response: 2014-07-11 00:00:00, target: 2018-02-14 00:00:00",2018-02-14,2014-07-11,0.0,"exact not match, response: 2009, target: 2012",2012,2009,1.0,"Let's analyze each pair of response and target according to the criterion:
+
+Criterion summary:  
+- Semantics should approximately match.  
+- It is sufficient if they point to the same entity.  
+- No need for exact wording.
+
+---
+
+**idx_0**  
+Response: ""southkorea""  
+Target: ""southkorea""  
+Analysis: exact match, same entity.  
+Score: 1
+
+**idx_1**  
+Response: ""china""  
+Target: ""china""  
+Analysis: exact match, same entity.  
+Score: 1
+
+**idx_2**  
+Response: ""china""  
+Target: ""china""  
+Analysis: exact match, same entity.  
+Score: 1
+
+**idx_3**  
+Response: ""china""  
+Target: ""china""  
+Analysis: exact match, same entity.  
+Score: 1
+
+**idx_4**  
+Response: ""china""  
+Target: ""china""  
+Analysis: exact match, same entity.  
+Score: 1
+
+**idx_5**  
+Response: ""china""  
+Target: ""china""  
+Analysis: exact match, same entity.  
+Score: 1
+
+**idx_6**  
+Response: ""china""  
+Target: ""china""  
+Analysis: exact match, same entity.  
+Score: 1
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1
+}
+```",china,china,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- Semantics just need to be approximately the same or point to the same entity.  
+- No need for exact word-for-word match.
+
+Analysis by idx:
+
+- idx_0: response = ""operational"", target = ""operational""  
+  Same word and same meaning → score 1
+
+- idx_1: response = ""operational"", target = ""operational""  
+  Same word and meaning → score 1
+
+- idx_2: response = ""operational"", target = ""operational""  
+  Same → score 1
+
+- idx_3: response = ""operational"", target = ""operational""  
+  Same → score 1
+
+- idx_4: response = ""operational"", target = ""operational""  
+  Same → score 1
+
+- idx_5: response = ""operational"", target = ""operational""  
+  Same → score 1
+
+- idx_6: response = ""operational"", target = ""operational""  
+  Same → score 1
+
+All responses match perfectly with the target answers.
+
+Final scoring result in JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1
+}
+```",operational,operational,0.0,"date not near, response: 2014-07-11 00:00:00, target: 2017-12-30 00:00:00",2017-12-30,2014-07-11,1.0,"number near in range 5.0%, response: 1086.0, target: 1045.0",1045,1086,1.0,key_match,0.0,"Let's analyze each pair step-by-step according to the criterion:
+
+Criterion summary:  
+- The answer is considered correct if the semantics are approximately the same or if they point to the same entity.  
+- No need for exact word-for-word match.  
+
+---
+
+**idx_0**  
+- Response: ""apr-1400""  
+- Target: ""apr-1400pwr""  
+Analysis:  
+The response ""apr-1400"" matches the ""apr-1400"" part of the target ""apr-1400pwr"". The suffix ""pwr"" might refer to a power plant or power version, but broadly they refer to the APR-1400 reactor type. Semantically, this is a match for the reactor model/entity.  
+Score: 1
+
+---
+
+**idx_1**  
+- Response: ""pwr""  
+- Target: ""eprpwr""  
+Analysis:  
+Response is a substring of the target, but ""pwr"" alone is too generic and does not identify the specific entity ""eprpwr"" (European Pressurized Reactor power plant). ""pwr"" just means pressurized water reactor in general, but does not specify to ""eprpwr"". The semantics do not pinpoint the same entity, so not sufficient.  
+Score: 0
+
+---
+
+**idx_2**  
+- Same as idx_1  
+- Same analysis: ""pwr"" vs ""eprpwr"" – too generic.  
+Score: 0
+
+---
+
+**idx_3**  
+- Response: ""pwr""  
+- Target: ""vver-1000/428m(aes-91)""  
+Analysis:  
+Target is a specific nuclear power plant type: VVER-1000/428M (AES-91 design). Response ""pwr"" is too generic, doesn't refer to the specific entity. Semantics differ.  
+Score: 0
+
+---
+
+**idx_4**  
+- Same as idx_3  
+- Same analysis.  
+Score: 0
+
+---
+
+**idx_5**  
+- Response: ""pwr""  
+- Target: ""acpr-1000pwr""  
+Analysis:  
+Target is a specific plant or reactor model: ACPR-1000pwr. Response ""pwr"" is generic, not pinpointing the same entity.  
+Score: 0
+
+---
+
+**idx_6**  
+- Same as idx_5  
+- Same analysis.  
+Score: 0
+
+---
+
+### Final scoring JSON output:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",vver-1000/428m(aes-91),pwr
+,,tianwan-4,Tianwan-4,0.0,"date not near, response: 2018-07-11 00:00:00, target: 2018-12-22 00:00:00",2018-12-22,2018-07-11,0.0,"exact not match, response: 2010, target: 2013",2013,2010,1.0,"Let's analyze each pair of response and target according to the criterion:
+
+Criterion summary:  
+- Semantics should approximately match.  
+- It is sufficient if they point to the same entity.  
+- No need for exact wording.
+
+---
+
+**idx_0**  
+Response: ""southkorea""  
+Target: ""southkorea""  
+Analysis: exact match, same entity.  
+Score: 1
+
+**idx_1**  
+Response: ""china""  
+Target: ""china""  
+Analysis: exact match, same entity.  
+Score: 1
+
+**idx_2**  
+Response: ""china""  
+Target: ""china""  
+Analysis: exact match, same entity.  
+Score: 1
+
+**idx_3**  
+Response: ""china""  
+Target: ""china""  
+Analysis: exact match, same entity.  
+Score: 1
+
+**idx_4**  
+Response: ""china""  
+Target: ""china""  
+Analysis: exact match, same entity.  
+Score: 1
+
+**idx_5**  
+Response: ""china""  
+Target: ""china""  
+Analysis: exact match, same entity.  
+Score: 1
+
+**idx_6**  
+Response: ""china""  
+Target: ""china""  
+Analysis: exact match, same entity.  
+Score: 1
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1
+}
+```",china,china,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- Semantics just need to be approximately the same or point to the same entity.  
+- No need for exact word-for-word match.
+
+Analysis by idx:
+
+- idx_0: response = ""operational"", target = ""operational""  
+  Same word and same meaning → score 1
+
+- idx_1: response = ""operational"", target = ""operational""  
+  Same word and meaning → score 1
+
+- idx_2: response = ""operational"", target = ""operational""  
+  Same → score 1
+
+- idx_3: response = ""operational"", target = ""operational""  
+  Same → score 1
+
+- idx_4: response = ""operational"", target = ""operational""  
+  Same → score 1
+
+- idx_5: response = ""operational"", target = ""operational""  
+  Same → score 1
+
+- idx_6: response = ""operational"", target = ""operational""  
+  Same → score 1
+
+All responses match perfectly with the target answers.
+
+Final scoring result in JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1
+}
+```",operational,operational,0.0,"date not near, response: 2018-07-11 00:00:00, target: 2018-10-27 00:00:00",2018-10-27,2018-07-11,1.0,"number near in range 5.0%, response: 1086.0, target: 1045.0",1045,1086,1.0,key_match,0.0,"Let's analyze each pair step-by-step according to the criterion:
+
+Criterion summary:  
+- The answer is considered correct if the semantics are approximately the same or if they point to the same entity.  
+- No need for exact word-for-word match.  
+
+---
+
+**idx_0**  
+- Response: ""apr-1400""  
+- Target: ""apr-1400pwr""  
+Analysis:  
+The response ""apr-1400"" matches the ""apr-1400"" part of the target ""apr-1400pwr"". The suffix ""pwr"" might refer to a power plant or power version, but broadly they refer to the APR-1400 reactor type. Semantically, this is a match for the reactor model/entity.  
+Score: 1
+
+---
+
+**idx_1**  
+- Response: ""pwr""  
+- Target: ""eprpwr""  
+Analysis:  
+Response is a substring of the target, but ""pwr"" alone is too generic and does not identify the specific entity ""eprpwr"" (European Pressurized Reactor power plant). ""pwr"" just means pressurized water reactor in general, but does not specify to ""eprpwr"". The semantics do not pinpoint the same entity, so not sufficient.  
+Score: 0
+
+---
+
+**idx_2**  
+- Same as idx_1  
+- Same analysis: ""pwr"" vs ""eprpwr"" – too generic.  
+Score: 0
+
+---
+
+**idx_3**  
+- Response: ""pwr""  
+- Target: ""vver-1000/428m(aes-91)""  
+Analysis:  
+Target is a specific nuclear power plant type: VVER-1000/428M (AES-91 design). Response ""pwr"" is too generic, doesn't refer to the specific entity. Semantics differ.  
+Score: 0
+
+---
+
+**idx_4**  
+- Same as idx_3  
+- Same analysis.  
+Score: 0
+
+---
+
+**idx_5**  
+- Response: ""pwr""  
+- Target: ""acpr-1000pwr""  
+Analysis:  
+Target is a specific plant or reactor model: ACPR-1000pwr. Response ""pwr"" is generic, not pinpointing the same entity.  
+Score: 0
+
+---
+
+**idx_6**  
+- Same as idx_5  
+- Same analysis.  
+Score: 0
+
+---
+
+### Final scoring JSON output:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",vver-1000/428m(aes-91),pwr
+,,tianwan-5,Tianwan-5,0.0,"date not near, response: 2021-09-17 00:00:00, target: 2020-09-08 00:00:00",2020-09-08,2021-09-17,0.0,"exact not match, response: 2014, target: 2015",2015,2014,1.0,"Let's analyze each pair of response and target according to the criterion:
+
+Criterion summary:  
+- Semantics should approximately match.  
+- It is sufficient if they point to the same entity.  
+- No need for exact wording.
+
+---
+
+**idx_0**  
+Response: ""southkorea""  
+Target: ""southkorea""  
+Analysis: exact match, same entity.  
+Score: 1
+
+**idx_1**  
+Response: ""china""  
+Target: ""china""  
+Analysis: exact match, same entity.  
+Score: 1
+
+**idx_2**  
+Response: ""china""  
+Target: ""china""  
+Analysis: exact match, same entity.  
+Score: 1
+
+**idx_3**  
+Response: ""china""  
+Target: ""china""  
+Analysis: exact match, same entity.  
+Score: 1
+
+**idx_4**  
+Response: ""china""  
+Target: ""china""  
+Analysis: exact match, same entity.  
+Score: 1
+
+**idx_5**  
+Response: ""china""  
+Target: ""china""  
+Analysis: exact match, same entity.  
+Score: 1
+
+**idx_6**  
+Response: ""china""  
+Target: ""china""  
+Analysis: exact match, same entity.  
+Score: 1
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1
+}
+```",china,china,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- Semantics just need to be approximately the same or point to the same entity.  
+- No need for exact word-for-word match.
+
+Analysis by idx:
+
+- idx_0: response = ""operational"", target = ""operational""  
+  Same word and same meaning → score 1
+
+- idx_1: response = ""operational"", target = ""operational""  
+  Same word and meaning → score 1
+
+- idx_2: response = ""operational"", target = ""operational""  
+  Same → score 1
+
+- idx_3: response = ""operational"", target = ""operational""  
+  Same → score 1
+
+- idx_4: response = ""operational"", target = ""operational""  
+  Same → score 1
+
+- idx_5: response = ""operational"", target = ""operational""  
+  Same → score 1
+
+- idx_6: response = ""operational"", target = ""operational""  
+  Same → score 1
+
+All responses match perfectly with the target answers.
+
+Final scoring result in JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1
+}
+```",operational,operational,0.0,"date not near, response: 2021-09-17 00:00:00, target: 2020-08-08 00:00:00",2020-08-08,2021-09-17,0.0,"number not near, response: 1250.0, target: 1000.0",1000,1250,1.0,key_match,0.0,"Let's analyze each pair step-by-step according to the criterion:
+
+Criterion summary:  
+- The answer is considered correct if the semantics are approximately the same or if they point to the same entity.  
+- No need for exact word-for-word match.  
+
+---
+
+**idx_0**  
+- Response: ""apr-1400""  
+- Target: ""apr-1400pwr""  
+Analysis:  
+The response ""apr-1400"" matches the ""apr-1400"" part of the target ""apr-1400pwr"". The suffix ""pwr"" might refer to a power plant or power version, but broadly they refer to the APR-1400 reactor type. Semantically, this is a match for the reactor model/entity.  
+Score: 1
+
+---
+
+**idx_1**  
+- Response: ""pwr""  
+- Target: ""eprpwr""  
+Analysis:  
+Response is a substring of the target, but ""pwr"" alone is too generic and does not identify the specific entity ""eprpwr"" (European Pressurized Reactor power plant). ""pwr"" just means pressurized water reactor in general, but does not specify to ""eprpwr"". The semantics do not pinpoint the same entity, so not sufficient.  
+Score: 0
+
+---
+
+**idx_2**  
+- Same as idx_1  
+- Same analysis: ""pwr"" vs ""eprpwr"" – too generic.  
+Score: 0
+
+---
+
+**idx_3**  
+- Response: ""pwr""  
+- Target: ""vver-1000/428m(aes-91)""  
+Analysis:  
+Target is a specific nuclear power plant type: VVER-1000/428M (AES-91 design). Response ""pwr"" is too generic, doesn't refer to the specific entity. Semantics differ.  
+Score: 0
+
+---
+
+**idx_4**  
+- Same as idx_3  
+- Same analysis.  
+Score: 0
+
+---
+
+**idx_5**  
+- Response: ""pwr""  
+- Target: ""acpr-1000pwr""  
+Analysis:  
+Target is a specific plant or reactor model: ACPR-1000pwr. Response ""pwr"" is generic, not pinpointing the same entity.  
+Score: 0
+
+---
+
+**idx_6**  
+- Same as idx_5  
+- Same analysis.  
+Score: 0
+
+---
+
+### Final scoring JSON output:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",acpr-1000pwr,pwr
+,,tianwan-6,Tianwan-6,0.0,"date not near, response: 2023-05-19 00:00:00, target: 2021-06-02 00:00:00",2021-06-02,2023-05-19,0.0,"exact not match, response: 2015, target: 2016",2016,2015,1.0,"Let's analyze each pair of response and target according to the criterion:
+
+Criterion summary:  
+- Semantics should approximately match.  
+- It is sufficient if they point to the same entity.  
+- No need for exact wording.
+
+---
+
+**idx_0**  
+Response: ""southkorea""  
+Target: ""southkorea""  
+Analysis: exact match, same entity.  
+Score: 1
+
+**idx_1**  
+Response: ""china""  
+Target: ""china""  
+Analysis: exact match, same entity.  
+Score: 1
+
+**idx_2**  
+Response: ""china""  
+Target: ""china""  
+Analysis: exact match, same entity.  
+Score: 1
+
+**idx_3**  
+Response: ""china""  
+Target: ""china""  
+Analysis: exact match, same entity.  
+Score: 1
+
+**idx_4**  
+Response: ""china""  
+Target: ""china""  
+Analysis: exact match, same entity.  
+Score: 1
+
+**idx_5**  
+Response: ""china""  
+Target: ""china""  
+Analysis: exact match, same entity.  
+Score: 1
+
+**idx_6**  
+Response: ""china""  
+Target: ""china""  
+Analysis: exact match, same entity.  
+Score: 1
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1
+}
+```",china,china,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- Semantics just need to be approximately the same or point to the same entity.  
+- No need for exact word-for-word match.
+
+Analysis by idx:
+
+- idx_0: response = ""operational"", target = ""operational""  
+  Same word and same meaning → score 1
+
+- idx_1: response = ""operational"", target = ""operational""  
+  Same word and meaning → score 1
+
+- idx_2: response = ""operational"", target = ""operational""  
+  Same → score 1
+
+- idx_3: response = ""operational"", target = ""operational""  
+  Same → score 1
+
+- idx_4: response = ""operational"", target = ""operational""  
+  Same → score 1
+
+- idx_5: response = ""operational"", target = ""operational""  
+  Same → score 1
+
+- idx_6: response = ""operational"", target = ""operational""  
+  Same → score 1
+
+All responses match perfectly with the target answers.
+
+Final scoring result in JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1
+}
+```",operational,operational,0.0,"date not near, response: 2023-05-19 00:00:00, target: 2021-05-13 00:00:00",2021-05-13,2023-05-19,0.0,"number not near, response: 1250.0, target: 1000.0",1000,1250,1.0,key_match,0.0,"Let's analyze each pair step-by-step according to the criterion:
+
+Criterion summary:  
+- The answer is considered correct if the semantics are approximately the same or if they point to the same entity.  
+- No need for exact word-for-word match.  
+
+---
+
+**idx_0**  
+- Response: ""apr-1400""  
+- Target: ""apr-1400pwr""  
+Analysis:  
+The response ""apr-1400"" matches the ""apr-1400"" part of the target ""apr-1400pwr"". The suffix ""pwr"" might refer to a power plant or power version, but broadly they refer to the APR-1400 reactor type. Semantically, this is a match for the reactor model/entity.  
+Score: 1
+
+---
+
+**idx_1**  
+- Response: ""pwr""  
+- Target: ""eprpwr""  
+Analysis:  
+Response is a substring of the target, but ""pwr"" alone is too generic and does not identify the specific entity ""eprpwr"" (European Pressurized Reactor power plant). ""pwr"" just means pressurized water reactor in general, but does not specify to ""eprpwr"". The semantics do not pinpoint the same entity, so not sufficient.  
+Score: 0
+
+---
+
+**idx_2**  
+- Same as idx_1  
+- Same analysis: ""pwr"" vs ""eprpwr"" – too generic.  
+Score: 0
+
+---
+
+**idx_3**  
+- Response: ""pwr""  
+- Target: ""vver-1000/428m(aes-91)""  
+Analysis:  
+Target is a specific nuclear power plant type: VVER-1000/428M (AES-91 design). Response ""pwr"" is too generic, doesn't refer to the specific entity. Semantics differ.  
+Score: 0
+
+---
+
+**idx_4**  
+- Same as idx_3  
+- Same analysis.  
+Score: 0
+
+---
+
+**idx_5**  
+- Response: ""pwr""  
+- Target: ""acpr-1000pwr""  
+Analysis:  
+Target is a specific plant or reactor model: ACPR-1000pwr. Response ""pwr"" is generic, not pinpointing the same entity.  
+Score: 0
+
+---
+
+**idx_6**  
+- Same as idx_5  
+- Same analysis.  
+Score: 0
+
+---
+
+### Final scoring JSON output:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",acpr-1000pwr,pwr
+1.0,,astravets,,,,2021-06-10,,,,2012,,,,belarus,,,,operational,,,,2019-11-07,,,,1110,,,,,,vver-1200,
+1.0,,atucha-2,,,,2016-05-26,,,,1981,,,,argentina,,,,operational,,,,2014-06-27,,,,745,,,,,,phwr-german-si,
+1.0,,barakah-1,,,,2021-04-01,,,,2012,,,,uae,,,,operational,,,,2020-08-19,,,,1337,,,,,,apr-1400pwr,
+1.0,,barakah-2,,,,2022-03-24,,,,2013,,,,uae,,,,operational,,,,2021-09-14,,,,1337,,,,,,apr-1400pwr,
+1.0,,barakah-3,,,,2023-02-24,,,,2014,,,,uae,,,,operational,,,,2022-10-10,,,,1337,,,,,,apr-1400pwr,
+1.0,,barakah-4,,,,2024-09-05,,,,2015,,,,uae,,,,operational,,,,2024-03-25,,,,1337,,,,,,apr-1400pwr,
+1.0,,belarusian-1,,,,2021-06-10,,,,2013,,,,belarus,,,,operational,,,,2020-11-03,,,,1110,,,,,,vver-1200,
+1.0,,belarusian-2,,,,2023-11-01,,,,2014,,,,belarus,,,,operational,,,,2023-05-13,,,,1110,,,,,,vver-1200,
+1.0,,beloyarsk-4,,,,2016-11-01,,,,2006,,,,russia,,,,operational,,,,2015-12-10,,,,820,,,,,,bn-800fbr,
+1.0,,bushehr-1,,,,2013-09-23,,,,1975,,,,iran,,,,operational,,,,2011-09-03,,,,915,,,,,,vver-1000,
+1.0,,cernavoda-2,,,,2007-10-28,,,,1983,,,,romania,,,,operational,,,,2007-08-07,,,,650,,,,,,phwrcandu6,
+1.0,,changjiang-1,,,,2015-12-25,,,,2010,,,,china,,,,operational,,,,2015-11-07,,,,601,,,,,,cnp-600,
+1.0,,changjiang-2,,,,2016-08-12,,,,2010,,,,china,,,,operational,,,,2016-06-20,,,,601,,,,,,cnp-600,
+1.0,,chashma-3,,,,2016-12-15,,,,2011,,,,pakistan,,,,operational,,,,2016-10-15,,,,340,,,,,,cnp-300pwr,
+1.0,,chashma-4,,,,2017-09-28,,,,2011,,,,pakistan,,,,operational,,,,2017-06-27,,,,340,,,,,,cnp-300pwr,
+1.0,,fangchenggang-3,,,,2023-03-25,,,,2015,,,,china,,,,operational,,,,2023-01-10,,,,1180,,,,,,hualongonepwr,
+1.0,,fangchenggang-4,,,,2024-05-25,,,,2016,,,,china,,,,operational,,,,2024-04-09,,,,1180,,,,,,hpr1000pwr,
+1.0,,fangjiashan-1,,,,2014-12-15,,,,2008,,,,china,,,,operational,,,,2014-11-04,,,,1012,,,,,,cpr1000pwr,
+1.0,,fangjiashan-2,,,,2015-02-12,,,,2009,,,,china,,,,operational,,,,2015-01-12,,,,1012,,,,,,cpr1000pwr,
+1.0,,fuqing-1,,,,2014-11-18,,,,2008,,,,china,,,,operational,,,,2014-08-20,,,,1089,,,,,,cpr-1000pwr,
+1.0,,fuqing-2,,,,2015-10-18,,,,2009,,,,china,,,,operational,,,,2015-08-06,,,,1089,,,,,,cpr-1000pwr,
+1.0,,fuqing-3,,,,2016-10-21,,,,2010,,,,china,,,,operational,,,,2016-09-08,,,,1000,,,,,,cpr-1000pwr,
+1.0,,fuqing-4,,,,2017-09-17,,,,2012,,,,china,,,,operational,,,,2017-07-29,,,,1000,,,,,,cpr-1000pwr,
+1.0,,fuqing-5,,,,2021-01-30,,,,2015,,,,china,,,,operational,,,,2020-11-27,,,,1075,,,,,,hualongonepwr,
+1.0,,fuqing-6,,,,2022-03-25,,,,2015,,,,china,,,,operational,,,,2022-01-01,,,,1075,,,,,,hualongonepwr,
+1.0,,haiyang-1,,,,2018-10-22,,,,2009,,,,china,,,,operational,,,,2018-08-17,,,,1170,,,,,,ap1000pwr,
+1.0,,haiyang-2,,,,2019-01-09,,,,2010,,,,china,,,,operational,,,,2018-10-13,,,,1170,,,,,,ap1000pwr,
+1.0,,hongyanhe-1,,,,2013-06-06,,,,2007,,,,china,,,,operational,,,,2013-02-17,,,,1061,,,,,,cpr-1000pwr,
+1.0,,hongyanhe-2,,,,2014-05-13,,,,2008,,,,china,,,,operational,,,,2013-11-23,,,,1061,,,,,,cpr-1000pwr,
+1.0,,hongyanhe-3,,,,2015-08-10,,,,2009,,,,china,,,,operational,,,,2015-03-23,,,,1061,,,,,,cpr-1000pwr,
+1.0,,hongyanhe-4,,,,2016-06-08,,,,2009,,,,china,,,,operational,,,,2016-04-01,,,,1061,,,,,,cpr-1000pwr,
+1.0,,hongyanhe-5,,,,2021-07-31,,,,2015,,,,china,,,,operational,,,,2021-06-25,,,,1061,,,,,,acpr-1000pwr,
+1.0,,hongyanhe-6,,,,2022-06-23,,,,2015,,,,china,,,,operational,,,,2022-05-02,,,,1061,,,,,,acpr-1000pwr,
+,1.0,hualong-1,Hualong-1,,,,2017-12-17,,,,2010,,,,china,,,,operational,,,,2017-12-17,,,,1086,,,,,,pwr
+,1.0,hualong-2,Hualong-2,,,,2019-07-09,,,,2011,,,,china,,,,operational,,,,2019-07-09,,,,1086,,,,,,pwr
+1.0,,kakrapar-3,,,,2023-06-30,,,,2010,,,,india,,,,operational,,,,2021-01-10,,,,630,,,,,,phwr-700,
+1.0,,kakrapar-4,,,,2024-03-31,,,,2010,,,,india,,,,operational,,,,2024-02-20,,,,630,,,,,,phwr-700,
+1.0,,kalinin-4,,,,2012-12-25,,,,1986,,,,russia,,,,operational,,,,2021-11-24,,,,950,,,,,,vverv-320,
+1.0,,karachi-2,,,,2021-05-21,,,,2015,,,,pakistan,,,,operational,,,,2021-03-18,,,,1100,,,,,,hualongonepwr,
+1.0,,karachi-3,,,,2022-04-18,,,,2016,,,,pakistan,,,,operational,,,,2022-03-04,,,,1100,,,,,,hualongonepwr,
+1.0,,kudankulam-1,,,,2014-12-31,,,,2002,,,,india,,,,operational,,,,2013-10-22,,,,917,,,,,,vver-1000,
+1.0,,kudankulam-2,,,,2017-03-31,,,,2002,,,,india,,,,operational,,,,2016-08-29,,,,917,,,,,,vver-1000,
+1.0,,leningrad-ii-1,,,,2018-10-29,,,,2008,,,,russia,,,,operational,,,,2018-03-09,,,,1085,,,,,,vver-1200,
+1.0,,leningrad-ii-2,,,,2021-03-22,,,,2010,,,,russia,,,,operational,,,,2020-10-19,,,,1085,,,,,,vver-1200,
+1.0,,lingao-3,,,,2010-09-15,,,,2005,,,,china,,,,operational,,,,2010-07-15,,,,1007,,,,,,cpr-1000pwr,
+1.0,,lingao-4,,,,2011-08-07,,,,2006,,,,china,,,,operational,,,,2011-05-03,,,,1007,,,,,,cpr-1000pwr,
+1.0,,mochovce-3,,,,2023-10-18,,,,1987,,,,slovakia,,,,operational,,,,2023-01-31,,,,440,,,,,,vver-440v-213,
+1.0,,ningde-1,,,,2013-04-18,,,,2008,,,,china,,,,operational,,,,2012-12-28,,,,1020,,,,,,cpr-1000pwr,
+1.0,,ningde-2,,,,2014-05-04,,,,2008,,,,china,,,,operational,,,,2014-01-04,,,,1020,,,,,,cpr-1000pwr,
+1.0,,ningde-3,,,,2015-06-10,,,,2010,,,,china,,,,operational,,,,2015-03-21,,,,1020,,,,,,cpr-1000pwr,
+1.0,,ningde-4,,,,2016-07-21,,,,2010,,,,china,,,,operational,,,,2016-03-29,,,,1020,,,,,,cpr-1000pwr,
+1.0,,novovoronezh-ii-1,,,,2017-02-27,,,,2008,,,,russia,,,,operational,,,,2016-08-05,,,,1114,,,,,,vver-1200,
+1.0,,novovoronezh-ii-2,,,,2019-11-01,,,,2009,,,,russia,,,,operational,,,,2019-05-01,,,,1114,,,,,,vver-1200,
+1.0,,olkiluoto-3,,,,2023-05-01,,,,2005,,,,finland,,,,operational,,,,2022-03-12,,,,1600,,,,,,eprpwr,
+1.0,,qinshanii-3,,,,2010-10-28,,,,2006,,,,china,,,,operational,,,,2010-03-07,,,,650,,,,,,cnp-600pwr,
+1.0,,qinshanii-4,,,,2012-12-25,,,,2007,,,,china,,,,operational,,,,2012-11-30,,,,650,,,,,,cnp-600pwr,
+1.0,,rostov-2,,,,2010-12-18,,,,1983/1999,,,,russia,,,,operational,,,,2009-12-10,,,,1000,,,,,,vver-1000,
+1.0,,rostov-3,,,,2015-09-17,,,,2009,,,,russia,,,,operational,,,,2014-12-27,,,,1000,,,,,,vver-1000,
+1.0,,rostov-4,,,,2018-09-28,,,,2010,,,,russia,,,,operational,,,,2018-02-02,,,,1010,,,,,,vver-1000,
+1.0,,saeul-1(shin-kori3),,,,2016-12-20,,,,2008,,,,southkorea,,,,operational,,,,2016-01-15,,,,1392,,,,,,apr-1400pwr,
+1.0,,sanmen-1,,,,2018-09-21,,,,2009,,,,china,,,,operational,,,,2018-06-30,,,,1157,,,,,,ap1000pwr,
+1.0,,sanmen-2,,,,2018-11-05,,,,2009,,,,china,,,,operational,,,,2018-08-24,,,,1157,,,,,,ap1000pwr,
+1.0,,shin-hanul-1,,,,2022-12-07,,,,2012,,,,southkorea,,,,operational,,,,2022-06-09,,,,1340,,,,,,apr-1400,
+1.0,,shin-hanul-2,,,,2024-04-05,,,,2013,,,,southkorea,,,,operational,,,,2023-12-21,,,,1340,,,,,,apr-1400,
+1.0,,shin-kori-1,,,,2011-02-28,,,,2006,,,,southkorea,,,,operational,,,,2010-08-04,,,,986,,,,,,opr-1000pwr,
+1.0,,shin-kori-2,,,,2012-07-20,,,,2007,,,,southkorea,,,,operational,,,,2012-01-28,,,,982,,,,,,opr-1000pwr,
+1.0,,shin-wolsong-1,,,,2012-07-31,,,,2007,,,,southkorea,,,,operational,,,,2012-01-31,,,,997,,,,,,opr-1000,
+1.0,,shin-wolsong-2,,,,2015-07-24,,,,2008,,,,southkorea,,,,operational,,,,2015-02-26,,,,993,,,,,,opr-1000,
+,1.0,shinkori10,Shin Kori 10,,,,2026-08-01,,,,2024,,,,southkorea,,,,notyet,,,,2026-08-01,,,,1400,,,,,,apr-1400
+,1.0,shinkori5,Shin Kori 5,,,,2020-03-01,,,,2014,,,,southkorea,,,,operational,,,,2020-03-01,,,,1400,,,,,,apr-1400
+,1.0,shinkori6,Shin Kori 6,,,,2022-08-18,,,,2016,,,,southkorea,,,,operational,,,,2022-08-18,,,,1400,,,,,,apr-1400
+,1.0,shinkori7,Shin Kori 7,,,,2024-07-01,,,,2018,,,,southkorea,,,,operational,,,,2024-07-01,,,,1400,,,,,,apr-1400
+,1.0,shinkori8,Shin Kori 8,,,,2023-05-28,,,,2020,,,,southkorea,,,,operational,,,,2023-05-28,,,,1400,,,,,,apr-1400
+,1.0,shinkori9,Shin Kori 9,,,,2024-08-25,,,,2022,,,,southkorea,,,,operational,,,,2024-08-25,,,,1400,,,,,,apr-1400
+,1.0,tianwan-10,Tianwan-10,,,,2024-09-29,,,,2023,,,,china,,,,operational,,,,2024-09-29,,,,1250,,,,,,pwr
+,1.0,tianwan-11,Tianwan-11,,,,2026-08-01,,,,2024,,,,china,,,,notyet,,,,2026-08-01,,,,1250,,,,,,pwr
+,1.0,tianwan-7,Tianwan-7,,,,2022-08-09,,,,2017,,,,china,,,,operational,,,,2022-08-09,,,,1250,,,,,,pwr
+,1.0,tianwan-8,Tianwan-8,,,,2023-07-15,,,,2019,,,,china,,,,operational,,,,2023-07-15,,,,1250,,,,,,pwr
+,1.0,tianwan-9,Tianwan-9,,,,2024-05-10,,,,2021,,,,china,,,,operational,,,,2024-05-10,,,,1250,,,,,,pwr
+1.0,,tomari-3,,,,2009-12-22,,,,2004,,,,japan,,,,long-termshutdown,,,,2009-03-20,,,,866,,,,,,m(3-loop)pwr,
+1.0,,vogtle-3,,,,2023-07-31,,,,2013,,,,usa,,,,operational,,,,2023-04-01,,,,1117,,,,,,ap1000pwr,
+1.0,,vogtle-4,,,,2024-04-29,,,,2013,,,,usa,,,,operational,,,,2024-03-01,,,,1117,,,,,,ap1000pwr,
+1.0,,watts-bar-2,,,,2016-10-19,,,,1973,,,,usa,,,,operational,,,,2016-06-03,,,,1150,,,,,,pwr(wh4-loop),
+1.0,,yangjiang-1,,,,2014-03-25,,,,2008,,,,china,,,,operational,,,,2013-12-31,,,,1000,,,,,,cpr-1000pwr,
+1.0,,yangjiang-2,,,,2015-06-13,,,,2009,,,,china,,,,operational,,,,2015-03-10,,,,1000,,,,,,cpr-1000pwr,
+1.0,,yangjiang-3,,,,2016-01-15,,,,2010,,,,china,,,,operational,,,,2015-10-18,,,,1000,,,,,,cpr-1000pwr,
+1.0,,yangjiang-4,,,,2017-03-15,,,,2012,,,,china,,,,operational,,,,2017-01-08,,,,1000,,,,,,cpr-1000pwr,
+1.0,,yangjiang-5,,,,2018-07-12,,,,2013,,,,china,,,,operational,,,,2018-05-23,,,,1000,,,,,,acpr-1000pwr,
+1.0,,yangjiang-6,,,,2019-07-24,,,,2013,,,,china,,,,operational,,,,2019-06-29,,,,1000,,,,,,acpr-1000pwr,

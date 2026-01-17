@@ -1,0 +1,672 @@
+exist_flag_gt,exist_flag_response,自治州名称,自治州名称_before_map,2024年州长姓名_exact_match,2024年州长姓名_exact_match_eval_msg,2024年州长姓名_query,2024年州长姓名_response,下辖地区_llm_judge,下辖地区_llm_judge_eval_msg,下辖地区_query,下辖地区_response,州长所属民族_exact_match,州长所属民族_exact_match_eval_msg,州长所属民族_query,州长所属民族_response,总面积_number_near,总面积_number_near_eval_msg,总面积_query,总面积_response,自治州名称_exact_match,自治州名称_exact_match_eval_msg,设立时间_llm_judge,设立时间_llm_judge_eval_msg,设立时间_query,设立时间_response
+,,吉林延边朝鲜族自治州,延边朝鲜族自治州,0.0,"exact not match, response: 张喜军, target: 洪庆",洪庆,张喜军,0.0,"Let's analyze each pair one by one:
+
+---
+
+**idx_0**
+
+- Response: ""12个县市"" (12 counties/cities)
+- Target: ""延吉、图们、敦化、珲春、龙井、和龙6市和汪清、安图2县"" (6 cities + 2 counties = 8 total)
+
+Analysis: The target explicitly lists 6 cities plus 2 counties, totaling 8 units. The response says 12, which is not consistent with the target's number. Since the criterion requires semantic agreement or matching the entity count, this numeric mismatch indicates the response is incorrect.
+
+Score: 0
+
+---
+
+**idx_1**
+
+- Response: ""7个县市"" (7 counties/cities)
+- Target: ""吉首市、泸溪县、凤凰县、花垣县、保靖县、古丈县、永顺县、龙山县"" (1 city + 7 counties = 8 total)
+
+Analysis: The target lists 1 city and 7 counties, total 8. The response states 7, which is fewer than the actual number.
+
+Since the response mismatches the number of counties/cities, it does not sufficiently match the target.
+
+Score: 0
+
+---
+
+**idx_2**
+
+- Response: ""6个县市"" (6 counties/cities)
+- Target: ""马尔康、金川、小金、阿坝、若尔盖、红原、壤塘、汶川、理县、茂县、松潘、九寨沟、黑水13县"" (13 counties)
+
+Analysis: The response states 6 counties/cities, but the target lists 13 counties. The response is half the number, mismatch in count.
+
+Score: 0
+
+---
+
+**idx_3**
+
+- Response: ""17个县市"" (17 counties/cities)
+- Target: ""西昌市，德昌、会理、会东、宁南、普格、布拖、昭觉、金阳、雷波、美姑、甘洛、越西、喜德、冕宁、盐源15县和木里藏族自治县""
+  
+Count entities:
+- 1 city (西昌市)
+- 15 counties
+- 1 autonomous county (木里藏族自治县)
+  
+Total: 17 (1+15+1)
+  
+Response: 17 counties/cities; Target: 17 total entities.
+
+The response number exactly matches the target.
+
+Score: 1
+
+---
+
+**idx_4**
+
+- Response: ""18个县市"" (18 counties/cities)
+- Target: Lists 18 administrative counties.
+
+Response number matches exactly.
+
+Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",延吉、图们、敦化、珲春、龙井、和龙6市和汪清、安图2县,12个县市,1.0,"exact match, response: 朝鲜族, target: 朝鲜族",朝鲜族,朝鲜族,0.0,"number not near, response: 24780.0, target: 43300.0",43300,24780,1.0,key_match,0.0,"首先，依据给定的评分准则：
+
+> 和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。
+
+具体分析每个idx：
+
+- idx_0  
+  Response: 1952年07月09日  
+  Target: 1952年9月3日  
+  两者均为1952年，同一年份，月份不同（7月 vs 9月），但整体指向的是“某个1952年的具体日期”。因为题目要求语义大致相同或指向实体一致即可，这里日期相差2个月，不同具体日期，且没有指出是同一事件的重述，实际日期具体不同，不能算作相同实体。  
+  结论：不相同，得分 0
+
+- idx_1  
+  Response: 1958年07月01日  
+  Target: 1957年9月20日  
+  年份不同，月份日也不同，指向的日期实体明显不一致。  
+  结论：得分 0
+
+- idx_2  
+  Response: 1984年10月25日  
+  Target: 1953年1月1日  
+  年份相差31年，显然不一致。  
+  结论：得分 0
+
+- idx_3  
+  Response: 1955年09月12日  
+  Target: 1952年10月1日  
+  年份相差3年，日期完全不同。  
+  结论：得分 0
+
+- idx_4  
+  Response: 1955年10月01日  
+  Target: 1950年11月24日  
+  年份相差5年，日期不同。  
+  结论：得分 0
+
+总结：所有回答均与参考答案日期明显不同，无法归为语义大致相同或指向相同实体。
+
+最终评分结果如下。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",1952年9月3日,1952年07月09日
+,,湖南湘西土家族苗族自治州,湘西土家族苗族自治州,0.0,"exact not match, response: 龚武生, target: 陈华",陈华,龚武生,0.0,"Let's analyze each pair one by one:
+
+---
+
+**idx_0**
+
+- Response: ""12个县市"" (12 counties/cities)
+- Target: ""延吉、图们、敦化、珲春、龙井、和龙6市和汪清、安图2县"" (6 cities + 2 counties = 8 total)
+
+Analysis: The target explicitly lists 6 cities plus 2 counties, totaling 8 units. The response says 12, which is not consistent with the target's number. Since the criterion requires semantic agreement or matching the entity count, this numeric mismatch indicates the response is incorrect.
+
+Score: 0
+
+---
+
+**idx_1**
+
+- Response: ""7个县市"" (7 counties/cities)
+- Target: ""吉首市、泸溪县、凤凰县、花垣县、保靖县、古丈县、永顺县、龙山县"" (1 city + 7 counties = 8 total)
+
+Analysis: The target lists 1 city and 7 counties, total 8. The response states 7, which is fewer than the actual number.
+
+Since the response mismatches the number of counties/cities, it does not sufficiently match the target.
+
+Score: 0
+
+---
+
+**idx_2**
+
+- Response: ""6个县市"" (6 counties/cities)
+- Target: ""马尔康、金川、小金、阿坝、若尔盖、红原、壤塘、汶川、理县、茂县、松潘、九寨沟、黑水13县"" (13 counties)
+
+Analysis: The response states 6 counties/cities, but the target lists 13 counties. The response is half the number, mismatch in count.
+
+Score: 0
+
+---
+
+**idx_3**
+
+- Response: ""17个县市"" (17 counties/cities)
+- Target: ""西昌市，德昌、会理、会东、宁南、普格、布拖、昭觉、金阳、雷波、美姑、甘洛、越西、喜德、冕宁、盐源15县和木里藏族自治县""
+  
+Count entities:
+- 1 city (西昌市)
+- 15 counties
+- 1 autonomous county (木里藏族自治县)
+  
+Total: 17 (1+15+1)
+  
+Response: 17 counties/cities; Target: 17 total entities.
+
+The response number exactly matches the target.
+
+Score: 1
+
+---
+
+**idx_4**
+
+- Response: ""18个县市"" (18 counties/cities)
+- Target: Lists 18 administrative counties.
+
+Response number matches exactly.
+
+Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",吉首市、泸溪县、凤凰县、花垣县、保靖县、古丈县、永顺县、龙山县,7个县市,0.0,"exact not match, response: 苗族, target: 土家族",土家族,苗族,0.0,"number not near, response: 27297.0, target: 15470.0",15470,27297,1.0,key_match,0.0,"首先，依据给定的评分准则：
+
+> 和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。
+
+具体分析每个idx：
+
+- idx_0  
+  Response: 1952年07月09日  
+  Target: 1952年9月3日  
+  两者均为1952年，同一年份，月份不同（7月 vs 9月），但整体指向的是“某个1952年的具体日期”。因为题目要求语义大致相同或指向实体一致即可，这里日期相差2个月，不同具体日期，且没有指出是同一事件的重述，实际日期具体不同，不能算作相同实体。  
+  结论：不相同，得分 0
+
+- idx_1  
+  Response: 1958年07月01日  
+  Target: 1957年9月20日  
+  年份不同，月份日也不同，指向的日期实体明显不一致。  
+  结论：得分 0
+
+- idx_2  
+  Response: 1984年10月25日  
+  Target: 1953年1月1日  
+  年份相差31年，显然不一致。  
+  结论：得分 0
+
+- idx_3  
+  Response: 1955年09月12日  
+  Target: 1952年10月1日  
+  年份相差3年，日期完全不同。  
+  结论：得分 0
+
+- idx_4  
+  Response: 1955年10月01日  
+  Target: 1950年11月24日  
+  年份相差5年，日期不同。  
+  结论：得分 0
+
+总结：所有回答均与参考答案日期明显不同，无法归为语义大致相同或指向相同实体。
+
+最终评分结果如下。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",1957年9月20日,1958年07月01日
+,,四川阿坝藏族羌族自治州,阿坝藏族羌族自治州,0.0,"exact not match, response: 李德刚, target: 罗振华",罗振华,李德刚,0.0,"Let's analyze each pair one by one:
+
+---
+
+**idx_0**
+
+- Response: ""12个县市"" (12 counties/cities)
+- Target: ""延吉、图们、敦化、珲春、龙井、和龙6市和汪清、安图2县"" (6 cities + 2 counties = 8 total)
+
+Analysis: The target explicitly lists 6 cities plus 2 counties, totaling 8 units. The response says 12, which is not consistent with the target's number. Since the criterion requires semantic agreement or matching the entity count, this numeric mismatch indicates the response is incorrect.
+
+Score: 0
+
+---
+
+**idx_1**
+
+- Response: ""7个县市"" (7 counties/cities)
+- Target: ""吉首市、泸溪县、凤凰县、花垣县、保靖县、古丈县、永顺县、龙山县"" (1 city + 7 counties = 8 total)
+
+Analysis: The target lists 1 city and 7 counties, total 8. The response states 7, which is fewer than the actual number.
+
+Since the response mismatches the number of counties/cities, it does not sufficiently match the target.
+
+Score: 0
+
+---
+
+**idx_2**
+
+- Response: ""6个县市"" (6 counties/cities)
+- Target: ""马尔康、金川、小金、阿坝、若尔盖、红原、壤塘、汶川、理县、茂县、松潘、九寨沟、黑水13县"" (13 counties)
+
+Analysis: The response states 6 counties/cities, but the target lists 13 counties. The response is half the number, mismatch in count.
+
+Score: 0
+
+---
+
+**idx_3**
+
+- Response: ""17个县市"" (17 counties/cities)
+- Target: ""西昌市，德昌、会理、会东、宁南、普格、布拖、昭觉、金阳、雷波、美姑、甘洛、越西、喜德、冕宁、盐源15县和木里藏族自治县""
+  
+Count entities:
+- 1 city (西昌市)
+- 15 counties
+- 1 autonomous county (木里藏族自治县)
+  
+Total: 17 (1+15+1)
+  
+Response: 17 counties/cities; Target: 17 total entities.
+
+The response number exactly matches the target.
+
+Score: 1
+
+---
+
+**idx_4**
+
+- Response: ""18个县市"" (18 counties/cities)
+- Target: Lists 18 administrative counties.
+
+Response number matches exactly.
+
+Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",马尔康、金川、小金、阿坝、若尔盖、红原、壤塘、汶川、理县、茂县、松潘、九寨沟、黑水13县,6个县市,1.0,"exact match, response: 藏族, target: 藏族",藏族,藏族,1.0,"number near in range 5.0%, response: 82451.0, target: 83002.0",83002,82451,1.0,key_match,0.0,"首先，依据给定的评分准则：
+
+> 和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。
+
+具体分析每个idx：
+
+- idx_0  
+  Response: 1952年07月09日  
+  Target: 1952年9月3日  
+  两者均为1952年，同一年份，月份不同（7月 vs 9月），但整体指向的是“某个1952年的具体日期”。因为题目要求语义大致相同或指向实体一致即可，这里日期相差2个月，不同具体日期，且没有指出是同一事件的重述，实际日期具体不同，不能算作相同实体。  
+  结论：不相同，得分 0
+
+- idx_1  
+  Response: 1958年07月01日  
+  Target: 1957年9月20日  
+  年份不同，月份日也不同，指向的日期实体明显不一致。  
+  结论：得分 0
+
+- idx_2  
+  Response: 1984年10月25日  
+  Target: 1953年1月1日  
+  年份相差31年，显然不一致。  
+  结论：得分 0
+
+- idx_3  
+  Response: 1955年09月12日  
+  Target: 1952年10月1日  
+  年份相差3年，日期完全不同。  
+  结论：得分 0
+
+- idx_4  
+  Response: 1955年10月01日  
+  Target: 1950年11月24日  
+  年份相差5年，日期不同。  
+  结论：得分 0
+
+总结：所有回答均与参考答案日期明显不同，无法归为语义大致相同或指向相同实体。
+
+最终评分结果如下。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",1953年1月1日,1984年10月25日
+,,四川凉山彝族自治州,凉山彝族自治州,0.0,"exact not match, response: 陈光浩, target: 阿石拉比",阿石拉比,陈光浩,1.0,"Let's analyze each pair one by one:
+
+---
+
+**idx_0**
+
+- Response: ""12个县市"" (12 counties/cities)
+- Target: ""延吉、图们、敦化、珲春、龙井、和龙6市和汪清、安图2县"" (6 cities + 2 counties = 8 total)
+
+Analysis: The target explicitly lists 6 cities plus 2 counties, totaling 8 units. The response says 12, which is not consistent with the target's number. Since the criterion requires semantic agreement or matching the entity count, this numeric mismatch indicates the response is incorrect.
+
+Score: 0
+
+---
+
+**idx_1**
+
+- Response: ""7个县市"" (7 counties/cities)
+- Target: ""吉首市、泸溪县、凤凰县、花垣县、保靖县、古丈县、永顺县、龙山县"" (1 city + 7 counties = 8 total)
+
+Analysis: The target lists 1 city and 7 counties, total 8. The response states 7, which is fewer than the actual number.
+
+Since the response mismatches the number of counties/cities, it does not sufficiently match the target.
+
+Score: 0
+
+---
+
+**idx_2**
+
+- Response: ""6个县市"" (6 counties/cities)
+- Target: ""马尔康、金川、小金、阿坝、若尔盖、红原、壤塘、汶川、理县、茂县、松潘、九寨沟、黑水13县"" (13 counties)
+
+Analysis: The response states 6 counties/cities, but the target lists 13 counties. The response is half the number, mismatch in count.
+
+Score: 0
+
+---
+
+**idx_3**
+
+- Response: ""17个县市"" (17 counties/cities)
+- Target: ""西昌市，德昌、会理、会东、宁南、普格、布拖、昭觉、金阳、雷波、美姑、甘洛、越西、喜德、冕宁、盐源15县和木里藏族自治县""
+  
+Count entities:
+- 1 city (西昌市)
+- 15 counties
+- 1 autonomous county (木里藏族自治县)
+  
+Total: 17 (1+15+1)
+  
+Response: 17 counties/cities; Target: 17 total entities.
+
+The response number exactly matches the target.
+
+Score: 1
+
+---
+
+**idx_4**
+
+- Response: ""18个县市"" (18 counties/cities)
+- Target: Lists 18 administrative counties.
+
+Response number matches exactly.
+
+Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",西昌市，德昌、会理、会东、宁南、普格、布拖、昭觉、金阳、雷波、美姑、甘洛、越西、喜德、冕宁、盐源15县和木里藏族自治县,17个县市,1.0,"exact match, response: 彝族, target: 彝族",彝族,彝族,0.0,"number not near, response: 56065.0, target: 60261.0",60261,56065,1.0,key_match,0.0,"首先，依据给定的评分准则：
+
+> 和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。
+
+具体分析每个idx：
+
+- idx_0  
+  Response: 1952年07月09日  
+  Target: 1952年9月3日  
+  两者均为1952年，同一年份，月份不同（7月 vs 9月），但整体指向的是“某个1952年的具体日期”。因为题目要求语义大致相同或指向实体一致即可，这里日期相差2个月，不同具体日期，且没有指出是同一事件的重述，实际日期具体不同，不能算作相同实体。  
+  结论：不相同，得分 0
+
+- idx_1  
+  Response: 1958年07月01日  
+  Target: 1957年9月20日  
+  年份不同，月份日也不同，指向的日期实体明显不一致。  
+  结论：得分 0
+
+- idx_2  
+  Response: 1984年10月25日  
+  Target: 1953年1月1日  
+  年份相差31年，显然不一致。  
+  结论：得分 0
+
+- idx_3  
+  Response: 1955年09月12日  
+  Target: 1952年10月1日  
+  年份相差3年，日期完全不同。  
+  结论：得分 0
+
+- idx_4  
+  Response: 1955年10月01日  
+  Target: 1950年11月24日  
+  年份相差5年，日期不同。  
+  结论：得分 0
+
+总结：所有回答均与参考答案日期明显不同，无法归为语义大致相同或指向相同实体。
+
+最终评分结果如下。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",1952年10月1日,1955年09月12日
+,,四川甘孜藏族自治州,甘孜藏族自治州,0.0,"exact not match, response: 丁明, target: 冯发贵",冯发贵,丁明,1.0,"Let's analyze each pair one by one:
+
+---
+
+**idx_0**
+
+- Response: ""12个县市"" (12 counties/cities)
+- Target: ""延吉、图们、敦化、珲春、龙井、和龙6市和汪清、安图2县"" (6 cities + 2 counties = 8 total)
+
+Analysis: The target explicitly lists 6 cities plus 2 counties, totaling 8 units. The response says 12, which is not consistent with the target's number. Since the criterion requires semantic agreement or matching the entity count, this numeric mismatch indicates the response is incorrect.
+
+Score: 0
+
+---
+
+**idx_1**
+
+- Response: ""7个县市"" (7 counties/cities)
+- Target: ""吉首市、泸溪县、凤凰县、花垣县、保靖县、古丈县、永顺县、龙山县"" (1 city + 7 counties = 8 total)
+
+Analysis: The target lists 1 city and 7 counties, total 8. The response states 7, which is fewer than the actual number.
+
+Since the response mismatches the number of counties/cities, it does not sufficiently match the target.
+
+Score: 0
+
+---
+
+**idx_2**
+
+- Response: ""6个县市"" (6 counties/cities)
+- Target: ""马尔康、金川、小金、阿坝、若尔盖、红原、壤塘、汶川、理县、茂县、松潘、九寨沟、黑水13县"" (13 counties)
+
+Analysis: The response states 6 counties/cities, but the target lists 13 counties. The response is half the number, mismatch in count.
+
+Score: 0
+
+---
+
+**idx_3**
+
+- Response: ""17个县市"" (17 counties/cities)
+- Target: ""西昌市，德昌、会理、会东、宁南、普格、布拖、昭觉、金阳、雷波、美姑、甘洛、越西、喜德、冕宁、盐源15县和木里藏族自治县""
+  
+Count entities:
+- 1 city (西昌市)
+- 15 counties
+- 1 autonomous county (木里藏族自治县)
+  
+Total: 17 (1+15+1)
+  
+Response: 17 counties/cities; Target: 17 total entities.
+
+The response number exactly matches the target.
+
+Score: 1
+
+---
+
+**idx_4**
+
+- Response: ""18个县市"" (18 counties/cities)
+- Target: Lists 18 administrative counties.
+
+Response number matches exactly.
+
+Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",康定、泸定、丹巴、九龙、雅江、道孚、炉霍、甘孜、新龙、德格、白玉、石渠、色达、理塘、巴塘、乡城、稻城、得荣18个行政县,18个县市,1.0,"exact match, response: 藏族, target: 藏族",藏族,藏族,1.0,"number near in range 5.0%, response: 153371.0, target: 149683.0",149683,153371,1.0,key_match,0.0,"首先，依据给定的评分准则：
+
+> 和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。
+
+具体分析每个idx：
+
+- idx_0  
+  Response: 1952年07月09日  
+  Target: 1952年9月3日  
+  两者均为1952年，同一年份，月份不同（7月 vs 9月），但整体指向的是“某个1952年的具体日期”。因为题目要求语义大致相同或指向实体一致即可，这里日期相差2个月，不同具体日期，且没有指出是同一事件的重述，实际日期具体不同，不能算作相同实体。  
+  结论：不相同，得分 0
+
+- idx_1  
+  Response: 1958年07月01日  
+  Target: 1957年9月20日  
+  年份不同，月份日也不同，指向的日期实体明显不一致。  
+  结论：得分 0
+
+- idx_2  
+  Response: 1984年10月25日  
+  Target: 1953年1月1日  
+  年份相差31年，显然不一致。  
+  结论：得分 0
+
+- idx_3  
+  Response: 1955年09月12日  
+  Target: 1952年10月1日  
+  年份相差3年，日期完全不同。  
+  结论：得分 0
+
+- idx_4  
+  Response: 1955年10月01日  
+  Target: 1950年11月24日  
+  年份相差5年，日期不同。  
+  结论：得分 0
+
+总结：所有回答均与参考答案日期明显不同，无法归为语义大致相同或指向相同实体。
+
+最终评分结果如下。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",1950年11月24日,1955年10月01日
+1.0,,云南大理白族自治州,,,,陈真永,,,,大理市、漾濞彝族自治县、祥云县、宾川县、弥渡县、南涧彝族自治县、巍山彝族回族自治县、永平县、云龙县、洱源县、剑川县、鹤庆县,,,,白族,,,,28302,,,,,,1956年11月22日,
+1.0,,云南德宏傣族景颇族自治州,,,,卫岗,,,,芒市、瑞丽市、梁河县、盈江县、陇川县,,,,傣族,,,,11172,,,,,,1953年07月23日,
+1.0,,云南怒江傈僳族自治州,,,,李文辉,,,,泸水市、福贡县、贡山独龙族怒族自治县、兰坪白族普米族自治县,,,,傈僳族,,,,14585,,,,,,1954年8月23日,
+1.0,,云南文山壮族苗族自治州,,,,马忠俊,,,,文山市、砚山县、西畴县、麻栗坡县、马关县、丘北县、广南县、富宁县,,,,苗族,,,,31408,,,,,,1958年04月01日,
+1.0,,云南楚雄彝族自治州,,,,张文旺,,,,楚雄市、禄丰市、双柏县、牟定县、南华县、姚安县、大姚县、永仁县、元谋县、武定县,,,,彝族,,,,28439,,,,,,1958年04月15日,
+1.0,,云南红河哈尼族彝族自治州,,,,罗萍,,,,蒙自市、个旧市、开远市、弥勒市、建水县、石屏县、泸西县、元阳县、红河县、绿春县、金平苗族瑶族傣族自治县、河口瑶族自治县、屏边苗族自治县,,,,哈尼族,,,,32174,,,,,,1957年11月18日,
+1.0,,云南西双版纳傣族自治州,,,,刀文,,,,景洪市、勐海县、勐腊县,,,,傣族,,,,19096,,,,,,1953年01月24日,
+1.0,,云南迪庆藏族自治州,,,,张卫东,,,,香格里拉市、德钦县、维西县,,,,藏族,,,,23186,,,,,,1957年09月13日,
+1.0,,新疆伊犁哈萨克自治州,,,,叶尔夏提·吐尔逊拜,,,,伊宁市、奎屯市、霍尔果斯市、伊宁县、察布查尔锡伯自治县、霍城县、巩留县、新源县、昭苏县、特克斯县、尼勒克县。塔城地区（塔城市、乌苏市、额敏县、沙湾县、托里县、裕民县、和布克赛尔蒙古自治县）和阿勒泰地区（阿勒泰市、布尔津县、富蕴县、福海县、哈巴河县、青河县、吉木乃县）,,,,哈萨克族,,,,278851.95,,,,,,1954年11月,
+1.0,,新疆克孜勒苏柯尔克孜自治州,,,,吾肉孜阿力·哈西哈尔巴依,,,,阿图什市、阿克陶县、乌恰县、阿合奇县,,,,柯尔克孜族,,,,72468,,,,,,1954年7月14日,
+1.0,,新疆博尔塔拉蒙古自治州,,,,刘欣,,,,博乐市、阿拉山口市、精河县、温泉县,,,,蒙古族,,,,27200,,,,,,1954年7月13日,
+1.0,,新疆巴音郭楞蒙古自治州,,,,阿西克特,,,,库尔勒市、轮台县、尉犁县、若羌县、且末县、焉耆回族自治县、和静县、和硕县、博湖县,,,,蒙古族,,,,471526,,,,,,1954年06月23日,
+1.0,,新疆昌吉回族自治州,,,,郑敏,,,,昌吉市、阜康市、呼图壁县、玛纳斯县、奇台县、吉木萨尔县、木垒哈萨克自治县,,,,回族,,,,73660.41,,,,,,1954年7月8日,
+,1.0,湖北恩施土家土家族苗族自治州,恩施土家族苗族自治州,,,,黄波,,,,4个县市,,,,土家族,,,,24699,,,,,,1984年09月26日
+1.0,,湖北恩施土家族苗族自治州,,,,夏锡璠,,,,恩施、利川2市和巴东、来凤、咸丰、建始、鹤峰、宣恩6个县,,,,土家族,,,,24060,,,,,,1983年8月19日,
+1.0,,甘肃临夏回族自治州,,,,何东,,,,临夏市、临夏县、康乐县、永靖县、广河县、和政县、东乡族自治县、积石山保安族东乡族撒拉族自治县,,,,回族,,,,8169,,,,,,1956年11月,
+1.0,,甘肃甘南藏族自治州,,,,杨武,,,,合作市、临潭县、卓尼县、舟曲县、迭部县、玛曲县、碌曲县、夏河县,,,,藏族,,,,45000,,,,,,1953年10月,
+1.0,,贵州黔东南苗族侗族自治州,,,,杨光杰,,,,凯里市及麻江、丹寨、黄平、施秉、镇远、岑巩、三穗、天柱、锦屏、黎平、从江、榕江、雷山、台江、剑河15个县,,,,苗族,,,,30282,,,,,,1956年7月23日,
+1.0,,贵州黔南布依族苗族自治州,,,,向承强,,,,都匀市、福泉市、荔波县、贵定县、瓮安县、独山县、平塘县、罗甸县、长顺县、龙里县、惠水县,,,,苗族,,,,26195,,,,,,1956年8月8日,
+1.0,,贵州黔西南布依族苗族自治州,,,,黄兴文,,,,兴义市、兴仁市、普安县、晴隆县、贞丰县、望谟县、册亨县,,,,布依族,,,,16806,,,,,,1982年5月1日,
+1.0,,青海果洛藏族自治州,,,,叶万彬,,,,玛沁县、班玛县、甘德县、达日县、久治县、玛多县,,,,藏族,,,,74246,,,,,,1954年1月1日,
+1.0,,青海海北藏族自治州,,,,张胜源,,,,海晏县、祁连县、刚察县、门源回族自治县,,,,藏族,,,,34390,,,,,,1953年12月31日,
+1.0,,青海海南藏族自治州,,,,尕玛朋措,,,,共和县、同德县、贵德县、兴海县、贵南县,,,,藏族,,,,43453,,,,,,1953年12月06日,
+1.0,,青海海西蒙古族藏族自治州,,,,乔亚群,,,,德令哈市、格尔木市、茫崖市、乌兰县、都兰县、天峻县,,,,蒙古族,,,,325800,,,,,,1954年1月25日,
+1.0,,青海玉树藏族自治州,,,,索南丹增,,,,玉树市、杂多县、称多县、治多县、囊谦县、曲麻莱县,,,,藏族,,,,267000,,,,,,1951年12月,
+1.0,,青海黄南藏族自治州,,,,扎西才让,,,,同仁县、尖扎县、泽库县、河南蒙古族自治县,,,,藏族,,,,18226,,,,,,1953年12月22日,

@@ -1,0 +1,3240 @@
+exist_flag_gt,exist_flag_response,处理器型号,处理器型号_before_map,三级缓存(mb)_number_near,三级缓存(mb)_number_near_eval_msg,三级缓存(mb)_query,三级缓存(mb)_response,二级缓存(mb)_exact_match,二级缓存(mb)_exact_match_eval_msg,二级缓存(mb)_query,二级缓存(mb)_response,产品系列_llm_judge,产品系列_llm_judge_eval_msg,产品系列_query,产品系列_response,制造工艺_llm_judge,制造工艺_llm_judge_eval_msg,制造工艺_query,制造工艺_response,处理器型号_exact_match,处理器型号_exact_match_eval_msg,时间_date_near,时间_date_near_eval_msg,时间_query,时间_response,显卡型号_llm_judge,显卡型号_llm_judge_eval_msg,显卡型号_query,显卡型号_response,显卡核心数_number_near,显卡核心数_number_near_eval_msg,显卡核心数_query,显卡核心数_response,核心_exact_match,核心_exact_match_eval_msg,核心_query,核心_response,核心架构_llm_judge,核心架构_llm_judge_eval_msg,核心架构_query,核心架构_response,核心频率(ghz)_llm_judge,核心频率(ghz)_llm_judge_eval_msg,核心频率(ghz)_query,核心频率(ghz)_response,线程_exact_match,线程_exact_match_eval_msg,线程_query,线程_response
+,,amd锐龙5pro7530u,AMD Ryzen 5 7530U,0.0,"number not convertable, response: None, target: 16.0",16.0,NULL,0.0,"exact not match, response: nan, target: 3.0",3.0,nan,0.0,"分析步骤：
+
+1. 参考答案为不同的“锐龙XX系列”，响应答案全部为“apu”。
+2. 评分标准要求语义相同大致或者指向的实体一致才可给1分。
+3. “apu”是一类产品类别，指代带集成显卡的处理器类别，而“锐龙XX系列”表示的是具体的AMD Ryzen某个系列的型号。
+4. 因为“apu”泛指一类产品，而目标答案具体是某个锐龙系列，二者指向的实体并不一致。
+5. 没有体现具体系列信息，因此不符合概念上的“语义大致相同或者指向实体一致”的要求。
+6. 根据评分规则，每对回答只能打0分或1分，这里的回答无法对应具体系列，故全部评为0分。
+
+最终评分结果：
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0
+}
+```",锐龙pro7000系列,apu,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(Interpretation: The response and the target should be roughly semantically the same or refer to the same entity. Word-by-word exact match is not necessary.)
+
+---
+
+**idx_0**  
+- Response: ""5nm""  
+- Target: ""tsmc7nmfinfet""  
+- ""5nm"" vs ""7nm"" - Different technology nodes (5nm vs 7nm)  
+- Different entities too, since target specific to ""tsmc7nmfinfet"" and response is ""5nm"" which is another process node and different from 7nm.  
+- Not semantically equivalent or same entity.  
+- Score: 0
+
+**idx_1**  
+- Response: ""5nm""  
+- Target: ""tsmc6nmfinfet""  
+- Response ""5nm"" and target ""6nm"" (different nodes)  
+- Not semantically same, nodes differ  
+- Score: 0
+
+**idx_2**  
+- Response: ""7nm""  
+- Target: ""tsmc7nmfinfet""  
+- Response states the node number ""7nm"" which matches the ""tsmc7nmfinfet"" (7nm FinFET process from TSMC)  
+- The response indicates the node 7nm, and target is 7nm plus ""tsmc"" branding which is okay according to criteria (entity consistent)  
+- Score: 1
+
+**idx_3**  
+- Response: ""7nm""  
+- Target: ""tsmc7nmfinfet""  
+- Same reasoning as idx_2  
+- Score: 1
+
+**idx_4**  
+- Response: ""12nm""  
+- Target: ""tsmc7nmfinfet""  
+- 12nm vs 7nm different nodes  
+- Not the same or semantically close enough  
+- Score: 0
+
+**idx_5**  
+- Response: ""7nm""  
+- Target: ""tsmc7nmfinfet""  
+- Same as idx_2 and idx_3  
+- Score: 1
+
+**idx_6**  
+- Response: ""14nm""  
+- Target: ""12nmfinfet""  
+- 14nm vs 12nm different nodes (process nodes difference)  
+- Not semantically same or same entity  
+- Score: 0
+
+**idx_7**  
+- Response: ""14nm""  
+- Target: ""14nm""  
+- Exact match, obviously correct.  
+- Score: 1
+
+**idx_8**  
+- Response: ""28nm""  
+- Target: ""14nm""  
+- 28nm different from 14nm  
+- Not matching or semantically close  
+- Score: 0
+
+---
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0
+}
+```
+",tsmc7nmfinfet,5nm,1.0,key_match,0.0,"date not convertable, response: 2023-2023, target: 2023-01-04",2023-01-04,2023-2023,1.0,"Let's analyze each response item by item against the target according to the criterion:
+
+Criterion summary:  
+- The response and the target should be semantically roughly the same or indicate the same entity.  
+- It is not necessary to have word-for-word match but the meaning or the entity pointed to should be the same.
+
+---
+
+### idx_0  
+- Response: ""rdna3""  
+- Target: ""amdradeon™graphics""  
+Analysis:  
+""rdna3"" refers to a GPU architecture generation by AMD. ""amdradeon™graphics"" is a brand name for AMD GPUs (not specifying generation). In some sense, RDNA3 is a subset or a detail under AMG Radeon graphics.  
+Are these semantically similar or pointing to the same entity?  
+- The target is broad (""AMD Radeon graphics"") while response is specific (""RDNA3"")  
+- Since the response is a specific architecture of the general AMD Radeon graphics, it can be considered as roughly the same, or pointing to an entity under the same umbrella.  
+Hence, the response is acceptable as semantically related.  
+Score: 1
+
+---
+
+### idx_1  
+- Response: ""rdna3""  
+- Target: ""amdradeon™680m""  
+Analysis:  
+""amdradeon™680m"" is a specific product or model (an iGPU model in Ryzen chips), while ""RDNA3"" is a GPU architecture.  
+Is RDNA3 directly the same as Radeon 680M? Generally, 680M is based on RDNA2, sometimes RDNA3 depending on the generation. The response ""rdna3"" is a architecture generation, the target is a product line.  
+The response points to the architecture family, the target is a specific model.  
+Are they semantically close enough? Since one is a product name and the other the architecture generational family, which is supposed to contain that product, the response is acceptable.  
+Score: 1
+
+---
+
+### idx_2  
+- Response: ""rdna2""  
+- Target: ""nan""  
+Analysis:  
+Target is ""nan"" (not a number or no information).  
+Response is ""rdna2"". We cannot say if the response is correct or incorrect because target is not informative. But since we must judge based on whether response is semantically close or pointing to the same entity as the target, and here target is ""nan"", there is no entity to match.  
+No direct mismatch.  
+Is the response valid? There is nothing to contradict.  
+Common grading practice when target is missing or nan is either to ignore or accept any response. But not clearly specified here. Since criterion says only compare semantic equivalence or entity pointing. Here no entity to point to.  
+Hence, response cannot be considered correct or incorrect definitively. But since ""nan"" does not state anything, answer is accepted by default?  
+Probably yes (1).  
+Score: 1
+
+---
+
+### idx_3  
+Same as idx_2.  
+Score: 1
+
+---
+
+### idx_4  
+- Response: ""vega12""  
+- Target: ""nan""  
+Same reasoning as idx_2  
+Score: 1
+
+---
+
+### idx_5  
+- Response: ""vega12""  
+- Target: ""nan""  
+Same reasoning  
+Score: 1
+
+---
+
+### idx_6  
+- Response: ""vega11""  
+- Target: ""nan""  
+Score: 1
+
+---
+
+### idx_7  
+- Response: ""vega10""  
+- Target: ""nan""  
+Score: 1
+
+---
+
+### idx_8  
+- Response: ""vega8""  
+- Target: ""nan""  
+Score: 1
+
+---
+
+### Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1
+}
+```
+
+---
+
+No deductions needed given the criterion and data.",amdradeon™graphics,rdna3,0.0,"number not near, response: 12.0, target: 7.0",7.0,12.0,0.0,"exact not match, response: 4, target: 6",6,4,1.0,"分析过程：
+
+参考答案均为“zen架构”，即标准答案指的是“zen架构”这一CPU架构名称，要求回答指向“zen架构”即可，语义相同或指向实体一致即得分1。
+
+各响应逐条分析：
+
+- idx_0 : response是“zen4”，这是“zen架构”的第四代，也属于zen架构的范畴，语义指向与参考答案一致，得分1。
+- idx_1 : 同上，response是“zen4”，得分1。
+- idx_2 : response是“zen2”，属于zen架构的一代，也属于zen架构范畴，得分1。
+- idx_3 : 同上，“zen2”，得分1。
+- idx_4 : response是“zen+”，这个也是zen架构的一个版本，指向一致，得分1。
+- idx_5 : 同上，得分1。
+- idx_6 : response是“zen”，即zen架构本身，完全一致，得分1。
+- idx_7 : 同上，得分1。
+- idx_8 : response是“kaveri”，这是AMD的一款APU架构，但不是zen架构，与标准答案指向不同，得分0。
+
+结论：
+除了idx_8得0分，其余均得1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0
+}
+```",zen架构,zen4,0.0,"Let's analyze each idx item according to the criterion:
+
+Criterion: The response should be semantically or referentially consistent with the target. Numbers must match or at least be very close, since the responses are numeric values.
+
+---
+
+**idx_0:**  
+- response: 4.7  
+- target: 2.0  
+- Analysis: The response number 4.7 is not semantically close or equivalent to 2.0. They differ significantly.  
+- Score: 0
+
+**idx_1:**  
+- response: 4.5  
+- target: 3.2  
+- Analysis: The response 4.5 does not match or approximate 3.2 closely. Different values.  
+- Score: 0
+
+**idx_2:**  
+- response: 3.7  
+- target: 3.7  
+- Analysis: The response exactly matches the target.  
+- Score: 1
+
+**idx_3:**  
+- response: 3.7  
+- target: 3.5  
+- Analysis: Response is close to the target, only 0.2 difference; since the criterion allows approximate semantic equivalence, this can be considered consistent.  
+- Score: 1
+
+**idx_4:**  
+- response: nan  
+- target: 3.8  
+- Analysis: Response 'nan' (not a number) does not correspond to 3.8. No equivalence.  
+- Score: 0
+
+**idx_5:**  
+- response: 3.6  
+- target: 3.6  
+- Analysis: Exact match.  
+- Score: 1
+
+**idx_6:**  
+- response: nan  
+- target: 3.6  
+- Analysis: Response 'nan' is not equivalent to 3.6.  
+- Score: 0
+
+**idx_7:**  
+- response: nan  
+- target: 3.6  
+- Analysis: Same as above.  
+- Score: 0
+
+**idx_8:**  
+- response: nan  
+- target: 3.5  
+- Analysis: Same - nan does not correspond to 3.5.  
+- Score: 0
+
+---
+
+Final scores in JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",2.0,4.7,0.0,"exact not match, response: 8, target: 12",12,8
+,,amd锐龙77735h,AMD Ryzen 7 7735H,0.0,"number not convertable, response: None, target: 16.0",16.0,NULL,0.0,"exact not match, response: nan, target: 4.0",4.0,nan,0.0,"分析步骤：
+
+1. 参考答案为不同的“锐龙XX系列”，响应答案全部为“apu”。
+2. 评分标准要求语义相同大致或者指向的实体一致才可给1分。
+3. “apu”是一类产品类别，指代带集成显卡的处理器类别，而“锐龙XX系列”表示的是具体的AMD Ryzen某个系列的型号。
+4. 因为“apu”泛指一类产品，而目标答案具体是某个锐龙系列，二者指向的实体并不一致。
+5. 没有体现具体系列信息，因此不符合概念上的“语义大致相同或者指向实体一致”的要求。
+6. 根据评分规则，每对回答只能打0分或1分，这里的回答无法对应具体系列，故全部评为0分。
+
+最终评分结果：
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0
+}
+```",锐龙7000系列,apu,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(Interpretation: The response and the target should be roughly semantically the same or refer to the same entity. Word-by-word exact match is not necessary.)
+
+---
+
+**idx_0**  
+- Response: ""5nm""  
+- Target: ""tsmc7nmfinfet""  
+- ""5nm"" vs ""7nm"" - Different technology nodes (5nm vs 7nm)  
+- Different entities too, since target specific to ""tsmc7nmfinfet"" and response is ""5nm"" which is another process node and different from 7nm.  
+- Not semantically equivalent or same entity.  
+- Score: 0
+
+**idx_1**  
+- Response: ""5nm""  
+- Target: ""tsmc6nmfinfet""  
+- Response ""5nm"" and target ""6nm"" (different nodes)  
+- Not semantically same, nodes differ  
+- Score: 0
+
+**idx_2**  
+- Response: ""7nm""  
+- Target: ""tsmc7nmfinfet""  
+- Response states the node number ""7nm"" which matches the ""tsmc7nmfinfet"" (7nm FinFET process from TSMC)  
+- The response indicates the node 7nm, and target is 7nm plus ""tsmc"" branding which is okay according to criteria (entity consistent)  
+- Score: 1
+
+**idx_3**  
+- Response: ""7nm""  
+- Target: ""tsmc7nmfinfet""  
+- Same reasoning as idx_2  
+- Score: 1
+
+**idx_4**  
+- Response: ""12nm""  
+- Target: ""tsmc7nmfinfet""  
+- 12nm vs 7nm different nodes  
+- Not the same or semantically close enough  
+- Score: 0
+
+**idx_5**  
+- Response: ""7nm""  
+- Target: ""tsmc7nmfinfet""  
+- Same as idx_2 and idx_3  
+- Score: 1
+
+**idx_6**  
+- Response: ""14nm""  
+- Target: ""12nmfinfet""  
+- 14nm vs 12nm different nodes (process nodes difference)  
+- Not semantically same or same entity  
+- Score: 0
+
+**idx_7**  
+- Response: ""14nm""  
+- Target: ""14nm""  
+- Exact match, obviously correct.  
+- Score: 1
+
+**idx_8**  
+- Response: ""28nm""  
+- Target: ""14nm""  
+- 28nm different from 14nm  
+- Not matching or semantically close  
+- Score: 0
+
+---
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0
+}
+```
+",tsmc6nmfinfet,5nm,1.0,key_match,0.0,"date not convertable, response: 2023-2023, target: 2023-01-04",2023-01-04,2023-2023,1.0,"Let's analyze each response item by item against the target according to the criterion:
+
+Criterion summary:  
+- The response and the target should be semantically roughly the same or indicate the same entity.  
+- It is not necessary to have word-for-word match but the meaning or the entity pointed to should be the same.
+
+---
+
+### idx_0  
+- Response: ""rdna3""  
+- Target: ""amdradeon™graphics""  
+Analysis:  
+""rdna3"" refers to a GPU architecture generation by AMD. ""amdradeon™graphics"" is a brand name for AMD GPUs (not specifying generation). In some sense, RDNA3 is a subset or a detail under AMG Radeon graphics.  
+Are these semantically similar or pointing to the same entity?  
+- The target is broad (""AMD Radeon graphics"") while response is specific (""RDNA3"")  
+- Since the response is a specific architecture of the general AMD Radeon graphics, it can be considered as roughly the same, or pointing to an entity under the same umbrella.  
+Hence, the response is acceptable as semantically related.  
+Score: 1
+
+---
+
+### idx_1  
+- Response: ""rdna3""  
+- Target: ""amdradeon™680m""  
+Analysis:  
+""amdradeon™680m"" is a specific product or model (an iGPU model in Ryzen chips), while ""RDNA3"" is a GPU architecture.  
+Is RDNA3 directly the same as Radeon 680M? Generally, 680M is based on RDNA2, sometimes RDNA3 depending on the generation. The response ""rdna3"" is a architecture generation, the target is a product line.  
+The response points to the architecture family, the target is a specific model.  
+Are they semantically close enough? Since one is a product name and the other the architecture generational family, which is supposed to contain that product, the response is acceptable.  
+Score: 1
+
+---
+
+### idx_2  
+- Response: ""rdna2""  
+- Target: ""nan""  
+Analysis:  
+Target is ""nan"" (not a number or no information).  
+Response is ""rdna2"". We cannot say if the response is correct or incorrect because target is not informative. But since we must judge based on whether response is semantically close or pointing to the same entity as the target, and here target is ""nan"", there is no entity to match.  
+No direct mismatch.  
+Is the response valid? There is nothing to contradict.  
+Common grading practice when target is missing or nan is either to ignore or accept any response. But not clearly specified here. Since criterion says only compare semantic equivalence or entity pointing. Here no entity to point to.  
+Hence, response cannot be considered correct or incorrect definitively. But since ""nan"" does not state anything, answer is accepted by default?  
+Probably yes (1).  
+Score: 1
+
+---
+
+### idx_3  
+Same as idx_2.  
+Score: 1
+
+---
+
+### idx_4  
+- Response: ""vega12""  
+- Target: ""nan""  
+Same reasoning as idx_2  
+Score: 1
+
+---
+
+### idx_5  
+- Response: ""vega12""  
+- Target: ""nan""  
+Same reasoning  
+Score: 1
+
+---
+
+### idx_6  
+- Response: ""vega11""  
+- Target: ""nan""  
+Score: 1
+
+---
+
+### idx_7  
+- Response: ""vega10""  
+- Target: ""nan""  
+Score: 1
+
+---
+
+### idx_8  
+- Response: ""vega8""  
+- Target: ""nan""  
+Score: 1
+
+---
+
+### Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1
+}
+```
+
+---
+
+No deductions needed given the criterion and data.",amdradeon™680m,rdna3,1.0,"number near in range 1.0%, response: 12.0, target: 12.0",12.0,12.0,1.0,"exact match, response: 8, target: 8",8,8,1.0,"分析过程：
+
+参考答案均为“zen架构”，即标准答案指的是“zen架构”这一CPU架构名称，要求回答指向“zen架构”即可，语义相同或指向实体一致即得分1。
+
+各响应逐条分析：
+
+- idx_0 : response是“zen4”，这是“zen架构”的第四代，也属于zen架构的范畴，语义指向与参考答案一致，得分1。
+- idx_1 : 同上，response是“zen4”，得分1。
+- idx_2 : response是“zen2”，属于zen架构的一代，也属于zen架构范畴，得分1。
+- idx_3 : 同上，“zen2”，得分1。
+- idx_4 : response是“zen+”，这个也是zen架构的一个版本，指向一致，得分1。
+- idx_5 : 同上，得分1。
+- idx_6 : response是“zen”，即zen架构本身，完全一致，得分1。
+- idx_7 : 同上，得分1。
+- idx_8 : response是“kaveri”，这是AMD的一款APU架构，但不是zen架构，与标准答案指向不同，得分0。
+
+结论：
+除了idx_8得0分，其余均得1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0
+}
+```",zen架构,zen4,0.0,"Let's analyze each idx item according to the criterion:
+
+Criterion: The response should be semantically or referentially consistent with the target. Numbers must match or at least be very close, since the responses are numeric values.
+
+---
+
+**idx_0:**  
+- response: 4.7  
+- target: 2.0  
+- Analysis: The response number 4.7 is not semantically close or equivalent to 2.0. They differ significantly.  
+- Score: 0
+
+**idx_1:**  
+- response: 4.5  
+- target: 3.2  
+- Analysis: The response 4.5 does not match or approximate 3.2 closely. Different values.  
+- Score: 0
+
+**idx_2:**  
+- response: 3.7  
+- target: 3.7  
+- Analysis: The response exactly matches the target.  
+- Score: 1
+
+**idx_3:**  
+- response: 3.7  
+- target: 3.5  
+- Analysis: Response is close to the target, only 0.2 difference; since the criterion allows approximate semantic equivalence, this can be considered consistent.  
+- Score: 1
+
+**idx_4:**  
+- response: nan  
+- target: 3.8  
+- Analysis: Response 'nan' (not a number) does not correspond to 3.8. No equivalence.  
+- Score: 0
+
+**idx_5:**  
+- response: 3.6  
+- target: 3.6  
+- Analysis: Exact match.  
+- Score: 1
+
+**idx_6:**  
+- response: nan  
+- target: 3.6  
+- Analysis: Response 'nan' is not equivalent to 3.6.  
+- Score: 0
+
+**idx_7:**  
+- response: nan  
+- target: 3.6  
+- Analysis: Same as above.  
+- Score: 0
+
+**idx_8:**  
+- response: nan  
+- target: 3.5  
+- Analysis: Same - nan does not correspond to 3.5.  
+- Score: 0
+
+---
+
+Final scores in JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",3.2,4.5,1.0,"exact match, response: 16, target: 16",16,16
+,,amd锐龙55600x,AMD Ryzen 5 5600X,0.0,"number not convertable, response: None, target: 32.0",32.0,NULL,0.0,"exact not match, response: nan, target: 3.0",3.0,nan,0.0,"分析步骤：
+
+1. 参考答案为不同的“锐龙XX系列”，响应答案全部为“apu”。
+2. 评分标准要求语义相同大致或者指向的实体一致才可给1分。
+3. “apu”是一类产品类别，指代带集成显卡的处理器类别，而“锐龙XX系列”表示的是具体的AMD Ryzen某个系列的型号。
+4. 因为“apu”泛指一类产品，而目标答案具体是某个锐龙系列，二者指向的实体并不一致。
+5. 没有体现具体系列信息，因此不符合概念上的“语义大致相同或者指向实体一致”的要求。
+6. 根据评分规则，每对回答只能打0分或1分，这里的回答无法对应具体系列，故全部评为0分。
+
+最终评分结果：
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0
+}
+```",锐龙5000系列,apu,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(Interpretation: The response and the target should be roughly semantically the same or refer to the same entity. Word-by-word exact match is not necessary.)
+
+---
+
+**idx_0**  
+- Response: ""5nm""  
+- Target: ""tsmc7nmfinfet""  
+- ""5nm"" vs ""7nm"" - Different technology nodes (5nm vs 7nm)  
+- Different entities too, since target specific to ""tsmc7nmfinfet"" and response is ""5nm"" which is another process node and different from 7nm.  
+- Not semantically equivalent or same entity.  
+- Score: 0
+
+**idx_1**  
+- Response: ""5nm""  
+- Target: ""tsmc6nmfinfet""  
+- Response ""5nm"" and target ""6nm"" (different nodes)  
+- Not semantically same, nodes differ  
+- Score: 0
+
+**idx_2**  
+- Response: ""7nm""  
+- Target: ""tsmc7nmfinfet""  
+- Response states the node number ""7nm"" which matches the ""tsmc7nmfinfet"" (7nm FinFET process from TSMC)  
+- The response indicates the node 7nm, and target is 7nm plus ""tsmc"" branding which is okay according to criteria (entity consistent)  
+- Score: 1
+
+**idx_3**  
+- Response: ""7nm""  
+- Target: ""tsmc7nmfinfet""  
+- Same reasoning as idx_2  
+- Score: 1
+
+**idx_4**  
+- Response: ""12nm""  
+- Target: ""tsmc7nmfinfet""  
+- 12nm vs 7nm different nodes  
+- Not the same or semantically close enough  
+- Score: 0
+
+**idx_5**  
+- Response: ""7nm""  
+- Target: ""tsmc7nmfinfet""  
+- Same as idx_2 and idx_3  
+- Score: 1
+
+**idx_6**  
+- Response: ""14nm""  
+- Target: ""12nmfinfet""  
+- 14nm vs 12nm different nodes (process nodes difference)  
+- Not semantically same or same entity  
+- Score: 0
+
+**idx_7**  
+- Response: ""14nm""  
+- Target: ""14nm""  
+- Exact match, obviously correct.  
+- Score: 1
+
+**idx_8**  
+- Response: ""28nm""  
+- Target: ""14nm""  
+- 28nm different from 14nm  
+- Not matching or semantically close  
+- Score: 0
+
+---
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0
+}
+```
+",tsmc7nmfinfet,7nm,1.0,key_match,0.0,"date not convertable, response: 2020-2021, target: 2020-11-05",2020-11-05,2020-2021,1.0,"Let's analyze each response item by item against the target according to the criterion:
+
+Criterion summary:  
+- The response and the target should be semantically roughly the same or indicate the same entity.  
+- It is not necessary to have word-for-word match but the meaning or the entity pointed to should be the same.
+
+---
+
+### idx_0  
+- Response: ""rdna3""  
+- Target: ""amdradeon™graphics""  
+Analysis:  
+""rdna3"" refers to a GPU architecture generation by AMD. ""amdradeon™graphics"" is a brand name for AMD GPUs (not specifying generation). In some sense, RDNA3 is a subset or a detail under AMG Radeon graphics.  
+Are these semantically similar or pointing to the same entity?  
+- The target is broad (""AMD Radeon graphics"") while response is specific (""RDNA3"")  
+- Since the response is a specific architecture of the general AMD Radeon graphics, it can be considered as roughly the same, or pointing to an entity under the same umbrella.  
+Hence, the response is acceptable as semantically related.  
+Score: 1
+
+---
+
+### idx_1  
+- Response: ""rdna3""  
+- Target: ""amdradeon™680m""  
+Analysis:  
+""amdradeon™680m"" is a specific product or model (an iGPU model in Ryzen chips), while ""RDNA3"" is a GPU architecture.  
+Is RDNA3 directly the same as Radeon 680M? Generally, 680M is based on RDNA2, sometimes RDNA3 depending on the generation. The response ""rdna3"" is a architecture generation, the target is a product line.  
+The response points to the architecture family, the target is a specific model.  
+Are they semantically close enough? Since one is a product name and the other the architecture generational family, which is supposed to contain that product, the response is acceptable.  
+Score: 1
+
+---
+
+### idx_2  
+- Response: ""rdna2""  
+- Target: ""nan""  
+Analysis:  
+Target is ""nan"" (not a number or no information).  
+Response is ""rdna2"". We cannot say if the response is correct or incorrect because target is not informative. But since we must judge based on whether response is semantically close or pointing to the same entity as the target, and here target is ""nan"", there is no entity to match.  
+No direct mismatch.  
+Is the response valid? There is nothing to contradict.  
+Common grading practice when target is missing or nan is either to ignore or accept any response. But not clearly specified here. Since criterion says only compare semantic equivalence or entity pointing. Here no entity to point to.  
+Hence, response cannot be considered correct or incorrect definitively. But since ""nan"" does not state anything, answer is accepted by default?  
+Probably yes (1).  
+Score: 1
+
+---
+
+### idx_3  
+Same as idx_2.  
+Score: 1
+
+---
+
+### idx_4  
+- Response: ""vega12""  
+- Target: ""nan""  
+Same reasoning as idx_2  
+Score: 1
+
+---
+
+### idx_5  
+- Response: ""vega12""  
+- Target: ""nan""  
+Same reasoning  
+Score: 1
+
+---
+
+### idx_6  
+- Response: ""vega11""  
+- Target: ""nan""  
+Score: 1
+
+---
+
+### idx_7  
+- Response: ""vega10""  
+- Target: ""nan""  
+Score: 1
+
+---
+
+### idx_8  
+- Response: ""vega8""  
+- Target: ""nan""  
+Score: 1
+
+---
+
+### Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1
+}
+```
+
+---
+
+No deductions needed given the criterion and data.",nan,rdna2,0.0,"number not convertable, response: 12.0, target: None",NULL,12.0,0.0,"exact not match, response: 12, target: 6",6,12,1.0,"分析过程：
+
+参考答案均为“zen架构”，即标准答案指的是“zen架构”这一CPU架构名称，要求回答指向“zen架构”即可，语义相同或指向实体一致即得分1。
+
+各响应逐条分析：
+
+- idx_0 : response是“zen4”，这是“zen架构”的第四代，也属于zen架构的范畴，语义指向与参考答案一致，得分1。
+- idx_1 : 同上，response是“zen4”，得分1。
+- idx_2 : response是“zen2”，属于zen架构的一代，也属于zen架构范畴，得分1。
+- idx_3 : 同上，“zen2”，得分1。
+- idx_4 : response是“zen+”，这个也是zen架构的一个版本，指向一致，得分1。
+- idx_5 : 同上，得分1。
+- idx_6 : response是“zen”，即zen架构本身，完全一致，得分1。
+- idx_7 : 同上，得分1。
+- idx_8 : response是“kaveri”，这是AMD的一款APU架构，但不是zen架构，与标准答案指向不同，得分0。
+
+结论：
+除了idx_8得0分，其余均得1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0
+}
+```",zen架构,zen2,1.0,"Let's analyze each idx item according to the criterion:
+
+Criterion: The response should be semantically or referentially consistent with the target. Numbers must match or at least be very close, since the responses are numeric values.
+
+---
+
+**idx_0:**  
+- response: 4.7  
+- target: 2.0  
+- Analysis: The response number 4.7 is not semantically close or equivalent to 2.0. They differ significantly.  
+- Score: 0
+
+**idx_1:**  
+- response: 4.5  
+- target: 3.2  
+- Analysis: The response 4.5 does not match or approximate 3.2 closely. Different values.  
+- Score: 0
+
+**idx_2:**  
+- response: 3.7  
+- target: 3.7  
+- Analysis: The response exactly matches the target.  
+- Score: 1
+
+**idx_3:**  
+- response: 3.7  
+- target: 3.5  
+- Analysis: Response is close to the target, only 0.2 difference; since the criterion allows approximate semantic equivalence, this can be considered consistent.  
+- Score: 1
+
+**idx_4:**  
+- response: nan  
+- target: 3.8  
+- Analysis: Response 'nan' (not a number) does not correspond to 3.8. No equivalence.  
+- Score: 0
+
+**idx_5:**  
+- response: 3.6  
+- target: 3.6  
+- Analysis: Exact match.  
+- Score: 1
+
+**idx_6:**  
+- response: nan  
+- target: 3.6  
+- Analysis: Response 'nan' is not equivalent to 3.6.  
+- Score: 0
+
+**idx_7:**  
+- response: nan  
+- target: 3.6  
+- Analysis: Same as above.  
+- Score: 0
+
+**idx_8:**  
+- response: nan  
+- target: 3.5  
+- Analysis: Same - nan does not correspond to 3.5.  
+- Score: 0
+
+---
+
+Final scores in JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",3.7,3.7,0.0,"exact not match, response: 16, target: 12",12,16
+,,amd锐龙55600,AMD Ryzen 5 5600,0.0,"number not convertable, response: None, target: 32.0",32.0,NULL,0.0,"exact not match, response: nan, target: 3.0",3.0,nan,0.0,"分析步骤：
+
+1. 参考答案为不同的“锐龙XX系列”，响应答案全部为“apu”。
+2. 评分标准要求语义相同大致或者指向的实体一致才可给1分。
+3. “apu”是一类产品类别，指代带集成显卡的处理器类别，而“锐龙XX系列”表示的是具体的AMD Ryzen某个系列的型号。
+4. 因为“apu”泛指一类产品，而目标答案具体是某个锐龙系列，二者指向的实体并不一致。
+5. 没有体现具体系列信息，因此不符合概念上的“语义大致相同或者指向实体一致”的要求。
+6. 根据评分规则，每对回答只能打0分或1分，这里的回答无法对应具体系列，故全部评为0分。
+
+最终评分结果：
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0
+}
+```",锐龙5000系列,apu,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(Interpretation: The response and the target should be roughly semantically the same or refer to the same entity. Word-by-word exact match is not necessary.)
+
+---
+
+**idx_0**  
+- Response: ""5nm""  
+- Target: ""tsmc7nmfinfet""  
+- ""5nm"" vs ""7nm"" - Different technology nodes (5nm vs 7nm)  
+- Different entities too, since target specific to ""tsmc7nmfinfet"" and response is ""5nm"" which is another process node and different from 7nm.  
+- Not semantically equivalent or same entity.  
+- Score: 0
+
+**idx_1**  
+- Response: ""5nm""  
+- Target: ""tsmc6nmfinfet""  
+- Response ""5nm"" and target ""6nm"" (different nodes)  
+- Not semantically same, nodes differ  
+- Score: 0
+
+**idx_2**  
+- Response: ""7nm""  
+- Target: ""tsmc7nmfinfet""  
+- Response states the node number ""7nm"" which matches the ""tsmc7nmfinfet"" (7nm FinFET process from TSMC)  
+- The response indicates the node 7nm, and target is 7nm plus ""tsmc"" branding which is okay according to criteria (entity consistent)  
+- Score: 1
+
+**idx_3**  
+- Response: ""7nm""  
+- Target: ""tsmc7nmfinfet""  
+- Same reasoning as idx_2  
+- Score: 1
+
+**idx_4**  
+- Response: ""12nm""  
+- Target: ""tsmc7nmfinfet""  
+- 12nm vs 7nm different nodes  
+- Not the same or semantically close enough  
+- Score: 0
+
+**idx_5**  
+- Response: ""7nm""  
+- Target: ""tsmc7nmfinfet""  
+- Same as idx_2 and idx_3  
+- Score: 1
+
+**idx_6**  
+- Response: ""14nm""  
+- Target: ""12nmfinfet""  
+- 14nm vs 12nm different nodes (process nodes difference)  
+- Not semantically same or same entity  
+- Score: 0
+
+**idx_7**  
+- Response: ""14nm""  
+- Target: ""14nm""  
+- Exact match, obviously correct.  
+- Score: 1
+
+**idx_8**  
+- Response: ""28nm""  
+- Target: ""14nm""  
+- 28nm different from 14nm  
+- Not matching or semantically close  
+- Score: 0
+
+---
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0
+}
+```
+",tsmc7nmfinfet,7nm,1.0,key_match,0.0,"date not convertable, response: 2021-2022, target: 2022-04-04",2022-04-04,2021-2022,1.0,"Let's analyze each response item by item against the target according to the criterion:
+
+Criterion summary:  
+- The response and the target should be semantically roughly the same or indicate the same entity.  
+- It is not necessary to have word-for-word match but the meaning or the entity pointed to should be the same.
+
+---
+
+### idx_0  
+- Response: ""rdna3""  
+- Target: ""amdradeon™graphics""  
+Analysis:  
+""rdna3"" refers to a GPU architecture generation by AMD. ""amdradeon™graphics"" is a brand name for AMD GPUs (not specifying generation). In some sense, RDNA3 is a subset or a detail under AMG Radeon graphics.  
+Are these semantically similar or pointing to the same entity?  
+- The target is broad (""AMD Radeon graphics"") while response is specific (""RDNA3"")  
+- Since the response is a specific architecture of the general AMD Radeon graphics, it can be considered as roughly the same, or pointing to an entity under the same umbrella.  
+Hence, the response is acceptable as semantically related.  
+Score: 1
+
+---
+
+### idx_1  
+- Response: ""rdna3""  
+- Target: ""amdradeon™680m""  
+Analysis:  
+""amdradeon™680m"" is a specific product or model (an iGPU model in Ryzen chips), while ""RDNA3"" is a GPU architecture.  
+Is RDNA3 directly the same as Radeon 680M? Generally, 680M is based on RDNA2, sometimes RDNA3 depending on the generation. The response ""rdna3"" is a architecture generation, the target is a product line.  
+The response points to the architecture family, the target is a specific model.  
+Are they semantically close enough? Since one is a product name and the other the architecture generational family, which is supposed to contain that product, the response is acceptable.  
+Score: 1
+
+---
+
+### idx_2  
+- Response: ""rdna2""  
+- Target: ""nan""  
+Analysis:  
+Target is ""nan"" (not a number or no information).  
+Response is ""rdna2"". We cannot say if the response is correct or incorrect because target is not informative. But since we must judge based on whether response is semantically close or pointing to the same entity as the target, and here target is ""nan"", there is no entity to match.  
+No direct mismatch.  
+Is the response valid? There is nothing to contradict.  
+Common grading practice when target is missing or nan is either to ignore or accept any response. But not clearly specified here. Since criterion says only compare semantic equivalence or entity pointing. Here no entity to point to.  
+Hence, response cannot be considered correct or incorrect definitively. But since ""nan"" does not state anything, answer is accepted by default?  
+Probably yes (1).  
+Score: 1
+
+---
+
+### idx_3  
+Same as idx_2.  
+Score: 1
+
+---
+
+### idx_4  
+- Response: ""vega12""  
+- Target: ""nan""  
+Same reasoning as idx_2  
+Score: 1
+
+---
+
+### idx_5  
+- Response: ""vega12""  
+- Target: ""nan""  
+Same reasoning  
+Score: 1
+
+---
+
+### idx_6  
+- Response: ""vega11""  
+- Target: ""nan""  
+Score: 1
+
+---
+
+### idx_7  
+- Response: ""vega10""  
+- Target: ""nan""  
+Score: 1
+
+---
+
+### idx_8  
+- Response: ""vega8""  
+- Target: ""nan""  
+Score: 1
+
+---
+
+### Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1
+}
+```
+
+---
+
+No deductions needed given the criterion and data.",nan,rdna2,0.0,"number not convertable, response: 12.0, target: None",NULL,12.0,0.0,"exact not match, response: 12, target: 6",6,12,1.0,"分析过程：
+
+参考答案均为“zen架构”，即标准答案指的是“zen架构”这一CPU架构名称，要求回答指向“zen架构”即可，语义相同或指向实体一致即得分1。
+
+各响应逐条分析：
+
+- idx_0 : response是“zen4”，这是“zen架构”的第四代，也属于zen架构的范畴，语义指向与参考答案一致，得分1。
+- idx_1 : 同上，response是“zen4”，得分1。
+- idx_2 : response是“zen2”，属于zen架构的一代，也属于zen架构范畴，得分1。
+- idx_3 : 同上，“zen2”，得分1。
+- idx_4 : response是“zen+”，这个也是zen架构的一个版本，指向一致，得分1。
+- idx_5 : 同上，得分1。
+- idx_6 : response是“zen”，即zen架构本身，完全一致，得分1。
+- idx_7 : 同上，得分1。
+- idx_8 : response是“kaveri”，这是AMD的一款APU架构，但不是zen架构，与标准答案指向不同，得分0。
+
+结论：
+除了idx_8得0分，其余均得1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0
+}
+```",zen架构,zen2,1.0,"Let's analyze each idx item according to the criterion:
+
+Criterion: The response should be semantically or referentially consistent with the target. Numbers must match or at least be very close, since the responses are numeric values.
+
+---
+
+**idx_0:**  
+- response: 4.7  
+- target: 2.0  
+- Analysis: The response number 4.7 is not semantically close or equivalent to 2.0. They differ significantly.  
+- Score: 0
+
+**idx_1:**  
+- response: 4.5  
+- target: 3.2  
+- Analysis: The response 4.5 does not match or approximate 3.2 closely. Different values.  
+- Score: 0
+
+**idx_2:**  
+- response: 3.7  
+- target: 3.7  
+- Analysis: The response exactly matches the target.  
+- Score: 1
+
+**idx_3:**  
+- response: 3.7  
+- target: 3.5  
+- Analysis: Response is close to the target, only 0.2 difference; since the criterion allows approximate semantic equivalence, this can be considered consistent.  
+- Score: 1
+
+**idx_4:**  
+- response: nan  
+- target: 3.8  
+- Analysis: Response 'nan' (not a number) does not correspond to 3.8. No equivalence.  
+- Score: 0
+
+**idx_5:**  
+- response: 3.6  
+- target: 3.6  
+- Analysis: Exact match.  
+- Score: 1
+
+**idx_6:**  
+- response: nan  
+- target: 3.6  
+- Analysis: Response 'nan' is not equivalent to 3.6.  
+- Score: 0
+
+**idx_7:**  
+- response: nan  
+- target: 3.6  
+- Analysis: Same as above.  
+- Score: 0
+
+**idx_8:**  
+- response: nan  
+- target: 3.5  
+- Analysis: Same - nan does not correspond to 3.5.  
+- Score: 0
+
+---
+
+Final scores in JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",3.5,3.7,0.0,"exact not match, response: 16, target: 12",12,16
+,,amd锐龙53600x,AMD Ryzen 5 3600X,0.0,"number not convertable, response: None, target: 32.0",32.0,NULL,0.0,"exact not match, response: nan, target: 3.0",3.0,nan,0.0,"分析步骤：
+
+1. 参考答案为不同的“锐龙XX系列”，响应答案全部为“apu”。
+2. 评分标准要求语义相同大致或者指向的实体一致才可给1分。
+3. “apu”是一类产品类别，指代带集成显卡的处理器类别，而“锐龙XX系列”表示的是具体的AMD Ryzen某个系列的型号。
+4. 因为“apu”泛指一类产品，而目标答案具体是某个锐龙系列，二者指向的实体并不一致。
+5. 没有体现具体系列信息，因此不符合概念上的“语义大致相同或者指向实体一致”的要求。
+6. 根据评分规则，每对回答只能打0分或1分，这里的回答无法对应具体系列，故全部评为0分。
+
+最终评分结果：
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0
+}
+```",锐龙3000系列,apu,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(Interpretation: The response and the target should be roughly semantically the same or refer to the same entity. Word-by-word exact match is not necessary.)
+
+---
+
+**idx_0**  
+- Response: ""5nm""  
+- Target: ""tsmc7nmfinfet""  
+- ""5nm"" vs ""7nm"" - Different technology nodes (5nm vs 7nm)  
+- Different entities too, since target specific to ""tsmc7nmfinfet"" and response is ""5nm"" which is another process node and different from 7nm.  
+- Not semantically equivalent or same entity.  
+- Score: 0
+
+**idx_1**  
+- Response: ""5nm""  
+- Target: ""tsmc6nmfinfet""  
+- Response ""5nm"" and target ""6nm"" (different nodes)  
+- Not semantically same, nodes differ  
+- Score: 0
+
+**idx_2**  
+- Response: ""7nm""  
+- Target: ""tsmc7nmfinfet""  
+- Response states the node number ""7nm"" which matches the ""tsmc7nmfinfet"" (7nm FinFET process from TSMC)  
+- The response indicates the node 7nm, and target is 7nm plus ""tsmc"" branding which is okay according to criteria (entity consistent)  
+- Score: 1
+
+**idx_3**  
+- Response: ""7nm""  
+- Target: ""tsmc7nmfinfet""  
+- Same reasoning as idx_2  
+- Score: 1
+
+**idx_4**  
+- Response: ""12nm""  
+- Target: ""tsmc7nmfinfet""  
+- 12nm vs 7nm different nodes  
+- Not the same or semantically close enough  
+- Score: 0
+
+**idx_5**  
+- Response: ""7nm""  
+- Target: ""tsmc7nmfinfet""  
+- Same as idx_2 and idx_3  
+- Score: 1
+
+**idx_6**  
+- Response: ""14nm""  
+- Target: ""12nmfinfet""  
+- 14nm vs 12nm different nodes (process nodes difference)  
+- Not semantically same or same entity  
+- Score: 0
+
+**idx_7**  
+- Response: ""14nm""  
+- Target: ""14nm""  
+- Exact match, obviously correct.  
+- Score: 1
+
+**idx_8**  
+- Response: ""28nm""  
+- Target: ""14nm""  
+- 28nm different from 14nm  
+- Not matching or semantically close  
+- Score: 0
+
+---
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0
+}
+```
+",tsmc7nmfinfet,12nm,1.0,key_match,0.0,"date not convertable, response: 2018-2019, target: 2019-07-07",2019-07-07,2018-2019,1.0,"Let's analyze each response item by item against the target according to the criterion:
+
+Criterion summary:  
+- The response and the target should be semantically roughly the same or indicate the same entity.  
+- It is not necessary to have word-for-word match but the meaning or the entity pointed to should be the same.
+
+---
+
+### idx_0  
+- Response: ""rdna3""  
+- Target: ""amdradeon™graphics""  
+Analysis:  
+""rdna3"" refers to a GPU architecture generation by AMD. ""amdradeon™graphics"" is a brand name for AMD GPUs (not specifying generation). In some sense, RDNA3 is a subset or a detail under AMG Radeon graphics.  
+Are these semantically similar or pointing to the same entity?  
+- The target is broad (""AMD Radeon graphics"") while response is specific (""RDNA3"")  
+- Since the response is a specific architecture of the general AMD Radeon graphics, it can be considered as roughly the same, or pointing to an entity under the same umbrella.  
+Hence, the response is acceptable as semantically related.  
+Score: 1
+
+---
+
+### idx_1  
+- Response: ""rdna3""  
+- Target: ""amdradeon™680m""  
+Analysis:  
+""amdradeon™680m"" is a specific product or model (an iGPU model in Ryzen chips), while ""RDNA3"" is a GPU architecture.  
+Is RDNA3 directly the same as Radeon 680M? Generally, 680M is based on RDNA2, sometimes RDNA3 depending on the generation. The response ""rdna3"" is a architecture generation, the target is a product line.  
+The response points to the architecture family, the target is a specific model.  
+Are they semantically close enough? Since one is a product name and the other the architecture generational family, which is supposed to contain that product, the response is acceptable.  
+Score: 1
+
+---
+
+### idx_2  
+- Response: ""rdna2""  
+- Target: ""nan""  
+Analysis:  
+Target is ""nan"" (not a number or no information).  
+Response is ""rdna2"". We cannot say if the response is correct or incorrect because target is not informative. But since we must judge based on whether response is semantically close or pointing to the same entity as the target, and here target is ""nan"", there is no entity to match.  
+No direct mismatch.  
+Is the response valid? There is nothing to contradict.  
+Common grading practice when target is missing or nan is either to ignore or accept any response. But not clearly specified here. Since criterion says only compare semantic equivalence or entity pointing. Here no entity to point to.  
+Hence, response cannot be considered correct or incorrect definitively. But since ""nan"" does not state anything, answer is accepted by default?  
+Probably yes (1).  
+Score: 1
+
+---
+
+### idx_3  
+Same as idx_2.  
+Score: 1
+
+---
+
+### idx_4  
+- Response: ""vega12""  
+- Target: ""nan""  
+Same reasoning as idx_2  
+Score: 1
+
+---
+
+### idx_5  
+- Response: ""vega12""  
+- Target: ""nan""  
+Same reasoning  
+Score: 1
+
+---
+
+### idx_6  
+- Response: ""vega11""  
+- Target: ""nan""  
+Score: 1
+
+---
+
+### idx_7  
+- Response: ""vega10""  
+- Target: ""nan""  
+Score: 1
+
+---
+
+### idx_8  
+- Response: ""vega8""  
+- Target: ""nan""  
+Score: 1
+
+---
+
+### Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1
+}
+```
+
+---
+
+No deductions needed given the criterion and data.",nan,vega12,0.0,"number not convertable, response: 12.0, target: None",NULL,12.0,1.0,"exact match, response: 6, target: 6",6,6,1.0,"分析过程：
+
+参考答案均为“zen架构”，即标准答案指的是“zen架构”这一CPU架构名称，要求回答指向“zen架构”即可，语义相同或指向实体一致即得分1。
+
+各响应逐条分析：
+
+- idx_0 : response是“zen4”，这是“zen架构”的第四代，也属于zen架构的范畴，语义指向与参考答案一致，得分1。
+- idx_1 : 同上，response是“zen4”，得分1。
+- idx_2 : response是“zen2”，属于zen架构的一代，也属于zen架构范畴，得分1。
+- idx_3 : 同上，“zen2”，得分1。
+- idx_4 : response是“zen+”，这个也是zen架构的一个版本，指向一致，得分1。
+- idx_5 : 同上，得分1。
+- idx_6 : response是“zen”，即zen架构本身，完全一致，得分1。
+- idx_7 : 同上，得分1。
+- idx_8 : response是“kaveri”，这是AMD的一款APU架构，但不是zen架构，与标准答案指向不同，得分0。
+
+结论：
+除了idx_8得0分，其余均得1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0
+}
+```",zen架构,zen+,0.0,"Let's analyze each idx item according to the criterion:
+
+Criterion: The response should be semantically or referentially consistent with the target. Numbers must match or at least be very close, since the responses are numeric values.
+
+---
+
+**idx_0:**  
+- response: 4.7  
+- target: 2.0  
+- Analysis: The response number 4.7 is not semantically close or equivalent to 2.0. They differ significantly.  
+- Score: 0
+
+**idx_1:**  
+- response: 4.5  
+- target: 3.2  
+- Analysis: The response 4.5 does not match or approximate 3.2 closely. Different values.  
+- Score: 0
+
+**idx_2:**  
+- response: 3.7  
+- target: 3.7  
+- Analysis: The response exactly matches the target.  
+- Score: 1
+
+**idx_3:**  
+- response: 3.7  
+- target: 3.5  
+- Analysis: Response is close to the target, only 0.2 difference; since the criterion allows approximate semantic equivalence, this can be considered consistent.  
+- Score: 1
+
+**idx_4:**  
+- response: nan  
+- target: 3.8  
+- Analysis: Response 'nan' (not a number) does not correspond to 3.8. No equivalence.  
+- Score: 0
+
+**idx_5:**  
+- response: 3.6  
+- target: 3.6  
+- Analysis: Exact match.  
+- Score: 1
+
+**idx_6:**  
+- response: nan  
+- target: 3.6  
+- Analysis: Response 'nan' is not equivalent to 3.6.  
+- Score: 0
+
+**idx_7:**  
+- response: nan  
+- target: 3.6  
+- Analysis: Same as above.  
+- Score: 0
+
+**idx_8:**  
+- response: nan  
+- target: 3.5  
+- Analysis: Same - nan does not correspond to 3.5.  
+- Score: 0
+
+---
+
+Final scores in JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",3.8,nan,1.0,"exact match, response: 12, target: 12",12,12
+,,amd锐龙53600,AMD Ryzen 5 3600,0.0,"number not convertable, response: None, target: 32.0",32.0,NULL,0.0,"exact not match, response: nan, target: 3.0",3.0,nan,0.0,"分析步骤：
+
+1. 参考答案为不同的“锐龙XX系列”，响应答案全部为“apu”。
+2. 评分标准要求语义相同大致或者指向的实体一致才可给1分。
+3. “apu”是一类产品类别，指代带集成显卡的处理器类别，而“锐龙XX系列”表示的是具体的AMD Ryzen某个系列的型号。
+4. 因为“apu”泛指一类产品，而目标答案具体是某个锐龙系列，二者指向的实体并不一致。
+5. 没有体现具体系列信息，因此不符合概念上的“语义大致相同或者指向实体一致”的要求。
+6. 根据评分规则，每对回答只能打0分或1分，这里的回答无法对应具体系列，故全部评为0分。
+
+最终评分结果：
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0
+}
+```",锐龙3000系列,apu,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(Interpretation: The response and the target should be roughly semantically the same or refer to the same entity. Word-by-word exact match is not necessary.)
+
+---
+
+**idx_0**  
+- Response: ""5nm""  
+- Target: ""tsmc7nmfinfet""  
+- ""5nm"" vs ""7nm"" - Different technology nodes (5nm vs 7nm)  
+- Different entities too, since target specific to ""tsmc7nmfinfet"" and response is ""5nm"" which is another process node and different from 7nm.  
+- Not semantically equivalent or same entity.  
+- Score: 0
+
+**idx_1**  
+- Response: ""5nm""  
+- Target: ""tsmc6nmfinfet""  
+- Response ""5nm"" and target ""6nm"" (different nodes)  
+- Not semantically same, nodes differ  
+- Score: 0
+
+**idx_2**  
+- Response: ""7nm""  
+- Target: ""tsmc7nmfinfet""  
+- Response states the node number ""7nm"" which matches the ""tsmc7nmfinfet"" (7nm FinFET process from TSMC)  
+- The response indicates the node 7nm, and target is 7nm plus ""tsmc"" branding which is okay according to criteria (entity consistent)  
+- Score: 1
+
+**idx_3**  
+- Response: ""7nm""  
+- Target: ""tsmc7nmfinfet""  
+- Same reasoning as idx_2  
+- Score: 1
+
+**idx_4**  
+- Response: ""12nm""  
+- Target: ""tsmc7nmfinfet""  
+- 12nm vs 7nm different nodes  
+- Not the same or semantically close enough  
+- Score: 0
+
+**idx_5**  
+- Response: ""7nm""  
+- Target: ""tsmc7nmfinfet""  
+- Same as idx_2 and idx_3  
+- Score: 1
+
+**idx_6**  
+- Response: ""14nm""  
+- Target: ""12nmfinfet""  
+- 14nm vs 12nm different nodes (process nodes difference)  
+- Not semantically same or same entity  
+- Score: 0
+
+**idx_7**  
+- Response: ""14nm""  
+- Target: ""14nm""  
+- Exact match, obviously correct.  
+- Score: 1
+
+**idx_8**  
+- Response: ""28nm""  
+- Target: ""14nm""  
+- 28nm different from 14nm  
+- Not matching or semantically close  
+- Score: 0
+
+---
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0
+}
+```
+",tsmc7nmfinfet,7nm,1.0,key_match,0.0,"date not convertable, response: 2019-2020, target: 2019-07-07",2019-07-07,2019-2020,1.0,"Let's analyze each response item by item against the target according to the criterion:
+
+Criterion summary:  
+- The response and the target should be semantically roughly the same or indicate the same entity.  
+- It is not necessary to have word-for-word match but the meaning or the entity pointed to should be the same.
+
+---
+
+### idx_0  
+- Response: ""rdna3""  
+- Target: ""amdradeon™graphics""  
+Analysis:  
+""rdna3"" refers to a GPU architecture generation by AMD. ""amdradeon™graphics"" is a brand name for AMD GPUs (not specifying generation). In some sense, RDNA3 is a subset or a detail under AMG Radeon graphics.  
+Are these semantically similar or pointing to the same entity?  
+- The target is broad (""AMD Radeon graphics"") while response is specific (""RDNA3"")  
+- Since the response is a specific architecture of the general AMD Radeon graphics, it can be considered as roughly the same, or pointing to an entity under the same umbrella.  
+Hence, the response is acceptable as semantically related.  
+Score: 1
+
+---
+
+### idx_1  
+- Response: ""rdna3""  
+- Target: ""amdradeon™680m""  
+Analysis:  
+""amdradeon™680m"" is a specific product or model (an iGPU model in Ryzen chips), while ""RDNA3"" is a GPU architecture.  
+Is RDNA3 directly the same as Radeon 680M? Generally, 680M is based on RDNA2, sometimes RDNA3 depending on the generation. The response ""rdna3"" is a architecture generation, the target is a product line.  
+The response points to the architecture family, the target is a specific model.  
+Are they semantically close enough? Since one is a product name and the other the architecture generational family, which is supposed to contain that product, the response is acceptable.  
+Score: 1
+
+---
+
+### idx_2  
+- Response: ""rdna2""  
+- Target: ""nan""  
+Analysis:  
+Target is ""nan"" (not a number or no information).  
+Response is ""rdna2"". We cannot say if the response is correct or incorrect because target is not informative. But since we must judge based on whether response is semantically close or pointing to the same entity as the target, and here target is ""nan"", there is no entity to match.  
+No direct mismatch.  
+Is the response valid? There is nothing to contradict.  
+Common grading practice when target is missing or nan is either to ignore or accept any response. But not clearly specified here. Since criterion says only compare semantic equivalence or entity pointing. Here no entity to point to.  
+Hence, response cannot be considered correct or incorrect definitively. But since ""nan"" does not state anything, answer is accepted by default?  
+Probably yes (1).  
+Score: 1
+
+---
+
+### idx_3  
+Same as idx_2.  
+Score: 1
+
+---
+
+### idx_4  
+- Response: ""vega12""  
+- Target: ""nan""  
+Same reasoning as idx_2  
+Score: 1
+
+---
+
+### idx_5  
+- Response: ""vega12""  
+- Target: ""nan""  
+Same reasoning  
+Score: 1
+
+---
+
+### idx_6  
+- Response: ""vega11""  
+- Target: ""nan""  
+Score: 1
+
+---
+
+### idx_7  
+- Response: ""vega10""  
+- Target: ""nan""  
+Score: 1
+
+---
+
+### idx_8  
+- Response: ""vega8""  
+- Target: ""nan""  
+Score: 1
+
+---
+
+### Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1
+}
+```
+
+---
+
+No deductions needed given the criterion and data.",nan,vega12,0.0,"number not convertable, response: 12.0, target: None",NULL,12.0,1.0,"exact match, response: 6, target: 6",6,6,1.0,"分析过程：
+
+参考答案均为“zen架构”，即标准答案指的是“zen架构”这一CPU架构名称，要求回答指向“zen架构”即可，语义相同或指向实体一致即得分1。
+
+各响应逐条分析：
+
+- idx_0 : response是“zen4”，这是“zen架构”的第四代，也属于zen架构的范畴，语义指向与参考答案一致，得分1。
+- idx_1 : 同上，response是“zen4”，得分1。
+- idx_2 : response是“zen2”，属于zen架构的一代，也属于zen架构范畴，得分1。
+- idx_3 : 同上，“zen2”，得分1。
+- idx_4 : response是“zen+”，这个也是zen架构的一个版本，指向一致，得分1。
+- idx_5 : 同上，得分1。
+- idx_6 : response是“zen”，即zen架构本身，完全一致，得分1。
+- idx_7 : 同上，得分1。
+- idx_8 : response是“kaveri”，这是AMD的一款APU架构，但不是zen架构，与标准答案指向不同，得分0。
+
+结论：
+除了idx_8得0分，其余均得1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0
+}
+```",zen架构,zen+,1.0,"Let's analyze each idx item according to the criterion:
+
+Criterion: The response should be semantically or referentially consistent with the target. Numbers must match or at least be very close, since the responses are numeric values.
+
+---
+
+**idx_0:**  
+- response: 4.7  
+- target: 2.0  
+- Analysis: The response number 4.7 is not semantically close or equivalent to 2.0. They differ significantly.  
+- Score: 0
+
+**idx_1:**  
+- response: 4.5  
+- target: 3.2  
+- Analysis: The response 4.5 does not match or approximate 3.2 closely. Different values.  
+- Score: 0
+
+**idx_2:**  
+- response: 3.7  
+- target: 3.7  
+- Analysis: The response exactly matches the target.  
+- Score: 1
+
+**idx_3:**  
+- response: 3.7  
+- target: 3.5  
+- Analysis: Response is close to the target, only 0.2 difference; since the criterion allows approximate semantic equivalence, this can be considered consistent.  
+- Score: 1
+
+**idx_4:**  
+- response: nan  
+- target: 3.8  
+- Analysis: Response 'nan' (not a number) does not correspond to 3.8. No equivalence.  
+- Score: 0
+
+**idx_5:**  
+- response: 3.6  
+- target: 3.6  
+- Analysis: Exact match.  
+- Score: 1
+
+**idx_6:**  
+- response: nan  
+- target: 3.6  
+- Analysis: Response 'nan' is not equivalent to 3.6.  
+- Score: 0
+
+**idx_7:**  
+- response: nan  
+- target: 3.6  
+- Analysis: Same as above.  
+- Score: 0
+
+**idx_8:**  
+- response: nan  
+- target: 3.5  
+- Analysis: Same - nan does not correspond to 3.5.  
+- Score: 0
+
+---
+
+Final scores in JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",3.6,3.6,1.0,"exact match, response: 12, target: 12",12,12
+,,amd锐龙52600x,AMD Ryzen 5 2600X,0.0,"number not convertable, response: None, target: 16.0",16.0,NULL,0.0,"exact not match, response: nan, target: 3.0",3.0,nan,0.0,"分析步骤：
+
+1. 参考答案为不同的“锐龙XX系列”，响应答案全部为“apu”。
+2. 评分标准要求语义相同大致或者指向的实体一致才可给1分。
+3. “apu”是一类产品类别，指代带集成显卡的处理器类别，而“锐龙XX系列”表示的是具体的AMD Ryzen某个系列的型号。
+4. 因为“apu”泛指一类产品，而目标答案具体是某个锐龙系列，二者指向的实体并不一致。
+5. 没有体现具体系列信息，因此不符合概念上的“语义大致相同或者指向实体一致”的要求。
+6. 根据评分规则，每对回答只能打0分或1分，这里的回答无法对应具体系列，故全部评为0分。
+
+最终评分结果：
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0
+}
+```",锐龙2000系列,apu,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(Interpretation: The response and the target should be roughly semantically the same or refer to the same entity. Word-by-word exact match is not necessary.)
+
+---
+
+**idx_0**  
+- Response: ""5nm""  
+- Target: ""tsmc7nmfinfet""  
+- ""5nm"" vs ""7nm"" - Different technology nodes (5nm vs 7nm)  
+- Different entities too, since target specific to ""tsmc7nmfinfet"" and response is ""5nm"" which is another process node and different from 7nm.  
+- Not semantically equivalent or same entity.  
+- Score: 0
+
+**idx_1**  
+- Response: ""5nm""  
+- Target: ""tsmc6nmfinfet""  
+- Response ""5nm"" and target ""6nm"" (different nodes)  
+- Not semantically same, nodes differ  
+- Score: 0
+
+**idx_2**  
+- Response: ""7nm""  
+- Target: ""tsmc7nmfinfet""  
+- Response states the node number ""7nm"" which matches the ""tsmc7nmfinfet"" (7nm FinFET process from TSMC)  
+- The response indicates the node 7nm, and target is 7nm plus ""tsmc"" branding which is okay according to criteria (entity consistent)  
+- Score: 1
+
+**idx_3**  
+- Response: ""7nm""  
+- Target: ""tsmc7nmfinfet""  
+- Same reasoning as idx_2  
+- Score: 1
+
+**idx_4**  
+- Response: ""12nm""  
+- Target: ""tsmc7nmfinfet""  
+- 12nm vs 7nm different nodes  
+- Not the same or semantically close enough  
+- Score: 0
+
+**idx_5**  
+- Response: ""7nm""  
+- Target: ""tsmc7nmfinfet""  
+- Same as idx_2 and idx_3  
+- Score: 1
+
+**idx_6**  
+- Response: ""14nm""  
+- Target: ""12nmfinfet""  
+- 14nm vs 12nm different nodes (process nodes difference)  
+- Not semantically same or same entity  
+- Score: 0
+
+**idx_7**  
+- Response: ""14nm""  
+- Target: ""14nm""  
+- Exact match, obviously correct.  
+- Score: 1
+
+**idx_8**  
+- Response: ""28nm""  
+- Target: ""14nm""  
+- 28nm different from 14nm  
+- Not matching or semantically close  
+- Score: 0
+
+---
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0
+}
+```
+",12nmfinfet,14nm,1.0,key_match,0.0,"date not convertable, response: 2017-2018, target: 2018-04-19",2018-04-19,2017-2018,1.0,"Let's analyze each response item by item against the target according to the criterion:
+
+Criterion summary:  
+- The response and the target should be semantically roughly the same or indicate the same entity.  
+- It is not necessary to have word-for-word match but the meaning or the entity pointed to should be the same.
+
+---
+
+### idx_0  
+- Response: ""rdna3""  
+- Target: ""amdradeon™graphics""  
+Analysis:  
+""rdna3"" refers to a GPU architecture generation by AMD. ""amdradeon™graphics"" is a brand name for AMD GPUs (not specifying generation). In some sense, RDNA3 is a subset or a detail under AMG Radeon graphics.  
+Are these semantically similar or pointing to the same entity?  
+- The target is broad (""AMD Radeon graphics"") while response is specific (""RDNA3"")  
+- Since the response is a specific architecture of the general AMD Radeon graphics, it can be considered as roughly the same, or pointing to an entity under the same umbrella.  
+Hence, the response is acceptable as semantically related.  
+Score: 1
+
+---
+
+### idx_1  
+- Response: ""rdna3""  
+- Target: ""amdradeon™680m""  
+Analysis:  
+""amdradeon™680m"" is a specific product or model (an iGPU model in Ryzen chips), while ""RDNA3"" is a GPU architecture.  
+Is RDNA3 directly the same as Radeon 680M? Generally, 680M is based on RDNA2, sometimes RDNA3 depending on the generation. The response ""rdna3"" is a architecture generation, the target is a product line.  
+The response points to the architecture family, the target is a specific model.  
+Are they semantically close enough? Since one is a product name and the other the architecture generational family, which is supposed to contain that product, the response is acceptable.  
+Score: 1
+
+---
+
+### idx_2  
+- Response: ""rdna2""  
+- Target: ""nan""  
+Analysis:  
+Target is ""nan"" (not a number or no information).  
+Response is ""rdna2"". We cannot say if the response is correct or incorrect because target is not informative. But since we must judge based on whether response is semantically close or pointing to the same entity as the target, and here target is ""nan"", there is no entity to match.  
+No direct mismatch.  
+Is the response valid? There is nothing to contradict.  
+Common grading practice when target is missing or nan is either to ignore or accept any response. But not clearly specified here. Since criterion says only compare semantic equivalence or entity pointing. Here no entity to point to.  
+Hence, response cannot be considered correct or incorrect definitively. But since ""nan"" does not state anything, answer is accepted by default?  
+Probably yes (1).  
+Score: 1
+
+---
+
+### idx_3  
+Same as idx_2.  
+Score: 1
+
+---
+
+### idx_4  
+- Response: ""vega12""  
+- Target: ""nan""  
+Same reasoning as idx_2  
+Score: 1
+
+---
+
+### idx_5  
+- Response: ""vega12""  
+- Target: ""nan""  
+Same reasoning  
+Score: 1
+
+---
+
+### idx_6  
+- Response: ""vega11""  
+- Target: ""nan""  
+Score: 1
+
+---
+
+### idx_7  
+- Response: ""vega10""  
+- Target: ""nan""  
+Score: 1
+
+---
+
+### idx_8  
+- Response: ""vega8""  
+- Target: ""nan""  
+Score: 1
+
+---
+
+### Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1
+}
+```
+
+---
+
+No deductions needed given the criterion and data.",nan,vega11,0.0,"number not convertable, response: 11.0, target: None",NULL,11.0,1.0,"exact match, response: 6, target: 6",6,6,1.0,"分析过程：
+
+参考答案均为“zen架构”，即标准答案指的是“zen架构”这一CPU架构名称，要求回答指向“zen架构”即可，语义相同或指向实体一致即得分1。
+
+各响应逐条分析：
+
+- idx_0 : response是“zen4”，这是“zen架构”的第四代，也属于zen架构的范畴，语义指向与参考答案一致，得分1。
+- idx_1 : 同上，response是“zen4”，得分1。
+- idx_2 : response是“zen2”，属于zen架构的一代，也属于zen架构范畴，得分1。
+- idx_3 : 同上，“zen2”，得分1。
+- idx_4 : response是“zen+”，这个也是zen架构的一个版本，指向一致，得分1。
+- idx_5 : 同上，得分1。
+- idx_6 : response是“zen”，即zen架构本身，完全一致，得分1。
+- idx_7 : 同上，得分1。
+- idx_8 : response是“kaveri”，这是AMD的一款APU架构，但不是zen架构，与标准答案指向不同，得分0。
+
+结论：
+除了idx_8得0分，其余均得1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0
+}
+```",zen架构,zen,0.0,"Let's analyze each idx item according to the criterion:
+
+Criterion: The response should be semantically or referentially consistent with the target. Numbers must match or at least be very close, since the responses are numeric values.
+
+---
+
+**idx_0:**  
+- response: 4.7  
+- target: 2.0  
+- Analysis: The response number 4.7 is not semantically close or equivalent to 2.0. They differ significantly.  
+- Score: 0
+
+**idx_1:**  
+- response: 4.5  
+- target: 3.2  
+- Analysis: The response 4.5 does not match or approximate 3.2 closely. Different values.  
+- Score: 0
+
+**idx_2:**  
+- response: 3.7  
+- target: 3.7  
+- Analysis: The response exactly matches the target.  
+- Score: 1
+
+**idx_3:**  
+- response: 3.7  
+- target: 3.5  
+- Analysis: Response is close to the target, only 0.2 difference; since the criterion allows approximate semantic equivalence, this can be considered consistent.  
+- Score: 1
+
+**idx_4:**  
+- response: nan  
+- target: 3.8  
+- Analysis: Response 'nan' (not a number) does not correspond to 3.8. No equivalence.  
+- Score: 0
+
+**idx_5:**  
+- response: 3.6  
+- target: 3.6  
+- Analysis: Exact match.  
+- Score: 1
+
+**idx_6:**  
+- response: nan  
+- target: 3.6  
+- Analysis: Response 'nan' is not equivalent to 3.6.  
+- Score: 0
+
+**idx_7:**  
+- response: nan  
+- target: 3.6  
+- Analysis: Same as above.  
+- Score: 0
+
+**idx_8:**  
+- response: nan  
+- target: 3.5  
+- Analysis: Same - nan does not correspond to 3.5.  
+- Score: 0
+
+---
+
+Final scores in JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",3.6,nan,1.0,"exact match, response: 12, target: 12",12,12
+,,amd锐龙51600x,AMD Ryzen 5 1600X,0.0,"number not convertable, response: None, target: 16.0",16.0,NULL,0.0,"exact not match, response: nan, target: 3.0",3.0,nan,0.0,"分析步骤：
+
+1. 参考答案为不同的“锐龙XX系列”，响应答案全部为“apu”。
+2. 评分标准要求语义相同大致或者指向的实体一致才可给1分。
+3. “apu”是一类产品类别，指代带集成显卡的处理器类别，而“锐龙XX系列”表示的是具体的AMD Ryzen某个系列的型号。
+4. 因为“apu”泛指一类产品，而目标答案具体是某个锐龙系列，二者指向的实体并不一致。
+5. 没有体现具体系列信息，因此不符合概念上的“语义大致相同或者指向实体一致”的要求。
+6. 根据评分规则，每对回答只能打0分或1分，这里的回答无法对应具体系列，故全部评为0分。
+
+最终评分结果：
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0
+}
+```",锐龙1000系列,apu,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(Interpretation: The response and the target should be roughly semantically the same or refer to the same entity. Word-by-word exact match is not necessary.)
+
+---
+
+**idx_0**  
+- Response: ""5nm""  
+- Target: ""tsmc7nmfinfet""  
+- ""5nm"" vs ""7nm"" - Different technology nodes (5nm vs 7nm)  
+- Different entities too, since target specific to ""tsmc7nmfinfet"" and response is ""5nm"" which is another process node and different from 7nm.  
+- Not semantically equivalent or same entity.  
+- Score: 0
+
+**idx_1**  
+- Response: ""5nm""  
+- Target: ""tsmc6nmfinfet""  
+- Response ""5nm"" and target ""6nm"" (different nodes)  
+- Not semantically same, nodes differ  
+- Score: 0
+
+**idx_2**  
+- Response: ""7nm""  
+- Target: ""tsmc7nmfinfet""  
+- Response states the node number ""7nm"" which matches the ""tsmc7nmfinfet"" (7nm FinFET process from TSMC)  
+- The response indicates the node 7nm, and target is 7nm plus ""tsmc"" branding which is okay according to criteria (entity consistent)  
+- Score: 1
+
+**idx_3**  
+- Response: ""7nm""  
+- Target: ""tsmc7nmfinfet""  
+- Same reasoning as idx_2  
+- Score: 1
+
+**idx_4**  
+- Response: ""12nm""  
+- Target: ""tsmc7nmfinfet""  
+- 12nm vs 7nm different nodes  
+- Not the same or semantically close enough  
+- Score: 0
+
+**idx_5**  
+- Response: ""7nm""  
+- Target: ""tsmc7nmfinfet""  
+- Same as idx_2 and idx_3  
+- Score: 1
+
+**idx_6**  
+- Response: ""14nm""  
+- Target: ""12nmfinfet""  
+- 14nm vs 12nm different nodes (process nodes difference)  
+- Not semantically same or same entity  
+- Score: 0
+
+**idx_7**  
+- Response: ""14nm""  
+- Target: ""14nm""  
+- Exact match, obviously correct.  
+- Score: 1
+
+**idx_8**  
+- Response: ""28nm""  
+- Target: ""14nm""  
+- 28nm different from 14nm  
+- Not matching or semantically close  
+- Score: 0
+
+---
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0
+}
+```
+",14nm,14nm,1.0,key_match,0.0,"date not convertable, response: 2016-2017, target: 2017-04-11",2017-04-11,2016-2017,1.0,"Let's analyze each response item by item against the target according to the criterion:
+
+Criterion summary:  
+- The response and the target should be semantically roughly the same or indicate the same entity.  
+- It is not necessary to have word-for-word match but the meaning or the entity pointed to should be the same.
+
+---
+
+### idx_0  
+- Response: ""rdna3""  
+- Target: ""amdradeon™graphics""  
+Analysis:  
+""rdna3"" refers to a GPU architecture generation by AMD. ""amdradeon™graphics"" is a brand name for AMD GPUs (not specifying generation). In some sense, RDNA3 is a subset or a detail under AMG Radeon graphics.  
+Are these semantically similar or pointing to the same entity?  
+- The target is broad (""AMD Radeon graphics"") while response is specific (""RDNA3"")  
+- Since the response is a specific architecture of the general AMD Radeon graphics, it can be considered as roughly the same, or pointing to an entity under the same umbrella.  
+Hence, the response is acceptable as semantically related.  
+Score: 1
+
+---
+
+### idx_1  
+- Response: ""rdna3""  
+- Target: ""amdradeon™680m""  
+Analysis:  
+""amdradeon™680m"" is a specific product or model (an iGPU model in Ryzen chips), while ""RDNA3"" is a GPU architecture.  
+Is RDNA3 directly the same as Radeon 680M? Generally, 680M is based on RDNA2, sometimes RDNA3 depending on the generation. The response ""rdna3"" is a architecture generation, the target is a product line.  
+The response points to the architecture family, the target is a specific model.  
+Are they semantically close enough? Since one is a product name and the other the architecture generational family, which is supposed to contain that product, the response is acceptable.  
+Score: 1
+
+---
+
+### idx_2  
+- Response: ""rdna2""  
+- Target: ""nan""  
+Analysis:  
+Target is ""nan"" (not a number or no information).  
+Response is ""rdna2"". We cannot say if the response is correct or incorrect because target is not informative. But since we must judge based on whether response is semantically close or pointing to the same entity as the target, and here target is ""nan"", there is no entity to match.  
+No direct mismatch.  
+Is the response valid? There is nothing to contradict.  
+Common grading practice when target is missing or nan is either to ignore or accept any response. But not clearly specified here. Since criterion says only compare semantic equivalence or entity pointing. Here no entity to point to.  
+Hence, response cannot be considered correct or incorrect definitively. But since ""nan"" does not state anything, answer is accepted by default?  
+Probably yes (1).  
+Score: 1
+
+---
+
+### idx_3  
+Same as idx_2.  
+Score: 1
+
+---
+
+### idx_4  
+- Response: ""vega12""  
+- Target: ""nan""  
+Same reasoning as idx_2  
+Score: 1
+
+---
+
+### idx_5  
+- Response: ""vega12""  
+- Target: ""nan""  
+Same reasoning  
+Score: 1
+
+---
+
+### idx_6  
+- Response: ""vega11""  
+- Target: ""nan""  
+Score: 1
+
+---
+
+### idx_7  
+- Response: ""vega10""  
+- Target: ""nan""  
+Score: 1
+
+---
+
+### idx_8  
+- Response: ""vega8""  
+- Target: ""nan""  
+Score: 1
+
+---
+
+### Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1
+}
+```
+
+---
+
+No deductions needed given the criterion and data.",nan,vega10,0.0,"number not convertable, response: 10.0, target: None",NULL,10.0,1.0,"exact match, response: 6, target: 6",6,6,1.0,"分析过程：
+
+参考答案均为“zen架构”，即标准答案指的是“zen架构”这一CPU架构名称，要求回答指向“zen架构”即可，语义相同或指向实体一致即得分1。
+
+各响应逐条分析：
+
+- idx_0 : response是“zen4”，这是“zen架构”的第四代，也属于zen架构的范畴，语义指向与参考答案一致，得分1。
+- idx_1 : 同上，response是“zen4”，得分1。
+- idx_2 : response是“zen2”，属于zen架构的一代，也属于zen架构范畴，得分1。
+- idx_3 : 同上，“zen2”，得分1。
+- idx_4 : response是“zen+”，这个也是zen架构的一个版本，指向一致，得分1。
+- idx_5 : 同上，得分1。
+- idx_6 : response是“zen”，即zen架构本身，完全一致，得分1。
+- idx_7 : 同上，得分1。
+- idx_8 : response是“kaveri”，这是AMD的一款APU架构，但不是zen架构，与标准答案指向不同，得分0。
+
+结论：
+除了idx_8得0分，其余均得1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0
+}
+```",zen架构,zen,0.0,"Let's analyze each idx item according to the criterion:
+
+Criterion: The response should be semantically or referentially consistent with the target. Numbers must match or at least be very close, since the responses are numeric values.
+
+---
+
+**idx_0:**  
+- response: 4.7  
+- target: 2.0  
+- Analysis: The response number 4.7 is not semantically close or equivalent to 2.0. They differ significantly.  
+- Score: 0
+
+**idx_1:**  
+- response: 4.5  
+- target: 3.2  
+- Analysis: The response 4.5 does not match or approximate 3.2 closely. Different values.  
+- Score: 0
+
+**idx_2:**  
+- response: 3.7  
+- target: 3.7  
+- Analysis: The response exactly matches the target.  
+- Score: 1
+
+**idx_3:**  
+- response: 3.7  
+- target: 3.5  
+- Analysis: Response is close to the target, only 0.2 difference; since the criterion allows approximate semantic equivalence, this can be considered consistent.  
+- Score: 1
+
+**idx_4:**  
+- response: nan  
+- target: 3.8  
+- Analysis: Response 'nan' (not a number) does not correspond to 3.8. No equivalence.  
+- Score: 0
+
+**idx_5:**  
+- response: 3.6  
+- target: 3.6  
+- Analysis: Exact match.  
+- Score: 1
+
+**idx_6:**  
+- response: nan  
+- target: 3.6  
+- Analysis: Response 'nan' is not equivalent to 3.6.  
+- Score: 0
+
+**idx_7:**  
+- response: nan  
+- target: 3.6  
+- Analysis: Same as above.  
+- Score: 0
+
+**idx_8:**  
+- response: nan  
+- target: 3.5  
+- Analysis: Same - nan does not correspond to 3.5.  
+- Score: 0
+
+---
+
+Final scores in JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",3.6,nan,0.0,"exact not match, response: 6, target: 12",12,6
+,,amd锐龙51500x,AMD Ryzen 5 1500X,0.0,"number not convertable, response: None, target: 16.0",16.0,NULL,0.0,"exact not match, response: nan, target: 2.0",2.0,nan,0.0,"分析步骤：
+
+1. 参考答案为不同的“锐龙XX系列”，响应答案全部为“apu”。
+2. 评分标准要求语义相同大致或者指向的实体一致才可给1分。
+3. “apu”是一类产品类别，指代带集成显卡的处理器类别，而“锐龙XX系列”表示的是具体的AMD Ryzen某个系列的型号。
+4. 因为“apu”泛指一类产品，而目标答案具体是某个锐龙系列，二者指向的实体并不一致。
+5. 没有体现具体系列信息，因此不符合概念上的“语义大致相同或者指向实体一致”的要求。
+6. 根据评分规则，每对回答只能打0分或1分，这里的回答无法对应具体系列，故全部评为0分。
+
+最终评分结果：
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0
+}
+```",锐龙1000系列,apu,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(Interpretation: The response and the target should be roughly semantically the same or refer to the same entity. Word-by-word exact match is not necessary.)
+
+---
+
+**idx_0**  
+- Response: ""5nm""  
+- Target: ""tsmc7nmfinfet""  
+- ""5nm"" vs ""7nm"" - Different technology nodes (5nm vs 7nm)  
+- Different entities too, since target specific to ""tsmc7nmfinfet"" and response is ""5nm"" which is another process node and different from 7nm.  
+- Not semantically equivalent or same entity.  
+- Score: 0
+
+**idx_1**  
+- Response: ""5nm""  
+- Target: ""tsmc6nmfinfet""  
+- Response ""5nm"" and target ""6nm"" (different nodes)  
+- Not semantically same, nodes differ  
+- Score: 0
+
+**idx_2**  
+- Response: ""7nm""  
+- Target: ""tsmc7nmfinfet""  
+- Response states the node number ""7nm"" which matches the ""tsmc7nmfinfet"" (7nm FinFET process from TSMC)  
+- The response indicates the node 7nm, and target is 7nm plus ""tsmc"" branding which is okay according to criteria (entity consistent)  
+- Score: 1
+
+**idx_3**  
+- Response: ""7nm""  
+- Target: ""tsmc7nmfinfet""  
+- Same reasoning as idx_2  
+- Score: 1
+
+**idx_4**  
+- Response: ""12nm""  
+- Target: ""tsmc7nmfinfet""  
+- 12nm vs 7nm different nodes  
+- Not the same or semantically close enough  
+- Score: 0
+
+**idx_5**  
+- Response: ""7nm""  
+- Target: ""tsmc7nmfinfet""  
+- Same as idx_2 and idx_3  
+- Score: 1
+
+**idx_6**  
+- Response: ""14nm""  
+- Target: ""12nmfinfet""  
+- 14nm vs 12nm different nodes (process nodes difference)  
+- Not semantically same or same entity  
+- Score: 0
+
+**idx_7**  
+- Response: ""14nm""  
+- Target: ""14nm""  
+- Exact match, obviously correct.  
+- Score: 1
+
+**idx_8**  
+- Response: ""28nm""  
+- Target: ""14nm""  
+- 28nm different from 14nm  
+- Not matching or semantically close  
+- Score: 0
+
+---
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0
+}
+```
+",14nm,28nm,1.0,key_match,0.0,"date not convertable, response: 2012-2016, target: 2017-04-11",2017-04-11,2012-2016,1.0,"Let's analyze each response item by item against the target according to the criterion:
+
+Criterion summary:  
+- The response and the target should be semantically roughly the same or indicate the same entity.  
+- It is not necessary to have word-for-word match but the meaning or the entity pointed to should be the same.
+
+---
+
+### idx_0  
+- Response: ""rdna3""  
+- Target: ""amdradeon™graphics""  
+Analysis:  
+""rdna3"" refers to a GPU architecture generation by AMD. ""amdradeon™graphics"" is a brand name for AMD GPUs (not specifying generation). In some sense, RDNA3 is a subset or a detail under AMG Radeon graphics.  
+Are these semantically similar or pointing to the same entity?  
+- The target is broad (""AMD Radeon graphics"") while response is specific (""RDNA3"")  
+- Since the response is a specific architecture of the general AMD Radeon graphics, it can be considered as roughly the same, or pointing to an entity under the same umbrella.  
+Hence, the response is acceptable as semantically related.  
+Score: 1
+
+---
+
+### idx_1  
+- Response: ""rdna3""  
+- Target: ""amdradeon™680m""  
+Analysis:  
+""amdradeon™680m"" is a specific product or model (an iGPU model in Ryzen chips), while ""RDNA3"" is a GPU architecture.  
+Is RDNA3 directly the same as Radeon 680M? Generally, 680M is based on RDNA2, sometimes RDNA3 depending on the generation. The response ""rdna3"" is a architecture generation, the target is a product line.  
+The response points to the architecture family, the target is a specific model.  
+Are they semantically close enough? Since one is a product name and the other the architecture generational family, which is supposed to contain that product, the response is acceptable.  
+Score: 1
+
+---
+
+### idx_2  
+- Response: ""rdna2""  
+- Target: ""nan""  
+Analysis:  
+Target is ""nan"" (not a number or no information).  
+Response is ""rdna2"". We cannot say if the response is correct or incorrect because target is not informative. But since we must judge based on whether response is semantically close or pointing to the same entity as the target, and here target is ""nan"", there is no entity to match.  
+No direct mismatch.  
+Is the response valid? There is nothing to contradict.  
+Common grading practice when target is missing or nan is either to ignore or accept any response. But not clearly specified here. Since criterion says only compare semantic equivalence or entity pointing. Here no entity to point to.  
+Hence, response cannot be considered correct or incorrect definitively. But since ""nan"" does not state anything, answer is accepted by default?  
+Probably yes (1).  
+Score: 1
+
+---
+
+### idx_3  
+Same as idx_2.  
+Score: 1
+
+---
+
+### idx_4  
+- Response: ""vega12""  
+- Target: ""nan""  
+Same reasoning as idx_2  
+Score: 1
+
+---
+
+### idx_5  
+- Response: ""vega12""  
+- Target: ""nan""  
+Same reasoning  
+Score: 1
+
+---
+
+### idx_6  
+- Response: ""vega11""  
+- Target: ""nan""  
+Score: 1
+
+---
+
+### idx_7  
+- Response: ""vega10""  
+- Target: ""nan""  
+Score: 1
+
+---
+
+### idx_8  
+- Response: ""vega8""  
+- Target: ""nan""  
+Score: 1
+
+---
+
+### Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1
+}
+```
+
+---
+
+No deductions needed given the criterion and data.",nan,vega8,0.0,"number not convertable, response: 8.0, target: None",NULL,8.0,0.0,"exact not match, response: 6, target: 4",4,6,0.0,"分析过程：
+
+参考答案均为“zen架构”，即标准答案指的是“zen架构”这一CPU架构名称，要求回答指向“zen架构”即可，语义相同或指向实体一致即得分1。
+
+各响应逐条分析：
+
+- idx_0 : response是“zen4”，这是“zen架构”的第四代，也属于zen架构的范畴，语义指向与参考答案一致，得分1。
+- idx_1 : 同上，response是“zen4”，得分1。
+- idx_2 : response是“zen2”，属于zen架构的一代，也属于zen架构范畴，得分1。
+- idx_3 : 同上，“zen2”，得分1。
+- idx_4 : response是“zen+”，这个也是zen架构的一个版本，指向一致，得分1。
+- idx_5 : 同上，得分1。
+- idx_6 : response是“zen”，即zen架构本身，完全一致，得分1。
+- idx_7 : 同上，得分1。
+- idx_8 : response是“kaveri”，这是AMD的一款APU架构，但不是zen架构，与标准答案指向不同，得分0。
+
+结论：
+除了idx_8得0分，其余均得1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0
+}
+```",zen架构,kaveri,0.0,"Let's analyze each idx item according to the criterion:
+
+Criterion: The response should be semantically or referentially consistent with the target. Numbers must match or at least be very close, since the responses are numeric values.
+
+---
+
+**idx_0:**  
+- response: 4.7  
+- target: 2.0  
+- Analysis: The response number 4.7 is not semantically close or equivalent to 2.0. They differ significantly.  
+- Score: 0
+
+**idx_1:**  
+- response: 4.5  
+- target: 3.2  
+- Analysis: The response 4.5 does not match or approximate 3.2 closely. Different values.  
+- Score: 0
+
+**idx_2:**  
+- response: 3.7  
+- target: 3.7  
+- Analysis: The response exactly matches the target.  
+- Score: 1
+
+**idx_3:**  
+- response: 3.7  
+- target: 3.5  
+- Analysis: Response is close to the target, only 0.2 difference; since the criterion allows approximate semantic equivalence, this can be considered consistent.  
+- Score: 1
+
+**idx_4:**  
+- response: nan  
+- target: 3.8  
+- Analysis: Response 'nan' (not a number) does not correspond to 3.8. No equivalence.  
+- Score: 0
+
+**idx_5:**  
+- response: 3.6  
+- target: 3.6  
+- Analysis: Exact match.  
+- Score: 1
+
+**idx_6:**  
+- response: nan  
+- target: 3.6  
+- Analysis: Response 'nan' is not equivalent to 3.6.  
+- Score: 0
+
+**idx_7:**  
+- response: nan  
+- target: 3.6  
+- Analysis: Same as above.  
+- Score: 0
+
+**idx_8:**  
+- response: nan  
+- target: 3.5  
+- Analysis: Same - nan does not correspond to 3.5.  
+- Score: 0
+
+---
+
+Final scores in JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",3.5,nan,0.0,"exact not match, response: 6, target: 8",8,6
+1.0,,7thgenamdathlon™x4940,,,,NULL,,,,2.0,,,,athlonx4,,,,28nm,,,,,,2017-07-27,,,,nan,,,,NULL,,,,4,,,,zen架构,,,,3.2,,,,4,
+1.0,,7thgenamdathlon™x4950,,,,NULL,,,,2.0,,,,athlonx4,,,,28nm,,,,,,2017-07-27,,,,nan,,,,NULL,,,,4,,,,zen架构,,,,3.5,,,,4,
+1.0,,7thgenamdathlon™x4970,,,,NULL,,,,2.0,,,,athlonx4,,,,28nm,,,,,,2017-07-27,,,,nan,,,,NULL,,,,4,,,,zen架构,,,,3.8,,,,4,
+1.0,,amd3015ce,,,,4.0,,,,1.0,,,,amd3000series,,,,14nm,,,,,,2021-04-29,,,,radeon™graphics,,,,3.0,,,,2,,,,zen架构,,,,1.2,,,,4,
+1.0,,amd3015e,,,,4.0,,,,1.0,,,,amd3000series,,,,14nm,,,,,,2020-07-06,,,,amdradeon™graphics,,,,3.0,,,,2,,,,zen架构,,,,1.2,,,,4,
+1.0,,amd3020e,,,,4.0,,,,1.0,,,,amd3000series,,,,14nm,,,,,,2020-01-06,,,,amdradeon™graphics,,,,3.0,,,,2,,,,zen架构,,,,1.2,,,,2,
+1.0,,amdathlon™200ge,,,,4.0,,,,1.0,,,,athlon200series,,,,14nm,,,,,,2018-12-21,,,,radeon™vega3graphics,,,,3.0,,,,2,,,,zen架构,,,,3.2,,,,4,
+1.0,,amdathlon™220ge,,,,4.0,,,,1.0,,,,athlon200series,,,,14nm,,,,,,2018-12-21,,,,radeon™vega3graphics,,,,3.0,,,,2,,,,zen架构,,,,3.4,,,,4,
+1.0,,amdathlon™240ge,,,,4.0,,,,1.0,,,,athlon200series,,,,14nm,,,,,,2018-12-21,,,,radeon™vega3graphics,,,,3.0,,,,2,,,,zen架构,,,,3.5,,,,4,
+1.0,,amdathlon™3000g,,,,4.0,,,,1.0,,,,athlon3000series,,,,14nm,,,,,,2019-11-19,,,,radeon™vega3graphics,,,,3.0,,,,2,,,,zen架构,,,,3.5,,,,4,
+1.0,,amdathlon™300ge,,,,4.0,,,,1.0,,,,athlon300series,,,,14nm,,,,,,2019-07-07,,,,radeon™vega3graphics,,,,3.0,,,,2,,,,zen架构,,,,3.4,,,,4,
+1.0,,amdathlon™300u,,,,4.0,,,,1.0,,,,athlon300series,,,,14nm,,,,,,2019-01-06,,,,radeon™vega3graphics,,,,3.0,,,,2,,,,zen架构,,,,2.4,,,,4,
+1.0,,amdathlon™320ge,,,,4.0,,,,1.0,,,,athlon300series,,,,14nmfinfet,,,,,,2019-07-07,,,,radeon™vega3graphics,,,,3.0,,,,2,,,,zen架构,,,,3.5,,,,4,
+1.0,,amdathlon™gold3150c,,,,4.0,,,,1.0,,,,athlon3000series,,,,14nm,,,,,,2020-09-22,,,,amdradeon™graphics,,,,3.0,,,,2,,,,zen架构,,,,2.4,,,,4,
+1.0,,amdathlon™gold3150g(oemonly),,,,4.0,,,,2.0,,,,athlon3000series,,,,12nm,,,,,,2020-07-21,,,,radeon™graphics,,,,3.0,,,,4,,,,zen架构,,,,3.5,,,,4,
+1.0,,amdathlon™gold3150ge(oemonly),,,,4.0,,,,2.0,,,,athlon3000series,,,,12nm,,,,,,2020-07-21,,,,radeon™graphics,,,,3.0,,,,4,,,,zen架构,,,,3.3,,,,4,
+1.0,,amdathlon™gold3150u,,,,4.0,,,,1.0,,,,athlon3000series,,,,14nm,,,,,,2020-01-06,,,,amdradeon™graphics,,,,3.0,,,,2,,,,zen架构,,,,2.4,,,,4,
+1.0,,amdathlon™gold7220c,,,,2.0,,,,1.0,,,,athlon7000series,,,,tsmc6nmfinfet,,,,,,2023-05-01,,,,amdradeon™610m,,,,2.0,,,,2,,,,zen架构,,,,2.4,,,,4,
+1.0,,amdathlon™gold7220u,,,,4.0,,,,1.0,,,,athlon7000series,,,,tsmc6nmfinfet,,,,,,2022-09-20,,,,amdradeon™610m,,,,2.0,,,,2,,,,zen架构,,,,2.4,,,,4,
+1.0,,amdathlon™goldpro3150g,,,,4.0,,,,2.0,,,,athlonpro3000series,,,,12nm,,,,,,2020-07-21,,,,radeon™graphics,,,,3.0,,,,4,,,,zen架构,,,,3.5,,,,4,
+1.0,,amdathlon™goldpro3150ge,,,,4.0,,,,2.0,,,,athlonpro3000series,,,,12nm,,,,,,2020-07-21,,,,radeon™graphics,,,,3.0,,,,4,,,,zen架构,,,,3.3,,,,4,
+1.0,,amdathlon™pro200ge,,,,4.0,,,,1.0,,,,athlonpro200series,,,,14nm,,,,,,2018-12-21,,,,radeon™vega3graphics,,,,3.0,,,,2,,,,zen架构,,,,3.2,,,,4,
+1.0,,amdathlon™pro200umobileprocessorwithradeon™vega3graphics,,,,4.0,,,,1.0,,,,athlonpro200series,,,,14nm,,,,,,2018-12-21,,,,radeon™vega3graphics,,,,3.0,,,,2,,,,zen架构,,,,2.3,,,,4,
+1.0,,amdathlon™pro300ge,,,,4.0,,,,1.0,,,,athlonpro300series,,,,12nm,,,,,,2019-09-30,,,,radeon™vega3graphics,,,,3.0,,,,2,,,,zen架构,,,,3.4,,,,4,
+1.0,,amdathlon™pro300umobileprocessorwithradeon™vega3graphics,,,,4.0,,,,1.0,,,,athlonpro300series,,,,14nm,,,,,,2019-09-30,,,,radeon™vega3graphics,,,,3.0,,,,2,,,,zen架构,,,,2.4,,,,4,
+1.0,,amdathlon™pro3045b,,,,4.0,,,,1.0,,,,athlonpro3000series,,,,14nm,,,,,,2021-01-01,,,,amdradeon™graphics,,,,2.0,,,,2,,,,zen架构,,,,2.3,,,,2,
+1.0,,amdathlon™pro3145b,,,,4.0,,,,1.0,,,,athlonpro3000series,,,,14nm,,,,,,2021-01-01,,,,amdradeon™graphics,,,,3.0,,,,2,,,,zen架构,,,,2.4,,,,4,
+1.0,,amdathlon™silver3050c,,,,4.0,,,,1.0,,,,athlon3000series,,,,14nm,,,,,,2020-09-22,,,,amdradeon™graphics,,,,2.0,,,,2,,,,zen架构,,,,2.3,,,,2,
+1.0,,amdathlon™silver3050e,,,,4.0,,,,1.0,,,,athlon3000series,,,,14nm,,,,,,2020-01-06,,,,amdradeon™graphics,,,,3.0,,,,2,,,,zen架构,,,,1.4,,,,4,
+1.0,,amdathlon™silver3050ge(oemonly),,,,4.0,,,,1.0,,,,athlon3000series,,,,14nm,,,,,,2020-07-21,,,,radeon™graphics,,,,3.0,,,,2,,,,zen架构,,,,3.4,,,,4,
+1.0,,amdathlon™silver3050u,,,,4.0,,,,1.0,,,,athlon3000series,,,,14nm,,,,,,2020-01-06,,,,amdradeon™graphics,,,,2.0,,,,2,,,,zen架构,,,,2.3,,,,2,
+1.0,,amdathlon™silver7120c,,,,2.0,,,,1.0,,,,athlon7000series,,,,tsmc6nmfinfet,,,,,,2023-05-23,,,,amdradeon™610m,,,,2.0,,,,2,,,,zen架构,,,,2.4,,,,2,
+1.0,,amdathlon™silver7120u,,,,2.0,,,,1.0,,,,athlon7000series,,,,tsmc6nmfinfet,,,,,,2022-09-20,,,,amdradeon™610m,,,,2.0,,,,2,,,,zen架构,,,,2.4,,,,2,
+1.0,,amdathlon™silverpro3125ge,,,,4.0,,,,1.0,,,,athlonpro3000series,,,,12nm,,,,,,2020-07-21,,,,radeon™graphics,,,,3.0,,,,2,,,,zen架构,,,,3.4,,,,4,
+1.0,,amd锐龙31200,,,,8.0,,,,2.0,,,,锐龙1000系列,,,,14nm,,,,,,2017-07-27,,,,nan,,,,NULL,,,,4,,,,zen架构,,,,3.1,,,,4,
+1.0,,amd锐龙31300x,,,,8.0,,,,2.0,,,,锐龙1000系列,,,,14nm,,,,,,2017-07-27,,,,nan,,,,NULL,,,,4,,,,zen架构,,,,3.5,,,,4,
+1.0,,amd锐龙32200ge搭配radeonvega8显卡,,,,4.0,,,,2.0,,,,锐龙2000系列,,,,14nmfinfet,,,,,,2018-04-19,,,,radeon™vega8graphics,,,,8.0,,,,4,,,,zen架构,,,,3.2,,,,4,
+1.0,,amd锐龙32200g搭配radeonvega8显卡,,,,4.0,,,,2.0,,,,锐龙2000系列,,,,14nmfinfet,,,,,,2018-02-12,,,,radeon™vega8graphics,,,,8.0,,,,4,,,,zen架构,,,,3.5,,,,4,
+1.0,,amd锐龙32200u,,,,4.0,,,,1.0,,,,锐龙2000系列,,,,14nm,,,,,,2018-01-08,,,,radeon™vega3graphics,,,,3.0,,,,2,,,,zen架构,,,,2.5,,,,4,
+1.0,,amd锐龙32300u,,,,4.0,,,,2.0,,,,锐龙2000系列,,,,14nm,,,,,,2018-01-08,,,,radeon™vega6graphics,,,,6.0,,,,4,,,,zen架构,,,,2.0,,,,4,
+1.0,,amd锐龙32300x,,,,8.0,,,,2.0,,,,锐龙2000系列,,,,12nm,,,,,,2018-09-10,,,,nan,,,,NULL,,,,4,,,,zen架构,,,,3.5,,,,4,
+1.0,,amd锐龙33100,,,,16.0,,,,2.0,,,,锐龙3000系列,,,,tsmc7nmfinfet,,,,,,2020-04-21,,,,nan,,,,NULL,,,,4,,,,zen架构,,,,3.6,,,,8,
+1.0,,amd锐龙33200ge（仅限oem）,,,,4.0,,,,2.0,,,,锐龙3000系列,,,,12nm,,,,,,2019-07-07,,,,radeon™vega8graphics,,,,8.0,,,,4,,,,zen架构,,,,3.3,,,,4,
+1.0,,amd锐龙33200g搭配radeonvega8显卡,,,,4.0,,,,2.0,,,,锐龙3000系列,,,,12nmfinfet,,,,,,2019-07-07,,,,radeon™vega8graphics,,,,8.0,,,,4,,,,zen架构,,,,3.6,,,,4,
+1.0,,amd锐龙33200u,,,,4.0,,,,1.0,,,,锐龙3000系列,,,,14nm,,,,,,2019-01-06,,,,radeon™vega3graphics,,,,3.0,,,,2,,,,zen架构,,,,2.6,,,,4,
+1.0,,amd锐龙33250c,,,,4.0,,,,1.0,,,,锐龙3000系列,,,,14nm,,,,,,2020-09-22,,,,amdradeon™graphics,,,,3.0,,,,2,,,,zen架构,,,,2.6,,,,4,
+1.0,,amd锐龙33250u,,,,4.0,,,,1.0,,,,锐龙3000系列,,,,14nm,,,,,,2020-01-06,,,,amdradeon™graphics,,,,3.0,,,,2,,,,zen架构,,,,2.6,,,,4,
+1.0,,amd锐龙33300u,,,,4.0,,,,2.0,,,,锐龙3000系列,,,,12nm,,,,,,2019-01-06,,,,radeon™vega6graphics,,,,6.0,,,,4,,,,zen架构,,,,2.1,,,,4,
+1.0,,amd锐龙33300x,,,,16.0,,,,2.0,,,,锐龙3000系列,,,,tsmc7nmfinfet,,,,,,2020-04-21,,,,nan,,,,NULL,,,,4,,,,zen架构,,,,3.8,,,,8,
+1.0,,amd锐龙33350u,,,,4.0,,,,2.0,,,,锐龙3000系列,,,,12nm,,,,,,2019-01-06,,,,radeon™vega6graphics,,,,6.0,,,,4,,,,zen架构,,,,2.1,,,,4,
+1.0,,amd锐龙34100,,,,4.0,,,,2.0,,,,锐龙4000系列,,,,tsmc7nmfinfet,,,,,,2022-04-04,,,,nan,,,,NULL,,,,4,,,,zen架构,,,,3.8,,,,8,
+1.0,,amd锐龙34300ge（仅限oem）,,,,4.0,,,,2.0,,,,锐龙4000系列,,,,tsmc7nmfinfet,,,,,,2020-07-21,,,,radeon™graphics,,,,6.0,,,,4,,,,zen架构,,,,3.5,,,,8,
+1.0,,amd锐龙34300g（仅限oem）,,,,4.0,,,,2.0,,,,锐龙4000系列,,,,tsmc7nmfinfet,,,,,,2020-07-21,,,,radeon™graphics,,,,6.0,,,,4,,,,zen架构,,,,3.8,,,,8,
+1.0,,amd锐龙34300u,,,,4.0,,,,2.0,,,,锐龙4000系列,,,,tsmc7nmfinfet,,,,,,2020-01-06,,,,amdradeon™graphics,,,,5.0,,,,4,,,,zen架构,,,,2.7,,,,4,
+1.0,,amd锐龙35125c,,,,8.0,,,,1.0,,,,锐龙5000系列,,,,tsmc7nmfinfet,,,,,,2022-05-05,,,,amdradeon™graphics,,,,3.0,,,,2,,,,zen架构,,,,3.0,,,,4,
+1.0,,amd锐龙35300ge（仅限oem）,,,,8.0,,,,2.0,,,,锐龙5000系列,,,,tsmc7nmfinfet,,,,,,2021-04-13,,,,radeon™graphics,,,,6.0,,,,4,,,,zen架构,,,,3.6,,,,8,
+1.0,,amd锐龙35300g（仅限oem）,,,,8.0,,,,2.0,,,,锐龙5000系列,,,,tsmc7nmfinfet,,,,,,2021-04-13,,,,radeon™graphics,,,,6.0,,,,4,,,,zen架构,,,,4.0,,,,8,
+1.0,,amd锐龙35300u,,,,4.0,,,,2.0,,,,锐龙5000系列,,,,tsmc7nmfinfet,,,,,,2021-01-12,,,,amdradeon™graphics,,,,6.0,,,,4,,,,zen架构,,,,2.6,,,,8,
+1.0,,amd锐龙35305ge,,,,8.0,,,,2.0,,,,锐龙5000系列,,,,tsmc7nmfinfet,,,,,,2021-01-23,,,,radeon™graphics,,,,6.0,,,,4,,,,zen架构,,,,3.6,,,,8,
+1.0,,amd锐龙35400u,,,,8.0,,,,2.0,,,,锐龙5000系列,,,,tsmc7nmfinfet,,,,,,2021-01-12,,,,amdradeon™graphics,,,,6.0,,,,4,,,,zen架构,,,,2.6,,,,8,
+1.0,,amd锐龙35425c,,,,8.0,,,,2.0,,,,锐龙5000系列,,,,tsmc7nmfinfet,,,,,,2022-05-05,,,,amdradeon™graphics,,,,6.0,,,,4,,,,zen架构,,,,2.7,,,,8,
+1.0,,amd锐龙35425u,,,,8.0,,,,2.0,,,,锐龙5000系列,,,,tsmc7nmfinfet,,,,,,2022-01-30,,,,amdradeon™graphics,,,,6.0,,,,4,,,,zen架构,,,,2.7,,,,8,
+1.0,,amd锐龙37320c,,,,4.0,,,,2.0,,,,锐龙7000系列,,,,tsmc6nmfinfet,,,,,,2023-05-23,,,,amdradeon™610m,,,,2.0,,,,4,,,,zen架构,,,,2.4,,,,8,
+1.0,,amd锐龙37320u,,,,4.0,,,,2.0,,,,锐龙7000系列,,,,tsmc6nmfinfet,,,,,,2022-09-20,,,,amdradeon™610m,,,,2.0,,,,4,,,,zen架构,,,,2.4,,,,8,
+1.0,,amd锐龙37330u,,,,8.0,,,,2.0,,,,锐龙7000系列,,,,tsmc7nmfinfet,,,,,,2023-01-04,,,,amdradeon™graphics,,,,6.0,,,,4,,,,zen架构,,,,2.3,,,,8,
+1.0,,amd锐龙37335u,,,,8.0,,,,2.0,,,,锐龙7000系列,,,,tsmc6nmfinfet,,,,,,2023-01-04,,,,amdradeon™660m,,,,4.0,,,,4,,,,zen架构,,,,3.0,,,,8,
+1.0,,amd锐龙37440u,,,,8.0,,,,4.0,,,,锐龙7000系列,,,,tsmc4nmfinfet,,,,,,2023-05-03,,,,amdradeon™740m,,,,4.0,,,,4,,,,zen架构,,,,3.0,,,,8,
+1.0,,amd锐龙38440u,,,,8.0,,,,4.0,,,,锐龙8000系列,,,,tsmc4nmfinfet,,,,,,2023-12-06,,,,amdradeon™740m,,,,4.0,,,,4,,,,zen架构,,,,3.0,,,,8,
+1.0,,amd锐龙3pro1200,,,,8.0,,,,2.0,,,,锐龙pro1000系列,,,,14nm,,,,,,2017-06-29,,,,nan,,,,NULL,,,,4,,,,zen架构,,,,3.1,,,,4,
+1.0,,amd锐龙3pro1300,,,,8.0,,,,2.0,,,,锐龙pro1000系列,,,,14nm,,,,,,2017-06-29,,,,nan,,,,NULL,,,,4,,,,zen架构,,,,3.5,,,,4,
+1.0,,amd锐龙3pro2200ge搭配radeonvega8显卡,,,,4.0,,,,2.0,,,,ryzenpro2000系列,,,,14nmfinfet,,,,,,2018-05-10,,,,radeon™vega8graphics,,,,8.0,,,,4,,,,zen架构,,,,3.2,,,,4,
+1.0,,amd锐龙3pro2200g搭配radeonvega8显卡,,,,4.0,,,,2.0,,,,ryzenpro2000系列,,,,14nmfinfet,,,,,,2018-05-10,,,,radeon™vega8graphics,,,,8.0,,,,4,,,,zen架构,,,,3.5,,,,4,
+1.0,,amd锐龙3pro2300u,,,,4.0,,,,2.0,,,,ryzenpro2000系列,,,,14nm,,,,,,2018-01-08,,,,radeon™vega6graphics,,,,6.0,,,,4,,,,zen架构,,,,2.0,,,,4,
+1.0,,amd锐龙3pro3200g,,,,4.0,,,,2.0,,,,锐龙pro3000系列,,,,12nm,,,,,,2019-09-30,,,,radeon™vega8graphics,,,,8.0,,,,4,,,,zen架构,,,,3.6,,,,4,
+1.0,,amd锐龙3pro3200ge,,,,4.0,,,,2.0,,,,锐龙pro3000系列,,,,12nm,,,,,,2019-09-30,,,,radeon™vega8graphics,,,,8.0,,,,4,,,,zen架构,,,,3.3,,,,4,
+1.0,,amd锐龙3pro3300u,,,,4.0,,,,2.0,,,,锐龙pro3000系列,,,,12nm,,,,,,2019-04-08,,,,radeon™vega6graphics,,,,6.0,,,,4,,,,zen架构,,,,2.1,,,,4,
+1.0,,amd锐龙3pro4350g,,,,4.0,,,,2.0,,,,锐龙pro4000系列,,,,tsmc7nmfinfet,,,,,,2020-07-21,,,,radeon™graphics,,,,6.0,,,,4,,,,zen架构,,,,3.8,,,,8,
+1.0,,amd锐龙3pro4350ge,,,,4.0,,,,2.0,,,,锐龙pro4000系列,,,,tsmc7nmfinfet,,,,,,2020-07-21,,,,radeon™vega6graphics,,,,6.0,,,,4,,,,zen架构,,,,3.5,,,,8,
+1.0,,amd锐龙3pro4355g,,,,4.0,,,,2.0,,,,锐龙pro4000系列,,,,tsmc7nmfinfet,,,,,,2020-07-21,,,,radeon™graphics,,,,6.0,,,,4,,,,zen架构,,,,3.8,,,,8,
+1.0,,amd锐龙3pro4355ge,,,,4.0,,,,2.0,,,,锐龙pro4000系列,,,,tsmc7nmfinfet,,,,,,2020-07-21,,,,radeon™vega6graphics,,,,6.0,,,,4,,,,zen架构,,,,3.5,,,,8,
+1.0,,amd锐龙3pro4450u,,,,4.0,,,,2.0,,,,锐龙pro4000系列,,,,tsmc7nmfinfet,,,,,,2020-05-07,,,,amdradeon™graphics,,,,5.0,,,,4,,,,zen架构,,,,2.5,,,,8,
+1.0,,amd锐龙3pro5350g,,,,8.0,,,,2.0,,,,锐龙pro5000系列,,,,tsmc7nmfinfet,,,,,,2021-06-01,,,,radeon™graphics,,,,6.0,,,,4,,,,zen架构,,,,4.0,,,,8,
+1.0,,amd锐龙3pro5350ge,,,,8.0,,,,2.0,,,,锐龙pro5000系列,,,,tsmc7nmfinfet,,,,,,2021-06-01,,,,radeon™graphics,,,,6.0,,,,4,,,,zen架构,,,,3.6,,,,8,
+1.0,,amd锐龙3pro5450u,,,,8.0,,,,2.0,,,,锐龙pro5000系列,,,,tsmc7nmfinfet,,,,,,2021-03-16,,,,amdradeon™graphics,,,,6.0,,,,4,,,,zen架构,,,,2.6,,,,8,
+1.0,,amd锐龙3pro5475u,,,,8.0,,,,2.0,,,,锐龙pro5000系列,,,,tsmc7nmfinfet,,,,,,2022-01-30,,,,amdradeon™graphics,,,,6.0,,,,4,,,,zen架构,,,,2.7,,,,8,
+1.0,,amd锐龙3pro7330u,,,,8.0,,,,2.0,,,,锐龙pro7000系列,,,,tsmc7nmfinfet,,,,,,2023-01-04,,,,amdradeon™graphics,,,,6.0,,,,4,,,,zen架构,,,,2.3,,,,8,
+1.0,,amd锐龙3pro7335u,,,,NULL,,,,8.0,,,,锐龙pro7000系列,,,,tsmc6nmfinfet,,,,,,2023-09-30,,,,amdradeon™660m,,,,4.0,,,,4,,,,zen架构,,,,3.0,,,,8,
+1.0,,amd锐龙51400,,,,8.0,,,,2.0,,,,锐龙1000系列,,,,14nm,,,,,,2017-04-11,,,,nan,,,,NULL,,,,4,,,,zen架构,,,,3.2,,,,8,
+1.0,,amd锐龙51600,,,,16.0,,,,3.0,,,,锐龙1000系列,,,,14nm,,,,,,2017-04-11,,,,nan,,,,NULL,,,,6,,,,zen架构,,,,3.2,,,,12,
+1.0,,amd锐龙51600(af),,,,16.0,,,,3.0,,,,锐龙1000系列,,,,12nm,,,,,,2019-10-11,,,,nan,,,,NULL,,,,6,,,,zen架构,,,,3.2,,,,12,
+1.0,,amd锐龙52400ge搭配radeonrxvega11显卡,,,,4.0,,,,2.0,,,,锐龙2000系列,,,,14nmfinfet,,,,,,2018-04-19,,,,radeon™rxvega11graphics,,,,11.0,,,,4,,,,zen架构,,,,3.2,,,,8,
+1.0,,amd锐龙52400g搭配radeonrxvega11显卡,,,,4.0,,,,2.0,,,,锐龙2000系列,,,,14nmfinfet,,,,,,2018-02-12,,,,radeon™rxvega11graphics,,,,11.0,,,,4,,,,zen架构,,,,3.6,,,,8,
+1.0,,amd锐龙52500u,,,,4.0,,,,2.0,,,,锐龙2000系列,,,,14nm,,,,,,2017-10-26,,,,radeon™vega8graphics,,,,8.0,,,,4,,,,zen架构,,,,2.0,,,,8,
+1.0,,amd锐龙52500x,,,,8.0,,,,2.0,,,,锐龙2000系列,,,,12nm,,,,,,2018-09-10,,,,nan,,,,NULL,,,,4,,,,zen架构,,,,3.6,,,,8,
+1.0,,amd锐龙52600,,,,16.0,,,,3.0,,,,锐龙2000系列,,,,12nmfinfet,,,,,,2018-04-19,,,,nan,,,,NULL,,,,6,,,,zen架构,,,,3.4,,,,12,
+1.0,,amd锐龙52600e,,,,16.0,,,,3.0,,,,锐龙2000系列,,,,12nm,,,,,,2018-09-11,,,,nan,,,,NULL,,,,6,,,,zen架构,,,,3.1,,,,12,
+1.0,,amd锐龙52600h,,,,4.0,,,,2.0,,,,锐龙2000系列,,,,14nm,,,,,,2018-09-10,,,,radeon™vega8graphics,,,,8.0,,,,4,,,,zen架构,,,,3.2,,,,8,
+1.0,,amd锐龙53400ge（仅限oem）,,,,4.0,,,,2.0,,,,锐龙3000系列,,,,12nm,,,,,,2019-07-07,,,,radeon™vega11graphics,,,,11.0,,,,4,,,,zen架构,,,,3.3,,,,8,
+1.0,,amd锐龙53400g搭配radeonrxvega11显卡,,,,4.0,,,,2.0,,,,锐龙3000系列,,,,12nmfinfet,,,,,,2019-07-07,,,,radeon™rxvega11graphics,,,,11.0,,,,4,,,,zen架构,,,,3.7,,,,8,
+1.0,,amd锐龙53450u,,,,4.0,,,,2.0,,,,锐龙3000系列,,,,12nm,,,,,,2020-05-01,,,,radeon™vega8graphics,,,,NULL,,,,4,,,,zen架构,,,,2.1,,,,8,
+1.0,,amd锐龙53500c,,,,4.0,,,,2.0,,,,锐龙3000系列,,,,12nm,,,,,,2020-09-22,,,,amdradeon™graphics,,,,8.0,,,,4,,,,zen架构,,,,2.1,,,,8,
+1.0,,amd锐龙53500u,,,,4.0,,,,2.0,,,,锐龙3000系列,,,,12nm,,,,,,2019-01-06,,,,radeon™vega8graphics,,,,8.0,,,,4,,,,zen架构,,,,2.1,,,,8,
+1.0,,amd锐龙53500x,,,,32.0,,,,3.0,,,,锐龙3000系列,,,,tsmc7nmfinfet,,,,,,2019-09-24,,,,nan,,,,NULL,,,,6,,,,zen架构,,,,3.6,,,,6,
+1.0,,amd锐龙53500（仅限oem）,,,,16.0,,,,3.0,,,,锐龙3000系列,,,,tsmc7nmfinfet,,,,,,2019-10-09,,,,nan,,,,NULL,,,,6,,,,zen架构,,,,3.6,,,,6,
+1.0,,amd锐龙53550h,,,,4.0,,,,2.0,,,,锐龙3000系列,,,,12nm,,,,,,2019-01-06,,,,radeon™vega8graphics,,,,8.0,,,,4,,,,zen架构,,,,2.1,,,,8,
+1.0,,amd锐龙53580umicrosoftsurface版,,,,4.0,,,,2.0,,,,锐龙3000系列,,,,12nm,,,,,,2019-10-02,,,,radeon™vega9graphics,,,,9.0,,,,4,,,,zen架构,,,,2.1,,,,8,
+1.0,,amd锐龙53600xt,,,,32.0,,,,3.0,,,,锐龙3000系列,,,,tsmc7nmfinfet,,,,,,2020-07-07,,,,nan,,,,NULL,,,,6,,,,zen架构,,,,3.8,,,,12,
+1.0,,amd锐龙54500,,,,8.0,,,,3.0,,,,锐龙4000系列,,,,tsmc7nmfinfet,,,,,,2022-04-04,,,,nan,,,,NULL,,,,6,,,,zen架构,,,,3.6,,,,12,
+1.0,,amd锐龙54500u,,,,8.0,,,,3.0,,,,锐龙4000系列,,,,tsmc7nmfinfet,,,,,,2020-01-06,,,,amdradeon™graphics,,,,6.0,,,,6,,,,zen架构,,,,2.3,,,,6,
+1.0,,amd锐龙54600g,,,,8.0,,,,3.0,,,,锐龙4000系列,,,,tsmc7nmfinfet,,,,,,2020-07-21,,,,radeon™graphics,,,,7.0,,,,6,,,,zen架构,,,,3.7,,,,12,
+1.0,,amd锐龙54600ge（仅限oem）,,,,8.0,,,,3.0,,,,锐龙4000系列,,,,tsmc7nmfinfet,,,,,,2020-07-21,,,,radeon™graphics,,,,7.0,,,,6,,,,zen架构,,,,3.3,,,,12,
+1.0,,amd锐龙54600h,,,,8.0,,,,3.0,,,,锐龙4000系列,,,,tsmc7nmfinfet,,,,,,2020-01-06,,,,amdradeon™graphics,,,,6.0,,,,6,,,,zen架构,,,,3.0,,,,12,
+1.0,,amd锐龙54600u,,,,8.0,,,,3.0,,,,锐龙4000系列,,,,tsmc7nmfinfet,,,,,,2020-01-06,,,,amdradeon™graphics,,,,6.0,,,,6,,,,zen架构,,,,2.1,,,,12,
+1.0,,amd锐龙54680umicrosoftsurface版,,,,8.0,,,,3.0,,,,锐龙4000系列,,,,tsmc7nmfinfet,,,,,,2021-04-13,,,,radeon™graphics,,,,7.0,,,,6,,,,zen架构,,,,2.2,,,,12,
+1.0,,amd锐龙55500,,,,16.0,,,,3.0,,,,锐龙5000系列,,,,tsmc7nmfinfet,,,,,,2022-04-04,,,,nan,,,,NULL,,,,6,,,,zen架构,,,,3.6,,,,12,
+1.0,,amd锐龙55500h,,,,8.0,,,,2.0,,,,锐龙5000系列,,,,tsmc7nmfinfet,,,,,,2023-06-23,,,,amdradeon™graphics,,,,6.0,,,,4,,,,zen架构,,,,3.3,,,,8,
+1.0,,amd锐龙55500u,,,,8.0,,,,3.0,,,,锐龙5000系列,,,,tsmc7nmfinfet,,,,,,2021-01-12,,,,amdradeon™graphics,,,,7.0,,,,6,,,,zen架构,,,,2.1,,,,12,
+1.0,,amd锐龙55560u,,,,8.0,,,,3.0,,,,锐龙5000系列,,,,tsmc7nmfinfet,,,,,,2021-01-12,,,,amdradeon™graphics,,,,6.0,,,,6,,,,zen架构,,,,2.3,,,,12,
+1.0,,amd锐龙55600g,,,,16.0,,,,3.0,,,,锐龙5000系列,,,,tsmc7nmfinfet,,,,,,2021-04-13,,,,radeon™graphics,,,,7.0,,,,6,,,,zen架构,,,,3.9,,,,12,
+1.0,,amd锐龙55600ge,,,,16.0,,,,3.0,,,,锐龙5000系列,,,,tsmc7nmfinfet,,,,,,2021-04-13,,,,radeon™graphics,,,,7.0,,,,6,,,,zen架构,,,,3.4,,,,12,
+1.0,,amd锐龙55600h,,,,16.0,,,,3.0,,,,锐龙5000系列,,,,tsmc7nmfinfet,,,,,,2021-01-12,,,,amdradeon™graphics,,,,7.0,,,,6,,,,zen架构,,,,3.3,,,,12,
+1.0,,amd锐龙55600hs,,,,16.0,,,,3.0,,,,锐龙5000系列,,,,tsmc7nmfinfet,,,,,,2021-01-12,,,,amdradeon™graphics,,,,7.0,,,,6,,,,zen架构,,,,3.0,,,,12,
+1.0,,amd锐龙55600u,,,,16.0,,,,3.0,,,,锐龙5000系列,,,,tsmc7nmfinfet,,,,,,2021-01-12,,,,amdradeon™graphics,,,,7.0,,,,6,,,,zen架构,,,,2.3,,,,12,
+1.0,,amd锐龙55600x3d,,,,96.0,,,,3.0,,,,锐龙5000系列,,,,tsmc7nmfinfet,,,,,,2023-07-07,,,,nan,,,,NULL,,,,6,,,,zen架构,,,,3.3,,,,12,
+1.0,,amd锐龙55625c,,,,16.0,,,,3.0,,,,锐龙5000系列,,,,tsmc7nmfinfet,,,,,,2022-05-05,,,,amdradeon™graphics,,,,7.0,,,,6,,,,zen架构,,,,2.3,,,,12,
+1.0,,amd锐龙55625u,,,,16.0,,,,3.0,,,,锐龙5000系列,,,,tsmc7nmfinfet,,,,,,2022-01-30,,,,amdradeon™graphics,,,,7.0,,,,6,,,,zen架构,,,,2.3,,,,12,
+1.0,,amd锐龙56600h,,,,16.0,,,,3.0,,,,锐龙6000系列,,,,tsmc6nmfinfet,,,,,,2022-01-04,,,,amdradeon™660m,,,,6.0,,,,6,,,,zen架构,,,,3.3,,,,12,
+,1.0,amd锐龙56600hs,AMD Ryzen 5 6600X,,,,NULL,,,,nan,,,,apu,,,,7nm,,,,,,2022-2023,,,,rdna3,,,,12.0,,,,12,,,,zen3,,,,4.5,,,,16
+1.0,,amd锐龙56600hs​,,,,16.0,,,,3.0,,,,锐龙6000系列,,,,tsmc6nmfinfet,,,,,,2022-01-04,,,,amdradeon™660m,,,,6.0,,,,6,,,,zen架构,,,,3.3,,,,12,
+1.0,,amd锐龙56600u,,,,16.0,,,,3.0,,,,锐龙6000系列,,,,tsmc6nmfinfet,,,,,,2022-01-04,,,,amdradeon™660m,,,,6.0,,,,6,,,,zen架构,,,,2.9,,,,12,
+1.0,,amd锐龙57430u,,,,16.0,,,,3.0,,,,锐龙7000系列,,,,tsmc7nmfinfet,,,,,,2023-01-05,,,,amdradeon™graphics,,,,7.0,,,,6,,,,zen架构,,,,2.3,,,,12,
+1.0,,amd锐龙57500f,,,,32.0,,,,6.0,,,,锐龙7000系列,,,,tsmc5nmfinfet,,,,,,2023-07-22,,,,nan,,,,NULL,,,,6,,,,zen架构,,,,3.7,,,,12,
+1.0,,amd锐龙57520c,,,,4.0,,,,2.0,,,,锐龙7000系列,,,,tsmc6nmfinfet,,,,,,2023-05-23,,,,amdradeon™610m,,,,2.0,,,,4,,,,zen架构,,,,2.8,,,,8,
+1.0,,amd锐龙57520u,,,,4.0,,,,2.0,,,,锐龙7000系列,,,,tsmc6nmfinfet,,,,,,2022-09-20,,,,amdradeon™610m,,,,2.0,,,,4,,,,zen架构,,,,2.8,,,,8,
+1.0,,amd锐龙57530u,,,,16.0,,,,3.0,,,,锐龙7000系列,,,,tsmc7nmfinfet,,,,,,2023-01-04,,,,amdradeon™graphics,,,,7.0,,,,6,,,,zen架构,,,,2.0,,,,12,
+1.0,,amd锐龙57535h,,,,16.0,,,,3.0,,,,锐龙7000系列,,,,tsmc6nmfinfet,,,,,,2023-01-04,,,,amdradeon™660m,,,,6.0,,,,6,,,,zen架构,,,,3.3,,,,12,
+1.0,,amd锐龙57535hs,,,,16.0,,,,3.0,,,,锐龙7000系列,,,,tsmc6nmfinfet,,,,,,2023-01-05,,,,amdradeon™660m,,,,6.0,,,,6,,,,zen架构,,,,3.3,,,,12,
+1.0,,amd锐龙57535u,,,,16.0,,,,3.0,,,,锐龙7000系列,,,,tsmc6nmfinfet,,,,,,2023-01-05,,,,amdradeon™660m,,,,6.0,,,,6,,,,zen架构,,,,2.9,,,,12,
+1.0,,amd锐龙57540u,,,,16.0,,,,6.0,,,,锐龙7000系列,,,,tsmc4nmfinfet,,,,,,2023-05-03,,,,amdradeon™740m,,,,4.0,,,,6,,,,zen架构,,,,3.2,,,,12,
+1.0,,amd锐龙57545u,,,,16.0,,,,6.0,,,,锐龙7000系列,,,,tsmc4nmfinfet,,,,,,2023-11-02,,,,amdradeon™740m,,,,4.0,,,,6,,,,zen架构,,,,3.2,,,,12,
+1.0,,amd锐龙57600,,,,32.0,,,,6.0,,,,锐龙7000系列,,,,tsmc5nmfinfet,,,,,,2023-01-14,,,,amdradeon™graphics,,,,2.0,,,,6,,,,zen架构,,,,3.8,,,,12,
+1.0,,amd锐龙57600x,,,,32.0,,,,6.0,,,,锐龙7000系列,,,,tsmc5nmfinfet,,,,,,2022-09-27,,,,amdradeon™graphics,,,,2.0,,,,6,,,,zen架构,,,,4.7,,,,12,
+1.0,,amd锐龙57640h,,,,16.0,,,,6.0,,,,锐龙7000系列,,,,tsmc4nmfinfet,,,,,,2023-01-04,,,,amdradeon™760m,,,,8.0,,,,6,,,,zen架构,,,,4.3,,,,12,
+1.0,,amd锐龙57640hs,,,,16.0,,,,6.0,,,,锐龙7000系列,,,,tsmc4nmfinfet,,,,,,2023-01-04,,,,amdradeon™760m,,,,8.0,,,,6,,,,zen架构,,,,4.3,,,,12,
+1.0,,amd锐龙57640u,,,,16.0,,,,6.0,,,,锐龙7000系列,,,,tsmc4nmfinfet,,,,,,2023-05-03,,,,amdradeon™760m,,,,8.0,,,,6,,,,zen架构,,,,3.5,,,,12,
+1.0,,amd锐龙57645hx,,,,32.0,,,,6.0,,,,锐龙7000系列,,,,tsmc5nmfinfet,,,,,,2023-02-28,,,,amdradeon™610m,,,,2.0,,,,6,,,,zen架构,,,,4.0,,,,12,
+1.0,,amd锐龙58540u,,,,16.0,,,,6.0,,,,锐龙8000系列,,,,tsmc4nmfinfet,,,,,,2023-12-06,,,,amdradeon™740m,,,,4.0,,,,6,,,,zen架构,,,,3.2,,,,12,
+1.0,,amd锐龙58640hs,,,,16.0,,,,6.0,,,,锐龙8000系列,,,,tsmc4nmfinfet,,,,,,2023-12-06,,,,amdradeon™760m,,,,8.0,,,,6,,,,zen架构,,,,3.5,,,,12,
+1.0,,amd锐龙58640u,,,,16.0,,,,6.0,,,,锐龙8000系列,,,,tsmc4nmfinfet,,,,,,2023-12-06,,,,amdradeon™760m,,,,8.0,,,,6,,,,zen架构,,,,3.5,,,,12,
+1.0,,amd锐龙58645h,,,,16.0,,,,6.0,,,,锐龙8000系列,,,,tsmc4nmfinfet,,,,,,2023-12-06,,,,amdradeon™760m,,,,8.0,,,,6,,,,zen架构,,,,4.3,,,,12,
+1.0,,amd锐龙58645hs,,,,16.0,,,,6.0,,,,锐龙8000系列,,,,tsmc4nmfinfet,,,,,,2023-12-06,,,,amdradeon™760m,,,,8.0,,,,6,,,,zen架构,,,,4.3,,,,12,
+1.0,,amd锐龙5pro1500,,,,16.0,,,,2.0,,,,锐龙pro1000系列,,,,14nm,,,,,,2017-06-29,,,,nan,,,,NULL,,,,4,,,,zen架构,,,,3.5,,,,8,
+1.0,,amd锐龙5pro1600,,,,16.0,,,,3.0,,,,锐龙pro1000系列,,,,14nm,,,,,,2017-06-29,,,,nan,,,,NULL,,,,6,,,,zen架构,,,,3.2,,,,12,
+1.0,,amd锐龙5pro2400ge搭配radeonvega11显卡,,,,4.0,,,,2.0,,,,ryzenpro2000系列,,,,14nmfinfet,,,,,,2018-05-10,,,,radeon™vega11graphics,,,,11.0,,,,4,,,,zen架构,,,,3.2,,,,8,
+1.0,,amd锐龙5pro2400g搭配radeonvega11显卡,,,,4.0,,,,2.0,,,,ryzenpro2000系列,,,,14nmfinfet,,,,,,2018-05-10,,,,radeon™vega11graphics,,,,11.0,,,,4,,,,zen架构,,,,3.6,,,,8,
+1.0,,amd锐龙5pro2500u,,,,4.0,,,,2.0,,,,ryzenpro2000系列,,,,14nm,,,,,,2017-10-26,,,,radeon™vega8graphics,,,,8.0,,,,4,,,,zen架构,,,,2.0,,,,8,
+1.0,,amd锐龙5pro2600,,,,16.0,,,,3.0,,,,ryzenpro2000系列,,,,12nm,,,,,,2018-09-19,,,,nan,,,,NULL,,,,6,,,,zen架构,,,,3.4,,,,12,
+1.0,,amd锐龙5pro3350g,,,,4.0,,,,2.0,,,,锐龙pro3000系列,,,,12nm,,,,,,2020-07-21,,,,radeon™graphics,,,,10.0,,,,4,,,,zen架构,,,,3.6,,,,8,
+1.0,,amd锐龙5pro3350ge,,,,4.0,,,,2.0,,,,锐龙pro3000系列,,,,12nm,,,,,,2020-07-21,,,,radeon™graphics,,,,10.0,,,,4,,,,zen架构,,,,3.3,,,,4,
+1.0,,amd锐龙5pro3400g,,,,4.0,,,,2.0,,,,锐龙pro3000系列,,,,12nm,,,,,,2019-09-30,,,,radeon™vega11graphics,,,,11.0,,,,4,,,,zen架构,,,,3.7,,,,8,
+1.0,,amd锐龙5pro3400ge,,,,4.0,,,,2.0,,,,锐龙pro3000系列,,,,12nm,,,,,,2019-09-30,,,,radeon™vega11graphics,,,,11.0,,,,4,,,,zen架构,,,,3.3,,,,8,
+1.0,,amd锐龙5pro3500u,,,,4.0,,,,2.0,,,,锐龙pro3000系列,,,,12nm,,,,,,2019-04-08,,,,radeon™vega8graphics,,,,8.0,,,,4,,,,zen架构,,,,2.1,,,,8,
+1.0,,amd锐龙5pro3600,,,,32.0,,,,3.0,,,,锐龙pro3000系列,,,,tsmc7nmfinfet,,,,,,2019-09-30,,,,nan,,,,NULL,,,,6,,,,zen架构,,,,3.6,,,,12,
+1.0,,amd锐龙5pro4650g,,,,8.0,,,,3.0,,,,锐龙pro4000系列,,,,tsmc7nmfinfet,,,,,,2020-07-21,,,,radeon™graphics,,,,7.0,,,,6,,,,zen架构,,,,3.7,,,,12,
+1.0,,amd锐龙5pro4650ge,,,,8.0,,,,3.0,,,,锐龙pro4000系列,,,,tsmc7nmfinfet,,,,,,2020-07-21,,,,radeon™graphics,,,,7.0,,,,6,,,,zen架构,,,,3.3,,,,12,
+1.0,,amd锐龙5pro4650u,,,,8.0,,,,3.0,,,,锐龙pro4000系列,,,,tsmc7nmfinfet,,,,,,2020-05-07,,,,amdradeon™graphics,,,,6.0,,,,6,,,,zen架构,,,,2.1,,,,12,
+1.0,,amd锐龙5pro4655g,,,,8.0,,,,3.0,,,,锐龙pro4000系列,,,,tsmc7nmfinfet,,,,,,2022-11-11,,,,radeon™graphics,,,,7.0,,,,6,,,,zen架构,,,,3.7,,,,12,
+1.0,,amd锐龙5pro4655ge,,,,8.0,,,,3.0,,,,锐龙pro4000系列,,,,tsmc7nmfinfet,,,,,,2022-11-11,,,,radeon™graphics,,,,7.0,,,,6,,,,zen架构,,,,3.3,,,,12,
+1.0,,amd锐龙5pro5645,,,,32.0,,,,3.0,,,,锐龙pro5000系列,,,,tsmc7nmfinfet,,,,,,2022-10-25,,,,nan,,,,NULL,,,,6,,,,zen架构,,,,3.7,,,,12,
+1.0,,amd锐龙5pro5650g,,,,16.0,,,,3.0,,,,锐龙pro5000系列,,,,tsmc7nmfinfet,,,,,,2021-06-01,,,,radeon™graphics,,,,7.0,,,,6,,,,zen架构,,,,3.9,,,,12,
+1.0,,amd锐龙5pro5650ge,,,,16.0,,,,3.0,,,,锐龙pro5000系列,,,,tsmc7nmfinfet,,,,,,2021-06-01,,,,radeon™graphics,,,,7.0,,,,6,,,,zen架构,,,,3.4,,,,12,
+1.0,,amd锐龙5pro5650u,,,,16.0,,,,3.0,,,,锐龙pro5000系列,,,,tsmc7nmfinfet,,,,,,2021-03-16,,,,amdradeon™graphics,,,,7.0,,,,6,,,,zen架构,,,,2.3,,,,12,
+1.0,,amd锐龙5pro5675u,,,,16.0,,,,3.0,,,,锐龙pro5000系列,,,,tsmc7nmfinfet,,,,,,2022-01-30,,,,amdradeon™graphics,,,,7.0,,,,6,,,,zen架构,,,,2.3,,,,12,
+1.0,,amd锐龙5pro6650h,,,,16.0,,,,3.0,,,,锐龙pro6000系列,,,,tsmc6nmfinfet,,,,,,2022-04-19,,,,amdradeon™660m,,,,6.0,,,,6,,,,zen架构,,,,3.3,,,,12,
+1.0,,amd锐龙5pro6650hs,,,,16.0,,,,3.0,,,,锐龙pro6000系列,,,,tsmc6nmfinfet,,,,,,2022-04-19,,,,amdradeon™660m,,,,6.0,,,,6,,,,zen架构,,,,3.3,,,,12,
+1.0,,amd锐龙5pro6650u,,,,16.0,,,,3.0,,,,锐龙pro6000系列,,,,tsmc6nmfinfet,,,,,,2022-04-19,,,,amdradeon™660m,,,,6.0,,,,6,,,,zen架构,,,,2.9,,,,12,
+1.0,,amd锐龙5pro7535u,,,,16.0,,,,3.0,,,,锐龙pro7000系列,,,,tsmc6nmfinfet,,,,,,2023-09-30,,,,amdradeon™660m,,,,6.0,,,,6,,,,zen架构,,,,2.9,,,,12,
+1.0,,amd锐龙5pro7540u,,,,16.0,,,,6.0,,,,锐龙pro7000系列,,,,tsmc4nmfinfet,,,,,,2023-06-13,,,,amdradeon™740m,,,,4.0,,,,6,,,,zen架构,,,,3.2,,,,12,
+1.0,,amd锐龙5pro7545u,,,,16.0,,,,6.0,,,,锐龙pro7000系列,,,,tsmc4nmfinfet,,,,,,2023-11-02,,,,amdradeon™740m,,,,4.0,,,,6,,,,zen架构,,,,3.2,,,,12,
+1.0,,amd锐龙5pro7640hs,,,,16.0,,,,6.0,,,,锐龙pro7000系列,,,,tsmc4nmfinfet,,,,,,2023-06-13,,,,amdradeon™760m,,,,8.0,,,,6,,,,zen架构,,,,4.3,,,,12,
+1.0,,amd锐龙5pro7640u,,,,16.0,,,,6.0,,,,锐龙pro7000系列,,,,tsmc4nmfinfet,,,,,,2023-06-13,,,,amdradeon™760m,,,,8.0,,,,6,,,,zen架构,,,,3.5,,,,12,
+1.0,,amd锐龙5pro7645,,,,32.0,,,,6.0,,,,锐龙pro7000系列,,,,tsmc5nmfinfet,,,,,,2023-06-13,,,,amdradeon™graphics,,,,2.0,,,,6,,,,zen架构,,,,3.8,,,,12,
+1.0,,amd锐龙71700,,,,16.0,,,,4.0,,,,锐龙1000系列,,,,14nm,,,,,,2017-03-02,,,,nan,,,,NULL,,,,8,,,,zen架构,,,,3.0,,,,16,
+1.0,,amd锐龙71700x,,,,16.0,,,,4.0,,,,锐龙1000系列,,,,14nm,,,,,,2017-03-02,,,,nan,,,,NULL,,,,8,,,,zen架构,,,,3.4,,,,16,
+1.0,,amd锐龙71800x,,,,16.0,,,,4.0,,,,锐龙1000系列,,,,14nm,,,,,,2017-03-02,,,,nan,,,,NULL,,,,8,,,,zen架构,,,,3.6,,,,16,
+1.0,,amd锐龙72700,,,,16.0,,,,4.0,,,,锐龙2000系列,,,,12nmfinfet,,,,,,2018-04-19,,,,nan,,,,NULL,,,,8,,,,zen架构,,,,3.2,,,,16,
+1.0,,amd锐龙72700e,,,,16.0,,,,4.0,,,,锐龙2000系列,,,,12nm,,,,,,2018-09-19,,,,nan,,,,NULL,,,,8,,,,zen架构,,,,2.8,,,,16,
+1.0,,amd锐龙72700u,,,,4.0,,,,2.0,,,,锐龙2000系列,,,,14nm,,,,,,2017-10-26,,,,radeon™rxvega10graphics,,,,10.0,,,,4,,,,zen架构,,,,2.2,,,,8,
+1.0,,amd锐龙72700x,,,,16.0,,,,4.0,,,,锐龙2000系列,,,,12nmfinfet,,,,,,2018-04-19,,,,nan,,,,NULL,,,,8,,,,zen架构,,,,3.7,,,,16,
+1.0,,amd锐龙72800h,,,,4.0,,,,2.0,,,,锐龙2000系列,,,,14nm,,,,,,2018-09-10,,,,radeon™rxvega11graphics,,,,11.0,,,,4,,,,zen架构,,,,3.3,,,,8,
+1.0,,amd锐龙73700c,,,,4.0,,,,2.0,,,,锐龙3000系列,,,,12nm,,,,,,2020-09-22,,,,amdradeon™graphics,,,,10.0,,,,4,,,,zen架构,,,,2.3,,,,8,
+1.0,,amd锐龙73700u,,,,4.0,,,,2.0,,,,锐龙3000系列,,,,12nm,,,,,,2019-01-06,,,,radeon™rxvega10graphics,,,,10.0,,,,4,,,,zen架构,,,,2.3,,,,8,
+1.0,,amd锐龙73700x,,,,32.0,,,,4.0,,,,锐龙3000系列,,,,tsmc7nmfinfet,,,,,,2019-07-07,,,,nan,,,,NULL,,,,8,,,,zen架构,,,,3.6,,,,16,
+1.0,,amd锐龙73750h,,,,4.0,,,,2.0,,,,锐龙3000系列,,,,12nm,,,,,,2019-01-06,,,,radeon™rxvega10graphics,,,,10.0,,,,4,,,,zen架构,,,,2.3,,,,8,
+1.0,,amd锐龙73780umicrosoftsurface®edition,,,,4.0,,,,2.0,,,,锐龙3000系列,,,,12nm,,,,,,2019-10-02,,,,radeon™rxvega11graphics,,,,11.0,,,,4,,,,zen架构,,,,2.3,,,,8,
+1.0,,amd锐龙73800x,,,,32.0,,,,4.0,,,,锐龙3000系列,,,,tsmc7nmfinfet,,,,,,2019-07-07,,,,nan,,,,NULL,,,,8,,,,zen架构,,,,3.9,,,,16,
+1.0,,amd锐龙73800xt,,,,32.0,,,,4.0,,,,锐龙3000系列,,,,tsmc7nmfinfet,,,,,,2020-07-07,,,,nan,,,,NULL,,,,8,,,,zen架构,,,,3.9,,,,16,
+1.0,,amd锐龙74700ge（仅限oem）,,,,8.0,,,,4.0,,,,锐龙4000系列,,,,tsmc7nmfinfet,,,,,,2020-07-21,,,,radeon™graphics,,,,8.0,,,,8,,,,zen架构,,,,3.1,,,,16,
+1.0,,amd锐龙74700g（仅限oem）,,,,8.0,,,,4.0,,,,锐龙4000系列,,,,tsmc7nmfinfet,,,,,,2020-07-21,,,,radeon™graphics,,,,8.0,,,,8,,,,zen架构,,,,3.6,,,,16,
+1.0,,amd锐龙74700u,,,,8.0,,,,4.0,,,,锐龙4000系列,,,,tsmc7nmfinfet,,,,,,2020-01-06,,,,amdradeon™graphics,,,,7.0,,,,8,,,,zen架构,,,,2.0,,,,8,
+1.0,,amd锐龙74800h,,,,8.0,,,,4.0,,,,锐龙4000系列,,,,tsmc7nmfinfet,,,,,,2020-01-06,,,,amdradeon™graphics,,,,7.0,,,,8,,,,zen架构,,,,2.9,,,,16,
+1.0,,amd锐龙74800hs,,,,8.0,,,,4.0,,,,锐龙4000系列,,,,tsmc7nmfinfet,,,,,,2020-03-16,,,,amdradeon™graphics,,,,7.0,,,,8,,,,zen架构,,,,2.9,,,,16,
+1.0,,amd锐龙74800u,,,,8.0,,,,4.0,,,,锐龙4000系列,,,,tsmc7nmfinfet,,,,,,2020-01-06,,,,amdradeon™graphics,,,,8.0,,,,8,,,,zen架构,,,,1.8,,,,16,
+1.0,,amd锐龙74980umicrosoftsurface版,,,,8.0,,,,4.0,,,,锐龙4000系列,,,,tsmc7nmfinfet,,,,,,2021-04-13,,,,radeon™graphics,,,,8.0,,,,8,,,,zen架构,,,,2.0,,,,16,
+1.0,,amd锐龙75700g,,,,16.0,,,,4.0,,,,锐龙5000系列,,,,tsmc7nmfinfet,,,,,,2021-04-13,,,,radeon™graphics,,,,8.0,,,,8,,,,zen架构,,,,3.8,,,,16,
+1.0,,amd锐龙75700ge,,,,16.0,,,,4.0,,,,锐龙5000系列,,,,tsmc7nmfinfet,,,,,,2021-04-13,,,,radeon™graphics,,,,8.0,,,,8,,,,zen架构,,,,3.2,,,,16,
+1.0,,amd锐龙75700u,,,,8.0,,,,4.0,,,,锐龙5000系列,,,,tsmc7nmfinfet,,,,,,2021-01-12,,,,amdradeon™graphics,,,,8.0,,,,8,,,,zen架构,,,,1.8,,,,16,
+1.0,,amd锐龙75700x,,,,32.0,,,,4.0,,,,锐龙5000系列,,,,tsmc7nmfinfet,,,,,,2022-04-04,,,,nan,,,,NULL,,,,8,,,,zen架构,,,,3.4,,,,16,
+1.0,,amd锐龙75800h,,,,16.0,,,,4.0,,,,锐龙5000系列,,,,tsmc7nmfinfet,,,,,,2021-01-12,,,,amdradeon™graphics,,,,8.0,,,,8,,,,zen架构,,,,3.2,,,,16,
+1.0,,amd锐龙75800hs,,,,16.0,,,,4.0,,,,锐龙5000系列,,,,tsmc7nmfinfet,,,,,,2021-01-12,,,,amdradeon™graphics,,,,8.0,,,,8,,,,zen架构,,,,2.8,,,,16,
+1.0,,amd锐龙75800u,,,,16.0,,,,4.0,,,,锐龙5000系列,,,,tsmc7nmfinfet,,,,,,2021-01-12,,,,amdradeon™graphics,,,,8.0,,,,8,,,,zen架构,,,,1.9,,,,16,
+1.0,,amd锐龙75800x,,,,32.0,,,,4.0,,,,锐龙5000系列,,,,tsmc7nmfinfet,,,,,,2020-11-05,,,,nan,,,,NULL,,,,8,,,,zen架构,,,,3.8,,,,16,
+1.0,,amd锐龙75800x3d,,,,96.0,,,,4.0,,,,锐龙5000系列,,,,tsmc7nmfinfet,,,,,,2022-04-20,,,,nan,,,,NULL,,,,8,,,,zen架构,,,,3.4,,,,16,
+1.0,,amd锐龙75800（仅限oem）,,,,32.0,,,,4.0,,,,锐龙5000系列,,,,tsmc7nmfinfet,,,,,,2021-01-12,,,,nan,,,,NULL,,,,8,,,,zen架构,,,,3.4,,,,16,
+1.0,,amd锐龙75825c,,,,16.0,,,,4.0,,,,锐龙5000系列,,,,tsmc7nmfinfet,,,,,,2022-05-05,,,,amdradeon™graphics,,,,8.0,,,,8,,,,zen架构,,,,2.0,,,,16,
+1.0,,amd锐龙75825u,,,,16.0,,,,4.0,,,,锐龙5000系列,,,,tsmc7nmfinfet,,,,,,2022-01-30,,,,amdradeon™graphics,,,,8.0,,,,8,,,,zen架构,,,,2.0,,,,16,
+1.0,,amd锐龙76800h,,,,16.0,,,,4.0,,,,锐龙6000系列,,,,tsmc6nmfinfet,,,,,,2022-01-04,,,,amdradeon™680m,,,,12.0,,,,8,,,,zen架构,,,,3.2,,,,16,
+1.0,,amd锐龙76800hs,,,,16.0,,,,4.0,,,,锐龙6000系列,,,,tsmc6nmfinfet,,,,,,2022-01-04,,,,amdradeon™680m,,,,12.0,,,,8,,,,zen架构,,,,3.2,,,,16,
+1.0,,amd锐龙76800u​,,,,16.0,,,,4.0,,,,锐龙6000系列,,,,tsmc6nmfinfet,,,,,,2022-01-04,,,,amdradeon™680m,,,,12.0,,,,8,,,,zen架构,,,,2.7,,,,16,
+1.0,,amd锐龙77700,,,,32.0,,,,8.0,,,,锐龙7000系列,,,,tsmc5nmfinfet,,,,,,2023-01-14,,,,amdradeon™graphics,,,,2.0,,,,8,,,,zen架构,,,,3.8,,,,16,
+1.0,,amd锐龙77700x,,,,32.0,,,,8.0,,,,锐龙7000系列,,,,tsmc5nmfinfet,,,,,,2022-09-27,,,,amdradeon™graphics,,,,2.0,,,,8,,,,zen架构,,,,4.5,,,,16,
+1.0,,amd锐龙77730u,,,,16.0,,,,4.0,,,,锐龙7000系列,,,,tsmc7nmfinfet,,,,,,2023-01-04,,,,amdradeon™graphics,,,,8.0,,,,8,,,,zen架构,,,,2.0,,,,16,
+1.0,,amd锐龙77735hs,,,,16.0,,,,4.0,,,,锐龙7000系列,,,,tsmc6nmfinfet,,,,,,2023-01-04,,,,amdradeon™680m,,,,12.0,,,,8,,,,zen架构,,,,3.2,,,,16,
+1.0,,amd锐龙77735u,,,,16.0,,,,4.0,,,,锐龙7000系列,,,,tsmc6nmfinfet,,,,,,2023-01-04,,,,amdradeon™680m,,,,12.0,,,,8,,,,zen架构,,,,2.7,,,,16,
+1.0,,amd锐龙77736u​,,,,16.0,,,,4.0,,,,锐龙7000系列,,,,tsmc6nmfinfet,,,,,,2023-01-04,,,,amdradeon™680m,,,,12.0,,,,8,,,,zen架构,,,,2.7,,,,16,
+1.0,,amd锐龙77745hx,,,,32.0,,,,8.0,,,,锐龙7000系列,,,,tsmc5nmfinfet,,,,,,2023-02-28,,,,amdradeon™610m,,,,2.0,,,,8,,,,zen架构,,,,3.6,,,,16,
+1.0,,amd锐龙77800x3d,,,,96.0,,,,8.0,,,,锐龙7000系列,,,,tsmc5nmfinfet,,,,,,2023-04-06,,,,amdradeon™graphics,,,,2.0,,,,8,,,,zen架构,,,,4.2,,,,16,
+1.0,,amd锐龙77840h,,,,16.0,,,,8.0,,,,锐龙7000系列,,,,tsmc4nmfinfet,,,,,,2023-01-04,,,,amdradeon™780m,,,,12.0,,,,8,,,,zen架构,,,,3.8,,,,16,
+1.0,,amd锐龙77840hs,,,,16.0,,,,8.0,,,,锐龙7000系列,,,,tsmc4nmfinfet,,,,,,2023-01-04,,,,amdradeon™780m,,,,12.0,,,,8,,,,zen架构,,,,3.8,,,,16,
+1.0,,amd锐龙77840u,,,,16.0,,,,8.0,,,,锐龙7000系列,,,,tsmc4nmfinfet,,,,,,2023-05-03,,,,amdradeon™780m,,,,12.0,,,,8,,,,zen架构,,,,3.3,,,,16,
+1.0,,amd锐龙78840hs,,,,16.0,,,,8.0,,,,锐龙8000系列,,,,tsmc4nmfinfet,,,,,,2023-12-06,,,,amdradeon™780m,,,,12.0,,,,8,,,,zen架构,,,,3.3,,,,16,
+1.0,,amd锐龙78840u,,,,16.0,,,,8.0,,,,锐龙8000系列,,,,tsmc4nmfinfet,,,,,,2023-12-06,,,,amdradeon™780m,,,,12.0,,,,8,,,,zen架构,,,,3.3,,,,16,
+1.0,,amd锐龙78845h,,,,16.0,,,,8.0,,,,锐龙8000系列,,,,tsmc4nmfinfet,,,,,,2023-12-06,,,,amdradeon™780m,,,,12.0,,,,8,,,,zen架构,,,,3.8,,,,16,
+1.0,,amd锐龙78845hs,,,,16.0,,,,8.0,,,,锐龙8000系列,,,,tsmc4nmfinfet,,,,,,2023-12-06,,,,amdradeon™780m,,,,12.0,,,,8,,,,zen架构,,,,3.8,,,,16,
+1.0,,amd锐龙7pro1700,,,,16.0,,,,4.0,,,,锐龙pro1000系列,,,,14nm,,,,,,2017-06-29,,,,nan,,,,NULL,,,,8,,,,zen架构,,,,3.0,,,,16,
+1.0,,amd锐龙7pro1700x,,,,16.0,,,,4.0,,,,锐龙pro1000系列,,,,14nm,,,,,,2017-06-29,,,,nan,,,,NULL,,,,8,,,,zen架构,,,,3.4,,,,16,
+1.0,,amd锐龙7pro2700,,,,16.0,,,,4.0,,,,ryzenpro2000系列,,,,12nm,,,,,,2018-09-19,,,,nan,,,,NULL,,,,8,,,,zen架构,,,,3.2,,,,16,
+1.0,,amd锐龙7pro2700u,,,,4.0,,,,2.0,,,,ryzenpro2000系列,,,,14nm,,,,,,2017-10-26,,,,radeon™vega10graphics,,,,10.0,,,,4,,,,zen架构,,,,2.2,,,,8,
+1.0,,amd锐龙7pro2700x,,,,16.0,,,,4.0,,,,ryzenpro2000系列,,,,12nm,,,,,,2018-04-19,,,,nan,,,,NULL,,,,8,,,,zen架构,,,,3.6,,,,16,
+1.0,,amd锐龙7pro3700,,,,32.0,,,,4.0,,,,锐龙pro3000系列,,,,tsmc7nmfinfet,,,,,,2019-09-30,,,,nan,,,,NULL,,,,8,,,,zen架构,,,,3.6,,,,16,
+1.0,,amd锐龙7pro3700u,,,,4.0,,,,2.0,,,,锐龙pro3000系列,,,,12nm,,,,,,2019-04-08,,,,radeon™vega10graphics,,,,10.0,,,,4,,,,zen架构,,,,2.3,,,,8,
+1.0,,amd锐龙7pro4750g,,,,8.0,,,,4.0,,,,锐龙pro4000系列,,,,tsmc7nmfinfet,,,,,,2020-07-21,,,,radeon™graphics,,,,8.0,,,,8,,,,zen架构,,,,3.6,,,,16,
+1.0,,amd锐龙7pro4750ge,,,,8.0,,,,4.0,,,,锐龙pro4000系列,,,,tsmc7nmfinfet,,,,,,2020-07-21,,,,radeon™graphics,,,,8.0,,,,8,,,,zen架构,,,,3.1,,,,16,
+1.0,,amd锐龙7pro4750u,,,,8.0,,,,4.0,,,,锐龙pro4000系列,,,,tsmc7nmfinfet,,,,,,2020-05-07,,,,amdradeon™graphics,,,,7.0,,,,8,,,,zen架构,,,,1.7,,,,16,
+1.0,,amd锐龙7pro5750g,,,,16.0,,,,4.0,,,,锐龙pro5000系列,,,,tsmc7nmfinfet,,,,,,2021-06-01,,,,radeon™graphics,,,,8.0,,,,8,,,,zen架构,,,,3.8,,,,16,
+1.0,,amd锐龙7pro5750ge,,,,16.0,,,,4.0,,,,锐龙pro5000系列,,,,tsmc7nmfinfet,,,,,,2021-06-01,,,,radeon™graphics,,,,8.0,,,,8,,,,zen架构,,,,3.2,,,,16,
+1.0,,amd锐龙7pro5845,,,,32.0,,,,4.0,,,,锐龙pro5000系列,,,,tsmc7nmfinfet,,,,,,2022-09-07,,,,nan,,,,NULL,,,,8,,,,zen架构,,,,3.4,,,,16,
+1.0,,amd锐龙7pro5850u,,,,16.0,,,,4.0,,,,锐龙pro5000系列,,,,tsmc7nmfinfet,,,,,,2021-03-16,,,,amdradeon™graphics,,,,8.0,,,,8,,,,zen架构,,,,1.9,,,,16,
+1.0,,amd锐龙7pro5875u,,,,16.0,,,,4.0,,,,锐龙pro5000系列,,,,tsmc7nmfinfet,,,,,,2022-01-30,,,,amdradeon™graphics,,,,8.0,,,,8,,,,zen架构,,,,2.0,,,,16,
+1.0,,amd锐龙7pro6850h,,,,16.0,,,,4.0,,,,锐龙pro6000系列,,,,tsmc6nmfinfet,,,,,,2022-04-19,,,,amdradeon™680m,,,,12.0,,,,8,,,,zen架构,,,,3.2,,,,16,
+1.0,,amd锐龙7pro6850hs,,,,16.0,,,,4.0,,,,锐龙pro6000系列,,,,tsmc6nmfinfet,,,,,,2022-04-19,,,,amdradeon™680m,,,,12.0,,,,8,,,,zen架构,,,,3.2,,,,16,
+1.0,,amd锐龙7pro6850u,,,,16.0,,,,4.0,,,,锐龙pro6000系列,,,,tsmc6nmfinfet,,,,,,2022-04-19,,,,amdradeon™680m,,,,12.0,,,,8,,,,zen架构,,,,2.7,,,,16,
+1.0,,amd锐龙7pro6860z,,,,16.0,,,,4.0,,,,锐龙pro6000系列,,,,tsmc6nmfinfet,,,,,,2022-04-19,,,,amdradeon™680m,,,,12.0,,,,8,,,,zen架构,,,,2.7,,,,16,
+1.0,,amd锐龙7pro7730u,,,,16.0,,,,4.0,,,,锐龙pro7000系列,,,,tsmc7nmfinfet,,,,,,2023-01-04,,,,amdradeon™graphics,,,,8.0,,,,8,,,,zen架构,,,,2.0,,,,16,
+1.0,,amd锐龙7pro7735u,,,,16.0,,,,4.0,,,,锐龙pro7000系列,,,,tsmc6nmfinfet,,,,,,2023-09-30,,,,amdradeon™680m,,,,12.0,,,,8,,,,zen架构,,,,2.7,,,,16,
+1.0,,amd锐龙7pro7745,,,,32.0,,,,8.0,,,,锐龙pro7000系列,,,,tsmc5nmfinfet,,,,,,2023-06-13,,,,amdradeon™graphics,,,,2.0,,,,8,,,,zen架构,,,,3.8,,,,16,
+1.0,,amd锐龙7pro7840hs,,,,16.0,,,,8.0,,,,锐龙pro7000系列,,,,tsmc4nmfinfet,,,,,,2023-06-13,,,,amdradeon™780m,,,,12.0,,,,8,,,,zen架构,,,,3.8,,,,16,
+1.0,,amd锐龙7pro7840u,,,,16.0,,,,8.0,,,,锐龙pro7000系列,,,,tsmc4nmfinfet,,,,,,2023-06-13,,,,amdradeon™780m,,,,12.0,,,,8,,,,zen架构,,,,3.3,,,,16,
+1.0,,amd锐龙93900x,,,,64.0,,,,6.0,,,,锐龙3000系列,,,,tsmc7nmfinfet,,,,,,2019-07-07,,,,nan,,,,NULL,,,,12,,,,zen架构,,,,3.8,,,,24,
+1.0,,amd锐龙93900xt,,,,64.0,,,,6.0,,,,锐龙3000系列,,,,tsmc7nmfinfet,,,,,,2020-07-07,,,,nan,,,,NULL,,,,12,,,,zen架构,,,,3.8,,,,24,
+1.0,,amd锐龙93900（仅限oem）,,,,64.0,,,,6.0,,,,锐龙3000系列,,,,tsmc7nmfinfet,,,,,,2019-09-24,,,,nan,,,,NULL,,,,12,,,,zen架构,,,,3.1,,,,24,
+1.0,,amd锐龙93950x,,,,64.0,,,,8.0,,,,锐龙3000系列,,,,tsmc7nmfinfet,,,,,,2019-11-25,,,,nan,,,,NULL,,,,16,,,,zen架构,,,,3.5,,,,32,
+1.0,,amd锐龙94900h,,,,8.0,,,,4.0,,,,锐龙4000系列,,,,tsmc7nmfinfet,,,,,,2020-03-16,,,,amdradeon™graphics,,,,8.0,,,,8,,,,zen架构,,,,3.3,,,,16,
+1.0,,amd锐龙94900hs,,,,8.0,,,,4.0,,,,锐龙4000系列,,,,tsmc7nmfinfet,,,,,,2020-03-17,,,,amdradeon™graphics,,,,8.0,,,,8,,,,zen架构,,,,3.0,,,,16,
+1.0,,amd锐龙95900hs,,,,16.0,,,,4.0,,,,锐龙5000系列,,,,tsmc7nmfinfet,,,,,,2021-01-12,,,,amdradeon™graphics,,,,NULL,,,,8,,,,zen架构,,,,3.0,,,,16,
+1.0,,amd锐龙95900hx,,,,16.0,,,,4.0,,,,锐龙5000系列,,,,tsmc7nmfinfet,,,,,,2021-01-12,,,,amdradeon™graphics,,,,8.0,,,,8,,,,zen架构,,,,3.3,,,,16,
+1.0,,amd锐龙95900x,,,,64.0,,,,6.0,,,,锐龙5000系列,,,,tsmc7nmfinfet,,,,,,2020-11-05,,,,nan,,,,NULL,,,,12,,,,zen架构,,,,3.7,,,,24,
+1.0,,amd锐龙95900（仅限oem）,,,,64.0,,,,6.0,,,,锐龙5000系列,,,,tsmc7nmfinfet,,,,,,2021-01-12,,,,nan,,,,NULL,,,,12,,,,zen架构,,,,3.0,,,,24,
+1.0,,amd锐龙95950x,,,,64.0,,,,8.0,,,,锐龙5000系列,,,,tsmc7nmfinfet,,,,,,2020-11-05,,,,nan,,,,NULL,,,,16,,,,zen架构,,,,3.4,,,,32,
+1.0,,amd锐龙95980hs,,,,16.0,,,,4.0,,,,锐龙5000系列,,,,tsmc7nmfinfet,,,,,,2021-01-12,,,,amdradeon™graphics,,,,8.0,,,,8,,,,zen架构,,,,3.0,,,,16,
+1.0,,amd锐龙95980hx,,,,16.0,,,,4.0,,,,锐龙5000系列,,,,tsmc7nmfinfet,,,,,,2021-01-12,,,,amdradeon™graphics,,,,8.0,,,,8,,,,zen架构,,,,3.3,,,,16,
+1.0,,amd锐龙96900hs​,,,,16.0,,,,4.0,,,,锐龙6000系列,,,,tsmc6nmfinfet,,,,,,2022-01-04,,,,amdradeon™680m,,,,12.0,,,,8,,,,zen架构,,,,3.3,,,,16,
+1.0,,amd锐龙96900hx,,,,16.0,,,,4.0,,,,锐龙6000系列,,,,tsmc6nmfinfet,,,,,,2022-01-04,,,,amdradeon™680m,,,,12.0,,,,8,,,,zen架构,,,,3.3,,,,16,
+1.0,,amd锐龙96980hs,,,,16.0,,,,4.0,,,,锐龙6000系列,,,,tsmc6nmfinfet,,,,,,2022-01-04,,,,amdradeon™680m,,,,12.0,,,,8,,,,zen架构,,,,3.3,,,,16,
+1.0,,amd锐龙96980hx,,,,16.0,,,,4.0,,,,锐龙6000系列,,,,tsmc6nmfinfet,,,,,,2022-01-04,,,,amdradeon™680m,,,,12.0,,,,8,,,,zen架构,,,,3.3,,,,16,
+1.0,,amd锐龙97845hx,,,,64.0,,,,12.0,,,,锐龙7000系列,,,,tsmc5nmfinfet,,,,,,2023-02-28,,,,amdradeon™610m,,,,2.0,,,,12,,,,zen架构,,,,3.0,,,,24,
+1.0,,amd锐龙97900,,,,64.0,,,,12.0,,,,锐龙7000系列,,,,tsmc5nmfinfet,,,,,,2023-01-14,,,,amdradeon™graphics,,,,2.0,,,,12,,,,zen架构,,,,3.7,,,,24,
+1.0,,amd锐龙97900x,,,,64.0,,,,12.0,,,,锐龙7000系列,,,,tsmc5nmfinfet,,,,,,2022-09-27,,,,amdradeon™graphics,,,,2.0,,,,12,,,,zen架构,,,,4.7,,,,24,
+1.0,,amd锐龙97900x3d,,,,128.0,,,,12.0,,,,锐龙7000系列,,,,tsmc5nmfinfet,,,,,,2023-02-28,,,,amdradeon™graphics,,,,2.0,,,,12,,,,zen架构,,,,4.4,,,,24,
+1.0,,amd锐龙97940h,,,,16.0,,,,8.0,,,,锐龙7000系列,,,,tsmc4nmfinfet,,,,,,2023-01-04,,,,amdradeon™780m,,,,12.0,,,,8,,,,zen架构,,,,4.0,,,,16,
+1.0,,amd锐龙97940hs,,,,16.0,,,,8.0,,,,锐龙7000系列,,,,tsmc4nmfinfet,,,,,,2023-01-04,,,,amdradeon™780m,,,,12.0,,,,8,,,,zen架构,,,,4.0,,,,16,
+1.0,,amd锐龙97945hx,,,,64.0,,,,16.0,,,,锐龙7000系列,,,,tsmc5nmfinfet,,,,,,2023-02-28,,,,amdradeon™610m,,,,2.0,,,,16,,,,zen架构,,,,2.5,,,,32,
+1.0,,amd锐龙97945hx3d,,,,128.0,,,,16.0,,,,锐龙7000系列,,,,tsmc5nmfinfet,,,,,,2023-07-27,,,,amdradeon™610m,,,,2.0,,,,16,,,,zen架构,,,,2.3,,,,32,
+1.0,,amd锐龙97950x,,,,64.0,,,,16.0,,,,锐龙7000系列,,,,tsmc5nmfinfet,,,,,,2022-09-27,,,,amdradeon™graphics,,,,2.0,,,,16,,,,zen架构,,,,4.5,,,,32,
+1.0,,amd锐龙97950x3d,,,,128.0,,,,16.0,,,,锐龙7000系列,,,,tsmc5nmfinfet,,,,,,2023-02-28,,,,amdradeon™graphics,,,,2.0,,,,16,,,,zen架构,,,,4.2,,,,32,
+1.0,,amd锐龙98945h,,,,16.0,,,,8.0,,,,锐龙8000系列,,,,tsmc4nmfinfet,,,,,,2023-12-06,,,,amdradeon™780m,,,,12.0,,,,8,,,,zen架构,,,,4.0,,,,16,
+1.0,,amd锐龙98945hs,,,,16.0,,,,8.0,,,,锐龙8000系列,,,,tsmc4nmfinfet,,,,,,2023-12-06,,,,amdradeon™780m,,,,12.0,,,,8,,,,zen架构,,,,4.0,,,,16,
+1.0,,amd锐龙9pro3900,,,,64.0,,,,6.0,,,,锐龙pro3000系列,,,,tsmc7nmfinfet,,,,,,2019-09-30,,,,nan,,,,NULL,,,,12,,,,zen架构,,,,3.1,,,,24,
+1.0,,amd锐龙9pro5945,,,,64.0,,,,6.0,,,,锐龙pro5000系列,,,,tsmc7nmfinfet,,,,,,2022-09-07,,,,nan,,,,NULL,,,,12,,,,zen架构,,,,3.0,,,,24,
+1.0,,amd锐龙9pro6950h,,,,16.0,,,,4.0,,,,锐龙pro6000系列,,,,tsmc6nmfinfet,,,,,,2022-04-19,,,,amdradeon™680m,,,,12.0,,,,8,,,,zen架构,,,,3.3,,,,16,
+1.0,,amd锐龙9pro6950hs,,,,16.0,,,,4.0,,,,锐龙pro6000系列,,,,tsmc6nmfinfet,,,,,,2022-04-19,,,,amdradeon™680m,,,,12.0,,,,8,,,,zen架构,,,,3.3,,,,16,
+1.0,,amd锐龙9pro7940hs,,,,16.0,,,,8.0,,,,锐龙pro7000系列,,,,tsmc4nmfinfet,,,,,,2023-06-13,,,,amdradeon™780m,,,,12.0,,,,8,,,,zen架构,,,,4.0,,,,16,
+1.0,,amd锐龙9pro7945,,,,64.0,,,,12.0,,,,锐龙pro7000系列,,,,tsmc5nmfinfet,,,,,,2023-06-13,,,,amdradeon™graphics,,,,2.0,,,,12,,,,zen架构,,,,3.7,,,,24,
+1.0,,amd锐龙threadripper1900x,,,,16.0,,,,4.0,,,,锐龙threadripper1000系列,,,,14nm,,,,,,2017-08-31,,,,nan,,,,NULL,,,,8,,,,zen架构,,,,3.8,,,,16,
+1.0,,amd锐龙threadripper1920x,,,,32.0,,,,6.0,,,,锐龙threadripper1000系列,,,,14nm,,,,,,2017-07-31,,,,nan,,,,NULL,,,,12,,,,zen架构,,,,3.5,,,,24,
+1.0,,amd锐龙threadripper1950x,,,,32.0,,,,8.0,,,,锐龙threadripper1000系列,,,,14nm,,,,,,2017-07-31,,,,nan,,,,NULL,,,,16,,,,zen架构,,,,3.4,,,,32,
+1.0,,amd锐龙threadripper2920x,,,,32.0,,,,6.0,,,,锐龙threadripper2000系列,,,,12nm,,,,,,2018-10-29,,,,nan,,,,NULL,,,,12,,,,zen架构,,,,3.5,,,,24,
+1.0,,amd锐龙threadripper2950x,,,,32.0,,,,8.0,,,,锐龙threadripper2000系列,,,,12nm,,,,,,2018-08-31,,,,nan,,,,NULL,,,,16,,,,zen架构,,,,3.5,,,,32,
+1.0,,amd锐龙threadripper2970wx,,,,64.0,,,,12.0,,,,锐龙threadripper2000系列,,,,12nm,,,,,,2018-10-29,,,,nan,,,,NULL,,,,24,,,,zen架构,,,,3.0,,,,48,
+1.0,,amd锐龙threadripper2990wx,,,,64.0,,,,16.0,,,,锐龙threadripper2000系列,,,,12nm,,,,,,2018-08-13,,,,nan,,,,NULL,,,,32,,,,zen架构,,,,3.0,,,,64,
+1.0,,amd锐龙threadripper3960x,,,,128.0,,,,12.0,,,,锐龙threadripper3000系列,,,,tsmc7nmfinfet,,,,,,2019-11-25,,,,nan,,,,NULL,,,,24,,,,zen架构,,,,3.8,,,,48,
+1.0,,amd锐龙threadripper3970x,,,,128.0,,,,16.0,,,,锐龙threadripper3000系列,,,,tsmc7nmfinfet,,,,,,2019-11-25,,,,nan,,,,NULL,,,,32,,,,zen架构,,,,3.7,,,,64,
+1.0,,amd锐龙threadripper3990x,,,,256.0,,,,32.0,,,,锐龙threadripper3000系列,,,,tsmc7nmfinfet,,,,,,2020-02-07,,,,nan,,,,NULL,,,,64,,,,zen架构,,,,2.9,,,,128,
+1.0,,amd锐龙threadripper7960x,,,,128.0,,,,24.0,,,,锐龙threadripper7000系列,,,,tsmc5nmfinfet,,,,,,2023-10-19,,,,nan,,,,NULL,,,,24,,,,zen架构,,,,4.2,,,,48,
+1.0,,amd锐龙threadripper7970x,,,,128.0,,,,32.0,,,,锐龙threadripper7000系列,,,,tsmc5nmfinfet,,,,,,2023-10-19,,,,nan,,,,NULL,,,,32,,,,zen架构,,,,4.0,,,,64,
+1.0,,amd锐龙threadripper7980x,,,,256.0,,,,64.0,,,,锐龙threadripper7000系列,,,,tsmc5nmfinfet,,,,,,2023-10-19,,,,nan,,,,NULL,,,,64,,,,zen架构,,,,3.2,,,,128,
+1.0,,amd锐龙threadripperpro3945wx,,,,64.0,,,,6.0,,,,锐龙threadripperpro3000wx系列,,,,tsmc7nmfinfet,,,,,,2020-07-14,,,,nan,,,,NULL,,,,12,,,,zen架构,,,,4.0,,,,24,
+1.0,,amd锐龙threadripperpro3955wx,,,,64.0,,,,8.0,,,,锐龙threadripperpro3000wx系列,,,,tsmc7nmfinfet,,,,,,2020-07-14,,,,nan,,,,NULL,,,,16,,,,zen架构,,,,3.9,,,,32,
+1.0,,amd锐龙threadripperpro3975wx,,,,128.0,,,,16.0,,,,锐龙threadripperpro3000wx系列,,,,tsmc7nmfinfet,,,,,,2020-07-14,,,,nan,,,,NULL,,,,32,,,,zen架构,,,,3.5,,,,64,
+1.0,,amd锐龙threadripperpro3995wx,,,,256.0,,,,32.0,,,,锐龙threadripperpro3000wx系列,,,,tsmc7nmfinfet,,,,,,2020-07-14,,,,nan,,,,NULL,,,,64,,,,zen架构,,,,2.7,,,,128,
+1.0,,amd锐龙threadripperpro5945wx,,,,64.0,,,,6.0,,,,锐龙threadripperpro5000wx系列,,,,tsmc7nmfinfet,,,,,,2022-03-08,,,,nan,,,,NULL,,,,12,,,,zen架构,,,,4.1,,,,24,
+1.0,,amd锐龙threadripperpro5955wx,,,,64.0,,,,8.0,,,,锐龙threadripperpro5000wx系列,,,,tsmc7nmfinfet,,,,,,2022-03-08,,,,nan,,,,NULL,,,,16,,,,zen架构,,,,4.0,,,,32,
+1.0,,amd锐龙threadripperpro5965wx,,,,128.0,,,,12.0,,,,锐龙threadripperpro5000wx系列,,,,tsmc7nmfinfet,,,,,,2022-03-08,,,,nan,,,,NULL,,,,24,,,,zen架构,,,,3.8,,,,48,
+1.0,,amd锐龙threadripperpro5975wx,,,,128.0,,,,16.0,,,,锐龙threadripperpro5000wx系列,,,,tsmc7nmfinfet,,,,,,2022-03-08,,,,nan,,,,NULL,,,,32,,,,zen架构,,,,3.6,,,,64,
+1.0,,amd锐龙threadripperpro5995wx,,,,256.0,,,,32.0,,,,锐龙threadripperpro5000wx系列,,,,tsmc7nmfinfet,,,,,,2022-03-08,,,,nan,,,,NULL,,,,64,,,,zen架构,,,,2.7,,,,128,
+1.0,,amd锐龙threadripperpro7945wx,,,,64.0,,,,12.0,,,,锐龙threadripperpro7000wx系列,,,,tsmc5nmfinfet,,,,,,2023-10-19,,,,nan,,,,NULL,,,,12,,,,zen架构,,,,4.7,,,,24,
+1.0,,amd锐龙threadripperpro7955wx,,,,64.0,,,,16.0,,,,锐龙threadripperpro7000wx系列,,,,tsmc5nmfinfet,,,,,,2023-10-19,,,,nan,,,,NULL,,,,16,,,,zen架构,,,,4.5,,,,32,
+1.0,,amd锐龙threadripperpro7965wx,,,,128.0,,,,24.0,,,,锐龙threadripperpro7000wx系列,,,,tsmc5nmfinfet,,,,,,2023-10-19,,,,nan,,,,NULL,,,,24,,,,zen架构,,,,4.2,,,,48,
+1.0,,amd锐龙threadripperpro7975wx,,,,128.0,,,,32.0,,,,锐龙threadripperpro7000wx系列,,,,tsmc5nmfinfet,,,,,,2023-10-19,,,,nan,,,,NULL,,,,32,,,,zen架构,,,,4.0,,,,64,
+1.0,,amd锐龙threadripperpro7985wx,,,,256.0,,,,64.0,,,,锐龙threadripperpro7000wx系列,,,,tsmc5nmfinfet,,,,,,2023-10-19,,,,nan,,,,NULL,,,,64,,,,zen架构,,,,3.2,,,,128,
+1.0,,amd锐龙threadripperpro7995wx,,,,384.0,,,,96.0,,,,锐龙threadripperpro7000wx系列,,,,tsmc5nmfinfet,,,,,,2023-10-19,,,,nan,,,,NULL,,,,96,,,,zen架构,,,,2.5,,,,192,
+1.0,,amd锐龙z1,,,,16.0,,,,6.0,,,,锐龙z1,,,,nan,,,,,,2023-04-26,,,,amdradeon™graphics,,,,4.0,,,,6,,,,zen架构,,,,3.2,,,,12,
+1.0,,amd锐龙z1extreme,,,,16.0,,,,8.0,,,,锐龙z1,,,,nan,,,,,,2023-04-26,,,,amdradeon™graphics,,,,12.0,,,,8,,,,zen架构,,,,3.3,,,,16,

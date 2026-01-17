@@ -1,0 +1,1770 @@
+exist_flag_gt,exist_flag_response,相机名称,相机名称_before_map,iso范围_llm_judge,iso范围_llm_judge_eval_msg,iso范围_query,iso范围_response,快门速度范围_llm_judge,快门速度范围_llm_judge_eval_msg,快门速度范围_query,快门速度范围_response,数码影像处理器_llm_judge,数码影像处理器_llm_judge_eval_msg,数码影像处理器_query,数码影像处理器_response,最高对焦点数目_exact_match,最高对焦点数目_exact_match_eval_msg,最高对焦点数目_query,最高对焦点数目_response,最高每秒拍摄幅数_llm_judge,最高每秒拍摄幅数_llm_judge_eval_msg,最高每秒拍摄幅数_query,最高每秒拍摄幅数_response,有效像素_llm_judge,有效像素_llm_judge_eval_msg,有效像素_query,有效像素_response,相机内减震技术_llm_judge,相机内减震技术_llm_judge_eval_msg,相机内减震技术_query,相机内减震技术_response,相机名称_exact_match,相机名称_exact_match_eval_msg,重量_llm_judge,重量_llm_judge_eval_msg,重量_query,重量_response
+,,z7,Z7,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(Meaning: The response and the reference answer should be roughly semantically the same or refer to the same entity; exact word-for-word correspondence is not necessary.)
+
+---
+
+### idx_0
+- Response: ""64-256000""
+- Target: ""iso64-25600""
+- Analysis: The reference answer indicates an ISO range from 64 to 25600, and the response has an upper bound of 256000, which is an order of magnitude higher, possibly a typo or exaggeration. While the lower bound matches (64), the upper bound is wrong. It does not point to the same entity since it expands the ISO upper limit by a factor of 10, which is not roughly the same range.
+- Verdict: Not semantically consistent, score = 0.
+
+### idx_1
+- Response: ""64-256000""
+- Target: ""iso100-51200""
+- Analysis: Response range is 64 to 256000; reference is 100 to 51200. Both lower and upper limits do not match (64 vs 100 lower, and 256000 vs 51200 upper). The ranges do not semantically match or point to the same entity. 256000 is much higher than 51200; 64 is lower than 100.
+- Verdict: Semantic mismatch, score = 0.
+
+### idx_2
+- Response: ""64-25600""
+- Target: ""iso100-51200""
+- Analysis: Lower end in response is 64 vs 100 in target; upper end is 25600 vs 51200. Although the ranges don't exactly coincide, they partially overlap which could be considered roughly similar in certain contexts, but the criterion allows ""大致相同"" (roughly the same). Here the ranges are half or double of each other: lower and upper limits are different but still in the same ISO context. Since both refer to ISO ranges most likely, this can be considered pointing to the same entity roughly.
+- Verdict: Semantic roughly consistent, score = 1.
+
+### idx_3
+- Response: ""64-25600""
+- Target: ""iso100-51200""
+- Analysis: The same as idx_2.
+- Verdict: 1.
+
+### idx_4
+- Response: ""100-25600""
+- Target: ""iso100-51200""
+- Analysis: Lower limit matches exactly (100). Upper limit is 25600 vs 51200. These differ by a factor of 2, but the ranges still share the same domain context of ISO settings. Pointing to the same entity roughly.
+- Verdict: 1.
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",iso64-25600,64-256000,1.0,"分析过程：
+
+参考答案涉及快门速度范围，重点是快门速度的最高和最低值，以及范围的合理性。评分依据是“语义相同大致、或者指向的实体一致即可”，括号内容未提及也算对，快门速度范围的上下限可以有一定微调（根据实际范围进行调整1/3或1/2EV步长调整），并且可以将30秒扩展到900秒。
+
+对应关系中，response的快门速度范围为“1/4000s-30s+b”（假设“+b”是后续简写，忽略不影响评判），而参考答案分别是：
+
+- idx_0、idx_1、idx_2、idx_3：标准答案快门速度最低是1/8000秒。
+- idx_4：标准答案快门速度最低是1/4000秒。
+
+逐项分析：
+
+idx_0：  
+response的范围是1/4000秒至30秒  
+目标：1/8000至30秒（以1/3或1/2ev为步长微调），可理解为快门速度最低端是1/8000秒。但可根据实际范围进行调整，1/4000与1/8000差了一档，即1/2ev，属于允许的微调范围吗？快门速度范围允许上下微调1/3或1/2EV，1/4000相较于1/8000低档一档，即1/2 EV（一般会以1/3或1/2 EV调整，1/4000确实是1/3 EV或者1/2 EV的一挡），因此这属于合理范围内的调整，且最高速度和秒数吻合。括号内容是否涉及可忽略。故语义大致相同，分数1。
+
+idx_1：   
+同idx_0，唯一差别是括号里额外说明了m模式下可扩展至900s，response中未提及括号内容，根据评分标准，括号内容未提及也算对。快门速度范围的最低值“1/4000”相比参考答案的“1/8000”属于可接受范围内调整，最高值一样30秒。分数1。
+
+idx_2：   
+同idx_0，分析同上，分数1。
+
+idx_3：   
+同idx_0，分析同上，分数1。
+
+idx_4：  
+response的快门速度范围“1/4000s-30s+b” 和目标“1/4000至30秒（以1/3或1/2ev为步长进行微调）”。二者下限完全匹配，上限匹配，完全一致，括号内容忽略。分数1。
+
+综合以上，所有response虽然最低速与参考答案存在差异，但均在允许的微调范围内，且整体范围覆盖一致，符合评分标准语义大致相同。
+
+最终评分：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",1/8000至30秒（以1/3或1/2ev为步长进行微调）,1/4000s-30s+b,1.0,"Let's analyze each item according to the grading criteria:
+
+- Criterion: The response and the target are considered correct if they are semantically the same or refer to the same entity. Exact word-to-word matching is not necessary.
+
+---
+
+**idx_0:**
+- Response: ""expeed6""
+- Target: ""expeed6""
+- Analysis: Exactly the same.
+- Score: 1
+
+**idx_1:**
+- Response: ""expeed6""
+- Target: ""双expeed6"" (which means ""dual expeed6"")
+- Analysis: Response mentions ""expeed6"" while target specifies ""dual expeed6"". The target refers to two units of expeed6; the response only mentions one. The response is missing ""双"" (dual), which is a significant part of the entity referenced.
+- According to criterion, the response and target should be semantically the same or refer to the same entity. Since ""expeed6"" and ""双expeed6"" refer to different configurations (one unit vs two units), they are not equivalent or the same entity.
+- Score: 0
+
+**idx_2:**
+- Response: ""expeed6""
+- Target: ""expeed6""
+- Same as idx_0.
+- Score: 1
+
+**idx_3:**
+- Response: ""expeed6""
+- Target: ""expeed6""
+- Same as idx_0.
+- Score: 1
+
+**idx_4:**
+- Response: ""expeed6""
+- Target: ""expeed6""
+- Same as idx_0.
+- Score: 1
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",expeed6,expeed6,1.0,"exact match, response: 493个, target: 493个",493个,493个,0.0,"Let's analyze each pair based on the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Translated, roughly: The response and the standard answer need to be basically semantically the same or refer to the same entity, no need for exact word-to-word matching.
+
+---
+
+**idx_0**  
+- Response: 约7幅/秒  
+- Target: 约9幅/秒  
+Analysis: 7 and 9 are close but noticeably different values. Since the criterion allows approximate semantic equivalence, but here 7 versus 9 is a quantitative numeric difference that could change meaning. Usually, a difference of about 20-30% could be acceptable if the context is loose, but without context, a difference of 7 vs 9 is around 22% off. The criterion says ""或指向的实体一致"" (or refer to the same entity). Here, both refer to some rate (frames per second), but numerical values differ. Since exact numbers matter, and ""约"" means about but this is a number difference, I think this counts as different answers. So 0.
+
+---
+
+**idx_1**  
+- Response: 约14幅/秒  
+- Target: 约14幅/秒  
+Analysis: Exact same. Score 1.
+
+---
+
+**idx_2**  
+- Response: 约7幅/秒  
+- Target: 约12幅/秒  
+Analysis: 7 vs 12 is a significant difference (~42% off). Not approximately equal. So score 0.
+
+---
+
+**idx_3**  
+- Response: 约14幅/秒  
+- Target: 约4.5幅/秒  
+Analysis: 14 vs 4.5 is more than 3x difference. Not approximately equal. Score 0.
+
+---
+
+**idx_4**  
+- Response: 约11幅/秒  
+- Target: 约11幅/秒  
+Analysis: Exact same. Score 1.
+
+---
+
+Final scoring:  
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1
+}
+```",约9幅/秒,约7幅/秒,1.0,"分析步骤：
+
+- 评分标准要求：和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。
+- 评分范围0或1，完全正确得1分，否则得0分。
+
+逐条分析：
+
+1. idx_0：
+   - 参考答案：约4,575万
+   - 回答：约4575万
+   - 分析：数字相同，只是格式略有不同，但数值一致，语义相同。
+   - 评分：1
+
+2. idx_1：
+   - 参考答案：约2,450万
+   - 回答：约2679万
+   - 分析：数字相差较大，指向的实体数值不同，语义不一致。
+   - 评分：0
+
+3. idx_2：
+   - 参考答案：约2,450万
+   - 回答：约2450万
+   - 分析：数字相同，只是格式不同，语义一致。
+   - 评分：1
+
+4. idx_3：
+   - 参考答案：约2,432万
+   - 回答：约2493万
+   - 分析：数字相差61万，差异较大，不算语义一致。
+   - 评分：0
+
+5. idx_4：
+   - 参考答案：约2,088万
+   - 回答：约2151万
+   - 分析：数字差距63万，语义不一致。
+   - 评分：0
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```","约4,575万",约4575万,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion:
+- The response should have a roughly same meaning or point to the same entity as the target.
+- No need for exact word-by-word match.
+
+Items:
+
+1. idx_0  
+   - response: ""vr减震"" (VR image stabilization)  
+   - target: ""影像传感器5轴移动"" (5-axis movement of image sensor)  
+   - Analysis:  
+     - ""VR减震"" is commonly understood as ""vibration reduction"" or image stabilization technology related to lens or sensor movement.  
+     - The target specifically mentions ""image sensor 5-axis movement,"" which corresponds closely to in-body image stabilization via sensor shift.  
+     - Although wording is different, the meaning/entity referred is effectively the same (image stabilization by sensor shifts).  
+   - Score: 1
+
+2. idx_1  
+   - response: ""vr减震""  
+   - target: ""5轴影像传感器移位"" (5-axis image sensor displacement)  
+   - Analysis:  
+     - Same as above, the response is ""vr减震,"" the target similarly describes sensor-based image stabilization.  
+     - They are semantically consistent.  
+   - Score: 1
+
+3. idx_2  
+   - response: ""vr减震""  
+   - target: ""影像传感器5轴移动""  
+   - Same as idx_0.  
+   - Score: 1
+
+4. idx_3  
+   - response: ""vr减震""  
+   - target: ""影像传感器5轴移动""  
+   - Same as idx_0 and idx_2.  
+   - Score: 1
+
+5. idx_4  
+   - response: ""vr减震""  
+   - target: ""-"" (no target answer)  
+   - Analysis:  
+     - No target answer given, so the response cannot be judged as correct or correct meaning.  
+     - According to general scoring logic, if the target is empty or not given, then the response should get score 0, since there's no correct answer to match.  
+   - Score: 0
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0
+}
+```
+",影像传感器5轴移动,vr减震,1.0,key_match,0.0,"First, let's analyze the responses against the targets one by one based on the criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""
+Translation: The meaning should be generally the same, or point to the same entity; exact word-for-word matching is not required.
+
+Since the items are numeric weights with units (grams) specified approximately (using ""约""), the key is whether the response value is reasonably close to the target value, as the criterion implies approximate or generally same entity suffices.
+
+Now analyze each pair:
+
+- idx_0:
+  - Response: 约815g
+  - Target: 约675g
+  - Difference: 140g more than target, which is roughly 20% higher.
+  - Is this ""大致相同""? 20% difference is quite large for a weight value measured approximately, but since ""约"" indicates approximation, let's consider if this is close enough.
+  - 675g vs 815g: difference seems significant.
+  - Considering normal rounding or approximation, 140g difference on 675g is large. Probably no.
+
+- idx_1:
+  - Response: 约645g
+  - Target: 约705g
+  - Difference: 60g less than target, around 8.5% difference.
+  - 645g and 705g difference is smaller percentage than idx_0, but still a difference.
+  - Given ""约"" implies approximation and criterion is lenient, this can be considered consistent.
+
+- idx_2:
+  - Response: 约655g
+  - Target: 约675g
+  - Difference: 20g less than target, about 3% difference.
+  - Very close. Definitely counts as correct.
+
+- idx_3:
+  - Response: 约715g
+  - Target: 约675g
+  - Difference: 40g more, about 6% higher.
+  - Also close and consistent with the target.
+
+- idx_4:
+  - Response: 约565g
+  - Target: 约450g
+  - Difference: 115g more, about 25% higher than target.
+  - Similar to idx_0, difference seems large.
+  - Possible no.
+
+Summary of judgement:
+
+- idx_0: 815g vs 675g too large difference → 0
+- idx_1: 645g vs 705g close enough → 1
+- idx_2: 655g vs 675g close → 1
+- idx_3: 715g vs 675g close → 1
+- idx_4: 565g vs 450g difference too large → 0
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0
+}
+```
+",约675g,约815g
+,,z6ⅱ,Z6II,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(Meaning: The response and the reference answer should be roughly semantically the same or refer to the same entity; exact word-for-word correspondence is not necessary.)
+
+---
+
+### idx_0
+- Response: ""64-256000""
+- Target: ""iso64-25600""
+- Analysis: The reference answer indicates an ISO range from 64 to 25600, and the response has an upper bound of 256000, which is an order of magnitude higher, possibly a typo or exaggeration. While the lower bound matches (64), the upper bound is wrong. It does not point to the same entity since it expands the ISO upper limit by a factor of 10, which is not roughly the same range.
+- Verdict: Not semantically consistent, score = 0.
+
+### idx_1
+- Response: ""64-256000""
+- Target: ""iso100-51200""
+- Analysis: Response range is 64 to 256000; reference is 100 to 51200. Both lower and upper limits do not match (64 vs 100 lower, and 256000 vs 51200 upper). The ranges do not semantically match or point to the same entity. 256000 is much higher than 51200; 64 is lower than 100.
+- Verdict: Semantic mismatch, score = 0.
+
+### idx_2
+- Response: ""64-25600""
+- Target: ""iso100-51200""
+- Analysis: Lower end in response is 64 vs 100 in target; upper end is 25600 vs 51200. Although the ranges don't exactly coincide, they partially overlap which could be considered roughly similar in certain contexts, but the criterion allows ""大致相同"" (roughly the same). Here the ranges are half or double of each other: lower and upper limits are different but still in the same ISO context. Since both refer to ISO ranges most likely, this can be considered pointing to the same entity roughly.
+- Verdict: Semantic roughly consistent, score = 1.
+
+### idx_3
+- Response: ""64-25600""
+- Target: ""iso100-51200""
+- Analysis: The same as idx_2.
+- Verdict: 1.
+
+### idx_4
+- Response: ""100-25600""
+- Target: ""iso100-51200""
+- Analysis: Lower limit matches exactly (100). Upper limit is 25600 vs 51200. These differ by a factor of 2, but the ranges still share the same domain context of ISO settings. Pointing to the same entity roughly.
+- Verdict: 1.
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",iso100-51200,64-256000,1.0,"分析过程：
+
+参考答案涉及快门速度范围，重点是快门速度的最高和最低值，以及范围的合理性。评分依据是“语义相同大致、或者指向的实体一致即可”，括号内容未提及也算对，快门速度范围的上下限可以有一定微调（根据实际范围进行调整1/3或1/2EV步长调整），并且可以将30秒扩展到900秒。
+
+对应关系中，response的快门速度范围为“1/4000s-30s+b”（假设“+b”是后续简写，忽略不影响评判），而参考答案分别是：
+
+- idx_0、idx_1、idx_2、idx_3：标准答案快门速度最低是1/8000秒。
+- idx_4：标准答案快门速度最低是1/4000秒。
+
+逐项分析：
+
+idx_0：  
+response的范围是1/4000秒至30秒  
+目标：1/8000至30秒（以1/3或1/2ev为步长微调），可理解为快门速度最低端是1/8000秒。但可根据实际范围进行调整，1/4000与1/8000差了一档，即1/2ev，属于允许的微调范围吗？快门速度范围允许上下微调1/3或1/2EV，1/4000相较于1/8000低档一档，即1/2 EV（一般会以1/3或1/2 EV调整，1/4000确实是1/3 EV或者1/2 EV的一挡），因此这属于合理范围内的调整，且最高速度和秒数吻合。括号内容是否涉及可忽略。故语义大致相同，分数1。
+
+idx_1：   
+同idx_0，唯一差别是括号里额外说明了m模式下可扩展至900s，response中未提及括号内容，根据评分标准，括号内容未提及也算对。快门速度范围的最低值“1/4000”相比参考答案的“1/8000”属于可接受范围内调整，最高值一样30秒。分数1。
+
+idx_2：   
+同idx_0，分析同上，分数1。
+
+idx_3：   
+同idx_0，分析同上，分数1。
+
+idx_4：  
+response的快门速度范围“1/4000s-30s+b” 和目标“1/4000至30秒（以1/3或1/2ev为步长进行微调）”。二者下限完全匹配，上限匹配，完全一致，括号内容忽略。分数1。
+
+综合以上，所有response虽然最低速与参考答案存在差异，但均在允许的微调范围内，且整体范围覆盖一致，符合评分标准语义大致相同。
+
+最终评分：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",1/8000至30秒（以1/3或1/2ev为步长进行微调，m模式下可扩展至900s）,1/4000s-30s+b,0.0,"Let's analyze each item according to the grading criteria:
+
+- Criterion: The response and the target are considered correct if they are semantically the same or refer to the same entity. Exact word-to-word matching is not necessary.
+
+---
+
+**idx_0:**
+- Response: ""expeed6""
+- Target: ""expeed6""
+- Analysis: Exactly the same.
+- Score: 1
+
+**idx_1:**
+- Response: ""expeed6""
+- Target: ""双expeed6"" (which means ""dual expeed6"")
+- Analysis: Response mentions ""expeed6"" while target specifies ""dual expeed6"". The target refers to two units of expeed6; the response only mentions one. The response is missing ""双"" (dual), which is a significant part of the entity referenced.
+- According to criterion, the response and target should be semantically the same or refer to the same entity. Since ""expeed6"" and ""双expeed6"" refer to different configurations (one unit vs two units), they are not equivalent or the same entity.
+- Score: 0
+
+**idx_2:**
+- Response: ""expeed6""
+- Target: ""expeed6""
+- Same as idx_0.
+- Score: 1
+
+**idx_3:**
+- Response: ""expeed6""
+- Target: ""expeed6""
+- Same as idx_0.
+- Score: 1
+
+**idx_4:**
+- Response: ""expeed6""
+- Target: ""expeed6""
+- Same as idx_0.
+- Score: 1
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",双expeed6,expeed6,0.0,"exact not match, response: 493个, target: 273个",273个,493个,1.0,"Let's analyze each pair based on the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Translated, roughly: The response and the standard answer need to be basically semantically the same or refer to the same entity, no need for exact word-to-word matching.
+
+---
+
+**idx_0**  
+- Response: 约7幅/秒  
+- Target: 约9幅/秒  
+Analysis: 7 and 9 are close but noticeably different values. Since the criterion allows approximate semantic equivalence, but here 7 versus 9 is a quantitative numeric difference that could change meaning. Usually, a difference of about 20-30% could be acceptable if the context is loose, but without context, a difference of 7 vs 9 is around 22% off. The criterion says ""或指向的实体一致"" (or refer to the same entity). Here, both refer to some rate (frames per second), but numerical values differ. Since exact numbers matter, and ""约"" means about but this is a number difference, I think this counts as different answers. So 0.
+
+---
+
+**idx_1**  
+- Response: 约14幅/秒  
+- Target: 约14幅/秒  
+Analysis: Exact same. Score 1.
+
+---
+
+**idx_2**  
+- Response: 约7幅/秒  
+- Target: 约12幅/秒  
+Analysis: 7 vs 12 is a significant difference (~42% off). Not approximately equal. So score 0.
+
+---
+
+**idx_3**  
+- Response: 约14幅/秒  
+- Target: 约4.5幅/秒  
+Analysis: 14 vs 4.5 is more than 3x difference. Not approximately equal. Score 0.
+
+---
+
+**idx_4**  
+- Response: 约11幅/秒  
+- Target: 约11幅/秒  
+Analysis: Exact same. Score 1.
+
+---
+
+Final scoring:  
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1
+}
+```",约14幅/秒,约14幅/秒,0.0,"分析步骤：
+
+- 评分标准要求：和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。
+- 评分范围0或1，完全正确得1分，否则得0分。
+
+逐条分析：
+
+1. idx_0：
+   - 参考答案：约4,575万
+   - 回答：约4575万
+   - 分析：数字相同，只是格式略有不同，但数值一致，语义相同。
+   - 评分：1
+
+2. idx_1：
+   - 参考答案：约2,450万
+   - 回答：约2679万
+   - 分析：数字相差较大，指向的实体数值不同，语义不一致。
+   - 评分：0
+
+3. idx_2：
+   - 参考答案：约2,450万
+   - 回答：约2450万
+   - 分析：数字相同，只是格式不同，语义一致。
+   - 评分：1
+
+4. idx_3：
+   - 参考答案：约2,432万
+   - 回答：约2493万
+   - 分析：数字相差61万，差异较大，不算语义一致。
+   - 评分：0
+
+5. idx_4：
+   - 参考答案：约2,088万
+   - 回答：约2151万
+   - 分析：数字差距63万，语义不一致。
+   - 评分：0
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```","约2,450万",约2679万,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion:
+- The response should have a roughly same meaning or point to the same entity as the target.
+- No need for exact word-by-word match.
+
+Items:
+
+1. idx_0  
+   - response: ""vr减震"" (VR image stabilization)  
+   - target: ""影像传感器5轴移动"" (5-axis movement of image sensor)  
+   - Analysis:  
+     - ""VR减震"" is commonly understood as ""vibration reduction"" or image stabilization technology related to lens or sensor movement.  
+     - The target specifically mentions ""image sensor 5-axis movement,"" which corresponds closely to in-body image stabilization via sensor shift.  
+     - Although wording is different, the meaning/entity referred is effectively the same (image stabilization by sensor shifts).  
+   - Score: 1
+
+2. idx_1  
+   - response: ""vr减震""  
+   - target: ""5轴影像传感器移位"" (5-axis image sensor displacement)  
+   - Analysis:  
+     - Same as above, the response is ""vr减震,"" the target similarly describes sensor-based image stabilization.  
+     - They are semantically consistent.  
+   - Score: 1
+
+3. idx_2  
+   - response: ""vr减震""  
+   - target: ""影像传感器5轴移动""  
+   - Same as idx_0.  
+   - Score: 1
+
+4. idx_3  
+   - response: ""vr减震""  
+   - target: ""影像传感器5轴移动""  
+   - Same as idx_0 and idx_2.  
+   - Score: 1
+
+5. idx_4  
+   - response: ""vr减震""  
+   - target: ""-"" (no target answer)  
+   - Analysis:  
+     - No target answer given, so the response cannot be judged as correct or correct meaning.  
+     - According to general scoring logic, if the target is empty or not given, then the response should get score 0, since there's no correct answer to match.  
+   - Score: 0
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0
+}
+```
+",5轴影像传感器移位,vr减震,1.0,key_match,1.0,"First, let's analyze the responses against the targets one by one based on the criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""
+Translation: The meaning should be generally the same, or point to the same entity; exact word-for-word matching is not required.
+
+Since the items are numeric weights with units (grams) specified approximately (using ""约""), the key is whether the response value is reasonably close to the target value, as the criterion implies approximate or generally same entity suffices.
+
+Now analyze each pair:
+
+- idx_0:
+  - Response: 约815g
+  - Target: 约675g
+  - Difference: 140g more than target, which is roughly 20% higher.
+  - Is this ""大致相同""? 20% difference is quite large for a weight value measured approximately, but since ""约"" indicates approximation, let's consider if this is close enough.
+  - 675g vs 815g: difference seems significant.
+  - Considering normal rounding or approximation, 140g difference on 675g is large. Probably no.
+
+- idx_1:
+  - Response: 约645g
+  - Target: 约705g
+  - Difference: 60g less than target, around 8.5% difference.
+  - 645g and 705g difference is smaller percentage than idx_0, but still a difference.
+  - Given ""约"" implies approximation and criterion is lenient, this can be considered consistent.
+
+- idx_2:
+  - Response: 约655g
+  - Target: 约675g
+  - Difference: 20g less than target, about 3% difference.
+  - Very close. Definitely counts as correct.
+
+- idx_3:
+  - Response: 约715g
+  - Target: 约675g
+  - Difference: 40g more, about 6% higher.
+  - Also close and consistent with the target.
+
+- idx_4:
+  - Response: 约565g
+  - Target: 约450g
+  - Difference: 115g more, about 25% higher than target.
+  - Similar to idx_0, difference seems large.
+  - Possible no.
+
+Summary of judgement:
+
+- idx_0: 815g vs 675g too large difference → 0
+- idx_1: 645g vs 705g close enough → 1
+- idx_2: 655g vs 675g close → 1
+- idx_3: 715g vs 675g close → 1
+- idx_4: 565g vs 450g difference too large → 0
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0
+}
+```
+",约705g,约645g
+,,z6,Z6,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(Meaning: The response and the reference answer should be roughly semantically the same or refer to the same entity; exact word-for-word correspondence is not necessary.)
+
+---
+
+### idx_0
+- Response: ""64-256000""
+- Target: ""iso64-25600""
+- Analysis: The reference answer indicates an ISO range from 64 to 25600, and the response has an upper bound of 256000, which is an order of magnitude higher, possibly a typo or exaggeration. While the lower bound matches (64), the upper bound is wrong. It does not point to the same entity since it expands the ISO upper limit by a factor of 10, which is not roughly the same range.
+- Verdict: Not semantically consistent, score = 0.
+
+### idx_1
+- Response: ""64-256000""
+- Target: ""iso100-51200""
+- Analysis: Response range is 64 to 256000; reference is 100 to 51200. Both lower and upper limits do not match (64 vs 100 lower, and 256000 vs 51200 upper). The ranges do not semantically match or point to the same entity. 256000 is much higher than 51200; 64 is lower than 100.
+- Verdict: Semantic mismatch, score = 0.
+
+### idx_2
+- Response: ""64-25600""
+- Target: ""iso100-51200""
+- Analysis: Lower end in response is 64 vs 100 in target; upper end is 25600 vs 51200. Although the ranges don't exactly coincide, they partially overlap which could be considered roughly similar in certain contexts, but the criterion allows ""大致相同"" (roughly the same). Here the ranges are half or double of each other: lower and upper limits are different but still in the same ISO context. Since both refer to ISO ranges most likely, this can be considered pointing to the same entity roughly.
+- Verdict: Semantic roughly consistent, score = 1.
+
+### idx_3
+- Response: ""64-25600""
+- Target: ""iso100-51200""
+- Analysis: The same as idx_2.
+- Verdict: 1.
+
+### idx_4
+- Response: ""100-25600""
+- Target: ""iso100-51200""
+- Analysis: Lower limit matches exactly (100). Upper limit is 25600 vs 51200. These differ by a factor of 2, but the ranges still share the same domain context of ISO settings. Pointing to the same entity roughly.
+- Verdict: 1.
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",iso100-51200,64-25600,1.0,"分析过程：
+
+参考答案涉及快门速度范围，重点是快门速度的最高和最低值，以及范围的合理性。评分依据是“语义相同大致、或者指向的实体一致即可”，括号内容未提及也算对，快门速度范围的上下限可以有一定微调（根据实际范围进行调整1/3或1/2EV步长调整），并且可以将30秒扩展到900秒。
+
+对应关系中，response的快门速度范围为“1/4000s-30s+b”（假设“+b”是后续简写，忽略不影响评判），而参考答案分别是：
+
+- idx_0、idx_1、idx_2、idx_3：标准答案快门速度最低是1/8000秒。
+- idx_4：标准答案快门速度最低是1/4000秒。
+
+逐项分析：
+
+idx_0：  
+response的范围是1/4000秒至30秒  
+目标：1/8000至30秒（以1/3或1/2ev为步长微调），可理解为快门速度最低端是1/8000秒。但可根据实际范围进行调整，1/4000与1/8000差了一档，即1/2ev，属于允许的微调范围吗？快门速度范围允许上下微调1/3或1/2EV，1/4000相较于1/8000低档一档，即1/2 EV（一般会以1/3或1/2 EV调整，1/4000确实是1/3 EV或者1/2 EV的一挡），因此这属于合理范围内的调整，且最高速度和秒数吻合。括号内容是否涉及可忽略。故语义大致相同，分数1。
+
+idx_1：   
+同idx_0，唯一差别是括号里额外说明了m模式下可扩展至900s，response中未提及括号内容，根据评分标准，括号内容未提及也算对。快门速度范围的最低值“1/4000”相比参考答案的“1/8000”属于可接受范围内调整，最高值一样30秒。分数1。
+
+idx_2：   
+同idx_0，分析同上，分数1。
+
+idx_3：   
+同idx_0，分析同上，分数1。
+
+idx_4：  
+response的快门速度范围“1/4000s-30s+b” 和目标“1/4000至30秒（以1/3或1/2ev为步长进行微调）”。二者下限完全匹配，上限匹配，完全一致，括号内容忽略。分数1。
+
+综合以上，所有response虽然最低速与参考答案存在差异，但均在允许的微调范围内，且整体范围覆盖一致，符合评分标准语义大致相同。
+
+最终评分：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",1/8000至30秒（以1/3或1/2ev为步长进行微调）,1/4000s-30s+b,1.0,"Let's analyze each item according to the grading criteria:
+
+- Criterion: The response and the target are considered correct if they are semantically the same or refer to the same entity. Exact word-to-word matching is not necessary.
+
+---
+
+**idx_0:**
+- Response: ""expeed6""
+- Target: ""expeed6""
+- Analysis: Exactly the same.
+- Score: 1
+
+**idx_1:**
+- Response: ""expeed6""
+- Target: ""双expeed6"" (which means ""dual expeed6"")
+- Analysis: Response mentions ""expeed6"" while target specifies ""dual expeed6"". The target refers to two units of expeed6; the response only mentions one. The response is missing ""双"" (dual), which is a significant part of the entity referenced.
+- According to criterion, the response and target should be semantically the same or refer to the same entity. Since ""expeed6"" and ""双expeed6"" refer to different configurations (one unit vs two units), they are not equivalent or the same entity.
+- Score: 0
+
+**idx_2:**
+- Response: ""expeed6""
+- Target: ""expeed6""
+- Same as idx_0.
+- Score: 1
+
+**idx_3:**
+- Response: ""expeed6""
+- Target: ""expeed6""
+- Same as idx_0.
+- Score: 1
+
+**idx_4:**
+- Response: ""expeed6""
+- Target: ""expeed6""
+- Same as idx_0.
+- Score: 1
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",expeed6,expeed6,1.0,"exact match, response: 273个, target: 273个",273个,273个,0.0,"Let's analyze each pair based on the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Translated, roughly: The response and the standard answer need to be basically semantically the same or refer to the same entity, no need for exact word-to-word matching.
+
+---
+
+**idx_0**  
+- Response: 约7幅/秒  
+- Target: 约9幅/秒  
+Analysis: 7 and 9 are close but noticeably different values. Since the criterion allows approximate semantic equivalence, but here 7 versus 9 is a quantitative numeric difference that could change meaning. Usually, a difference of about 20-30% could be acceptable if the context is loose, but without context, a difference of 7 vs 9 is around 22% off. The criterion says ""或指向的实体一致"" (or refer to the same entity). Here, both refer to some rate (frames per second), but numerical values differ. Since exact numbers matter, and ""约"" means about but this is a number difference, I think this counts as different answers. So 0.
+
+---
+
+**idx_1**  
+- Response: 约14幅/秒  
+- Target: 约14幅/秒  
+Analysis: Exact same. Score 1.
+
+---
+
+**idx_2**  
+- Response: 约7幅/秒  
+- Target: 约12幅/秒  
+Analysis: 7 vs 12 is a significant difference (~42% off). Not approximately equal. So score 0.
+
+---
+
+**idx_3**  
+- Response: 约14幅/秒  
+- Target: 约4.5幅/秒  
+Analysis: 14 vs 4.5 is more than 3x difference. Not approximately equal. Score 0.
+
+---
+
+**idx_4**  
+- Response: 约11幅/秒  
+- Target: 约11幅/秒  
+Analysis: Exact same. Score 1.
+
+---
+
+Final scoring:  
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1
+}
+```",约12幅/秒,约7幅/秒,1.0,"分析步骤：
+
+- 评分标准要求：和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。
+- 评分范围0或1，完全正确得1分，否则得0分。
+
+逐条分析：
+
+1. idx_0：
+   - 参考答案：约4,575万
+   - 回答：约4575万
+   - 分析：数字相同，只是格式略有不同，但数值一致，语义相同。
+   - 评分：1
+
+2. idx_1：
+   - 参考答案：约2,450万
+   - 回答：约2679万
+   - 分析：数字相差较大，指向的实体数值不同，语义不一致。
+   - 评分：0
+
+3. idx_2：
+   - 参考答案：约2,450万
+   - 回答：约2450万
+   - 分析：数字相同，只是格式不同，语义一致。
+   - 评分：1
+
+4. idx_3：
+   - 参考答案：约2,432万
+   - 回答：约2493万
+   - 分析：数字相差61万，差异较大，不算语义一致。
+   - 评分：0
+
+5. idx_4：
+   - 参考答案：约2,088万
+   - 回答：约2151万
+   - 分析：数字差距63万，语义不一致。
+   - 评分：0
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```","约2,450万",约2450万,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion:
+- The response should have a roughly same meaning or point to the same entity as the target.
+- No need for exact word-by-word match.
+
+Items:
+
+1. idx_0  
+   - response: ""vr减震"" (VR image stabilization)  
+   - target: ""影像传感器5轴移动"" (5-axis movement of image sensor)  
+   - Analysis:  
+     - ""VR减震"" is commonly understood as ""vibration reduction"" or image stabilization technology related to lens or sensor movement.  
+     - The target specifically mentions ""image sensor 5-axis movement,"" which corresponds closely to in-body image stabilization via sensor shift.  
+     - Although wording is different, the meaning/entity referred is effectively the same (image stabilization by sensor shifts).  
+   - Score: 1
+
+2. idx_1  
+   - response: ""vr减震""  
+   - target: ""5轴影像传感器移位"" (5-axis image sensor displacement)  
+   - Analysis:  
+     - Same as above, the response is ""vr减震,"" the target similarly describes sensor-based image stabilization.  
+     - They are semantically consistent.  
+   - Score: 1
+
+3. idx_2  
+   - response: ""vr减震""  
+   - target: ""影像传感器5轴移动""  
+   - Same as idx_0.  
+   - Score: 1
+
+4. idx_3  
+   - response: ""vr减震""  
+   - target: ""影像传感器5轴移动""  
+   - Same as idx_0 and idx_2.  
+   - Score: 1
+
+5. idx_4  
+   - response: ""vr减震""  
+   - target: ""-"" (no target answer)  
+   - Analysis:  
+     - No target answer given, so the response cannot be judged as correct or correct meaning.  
+     - According to general scoring logic, if the target is empty or not given, then the response should get score 0, since there's no correct answer to match.  
+   - Score: 0
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0
+}
+```
+",影像传感器5轴移动,vr减震,1.0,key_match,1.0,"First, let's analyze the responses against the targets one by one based on the criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""
+Translation: The meaning should be generally the same, or point to the same entity; exact word-for-word matching is not required.
+
+Since the items are numeric weights with units (grams) specified approximately (using ""约""), the key is whether the response value is reasonably close to the target value, as the criterion implies approximate or generally same entity suffices.
+
+Now analyze each pair:
+
+- idx_0:
+  - Response: 约815g
+  - Target: 约675g
+  - Difference: 140g more than target, which is roughly 20% higher.
+  - Is this ""大致相同""? 20% difference is quite large for a weight value measured approximately, but since ""约"" indicates approximation, let's consider if this is close enough.
+  - 675g vs 815g: difference seems significant.
+  - Considering normal rounding or approximation, 140g difference on 675g is large. Probably no.
+
+- idx_1:
+  - Response: 约645g
+  - Target: 约705g
+  - Difference: 60g less than target, around 8.5% difference.
+  - 645g and 705g difference is smaller percentage than idx_0, but still a difference.
+  - Given ""约"" implies approximation and criterion is lenient, this can be considered consistent.
+
+- idx_2:
+  - Response: 约655g
+  - Target: 约675g
+  - Difference: 20g less than target, about 3% difference.
+  - Very close. Definitely counts as correct.
+
+- idx_3:
+  - Response: 约715g
+  - Target: 约675g
+  - Difference: 40g more, about 6% higher.
+  - Also close and consistent with the target.
+
+- idx_4:
+  - Response: 约565g
+  - Target: 约450g
+  - Difference: 115g more, about 25% higher than target.
+  - Similar to idx_0, difference seems large.
+  - Possible no.
+
+Summary of judgement:
+
+- idx_0: 815g vs 675g too large difference → 0
+- idx_1: 645g vs 705g close enough → 1
+- idx_2: 655g vs 675g close → 1
+- idx_3: 715g vs 675g close → 1
+- idx_4: 565g vs 450g difference too large → 0
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0
+}
+```
+",约675g,约655g
+,,z5,Z5,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(Meaning: The response and the reference answer should be roughly semantically the same or refer to the same entity; exact word-for-word correspondence is not necessary.)
+
+---
+
+### idx_0
+- Response: ""64-256000""
+- Target: ""iso64-25600""
+- Analysis: The reference answer indicates an ISO range from 64 to 25600, and the response has an upper bound of 256000, which is an order of magnitude higher, possibly a typo or exaggeration. While the lower bound matches (64), the upper bound is wrong. It does not point to the same entity since it expands the ISO upper limit by a factor of 10, which is not roughly the same range.
+- Verdict: Not semantically consistent, score = 0.
+
+### idx_1
+- Response: ""64-256000""
+- Target: ""iso100-51200""
+- Analysis: Response range is 64 to 256000; reference is 100 to 51200. Both lower and upper limits do not match (64 vs 100 lower, and 256000 vs 51200 upper). The ranges do not semantically match or point to the same entity. 256000 is much higher than 51200; 64 is lower than 100.
+- Verdict: Semantic mismatch, score = 0.
+
+### idx_2
+- Response: ""64-25600""
+- Target: ""iso100-51200""
+- Analysis: Lower end in response is 64 vs 100 in target; upper end is 25600 vs 51200. Although the ranges don't exactly coincide, they partially overlap which could be considered roughly similar in certain contexts, but the criterion allows ""大致相同"" (roughly the same). Here the ranges are half or double of each other: lower and upper limits are different but still in the same ISO context. Since both refer to ISO ranges most likely, this can be considered pointing to the same entity roughly.
+- Verdict: Semantic roughly consistent, score = 1.
+
+### idx_3
+- Response: ""64-25600""
+- Target: ""iso100-51200""
+- Analysis: The same as idx_2.
+- Verdict: 1.
+
+### idx_4
+- Response: ""100-25600""
+- Target: ""iso100-51200""
+- Analysis: Lower limit matches exactly (100). Upper limit is 25600 vs 51200. These differ by a factor of 2, but the ranges still share the same domain context of ISO settings. Pointing to the same entity roughly.
+- Verdict: 1.
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",iso100-51200,64-25600,1.0,"分析过程：
+
+参考答案涉及快门速度范围，重点是快门速度的最高和最低值，以及范围的合理性。评分依据是“语义相同大致、或者指向的实体一致即可”，括号内容未提及也算对，快门速度范围的上下限可以有一定微调（根据实际范围进行调整1/3或1/2EV步长调整），并且可以将30秒扩展到900秒。
+
+对应关系中，response的快门速度范围为“1/4000s-30s+b”（假设“+b”是后续简写，忽略不影响评判），而参考答案分别是：
+
+- idx_0、idx_1、idx_2、idx_3：标准答案快门速度最低是1/8000秒。
+- idx_4：标准答案快门速度最低是1/4000秒。
+
+逐项分析：
+
+idx_0：  
+response的范围是1/4000秒至30秒  
+目标：1/8000至30秒（以1/3或1/2ev为步长微调），可理解为快门速度最低端是1/8000秒。但可根据实际范围进行调整，1/4000与1/8000差了一档，即1/2ev，属于允许的微调范围吗？快门速度范围允许上下微调1/3或1/2EV，1/4000相较于1/8000低档一档，即1/2 EV（一般会以1/3或1/2 EV调整，1/4000确实是1/3 EV或者1/2 EV的一挡），因此这属于合理范围内的调整，且最高速度和秒数吻合。括号内容是否涉及可忽略。故语义大致相同，分数1。
+
+idx_1：   
+同idx_0，唯一差别是括号里额外说明了m模式下可扩展至900s，response中未提及括号内容，根据评分标准，括号内容未提及也算对。快门速度范围的最低值“1/4000”相比参考答案的“1/8000”属于可接受范围内调整，最高值一样30秒。分数1。
+
+idx_2：   
+同idx_0，分析同上，分数1。
+
+idx_3：   
+同idx_0，分析同上，分数1。
+
+idx_4：  
+response的快门速度范围“1/4000s-30s+b” 和目标“1/4000至30秒（以1/3或1/2ev为步长进行微调）”。二者下限完全匹配，上限匹配，完全一致，括号内容忽略。分数1。
+
+综合以上，所有response虽然最低速与参考答案存在差异，但均在允许的微调范围内，且整体范围覆盖一致，符合评分标准语义大致相同。
+
+最终评分：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",1/8000至30秒（以1/3或1/2ev为步长进行微调）,1/4000s-30s+b,1.0,"Let's analyze each item according to the grading criteria:
+
+- Criterion: The response and the target are considered correct if they are semantically the same or refer to the same entity. Exact word-to-word matching is not necessary.
+
+---
+
+**idx_0:**
+- Response: ""expeed6""
+- Target: ""expeed6""
+- Analysis: Exactly the same.
+- Score: 1
+
+**idx_1:**
+- Response: ""expeed6""
+- Target: ""双expeed6"" (which means ""dual expeed6"")
+- Analysis: Response mentions ""expeed6"" while target specifies ""dual expeed6"". The target refers to two units of expeed6; the response only mentions one. The response is missing ""双"" (dual), which is a significant part of the entity referenced.
+- According to criterion, the response and target should be semantically the same or refer to the same entity. Since ""expeed6"" and ""双expeed6"" refer to different configurations (one unit vs two units), they are not equivalent or the same entity.
+- Score: 0
+
+**idx_2:**
+- Response: ""expeed6""
+- Target: ""expeed6""
+- Same as idx_0.
+- Score: 1
+
+**idx_3:**
+- Response: ""expeed6""
+- Target: ""expeed6""
+- Same as idx_0.
+- Score: 1
+
+**idx_4:**
+- Response: ""expeed6""
+- Target: ""expeed6""
+- Same as idx_0.
+- Score: 1
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",expeed6,expeed6,1.0,"exact match, response: 273个, target: 273个",273个,273个,0.0,"Let's analyze each pair based on the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Translated, roughly: The response and the standard answer need to be basically semantically the same or refer to the same entity, no need for exact word-to-word matching.
+
+---
+
+**idx_0**  
+- Response: 约7幅/秒  
+- Target: 约9幅/秒  
+Analysis: 7 and 9 are close but noticeably different values. Since the criterion allows approximate semantic equivalence, but here 7 versus 9 is a quantitative numeric difference that could change meaning. Usually, a difference of about 20-30% could be acceptable if the context is loose, but without context, a difference of 7 vs 9 is around 22% off. The criterion says ""或指向的实体一致"" (or refer to the same entity). Here, both refer to some rate (frames per second), but numerical values differ. Since exact numbers matter, and ""约"" means about but this is a number difference, I think this counts as different answers. So 0.
+
+---
+
+**idx_1**  
+- Response: 约14幅/秒  
+- Target: 约14幅/秒  
+Analysis: Exact same. Score 1.
+
+---
+
+**idx_2**  
+- Response: 约7幅/秒  
+- Target: 约12幅/秒  
+Analysis: 7 vs 12 is a significant difference (~42% off). Not approximately equal. So score 0.
+
+---
+
+**idx_3**  
+- Response: 约14幅/秒  
+- Target: 约4.5幅/秒  
+Analysis: 14 vs 4.5 is more than 3x difference. Not approximately equal. Score 0.
+
+---
+
+**idx_4**  
+- Response: 约11幅/秒  
+- Target: 约11幅/秒  
+Analysis: Exact same. Score 1.
+
+---
+
+Final scoring:  
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1
+}
+```",约4.5幅/秒,约14幅/秒,0.0,"分析步骤：
+
+- 评分标准要求：和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。
+- 评分范围0或1，完全正确得1分，否则得0分。
+
+逐条分析：
+
+1. idx_0：
+   - 参考答案：约4,575万
+   - 回答：约4575万
+   - 分析：数字相同，只是格式略有不同，但数值一致，语义相同。
+   - 评分：1
+
+2. idx_1：
+   - 参考答案：约2,450万
+   - 回答：约2679万
+   - 分析：数字相差较大，指向的实体数值不同，语义不一致。
+   - 评分：0
+
+3. idx_2：
+   - 参考答案：约2,450万
+   - 回答：约2450万
+   - 分析：数字相同，只是格式不同，语义一致。
+   - 评分：1
+
+4. idx_3：
+   - 参考答案：约2,432万
+   - 回答：约2493万
+   - 分析：数字相差61万，差异较大，不算语义一致。
+   - 评分：0
+
+5. idx_4：
+   - 参考答案：约2,088万
+   - 回答：约2151万
+   - 分析：数字差距63万，语义不一致。
+   - 评分：0
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```","约2,432万",约2493万,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion:
+- The response should have a roughly same meaning or point to the same entity as the target.
+- No need for exact word-by-word match.
+
+Items:
+
+1. idx_0  
+   - response: ""vr减震"" (VR image stabilization)  
+   - target: ""影像传感器5轴移动"" (5-axis movement of image sensor)  
+   - Analysis:  
+     - ""VR减震"" is commonly understood as ""vibration reduction"" or image stabilization technology related to lens or sensor movement.  
+     - The target specifically mentions ""image sensor 5-axis movement,"" which corresponds closely to in-body image stabilization via sensor shift.  
+     - Although wording is different, the meaning/entity referred is effectively the same (image stabilization by sensor shifts).  
+   - Score: 1
+
+2. idx_1  
+   - response: ""vr减震""  
+   - target: ""5轴影像传感器移位"" (5-axis image sensor displacement)  
+   - Analysis:  
+     - Same as above, the response is ""vr减震,"" the target similarly describes sensor-based image stabilization.  
+     - They are semantically consistent.  
+   - Score: 1
+
+3. idx_2  
+   - response: ""vr减震""  
+   - target: ""影像传感器5轴移动""  
+   - Same as idx_0.  
+   - Score: 1
+
+4. idx_3  
+   - response: ""vr减震""  
+   - target: ""影像传感器5轴移动""  
+   - Same as idx_0 and idx_2.  
+   - Score: 1
+
+5. idx_4  
+   - response: ""vr减震""  
+   - target: ""-"" (no target answer)  
+   - Analysis:  
+     - No target answer given, so the response cannot be judged as correct or correct meaning.  
+     - According to general scoring logic, if the target is empty or not given, then the response should get score 0, since there's no correct answer to match.  
+   - Score: 0
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0
+}
+```
+",影像传感器5轴移动,vr减震,1.0,key_match,1.0,"First, let's analyze the responses against the targets one by one based on the criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""
+Translation: The meaning should be generally the same, or point to the same entity; exact word-for-word matching is not required.
+
+Since the items are numeric weights with units (grams) specified approximately (using ""约""), the key is whether the response value is reasonably close to the target value, as the criterion implies approximate or generally same entity suffices.
+
+Now analyze each pair:
+
+- idx_0:
+  - Response: 约815g
+  - Target: 约675g
+  - Difference: 140g more than target, which is roughly 20% higher.
+  - Is this ""大致相同""? 20% difference is quite large for a weight value measured approximately, but since ""约"" indicates approximation, let's consider if this is close enough.
+  - 675g vs 815g: difference seems significant.
+  - Considering normal rounding or approximation, 140g difference on 675g is large. Probably no.
+
+- idx_1:
+  - Response: 约645g
+  - Target: 约705g
+  - Difference: 60g less than target, around 8.5% difference.
+  - 645g and 705g difference is smaller percentage than idx_0, but still a difference.
+  - Given ""约"" implies approximation and criterion is lenient, this can be considered consistent.
+
+- idx_2:
+  - Response: 约655g
+  - Target: 约675g
+  - Difference: 20g less than target, about 3% difference.
+  - Very close. Definitely counts as correct.
+
+- idx_3:
+  - Response: 约715g
+  - Target: 约675g
+  - Difference: 40g more, about 6% higher.
+  - Also close and consistent with the target.
+
+- idx_4:
+  - Response: 约565g
+  - Target: 约450g
+  - Difference: 115g more, about 25% higher than target.
+  - Similar to idx_0, difference seems large.
+  - Possible no.
+
+Summary of judgement:
+
+- idx_0: 815g vs 675g too large difference → 0
+- idx_1: 645g vs 705g close enough → 1
+- idx_2: 655g vs 675g close → 1
+- idx_3: 715g vs 675g close → 1
+- idx_4: 565g vs 450g difference too large → 0
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0
+}
+```
+",约675g,约715g
+,,z50,Z50,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(Meaning: The response and the reference answer should be roughly semantically the same or refer to the same entity; exact word-for-word correspondence is not necessary.)
+
+---
+
+### idx_0
+- Response: ""64-256000""
+- Target: ""iso64-25600""
+- Analysis: The reference answer indicates an ISO range from 64 to 25600, and the response has an upper bound of 256000, which is an order of magnitude higher, possibly a typo or exaggeration. While the lower bound matches (64), the upper bound is wrong. It does not point to the same entity since it expands the ISO upper limit by a factor of 10, which is not roughly the same range.
+- Verdict: Not semantically consistent, score = 0.
+
+### idx_1
+- Response: ""64-256000""
+- Target: ""iso100-51200""
+- Analysis: Response range is 64 to 256000; reference is 100 to 51200. Both lower and upper limits do not match (64 vs 100 lower, and 256000 vs 51200 upper). The ranges do not semantically match or point to the same entity. 256000 is much higher than 51200; 64 is lower than 100.
+- Verdict: Semantic mismatch, score = 0.
+
+### idx_2
+- Response: ""64-25600""
+- Target: ""iso100-51200""
+- Analysis: Lower end in response is 64 vs 100 in target; upper end is 25600 vs 51200. Although the ranges don't exactly coincide, they partially overlap which could be considered roughly similar in certain contexts, but the criterion allows ""大致相同"" (roughly the same). Here the ranges are half or double of each other: lower and upper limits are different but still in the same ISO context. Since both refer to ISO ranges most likely, this can be considered pointing to the same entity roughly.
+- Verdict: Semantic roughly consistent, score = 1.
+
+### idx_3
+- Response: ""64-25600""
+- Target: ""iso100-51200""
+- Analysis: The same as idx_2.
+- Verdict: 1.
+
+### idx_4
+- Response: ""100-25600""
+- Target: ""iso100-51200""
+- Analysis: Lower limit matches exactly (100). Upper limit is 25600 vs 51200. These differ by a factor of 2, but the ranges still share the same domain context of ISO settings. Pointing to the same entity roughly.
+- Verdict: 1.
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",iso100-51200,100-25600,1.0,"分析过程：
+
+参考答案涉及快门速度范围，重点是快门速度的最高和最低值，以及范围的合理性。评分依据是“语义相同大致、或者指向的实体一致即可”，括号内容未提及也算对，快门速度范围的上下限可以有一定微调（根据实际范围进行调整1/3或1/2EV步长调整），并且可以将30秒扩展到900秒。
+
+对应关系中，response的快门速度范围为“1/4000s-30s+b”（假设“+b”是后续简写，忽略不影响评判），而参考答案分别是：
+
+- idx_0、idx_1、idx_2、idx_3：标准答案快门速度最低是1/8000秒。
+- idx_4：标准答案快门速度最低是1/4000秒。
+
+逐项分析：
+
+idx_0：  
+response的范围是1/4000秒至30秒  
+目标：1/8000至30秒（以1/3或1/2ev为步长微调），可理解为快门速度最低端是1/8000秒。但可根据实际范围进行调整，1/4000与1/8000差了一档，即1/2ev，属于允许的微调范围吗？快门速度范围允许上下微调1/3或1/2EV，1/4000相较于1/8000低档一档，即1/2 EV（一般会以1/3或1/2 EV调整，1/4000确实是1/3 EV或者1/2 EV的一挡），因此这属于合理范围内的调整，且最高速度和秒数吻合。括号内容是否涉及可忽略。故语义大致相同，分数1。
+
+idx_1：   
+同idx_0，唯一差别是括号里额外说明了m模式下可扩展至900s，response中未提及括号内容，根据评分标准，括号内容未提及也算对。快门速度范围的最低值“1/4000”相比参考答案的“1/8000”属于可接受范围内调整，最高值一样30秒。分数1。
+
+idx_2：   
+同idx_0，分析同上，分数1。
+
+idx_3：   
+同idx_0，分析同上，分数1。
+
+idx_4：  
+response的快门速度范围“1/4000s-30s+b” 和目标“1/4000至30秒（以1/3或1/2ev为步长进行微调）”。二者下限完全匹配，上限匹配，完全一致，括号内容忽略。分数1。
+
+综合以上，所有response虽然最低速与参考答案存在差异，但均在允许的微调范围内，且整体范围覆盖一致，符合评分标准语义大致相同。
+
+最终评分：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",1/4000至30秒（以1/3或1/2ev为步长进行微调）,1/4000s-30s+b,1.0,"Let's analyze each item according to the grading criteria:
+
+- Criterion: The response and the target are considered correct if they are semantically the same or refer to the same entity. Exact word-to-word matching is not necessary.
+
+---
+
+**idx_0:**
+- Response: ""expeed6""
+- Target: ""expeed6""
+- Analysis: Exactly the same.
+- Score: 1
+
+**idx_1:**
+- Response: ""expeed6""
+- Target: ""双expeed6"" (which means ""dual expeed6"")
+- Analysis: Response mentions ""expeed6"" while target specifies ""dual expeed6"". The target refers to two units of expeed6; the response only mentions one. The response is missing ""双"" (dual), which is a significant part of the entity referenced.
+- According to criterion, the response and target should be semantically the same or refer to the same entity. Since ""expeed6"" and ""双expeed6"" refer to different configurations (one unit vs two units), they are not equivalent or the same entity.
+- Score: 0
+
+**idx_2:**
+- Response: ""expeed6""
+- Target: ""expeed6""
+- Same as idx_0.
+- Score: 1
+
+**idx_3:**
+- Response: ""expeed6""
+- Target: ""expeed6""
+- Same as idx_0.
+- Score: 1
+
+**idx_4:**
+- Response: ""expeed6""
+- Target: ""expeed6""
+- Same as idx_0.
+- Score: 1
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",expeed6,expeed6,0.0,"exact not match, response: 273个, target: 209个",209个,273个,1.0,"Let's analyze each pair based on the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Translated, roughly: The response and the standard answer need to be basically semantically the same or refer to the same entity, no need for exact word-to-word matching.
+
+---
+
+**idx_0**  
+- Response: 约7幅/秒  
+- Target: 约9幅/秒  
+Analysis: 7 and 9 are close but noticeably different values. Since the criterion allows approximate semantic equivalence, but here 7 versus 9 is a quantitative numeric difference that could change meaning. Usually, a difference of about 20-30% could be acceptable if the context is loose, but without context, a difference of 7 vs 9 is around 22% off. The criterion says ""或指向的实体一致"" (or refer to the same entity). Here, both refer to some rate (frames per second), but numerical values differ. Since exact numbers matter, and ""约"" means about but this is a number difference, I think this counts as different answers. So 0.
+
+---
+
+**idx_1**  
+- Response: 约14幅/秒  
+- Target: 约14幅/秒  
+Analysis: Exact same. Score 1.
+
+---
+
+**idx_2**  
+- Response: 约7幅/秒  
+- Target: 约12幅/秒  
+Analysis: 7 vs 12 is a significant difference (~42% off). Not approximately equal. So score 0.
+
+---
+
+**idx_3**  
+- Response: 约14幅/秒  
+- Target: 约4.5幅/秒  
+Analysis: 14 vs 4.5 is more than 3x difference. Not approximately equal. Score 0.
+
+---
+
+**idx_4**  
+- Response: 约11幅/秒  
+- Target: 约11幅/秒  
+Analysis: Exact same. Score 1.
+
+---
+
+Final scoring:  
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1
+}
+```",约11幅/秒,约11幅/秒,0.0,"分析步骤：
+
+- 评分标准要求：和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。
+- 评分范围0或1，完全正确得1分，否则得0分。
+
+逐条分析：
+
+1. idx_0：
+   - 参考答案：约4,575万
+   - 回答：约4575万
+   - 分析：数字相同，只是格式略有不同，但数值一致，语义相同。
+   - 评分：1
+
+2. idx_1：
+   - 参考答案：约2,450万
+   - 回答：约2679万
+   - 分析：数字相差较大，指向的实体数值不同，语义不一致。
+   - 评分：0
+
+3. idx_2：
+   - 参考答案：约2,450万
+   - 回答：约2450万
+   - 分析：数字相同，只是格式不同，语义一致。
+   - 评分：1
+
+4. idx_3：
+   - 参考答案：约2,432万
+   - 回答：约2493万
+   - 分析：数字相差61万，差异较大，不算语义一致。
+   - 评分：0
+
+5. idx_4：
+   - 参考答案：约2,088万
+   - 回答：约2151万
+   - 分析：数字差距63万，语义不一致。
+   - 评分：0
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```","约2,088万",约2151万,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion:
+- The response should have a roughly same meaning or point to the same entity as the target.
+- No need for exact word-by-word match.
+
+Items:
+
+1. idx_0  
+   - response: ""vr减震"" (VR image stabilization)  
+   - target: ""影像传感器5轴移动"" (5-axis movement of image sensor)  
+   - Analysis:  
+     - ""VR减震"" is commonly understood as ""vibration reduction"" or image stabilization technology related to lens or sensor movement.  
+     - The target specifically mentions ""image sensor 5-axis movement,"" which corresponds closely to in-body image stabilization via sensor shift.  
+     - Although wording is different, the meaning/entity referred is effectively the same (image stabilization by sensor shifts).  
+   - Score: 1
+
+2. idx_1  
+   - response: ""vr减震""  
+   - target: ""5轴影像传感器移位"" (5-axis image sensor displacement)  
+   - Analysis:  
+     - Same as above, the response is ""vr减震,"" the target similarly describes sensor-based image stabilization.  
+     - They are semantically consistent.  
+   - Score: 1
+
+3. idx_2  
+   - response: ""vr减震""  
+   - target: ""影像传感器5轴移动""  
+   - Same as idx_0.  
+   - Score: 1
+
+4. idx_3  
+   - response: ""vr减震""  
+   - target: ""影像传感器5轴移动""  
+   - Same as idx_0 and idx_2.  
+   - Score: 1
+
+5. idx_4  
+   - response: ""vr减震""  
+   - target: ""-"" (no target answer)  
+   - Analysis:  
+     - No target answer given, so the response cannot be judged as correct or correct meaning.  
+     - According to general scoring logic, if the target is empty or not given, then the response should get score 0, since there's no correct answer to match.  
+   - Score: 0
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0
+}
+```
+",-,vr减震,1.0,key_match,0.0,"First, let's analyze the responses against the targets one by one based on the criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""
+Translation: The meaning should be generally the same, or point to the same entity; exact word-for-word matching is not required.
+
+Since the items are numeric weights with units (grams) specified approximately (using ""约""), the key is whether the response value is reasonably close to the target value, as the criterion implies approximate or generally same entity suffices.
+
+Now analyze each pair:
+
+- idx_0:
+  - Response: 约815g
+  - Target: 约675g
+  - Difference: 140g more than target, which is roughly 20% higher.
+  - Is this ""大致相同""? 20% difference is quite large for a weight value measured approximately, but since ""约"" indicates approximation, let's consider if this is close enough.
+  - 675g vs 815g: difference seems significant.
+  - Considering normal rounding or approximation, 140g difference on 675g is large. Probably no.
+
+- idx_1:
+  - Response: 约645g
+  - Target: 约705g
+  - Difference: 60g less than target, around 8.5% difference.
+  - 645g and 705g difference is smaller percentage than idx_0, but still a difference.
+  - Given ""约"" implies approximation and criterion is lenient, this can be considered consistent.
+
+- idx_2:
+  - Response: 约655g
+  - Target: 约675g
+  - Difference: 20g less than target, about 3% difference.
+  - Very close. Definitely counts as correct.
+
+- idx_3:
+  - Response: 约715g
+  - Target: 约675g
+  - Difference: 40g more, about 6% higher.
+  - Also close and consistent with the target.
+
+- idx_4:
+  - Response: 约565g
+  - Target: 约450g
+  - Difference: 115g more, about 25% higher than target.
+  - Similar to idx_0, difference seems large.
+  - Possible no.
+
+Summary of judgement:
+
+- idx_0: 815g vs 675g too large difference → 0
+- idx_1: 645g vs 705g close enough → 1
+- idx_2: 655g vs 675g close → 1
+- idx_3: 715g vs 675g close → 1
+- idx_4: 565g vs 450g difference too large → 0
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0
+}
+```
+",约450g,约565g
+1.0,,z30,,,,iso100-51200,,,,1/4000至30秒（以1/3ev为步长进行微调),,,,expeed6,,,,209个,,,,约11幅/秒,,,,"约2,088万",,,,-,,,,,,约405g,
+1.0,,z50ⅱ,,,,iso100-51200,,,,1/4000至30秒（以1/3、1/2ev或1ev为增量进行微调，m模式下可扩展至900s）,,,,expeed7,,,,231个,,,,约30幅/秒,,,,"约2,090万",,,,-,,,,,,约550g,
+1.0,,z5ⅱ,,,,iso100-64000,,,,1/8000至30秒（以1/3ev为增量，m模式下可扩展至900秒）,,,,expeed7,,,,299个,,,,约30幅/秒,,,,"约2,450万",,,,5轴影像传感器移位,,,,,,约700g,
+1.0,,z6ⅲ,,,,iso100-64000,,,,"1/8000至30秒（以1/3、1/2或1ev为增量，m模式下可扩展至900秒）,使用电子快门时，快门速度最高可设置为1⁄₁₆₀₀₀秒。",,,,expeed7,,,,299个,,,,约120幅/秒,,,,"约2,450万",,,,5轴影像传感器位移,,,,,,约760g,
+1.0,,z7ⅱ,,,,iso64-25600,,,,1/8000-30秒（以1/3或1/2ev为步长进行微调，m模式下可扩展至900s）,,,,双expeed6,,,,493个,,,,约10幅/秒,,,,"约4,575万",,,,5轴影像传感器移位,,,,,,约705g,
+1.0,,z8,,,,iso64至25600,,,,1/32000-30秒（从1/3、1/2和1ev中选择步长，在模式m下可延长至900秒）,,,,expeed7,,,,493个,,,,约120幅/秒,,,,"约4,571万",,,,5轴影像传感器位移,,,,,,约910g,
+1.0,,z9,,,,iso64至25600,,,,1/32000−30秒（从1/3、1/2和1ev中选择步长，在模式m下可延长至900秒）,,,,expeed7,,,,493个,,,,约120幅/秒,,,,"约4,571万",,,,5轴影像传感器位移,,,,,,约1340g,
+1.0,,zf,,,,iso100-64000,,,,1/8000至30秒（以1/3ev为增量，m模式下可扩展至900秒）,,,,expeed7,,,,273个,,,,约30幅/秒,,,,"约2,450万",,,,5轴影像传感器位移,,,,,,约710g,
+1.0,,zfc,,,,iso100-51200,,,,1/4000至30秒（以1/3为步长，m模式下可延长至900s）,,,,expeed6,,,,209个,,,,约11幅/秒,,,,"约2,088万",,,,-,,,,,,约445g,

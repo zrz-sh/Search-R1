@@ -1,0 +1,4061 @@
+exist_flag_gt,exist_flag_response,yearofaward,yearofaward_before_map,background/occupation_llm_judge,background/occupation_llm_judge_eval_msg,background/occupation_query,background/occupation_response,countryofbirth_llm_judge,countryofbirth_llm_judge_eval_msg,countryofbirth_query,countryofbirth_response,dateofbirth_date_near,dateofbirth_date_near_eval_msg,dateofbirth_query,dateofbirth_response,devotedcountry_llm_judge,devotedcountry_llm_judge_eval_msg,devotedcountry_query,devotedcountry_response,fullname_llm_judge,fullname_llm_judge_eval_msg,fullname_query,fullname_response,gender_exact_match,gender_exact_match_eval_msg,gender_query,gender_response,majorcontributions_llm_judge,majorcontributions_llm_judge_eval_msg,majorcontributions_query,majorcontributions_response,university_llm_judge,university_llm_judge_eval_msg,university_query,university_response,yearofaward_exact_match,yearofaward_exact_match_eval_msg
+,,2009,2009,0.0,"Let's evaluate each pair according to the grading criteria:
+
+---
+
+**General note:** The criterion states that it is sufficient if the semantics are approximately the same or point to the same entity. Background/occupation expressions should be approximately correct.
+
+---
+
+### idx_0
+
+- **Response:** ""socialentrepreneur""
+- **Target:** ""filipinoteacherandsocialdevelopmentworker""
+
+Analysis:  
+The target indicates two roles: teacher and social development worker (occupational roles focused on education and social work). The response only mentions ""social entrepreneur,"" which is a distinct role. A social entrepreneur might be involved in social projects but is not synonymous with teacher or social development worker. The semantics differ in background/occupation and don't seem to approximate each other.
+
+Score: 0
+
+---
+
+### idx_1
+
+- **Response:** ""communityworker""
+- **Target:** ""midwife;founderbumisehatclinics""
+
+Analysis:  
+""Community worker"" is a broad term and can cover a range of social services roles, including midwife, who serves the community's health needs. Also, founder of a clinic points to community health services. ""Community worker"" can be seen as a general approximation to midwife + founder of health clinic, pointing to similar semantics about community health service.
+
+Score: 1
+
+---
+
+### idx_2
+
+- **Response:** ""militaryveteran""
+- **Target:** ""environmentalactivist;founderlivinglands&waters""
+
+Analysis:  
+A ""military veteran"" is distinct from an environmental activist and founder of an environmental organization. These are different occupations/backgrounds.
+
+Score: 0
+
+---
+
+### idx_3
+
+- **Response:** ""socialworker""
+- **Target:** ""philanthropist;co-founderblinknow""
+
+Analysis:  
+""Social worker"" and ""philanthropist"" have overlapping fields related to social good. Although ""philanthropist"" tends more towards charitable giving/founding an organization, and ""social worker"" is a recognized occupation, the overlap in social care and approximate semantics might suffice.
+
+The target includes co-founder of an organization, implying social services. ""Social worker"" approximates ""philanthropist and co-founder"" in social background broadly but could be a little loose.
+
+Based on the criterion of approximate semantics and background, this is borderline but acceptable.
+
+Score: 1
+
+---
+
+### idx_4
+
+- **Response:** ""formerpresident""
+- **Target:** ""socialentrepreneur;founderbitty&beau’scoffee""
+
+Analysis:  
+""Former president"" is a political role. The target is social entrepreneur and founder of a social business (Bitty & Beau’s Coffee).
+
+These are quite different backgrounds (politics vs. entrepreneurship), no approximate semantic equivalence.
+
+Score: 0
+
+---
+
+### idx_5
+
+- **Response:** ""formerfirstlady""
+- **Target:** ""chemicalengineer&inventor""
+
+Analysis:  
+""Former first lady"" is a political/social title. ""Chemical engineer & inventor"" refers to a scientific profession and inventorship.
+
+They are quite different backgrounds.
+
+Score: 0
+
+---
+
+### idx_6
+
+- **Response:** ""businessman""
+- **Target:** ""thefounderofthenon-profitbeauty2thestreetz""
+
+Analysis:  
+""Businessman"" is a general term typically referring to someone running a business (for profit). The target says founder of a non-profit organization.
+
+""Businessman"" vs. founder of a non-profit is a difference in type of business, but both are founders and involved in organizational leadership.
+
+Considering the criterion says approximate background/occupation expressions are fine and both are entrepreneurial/organizational roles, ""businessman"" can approximate ""founder of non-profit"".
+
+Score: 1
+
+---
+
+### idx_7
+
+- **Response:** ""physician""
+- **Target:** ""veterinarian;founderprojectstreetvet""
+
+Analysis:  
+""Physician"" is a medical doctor for humans. ""Veterinarian"" is a medical doctor for animals. Both are similar professions in medicine but differ in their patient base. Additionally, the target is founder of Project Streetvet, which relates to veterinary service for street animals most likely.
+
+Given the close semantic field of medical doctors and health professionals, and the criterion allowing approximate background/occupation, this can be considered acceptable.
+
+Score: 1
+
+---
+
+### Final Results
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1
+}
+```",filipinoteacherandsocialdevelopmentworker,socialentrepreneur,1.0,"Let's analyze each pair step-by-step:
+
+- idx_0: response = ""philippines"", target = ""philippines""  
+  Semantics match exactly → score = 1
+
+- idx_1: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+- idx_2: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+- idx_3: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+- idx_4: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+- idx_5: response = ""unitedstates"", target = ""ethiopia""  
+  Different entities → score = 0
+
+- idx_6: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+- idx_7: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+Final scoring results in JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",philippines,philippines,0.0,"date not near, response: 1971-06-15 00:00:00, target: 1981-03-05 00:00:00",1981-03-05,1971-06-15,1.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion: The semantics should be approximately the same or point to the same entity. Exact wording is not required.
+
+- idx_0: response = ""philippines"", target = ""philippines""
+  - Same entity, score = 1
+
+- idx_1: response = ""unitedstates"", target = ""indonesia""
+  - Different entities, score = 0
+
+- idx_2: response = ""unitedstates"", target = ""unitedstates""
+  - Same entity, score = 1
+
+- idx_3: response = ""unitedstates"", target = ""nepal""
+  - Different entities, score = 0
+
+- idx_4: response = ""unitedstates"", target = ""unitedstates""
+  - Same entity, score = 1
+
+- idx_5: response = ""unitedstates"", target = ""ethiopia""
+  - Different entities, score = 0
+
+- idx_6: response = ""unitedstates"", target = ""unitedstates""
+  - Same entity, score = 1
+
+- idx_7: response = ""unitedstates"", target = ""unitedstates""
+  - Same entity, score = 1
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",philippines,philippines,1.0,"Let's analyze each pair based on the criterion provided:
+
+Criterion summary:  
+- The response is correct if its semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word matching.
+
+---
+
+**idx_0**:  
+Response: ""efrenpenaflorida""  
+Target: ""efrengeronimopeñafloridajr.""  
+Analysis: Both seem to refer to the name ""Efren Peña Florida"" with some differences. The response lacks ""geronimo"" and the suffix ""jr."" and the tilde over the ""ñ"". However, from the semantics and entity perspective, the response clearly refers to the same person.
+
+Score: 1
+
+---
+
+**idx_1**:  
+Response: ""motherrobin""  
+Target: ""robinlim(“iburobin”)""  
+Analysis: The reference is ""robinlim"" with an alias ""iburobin"". Response added ""mother"" as a prefix, which changes the entity somewhat. They are related to ""robin"" but not the same entity (likely ""motherrobin"" is not exactly ""robinlim""). The semantics point to related but different entities.
+
+Score: 0
+
+---
+
+**idx_2**:  
+Response: ""jamesjones""  
+Target: ""chadpregracke""  
+Analysis: Two completely different names, no similar semantics. Different entities.
+
+Score: 0
+
+---
+
+**idx_3**:  
+Response: ""lisareeder""  
+Target: ""maggiedoyne""  
+Analysis: Different names, no match in semantics.
+
+Score: 0
+
+---
+
+**idx_4**:  
+Response: ""jimmycarter""  
+Target: ""amywright""  
+Analysis: Different entities, no semantic connection.
+
+Score: 0
+
+---
+
+**idx_5**:  
+Response: ""rosalynncarter""  
+Target: ""freweinimebrahtu""  
+Analysis: Different entities, no semantic similarity.
+
+Score: 0
+
+---
+
+**idx_6**:  
+Response: ""johndavis""  
+Target: ""shirleyraines""  
+Analysis: Different entities.
+
+Score: 0
+
+---
+
+**idx_7**:  
+Response: ""dr.kwanestewart""  
+Target: ""dr.kwanestewart""  
+Analysis: Exact same entity.
+
+Score: 1
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1
+}
+```",efrengeronimopeñafloridajr.,efrenpenaflorida,1.0,"exact match, response: male, target: male",male,male,0.0,"Let's analyze each pair item by item according to the criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- The answer has similar semantics to the reference answer.  
+- Scores are 0 or 1 only.
+
+---
+
+### idx_0  
+- Response: **rescuingvictimsoftrafficking**  
+- Target: **“pushcartclassroom”mobileschoolingforstreetchildren**  
+Analysis:  
+- ""Rescuing victims of trafficking"" is quite different from ""mobile schooling for street children"" (pushcart classroom).  
+- The concepts do not overlap semantically or point to the same entity.  
+**Score: 0**
+
+---
+
+### idx_1  
+- Response: **providingshelterandsupport**  
+- Target: **freematernal&infantcareindisaster-andpoverty-strickenareas**  
+Analysis:  
+- Providing shelter and support is a broad term, while the target is specific free maternal and infant care in disaster and poverty areas.  
+- Both are supportive actions related to vulnerable populations in disaster/poverty contexts. Shelter/support versus free maternal & infant care: similar semantic field (providing aid/support), though not exact.  
+- The response is more general but covers aspects of support. According to the criterion (""approximately the same"" or ""point to the same entity""), this can be considered similar since both describe humanitarian aid for vulnerable groups in hardship situations.  
+**Score: 1**
+
+---
+
+### idx_2  
+- Response: **helpingveteranswithptsd**  
+- Target: **large-scalecleanupofu.s.rivers**  
+Analysis:  
+- One is helping veterans with PTSD (mental health support), the other is environmental cleanup.  
+- No semantic or entity overlap.  
+**Score: 0**
+
+---
+
+### idx_3  
+- Response: **promotingmentalhealthawareness**  
+- Target: **kopilavalleychildren’shome,school&women’scenter**  
+Analysis:  
+- Target indicates a children’s home, school, and women's center in Kopila Valley; likely providing holistic care/education/support.  
+- Response mentions promoting mental health awareness.  
+- While mental health awareness could be part of what is done at the children’s home/women’s center, it is not specifically stated.  
+- No direct match or clear semantic equivalence; somewhat related to social welfare, but not clearly the same entity or concept.  
+- Given the criterion, these are not sufficiently similar in semantics or pointing to the same entity.  
+**Score: 0**
+
+---
+
+### idx_4  
+- Response: **environmentaladvocacy**  
+- Target: **jobs&inclusionforpeoplewithintellectualdisabilities**  
+Analysis:  
+- Environmental advocacy vs jobs and inclusion for people with intellectual disabilities—different domains (environmental vs social inclusion/disability).  
+- No semantic or entity overlap.  
+**Score: 0**
+
+---
+
+### idx_5  
+- Response: **healthadvocacy**  
+- Target: **reusablemenstrualpads&menstrual-healtheducation(dignityperiod)**  
+Analysis:  
+- Target focuses on menstrual health (pads and education). Response is ""health advocacy"" (broad).  
+- Menstrual health education is a subset of health advocacy.  
+- Since the response is more general but includes health advocacy (which covers menstrual health), this can be considered approximately the same semantically.  
+**Score: 1**
+
+---
+
+### idx_6  
+- Response: **supportinghurricanerelief**  
+- Target: **beauty,hygiene,food&advocacyforunhousedpeople**  
+Analysis:  
+- Response: hurricane relief  
+- Target: support for unhoused people in form of beauty, hygiene, food, and advocacy  
+- Both relate to vulnerable populations receiving support, but hurricane relief is a specific disaster response, unhoused people's support is a broader social support.   
+- Not clearly semantically aligned or referring to the same entity.  
+**Score: 0**
+
+---
+
+### idx_7  
+- Response: **medicalhumanitarianefforts**  
+- Target: **freeveterinarycareforpetsofpeopleexperiencinghomelessness**  
+Analysis:  
+- Response: general medical humanitarian efforts  
+- Target: specifically free veterinary care for pets of homeless people  
+- Medical humanitarian efforts typically refer to human medical care. Veterinary care is medical for animals, but different domain.  
+- Because the target focuses on animals, and the response on humanitarian medical efforts (presumably for humans), they do not point to the same entity.  
+**Score: 0**
+
+---
+
+### Final Scores:
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```
+",“pushcartclassroom”mobileschoolingforstreetchildren,rescuingvictimsoftrafficking,0.0,"Let's analyze each idx item by item:
+
+Criterion summary:  
+- The response must refer to the same university as the target to get a score of 1.  
+- The semantics must approximate the reference, but exact match is not required. Supplementary info like major or degree can be ignored.  
+- ""nan"" means no valid response / no valid target, so special consideration needed.
+
+---
+
+**idx_0:**  
+- response: ""nan"" (no answer)  
+- target: ""cavitestateuniversity"" (valid target)  
+Analysis: response is empty, target expects a university. No match.  
+Score: 0
+
+---
+
+**idx_1:**  
+- response: ""nan""  
+- target: ""santabarbaracitycollege"" (valid target)  
+Analysis: response is empty, target expects a university/college. No match.  
+Score: 0
+
+---
+
+**idx_2:**  
+- response: ""wakeforestu""  
+- target: ""blackhawkcollege(att.)""  
+Analysis: Different universities, ""wakeforestu"" vs ""blackhawkcollege"". Different entities. No match.  
+Score: 0
+
+---
+
+**idx_3:**  
+- response: ""stanfordu""  
+- target: ""nan"" (no target)  
+Analysis: Target is ""nan"" (likely missing or no expected answer). The criterion does not explicitly cover this case. Generally, if no target, we cannot say it's correct. The safe approach is to give 0.  
+Score: 0
+
+---
+
+**idx_4:**  
+- response: ""emoryu""  
+- target: ""universityofcincinnati(music)""  
+Analysis: Different universities (Emory vs University of Cincinnati). No match.  
+Score: 0
+
+---
+
+**idx_5:**  
+- response: ""nan""  
+- target: ""prairieviewa&muniversity\n(chemicalengineering)"" (valid target)  
+Analysis: Response is empty, target expects a university. No match.  
+Score: 0
+
+---
+
+**idx_6:**  
+- response: ""harvardu""  
+- target: ""nan""  
+Analysis: Target is ""nan"" (no expected answer). Response given is ""harvardu."" No match because target missing. Score 0.
+
+---
+
+**idx_7:**  
+- response: ""nan""  
+- target: ""coloradostateuniversity(dvm)"" (valid target)  
+Analysis: Response missing, target expects a university. No match.  
+Score: 0
+
+---
+
+**Summary:** Only if response points to the same university as target do we assign 1. All pairs either have no response or mismatched university names or no target.
+
+**Final scores: all 0.**
+
+---
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```
+",cavitestateuniversity,nan,1.0,key_match
+,,2011,2011,1.0,"Let's evaluate each pair according to the grading criteria:
+
+---
+
+**General note:** The criterion states that it is sufficient if the semantics are approximately the same or point to the same entity. Background/occupation expressions should be approximately correct.
+
+---
+
+### idx_0
+
+- **Response:** ""socialentrepreneur""
+- **Target:** ""filipinoteacherandsocialdevelopmentworker""
+
+Analysis:  
+The target indicates two roles: teacher and social development worker (occupational roles focused on education and social work). The response only mentions ""social entrepreneur,"" which is a distinct role. A social entrepreneur might be involved in social projects but is not synonymous with teacher or social development worker. The semantics differ in background/occupation and don't seem to approximate each other.
+
+Score: 0
+
+---
+
+### idx_1
+
+- **Response:** ""communityworker""
+- **Target:** ""midwife;founderbumisehatclinics""
+
+Analysis:  
+""Community worker"" is a broad term and can cover a range of social services roles, including midwife, who serves the community's health needs. Also, founder of a clinic points to community health services. ""Community worker"" can be seen as a general approximation to midwife + founder of health clinic, pointing to similar semantics about community health service.
+
+Score: 1
+
+---
+
+### idx_2
+
+- **Response:** ""militaryveteran""
+- **Target:** ""environmentalactivist;founderlivinglands&waters""
+
+Analysis:  
+A ""military veteran"" is distinct from an environmental activist and founder of an environmental organization. These are different occupations/backgrounds.
+
+Score: 0
+
+---
+
+### idx_3
+
+- **Response:** ""socialworker""
+- **Target:** ""philanthropist;co-founderblinknow""
+
+Analysis:  
+""Social worker"" and ""philanthropist"" have overlapping fields related to social good. Although ""philanthropist"" tends more towards charitable giving/founding an organization, and ""social worker"" is a recognized occupation, the overlap in social care and approximate semantics might suffice.
+
+The target includes co-founder of an organization, implying social services. ""Social worker"" approximates ""philanthropist and co-founder"" in social background broadly but could be a little loose.
+
+Based on the criterion of approximate semantics and background, this is borderline but acceptable.
+
+Score: 1
+
+---
+
+### idx_4
+
+- **Response:** ""formerpresident""
+- **Target:** ""socialentrepreneur;founderbitty&beau’scoffee""
+
+Analysis:  
+""Former president"" is a political role. The target is social entrepreneur and founder of a social business (Bitty & Beau’s Coffee).
+
+These are quite different backgrounds (politics vs. entrepreneurship), no approximate semantic equivalence.
+
+Score: 0
+
+---
+
+### idx_5
+
+- **Response:** ""formerfirstlady""
+- **Target:** ""chemicalengineer&inventor""
+
+Analysis:  
+""Former first lady"" is a political/social title. ""Chemical engineer & inventor"" refers to a scientific profession and inventorship.
+
+They are quite different backgrounds.
+
+Score: 0
+
+---
+
+### idx_6
+
+- **Response:** ""businessman""
+- **Target:** ""thefounderofthenon-profitbeauty2thestreetz""
+
+Analysis:  
+""Businessman"" is a general term typically referring to someone running a business (for profit). The target says founder of a non-profit organization.
+
+""Businessman"" vs. founder of a non-profit is a difference in type of business, but both are founders and involved in organizational leadership.
+
+Considering the criterion says approximate background/occupation expressions are fine and both are entrepreneurial/organizational roles, ""businessman"" can approximate ""founder of non-profit"".
+
+Score: 1
+
+---
+
+### idx_7
+
+- **Response:** ""physician""
+- **Target:** ""veterinarian;founderprojectstreetvet""
+
+Analysis:  
+""Physician"" is a medical doctor for humans. ""Veterinarian"" is a medical doctor for animals. Both are similar professions in medicine but differ in their patient base. Additionally, the target is founder of Project Streetvet, which relates to veterinary service for street animals most likely.
+
+Given the close semantic field of medical doctors and health professionals, and the criterion allowing approximate background/occupation, this can be considered acceptable.
+
+Score: 1
+
+---
+
+### Final Results
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1
+}
+```",midwife;founderbumisehatclinics,communityworker,1.0,"Let's analyze each pair step-by-step:
+
+- idx_0: response = ""philippines"", target = ""philippines""  
+  Semantics match exactly → score = 1
+
+- idx_1: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+- idx_2: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+- idx_3: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+- idx_4: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+- idx_5: response = ""unitedstates"", target = ""ethiopia""  
+  Different entities → score = 0
+
+- idx_6: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+- idx_7: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+Final scoring results in JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",unitedstates,unitedstates,0.0,"date not near, response: 1947-10-12 00:00:00, target: 1956-11-24 00:00:00",1956-11-24,1947-10-12,0.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion: The semantics should be approximately the same or point to the same entity. Exact wording is not required.
+
+- idx_0: response = ""philippines"", target = ""philippines""
+  - Same entity, score = 1
+
+- idx_1: response = ""unitedstates"", target = ""indonesia""
+  - Different entities, score = 0
+
+- idx_2: response = ""unitedstates"", target = ""unitedstates""
+  - Same entity, score = 1
+
+- idx_3: response = ""unitedstates"", target = ""nepal""
+  - Different entities, score = 0
+
+- idx_4: response = ""unitedstates"", target = ""unitedstates""
+  - Same entity, score = 1
+
+- idx_5: response = ""unitedstates"", target = ""ethiopia""
+  - Different entities, score = 0
+
+- idx_6: response = ""unitedstates"", target = ""unitedstates""
+  - Same entity, score = 1
+
+- idx_7: response = ""unitedstates"", target = ""unitedstates""
+  - Same entity, score = 1
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",indonesia,unitedstates,0.0,"Let's analyze each pair based on the criterion provided:
+
+Criterion summary:  
+- The response is correct if its semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word matching.
+
+---
+
+**idx_0**:  
+Response: ""efrenpenaflorida""  
+Target: ""efrengeronimopeñafloridajr.""  
+Analysis: Both seem to refer to the name ""Efren Peña Florida"" with some differences. The response lacks ""geronimo"" and the suffix ""jr."" and the tilde over the ""ñ"". However, from the semantics and entity perspective, the response clearly refers to the same person.
+
+Score: 1
+
+---
+
+**idx_1**:  
+Response: ""motherrobin""  
+Target: ""robinlim(“iburobin”)""  
+Analysis: The reference is ""robinlim"" with an alias ""iburobin"". Response added ""mother"" as a prefix, which changes the entity somewhat. They are related to ""robin"" but not the same entity (likely ""motherrobin"" is not exactly ""robinlim""). The semantics point to related but different entities.
+
+Score: 0
+
+---
+
+**idx_2**:  
+Response: ""jamesjones""  
+Target: ""chadpregracke""  
+Analysis: Two completely different names, no similar semantics. Different entities.
+
+Score: 0
+
+---
+
+**idx_3**:  
+Response: ""lisareeder""  
+Target: ""maggiedoyne""  
+Analysis: Different names, no match in semantics.
+
+Score: 0
+
+---
+
+**idx_4**:  
+Response: ""jimmycarter""  
+Target: ""amywright""  
+Analysis: Different entities, no semantic connection.
+
+Score: 0
+
+---
+
+**idx_5**:  
+Response: ""rosalynncarter""  
+Target: ""freweinimebrahtu""  
+Analysis: Different entities, no semantic similarity.
+
+Score: 0
+
+---
+
+**idx_6**:  
+Response: ""johndavis""  
+Target: ""shirleyraines""  
+Analysis: Different entities.
+
+Score: 0
+
+---
+
+**idx_7**:  
+Response: ""dr.kwanestewart""  
+Target: ""dr.kwanestewart""  
+Analysis: Exact same entity.
+
+Score: 1
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1
+}
+```",robinlim(“iburobin”),motherrobin,1.0,"exact match, response: female, target: female",female,female,1.0,"Let's analyze each pair item by item according to the criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- The answer has similar semantics to the reference answer.  
+- Scores are 0 or 1 only.
+
+---
+
+### idx_0  
+- Response: **rescuingvictimsoftrafficking**  
+- Target: **“pushcartclassroom”mobileschoolingforstreetchildren**  
+Analysis:  
+- ""Rescuing victims of trafficking"" is quite different from ""mobile schooling for street children"" (pushcart classroom).  
+- The concepts do not overlap semantically or point to the same entity.  
+**Score: 0**
+
+---
+
+### idx_1  
+- Response: **providingshelterandsupport**  
+- Target: **freematernal&infantcareindisaster-andpoverty-strickenareas**  
+Analysis:  
+- Providing shelter and support is a broad term, while the target is specific free maternal and infant care in disaster and poverty areas.  
+- Both are supportive actions related to vulnerable populations in disaster/poverty contexts. Shelter/support versus free maternal & infant care: similar semantic field (providing aid/support), though not exact.  
+- The response is more general but covers aspects of support. According to the criterion (""approximately the same"" or ""point to the same entity""), this can be considered similar since both describe humanitarian aid for vulnerable groups in hardship situations.  
+**Score: 1**
+
+---
+
+### idx_2  
+- Response: **helpingveteranswithptsd**  
+- Target: **large-scalecleanupofu.s.rivers**  
+Analysis:  
+- One is helping veterans with PTSD (mental health support), the other is environmental cleanup.  
+- No semantic or entity overlap.  
+**Score: 0**
+
+---
+
+### idx_3  
+- Response: **promotingmentalhealthawareness**  
+- Target: **kopilavalleychildren’shome,school&women’scenter**  
+Analysis:  
+- Target indicates a children’s home, school, and women's center in Kopila Valley; likely providing holistic care/education/support.  
+- Response mentions promoting mental health awareness.  
+- While mental health awareness could be part of what is done at the children’s home/women’s center, it is not specifically stated.  
+- No direct match or clear semantic equivalence; somewhat related to social welfare, but not clearly the same entity or concept.  
+- Given the criterion, these are not sufficiently similar in semantics or pointing to the same entity.  
+**Score: 0**
+
+---
+
+### idx_4  
+- Response: **environmentaladvocacy**  
+- Target: **jobs&inclusionforpeoplewithintellectualdisabilities**  
+Analysis:  
+- Environmental advocacy vs jobs and inclusion for people with intellectual disabilities—different domains (environmental vs social inclusion/disability).  
+- No semantic or entity overlap.  
+**Score: 0**
+
+---
+
+### idx_5  
+- Response: **healthadvocacy**  
+- Target: **reusablemenstrualpads&menstrual-healtheducation(dignityperiod)**  
+Analysis:  
+- Target focuses on menstrual health (pads and education). Response is ""health advocacy"" (broad).  
+- Menstrual health education is a subset of health advocacy.  
+- Since the response is more general but includes health advocacy (which covers menstrual health), this can be considered approximately the same semantically.  
+**Score: 1**
+
+---
+
+### idx_6  
+- Response: **supportinghurricanerelief**  
+- Target: **beauty,hygiene,food&advocacyforunhousedpeople**  
+Analysis:  
+- Response: hurricane relief  
+- Target: support for unhoused people in form of beauty, hygiene, food, and advocacy  
+- Both relate to vulnerable populations receiving support, but hurricane relief is a specific disaster response, unhoused people's support is a broader social support.   
+- Not clearly semantically aligned or referring to the same entity.  
+**Score: 0**
+
+---
+
+### idx_7  
+- Response: **medicalhumanitarianefforts**  
+- Target: **freeveterinarycareforpetsofpeopleexperiencinghomelessness**  
+Analysis:  
+- Response: general medical humanitarian efforts  
+- Target: specifically free veterinary care for pets of homeless people  
+- Medical humanitarian efforts typically refer to human medical care. Veterinary care is medical for animals, but different domain.  
+- Because the target focuses on animals, and the response on humanitarian medical efforts (presumably for humans), they do not point to the same entity.  
+**Score: 0**
+
+---
+
+### Final Scores:
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```
+",freematernal&infantcareindisaster-andpoverty-strickenareas,providingshelterandsupport,0.0,"Let's analyze each idx item by item:
+
+Criterion summary:  
+- The response must refer to the same university as the target to get a score of 1.  
+- The semantics must approximate the reference, but exact match is not required. Supplementary info like major or degree can be ignored.  
+- ""nan"" means no valid response / no valid target, so special consideration needed.
+
+---
+
+**idx_0:**  
+- response: ""nan"" (no answer)  
+- target: ""cavitestateuniversity"" (valid target)  
+Analysis: response is empty, target expects a university. No match.  
+Score: 0
+
+---
+
+**idx_1:**  
+- response: ""nan""  
+- target: ""santabarbaracitycollege"" (valid target)  
+Analysis: response is empty, target expects a university/college. No match.  
+Score: 0
+
+---
+
+**idx_2:**  
+- response: ""wakeforestu""  
+- target: ""blackhawkcollege(att.)""  
+Analysis: Different universities, ""wakeforestu"" vs ""blackhawkcollege"". Different entities. No match.  
+Score: 0
+
+---
+
+**idx_3:**  
+- response: ""stanfordu""  
+- target: ""nan"" (no target)  
+Analysis: Target is ""nan"" (likely missing or no expected answer). The criterion does not explicitly cover this case. Generally, if no target, we cannot say it's correct. The safe approach is to give 0.  
+Score: 0
+
+---
+
+**idx_4:**  
+- response: ""emoryu""  
+- target: ""universityofcincinnati(music)""  
+Analysis: Different universities (Emory vs University of Cincinnati). No match.  
+Score: 0
+
+---
+
+**idx_5:**  
+- response: ""nan""  
+- target: ""prairieviewa&muniversity\n(chemicalengineering)"" (valid target)  
+Analysis: Response is empty, target expects a university. No match.  
+Score: 0
+
+---
+
+**idx_6:**  
+- response: ""harvardu""  
+- target: ""nan""  
+Analysis: Target is ""nan"" (no expected answer). Response given is ""harvardu."" No match because target missing. Score 0.
+
+---
+
+**idx_7:**  
+- response: ""nan""  
+- target: ""coloradostateuniversity(dvm)"" (valid target)  
+Analysis: Response missing, target expects a university. No match.  
+Score: 0
+
+---
+
+**Summary:** Only if response points to the same university as target do we assign 1. All pairs either have no response or mismatched university names or no target.
+
+**Final scores: all 0.**
+
+---
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```
+",santabarbaracitycollege,nan,1.0,key_match
+,,2013,2013,0.0,"Let's evaluate each pair according to the grading criteria:
+
+---
+
+**General note:** The criterion states that it is sufficient if the semantics are approximately the same or point to the same entity. Background/occupation expressions should be approximately correct.
+
+---
+
+### idx_0
+
+- **Response:** ""socialentrepreneur""
+- **Target:** ""filipinoteacherandsocialdevelopmentworker""
+
+Analysis:  
+The target indicates two roles: teacher and social development worker (occupational roles focused on education and social work). The response only mentions ""social entrepreneur,"" which is a distinct role. A social entrepreneur might be involved in social projects but is not synonymous with teacher or social development worker. The semantics differ in background/occupation and don't seem to approximate each other.
+
+Score: 0
+
+---
+
+### idx_1
+
+- **Response:** ""communityworker""
+- **Target:** ""midwife;founderbumisehatclinics""
+
+Analysis:  
+""Community worker"" is a broad term and can cover a range of social services roles, including midwife, who serves the community's health needs. Also, founder of a clinic points to community health services. ""Community worker"" can be seen as a general approximation to midwife + founder of health clinic, pointing to similar semantics about community health service.
+
+Score: 1
+
+---
+
+### idx_2
+
+- **Response:** ""militaryveteran""
+- **Target:** ""environmentalactivist;founderlivinglands&waters""
+
+Analysis:  
+A ""military veteran"" is distinct from an environmental activist and founder of an environmental organization. These are different occupations/backgrounds.
+
+Score: 0
+
+---
+
+### idx_3
+
+- **Response:** ""socialworker""
+- **Target:** ""philanthropist;co-founderblinknow""
+
+Analysis:  
+""Social worker"" and ""philanthropist"" have overlapping fields related to social good. Although ""philanthropist"" tends more towards charitable giving/founding an organization, and ""social worker"" is a recognized occupation, the overlap in social care and approximate semantics might suffice.
+
+The target includes co-founder of an organization, implying social services. ""Social worker"" approximates ""philanthropist and co-founder"" in social background broadly but could be a little loose.
+
+Based on the criterion of approximate semantics and background, this is borderline but acceptable.
+
+Score: 1
+
+---
+
+### idx_4
+
+- **Response:** ""formerpresident""
+- **Target:** ""socialentrepreneur;founderbitty&beau’scoffee""
+
+Analysis:  
+""Former president"" is a political role. The target is social entrepreneur and founder of a social business (Bitty & Beau’s Coffee).
+
+These are quite different backgrounds (politics vs. entrepreneurship), no approximate semantic equivalence.
+
+Score: 0
+
+---
+
+### idx_5
+
+- **Response:** ""formerfirstlady""
+- **Target:** ""chemicalengineer&inventor""
+
+Analysis:  
+""Former first lady"" is a political/social title. ""Chemical engineer & inventor"" refers to a scientific profession and inventorship.
+
+They are quite different backgrounds.
+
+Score: 0
+
+---
+
+### idx_6
+
+- **Response:** ""businessman""
+- **Target:** ""thefounderofthenon-profitbeauty2thestreetz""
+
+Analysis:  
+""Businessman"" is a general term typically referring to someone running a business (for profit). The target says founder of a non-profit organization.
+
+""Businessman"" vs. founder of a non-profit is a difference in type of business, but both are founders and involved in organizational leadership.
+
+Considering the criterion says approximate background/occupation expressions are fine and both are entrepreneurial/organizational roles, ""businessman"" can approximate ""founder of non-profit"".
+
+Score: 1
+
+---
+
+### idx_7
+
+- **Response:** ""physician""
+- **Target:** ""veterinarian;founderprojectstreetvet""
+
+Analysis:  
+""Physician"" is a medical doctor for humans. ""Veterinarian"" is a medical doctor for animals. Both are similar professions in medicine but differ in their patient base. Additionally, the target is founder of Project Streetvet, which relates to veterinary service for street animals most likely.
+
+Given the close semantic field of medical doctors and health professionals, and the criterion allowing approximate background/occupation, this can be considered acceptable.
+
+Score: 1
+
+---
+
+### Final Results
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1
+}
+```",environmentalactivist;founderlivinglands&waters,militaryveteran,1.0,"Let's analyze each pair step-by-step:
+
+- idx_0: response = ""philippines"", target = ""philippines""  
+  Semantics match exactly → score = 1
+
+- idx_1: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+- idx_2: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+- idx_3: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+- idx_4: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+- idx_5: response = ""unitedstates"", target = ""ethiopia""  
+  Different entities → score = 0
+
+- idx_6: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+- idx_7: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+Final scoring results in JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",unitedstates,unitedstates,0.0,"date not near, response: 1965-07-28 00:00:00, target: 1974-12-04 00:00:00",1974-12-04,1965-07-28,1.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion: The semantics should be approximately the same or point to the same entity. Exact wording is not required.
+
+- idx_0: response = ""philippines"", target = ""philippines""
+  - Same entity, score = 1
+
+- idx_1: response = ""unitedstates"", target = ""indonesia""
+  - Different entities, score = 0
+
+- idx_2: response = ""unitedstates"", target = ""unitedstates""
+  - Same entity, score = 1
+
+- idx_3: response = ""unitedstates"", target = ""nepal""
+  - Different entities, score = 0
+
+- idx_4: response = ""unitedstates"", target = ""unitedstates""
+  - Same entity, score = 1
+
+- idx_5: response = ""unitedstates"", target = ""ethiopia""
+  - Different entities, score = 0
+
+- idx_6: response = ""unitedstates"", target = ""unitedstates""
+  - Same entity, score = 1
+
+- idx_7: response = ""unitedstates"", target = ""unitedstates""
+  - Same entity, score = 1
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",unitedstates,unitedstates,0.0,"Let's analyze each pair based on the criterion provided:
+
+Criterion summary:  
+- The response is correct if its semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word matching.
+
+---
+
+**idx_0**:  
+Response: ""efrenpenaflorida""  
+Target: ""efrengeronimopeñafloridajr.""  
+Analysis: Both seem to refer to the name ""Efren Peña Florida"" with some differences. The response lacks ""geronimo"" and the suffix ""jr."" and the tilde over the ""ñ"". However, from the semantics and entity perspective, the response clearly refers to the same person.
+
+Score: 1
+
+---
+
+**idx_1**:  
+Response: ""motherrobin""  
+Target: ""robinlim(“iburobin”)""  
+Analysis: The reference is ""robinlim"" with an alias ""iburobin"". Response added ""mother"" as a prefix, which changes the entity somewhat. They are related to ""robin"" but not the same entity (likely ""motherrobin"" is not exactly ""robinlim""). The semantics point to related but different entities.
+
+Score: 0
+
+---
+
+**idx_2**:  
+Response: ""jamesjones""  
+Target: ""chadpregracke""  
+Analysis: Two completely different names, no similar semantics. Different entities.
+
+Score: 0
+
+---
+
+**idx_3**:  
+Response: ""lisareeder""  
+Target: ""maggiedoyne""  
+Analysis: Different names, no match in semantics.
+
+Score: 0
+
+---
+
+**idx_4**:  
+Response: ""jimmycarter""  
+Target: ""amywright""  
+Analysis: Different entities, no semantic connection.
+
+Score: 0
+
+---
+
+**idx_5**:  
+Response: ""rosalynncarter""  
+Target: ""freweinimebrahtu""  
+Analysis: Different entities, no semantic similarity.
+
+Score: 0
+
+---
+
+**idx_6**:  
+Response: ""johndavis""  
+Target: ""shirleyraines""  
+Analysis: Different entities.
+
+Score: 0
+
+---
+
+**idx_7**:  
+Response: ""dr.kwanestewart""  
+Target: ""dr.kwanestewart""  
+Analysis: Exact same entity.
+
+Score: 1
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1
+}
+```",chadpregracke,jamesjones,1.0,"exact match, response: male, target: male",male,male,0.0,"Let's analyze each pair item by item according to the criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- The answer has similar semantics to the reference answer.  
+- Scores are 0 or 1 only.
+
+---
+
+### idx_0  
+- Response: **rescuingvictimsoftrafficking**  
+- Target: **“pushcartclassroom”mobileschoolingforstreetchildren**  
+Analysis:  
+- ""Rescuing victims of trafficking"" is quite different from ""mobile schooling for street children"" (pushcart classroom).  
+- The concepts do not overlap semantically or point to the same entity.  
+**Score: 0**
+
+---
+
+### idx_1  
+- Response: **providingshelterandsupport**  
+- Target: **freematernal&infantcareindisaster-andpoverty-strickenareas**  
+Analysis:  
+- Providing shelter and support is a broad term, while the target is specific free maternal and infant care in disaster and poverty areas.  
+- Both are supportive actions related to vulnerable populations in disaster/poverty contexts. Shelter/support versus free maternal & infant care: similar semantic field (providing aid/support), though not exact.  
+- The response is more general but covers aspects of support. According to the criterion (""approximately the same"" or ""point to the same entity""), this can be considered similar since both describe humanitarian aid for vulnerable groups in hardship situations.  
+**Score: 1**
+
+---
+
+### idx_2  
+- Response: **helpingveteranswithptsd**  
+- Target: **large-scalecleanupofu.s.rivers**  
+Analysis:  
+- One is helping veterans with PTSD (mental health support), the other is environmental cleanup.  
+- No semantic or entity overlap.  
+**Score: 0**
+
+---
+
+### idx_3  
+- Response: **promotingmentalhealthawareness**  
+- Target: **kopilavalleychildren’shome,school&women’scenter**  
+Analysis:  
+- Target indicates a children’s home, school, and women's center in Kopila Valley; likely providing holistic care/education/support.  
+- Response mentions promoting mental health awareness.  
+- While mental health awareness could be part of what is done at the children’s home/women’s center, it is not specifically stated.  
+- No direct match or clear semantic equivalence; somewhat related to social welfare, but not clearly the same entity or concept.  
+- Given the criterion, these are not sufficiently similar in semantics or pointing to the same entity.  
+**Score: 0**
+
+---
+
+### idx_4  
+- Response: **environmentaladvocacy**  
+- Target: **jobs&inclusionforpeoplewithintellectualdisabilities**  
+Analysis:  
+- Environmental advocacy vs jobs and inclusion for people with intellectual disabilities—different domains (environmental vs social inclusion/disability).  
+- No semantic or entity overlap.  
+**Score: 0**
+
+---
+
+### idx_5  
+- Response: **healthadvocacy**  
+- Target: **reusablemenstrualpads&menstrual-healtheducation(dignityperiod)**  
+Analysis:  
+- Target focuses on menstrual health (pads and education). Response is ""health advocacy"" (broad).  
+- Menstrual health education is a subset of health advocacy.  
+- Since the response is more general but includes health advocacy (which covers menstrual health), this can be considered approximately the same semantically.  
+**Score: 1**
+
+---
+
+### idx_6  
+- Response: **supportinghurricanerelief**  
+- Target: **beauty,hygiene,food&advocacyforunhousedpeople**  
+Analysis:  
+- Response: hurricane relief  
+- Target: support for unhoused people in form of beauty, hygiene, food, and advocacy  
+- Both relate to vulnerable populations receiving support, but hurricane relief is a specific disaster response, unhoused people's support is a broader social support.   
+- Not clearly semantically aligned or referring to the same entity.  
+**Score: 0**
+
+---
+
+### idx_7  
+- Response: **medicalhumanitarianefforts**  
+- Target: **freeveterinarycareforpetsofpeopleexperiencinghomelessness**  
+Analysis:  
+- Response: general medical humanitarian efforts  
+- Target: specifically free veterinary care for pets of homeless people  
+- Medical humanitarian efforts typically refer to human medical care. Veterinary care is medical for animals, but different domain.  
+- Because the target focuses on animals, and the response on humanitarian medical efforts (presumably for humans), they do not point to the same entity.  
+**Score: 0**
+
+---
+
+### Final Scores:
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```
+",large-scalecleanupofu.s.rivers,helpingveteranswithptsd,0.0,"Let's analyze each idx item by item:
+
+Criterion summary:  
+- The response must refer to the same university as the target to get a score of 1.  
+- The semantics must approximate the reference, but exact match is not required. Supplementary info like major or degree can be ignored.  
+- ""nan"" means no valid response / no valid target, so special consideration needed.
+
+---
+
+**idx_0:**  
+- response: ""nan"" (no answer)  
+- target: ""cavitestateuniversity"" (valid target)  
+Analysis: response is empty, target expects a university. No match.  
+Score: 0
+
+---
+
+**idx_1:**  
+- response: ""nan""  
+- target: ""santabarbaracitycollege"" (valid target)  
+Analysis: response is empty, target expects a university/college. No match.  
+Score: 0
+
+---
+
+**idx_2:**  
+- response: ""wakeforestu""  
+- target: ""blackhawkcollege(att.)""  
+Analysis: Different universities, ""wakeforestu"" vs ""blackhawkcollege"". Different entities. No match.  
+Score: 0
+
+---
+
+**idx_3:**  
+- response: ""stanfordu""  
+- target: ""nan"" (no target)  
+Analysis: Target is ""nan"" (likely missing or no expected answer). The criterion does not explicitly cover this case. Generally, if no target, we cannot say it's correct. The safe approach is to give 0.  
+Score: 0
+
+---
+
+**idx_4:**  
+- response: ""emoryu""  
+- target: ""universityofcincinnati(music)""  
+Analysis: Different universities (Emory vs University of Cincinnati). No match.  
+Score: 0
+
+---
+
+**idx_5:**  
+- response: ""nan""  
+- target: ""prairieviewa&muniversity\n(chemicalengineering)"" (valid target)  
+Analysis: Response is empty, target expects a university. No match.  
+Score: 0
+
+---
+
+**idx_6:**  
+- response: ""harvardu""  
+- target: ""nan""  
+Analysis: Target is ""nan"" (no expected answer). Response given is ""harvardu."" No match because target missing. Score 0.
+
+---
+
+**idx_7:**  
+- response: ""nan""  
+- target: ""coloradostateuniversity(dvm)"" (valid target)  
+Analysis: Response missing, target expects a university. No match.  
+Score: 0
+
+---
+
+**Summary:** Only if response points to the same university as target do we assign 1. All pairs either have no response or mismatched university names or no target.
+
+**Final scores: all 0.**
+
+---
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```
+",blackhawkcollege(att.),wakeforestu,1.0,key_match
+,,2015,2015,1.0,"Let's evaluate each pair according to the grading criteria:
+
+---
+
+**General note:** The criterion states that it is sufficient if the semantics are approximately the same or point to the same entity. Background/occupation expressions should be approximately correct.
+
+---
+
+### idx_0
+
+- **Response:** ""socialentrepreneur""
+- **Target:** ""filipinoteacherandsocialdevelopmentworker""
+
+Analysis:  
+The target indicates two roles: teacher and social development worker (occupational roles focused on education and social work). The response only mentions ""social entrepreneur,"" which is a distinct role. A social entrepreneur might be involved in social projects but is not synonymous with teacher or social development worker. The semantics differ in background/occupation and don't seem to approximate each other.
+
+Score: 0
+
+---
+
+### idx_1
+
+- **Response:** ""communityworker""
+- **Target:** ""midwife;founderbumisehatclinics""
+
+Analysis:  
+""Community worker"" is a broad term and can cover a range of social services roles, including midwife, who serves the community's health needs. Also, founder of a clinic points to community health services. ""Community worker"" can be seen as a general approximation to midwife + founder of health clinic, pointing to similar semantics about community health service.
+
+Score: 1
+
+---
+
+### idx_2
+
+- **Response:** ""militaryveteran""
+- **Target:** ""environmentalactivist;founderlivinglands&waters""
+
+Analysis:  
+A ""military veteran"" is distinct from an environmental activist and founder of an environmental organization. These are different occupations/backgrounds.
+
+Score: 0
+
+---
+
+### idx_3
+
+- **Response:** ""socialworker""
+- **Target:** ""philanthropist;co-founderblinknow""
+
+Analysis:  
+""Social worker"" and ""philanthropist"" have overlapping fields related to social good. Although ""philanthropist"" tends more towards charitable giving/founding an organization, and ""social worker"" is a recognized occupation, the overlap in social care and approximate semantics might suffice.
+
+The target includes co-founder of an organization, implying social services. ""Social worker"" approximates ""philanthropist and co-founder"" in social background broadly but could be a little loose.
+
+Based on the criterion of approximate semantics and background, this is borderline but acceptable.
+
+Score: 1
+
+---
+
+### idx_4
+
+- **Response:** ""formerpresident""
+- **Target:** ""socialentrepreneur;founderbitty&beau’scoffee""
+
+Analysis:  
+""Former president"" is a political role. The target is social entrepreneur and founder of a social business (Bitty & Beau’s Coffee).
+
+These are quite different backgrounds (politics vs. entrepreneurship), no approximate semantic equivalence.
+
+Score: 0
+
+---
+
+### idx_5
+
+- **Response:** ""formerfirstlady""
+- **Target:** ""chemicalengineer&inventor""
+
+Analysis:  
+""Former first lady"" is a political/social title. ""Chemical engineer & inventor"" refers to a scientific profession and inventorship.
+
+They are quite different backgrounds.
+
+Score: 0
+
+---
+
+### idx_6
+
+- **Response:** ""businessman""
+- **Target:** ""thefounderofthenon-profitbeauty2thestreetz""
+
+Analysis:  
+""Businessman"" is a general term typically referring to someone running a business (for profit). The target says founder of a non-profit organization.
+
+""Businessman"" vs. founder of a non-profit is a difference in type of business, but both are founders and involved in organizational leadership.
+
+Considering the criterion says approximate background/occupation expressions are fine and both are entrepreneurial/organizational roles, ""businessman"" can approximate ""founder of non-profit"".
+
+Score: 1
+
+---
+
+### idx_7
+
+- **Response:** ""physician""
+- **Target:** ""veterinarian;founderprojectstreetvet""
+
+Analysis:  
+""Physician"" is a medical doctor for humans. ""Veterinarian"" is a medical doctor for animals. Both are similar professions in medicine but differ in their patient base. Additionally, the target is founder of Project Streetvet, which relates to veterinary service for street animals most likely.
+
+Given the close semantic field of medical doctors and health professionals, and the criterion allowing approximate background/occupation, this can be considered acceptable.
+
+Score: 1
+
+---
+
+### Final Results
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1
+}
+```",philanthropist;co-founderblinknow,socialworker,1.0,"Let's analyze each pair step-by-step:
+
+- idx_0: response = ""philippines"", target = ""philippines""  
+  Semantics match exactly → score = 1
+
+- idx_1: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+- idx_2: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+- idx_3: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+- idx_4: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+- idx_5: response = ""unitedstates"", target = ""ethiopia""  
+  Different entities → score = 0
+
+- idx_6: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+- idx_7: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+Final scoring results in JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",unitedstates,unitedstates,0.0,"date not near, response: 1974-11-26 00:00:00, target: 1986-11-07 00:00:00",1986-11-07,1974-11-26,0.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion: The semantics should be approximately the same or point to the same entity. Exact wording is not required.
+
+- idx_0: response = ""philippines"", target = ""philippines""
+  - Same entity, score = 1
+
+- idx_1: response = ""unitedstates"", target = ""indonesia""
+  - Different entities, score = 0
+
+- idx_2: response = ""unitedstates"", target = ""unitedstates""
+  - Same entity, score = 1
+
+- idx_3: response = ""unitedstates"", target = ""nepal""
+  - Different entities, score = 0
+
+- idx_4: response = ""unitedstates"", target = ""unitedstates""
+  - Same entity, score = 1
+
+- idx_5: response = ""unitedstates"", target = ""ethiopia""
+  - Different entities, score = 0
+
+- idx_6: response = ""unitedstates"", target = ""unitedstates""
+  - Same entity, score = 1
+
+- idx_7: response = ""unitedstates"", target = ""unitedstates""
+  - Same entity, score = 1
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",nepal,unitedstates,0.0,"Let's analyze each pair based on the criterion provided:
+
+Criterion summary:  
+- The response is correct if its semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word matching.
+
+---
+
+**idx_0**:  
+Response: ""efrenpenaflorida""  
+Target: ""efrengeronimopeñafloridajr.""  
+Analysis: Both seem to refer to the name ""Efren Peña Florida"" with some differences. The response lacks ""geronimo"" and the suffix ""jr."" and the tilde over the ""ñ"". However, from the semantics and entity perspective, the response clearly refers to the same person.
+
+Score: 1
+
+---
+
+**idx_1**:  
+Response: ""motherrobin""  
+Target: ""robinlim(“iburobin”)""  
+Analysis: The reference is ""robinlim"" with an alias ""iburobin"". Response added ""mother"" as a prefix, which changes the entity somewhat. They are related to ""robin"" but not the same entity (likely ""motherrobin"" is not exactly ""robinlim""). The semantics point to related but different entities.
+
+Score: 0
+
+---
+
+**idx_2**:  
+Response: ""jamesjones""  
+Target: ""chadpregracke""  
+Analysis: Two completely different names, no similar semantics. Different entities.
+
+Score: 0
+
+---
+
+**idx_3**:  
+Response: ""lisareeder""  
+Target: ""maggiedoyne""  
+Analysis: Different names, no match in semantics.
+
+Score: 0
+
+---
+
+**idx_4**:  
+Response: ""jimmycarter""  
+Target: ""amywright""  
+Analysis: Different entities, no semantic connection.
+
+Score: 0
+
+---
+
+**idx_5**:  
+Response: ""rosalynncarter""  
+Target: ""freweinimebrahtu""  
+Analysis: Different entities, no semantic similarity.
+
+Score: 0
+
+---
+
+**idx_6**:  
+Response: ""johndavis""  
+Target: ""shirleyraines""  
+Analysis: Different entities.
+
+Score: 0
+
+---
+
+**idx_7**:  
+Response: ""dr.kwanestewart""  
+Target: ""dr.kwanestewart""  
+Analysis: Exact same entity.
+
+Score: 1
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1
+}
+```",maggiedoyne,lisareeder,1.0,"exact match, response: female, target: female",female,female,0.0,"Let's analyze each pair item by item according to the criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- The answer has similar semantics to the reference answer.  
+- Scores are 0 or 1 only.
+
+---
+
+### idx_0  
+- Response: **rescuingvictimsoftrafficking**  
+- Target: **“pushcartclassroom”mobileschoolingforstreetchildren**  
+Analysis:  
+- ""Rescuing victims of trafficking"" is quite different from ""mobile schooling for street children"" (pushcart classroom).  
+- The concepts do not overlap semantically or point to the same entity.  
+**Score: 0**
+
+---
+
+### idx_1  
+- Response: **providingshelterandsupport**  
+- Target: **freematernal&infantcareindisaster-andpoverty-strickenareas**  
+Analysis:  
+- Providing shelter and support is a broad term, while the target is specific free maternal and infant care in disaster and poverty areas.  
+- Both are supportive actions related to vulnerable populations in disaster/poverty contexts. Shelter/support versus free maternal & infant care: similar semantic field (providing aid/support), though not exact.  
+- The response is more general but covers aspects of support. According to the criterion (""approximately the same"" or ""point to the same entity""), this can be considered similar since both describe humanitarian aid for vulnerable groups in hardship situations.  
+**Score: 1**
+
+---
+
+### idx_2  
+- Response: **helpingveteranswithptsd**  
+- Target: **large-scalecleanupofu.s.rivers**  
+Analysis:  
+- One is helping veterans with PTSD (mental health support), the other is environmental cleanup.  
+- No semantic or entity overlap.  
+**Score: 0**
+
+---
+
+### idx_3  
+- Response: **promotingmentalhealthawareness**  
+- Target: **kopilavalleychildren’shome,school&women’scenter**  
+Analysis:  
+- Target indicates a children’s home, school, and women's center in Kopila Valley; likely providing holistic care/education/support.  
+- Response mentions promoting mental health awareness.  
+- While mental health awareness could be part of what is done at the children’s home/women’s center, it is not specifically stated.  
+- No direct match or clear semantic equivalence; somewhat related to social welfare, but not clearly the same entity or concept.  
+- Given the criterion, these are not sufficiently similar in semantics or pointing to the same entity.  
+**Score: 0**
+
+---
+
+### idx_4  
+- Response: **environmentaladvocacy**  
+- Target: **jobs&inclusionforpeoplewithintellectualdisabilities**  
+Analysis:  
+- Environmental advocacy vs jobs and inclusion for people with intellectual disabilities—different domains (environmental vs social inclusion/disability).  
+- No semantic or entity overlap.  
+**Score: 0**
+
+---
+
+### idx_5  
+- Response: **healthadvocacy**  
+- Target: **reusablemenstrualpads&menstrual-healtheducation(dignityperiod)**  
+Analysis:  
+- Target focuses on menstrual health (pads and education). Response is ""health advocacy"" (broad).  
+- Menstrual health education is a subset of health advocacy.  
+- Since the response is more general but includes health advocacy (which covers menstrual health), this can be considered approximately the same semantically.  
+**Score: 1**
+
+---
+
+### idx_6  
+- Response: **supportinghurricanerelief**  
+- Target: **beauty,hygiene,food&advocacyforunhousedpeople**  
+Analysis:  
+- Response: hurricane relief  
+- Target: support for unhoused people in form of beauty, hygiene, food, and advocacy  
+- Both relate to vulnerable populations receiving support, but hurricane relief is a specific disaster response, unhoused people's support is a broader social support.   
+- Not clearly semantically aligned or referring to the same entity.  
+**Score: 0**
+
+---
+
+### idx_7  
+- Response: **medicalhumanitarianefforts**  
+- Target: **freeveterinarycareforpetsofpeopleexperiencinghomelessness**  
+Analysis:  
+- Response: general medical humanitarian efforts  
+- Target: specifically free veterinary care for pets of homeless people  
+- Medical humanitarian efforts typically refer to human medical care. Veterinary care is medical for animals, but different domain.  
+- Because the target focuses on animals, and the response on humanitarian medical efforts (presumably for humans), they do not point to the same entity.  
+**Score: 0**
+
+---
+
+### Final Scores:
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```
+","kopilavalleychildren’shome,school&women’scenter",promotingmentalhealthawareness,0.0,"Let's analyze each idx item by item:
+
+Criterion summary:  
+- The response must refer to the same university as the target to get a score of 1.  
+- The semantics must approximate the reference, but exact match is not required. Supplementary info like major or degree can be ignored.  
+- ""nan"" means no valid response / no valid target, so special consideration needed.
+
+---
+
+**idx_0:**  
+- response: ""nan"" (no answer)  
+- target: ""cavitestateuniversity"" (valid target)  
+Analysis: response is empty, target expects a university. No match.  
+Score: 0
+
+---
+
+**idx_1:**  
+- response: ""nan""  
+- target: ""santabarbaracitycollege"" (valid target)  
+Analysis: response is empty, target expects a university/college. No match.  
+Score: 0
+
+---
+
+**idx_2:**  
+- response: ""wakeforestu""  
+- target: ""blackhawkcollege(att.)""  
+Analysis: Different universities, ""wakeforestu"" vs ""blackhawkcollege"". Different entities. No match.  
+Score: 0
+
+---
+
+**idx_3:**  
+- response: ""stanfordu""  
+- target: ""nan"" (no target)  
+Analysis: Target is ""nan"" (likely missing or no expected answer). The criterion does not explicitly cover this case. Generally, if no target, we cannot say it's correct. The safe approach is to give 0.  
+Score: 0
+
+---
+
+**idx_4:**  
+- response: ""emoryu""  
+- target: ""universityofcincinnati(music)""  
+Analysis: Different universities (Emory vs University of Cincinnati). No match.  
+Score: 0
+
+---
+
+**idx_5:**  
+- response: ""nan""  
+- target: ""prairieviewa&muniversity\n(chemicalengineering)"" (valid target)  
+Analysis: Response is empty, target expects a university. No match.  
+Score: 0
+
+---
+
+**idx_6:**  
+- response: ""harvardu""  
+- target: ""nan""  
+Analysis: Target is ""nan"" (no expected answer). Response given is ""harvardu."" No match because target missing. Score 0.
+
+---
+
+**idx_7:**  
+- response: ""nan""  
+- target: ""coloradostateuniversity(dvm)"" (valid target)  
+Analysis: Response missing, target expects a university. No match.  
+Score: 0
+
+---
+
+**Summary:** Only if response points to the same university as target do we assign 1. All pairs either have no response or mismatched university names or no target.
+
+**Final scores: all 0.**
+
+---
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```
+",nan,stanfordu,1.0,key_match
+,,2017,2017,0.0,"Let's evaluate each pair according to the grading criteria:
+
+---
+
+**General note:** The criterion states that it is sufficient if the semantics are approximately the same or point to the same entity. Background/occupation expressions should be approximately correct.
+
+---
+
+### idx_0
+
+- **Response:** ""socialentrepreneur""
+- **Target:** ""filipinoteacherandsocialdevelopmentworker""
+
+Analysis:  
+The target indicates two roles: teacher and social development worker (occupational roles focused on education and social work). The response only mentions ""social entrepreneur,"" which is a distinct role. A social entrepreneur might be involved in social projects but is not synonymous with teacher or social development worker. The semantics differ in background/occupation and don't seem to approximate each other.
+
+Score: 0
+
+---
+
+### idx_1
+
+- **Response:** ""communityworker""
+- **Target:** ""midwife;founderbumisehatclinics""
+
+Analysis:  
+""Community worker"" is a broad term and can cover a range of social services roles, including midwife, who serves the community's health needs. Also, founder of a clinic points to community health services. ""Community worker"" can be seen as a general approximation to midwife + founder of health clinic, pointing to similar semantics about community health service.
+
+Score: 1
+
+---
+
+### idx_2
+
+- **Response:** ""militaryveteran""
+- **Target:** ""environmentalactivist;founderlivinglands&waters""
+
+Analysis:  
+A ""military veteran"" is distinct from an environmental activist and founder of an environmental organization. These are different occupations/backgrounds.
+
+Score: 0
+
+---
+
+### idx_3
+
+- **Response:** ""socialworker""
+- **Target:** ""philanthropist;co-founderblinknow""
+
+Analysis:  
+""Social worker"" and ""philanthropist"" have overlapping fields related to social good. Although ""philanthropist"" tends more towards charitable giving/founding an organization, and ""social worker"" is a recognized occupation, the overlap in social care and approximate semantics might suffice.
+
+The target includes co-founder of an organization, implying social services. ""Social worker"" approximates ""philanthropist and co-founder"" in social background broadly but could be a little loose.
+
+Based on the criterion of approximate semantics and background, this is borderline but acceptable.
+
+Score: 1
+
+---
+
+### idx_4
+
+- **Response:** ""formerpresident""
+- **Target:** ""socialentrepreneur;founderbitty&beau’scoffee""
+
+Analysis:  
+""Former president"" is a political role. The target is social entrepreneur and founder of a social business (Bitty & Beau’s Coffee).
+
+These are quite different backgrounds (politics vs. entrepreneurship), no approximate semantic equivalence.
+
+Score: 0
+
+---
+
+### idx_5
+
+- **Response:** ""formerfirstlady""
+- **Target:** ""chemicalengineer&inventor""
+
+Analysis:  
+""Former first lady"" is a political/social title. ""Chemical engineer & inventor"" refers to a scientific profession and inventorship.
+
+They are quite different backgrounds.
+
+Score: 0
+
+---
+
+### idx_6
+
+- **Response:** ""businessman""
+- **Target:** ""thefounderofthenon-profitbeauty2thestreetz""
+
+Analysis:  
+""Businessman"" is a general term typically referring to someone running a business (for profit). The target says founder of a non-profit organization.
+
+""Businessman"" vs. founder of a non-profit is a difference in type of business, but both are founders and involved in organizational leadership.
+
+Considering the criterion says approximate background/occupation expressions are fine and both are entrepreneurial/organizational roles, ""businessman"" can approximate ""founder of non-profit"".
+
+Score: 1
+
+---
+
+### idx_7
+
+- **Response:** ""physician""
+- **Target:** ""veterinarian;founderprojectstreetvet""
+
+Analysis:  
+""Physician"" is a medical doctor for humans. ""Veterinarian"" is a medical doctor for animals. Both are similar professions in medicine but differ in their patient base. Additionally, the target is founder of Project Streetvet, which relates to veterinary service for street animals most likely.
+
+Given the close semantic field of medical doctors and health professionals, and the criterion allowing approximate background/occupation, this can be considered acceptable.
+
+Score: 1
+
+---
+
+### Final Results
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1
+}
+```",socialentrepreneur;founderbitty&beau’scoffee,formerpresident,1.0,"Let's analyze each pair step-by-step:
+
+- idx_0: response = ""philippines"", target = ""philippines""  
+  Semantics match exactly → score = 1
+
+- idx_1: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+- idx_2: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+- idx_3: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+- idx_4: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+- idx_5: response = ""unitedstates"", target = ""ethiopia""  
+  Different entities → score = 0
+
+- idx_6: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+- idx_7: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+Final scoring results in JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",unitedstates,unitedstates,0.0,"date not near, response: 1924-10-01 00:00:00, target: 1975-09-21 00:00:00",1975-09-21,1924-10-01,1.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion: The semantics should be approximately the same or point to the same entity. Exact wording is not required.
+
+- idx_0: response = ""philippines"", target = ""philippines""
+  - Same entity, score = 1
+
+- idx_1: response = ""unitedstates"", target = ""indonesia""
+  - Different entities, score = 0
+
+- idx_2: response = ""unitedstates"", target = ""unitedstates""
+  - Same entity, score = 1
+
+- idx_3: response = ""unitedstates"", target = ""nepal""
+  - Different entities, score = 0
+
+- idx_4: response = ""unitedstates"", target = ""unitedstates""
+  - Same entity, score = 1
+
+- idx_5: response = ""unitedstates"", target = ""ethiopia""
+  - Different entities, score = 0
+
+- idx_6: response = ""unitedstates"", target = ""unitedstates""
+  - Same entity, score = 1
+
+- idx_7: response = ""unitedstates"", target = ""unitedstates""
+  - Same entity, score = 1
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",unitedstates,unitedstates,0.0,"Let's analyze each pair based on the criterion provided:
+
+Criterion summary:  
+- The response is correct if its semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word matching.
+
+---
+
+**idx_0**:  
+Response: ""efrenpenaflorida""  
+Target: ""efrengeronimopeñafloridajr.""  
+Analysis: Both seem to refer to the name ""Efren Peña Florida"" with some differences. The response lacks ""geronimo"" and the suffix ""jr."" and the tilde over the ""ñ"". However, from the semantics and entity perspective, the response clearly refers to the same person.
+
+Score: 1
+
+---
+
+**idx_1**:  
+Response: ""motherrobin""  
+Target: ""robinlim(“iburobin”)""  
+Analysis: The reference is ""robinlim"" with an alias ""iburobin"". Response added ""mother"" as a prefix, which changes the entity somewhat. They are related to ""robin"" but not the same entity (likely ""motherrobin"" is not exactly ""robinlim""). The semantics point to related but different entities.
+
+Score: 0
+
+---
+
+**idx_2**:  
+Response: ""jamesjones""  
+Target: ""chadpregracke""  
+Analysis: Two completely different names, no similar semantics. Different entities.
+
+Score: 0
+
+---
+
+**idx_3**:  
+Response: ""lisareeder""  
+Target: ""maggiedoyne""  
+Analysis: Different names, no match in semantics.
+
+Score: 0
+
+---
+
+**idx_4**:  
+Response: ""jimmycarter""  
+Target: ""amywright""  
+Analysis: Different entities, no semantic connection.
+
+Score: 0
+
+---
+
+**idx_5**:  
+Response: ""rosalynncarter""  
+Target: ""freweinimebrahtu""  
+Analysis: Different entities, no semantic similarity.
+
+Score: 0
+
+---
+
+**idx_6**:  
+Response: ""johndavis""  
+Target: ""shirleyraines""  
+Analysis: Different entities.
+
+Score: 0
+
+---
+
+**idx_7**:  
+Response: ""dr.kwanestewart""  
+Target: ""dr.kwanestewart""  
+Analysis: Exact same entity.
+
+Score: 1
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1
+}
+```",amywright,jimmycarter,0.0,"exact not match, response: male, target: female",female,male,0.0,"Let's analyze each pair item by item according to the criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- The answer has similar semantics to the reference answer.  
+- Scores are 0 or 1 only.
+
+---
+
+### idx_0  
+- Response: **rescuingvictimsoftrafficking**  
+- Target: **“pushcartclassroom”mobileschoolingforstreetchildren**  
+Analysis:  
+- ""Rescuing victims of trafficking"" is quite different from ""mobile schooling for street children"" (pushcart classroom).  
+- The concepts do not overlap semantically or point to the same entity.  
+**Score: 0**
+
+---
+
+### idx_1  
+- Response: **providingshelterandsupport**  
+- Target: **freematernal&infantcareindisaster-andpoverty-strickenareas**  
+Analysis:  
+- Providing shelter and support is a broad term, while the target is specific free maternal and infant care in disaster and poverty areas.  
+- Both are supportive actions related to vulnerable populations in disaster/poverty contexts. Shelter/support versus free maternal & infant care: similar semantic field (providing aid/support), though not exact.  
+- The response is more general but covers aspects of support. According to the criterion (""approximately the same"" or ""point to the same entity""), this can be considered similar since both describe humanitarian aid for vulnerable groups in hardship situations.  
+**Score: 1**
+
+---
+
+### idx_2  
+- Response: **helpingveteranswithptsd**  
+- Target: **large-scalecleanupofu.s.rivers**  
+Analysis:  
+- One is helping veterans with PTSD (mental health support), the other is environmental cleanup.  
+- No semantic or entity overlap.  
+**Score: 0**
+
+---
+
+### idx_3  
+- Response: **promotingmentalhealthawareness**  
+- Target: **kopilavalleychildren’shome,school&women’scenter**  
+Analysis:  
+- Target indicates a children’s home, school, and women's center in Kopila Valley; likely providing holistic care/education/support.  
+- Response mentions promoting mental health awareness.  
+- While mental health awareness could be part of what is done at the children’s home/women’s center, it is not specifically stated.  
+- No direct match or clear semantic equivalence; somewhat related to social welfare, but not clearly the same entity or concept.  
+- Given the criterion, these are not sufficiently similar in semantics or pointing to the same entity.  
+**Score: 0**
+
+---
+
+### idx_4  
+- Response: **environmentaladvocacy**  
+- Target: **jobs&inclusionforpeoplewithintellectualdisabilities**  
+Analysis:  
+- Environmental advocacy vs jobs and inclusion for people with intellectual disabilities—different domains (environmental vs social inclusion/disability).  
+- No semantic or entity overlap.  
+**Score: 0**
+
+---
+
+### idx_5  
+- Response: **healthadvocacy**  
+- Target: **reusablemenstrualpads&menstrual-healtheducation(dignityperiod)**  
+Analysis:  
+- Target focuses on menstrual health (pads and education). Response is ""health advocacy"" (broad).  
+- Menstrual health education is a subset of health advocacy.  
+- Since the response is more general but includes health advocacy (which covers menstrual health), this can be considered approximately the same semantically.  
+**Score: 1**
+
+---
+
+### idx_6  
+- Response: **supportinghurricanerelief**  
+- Target: **beauty,hygiene,food&advocacyforunhousedpeople**  
+Analysis:  
+- Response: hurricane relief  
+- Target: support for unhoused people in form of beauty, hygiene, food, and advocacy  
+- Both relate to vulnerable populations receiving support, but hurricane relief is a specific disaster response, unhoused people's support is a broader social support.   
+- Not clearly semantically aligned or referring to the same entity.  
+**Score: 0**
+
+---
+
+### idx_7  
+- Response: **medicalhumanitarianefforts**  
+- Target: **freeveterinarycareforpetsofpeopleexperiencinghomelessness**  
+Analysis:  
+- Response: general medical humanitarian efforts  
+- Target: specifically free veterinary care for pets of homeless people  
+- Medical humanitarian efforts typically refer to human medical care. Veterinary care is medical for animals, but different domain.  
+- Because the target focuses on animals, and the response on humanitarian medical efforts (presumably for humans), they do not point to the same entity.  
+**Score: 0**
+
+---
+
+### Final Scores:
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```
+",jobs&inclusionforpeoplewithintellectualdisabilities,environmentaladvocacy,0.0,"Let's analyze each idx item by item:
+
+Criterion summary:  
+- The response must refer to the same university as the target to get a score of 1.  
+- The semantics must approximate the reference, but exact match is not required. Supplementary info like major or degree can be ignored.  
+- ""nan"" means no valid response / no valid target, so special consideration needed.
+
+---
+
+**idx_0:**  
+- response: ""nan"" (no answer)  
+- target: ""cavitestateuniversity"" (valid target)  
+Analysis: response is empty, target expects a university. No match.  
+Score: 0
+
+---
+
+**idx_1:**  
+- response: ""nan""  
+- target: ""santabarbaracitycollege"" (valid target)  
+Analysis: response is empty, target expects a university/college. No match.  
+Score: 0
+
+---
+
+**idx_2:**  
+- response: ""wakeforestu""  
+- target: ""blackhawkcollege(att.)""  
+Analysis: Different universities, ""wakeforestu"" vs ""blackhawkcollege"". Different entities. No match.  
+Score: 0
+
+---
+
+**idx_3:**  
+- response: ""stanfordu""  
+- target: ""nan"" (no target)  
+Analysis: Target is ""nan"" (likely missing or no expected answer). The criterion does not explicitly cover this case. Generally, if no target, we cannot say it's correct. The safe approach is to give 0.  
+Score: 0
+
+---
+
+**idx_4:**  
+- response: ""emoryu""  
+- target: ""universityofcincinnati(music)""  
+Analysis: Different universities (Emory vs University of Cincinnati). No match.  
+Score: 0
+
+---
+
+**idx_5:**  
+- response: ""nan""  
+- target: ""prairieviewa&muniversity\n(chemicalengineering)"" (valid target)  
+Analysis: Response is empty, target expects a university. No match.  
+Score: 0
+
+---
+
+**idx_6:**  
+- response: ""harvardu""  
+- target: ""nan""  
+Analysis: Target is ""nan"" (no expected answer). Response given is ""harvardu."" No match because target missing. Score 0.
+
+---
+
+**idx_7:**  
+- response: ""nan""  
+- target: ""coloradostateuniversity(dvm)"" (valid target)  
+Analysis: Response missing, target expects a university. No match.  
+Score: 0
+
+---
+
+**Summary:** Only if response points to the same university as target do we assign 1. All pairs either have no response or mismatched university names or no target.
+
+**Final scores: all 0.**
+
+---
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```
+",universityofcincinnati(music),emoryu,1.0,key_match
+,,2019,2019,0.0,"Let's evaluate each pair according to the grading criteria:
+
+---
+
+**General note:** The criterion states that it is sufficient if the semantics are approximately the same or point to the same entity. Background/occupation expressions should be approximately correct.
+
+---
+
+### idx_0
+
+- **Response:** ""socialentrepreneur""
+- **Target:** ""filipinoteacherandsocialdevelopmentworker""
+
+Analysis:  
+The target indicates two roles: teacher and social development worker (occupational roles focused on education and social work). The response only mentions ""social entrepreneur,"" which is a distinct role. A social entrepreneur might be involved in social projects but is not synonymous with teacher or social development worker. The semantics differ in background/occupation and don't seem to approximate each other.
+
+Score: 0
+
+---
+
+### idx_1
+
+- **Response:** ""communityworker""
+- **Target:** ""midwife;founderbumisehatclinics""
+
+Analysis:  
+""Community worker"" is a broad term and can cover a range of social services roles, including midwife, who serves the community's health needs. Also, founder of a clinic points to community health services. ""Community worker"" can be seen as a general approximation to midwife + founder of health clinic, pointing to similar semantics about community health service.
+
+Score: 1
+
+---
+
+### idx_2
+
+- **Response:** ""militaryveteran""
+- **Target:** ""environmentalactivist;founderlivinglands&waters""
+
+Analysis:  
+A ""military veteran"" is distinct from an environmental activist and founder of an environmental organization. These are different occupations/backgrounds.
+
+Score: 0
+
+---
+
+### idx_3
+
+- **Response:** ""socialworker""
+- **Target:** ""philanthropist;co-founderblinknow""
+
+Analysis:  
+""Social worker"" and ""philanthropist"" have overlapping fields related to social good. Although ""philanthropist"" tends more towards charitable giving/founding an organization, and ""social worker"" is a recognized occupation, the overlap in social care and approximate semantics might suffice.
+
+The target includes co-founder of an organization, implying social services. ""Social worker"" approximates ""philanthropist and co-founder"" in social background broadly but could be a little loose.
+
+Based on the criterion of approximate semantics and background, this is borderline but acceptable.
+
+Score: 1
+
+---
+
+### idx_4
+
+- **Response:** ""formerpresident""
+- **Target:** ""socialentrepreneur;founderbitty&beau’scoffee""
+
+Analysis:  
+""Former president"" is a political role. The target is social entrepreneur and founder of a social business (Bitty & Beau’s Coffee).
+
+These are quite different backgrounds (politics vs. entrepreneurship), no approximate semantic equivalence.
+
+Score: 0
+
+---
+
+### idx_5
+
+- **Response:** ""formerfirstlady""
+- **Target:** ""chemicalengineer&inventor""
+
+Analysis:  
+""Former first lady"" is a political/social title. ""Chemical engineer & inventor"" refers to a scientific profession and inventorship.
+
+They are quite different backgrounds.
+
+Score: 0
+
+---
+
+### idx_6
+
+- **Response:** ""businessman""
+- **Target:** ""thefounderofthenon-profitbeauty2thestreetz""
+
+Analysis:  
+""Businessman"" is a general term typically referring to someone running a business (for profit). The target says founder of a non-profit organization.
+
+""Businessman"" vs. founder of a non-profit is a difference in type of business, but both are founders and involved in organizational leadership.
+
+Considering the criterion says approximate background/occupation expressions are fine and both are entrepreneurial/organizational roles, ""businessman"" can approximate ""founder of non-profit"".
+
+Score: 1
+
+---
+
+### idx_7
+
+- **Response:** ""physician""
+- **Target:** ""veterinarian;founderprojectstreetvet""
+
+Analysis:  
+""Physician"" is a medical doctor for humans. ""Veterinarian"" is a medical doctor for animals. Both are similar professions in medicine but differ in their patient base. Additionally, the target is founder of Project Streetvet, which relates to veterinary service for street animals most likely.
+
+Given the close semantic field of medical doctors and health professionals, and the criterion allowing approximate background/occupation, this can be considered acceptable.
+
+Score: 1
+
+---
+
+### Final Results
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1
+}
+```",chemicalengineer&inventor,formerfirstlady,0.0,"Let's analyze each pair step-by-step:
+
+- idx_0: response = ""philippines"", target = ""philippines""  
+  Semantics match exactly → score = 1
+
+- idx_1: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+- idx_2: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+- idx_3: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+- idx_4: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+- idx_5: response = ""unitedstates"", target = ""ethiopia""  
+  Different entities → score = 0
+
+- idx_6: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+- idx_7: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+Final scoring results in JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",ethiopia,unitedstates,0.0,"date not near, response: 1927-01-17 00:00:00, target: 1965-01-01 00:00:00",1965-01-01,1927-01-17,0.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion: The semantics should be approximately the same or point to the same entity. Exact wording is not required.
+
+- idx_0: response = ""philippines"", target = ""philippines""
+  - Same entity, score = 1
+
+- idx_1: response = ""unitedstates"", target = ""indonesia""
+  - Different entities, score = 0
+
+- idx_2: response = ""unitedstates"", target = ""unitedstates""
+  - Same entity, score = 1
+
+- idx_3: response = ""unitedstates"", target = ""nepal""
+  - Different entities, score = 0
+
+- idx_4: response = ""unitedstates"", target = ""unitedstates""
+  - Same entity, score = 1
+
+- idx_5: response = ""unitedstates"", target = ""ethiopia""
+  - Different entities, score = 0
+
+- idx_6: response = ""unitedstates"", target = ""unitedstates""
+  - Same entity, score = 1
+
+- idx_7: response = ""unitedstates"", target = ""unitedstates""
+  - Same entity, score = 1
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",ethiopia,unitedstates,0.0,"Let's analyze each pair based on the criterion provided:
+
+Criterion summary:  
+- The response is correct if its semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word matching.
+
+---
+
+**idx_0**:  
+Response: ""efrenpenaflorida""  
+Target: ""efrengeronimopeñafloridajr.""  
+Analysis: Both seem to refer to the name ""Efren Peña Florida"" with some differences. The response lacks ""geronimo"" and the suffix ""jr."" and the tilde over the ""ñ"". However, from the semantics and entity perspective, the response clearly refers to the same person.
+
+Score: 1
+
+---
+
+**idx_1**:  
+Response: ""motherrobin""  
+Target: ""robinlim(“iburobin”)""  
+Analysis: The reference is ""robinlim"" with an alias ""iburobin"". Response added ""mother"" as a prefix, which changes the entity somewhat. They are related to ""robin"" but not the same entity (likely ""motherrobin"" is not exactly ""robinlim""). The semantics point to related but different entities.
+
+Score: 0
+
+---
+
+**idx_2**:  
+Response: ""jamesjones""  
+Target: ""chadpregracke""  
+Analysis: Two completely different names, no similar semantics. Different entities.
+
+Score: 0
+
+---
+
+**idx_3**:  
+Response: ""lisareeder""  
+Target: ""maggiedoyne""  
+Analysis: Different names, no match in semantics.
+
+Score: 0
+
+---
+
+**idx_4**:  
+Response: ""jimmycarter""  
+Target: ""amywright""  
+Analysis: Different entities, no semantic connection.
+
+Score: 0
+
+---
+
+**idx_5**:  
+Response: ""rosalynncarter""  
+Target: ""freweinimebrahtu""  
+Analysis: Different entities, no semantic similarity.
+
+Score: 0
+
+---
+
+**idx_6**:  
+Response: ""johndavis""  
+Target: ""shirleyraines""  
+Analysis: Different entities.
+
+Score: 0
+
+---
+
+**idx_7**:  
+Response: ""dr.kwanestewart""  
+Target: ""dr.kwanestewart""  
+Analysis: Exact same entity.
+
+Score: 1
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1
+}
+```",freweinimebrahtu,rosalynncarter,1.0,"exact match, response: female, target: female",female,female,1.0,"Let's analyze each pair item by item according to the criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- The answer has similar semantics to the reference answer.  
+- Scores are 0 or 1 only.
+
+---
+
+### idx_0  
+- Response: **rescuingvictimsoftrafficking**  
+- Target: **“pushcartclassroom”mobileschoolingforstreetchildren**  
+Analysis:  
+- ""Rescuing victims of trafficking"" is quite different from ""mobile schooling for street children"" (pushcart classroom).  
+- The concepts do not overlap semantically or point to the same entity.  
+**Score: 0**
+
+---
+
+### idx_1  
+- Response: **providingshelterandsupport**  
+- Target: **freematernal&infantcareindisaster-andpoverty-strickenareas**  
+Analysis:  
+- Providing shelter and support is a broad term, while the target is specific free maternal and infant care in disaster and poverty areas.  
+- Both are supportive actions related to vulnerable populations in disaster/poverty contexts. Shelter/support versus free maternal & infant care: similar semantic field (providing aid/support), though not exact.  
+- The response is more general but covers aspects of support. According to the criterion (""approximately the same"" or ""point to the same entity""), this can be considered similar since both describe humanitarian aid for vulnerable groups in hardship situations.  
+**Score: 1**
+
+---
+
+### idx_2  
+- Response: **helpingveteranswithptsd**  
+- Target: **large-scalecleanupofu.s.rivers**  
+Analysis:  
+- One is helping veterans with PTSD (mental health support), the other is environmental cleanup.  
+- No semantic or entity overlap.  
+**Score: 0**
+
+---
+
+### idx_3  
+- Response: **promotingmentalhealthawareness**  
+- Target: **kopilavalleychildren’shome,school&women’scenter**  
+Analysis:  
+- Target indicates a children’s home, school, and women's center in Kopila Valley; likely providing holistic care/education/support.  
+- Response mentions promoting mental health awareness.  
+- While mental health awareness could be part of what is done at the children’s home/women’s center, it is not specifically stated.  
+- No direct match or clear semantic equivalence; somewhat related to social welfare, but not clearly the same entity or concept.  
+- Given the criterion, these are not sufficiently similar in semantics or pointing to the same entity.  
+**Score: 0**
+
+---
+
+### idx_4  
+- Response: **environmentaladvocacy**  
+- Target: **jobs&inclusionforpeoplewithintellectualdisabilities**  
+Analysis:  
+- Environmental advocacy vs jobs and inclusion for people with intellectual disabilities—different domains (environmental vs social inclusion/disability).  
+- No semantic or entity overlap.  
+**Score: 0**
+
+---
+
+### idx_5  
+- Response: **healthadvocacy**  
+- Target: **reusablemenstrualpads&menstrual-healtheducation(dignityperiod)**  
+Analysis:  
+- Target focuses on menstrual health (pads and education). Response is ""health advocacy"" (broad).  
+- Menstrual health education is a subset of health advocacy.  
+- Since the response is more general but includes health advocacy (which covers menstrual health), this can be considered approximately the same semantically.  
+**Score: 1**
+
+---
+
+### idx_6  
+- Response: **supportinghurricanerelief**  
+- Target: **beauty,hygiene,food&advocacyforunhousedpeople**  
+Analysis:  
+- Response: hurricane relief  
+- Target: support for unhoused people in form of beauty, hygiene, food, and advocacy  
+- Both relate to vulnerable populations receiving support, but hurricane relief is a specific disaster response, unhoused people's support is a broader social support.   
+- Not clearly semantically aligned or referring to the same entity.  
+**Score: 0**
+
+---
+
+### idx_7  
+- Response: **medicalhumanitarianefforts**  
+- Target: **freeveterinarycareforpetsofpeopleexperiencinghomelessness**  
+Analysis:  
+- Response: general medical humanitarian efforts  
+- Target: specifically free veterinary care for pets of homeless people  
+- Medical humanitarian efforts typically refer to human medical care. Veterinary care is medical for animals, but different domain.  
+- Because the target focuses on animals, and the response on humanitarian medical efforts (presumably for humans), they do not point to the same entity.  
+**Score: 0**
+
+---
+
+### Final Scores:
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```
+",reusablemenstrualpads&menstrual-healtheducation(dignityperiod),healthadvocacy,0.0,"Let's analyze each idx item by item:
+
+Criterion summary:  
+- The response must refer to the same university as the target to get a score of 1.  
+- The semantics must approximate the reference, but exact match is not required. Supplementary info like major or degree can be ignored.  
+- ""nan"" means no valid response / no valid target, so special consideration needed.
+
+---
+
+**idx_0:**  
+- response: ""nan"" (no answer)  
+- target: ""cavitestateuniversity"" (valid target)  
+Analysis: response is empty, target expects a university. No match.  
+Score: 0
+
+---
+
+**idx_1:**  
+- response: ""nan""  
+- target: ""santabarbaracitycollege"" (valid target)  
+Analysis: response is empty, target expects a university/college. No match.  
+Score: 0
+
+---
+
+**idx_2:**  
+- response: ""wakeforestu""  
+- target: ""blackhawkcollege(att.)""  
+Analysis: Different universities, ""wakeforestu"" vs ""blackhawkcollege"". Different entities. No match.  
+Score: 0
+
+---
+
+**idx_3:**  
+- response: ""stanfordu""  
+- target: ""nan"" (no target)  
+Analysis: Target is ""nan"" (likely missing or no expected answer). The criterion does not explicitly cover this case. Generally, if no target, we cannot say it's correct. The safe approach is to give 0.  
+Score: 0
+
+---
+
+**idx_4:**  
+- response: ""emoryu""  
+- target: ""universityofcincinnati(music)""  
+Analysis: Different universities (Emory vs University of Cincinnati). No match.  
+Score: 0
+
+---
+
+**idx_5:**  
+- response: ""nan""  
+- target: ""prairieviewa&muniversity\n(chemicalengineering)"" (valid target)  
+Analysis: Response is empty, target expects a university. No match.  
+Score: 0
+
+---
+
+**idx_6:**  
+- response: ""harvardu""  
+- target: ""nan""  
+Analysis: Target is ""nan"" (no expected answer). Response given is ""harvardu."" No match because target missing. Score 0.
+
+---
+
+**idx_7:**  
+- response: ""nan""  
+- target: ""coloradostateuniversity(dvm)"" (valid target)  
+Analysis: Response missing, target expects a university. No match.  
+Score: 0
+
+---
+
+**Summary:** Only if response points to the same university as target do we assign 1. All pairs either have no response or mismatched university names or no target.
+
+**Final scores: all 0.**
+
+---
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```
+","prairieviewa&muniversity
+(chemicalengineering)",nan,1.0,key_match
+,,2021,2021,1.0,"Let's evaluate each pair according to the grading criteria:
+
+---
+
+**General note:** The criterion states that it is sufficient if the semantics are approximately the same or point to the same entity. Background/occupation expressions should be approximately correct.
+
+---
+
+### idx_0
+
+- **Response:** ""socialentrepreneur""
+- **Target:** ""filipinoteacherandsocialdevelopmentworker""
+
+Analysis:  
+The target indicates two roles: teacher and social development worker (occupational roles focused on education and social work). The response only mentions ""social entrepreneur,"" which is a distinct role. A social entrepreneur might be involved in social projects but is not synonymous with teacher or social development worker. The semantics differ in background/occupation and don't seem to approximate each other.
+
+Score: 0
+
+---
+
+### idx_1
+
+- **Response:** ""communityworker""
+- **Target:** ""midwife;founderbumisehatclinics""
+
+Analysis:  
+""Community worker"" is a broad term and can cover a range of social services roles, including midwife, who serves the community's health needs. Also, founder of a clinic points to community health services. ""Community worker"" can be seen as a general approximation to midwife + founder of health clinic, pointing to similar semantics about community health service.
+
+Score: 1
+
+---
+
+### idx_2
+
+- **Response:** ""militaryveteran""
+- **Target:** ""environmentalactivist;founderlivinglands&waters""
+
+Analysis:  
+A ""military veteran"" is distinct from an environmental activist and founder of an environmental organization. These are different occupations/backgrounds.
+
+Score: 0
+
+---
+
+### idx_3
+
+- **Response:** ""socialworker""
+- **Target:** ""philanthropist;co-founderblinknow""
+
+Analysis:  
+""Social worker"" and ""philanthropist"" have overlapping fields related to social good. Although ""philanthropist"" tends more towards charitable giving/founding an organization, and ""social worker"" is a recognized occupation, the overlap in social care and approximate semantics might suffice.
+
+The target includes co-founder of an organization, implying social services. ""Social worker"" approximates ""philanthropist and co-founder"" in social background broadly but could be a little loose.
+
+Based on the criterion of approximate semantics and background, this is borderline but acceptable.
+
+Score: 1
+
+---
+
+### idx_4
+
+- **Response:** ""formerpresident""
+- **Target:** ""socialentrepreneur;founderbitty&beau’scoffee""
+
+Analysis:  
+""Former president"" is a political role. The target is social entrepreneur and founder of a social business (Bitty & Beau’s Coffee).
+
+These are quite different backgrounds (politics vs. entrepreneurship), no approximate semantic equivalence.
+
+Score: 0
+
+---
+
+### idx_5
+
+- **Response:** ""formerfirstlady""
+- **Target:** ""chemicalengineer&inventor""
+
+Analysis:  
+""Former first lady"" is a political/social title. ""Chemical engineer & inventor"" refers to a scientific profession and inventorship.
+
+They are quite different backgrounds.
+
+Score: 0
+
+---
+
+### idx_6
+
+- **Response:** ""businessman""
+- **Target:** ""thefounderofthenon-profitbeauty2thestreetz""
+
+Analysis:  
+""Businessman"" is a general term typically referring to someone running a business (for profit). The target says founder of a non-profit organization.
+
+""Businessman"" vs. founder of a non-profit is a difference in type of business, but both are founders and involved in organizational leadership.
+
+Considering the criterion says approximate background/occupation expressions are fine and both are entrepreneurial/organizational roles, ""businessman"" can approximate ""founder of non-profit"".
+
+Score: 1
+
+---
+
+### idx_7
+
+- **Response:** ""physician""
+- **Target:** ""veterinarian;founderprojectstreetvet""
+
+Analysis:  
+""Physician"" is a medical doctor for humans. ""Veterinarian"" is a medical doctor for animals. Both are similar professions in medicine but differ in their patient base. Additionally, the target is founder of Project Streetvet, which relates to veterinary service for street animals most likely.
+
+Given the close semantic field of medical doctors and health professionals, and the criterion allowing approximate background/occupation, this can be considered acceptable.
+
+Score: 1
+
+---
+
+### Final Results
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1
+}
+```",thefounderofthenon-profitbeauty2thestreetz,businessman,1.0,"Let's analyze each pair step-by-step:
+
+- idx_0: response = ""philippines"", target = ""philippines""  
+  Semantics match exactly → score = 1
+
+- idx_1: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+- idx_2: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+- idx_3: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+- idx_4: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+- idx_5: response = ""unitedstates"", target = ""ethiopia""  
+  Different entities → score = 0
+
+- idx_6: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+- idx_7: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+Final scoring results in JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",unitedstates,unitedstates,0.0,"date not near, response: 1955-02-28 00:00:00, target: 1967-12-29 00:00:00",1967-12-29,1955-02-28,1.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion: The semantics should be approximately the same or point to the same entity. Exact wording is not required.
+
+- idx_0: response = ""philippines"", target = ""philippines""
+  - Same entity, score = 1
+
+- idx_1: response = ""unitedstates"", target = ""indonesia""
+  - Different entities, score = 0
+
+- idx_2: response = ""unitedstates"", target = ""unitedstates""
+  - Same entity, score = 1
+
+- idx_3: response = ""unitedstates"", target = ""nepal""
+  - Different entities, score = 0
+
+- idx_4: response = ""unitedstates"", target = ""unitedstates""
+  - Same entity, score = 1
+
+- idx_5: response = ""unitedstates"", target = ""ethiopia""
+  - Different entities, score = 0
+
+- idx_6: response = ""unitedstates"", target = ""unitedstates""
+  - Same entity, score = 1
+
+- idx_7: response = ""unitedstates"", target = ""unitedstates""
+  - Same entity, score = 1
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",unitedstates,unitedstates,0.0,"Let's analyze each pair based on the criterion provided:
+
+Criterion summary:  
+- The response is correct if its semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word matching.
+
+---
+
+**idx_0**:  
+Response: ""efrenpenaflorida""  
+Target: ""efrengeronimopeñafloridajr.""  
+Analysis: Both seem to refer to the name ""Efren Peña Florida"" with some differences. The response lacks ""geronimo"" and the suffix ""jr."" and the tilde over the ""ñ"". However, from the semantics and entity perspective, the response clearly refers to the same person.
+
+Score: 1
+
+---
+
+**idx_1**:  
+Response: ""motherrobin""  
+Target: ""robinlim(“iburobin”)""  
+Analysis: The reference is ""robinlim"" with an alias ""iburobin"". Response added ""mother"" as a prefix, which changes the entity somewhat. They are related to ""robin"" but not the same entity (likely ""motherrobin"" is not exactly ""robinlim""). The semantics point to related but different entities.
+
+Score: 0
+
+---
+
+**idx_2**:  
+Response: ""jamesjones""  
+Target: ""chadpregracke""  
+Analysis: Two completely different names, no similar semantics. Different entities.
+
+Score: 0
+
+---
+
+**idx_3**:  
+Response: ""lisareeder""  
+Target: ""maggiedoyne""  
+Analysis: Different names, no match in semantics.
+
+Score: 0
+
+---
+
+**idx_4**:  
+Response: ""jimmycarter""  
+Target: ""amywright""  
+Analysis: Different entities, no semantic connection.
+
+Score: 0
+
+---
+
+**idx_5**:  
+Response: ""rosalynncarter""  
+Target: ""freweinimebrahtu""  
+Analysis: Different entities, no semantic similarity.
+
+Score: 0
+
+---
+
+**idx_6**:  
+Response: ""johndavis""  
+Target: ""shirleyraines""  
+Analysis: Different entities.
+
+Score: 0
+
+---
+
+**idx_7**:  
+Response: ""dr.kwanestewart""  
+Target: ""dr.kwanestewart""  
+Analysis: Exact same entity.
+
+Score: 1
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1
+}
+```",shirleyraines,johndavis,0.0,"exact not match, response: male, target: female",female,male,0.0,"Let's analyze each pair item by item according to the criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- The answer has similar semantics to the reference answer.  
+- Scores are 0 or 1 only.
+
+---
+
+### idx_0  
+- Response: **rescuingvictimsoftrafficking**  
+- Target: **“pushcartclassroom”mobileschoolingforstreetchildren**  
+Analysis:  
+- ""Rescuing victims of trafficking"" is quite different from ""mobile schooling for street children"" (pushcart classroom).  
+- The concepts do not overlap semantically or point to the same entity.  
+**Score: 0**
+
+---
+
+### idx_1  
+- Response: **providingshelterandsupport**  
+- Target: **freematernal&infantcareindisaster-andpoverty-strickenareas**  
+Analysis:  
+- Providing shelter and support is a broad term, while the target is specific free maternal and infant care in disaster and poverty areas.  
+- Both are supportive actions related to vulnerable populations in disaster/poverty contexts. Shelter/support versus free maternal & infant care: similar semantic field (providing aid/support), though not exact.  
+- The response is more general but covers aspects of support. According to the criterion (""approximately the same"" or ""point to the same entity""), this can be considered similar since both describe humanitarian aid for vulnerable groups in hardship situations.  
+**Score: 1**
+
+---
+
+### idx_2  
+- Response: **helpingveteranswithptsd**  
+- Target: **large-scalecleanupofu.s.rivers**  
+Analysis:  
+- One is helping veterans with PTSD (mental health support), the other is environmental cleanup.  
+- No semantic or entity overlap.  
+**Score: 0**
+
+---
+
+### idx_3  
+- Response: **promotingmentalhealthawareness**  
+- Target: **kopilavalleychildren’shome,school&women’scenter**  
+Analysis:  
+- Target indicates a children’s home, school, and women's center in Kopila Valley; likely providing holistic care/education/support.  
+- Response mentions promoting mental health awareness.  
+- While mental health awareness could be part of what is done at the children’s home/women’s center, it is not specifically stated.  
+- No direct match or clear semantic equivalence; somewhat related to social welfare, but not clearly the same entity or concept.  
+- Given the criterion, these are not sufficiently similar in semantics or pointing to the same entity.  
+**Score: 0**
+
+---
+
+### idx_4  
+- Response: **environmentaladvocacy**  
+- Target: **jobs&inclusionforpeoplewithintellectualdisabilities**  
+Analysis:  
+- Environmental advocacy vs jobs and inclusion for people with intellectual disabilities—different domains (environmental vs social inclusion/disability).  
+- No semantic or entity overlap.  
+**Score: 0**
+
+---
+
+### idx_5  
+- Response: **healthadvocacy**  
+- Target: **reusablemenstrualpads&menstrual-healtheducation(dignityperiod)**  
+Analysis:  
+- Target focuses on menstrual health (pads and education). Response is ""health advocacy"" (broad).  
+- Menstrual health education is a subset of health advocacy.  
+- Since the response is more general but includes health advocacy (which covers menstrual health), this can be considered approximately the same semantically.  
+**Score: 1**
+
+---
+
+### idx_6  
+- Response: **supportinghurricanerelief**  
+- Target: **beauty,hygiene,food&advocacyforunhousedpeople**  
+Analysis:  
+- Response: hurricane relief  
+- Target: support for unhoused people in form of beauty, hygiene, food, and advocacy  
+- Both relate to vulnerable populations receiving support, but hurricane relief is a specific disaster response, unhoused people's support is a broader social support.   
+- Not clearly semantically aligned or referring to the same entity.  
+**Score: 0**
+
+---
+
+### idx_7  
+- Response: **medicalhumanitarianefforts**  
+- Target: **freeveterinarycareforpetsofpeopleexperiencinghomelessness**  
+Analysis:  
+- Response: general medical humanitarian efforts  
+- Target: specifically free veterinary care for pets of homeless people  
+- Medical humanitarian efforts typically refer to human medical care. Veterinary care is medical for animals, but different domain.  
+- Because the target focuses on animals, and the response on humanitarian medical efforts (presumably for humans), they do not point to the same entity.  
+**Score: 0**
+
+---
+
+### Final Scores:
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```
+","beauty,hygiene,food&advocacyforunhousedpeople",supportinghurricanerelief,0.0,"Let's analyze each idx item by item:
+
+Criterion summary:  
+- The response must refer to the same university as the target to get a score of 1.  
+- The semantics must approximate the reference, but exact match is not required. Supplementary info like major or degree can be ignored.  
+- ""nan"" means no valid response / no valid target, so special consideration needed.
+
+---
+
+**idx_0:**  
+- response: ""nan"" (no answer)  
+- target: ""cavitestateuniversity"" (valid target)  
+Analysis: response is empty, target expects a university. No match.  
+Score: 0
+
+---
+
+**idx_1:**  
+- response: ""nan""  
+- target: ""santabarbaracitycollege"" (valid target)  
+Analysis: response is empty, target expects a university/college. No match.  
+Score: 0
+
+---
+
+**idx_2:**  
+- response: ""wakeforestu""  
+- target: ""blackhawkcollege(att.)""  
+Analysis: Different universities, ""wakeforestu"" vs ""blackhawkcollege"". Different entities. No match.  
+Score: 0
+
+---
+
+**idx_3:**  
+- response: ""stanfordu""  
+- target: ""nan"" (no target)  
+Analysis: Target is ""nan"" (likely missing or no expected answer). The criterion does not explicitly cover this case. Generally, if no target, we cannot say it's correct. The safe approach is to give 0.  
+Score: 0
+
+---
+
+**idx_4:**  
+- response: ""emoryu""  
+- target: ""universityofcincinnati(music)""  
+Analysis: Different universities (Emory vs University of Cincinnati). No match.  
+Score: 0
+
+---
+
+**idx_5:**  
+- response: ""nan""  
+- target: ""prairieviewa&muniversity\n(chemicalengineering)"" (valid target)  
+Analysis: Response is empty, target expects a university. No match.  
+Score: 0
+
+---
+
+**idx_6:**  
+- response: ""harvardu""  
+- target: ""nan""  
+Analysis: Target is ""nan"" (no expected answer). Response given is ""harvardu."" No match because target missing. Score 0.
+
+---
+
+**idx_7:**  
+- response: ""nan""  
+- target: ""coloradostateuniversity(dvm)"" (valid target)  
+Analysis: Response missing, target expects a university. No match.  
+Score: 0
+
+---
+
+**Summary:** Only if response points to the same university as target do we assign 1. All pairs either have no response or mismatched university names or no target.
+
+**Final scores: all 0.**
+
+---
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```
+",nan,harvardu,1.0,key_match
+,,2023,2023,1.0,"Let's evaluate each pair according to the grading criteria:
+
+---
+
+**General note:** The criterion states that it is sufficient if the semantics are approximately the same or point to the same entity. Background/occupation expressions should be approximately correct.
+
+---
+
+### idx_0
+
+- **Response:** ""socialentrepreneur""
+- **Target:** ""filipinoteacherandsocialdevelopmentworker""
+
+Analysis:  
+The target indicates two roles: teacher and social development worker (occupational roles focused on education and social work). The response only mentions ""social entrepreneur,"" which is a distinct role. A social entrepreneur might be involved in social projects but is not synonymous with teacher or social development worker. The semantics differ in background/occupation and don't seem to approximate each other.
+
+Score: 0
+
+---
+
+### idx_1
+
+- **Response:** ""communityworker""
+- **Target:** ""midwife;founderbumisehatclinics""
+
+Analysis:  
+""Community worker"" is a broad term and can cover a range of social services roles, including midwife, who serves the community's health needs. Also, founder of a clinic points to community health services. ""Community worker"" can be seen as a general approximation to midwife + founder of health clinic, pointing to similar semantics about community health service.
+
+Score: 1
+
+---
+
+### idx_2
+
+- **Response:** ""militaryveteran""
+- **Target:** ""environmentalactivist;founderlivinglands&waters""
+
+Analysis:  
+A ""military veteran"" is distinct from an environmental activist and founder of an environmental organization. These are different occupations/backgrounds.
+
+Score: 0
+
+---
+
+### idx_3
+
+- **Response:** ""socialworker""
+- **Target:** ""philanthropist;co-founderblinknow""
+
+Analysis:  
+""Social worker"" and ""philanthropist"" have overlapping fields related to social good. Although ""philanthropist"" tends more towards charitable giving/founding an organization, and ""social worker"" is a recognized occupation, the overlap in social care and approximate semantics might suffice.
+
+The target includes co-founder of an organization, implying social services. ""Social worker"" approximates ""philanthropist and co-founder"" in social background broadly but could be a little loose.
+
+Based on the criterion of approximate semantics and background, this is borderline but acceptable.
+
+Score: 1
+
+---
+
+### idx_4
+
+- **Response:** ""formerpresident""
+- **Target:** ""socialentrepreneur;founderbitty&beau’scoffee""
+
+Analysis:  
+""Former president"" is a political role. The target is social entrepreneur and founder of a social business (Bitty & Beau’s Coffee).
+
+These are quite different backgrounds (politics vs. entrepreneurship), no approximate semantic equivalence.
+
+Score: 0
+
+---
+
+### idx_5
+
+- **Response:** ""formerfirstlady""
+- **Target:** ""chemicalengineer&inventor""
+
+Analysis:  
+""Former first lady"" is a political/social title. ""Chemical engineer & inventor"" refers to a scientific profession and inventorship.
+
+They are quite different backgrounds.
+
+Score: 0
+
+---
+
+### idx_6
+
+- **Response:** ""businessman""
+- **Target:** ""thefounderofthenon-profitbeauty2thestreetz""
+
+Analysis:  
+""Businessman"" is a general term typically referring to someone running a business (for profit). The target says founder of a non-profit organization.
+
+""Businessman"" vs. founder of a non-profit is a difference in type of business, but both are founders and involved in organizational leadership.
+
+Considering the criterion says approximate background/occupation expressions are fine and both are entrepreneurial/organizational roles, ""businessman"" can approximate ""founder of non-profit"".
+
+Score: 1
+
+---
+
+### idx_7
+
+- **Response:** ""physician""
+- **Target:** ""veterinarian;founderprojectstreetvet""
+
+Analysis:  
+""Physician"" is a medical doctor for humans. ""Veterinarian"" is a medical doctor for animals. Both are similar professions in medicine but differ in their patient base. Additionally, the target is founder of Project Streetvet, which relates to veterinary service for street animals most likely.
+
+Given the close semantic field of medical doctors and health professionals, and the criterion allowing approximate background/occupation, this can be considered acceptable.
+
+Score: 1
+
+---
+
+### Final Results
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1
+}
+```",veterinarian;founderprojectstreetvet,physician,1.0,"Let's analyze each pair step-by-step:
+
+- idx_0: response = ""philippines"", target = ""philippines""  
+  Semantics match exactly → score = 1
+
+- idx_1: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+- idx_2: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+- idx_3: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+- idx_4: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+- idx_5: response = ""unitedstates"", target = ""ethiopia""  
+  Different entities → score = 0
+
+- idx_6: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+- idx_7: response = ""unitedstates"", target = ""unitedstates""  
+  Matches exactly → score = 1
+
+Final scoring results in JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",unitedstates,unitedstates,0.0,"date not near, response: 1976-04-14 00:00:00, target: 1974-10-04 00:00:00",1974-10-04,1976-04-14,1.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion: The semantics should be approximately the same or point to the same entity. Exact wording is not required.
+
+- idx_0: response = ""philippines"", target = ""philippines""
+  - Same entity, score = 1
+
+- idx_1: response = ""unitedstates"", target = ""indonesia""
+  - Different entities, score = 0
+
+- idx_2: response = ""unitedstates"", target = ""unitedstates""
+  - Same entity, score = 1
+
+- idx_3: response = ""unitedstates"", target = ""nepal""
+  - Different entities, score = 0
+
+- idx_4: response = ""unitedstates"", target = ""unitedstates""
+  - Same entity, score = 1
+
+- idx_5: response = ""unitedstates"", target = ""ethiopia""
+  - Different entities, score = 0
+
+- idx_6: response = ""unitedstates"", target = ""unitedstates""
+  - Same entity, score = 1
+
+- idx_7: response = ""unitedstates"", target = ""unitedstates""
+  - Same entity, score = 1
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",unitedstates,unitedstates,1.0,"Let's analyze each pair based on the criterion provided:
+
+Criterion summary:  
+- The response is correct if its semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word matching.
+
+---
+
+**idx_0**:  
+Response: ""efrenpenaflorida""  
+Target: ""efrengeronimopeñafloridajr.""  
+Analysis: Both seem to refer to the name ""Efren Peña Florida"" with some differences. The response lacks ""geronimo"" and the suffix ""jr."" and the tilde over the ""ñ"". However, from the semantics and entity perspective, the response clearly refers to the same person.
+
+Score: 1
+
+---
+
+**idx_1**:  
+Response: ""motherrobin""  
+Target: ""robinlim(“iburobin”)""  
+Analysis: The reference is ""robinlim"" with an alias ""iburobin"". Response added ""mother"" as a prefix, which changes the entity somewhat. They are related to ""robin"" but not the same entity (likely ""motherrobin"" is not exactly ""robinlim""). The semantics point to related but different entities.
+
+Score: 0
+
+---
+
+**idx_2**:  
+Response: ""jamesjones""  
+Target: ""chadpregracke""  
+Analysis: Two completely different names, no similar semantics. Different entities.
+
+Score: 0
+
+---
+
+**idx_3**:  
+Response: ""lisareeder""  
+Target: ""maggiedoyne""  
+Analysis: Different names, no match in semantics.
+
+Score: 0
+
+---
+
+**idx_4**:  
+Response: ""jimmycarter""  
+Target: ""amywright""  
+Analysis: Different entities, no semantic connection.
+
+Score: 0
+
+---
+
+**idx_5**:  
+Response: ""rosalynncarter""  
+Target: ""freweinimebrahtu""  
+Analysis: Different entities, no semantic similarity.
+
+Score: 0
+
+---
+
+**idx_6**:  
+Response: ""johndavis""  
+Target: ""shirleyraines""  
+Analysis: Different entities.
+
+Score: 0
+
+---
+
+**idx_7**:  
+Response: ""dr.kwanestewart""  
+Target: ""dr.kwanestewart""  
+Analysis: Exact same entity.
+
+Score: 1
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1
+}
+```",dr.kwanestewart,dr.kwanestewart,1.0,"exact match, response: male, target: male",male,male,0.0,"Let's analyze each pair item by item according to the criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- The answer has similar semantics to the reference answer.  
+- Scores are 0 or 1 only.
+
+---
+
+### idx_0  
+- Response: **rescuingvictimsoftrafficking**  
+- Target: **“pushcartclassroom”mobileschoolingforstreetchildren**  
+Analysis:  
+- ""Rescuing victims of trafficking"" is quite different from ""mobile schooling for street children"" (pushcart classroom).  
+- The concepts do not overlap semantically or point to the same entity.  
+**Score: 0**
+
+---
+
+### idx_1  
+- Response: **providingshelterandsupport**  
+- Target: **freematernal&infantcareindisaster-andpoverty-strickenareas**  
+Analysis:  
+- Providing shelter and support is a broad term, while the target is specific free maternal and infant care in disaster and poverty areas.  
+- Both are supportive actions related to vulnerable populations in disaster/poverty contexts. Shelter/support versus free maternal & infant care: similar semantic field (providing aid/support), though not exact.  
+- The response is more general but covers aspects of support. According to the criterion (""approximately the same"" or ""point to the same entity""), this can be considered similar since both describe humanitarian aid for vulnerable groups in hardship situations.  
+**Score: 1**
+
+---
+
+### idx_2  
+- Response: **helpingveteranswithptsd**  
+- Target: **large-scalecleanupofu.s.rivers**  
+Analysis:  
+- One is helping veterans with PTSD (mental health support), the other is environmental cleanup.  
+- No semantic or entity overlap.  
+**Score: 0**
+
+---
+
+### idx_3  
+- Response: **promotingmentalhealthawareness**  
+- Target: **kopilavalleychildren’shome,school&women’scenter**  
+Analysis:  
+- Target indicates a children’s home, school, and women's center in Kopila Valley; likely providing holistic care/education/support.  
+- Response mentions promoting mental health awareness.  
+- While mental health awareness could be part of what is done at the children’s home/women’s center, it is not specifically stated.  
+- No direct match or clear semantic equivalence; somewhat related to social welfare, but not clearly the same entity or concept.  
+- Given the criterion, these are not sufficiently similar in semantics or pointing to the same entity.  
+**Score: 0**
+
+---
+
+### idx_4  
+- Response: **environmentaladvocacy**  
+- Target: **jobs&inclusionforpeoplewithintellectualdisabilities**  
+Analysis:  
+- Environmental advocacy vs jobs and inclusion for people with intellectual disabilities—different domains (environmental vs social inclusion/disability).  
+- No semantic or entity overlap.  
+**Score: 0**
+
+---
+
+### idx_5  
+- Response: **healthadvocacy**  
+- Target: **reusablemenstrualpads&menstrual-healtheducation(dignityperiod)**  
+Analysis:  
+- Target focuses on menstrual health (pads and education). Response is ""health advocacy"" (broad).  
+- Menstrual health education is a subset of health advocacy.  
+- Since the response is more general but includes health advocacy (which covers menstrual health), this can be considered approximately the same semantically.  
+**Score: 1**
+
+---
+
+### idx_6  
+- Response: **supportinghurricanerelief**  
+- Target: **beauty,hygiene,food&advocacyforunhousedpeople**  
+Analysis:  
+- Response: hurricane relief  
+- Target: support for unhoused people in form of beauty, hygiene, food, and advocacy  
+- Both relate to vulnerable populations receiving support, but hurricane relief is a specific disaster response, unhoused people's support is a broader social support.   
+- Not clearly semantically aligned or referring to the same entity.  
+**Score: 0**
+
+---
+
+### idx_7  
+- Response: **medicalhumanitarianefforts**  
+- Target: **freeveterinarycareforpetsofpeopleexperiencinghomelessness**  
+Analysis:  
+- Response: general medical humanitarian efforts  
+- Target: specifically free veterinary care for pets of homeless people  
+- Medical humanitarian efforts typically refer to human medical care. Veterinary care is medical for animals, but different domain.  
+- Because the target focuses on animals, and the response on humanitarian medical efforts (presumably for humans), they do not point to the same entity.  
+**Score: 0**
+
+---
+
+### Final Scores:
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```
+",freeveterinarycareforpetsofpeopleexperiencinghomelessness,medicalhumanitarianefforts,0.0,"Let's analyze each idx item by item:
+
+Criterion summary:  
+- The response must refer to the same university as the target to get a score of 1.  
+- The semantics must approximate the reference, but exact match is not required. Supplementary info like major or degree can be ignored.  
+- ""nan"" means no valid response / no valid target, so special consideration needed.
+
+---
+
+**idx_0:**  
+- response: ""nan"" (no answer)  
+- target: ""cavitestateuniversity"" (valid target)  
+Analysis: response is empty, target expects a university. No match.  
+Score: 0
+
+---
+
+**idx_1:**  
+- response: ""nan""  
+- target: ""santabarbaracitycollege"" (valid target)  
+Analysis: response is empty, target expects a university/college. No match.  
+Score: 0
+
+---
+
+**idx_2:**  
+- response: ""wakeforestu""  
+- target: ""blackhawkcollege(att.)""  
+Analysis: Different universities, ""wakeforestu"" vs ""blackhawkcollege"". Different entities. No match.  
+Score: 0
+
+---
+
+**idx_3:**  
+- response: ""stanfordu""  
+- target: ""nan"" (no target)  
+Analysis: Target is ""nan"" (likely missing or no expected answer). The criterion does not explicitly cover this case. Generally, if no target, we cannot say it's correct. The safe approach is to give 0.  
+Score: 0
+
+---
+
+**idx_4:**  
+- response: ""emoryu""  
+- target: ""universityofcincinnati(music)""  
+Analysis: Different universities (Emory vs University of Cincinnati). No match.  
+Score: 0
+
+---
+
+**idx_5:**  
+- response: ""nan""  
+- target: ""prairieviewa&muniversity\n(chemicalengineering)"" (valid target)  
+Analysis: Response is empty, target expects a university. No match.  
+Score: 0
+
+---
+
+**idx_6:**  
+- response: ""harvardu""  
+- target: ""nan""  
+Analysis: Target is ""nan"" (no expected answer). Response given is ""harvardu."" No match because target missing. Score 0.
+
+---
+
+**idx_7:**  
+- response: ""nan""  
+- target: ""coloradostateuniversity(dvm)"" (valid target)  
+Analysis: Response missing, target expects a university. No match.  
+Score: 0
+
+---
+
+**Summary:** Only if response points to the same university as target do we assign 1. All pairs either have no response or mismatched university names or no target.
+
+**Final scores: all 0.**
+
+---
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```
+",coloradostateuniversity(dvm),nan,1.0,key_match
+1.0,,2008,,,,"co-founder,st.bernardproject(disaster-recoverynonprofitproject)",,,,unitedstates,,,,2026-08-01,,,,unitedstates,,,,lizmccartney,,,,female,,,,post-katrinahomerebuildingforlow-incomeresidents,,,,georgewashingtonuniversity,,,
+1.0,,2010,,,,"anti-trafficking
+socialactivist;foundermaitinepal,anon-profitorganizationdedicatedtohelpingvictimsofsextrafficking.",,,,"indiaor
+nepal",,,,1949-04-14,,,,nepal,,,,anuradhakoirala,,,,female,,,,"rescued+rehabilitatedthousands(50,000+)oftraffickingsurvivors",,,,stjoseph’sconventschool,,,
+1.0,,2012,,,,socialworker;founderecdc/butterflyhome,,,,nepal,,,,1984-01-01,,,,nepal,,,,pushpabasnet,,,,female,,,,supportschildrenlivingwithincarceratedparents,,,,st.xavier’scollege(socialwork),,,
+1.0,,2014,,,,formerroyalmarine;foundernowzaddogs,,,,england,,,,1969-01-01,,,,"tiverton,england/afghanistan",,,,pen(“paul”)farthing,,,,male,,,,rescuesanimalsfromconflictzones&reuniteswithtroops,,,,nan,,,
+1.0,,2016,,,,disability-rightsadvocate;founderasodisvalle,,,,colombia,,,,2026-08-01,,,,colombia,,,,jeisonaristizábal,,,,male,,,,"freetherapy,education&mobilityaidsfordisabledchildren",,,,universidadsantiagodecali(law),,,
+1.0,,2018,,,,physician;founderalbergueinspira,,,,peru,,,,1971-08-03,,,,peru,,,,dr.ricardoenriquepun-chong,,,,male,,,,"freehousing,food&careforsickchildren&families",,,,universidadautónomadeguadalajara(md),,,
+1.0,,2022,,,,techentrepreneur;foundertechlitafrica,,,,kenya,,,,1992-11-26,,,,kenya,,,,nellycheboi,,,,female,,,,buildscomputerlabs&teachesdigitalskillsinruralschools,,,,augustanacollege(cs&appliedmath),,,
+1.0,,2024,,,,non-profitexec;founderdogsmatter,,,,unitedstates,,,,2026-08-01,,,,unitedstates,,,,stephenknight,,,,male,,,,temporaryfostercareforpetswhileownersenteraddictiontreatment,,,,nan,,,
+,1.0,2025,2025,,,,socialentrepreneur,,,,unitedstates,,,,2026-08-01,,,,unitedstates,,,,quilenblackwell,,,,female,,,,empoweringat-riskyouth,,,,nan,,

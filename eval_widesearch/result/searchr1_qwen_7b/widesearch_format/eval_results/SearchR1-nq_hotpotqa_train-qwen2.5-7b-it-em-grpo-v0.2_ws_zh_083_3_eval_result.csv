@@ -1,0 +1,529 @@
+exist_flag_gt,exist_flag_response,景区名称,景区名称_before_map,所在城市_llm_judge,所在城市_llm_judge_eval_msg,所在城市_query,所在城市_response,旺季开放时间_llm_judge,旺季开放时间_llm_judge_eval_msg,旺季开放时间_query,旺季开放时间_response,旺季景区票价(元/人)_number_near,旺季景区票价(元/人)_number_near_eval_msg,旺季景区票价(元/人)_query,旺季景区票价(元/人)_response,景区名称_exact_match,景区名称_exact_match_eval_msg
+,,重庆武隆喀斯特旅游区（天生三桥·仙女山·芙蓉洞）,武隆喀斯特旅游区(天生三桥.仙女山.芙蓉洞),1.0,"Let's analyze each pair based on the criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应.""  
+Meaning: The response must be roughly semantically the same or point to the same entity as the target.
+
+---
+
+**idx_0**  
+- Response: 重庆市  
+- Target: 重庆市  
+- Analysis: Exactly the same entity, fully correct.  
+- Score: 1
+
+**idx_1**  
+- Response: 四川省  
+- Target: 成都市  
+- Analysis: 成都市 (Chengdu City) is a city within 四川省 (Sichuan Province). Response is a broader administrative region than the target, not the same entity but related (the response points to a higher-level entity). Criterion allows ""大致相同或者指向的实体一致,"" which suggests either semantically similar or same entity. Province and city are not the same entity. So this should not get a full score; response only identifies the province, not the city, which is less specific. Response does not equal or sufficiently approximate target entity.  
+- Score: 0
+
+**idx_2**  
+- Response: 四川省  
+- Target: 阿坝州 (Aba Prefecture)  
+- Analysis: Aba Prefecture is a prefecture within Sichuan Province. Similar to idx_1, province vs. prefecture. Not exactly the same entity. Does ""大致语义相同"" allow this? Not really, since responses are administrative divisions with a difference in level (province vs. prefecture). Probably 0.  
+- Score: 0
+
+**idx_3**  
+- Response: 贵州省  
+- Target: 安顺市 (Anshun City)  
+- Analysis: Anshun City is in Guizhou Province. Same logic as above. Response is broader administrative unit than target city. Not the same entity, so no.  
+- Score: 0
+
+**idx_4**  
+- Response: 云南省  
+- Target: 丽江市 (Lijiang City)  
+- Analysis: Lijiang City is within Yunnan Province. Same case, broader division provided in response but target is a city. Not equal or close enough semantically given the criterion.  
+- Score: 0
+
+---
+
+### Final scores:
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",重庆市,重庆市,0.0,"分析过程：
+
+题目给出的标准答案和回复都包含景区开放的时间范围信息，评分标准是“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+逐项分析如下：
+
+- idx_0  
+  - target: 仙女山景区实行24小时入园制，天生三桥和芙蓉洞景区开放具体时间段。总体开放时间并没有明确宣称是“3月1日-11月30日”  
+  - response: 3月1日-11月30日  
+  - 参考答案中没有出现这个时间段，时间范围与响应的时间范围明显不一致。  
+  - 判断：不相符 → 0分
+
+- idx_1  
+  - target: 青城前山景区开放时间（8:00-17:30），都江堰景区8:00-18:00  
+  - response: 1月1日-12月31日  
+  - 标准答案只给了具体的开放时间点，没有给出全年或全年无休信息。响应给出全年时间段（1月1日至12月31日），但没有与目标中的时间范围和开放时间段一致。  
+  - 语义上，双方指向的实体相同（都是景区开放时间），不过目标并未确认全年开放。响应给的全年开放时间不一致。  
+  - 判定为不符 → 0分
+
+- idx_2  
+  - target: 08:00~17:00  
+  - response: 3月1日-11月30日  
+  - target是开放时间段，response是开放日期范围，两者含义不同，且时间段中未明确指明日期范围。  
+  - 不符 → 0分
+
+- idx_3  
+  - target: 07:00~18:30  
+  - response: 1月1日-12月31日  
+  - target是开放时间段，response是开放日期范围，两者不一致。  
+  - 不符 → 0分
+
+- idx_4  
+  - target: 08:00~18:00  
+  - response: 1月1日-12月31日  
+  - target给出的是开放时段，response给出的是开放日期区间，两者含义不同，无语义一致性。  
+  - 不符 → 0分
+
+综上，没有一项语义大致一致或指向实体信息一致。
+
+最终评分结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0
+}
+```",仙女山景区实行24小时入园制，天生三桥和芙蓉洞景区开放日期为5月1日至31日：8:30—17:00、6月1日至8月31日：8:00—17:00、9月1日至次年4月30日：8:30—16:30。,3月1日-11月30日,0.0,"number not near, response: 240.0, target: 70.0",70,240,1.0,key_match
+,,成都市青城山－都江堰旅游景区,青城山—都江堰旅游景区,0.0,"Let's analyze each pair based on the criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应.""  
+Meaning: The response must be roughly semantically the same or point to the same entity as the target.
+
+---
+
+**idx_0**  
+- Response: 重庆市  
+- Target: 重庆市  
+- Analysis: Exactly the same entity, fully correct.  
+- Score: 1
+
+**idx_1**  
+- Response: 四川省  
+- Target: 成都市  
+- Analysis: 成都市 (Chengdu City) is a city within 四川省 (Sichuan Province). Response is a broader administrative region than the target, not the same entity but related (the response points to a higher-level entity). Criterion allows ""大致相同或者指向的实体一致,"" which suggests either semantically similar or same entity. Province and city are not the same entity. So this should not get a full score; response only identifies the province, not the city, which is less specific. Response does not equal or sufficiently approximate target entity.  
+- Score: 0
+
+**idx_2**  
+- Response: 四川省  
+- Target: 阿坝州 (Aba Prefecture)  
+- Analysis: Aba Prefecture is a prefecture within Sichuan Province. Similar to idx_1, province vs. prefecture. Not exactly the same entity. Does ""大致语义相同"" allow this? Not really, since responses are administrative divisions with a difference in level (province vs. prefecture). Probably 0.  
+- Score: 0
+
+**idx_3**  
+- Response: 贵州省  
+- Target: 安顺市 (Anshun City)  
+- Analysis: Anshun City is in Guizhou Province. Same logic as above. Response is broader administrative unit than target city. Not the same entity, so no.  
+- Score: 0
+
+**idx_4**  
+- Response: 云南省  
+- Target: 丽江市 (Lijiang City)  
+- Analysis: Lijiang City is within Yunnan Province. Same case, broader division provided in response but target is a city. Not equal or close enough semantically given the criterion.  
+- Score: 0
+
+---
+
+### Final scores:
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",成都市,四川省,0.0,"分析过程：
+
+题目给出的标准答案和回复都包含景区开放的时间范围信息，评分标准是“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+逐项分析如下：
+
+- idx_0  
+  - target: 仙女山景区实行24小时入园制，天生三桥和芙蓉洞景区开放具体时间段。总体开放时间并没有明确宣称是“3月1日-11月30日”  
+  - response: 3月1日-11月30日  
+  - 参考答案中没有出现这个时间段，时间范围与响应的时间范围明显不一致。  
+  - 判断：不相符 → 0分
+
+- idx_1  
+  - target: 青城前山景区开放时间（8:00-17:30），都江堰景区8:00-18:00  
+  - response: 1月1日-12月31日  
+  - 标准答案只给了具体的开放时间点，没有给出全年或全年无休信息。响应给出全年时间段（1月1日至12月31日），但没有与目标中的时间范围和开放时间段一致。  
+  - 语义上，双方指向的实体相同（都是景区开放时间），不过目标并未确认全年开放。响应给的全年开放时间不一致。  
+  - 判定为不符 → 0分
+
+- idx_2  
+  - target: 08:00~17:00  
+  - response: 3月1日-11月30日  
+  - target是开放时间段，response是开放日期范围，两者含义不同，且时间段中未明确指明日期范围。  
+  - 不符 → 0分
+
+- idx_3  
+  - target: 07:00~18:30  
+  - response: 1月1日-12月31日  
+  - target是开放时间段，response是开放日期范围，两者不一致。  
+  - 不符 → 0分
+
+- idx_4  
+  - target: 08:00~18:00  
+  - response: 1月1日-12月31日  
+  - target给出的是开放时段，response给出的是开放日期区间，两者含义不同，无语义一致性。  
+  - 不符 → 0分
+
+综上，没有一项语义大致一致或指向实体信息一致。
+
+最终评分结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0
+}
+```","青城前山景区：8：00到17：30
+都江堰景区：08:00~18:00",1月1日-12月31日,0.0,"number not near, response: 120.0, target: 80.0",80,120,1.0,key_match
+,,阿坝藏族羌族自治州九寨沟景区,九寨沟,0.0,"Let's analyze each pair based on the criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应.""  
+Meaning: The response must be roughly semantically the same or point to the same entity as the target.
+
+---
+
+**idx_0**  
+- Response: 重庆市  
+- Target: 重庆市  
+- Analysis: Exactly the same entity, fully correct.  
+- Score: 1
+
+**idx_1**  
+- Response: 四川省  
+- Target: 成都市  
+- Analysis: 成都市 (Chengdu City) is a city within 四川省 (Sichuan Province). Response is a broader administrative region than the target, not the same entity but related (the response points to a higher-level entity). Criterion allows ""大致相同或者指向的实体一致,"" which suggests either semantically similar or same entity. Province and city are not the same entity. So this should not get a full score; response only identifies the province, not the city, which is less specific. Response does not equal or sufficiently approximate target entity.  
+- Score: 0
+
+**idx_2**  
+- Response: 四川省  
+- Target: 阿坝州 (Aba Prefecture)  
+- Analysis: Aba Prefecture is a prefecture within Sichuan Province. Similar to idx_1, province vs. prefecture. Not exactly the same entity. Does ""大致语义相同"" allow this? Not really, since responses are administrative divisions with a difference in level (province vs. prefecture). Probably 0.  
+- Score: 0
+
+**idx_3**  
+- Response: 贵州省  
+- Target: 安顺市 (Anshun City)  
+- Analysis: Anshun City is in Guizhou Province. Same logic as above. Response is broader administrative unit than target city. Not the same entity, so no.  
+- Score: 0
+
+**idx_4**  
+- Response: 云南省  
+- Target: 丽江市 (Lijiang City)  
+- Analysis: Lijiang City is within Yunnan Province. Same case, broader division provided in response but target is a city. Not equal or close enough semantically given the criterion.  
+- Score: 0
+
+---
+
+### Final scores:
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",阿坝州,四川省,0.0,"分析过程：
+
+题目给出的标准答案和回复都包含景区开放的时间范围信息，评分标准是“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+逐项分析如下：
+
+- idx_0  
+  - target: 仙女山景区实行24小时入园制，天生三桥和芙蓉洞景区开放具体时间段。总体开放时间并没有明确宣称是“3月1日-11月30日”  
+  - response: 3月1日-11月30日  
+  - 参考答案中没有出现这个时间段，时间范围与响应的时间范围明显不一致。  
+  - 判断：不相符 → 0分
+
+- idx_1  
+  - target: 青城前山景区开放时间（8:00-17:30），都江堰景区8:00-18:00  
+  - response: 1月1日-12月31日  
+  - 标准答案只给了具体的开放时间点，没有给出全年或全年无休信息。响应给出全年时间段（1月1日至12月31日），但没有与目标中的时间范围和开放时间段一致。  
+  - 语义上，双方指向的实体相同（都是景区开放时间），不过目标并未确认全年开放。响应给的全年开放时间不一致。  
+  - 判定为不符 → 0分
+
+- idx_2  
+  - target: 08:00~17:00  
+  - response: 3月1日-11月30日  
+  - target是开放时间段，response是开放日期范围，两者含义不同，且时间段中未明确指明日期范围。  
+  - 不符 → 0分
+
+- idx_3  
+  - target: 07:00~18:30  
+  - response: 1月1日-12月31日  
+  - target是开放时间段，response是开放日期范围，两者不一致。  
+  - 不符 → 0分
+
+- idx_4  
+  - target: 08:00~18:00  
+  - response: 1月1日-12月31日  
+  - target给出的是开放时段，response给出的是开放日期区间，两者含义不同，无语义一致性。  
+  - 不符 → 0分
+
+综上，没有一项语义大致一致或指向实体信息一致。
+
+最终评分结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0
+}
+```",08:00~17:00,3月1日-11月30日,0.0,"number not near, response: 160.0, target: 190.0",190,160,1.0,key_match
+,,安顺市黄果树瀑布景区,黄果树瀑布景区,0.0,"Let's analyze each pair based on the criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应.""  
+Meaning: The response must be roughly semantically the same or point to the same entity as the target.
+
+---
+
+**idx_0**  
+- Response: 重庆市  
+- Target: 重庆市  
+- Analysis: Exactly the same entity, fully correct.  
+- Score: 1
+
+**idx_1**  
+- Response: 四川省  
+- Target: 成都市  
+- Analysis: 成都市 (Chengdu City) is a city within 四川省 (Sichuan Province). Response is a broader administrative region than the target, not the same entity but related (the response points to a higher-level entity). Criterion allows ""大致相同或者指向的实体一致,"" which suggests either semantically similar or same entity. Province and city are not the same entity. So this should not get a full score; response only identifies the province, not the city, which is less specific. Response does not equal or sufficiently approximate target entity.  
+- Score: 0
+
+**idx_2**  
+- Response: 四川省  
+- Target: 阿坝州 (Aba Prefecture)  
+- Analysis: Aba Prefecture is a prefecture within Sichuan Province. Similar to idx_1, province vs. prefecture. Not exactly the same entity. Does ""大致语义相同"" allow this? Not really, since responses are administrative divisions with a difference in level (province vs. prefecture). Probably 0.  
+- Score: 0
+
+**idx_3**  
+- Response: 贵州省  
+- Target: 安顺市 (Anshun City)  
+- Analysis: Anshun City is in Guizhou Province. Same logic as above. Response is broader administrative unit than target city. Not the same entity, so no.  
+- Score: 0
+
+**idx_4**  
+- Response: 云南省  
+- Target: 丽江市 (Lijiang City)  
+- Analysis: Lijiang City is within Yunnan Province. Same case, broader division provided in response but target is a city. Not equal or close enough semantically given the criterion.  
+- Score: 0
+
+---
+
+### Final scores:
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",安顺市,贵州省,0.0,"分析过程：
+
+题目给出的标准答案和回复都包含景区开放的时间范围信息，评分标准是“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+逐项分析如下：
+
+- idx_0  
+  - target: 仙女山景区实行24小时入园制，天生三桥和芙蓉洞景区开放具体时间段。总体开放时间并没有明确宣称是“3月1日-11月30日”  
+  - response: 3月1日-11月30日  
+  - 参考答案中没有出现这个时间段，时间范围与响应的时间范围明显不一致。  
+  - 判断：不相符 → 0分
+
+- idx_1  
+  - target: 青城前山景区开放时间（8:00-17:30），都江堰景区8:00-18:00  
+  - response: 1月1日-12月31日  
+  - 标准答案只给了具体的开放时间点，没有给出全年或全年无休信息。响应给出全年时间段（1月1日至12月31日），但没有与目标中的时间范围和开放时间段一致。  
+  - 语义上，双方指向的实体相同（都是景区开放时间），不过目标并未确认全年开放。响应给的全年开放时间不一致。  
+  - 判定为不符 → 0分
+
+- idx_2  
+  - target: 08:00~17:00  
+  - response: 3月1日-11月30日  
+  - target是开放时间段，response是开放日期范围，两者含义不同，且时间段中未明确指明日期范围。  
+  - 不符 → 0分
+
+- idx_3  
+  - target: 07:00~18:30  
+  - response: 1月1日-12月31日  
+  - target是开放时间段，response是开放日期范围，两者不一致。  
+  - 不符 → 0分
+
+- idx_4  
+  - target: 08:00~18:00  
+  - response: 1月1日-12月31日  
+  - target给出的是开放时段，response给出的是开放日期区间，两者含义不同，无语义一致性。  
+  - 不符 → 0分
+
+综上，没有一项语义大致一致或指向实体信息一致。
+
+最终评分结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0
+}
+```",07:00~18:30,1月1日-12月31日,0.0,"number not near, response: 200.0, target: 160.0",160,200,1.0,key_match
+,,丽江市玉龙雪山景区,丽江玉龙雪山景区,0.0,"Let's analyze each pair based on the criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应.""  
+Meaning: The response must be roughly semantically the same or point to the same entity as the target.
+
+---
+
+**idx_0**  
+- Response: 重庆市  
+- Target: 重庆市  
+- Analysis: Exactly the same entity, fully correct.  
+- Score: 1
+
+**idx_1**  
+- Response: 四川省  
+- Target: 成都市  
+- Analysis: 成都市 (Chengdu City) is a city within 四川省 (Sichuan Province). Response is a broader administrative region than the target, not the same entity but related (the response points to a higher-level entity). Criterion allows ""大致相同或者指向的实体一致,"" which suggests either semantically similar or same entity. Province and city are not the same entity. So this should not get a full score; response only identifies the province, not the city, which is less specific. Response does not equal or sufficiently approximate target entity.  
+- Score: 0
+
+**idx_2**  
+- Response: 四川省  
+- Target: 阿坝州 (Aba Prefecture)  
+- Analysis: Aba Prefecture is a prefecture within Sichuan Province. Similar to idx_1, province vs. prefecture. Not exactly the same entity. Does ""大致语义相同"" allow this? Not really, since responses are administrative divisions with a difference in level (province vs. prefecture). Probably 0.  
+- Score: 0
+
+**idx_3**  
+- Response: 贵州省  
+- Target: 安顺市 (Anshun City)  
+- Analysis: Anshun City is in Guizhou Province. Same logic as above. Response is broader administrative unit than target city. Not the same entity, so no.  
+- Score: 0
+
+**idx_4**  
+- Response: 云南省  
+- Target: 丽江市 (Lijiang City)  
+- Analysis: Lijiang City is within Yunnan Province. Same case, broader division provided in response but target is a city. Not equal or close enough semantically given the criterion.  
+- Score: 0
+
+---
+
+### Final scores:
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",丽江市,云南省,0.0,"分析过程：
+
+题目给出的标准答案和回复都包含景区开放的时间范围信息，评分标准是“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+逐项分析如下：
+
+- idx_0  
+  - target: 仙女山景区实行24小时入园制，天生三桥和芙蓉洞景区开放具体时间段。总体开放时间并没有明确宣称是“3月1日-11月30日”  
+  - response: 3月1日-11月30日  
+  - 参考答案中没有出现这个时间段，时间范围与响应的时间范围明显不一致。  
+  - 判断：不相符 → 0分
+
+- idx_1  
+  - target: 青城前山景区开放时间（8:00-17:30），都江堰景区8:00-18:00  
+  - response: 1月1日-12月31日  
+  - 标准答案只给了具体的开放时间点，没有给出全年或全年无休信息。响应给出全年时间段（1月1日至12月31日），但没有与目标中的时间范围和开放时间段一致。  
+  - 语义上，双方指向的实体相同（都是景区开放时间），不过目标并未确认全年开放。响应给的全年开放时间不一致。  
+  - 判定为不符 → 0分
+
+- idx_2  
+  - target: 08:00~17:00  
+  - response: 3月1日-11月30日  
+  - target是开放时间段，response是开放日期范围，两者含义不同，且时间段中未明确指明日期范围。  
+  - 不符 → 0分
+
+- idx_3  
+  - target: 07:00~18:30  
+  - response: 1月1日-12月31日  
+  - target是开放时间段，response是开放日期范围，两者不一致。  
+  - 不符 → 0分
+
+- idx_4  
+  - target: 08:00~18:00  
+  - response: 1月1日-12月31日  
+  - target给出的是开放时段，response给出的是开放日期区间，两者含义不同，无语义一致性。  
+  - 不符 → 0分
+
+综上，没有一项语义大致一致或指向实体信息一致。
+
+最终评分结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0
+}
+```",08:00~18:00,1月1日-12月31日,0.0,"number not near, response: 238.0, target: 100.0",100,238,1.0,key_match
+1.0,,丽江市丽江古城景区,,,,丽江市,,,,全天开放,,,,50,,,
+1.0,,乐山市乐山大佛景区,,,,乐山市,,,,07:30~18:30,,,,80,,,
+1.0,,乐山市峨眉山景区,,,,乐山市,,,,全天开放,,,,160,,,
+1.0,,保山市火山热海旅游区,,,,保山市,,,,08:00~24:00,,,,50,,,
+1.0,,南充市朱德故里景区,,,,南充市,,,,09:00~17:30,,,,59,,,
+1.0,,南充市阆中古城旅游景区,,,,南充市,,,,08:00~18:30,,,,120,,,
+1.0,,大理白族自治州崇圣寺三塔文化旅游区,,,,大理白族自治州,,,,07:10~19:00,,,,75,,,
+1.0,,安顺市龙宫景区,,,,安顺市,,,,07:30~17:30,,,,130,,,
+1.0,,巴中市光雾山旅游景区,,,,巴中市,,,,07:30~17:00,,,,80,,,
+1.0,,广元市剑门蜀道剑门关旅游景区,,,,广元市,,,,08:30~17:30,,,,130,,,
+1.0,,广安市邓小平故里旅游区,,,,广安市,,,,09:00~16:30,,,,NULL,,,
+1.0,,成都市天台山景区,,,,成都市,,,,8:30—18:00,,,,58,,,
+1.0,,成都市安仁古镇景区,,,,成都市,,,,09:00~17:00,,,,40,,,
+1.0,,文山州普者黑旅游景区,,,,文山州,,,,08:00~17:30,,,,188,,,
+1.0,,昆明市昆明世博园景区,,,,昆明市,,,,08:30~17:00,,,,70,,,
+1.0,,昆明市石林风景区,,,,昆明市,,,,08:00~17:30,,,,130,,,
+1.0,,毕节市百里杜鹃景区,,,,毕节市,,,,07:00~19:30,,,,130,,,
+1.0,,毕节市织金洞景区,,,,毕节市,,,,08:00~17:30,,,,110,,,
+1.0,,甘孜藏族自治州海螺沟景区,,,,甘孜州,,,,07:00~15:00,,,,90,,,
+1.0,,甘孜藏族自治州稻城亚丁旅游景区,,,,甘孜州,,,,06:30~19:00,,,,146,,,
+1.0,,绵阳市羌城旅游区,,,,阿坝州,,,,全天,,,,NULL,,,
+1.0,,腾冲市和顺古镇景区,,,,腾冲市,,,,07:30~22:00,,,,55,,,
+1.0,,西双版纳傣族自治州中国科学院西双版纳热带植物园,,,,西双版纳,,,,08:00~18:00,,,,80,,,
+1.0,,贵阳市青岩古镇景区,,,,贵阳市,,,,08:10~22:00,,,,10,,,
+1.0,,迪庆藏族自治州普达措国家公园,,,,迪庆藏族自治州,,,,08:00~16:00,,,,138,,,
+1.0,,遵义市赤水丹霞旅游区,,,,遵义市,,,,08:30~17:00,,,,180,,,
+1.0,,重庆万盛黑山谷景区,,,,重庆市,,,,08:30~15:30,,,,85,,,
+1.0,,重庆云阳龙缸景区,,,,重庆市,,,,08:00-18:30,,,,100,,,
+1.0,,重庆南川金佛山景区,,,,重庆市,,,,08:00~17:30,,,,80,,,
+1.0,,重庆大足石刻景区,,,,重庆市,,,,08:30~18:00,,,,115,,,
+1.0,,重庆奉节白帝城·瞿塘峡景区,,,,重庆市,,,,08:30~19:00,,,,100,,,
+1.0,,重庆巫山小三峡—小小三峡,,,,重庆市,,,,08:00~18:00,,,,120,,,
+1.0,,重庆彭水阿依河景区,,,,重庆市,,,,08:30~17:00,,,,90,,,
+1.0,,重庆江津四面山景区,,,,重庆市,,,,08:00~18:00,,,,90,,,
+1.0,,重庆涪陵武陵山大裂谷景区,,,,重庆市,,,,08:30~16:00,,,,145,,,
+1.0,,重庆酉阳桃花源景区,,,,重庆市,,,,08:00~17:00,,,,100,,,
+1.0,,重庆黔江濯水景区,,,,重庆市,,,,全天开放,,,,100,,,
+1.0,,铜仁市梵净山旅游区,,,,铜仁市,,,,07:00~15:00,,,,100,,,
+1.0,,阿坝藏族羌族自治州四姑娘山景区,,,,阿坝州,,,,07:30~15:30,,,,60,,,
+1.0,,阿坝藏族羌族自治州汶川特别旅游区,,,,阿坝州,,,,"三江景区：08:00~18:00
+映秀地震遗址、水磨古镇：全天开放
+震中纪念馆：08:30~16:30",,,,50,,,
+1.0,,阿坝藏族羌族自治州黄龙风景名胜区,,,,阿坝州,,,,08:00~17:00,,,,90,,,
+1.0,,雅安市碧峰峡旅游景区,,,,雅安市,,,,08:30~16:00,,,,100,,,
+1.0,,黔东南苗族侗族自治州镇远古城旅游景区,,,,黔东南苗族侗族自治州,,,,全天开放,,,,NULL,,,
+1.0,,黔南布依族苗族自治州樟江景区,,,,黔南布衣族苗族自治州,,,,08:00~16:00,,,,120,,,
+1.0,,黔西南州万峰林景区,,,,黔西南州,,,,08:00~18:00,,,,70,,,

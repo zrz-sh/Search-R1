@@ -1,0 +1,1661 @@
+exist_flag_gt,exist_flag_response,rank,rank_before_map,year,year_before_map,airport_llm_judge,airport_llm_judge_eval_msg,airport_query,airport_response,code(iata/icao)_exact_match,code(iata/icao)_exact_match_eval_msg,code(iata/icao)_query,code(iata/icao)_response,location_llm_judge,location_llm_judge_eval_msg,location_query,location_response,rank_exact_match,rank_exact_match_eval_msg,totalpassengers_number_near,totalpassengers_number_near_eval_msg,totalpassengers_query,totalpassengers_response,year_exact_match,year_exact_match_eval_msg
+,,1,1,2020,2020,0.0,"Let's analyze each pair one by one according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.""
+
+---
+
+**idx_0**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""guangzhoubaiyuninternationalairport""  
+- Analysis: Different airports (Atlanta vs. Guangzhou). So different entities. Score = 0
+
+**idx_1**  
+- response: ""dubaiinternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Different airports (Dubai vs. Atlanta). Score = 0
+
+**idx_2**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Essentially same entity, just word order difference. Score = 1
+
+**idx_3**  
+- response: ""dubaiinternationalairport""  
+- target: ""dallasfortworthinternationalairport""  
+- Different airports (Dubai vs. Dallas). Score = 0
+
+**idx_4**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Same entity. Score = 1
+
+**idx_5**  
+- response: ""dubaiinternationalairport""  
+- target: ""dallasfortworthinternationalairport""  
+- Different airports. Score = 0
+
+**idx_6**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Same entity. Score = 1
+
+**idx_7**  
+- response: ""dubaiinternationalairport""  
+- target: ""dubaiinternationalairport""  
+- Exact match. Score = 1
+
+**idx_8**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Same entity. Score = 1
+
+**idx_9**  
+- response: ""dubaiinternationalairport""  
+- target: ""dubaiinternationalairport""  
+- Exact match. Score = 1
+
+---
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",guangzhoubaiyuninternationalairport,hartsfield-jacksonatlantainternationalairport,0.0,"exact not match, response: atl/katl, target: can/zggg",can/zggg,atl/katl,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion Summary:  
+- Score 1 if the response semantics are approximately the same as the target or they point to the same entity/location.  
+- No need for exact word matching.  
+- Score 0 otherwise.
+
+---
+
+### idx_0  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: ""thejunctionofrenhetown,baiyundistrict,guangzhoucity,guangdongprovince,xinhuastreet,huadongtown,huadudistrict""  
+- Comparison: Response references a location in Atlanta, USA, target references a location in Guangzhou, China. Different entities.  
+- Score: 0
+
+### idx_1  
+- Response: ""dubai,unitedarabemirates""  
+- Target: ""at the intersection of the southern area of Fulton county, atlanta, united states and clayton county, it is 12.5 kilometers north of downtown atlanta.""  
+- Response refers to Dubai, UAE; target is a location in Atlanta, USA. Different entities.  
+- Score: 0
+
+### idx_2  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: ""at the intersection of the southern area of Fulton county, atlanta, united states and clayton county, it is 12.6 kilometers north of downtown atlanta.""  
+- Both refer to same general area, Atlanta, USA, with the response giving a slightly different directional detail but clearly the same location (Downtown Atlanta area).  
+- Semantics match well.  
+- Score: 1
+
+### idx_3  
+- Response: ""dubai,unitedarabemirates""  
+- Target: ""at the border of dallas county and tarrant county in the state of texas, united states.""  
+- Different locations/entities (Dubai vs Texas).  
+- Score: 0
+
+### idx_4  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: ""at the intersection of the southern area of Fulton county, atlanta, united states and clayton county, it is 12.7 kilometers north of downtown atlanta.""  
+- Same reasoning as idx_2.  
+- Score: 1
+
+### idx_5  
+- Response: ""dubai,unitedarabemirates""  
+- Target: same as idx_3.  
+- Different entities.  
+- Score: 0
+
+### idx_6  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: similar to idx_2, 4 but 12.8 kilometers north of downtown atlanta.  
+- Same entities.  
+- Score: 1
+
+### idx_7  
+- Response: ""dubai,unitedarabemirates""  
+- Target: ""algarhoud area, 2.6 nautical miles east of dubai.""  
+- Response mentions Dubai, UAE. Target is a location near Dubai. Since Algarhoud is a district in Dubai (right?), target is a sub-location of Dubai. Both roughly point to the same geographic entity (Dubai area).  
+- Semantics approximately the same.  
+- Score: 1
+
+### idx_8  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: ""at the intersection of the southern area of Fulton county, atlanta, united states and clayton county, it is 12.9 kilometers north of downtown atlanta.""  
+- Same as idx_2,4,6.  
+- Score: 1
+
+### idx_9  
+- Response: ""dubai,unitedarabemirates""  
+- Target: ""algarhoud area, 2.7 nautical miles east of dubai."" (Similar to idx_7)  
+- Same logic applies.  
+- Score: 1
+
+---
+
+### Final Scores
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```","thejunctionofrenhetown,baiyundistrict,guangzhoucity,guangdongprovince,xinhuastreet,huadongtown,huadudistrict","atlanta,georgia,usa(downtownatlantadistrict,10misouth)",1.0,key_match,0.0,"number not near, response: 97610000.0, target: 43767558.0",43767558,97610000,1.0,key_match
+,,2,2,2020,2020,0.0,"Let's analyze each pair one by one according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.""
+
+---
+
+**idx_0**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""guangzhoubaiyuninternationalairport""  
+- Analysis: Different airports (Atlanta vs. Guangzhou). So different entities. Score = 0
+
+**idx_1**  
+- response: ""dubaiinternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Different airports (Dubai vs. Atlanta). Score = 0
+
+**idx_2**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Essentially same entity, just word order difference. Score = 1
+
+**idx_3**  
+- response: ""dubaiinternationalairport""  
+- target: ""dallasfortworthinternationalairport""  
+- Different airports (Dubai vs. Dallas). Score = 0
+
+**idx_4**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Same entity. Score = 1
+
+**idx_5**  
+- response: ""dubaiinternationalairport""  
+- target: ""dallasfortworthinternationalairport""  
+- Different airports. Score = 0
+
+**idx_6**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Same entity. Score = 1
+
+**idx_7**  
+- response: ""dubaiinternationalairport""  
+- target: ""dubaiinternationalairport""  
+- Exact match. Score = 1
+
+**idx_8**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Same entity. Score = 1
+
+**idx_9**  
+- response: ""dubaiinternationalairport""  
+- target: ""dubaiinternationalairport""  
+- Exact match. Score = 1
+
+---
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",atlantahartsfield-jacksonatlantainternationalairport,dubaiinternationalairport,0.0,"exact not match, response: dxb/omdb, target: atl/katl",atl/katl,dxb/omdb,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion Summary:  
+- Score 1 if the response semantics are approximately the same as the target or they point to the same entity/location.  
+- No need for exact word matching.  
+- Score 0 otherwise.
+
+---
+
+### idx_0  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: ""thejunctionofrenhetown,baiyundistrict,guangzhoucity,guangdongprovince,xinhuastreet,huadongtown,huadudistrict""  
+- Comparison: Response references a location in Atlanta, USA, target references a location in Guangzhou, China. Different entities.  
+- Score: 0
+
+### idx_1  
+- Response: ""dubai,unitedarabemirates""  
+- Target: ""at the intersection of the southern area of Fulton county, atlanta, united states and clayton county, it is 12.5 kilometers north of downtown atlanta.""  
+- Response refers to Dubai, UAE; target is a location in Atlanta, USA. Different entities.  
+- Score: 0
+
+### idx_2  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: ""at the intersection of the southern area of Fulton county, atlanta, united states and clayton county, it is 12.6 kilometers north of downtown atlanta.""  
+- Both refer to same general area, Atlanta, USA, with the response giving a slightly different directional detail but clearly the same location (Downtown Atlanta area).  
+- Semantics match well.  
+- Score: 1
+
+### idx_3  
+- Response: ""dubai,unitedarabemirates""  
+- Target: ""at the border of dallas county and tarrant county in the state of texas, united states.""  
+- Different locations/entities (Dubai vs Texas).  
+- Score: 0
+
+### idx_4  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: ""at the intersection of the southern area of Fulton county, atlanta, united states and clayton county, it is 12.7 kilometers north of downtown atlanta.""  
+- Same reasoning as idx_2.  
+- Score: 1
+
+### idx_5  
+- Response: ""dubai,unitedarabemirates""  
+- Target: same as idx_3.  
+- Different entities.  
+- Score: 0
+
+### idx_6  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: similar to idx_2, 4 but 12.8 kilometers north of downtown atlanta.  
+- Same entities.  
+- Score: 1
+
+### idx_7  
+- Response: ""dubai,unitedarabemirates""  
+- Target: ""algarhoud area, 2.6 nautical miles east of dubai.""  
+- Response mentions Dubai, UAE. Target is a location near Dubai. Since Algarhoud is a district in Dubai (right?), target is a sub-location of Dubai. Both roughly point to the same geographic entity (Dubai area).  
+- Semantics approximately the same.  
+- Score: 1
+
+### idx_8  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: ""at the intersection of the southern area of Fulton county, atlanta, united states and clayton county, it is 12.9 kilometers north of downtown atlanta.""  
+- Same as idx_2,4,6.  
+- Score: 1
+
+### idx_9  
+- Response: ""dubai,unitedarabemirates""  
+- Target: ""algarhoud area, 2.7 nautical miles east of dubai."" (Similar to idx_7)  
+- Same logic applies.  
+- Score: 1
+
+---
+
+### Final Scores
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```","attheintersectionofthesouthernareaoffultoncounty,atlanta,unitedstatesandclaytoncounty,itis12.5kilometersnorthofdowntownatlanta.","dubai,unitedarabemirates",1.0,key_match,0.0,"number not near, response: 88490000.0, target: 42918685.0",42918685,88490000,1.0,key_match
+,,1,1,2021,2021,1.0,"Let's analyze each pair one by one according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.""
+
+---
+
+**idx_0**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""guangzhoubaiyuninternationalairport""  
+- Analysis: Different airports (Atlanta vs. Guangzhou). So different entities. Score = 0
+
+**idx_1**  
+- response: ""dubaiinternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Different airports (Dubai vs. Atlanta). Score = 0
+
+**idx_2**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Essentially same entity, just word order difference. Score = 1
+
+**idx_3**  
+- response: ""dubaiinternationalairport""  
+- target: ""dallasfortworthinternationalairport""  
+- Different airports (Dubai vs. Dallas). Score = 0
+
+**idx_4**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Same entity. Score = 1
+
+**idx_5**  
+- response: ""dubaiinternationalairport""  
+- target: ""dallasfortworthinternationalairport""  
+- Different airports. Score = 0
+
+**idx_6**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Same entity. Score = 1
+
+**idx_7**  
+- response: ""dubaiinternationalairport""  
+- target: ""dubaiinternationalairport""  
+- Exact match. Score = 1
+
+**idx_8**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Same entity. Score = 1
+
+**idx_9**  
+- response: ""dubaiinternationalairport""  
+- target: ""dubaiinternationalairport""  
+- Exact match. Score = 1
+
+---
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",atlantahartsfield-jacksonatlantainternationalairport,hartsfield-jacksonatlantainternationalairport,1.0,"exact match, response: atl/katl, target: atl/katl",atl/katl,atl/katl,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion Summary:  
+- Score 1 if the response semantics are approximately the same as the target or they point to the same entity/location.  
+- No need for exact word matching.  
+- Score 0 otherwise.
+
+---
+
+### idx_0  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: ""thejunctionofrenhetown,baiyundistrict,guangzhoucity,guangdongprovince,xinhuastreet,huadongtown,huadudistrict""  
+- Comparison: Response references a location in Atlanta, USA, target references a location in Guangzhou, China. Different entities.  
+- Score: 0
+
+### idx_1  
+- Response: ""dubai,unitedarabemirates""  
+- Target: ""at the intersection of the southern area of Fulton county, atlanta, united states and clayton county, it is 12.5 kilometers north of downtown atlanta.""  
+- Response refers to Dubai, UAE; target is a location in Atlanta, USA. Different entities.  
+- Score: 0
+
+### idx_2  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: ""at the intersection of the southern area of Fulton county, atlanta, united states and clayton county, it is 12.6 kilometers north of downtown atlanta.""  
+- Both refer to same general area, Atlanta, USA, with the response giving a slightly different directional detail but clearly the same location (Downtown Atlanta area).  
+- Semantics match well.  
+- Score: 1
+
+### idx_3  
+- Response: ""dubai,unitedarabemirates""  
+- Target: ""at the border of dallas county and tarrant county in the state of texas, united states.""  
+- Different locations/entities (Dubai vs Texas).  
+- Score: 0
+
+### idx_4  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: ""at the intersection of the southern area of Fulton county, atlanta, united states and clayton county, it is 12.7 kilometers north of downtown atlanta.""  
+- Same reasoning as idx_2.  
+- Score: 1
+
+### idx_5  
+- Response: ""dubai,unitedarabemirates""  
+- Target: same as idx_3.  
+- Different entities.  
+- Score: 0
+
+### idx_6  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: similar to idx_2, 4 but 12.8 kilometers north of downtown atlanta.  
+- Same entities.  
+- Score: 1
+
+### idx_7  
+- Response: ""dubai,unitedarabemirates""  
+- Target: ""algarhoud area, 2.6 nautical miles east of dubai.""  
+- Response mentions Dubai, UAE. Target is a location near Dubai. Since Algarhoud is a district in Dubai (right?), target is a sub-location of Dubai. Both roughly point to the same geographic entity (Dubai area).  
+- Semantics approximately the same.  
+- Score: 1
+
+### idx_8  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: ""at the intersection of the southern area of Fulton county, atlanta, united states and clayton county, it is 12.9 kilometers north of downtown atlanta.""  
+- Same as idx_2,4,6.  
+- Score: 1
+
+### idx_9  
+- Response: ""dubai,unitedarabemirates""  
+- Target: ""algarhoud area, 2.7 nautical miles east of dubai."" (Similar to idx_7)  
+- Same logic applies.  
+- Score: 1
+
+---
+
+### Final Scores
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```","attheintersectionofthesouthernareaoffultoncounty,atlanta,unitedstatesandclaytoncounty,itis12.6kilometersnorthofdowntownatlanta.","atlanta,georgia,usa(downtownatlantadistrict,10misouth)",1.0,key_match,1.0,"number near in range 5.0%, response: 74459000.0, target: 75704760.0",75704760,74459000,1.0,key_match
+,,2,2,2021,2021,0.0,"Let's analyze each pair one by one according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.""
+
+---
+
+**idx_0**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""guangzhoubaiyuninternationalairport""  
+- Analysis: Different airports (Atlanta vs. Guangzhou). So different entities. Score = 0
+
+**idx_1**  
+- response: ""dubaiinternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Different airports (Dubai vs. Atlanta). Score = 0
+
+**idx_2**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Essentially same entity, just word order difference. Score = 1
+
+**idx_3**  
+- response: ""dubaiinternationalairport""  
+- target: ""dallasfortworthinternationalairport""  
+- Different airports (Dubai vs. Dallas). Score = 0
+
+**idx_4**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Same entity. Score = 1
+
+**idx_5**  
+- response: ""dubaiinternationalairport""  
+- target: ""dallasfortworthinternationalairport""  
+- Different airports. Score = 0
+
+**idx_6**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Same entity. Score = 1
+
+**idx_7**  
+- response: ""dubaiinternationalairport""  
+- target: ""dubaiinternationalairport""  
+- Exact match. Score = 1
+
+**idx_8**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Same entity. Score = 1
+
+**idx_9**  
+- response: ""dubaiinternationalairport""  
+- target: ""dubaiinternationalairport""  
+- Exact match. Score = 1
+
+---
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",dallasfortworthinternationalairport,dubaiinternationalairport,0.0,"exact not match, response: dxb/omdb, target: dfw/kdfw",dfw/kdfw,dxb/omdb,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion Summary:  
+- Score 1 if the response semantics are approximately the same as the target or they point to the same entity/location.  
+- No need for exact word matching.  
+- Score 0 otherwise.
+
+---
+
+### idx_0  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: ""thejunctionofrenhetown,baiyundistrict,guangzhoucity,guangdongprovince,xinhuastreet,huadongtown,huadudistrict""  
+- Comparison: Response references a location in Atlanta, USA, target references a location in Guangzhou, China. Different entities.  
+- Score: 0
+
+### idx_1  
+- Response: ""dubai,unitedarabemirates""  
+- Target: ""at the intersection of the southern area of Fulton county, atlanta, united states and clayton county, it is 12.5 kilometers north of downtown atlanta.""  
+- Response refers to Dubai, UAE; target is a location in Atlanta, USA. Different entities.  
+- Score: 0
+
+### idx_2  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: ""at the intersection of the southern area of Fulton county, atlanta, united states and clayton county, it is 12.6 kilometers north of downtown atlanta.""  
+- Both refer to same general area, Atlanta, USA, with the response giving a slightly different directional detail but clearly the same location (Downtown Atlanta area).  
+- Semantics match well.  
+- Score: 1
+
+### idx_3  
+- Response: ""dubai,unitedarabemirates""  
+- Target: ""at the border of dallas county and tarrant county in the state of texas, united states.""  
+- Different locations/entities (Dubai vs Texas).  
+- Score: 0
+
+### idx_4  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: ""at the intersection of the southern area of Fulton county, atlanta, united states and clayton county, it is 12.7 kilometers north of downtown atlanta.""  
+- Same reasoning as idx_2.  
+- Score: 1
+
+### idx_5  
+- Response: ""dubai,unitedarabemirates""  
+- Target: same as idx_3.  
+- Different entities.  
+- Score: 0
+
+### idx_6  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: similar to idx_2, 4 but 12.8 kilometers north of downtown atlanta.  
+- Same entities.  
+- Score: 1
+
+### idx_7  
+- Response: ""dubai,unitedarabemirates""  
+- Target: ""algarhoud area, 2.6 nautical miles east of dubai.""  
+- Response mentions Dubai, UAE. Target is a location near Dubai. Since Algarhoud is a district in Dubai (right?), target is a sub-location of Dubai. Both roughly point to the same geographic entity (Dubai area).  
+- Semantics approximately the same.  
+- Score: 1
+
+### idx_8  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: ""at the intersection of the southern area of Fulton county, atlanta, united states and clayton county, it is 12.9 kilometers north of downtown atlanta.""  
+- Same as idx_2,4,6.  
+- Score: 1
+
+### idx_9  
+- Response: ""dubai,unitedarabemirates""  
+- Target: ""algarhoud area, 2.7 nautical miles east of dubai."" (Similar to idx_7)  
+- Same logic applies.  
+- Score: 1
+
+---
+
+### Final Scores
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```","attheborderofdallascountyandtarrantcountyinthestateoftexas,unitedstates","dubai,unitedarabemirates",1.0,key_match,0.0,"number not near, response: 79779000.0, target: 62465756.0",62465756,79779000,1.0,key_match
+,,1,1,2022,2022,1.0,"Let's analyze each pair one by one according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.""
+
+---
+
+**idx_0**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""guangzhoubaiyuninternationalairport""  
+- Analysis: Different airports (Atlanta vs. Guangzhou). So different entities. Score = 0
+
+**idx_1**  
+- response: ""dubaiinternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Different airports (Dubai vs. Atlanta). Score = 0
+
+**idx_2**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Essentially same entity, just word order difference. Score = 1
+
+**idx_3**  
+- response: ""dubaiinternationalairport""  
+- target: ""dallasfortworthinternationalairport""  
+- Different airports (Dubai vs. Dallas). Score = 0
+
+**idx_4**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Same entity. Score = 1
+
+**idx_5**  
+- response: ""dubaiinternationalairport""  
+- target: ""dallasfortworthinternationalairport""  
+- Different airports. Score = 0
+
+**idx_6**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Same entity. Score = 1
+
+**idx_7**  
+- response: ""dubaiinternationalairport""  
+- target: ""dubaiinternationalairport""  
+- Exact match. Score = 1
+
+**idx_8**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Same entity. Score = 1
+
+**idx_9**  
+- response: ""dubaiinternationalairport""  
+- target: ""dubaiinternationalairport""  
+- Exact match. Score = 1
+
+---
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",atlantahartsfield-jacksonatlantainternationalairport,hartsfield-jacksonatlantainternationalairport,1.0,"exact match, response: atl/katl, target: atl/katl",atl/katl,atl/katl,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion Summary:  
+- Score 1 if the response semantics are approximately the same as the target or they point to the same entity/location.  
+- No need for exact word matching.  
+- Score 0 otherwise.
+
+---
+
+### idx_0  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: ""thejunctionofrenhetown,baiyundistrict,guangzhoucity,guangdongprovince,xinhuastreet,huadongtown,huadudistrict""  
+- Comparison: Response references a location in Atlanta, USA, target references a location in Guangzhou, China. Different entities.  
+- Score: 0
+
+### idx_1  
+- Response: ""dubai,unitedarabemirates""  
+- Target: ""at the intersection of the southern area of Fulton county, atlanta, united states and clayton county, it is 12.5 kilometers north of downtown atlanta.""  
+- Response refers to Dubai, UAE; target is a location in Atlanta, USA. Different entities.  
+- Score: 0
+
+### idx_2  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: ""at the intersection of the southern area of Fulton county, atlanta, united states and clayton county, it is 12.6 kilometers north of downtown atlanta.""  
+- Both refer to same general area, Atlanta, USA, with the response giving a slightly different directional detail but clearly the same location (Downtown Atlanta area).  
+- Semantics match well.  
+- Score: 1
+
+### idx_3  
+- Response: ""dubai,unitedarabemirates""  
+- Target: ""at the border of dallas county and tarrant county in the state of texas, united states.""  
+- Different locations/entities (Dubai vs Texas).  
+- Score: 0
+
+### idx_4  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: ""at the intersection of the southern area of Fulton county, atlanta, united states and clayton county, it is 12.7 kilometers north of downtown atlanta.""  
+- Same reasoning as idx_2.  
+- Score: 1
+
+### idx_5  
+- Response: ""dubai,unitedarabemirates""  
+- Target: same as idx_3.  
+- Different entities.  
+- Score: 0
+
+### idx_6  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: similar to idx_2, 4 but 12.8 kilometers north of downtown atlanta.  
+- Same entities.  
+- Score: 1
+
+### idx_7  
+- Response: ""dubai,unitedarabemirates""  
+- Target: ""algarhoud area, 2.6 nautical miles east of dubai.""  
+- Response mentions Dubai, UAE. Target is a location near Dubai. Since Algarhoud is a district in Dubai (right?), target is a sub-location of Dubai. Both roughly point to the same geographic entity (Dubai area).  
+- Semantics approximately the same.  
+- Score: 1
+
+### idx_8  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: ""at the intersection of the southern area of Fulton county, atlanta, united states and clayton county, it is 12.9 kilometers north of downtown atlanta.""  
+- Same as idx_2,4,6.  
+- Score: 1
+
+### idx_9  
+- Response: ""dubai,unitedarabemirates""  
+- Target: ""algarhoud area, 2.7 nautical miles east of dubai."" (Similar to idx_7)  
+- Same logic applies.  
+- Score: 1
+
+---
+
+### Final Scores
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```","attheintersectionofthesouthernareaoffultoncounty,atlanta,unitedstatesandclaytoncounty,itis12.7kilometersnorthofdowntownatlanta.","atlanta,georgia,usa(downtownatlantadistrict,10misouth)",1.0,key_match,0.0,"number not near, response: 88770000.0, target: 93699630.0",93699630,88770000,1.0,key_match
+,,2,2,2022,2022,0.0,"Let's analyze each pair one by one according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.""
+
+---
+
+**idx_0**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""guangzhoubaiyuninternationalairport""  
+- Analysis: Different airports (Atlanta vs. Guangzhou). So different entities. Score = 0
+
+**idx_1**  
+- response: ""dubaiinternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Different airports (Dubai vs. Atlanta). Score = 0
+
+**idx_2**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Essentially same entity, just word order difference. Score = 1
+
+**idx_3**  
+- response: ""dubaiinternationalairport""  
+- target: ""dallasfortworthinternationalairport""  
+- Different airports (Dubai vs. Dallas). Score = 0
+
+**idx_4**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Same entity. Score = 1
+
+**idx_5**  
+- response: ""dubaiinternationalairport""  
+- target: ""dallasfortworthinternationalairport""  
+- Different airports. Score = 0
+
+**idx_6**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Same entity. Score = 1
+
+**idx_7**  
+- response: ""dubaiinternationalairport""  
+- target: ""dubaiinternationalairport""  
+- Exact match. Score = 1
+
+**idx_8**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Same entity. Score = 1
+
+**idx_9**  
+- response: ""dubaiinternationalairport""  
+- target: ""dubaiinternationalairport""  
+- Exact match. Score = 1
+
+---
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",dallasfortworthinternationalairport,dubaiinternationalairport,0.0,"exact not match, response: dxb/omdb, target: dfw/kdfw",dfw/kdfw,dxb/omdb,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion Summary:  
+- Score 1 if the response semantics are approximately the same as the target or they point to the same entity/location.  
+- No need for exact word matching.  
+- Score 0 otherwise.
+
+---
+
+### idx_0  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: ""thejunctionofrenhetown,baiyundistrict,guangzhoucity,guangdongprovince,xinhuastreet,huadongtown,huadudistrict""  
+- Comparison: Response references a location in Atlanta, USA, target references a location in Guangzhou, China. Different entities.  
+- Score: 0
+
+### idx_1  
+- Response: ""dubai,unitedarabemirates""  
+- Target: ""at the intersection of the southern area of Fulton county, atlanta, united states and clayton county, it is 12.5 kilometers north of downtown atlanta.""  
+- Response refers to Dubai, UAE; target is a location in Atlanta, USA. Different entities.  
+- Score: 0
+
+### idx_2  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: ""at the intersection of the southern area of Fulton county, atlanta, united states and clayton county, it is 12.6 kilometers north of downtown atlanta.""  
+- Both refer to same general area, Atlanta, USA, with the response giving a slightly different directional detail but clearly the same location (Downtown Atlanta area).  
+- Semantics match well.  
+- Score: 1
+
+### idx_3  
+- Response: ""dubai,unitedarabemirates""  
+- Target: ""at the border of dallas county and tarrant county in the state of texas, united states.""  
+- Different locations/entities (Dubai vs Texas).  
+- Score: 0
+
+### idx_4  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: ""at the intersection of the southern area of Fulton county, atlanta, united states and clayton county, it is 12.7 kilometers north of downtown atlanta.""  
+- Same reasoning as idx_2.  
+- Score: 1
+
+### idx_5  
+- Response: ""dubai,unitedarabemirates""  
+- Target: same as idx_3.  
+- Different entities.  
+- Score: 0
+
+### idx_6  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: similar to idx_2, 4 but 12.8 kilometers north of downtown atlanta.  
+- Same entities.  
+- Score: 1
+
+### idx_7  
+- Response: ""dubai,unitedarabemirates""  
+- Target: ""algarhoud area, 2.6 nautical miles east of dubai.""  
+- Response mentions Dubai, UAE. Target is a location near Dubai. Since Algarhoud is a district in Dubai (right?), target is a sub-location of Dubai. Both roughly point to the same geographic entity (Dubai area).  
+- Semantics approximately the same.  
+- Score: 1
+
+### idx_8  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: ""at the intersection of the southern area of Fulton county, atlanta, united states and clayton county, it is 12.9 kilometers north of downtown atlanta.""  
+- Same as idx_2,4,6.  
+- Score: 1
+
+### idx_9  
+- Response: ""dubai,unitedarabemirates""  
+- Target: ""algarhoud area, 2.7 nautical miles east of dubai."" (Similar to idx_7)  
+- Same logic applies.  
+- Score: 1
+
+---
+
+### Final Scores
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```","attheborderofdallascountyandtarrantcountyinthestateoftexas,unitedstates","dubai,unitedarabemirates",1.0,key_match,0.0,"number not near, response: 86240000.0, target: 73362946.0",73362946,86240000,1.0,key_match
+,,1,1,2023,2023,1.0,"Let's analyze each pair one by one according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.""
+
+---
+
+**idx_0**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""guangzhoubaiyuninternationalairport""  
+- Analysis: Different airports (Atlanta vs. Guangzhou). So different entities. Score = 0
+
+**idx_1**  
+- response: ""dubaiinternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Different airports (Dubai vs. Atlanta). Score = 0
+
+**idx_2**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Essentially same entity, just word order difference. Score = 1
+
+**idx_3**  
+- response: ""dubaiinternationalairport""  
+- target: ""dallasfortworthinternationalairport""  
+- Different airports (Dubai vs. Dallas). Score = 0
+
+**idx_4**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Same entity. Score = 1
+
+**idx_5**  
+- response: ""dubaiinternationalairport""  
+- target: ""dallasfortworthinternationalairport""  
+- Different airports. Score = 0
+
+**idx_6**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Same entity. Score = 1
+
+**idx_7**  
+- response: ""dubaiinternationalairport""  
+- target: ""dubaiinternationalairport""  
+- Exact match. Score = 1
+
+**idx_8**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Same entity. Score = 1
+
+**idx_9**  
+- response: ""dubaiinternationalairport""  
+- target: ""dubaiinternationalairport""  
+- Exact match. Score = 1
+
+---
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",atlantahartsfield-jacksonatlantainternationalairport,hartsfield-jacksonatlantainternationalairport,1.0,"exact match, response: atl/katl, target: atl/katl",atl/katl,atl/katl,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion Summary:  
+- Score 1 if the response semantics are approximately the same as the target or they point to the same entity/location.  
+- No need for exact word matching.  
+- Score 0 otherwise.
+
+---
+
+### idx_0  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: ""thejunctionofrenhetown,baiyundistrict,guangzhoucity,guangdongprovince,xinhuastreet,huadongtown,huadudistrict""  
+- Comparison: Response references a location in Atlanta, USA, target references a location in Guangzhou, China. Different entities.  
+- Score: 0
+
+### idx_1  
+- Response: ""dubai,unitedarabemirates""  
+- Target: ""at the intersection of the southern area of Fulton county, atlanta, united states and clayton county, it is 12.5 kilometers north of downtown atlanta.""  
+- Response refers to Dubai, UAE; target is a location in Atlanta, USA. Different entities.  
+- Score: 0
+
+### idx_2  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: ""at the intersection of the southern area of Fulton county, atlanta, united states and clayton county, it is 12.6 kilometers north of downtown atlanta.""  
+- Both refer to same general area, Atlanta, USA, with the response giving a slightly different directional detail but clearly the same location (Downtown Atlanta area).  
+- Semantics match well.  
+- Score: 1
+
+### idx_3  
+- Response: ""dubai,unitedarabemirates""  
+- Target: ""at the border of dallas county and tarrant county in the state of texas, united states.""  
+- Different locations/entities (Dubai vs Texas).  
+- Score: 0
+
+### idx_4  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: ""at the intersection of the southern area of Fulton county, atlanta, united states and clayton county, it is 12.7 kilometers north of downtown atlanta.""  
+- Same reasoning as idx_2.  
+- Score: 1
+
+### idx_5  
+- Response: ""dubai,unitedarabemirates""  
+- Target: same as idx_3.  
+- Different entities.  
+- Score: 0
+
+### idx_6  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: similar to idx_2, 4 but 12.8 kilometers north of downtown atlanta.  
+- Same entities.  
+- Score: 1
+
+### idx_7  
+- Response: ""dubai,unitedarabemirates""  
+- Target: ""algarhoud area, 2.6 nautical miles east of dubai.""  
+- Response mentions Dubai, UAE. Target is a location near Dubai. Since Algarhoud is a district in Dubai (right?), target is a sub-location of Dubai. Both roughly point to the same geographic entity (Dubai area).  
+- Semantics approximately the same.  
+- Score: 1
+
+### idx_8  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: ""at the intersection of the southern area of Fulton county, atlanta, united states and clayton county, it is 12.9 kilometers north of downtown atlanta.""  
+- Same as idx_2,4,6.  
+- Score: 1
+
+### idx_9  
+- Response: ""dubai,unitedarabemirates""  
+- Target: ""algarhoud area, 2.7 nautical miles east of dubai."" (Similar to idx_7)  
+- Same logic applies.  
+- Score: 1
+
+---
+
+### Final Scores
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```","attheintersectionofthesouthernareaoffultoncounty,atlanta,unitedstatesandclaytoncounty,itis12.8kilometersnorthofdowntownatlanta.","atlanta,georgia,usa(downtownatlantadistrict,10misouth)",1.0,key_match,0.0,"number not near, response: 96994000.0, target: 104653451.0",104653451,96994000,1.0,key_match
+,,2,2,2023,2023,1.0,"Let's analyze each pair one by one according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.""
+
+---
+
+**idx_0**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""guangzhoubaiyuninternationalairport""  
+- Analysis: Different airports (Atlanta vs. Guangzhou). So different entities. Score = 0
+
+**idx_1**  
+- response: ""dubaiinternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Different airports (Dubai vs. Atlanta). Score = 0
+
+**idx_2**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Essentially same entity, just word order difference. Score = 1
+
+**idx_3**  
+- response: ""dubaiinternationalairport""  
+- target: ""dallasfortworthinternationalairport""  
+- Different airports (Dubai vs. Dallas). Score = 0
+
+**idx_4**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Same entity. Score = 1
+
+**idx_5**  
+- response: ""dubaiinternationalairport""  
+- target: ""dallasfortworthinternationalairport""  
+- Different airports. Score = 0
+
+**idx_6**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Same entity. Score = 1
+
+**idx_7**  
+- response: ""dubaiinternationalairport""  
+- target: ""dubaiinternationalairport""  
+- Exact match. Score = 1
+
+**idx_8**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Same entity. Score = 1
+
+**idx_9**  
+- response: ""dubaiinternationalairport""  
+- target: ""dubaiinternationalairport""  
+- Exact match. Score = 1
+
+---
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",dubaiinternationalairport,dubaiinternationalairport,1.0,"exact match, response: dxb/omdb, target: dxb/omdb",dxb/omdb,dxb/omdb,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion Summary:  
+- Score 1 if the response semantics are approximately the same as the target or they point to the same entity/location.  
+- No need for exact word matching.  
+- Score 0 otherwise.
+
+---
+
+### idx_0  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: ""thejunctionofrenhetown,baiyundistrict,guangzhoucity,guangdongprovince,xinhuastreet,huadongtown,huadudistrict""  
+- Comparison: Response references a location in Atlanta, USA, target references a location in Guangzhou, China. Different entities.  
+- Score: 0
+
+### idx_1  
+- Response: ""dubai,unitedarabemirates""  
+- Target: ""at the intersection of the southern area of Fulton county, atlanta, united states and clayton county, it is 12.5 kilometers north of downtown atlanta.""  
+- Response refers to Dubai, UAE; target is a location in Atlanta, USA. Different entities.  
+- Score: 0
+
+### idx_2  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: ""at the intersection of the southern area of Fulton county, atlanta, united states and clayton county, it is 12.6 kilometers north of downtown atlanta.""  
+- Both refer to same general area, Atlanta, USA, with the response giving a slightly different directional detail but clearly the same location (Downtown Atlanta area).  
+- Semantics match well.  
+- Score: 1
+
+### idx_3  
+- Response: ""dubai,unitedarabemirates""  
+- Target: ""at the border of dallas county and tarrant county in the state of texas, united states.""  
+- Different locations/entities (Dubai vs Texas).  
+- Score: 0
+
+### idx_4  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: ""at the intersection of the southern area of Fulton county, atlanta, united states and clayton county, it is 12.7 kilometers north of downtown atlanta.""  
+- Same reasoning as idx_2.  
+- Score: 1
+
+### idx_5  
+- Response: ""dubai,unitedarabemirates""  
+- Target: same as idx_3.  
+- Different entities.  
+- Score: 0
+
+### idx_6  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: similar to idx_2, 4 but 12.8 kilometers north of downtown atlanta.  
+- Same entities.  
+- Score: 1
+
+### idx_7  
+- Response: ""dubai,unitedarabemirates""  
+- Target: ""algarhoud area, 2.6 nautical miles east of dubai.""  
+- Response mentions Dubai, UAE. Target is a location near Dubai. Since Algarhoud is a district in Dubai (right?), target is a sub-location of Dubai. Both roughly point to the same geographic entity (Dubai area).  
+- Semantics approximately the same.  
+- Score: 1
+
+### idx_8  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: ""at the intersection of the southern area of Fulton county, atlanta, united states and clayton county, it is 12.9 kilometers north of downtown atlanta.""  
+- Same as idx_2,4,6.  
+- Score: 1
+
+### idx_9  
+- Response: ""dubai,unitedarabemirates""  
+- Target: ""algarhoud area, 2.7 nautical miles east of dubai."" (Similar to idx_7)  
+- Same logic applies.  
+- Score: 1
+
+---
+
+### Final Scores
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```","algarhoudarea,2.6nauticalmileseastofdubai.","dubai,unitedarabemirates",1.0,key_match,0.0,"number not near, response: 92380000.0, target: 86994365.0",86994365,92380000,1.0,key_match
+,,1,1,2024,2024,1.0,"Let's analyze each pair one by one according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.""
+
+---
+
+**idx_0**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""guangzhoubaiyuninternationalairport""  
+- Analysis: Different airports (Atlanta vs. Guangzhou). So different entities. Score = 0
+
+**idx_1**  
+- response: ""dubaiinternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Different airports (Dubai vs. Atlanta). Score = 0
+
+**idx_2**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Essentially same entity, just word order difference. Score = 1
+
+**idx_3**  
+- response: ""dubaiinternationalairport""  
+- target: ""dallasfortworthinternationalairport""  
+- Different airports (Dubai vs. Dallas). Score = 0
+
+**idx_4**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Same entity. Score = 1
+
+**idx_5**  
+- response: ""dubaiinternationalairport""  
+- target: ""dallasfortworthinternationalairport""  
+- Different airports. Score = 0
+
+**idx_6**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Same entity. Score = 1
+
+**idx_7**  
+- response: ""dubaiinternationalairport""  
+- target: ""dubaiinternationalairport""  
+- Exact match. Score = 1
+
+**idx_8**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Same entity. Score = 1
+
+**idx_9**  
+- response: ""dubaiinternationalairport""  
+- target: ""dubaiinternationalairport""  
+- Exact match. Score = 1
+
+---
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",atlantahartsfield-jacksonatlantainternationalairport,hartsfield-jacksonatlantainternationalairport,1.0,"exact match, response: atl/katl, target: atl/katl",atl/katl,atl/katl,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion Summary:  
+- Score 1 if the response semantics are approximately the same as the target or they point to the same entity/location.  
+- No need for exact word matching.  
+- Score 0 otherwise.
+
+---
+
+### idx_0  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: ""thejunctionofrenhetown,baiyundistrict,guangzhoucity,guangdongprovince,xinhuastreet,huadongtown,huadudistrict""  
+- Comparison: Response references a location in Atlanta, USA, target references a location in Guangzhou, China. Different entities.  
+- Score: 0
+
+### idx_1  
+- Response: ""dubai,unitedarabemirates""  
+- Target: ""at the intersection of the southern area of Fulton county, atlanta, united states and clayton county, it is 12.5 kilometers north of downtown atlanta.""  
+- Response refers to Dubai, UAE; target is a location in Atlanta, USA. Different entities.  
+- Score: 0
+
+### idx_2  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: ""at the intersection of the southern area of Fulton county, atlanta, united states and clayton county, it is 12.6 kilometers north of downtown atlanta.""  
+- Both refer to same general area, Atlanta, USA, with the response giving a slightly different directional detail but clearly the same location (Downtown Atlanta area).  
+- Semantics match well.  
+- Score: 1
+
+### idx_3  
+- Response: ""dubai,unitedarabemirates""  
+- Target: ""at the border of dallas county and tarrant county in the state of texas, united states.""  
+- Different locations/entities (Dubai vs Texas).  
+- Score: 0
+
+### idx_4  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: ""at the intersection of the southern area of Fulton county, atlanta, united states and clayton county, it is 12.7 kilometers north of downtown atlanta.""  
+- Same reasoning as idx_2.  
+- Score: 1
+
+### idx_5  
+- Response: ""dubai,unitedarabemirates""  
+- Target: same as idx_3.  
+- Different entities.  
+- Score: 0
+
+### idx_6  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: similar to idx_2, 4 but 12.8 kilometers north of downtown atlanta.  
+- Same entities.  
+- Score: 1
+
+### idx_7  
+- Response: ""dubai,unitedarabemirates""  
+- Target: ""algarhoud area, 2.6 nautical miles east of dubai.""  
+- Response mentions Dubai, UAE. Target is a location near Dubai. Since Algarhoud is a district in Dubai (right?), target is a sub-location of Dubai. Both roughly point to the same geographic entity (Dubai area).  
+- Semantics approximately the same.  
+- Score: 1
+
+### idx_8  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: ""at the intersection of the southern area of Fulton county, atlanta, united states and clayton county, it is 12.9 kilometers north of downtown atlanta.""  
+- Same as idx_2,4,6.  
+- Score: 1
+
+### idx_9  
+- Response: ""dubai,unitedarabemirates""  
+- Target: ""algarhoud area, 2.7 nautical miles east of dubai."" (Similar to idx_7)  
+- Same logic applies.  
+- Score: 1
+
+---
+
+### Final Scores
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```","attheintersectionofthesouthernareaoffultoncounty,atlanta,unitedstatesandclaytoncounty,itis12.9kilometersnorthofdowntownatlanta.","atlanta,georgia,usa(downtownatlantadistrict,10misouth)",1.0,key_match,0.0,"number not near, response: 62700000.0, target: 108067766.0",108067766,62700000,1.0,key_match
+,,2,2,2024,2024,1.0,"Let's analyze each pair one by one according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.""
+
+---
+
+**idx_0**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""guangzhoubaiyuninternationalairport""  
+- Analysis: Different airports (Atlanta vs. Guangzhou). So different entities. Score = 0
+
+**idx_1**  
+- response: ""dubaiinternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Different airports (Dubai vs. Atlanta). Score = 0
+
+**idx_2**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Essentially same entity, just word order difference. Score = 1
+
+**idx_3**  
+- response: ""dubaiinternationalairport""  
+- target: ""dallasfortworthinternationalairport""  
+- Different airports (Dubai vs. Dallas). Score = 0
+
+**idx_4**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Same entity. Score = 1
+
+**idx_5**  
+- response: ""dubaiinternationalairport""  
+- target: ""dallasfortworthinternationalairport""  
+- Different airports. Score = 0
+
+**idx_6**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Same entity. Score = 1
+
+**idx_7**  
+- response: ""dubaiinternationalairport""  
+- target: ""dubaiinternationalairport""  
+- Exact match. Score = 1
+
+**idx_8**  
+- response: ""hartsfield-jacksonatlantainternationalairport""  
+- target: ""atlantahartsfield-jacksonatlantainternationalairport""  
+- Same entity. Score = 1
+
+**idx_9**  
+- response: ""dubaiinternationalairport""  
+- target: ""dubaiinternationalairport""  
+- Exact match. Score = 1
+
+---
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",dubaiinternationalairport,dubaiinternationalairport,1.0,"exact match, response: dxb/omdb, target: dxb/omdb",dxb/omdb,dxb/omdb,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion Summary:  
+- Score 1 if the response semantics are approximately the same as the target or they point to the same entity/location.  
+- No need for exact word matching.  
+- Score 0 otherwise.
+
+---
+
+### idx_0  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: ""thejunctionofrenhetown,baiyundistrict,guangzhoucity,guangdongprovince,xinhuastreet,huadongtown,huadudistrict""  
+- Comparison: Response references a location in Atlanta, USA, target references a location in Guangzhou, China. Different entities.  
+- Score: 0
+
+### idx_1  
+- Response: ""dubai,unitedarabemirates""  
+- Target: ""at the intersection of the southern area of Fulton county, atlanta, united states and clayton county, it is 12.5 kilometers north of downtown atlanta.""  
+- Response refers to Dubai, UAE; target is a location in Atlanta, USA. Different entities.  
+- Score: 0
+
+### idx_2  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: ""at the intersection of the southern area of Fulton county, atlanta, united states and clayton county, it is 12.6 kilometers north of downtown atlanta.""  
+- Both refer to same general area, Atlanta, USA, with the response giving a slightly different directional detail but clearly the same location (Downtown Atlanta area).  
+- Semantics match well.  
+- Score: 1
+
+### idx_3  
+- Response: ""dubai,unitedarabemirates""  
+- Target: ""at the border of dallas county and tarrant county in the state of texas, united states.""  
+- Different locations/entities (Dubai vs Texas).  
+- Score: 0
+
+### idx_4  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: ""at the intersection of the southern area of Fulton county, atlanta, united states and clayton county, it is 12.7 kilometers north of downtown atlanta.""  
+- Same reasoning as idx_2.  
+- Score: 1
+
+### idx_5  
+- Response: ""dubai,unitedarabemirates""  
+- Target: same as idx_3.  
+- Different entities.  
+- Score: 0
+
+### idx_6  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: similar to idx_2, 4 but 12.8 kilometers north of downtown atlanta.  
+- Same entities.  
+- Score: 1
+
+### idx_7  
+- Response: ""dubai,unitedarabemirates""  
+- Target: ""algarhoud area, 2.6 nautical miles east of dubai.""  
+- Response mentions Dubai, UAE. Target is a location near Dubai. Since Algarhoud is a district in Dubai (right?), target is a sub-location of Dubai. Both roughly point to the same geographic entity (Dubai area).  
+- Semantics approximately the same.  
+- Score: 1
+
+### idx_8  
+- Response: ""atlanta,georgia,usa(downtownatlantadistrict,10misouth)""  
+- Target: ""at the intersection of the southern area of Fulton county, atlanta, united states and clayton county, it is 12.9 kilometers north of downtown atlanta.""  
+- Same as idx_2,4,6.  
+- Score: 1
+
+### idx_9  
+- Response: ""dubai,unitedarabemirates""  
+- Target: ""algarhoud area, 2.7 nautical miles east of dubai."" (Similar to idx_7)  
+- Same logic applies.  
+- Score: 1
+
+---
+
+### Final Scores
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```","algarhoudarea,2.7nauticalmileseastofdubai.","dubai,unitedarabemirates",1.0,key_match,0.0,"number not near, response: 66000000.0, target: 92300000.0",92300000,66000000,1.0,key_match
+1.0,,10,,2020,,,,shanghaihongqiaointernationalairport,,,,sha/zsss,,,,"atthejunctionofchangningdistrictandminhangdistrictinshanghai,china,13kilometersfromthecitycenter.",,,,,,31165641,,,
+1.0,,3,,2020,,,,chengdushuangliuinternationalairport,,,,ctu/zuuu,,,,"atthejunctionofshuangliudistrictandwuhoudistrictinchengdu,sichuanprovince,china,about16kilometersnortheastofdowntownchengdu.",,,,,,40741509,,,
+1.0,,4,,2020,,,,dallasfortworthinternationalairport,,,,dfw/kdfw,,,,"attheborderofdallascountyandtarrantcountyinthestateoftexas,unitedstates",,,,,,39364990,,,
+1.0,,5,,2020,,,,shenzhenbao'aninternationalairport,,,,szx/zgsz,,,,"bao'andistrict,shenzhen,guangdongprovince,china,ontheeastbankofthepearlriverestuary",,,,,,37916054,,,
+1.0,,6,,2020,,,,chongqingjiangbeiinternationalairport,,,,ckg/zuck,,,,"lianglustreet,yubeidistrict,chongqing,china",,,,,,34937789,,,
+1.0,,7,,2020,,,,beijingcapitalinternationalairport,,,,pek/zbaa,,,,"chaoyangdistrictandshunyidistrict,beijing,china,are25kilometersawayfromthecenterofbeijinginthesouthwestand67kilometersawayfrombeijingdaxinginternationalairportinthesouth",,,,,,34513827,,,
+1.0,,8,,2020,,,,denverinternationalairport,,,,den/kden,,,,"northeastofdenver,colorado,usa",,,,,,33741129,,,
+1.0,,9,,2020,,,,kunmingchangshuiinternationalairport,,,,kmg/zppp,,,,"changshuistreet,guandudistrict,kunmingcity,yunnanprovince,china,islocated24.5kilometersnortheastofkunmingcity.",,,,,,32990805,,,
+1.0,,10,,2021,,,,lasvegasmccarraninternationalairport,,,,las/klas,,,,"paradisecity,lasvegasmetropolitanarea,clarkcounty,nevada,unitedstatesofamerica,about8kilometersnorthofdowntownlasvegas",,,,,,39710493,,,
+1.0,,3,,2021,,,,denverinternationalairport,,,,den/kden,,,,"northeastofdenver,colorado,usa",,,,,,58828552,,,
+1.0,,4,,2021,,,,o'hareinternationalairport,,,,ord/kord,,,,"27kilometersnorthwestofdowntownchicago,illinois,usa",,,,,,54020399,,,
+1.0,,5,,2021,,,,losangelesinternationalairport,,,,lax/klax,,,,"westchesterneighborhoodinlosangeles,california,unitedstates,located19kilometersnortheastofdowntownlosangeles.",,,,,,48007284,,,
+1.0,,6,,2021,,,,charlottedouglasinternationalairport,,,,clt/kclt,,,,5501ioshbirminghampkwy，nc,,,,,,43302230,,,
+1.0,,7,,2021,,,,orlandointernationalairport,,,,mco/kmco,,,,"inorlando,florida,unitedstatesofamerica,10kilometersnorthwestofdowntownorlando",,,,,,40351068,,,
+1.0,,8,,2021,,,,guangzhoubaiyuninternationalairport,,,,can/zggg,,,,"thejunctionofrenhetown,baiyundistrict,guangzhoucity,guangdongprovince,xinhuastreet,huadongtown,huadudistrict",,,,,,40249679,,,
+1.0,,9,,2021,,,,chengdushuangliuinternationalairport,,,,ctu/zuuu,,,,"atthejunctionofshuangliudistrictandwuhoudistrictinchengdu,sichuanprovince,china,about17kilometersnortheastofdowntownchengdu.",,,,,,40117496,,,
+1.0,,10,,2022,,,,parischarlesdegaulleairport,,,,cdg/lfpg,,,,"roissyintheval-d'oisedepartmentofthefrenchrepublic,25kmsouthwestofthecenterofparis",,,,,,57474033,,,
+1.0,,3,,2022,,,,denverinternationalairport,,,,den/kden,,,,"northeastofdenver,colorado,usa",,,,,,69286461,,,
+1.0,,4,,2022,,,,o'hareinternationalairport,,,,ord/kord,,,,"28kilometersnorthwestofdowntownchicago,illinois,usa",,,,,,68340619,,,
+1.0,,5,,2022,,,,dubaiinternationalairport,,,,dxb/omdb,,,,"algarhoudarea,2.5nauticalmileseastofdubai.",,,,,,66069981,,,
+1.0,,6,,2022,,,,losangelesinternationalairport,,,,lax/klax,,,,"westchesterneighborhoodinlosangeles,california,unitedstates,located20kilometersnortheastofdowntownlosangeles.",,,,,,65924298,,,
+1.0,,7,,2022,,,,istanbulairport,,,,ist/ltfm,,,,"thearnavutköydistrict,locatedalongtheblackseacoastintheeuropeanpartofistanbulprovince,turkey,isapproximately38kilometerssoutheastofthecitycenterofistanbul.",,,,,,64289107,,,
+1.0,,8,,2022,,,,heathrowairport,,,,lhr/egll,,,,"inthesouthernpartofthelondonboroughofhillingdon,unitedkingdomofgreatbritainandnorthernireland,located23kilometerseastofcentrallondon.",,,,,,61614508,,,
+1.0,,9,,2022,,,,indiragandhiinternationalairport,,,,del/vidp,,,,"newdelhi,nationalcapitalterritoryofindia,islocatedabout16kilometersnortheastofthecitycenterofnewdelhi.",,,,,,59490074,,,
+1.0,,10,,2023,,,,indiragandhiinternationalairport,,,,del/vidp,,,,"newdelhi,nationalcapitalterritoryofindia,islocatedabout17kilometersnortheastofthecitycenterofnewdelhi.",,,,,,72214841,,,
+1.0,,3,,2023,,,,dallasfortworthinternationalairport,,,,dfw/kdfw,,,,"attheborderofdallascountyandtarrantcountyinthestateoftexas,unitedstates",,,,,,81755538,,,
+1.0,,4,,2023,,,,heathrowairport,,,,lhr/egll,,,,"inthesouthernpartofthelondonboroughofhillingdon,unitedkingdomofgreatbritainandnorthernireland,located24kilometerseastofcentrallondon.",,,,,,79183364,,,
+1.0,,5,,2023,,,,tokyohanedaairport,,,,hnd/rjtt,,,,"ontheleftbankofthetamariverestuaryintokyobay,otaward,tokyo,japan,17kilometersnorthwestofthecenteroftokyo",,,,,,78719302,,,
+1.0,,6,,2023,,,,denverinternationalairport,,,,den/kden,,,,"northeastofdenver,colorado,usa",,,,,,77837917,,,
+1.0,,7,,2023,,,,istanbulairport,,,,ist/ltfm,,,,"thearnavutköydistrict,locatedalongtheblackseacoastintheeuropeanpartofistanbulprovince,turkey,isapproximately39kilometerssoutheastofthecitycenterofistanbul.",,,,,,76027321,,,
+1.0,,8,,2023,,,,losangelesinternationalairport,,,,lax/klax,,,,"westchesterneighborhoodinlosangeles,california,unitedstates,located21kilometersnortheastofdowntownlosangeles.",,,,,,75050875,,,
+1.0,,9,,2023,,,,o'hareinternationalairport,,,,ord/kord,,,,"29kilometersnorthwestofdowntownchicago,illinois,usa",,,,,,73894226,,,
+1.0,,10,,2024,,,,shanghaipudonginternationalairport,,,,pvg/zspd,,,,"zhuqiaotown,pudongnewarea,shanghai,china,about30kilometersfromthecenterofshanghai",,,,,,76787039,,,
+1.0,,3,,2024,,,,dallasfortworthinternationalairport,,,,dfw/kdfw,,,,"attheborderofdallascountyandtarrantcountyinthestateoftexas,unitedstates",,,,,,87817864,,,
+1.0,,4,,2024,,,,tokyohanedaairport,,,,hnd/rjtt,,,,"ontheleftbankofthetamariverestuaryintokyobay,otaward,tokyo,japan,17kilometersnorthwestofthecenteroftokyo",,,,,,85000000,,,
+1.0,,5,,2024,,,,heathrowairport,,,,lhr/egll,,,,"inthesouthernpartofthelondonboroughofhillingdon,unitedkingdomofgreatbritainandnorthernireland,located25kilometerseastofcentrallondon.",,,,,,83882140,,,
+1.0,,6,,2024,,,,denverinternationalairport,,,,den/kden,,,,"northeastofdenver,colorado,usa",,,,,,82358744,,,
+1.0,,7,,2024,,,,o'hareinternationalairport,,,,ord/kord,,,,"30kilometersnorthwestofdowntownchicago,illinois,usa",,,,,,80043050,,,
+1.0,,8,,2024,,,,istanbulairport,,,,ist/ltfm,,,,"thearnavutköydistrict,locatedalongtheblackseacoastintheeuropeanpartofistanbulprovince,turkey,isapproximately40kilometerssoutheastofthecitycenterofistanbul.",,,,,,79988272,,,
+1.0,,9,,2024,,,,indiragandhiinternationalairport,,,,del/vidp,,,,"palam,delhi,15km(9.3mi)southwestofthenewdelhirailwaystationand16km(9.9mi)fromthecitycentre",,,,,,77820834,,,

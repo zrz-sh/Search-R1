@@ -1,0 +1,833 @@
+exist_flag_gt,exist_flag_response,专辑名,专辑名_before_map,专辑名_exact_match,专辑名_exact_match_eval_msg,出道日期_exact_match,出道日期_exact_match_eval_msg,出道日期_query,出道日期_response,包含歌曲_llm_judge,包含歌曲_llm_judge_eval_msg,包含歌曲_query,包含歌曲_response,发行时间_exact_match,发行时间_exact_match_eval_msg,发行时间_query,发行时间_response,女团名_llm_judge,女团名_llm_judge_eval_msg,女团名_query,女团名_response,娱乐公司_llm_judge,娱乐公司_llm_judge_eval_msg,娱乐公司_query,娱乐公司_response
+,,girls,The Girls,1.0,key_match,0.0,"exact not match, response: 2020年09月17日, target: 2020年11月17日",2020年11月17日,2020年09月17日,0.0,"Let's analyze each pair according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(It means roughly the semantic content or referring to the same entities is enough, no need for exact matching.)
+
+---
+
+### idx_0  
+**Response:** badgirlblingbling, loveshot, babylove  
+**Target:**  
+girls  
+lllusion  
+lingo（링고）  
+life'stooshort  
+icu（쉬어가도돼/避风港）  
+life'stooshort(englishver.)  
+blackmamba  
+forever  
+dreamscometrue  
+
+**Analysis:**  
+- None of the response items appear in the target list.  
+- The response and target are listing song titles, but completely different ones.  
+- No semantic equivalence or shared entities.  
+
+**Score:** 0
+
+---
+
+### idx_1  
+**Response:** howyoulikethat,lovesickgirls,icecream,q,lidine,lalisa,goodbye  
+**Target:**  
+howyoulikethat  
+icecream  
+prettysavage  
+betyouwanna  
+lovesickgirls  
+crazyoveryou  
+lovetohateme  
+youneverknow  
+
+**Analysis:**  
+- The response includes ""howyoulikethat,"" ""icecream,"" and ""lovesickgirls,"" all present in the target.  
+- The response contains also ""q,"" ""lidine,"" ""lalisa,"" ""goodbye,"" which are not in target, but the criterion does not penalize extra unrelated items.  
+- Since the response contains at least some significant entries that appear in the target, there is some semantic overlap/entity overlap.  
+- The criterion says they don't have to be exact or exhaustive, just roughly semantically equivalent or pointing to same entities.
+
+**Score:** 1
+
+---
+
+### idx_2  
+**Response:** lols,lols(chineseversion),how'sitgoingtobe,icecream(feat.travisscott),goodbye(feat.cardib),lols(japaneseversion),goodbye(japaneseversion)  
+**Target:** whistle（휘파람）  
+boombayah（붐바야）  
+
+**Analysis:**  
+- Completely different song lists. No overlap or semantic equivalence.  
+- None of the target entries appear in the response, or vice versa.  
+
+**Score:** 0
+
+---
+
+### idx_3  
+**Response:** pinkvenom,lols(feat.dojacat),how'sitgoingtobe(feat.dojacat),goodbye(feat.cardib)  
+**Target:** playingwithfire（불장난）  
+stay  
+whistle（acousticver.）  
+
+**Analysis:**  
+- No overlap or semantic equivalence between response and target.  
+- Titles are entirely different.  
+
+**Score:** 0
+
+---
+
+### Final scoring in requested JSON format
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0
+}
+```","girls
+lllusion
+lingo（링고）
+life'stooshort
+icu（쉬어가도돼/避风港）
+life'stooshort(englishver.)
+blackmamba
+forever
+dreamscometrue","badgirlblingbling,loveshot,babylove",0.0,"exact not match, response: 2021年10月22日, target: 2022年7月8日",2022年7月8日,2021年10月22日,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary: Responses that have the same semantics or refer to the same entity as the target answer should get a full score of 1. Exact word-for-word matching is not necessary.
+
+---
+
+Analysis:
+
+- idx_0: response = ""aespa"", target = ""aespa""
+  - Same entity, exactly matches.
+  - Score: 1
+
+- idx_1: response = ""blackpink"", target = ""blackpink""
+  - Same entity, exactly matches.
+  - Score: 1
+
+- idx_2: response = ""blackpink"", target = ""blackpink""
+  - Same entity, exactly matches.
+  - Score: 1
+
+- idx_3: response = ""blackpink"", target = ""blackpink""
+  - Same entity, exactly matches.
+  - Score: 1
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1
+}
+```",aespa,aespa,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- The response only needs to have roughly the same meaning or point to the same entity as the standard answer.  
+- Exact matching of letters is not strictly necessary, as long as the entity is correctly identified.
+
+---
+
+### idx_0
+
+- Target: ""sm"" (SM Entertainment)  
+- Response: ""smentertainment""  
+- Analysis:  
+  The response explicitly includes ""sm"" and ""entertainment,"" clearly indicating ""SM Entertainment,"" which matches the entity ""sm.""  
+- Judgment: Correct and matches the entity. Score = 1
+
+---
+
+### idx_1
+
+- Target: ""yg"" (YG Entertainment)  
+- Response: ""ygentertainment""  
+- Analysis:  
+  The response explicitly says ""ygentertainment,"" clearly identifying ""YG Entertainment,"" matching the entity ""yg.""  
+- Judgment: Correct. Score = 1
+
+---
+
+### idx_2
+
+- Target: ""yg""  
+- Response: ""ygentertainment""  
+- Analysis:  
+  Same as above. Matches the target entity.  
+- Judgment: Correct. Score = 1
+
+---
+
+### idx_3
+
+- Target: ""yg""  
+- Response: ""ygentertainment""  
+- Analysis:  
+  Same reasoning as idx_1 and idx_2.  
+- Judgment: Correct. Score = 1
+
+---
+
+### Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1
+}
+```",sm,smentertainment
+,,thealbum,The Album,1.0,key_match,0.0,"exact not match, response: 2016年08月, target: 2016年8月8日",2016年8月8日,2016年08月,1.0,"Let's analyze each pair according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(It means roughly the semantic content or referring to the same entities is enough, no need for exact matching.)
+
+---
+
+### idx_0  
+**Response:** badgirlblingbling, loveshot, babylove  
+**Target:**  
+girls  
+lllusion  
+lingo（링고）  
+life'stooshort  
+icu（쉬어가도돼/避风港）  
+life'stooshort(englishver.)  
+blackmamba  
+forever  
+dreamscometrue  
+
+**Analysis:**  
+- None of the response items appear in the target list.  
+- The response and target are listing song titles, but completely different ones.  
+- No semantic equivalence or shared entities.  
+
+**Score:** 0
+
+---
+
+### idx_1  
+**Response:** howyoulikethat,lovesickgirls,icecream,q,lidine,lalisa,goodbye  
+**Target:**  
+howyoulikethat  
+icecream  
+prettysavage  
+betyouwanna  
+lovesickgirls  
+crazyoveryou  
+lovetohateme  
+youneverknow  
+
+**Analysis:**  
+- The response includes ""howyoulikethat,"" ""icecream,"" and ""lovesickgirls,"" all present in the target.  
+- The response contains also ""q,"" ""lidine,"" ""lalisa,"" ""goodbye,"" which are not in target, but the criterion does not penalize extra unrelated items.  
+- Since the response contains at least some significant entries that appear in the target, there is some semantic overlap/entity overlap.  
+- The criterion says they don't have to be exact or exhaustive, just roughly semantically equivalent or pointing to same entities.
+
+**Score:** 1
+
+---
+
+### idx_2  
+**Response:** lols,lols(chineseversion),how'sitgoingtobe,icecream(feat.travisscott),goodbye(feat.cardib),lols(japaneseversion),goodbye(japaneseversion)  
+**Target:** whistle（휘파람）  
+boombayah（붐바야）  
+
+**Analysis:**  
+- Completely different song lists. No overlap or semantic equivalence.  
+- None of the target entries appear in the response, or vice versa.  
+
+**Score:** 0
+
+---
+
+### idx_3  
+**Response:** pinkvenom,lols(feat.dojacat),how'sitgoingtobe(feat.dojacat),goodbye(feat.cardib)  
+**Target:** playingwithfire（불장난）  
+stay  
+whistle（acousticver.）  
+
+**Analysis:**  
+- No overlap or semantic equivalence between response and target.  
+- Titles are entirely different.  
+
+**Score:** 0
+
+---
+
+### Final scoring in requested JSON format
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0
+}
+```","howyoulikethat
+icecream
+prettysavage
+betyouwanna
+lovesickgirls
+crazyoveryou
+lovetohateme
+youneverknow","howyoulikethat,lovesickgirls,icecream,q,lidine,lalisa,goodbye",0.0,"exact not match, response: 2020年10月29日, target: 2020年10月2日",2020年10月2日,2020年10月29日,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary: Responses that have the same semantics or refer to the same entity as the target answer should get a full score of 1. Exact word-for-word matching is not necessary.
+
+---
+
+Analysis:
+
+- idx_0: response = ""aespa"", target = ""aespa""
+  - Same entity, exactly matches.
+  - Score: 1
+
+- idx_1: response = ""blackpink"", target = ""blackpink""
+  - Same entity, exactly matches.
+  - Score: 1
+
+- idx_2: response = ""blackpink"", target = ""blackpink""
+  - Same entity, exactly matches.
+  - Score: 1
+
+- idx_3: response = ""blackpink"", target = ""blackpink""
+  - Same entity, exactly matches.
+  - Score: 1
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1
+}
+```",blackpink,blackpink,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- The response only needs to have roughly the same meaning or point to the same entity as the standard answer.  
+- Exact matching of letters is not strictly necessary, as long as the entity is correctly identified.
+
+---
+
+### idx_0
+
+- Target: ""sm"" (SM Entertainment)  
+- Response: ""smentertainment""  
+- Analysis:  
+  The response explicitly includes ""sm"" and ""entertainment,"" clearly indicating ""SM Entertainment,"" which matches the entity ""sm.""  
+- Judgment: Correct and matches the entity. Score = 1
+
+---
+
+### idx_1
+
+- Target: ""yg"" (YG Entertainment)  
+- Response: ""ygentertainment""  
+- Analysis:  
+  The response explicitly says ""ygentertainment,"" clearly identifying ""YG Entertainment,"" matching the entity ""yg.""  
+- Judgment: Correct. Score = 1
+
+---
+
+### idx_2
+
+- Target: ""yg""  
+- Response: ""ygentertainment""  
+- Analysis:  
+  Same as above. Matches the target entity.  
+- Judgment: Correct. Score = 1
+
+---
+
+### idx_3
+
+- Target: ""yg""  
+- Response: ""ygentertainment""  
+- Analysis:  
+  Same reasoning as idx_1 and idx_2.  
+- Judgment: Correct. Score = 1
+
+---
+
+### Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1
+}
+```",yg,ygentertainment
+,,squareone,Square One,1.0,key_match,0.0,"exact not match, response: 2021年12月, target: 2016年8月8日",2016年8月8日,2021年12月,0.0,"Let's analyze each pair according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(It means roughly the semantic content or referring to the same entities is enough, no need for exact matching.)
+
+---
+
+### idx_0  
+**Response:** badgirlblingbling, loveshot, babylove  
+**Target:**  
+girls  
+lllusion  
+lingo（링고）  
+life'stooshort  
+icu（쉬어가도돼/避风港）  
+life'stooshort(englishver.)  
+blackmamba  
+forever  
+dreamscometrue  
+
+**Analysis:**  
+- None of the response items appear in the target list.  
+- The response and target are listing song titles, but completely different ones.  
+- No semantic equivalence or shared entities.  
+
+**Score:** 0
+
+---
+
+### idx_1  
+**Response:** howyoulikethat,lovesickgirls,icecream,q,lidine,lalisa,goodbye  
+**Target:**  
+howyoulikethat  
+icecream  
+prettysavage  
+betyouwanna  
+lovesickgirls  
+crazyoveryou  
+lovetohateme  
+youneverknow  
+
+**Analysis:**  
+- The response includes ""howyoulikethat,"" ""icecream,"" and ""lovesickgirls,"" all present in the target.  
+- The response contains also ""q,"" ""lidine,"" ""lalisa,"" ""goodbye,"" which are not in target, but the criterion does not penalize extra unrelated items.  
+- Since the response contains at least some significant entries that appear in the target, there is some semantic overlap/entity overlap.  
+- The criterion says they don't have to be exact or exhaustive, just roughly semantically equivalent or pointing to same entities.
+
+**Score:** 1
+
+---
+
+### idx_2  
+**Response:** lols,lols(chineseversion),how'sitgoingtobe,icecream(feat.travisscott),goodbye(feat.cardib),lols(japaneseversion),goodbye(japaneseversion)  
+**Target:** whistle（휘파람）  
+boombayah（붐바야）  
+
+**Analysis:**  
+- Completely different song lists. No overlap or semantic equivalence.  
+- None of the target entries appear in the response, or vice versa.  
+
+**Score:** 0
+
+---
+
+### idx_3  
+**Response:** pinkvenom,lols(feat.dojacat),how'sitgoingtobe(feat.dojacat),goodbye(feat.cardib)  
+**Target:** playingwithfire（불장난）  
+stay  
+whistle（acousticver.）  
+
+**Analysis:**  
+- No overlap or semantic equivalence between response and target.  
+- Titles are entirely different.  
+
+**Score:** 0
+
+---
+
+### Final scoring in requested JSON format
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0
+}
+```","whistle（휘파람）
+boombayah（붐바야）","lols,lols(chineseversion),how'sitgoingtobe,icecream(feat.travisscott),goodbye(feat.cardib),lols(japaneseversion),goodbye(japaneseversion)",0.0,"exact not match, response: 2021年12月31日, target: 2016年8月8日",2016年8月8日,2021年12月31日,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary: Responses that have the same semantics or refer to the same entity as the target answer should get a full score of 1. Exact word-for-word matching is not necessary.
+
+---
+
+Analysis:
+
+- idx_0: response = ""aespa"", target = ""aespa""
+  - Same entity, exactly matches.
+  - Score: 1
+
+- idx_1: response = ""blackpink"", target = ""blackpink""
+  - Same entity, exactly matches.
+  - Score: 1
+
+- idx_2: response = ""blackpink"", target = ""blackpink""
+  - Same entity, exactly matches.
+  - Score: 1
+
+- idx_3: response = ""blackpink"", target = ""blackpink""
+  - Same entity, exactly matches.
+  - Score: 1
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1
+}
+```",blackpink,blackpink,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- The response only needs to have roughly the same meaning or point to the same entity as the standard answer.  
+- Exact matching of letters is not strictly necessary, as long as the entity is correctly identified.
+
+---
+
+### idx_0
+
+- Target: ""sm"" (SM Entertainment)  
+- Response: ""smentertainment""  
+- Analysis:  
+  The response explicitly includes ""sm"" and ""entertainment,"" clearly indicating ""SM Entertainment,"" which matches the entity ""sm.""  
+- Judgment: Correct and matches the entity. Score = 1
+
+---
+
+### idx_1
+
+- Target: ""yg"" (YG Entertainment)  
+- Response: ""ygentertainment""  
+- Analysis:  
+  The response explicitly says ""ygentertainment,"" clearly identifying ""YG Entertainment,"" matching the entity ""yg.""  
+- Judgment: Correct. Score = 1
+
+---
+
+### idx_2
+
+- Target: ""yg""  
+- Response: ""ygentertainment""  
+- Analysis:  
+  Same as above. Matches the target entity.  
+- Judgment: Correct. Score = 1
+
+---
+
+### idx_3
+
+- Target: ""yg""  
+- Response: ""ygentertainment""  
+- Analysis:  
+  Same reasoning as idx_1 and idx_2.  
+- Judgment: Correct. Score = 1
+
+---
+
+### Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1
+}
+```",yg,ygentertainment
+,,squaretwo,Square Two,1.0,key_match,0.0,"exact not match, response: 2023年04月, target: 2016年8月8日",2016年8月8日,2023年04月,0.0,"Let's analyze each pair according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(It means roughly the semantic content or referring to the same entities is enough, no need for exact matching.)
+
+---
+
+### idx_0  
+**Response:** badgirlblingbling, loveshot, babylove  
+**Target:**  
+girls  
+lllusion  
+lingo（링고）  
+life'stooshort  
+icu（쉬어가도돼/避风港）  
+life'stooshort(englishver.)  
+blackmamba  
+forever  
+dreamscometrue  
+
+**Analysis:**  
+- None of the response items appear in the target list.  
+- The response and target are listing song titles, but completely different ones.  
+- No semantic equivalence or shared entities.  
+
+**Score:** 0
+
+---
+
+### idx_1  
+**Response:** howyoulikethat,lovesickgirls,icecream,q,lidine,lalisa,goodbye  
+**Target:**  
+howyoulikethat  
+icecream  
+prettysavage  
+betyouwanna  
+lovesickgirls  
+crazyoveryou  
+lovetohateme  
+youneverknow  
+
+**Analysis:**  
+- The response includes ""howyoulikethat,"" ""icecream,"" and ""lovesickgirls,"" all present in the target.  
+- The response contains also ""q,"" ""lidine,"" ""lalisa,"" ""goodbye,"" which are not in target, but the criterion does not penalize extra unrelated items.  
+- Since the response contains at least some significant entries that appear in the target, there is some semantic overlap/entity overlap.  
+- The criterion says they don't have to be exact or exhaustive, just roughly semantically equivalent or pointing to same entities.
+
+**Score:** 1
+
+---
+
+### idx_2  
+**Response:** lols,lols(chineseversion),how'sitgoingtobe,icecream(feat.travisscott),goodbye(feat.cardib),lols(japaneseversion),goodbye(japaneseversion)  
+**Target:** whistle（휘파람）  
+boombayah（붐바야）  
+
+**Analysis:**  
+- Completely different song lists. No overlap or semantic equivalence.  
+- None of the target entries appear in the response, or vice versa.  
+
+**Score:** 0
+
+---
+
+### idx_3  
+**Response:** pinkvenom,lols(feat.dojacat),how'sitgoingtobe(feat.dojacat),goodbye(feat.cardib)  
+**Target:** playingwithfire（불장난）  
+stay  
+whistle（acousticver.）  
+
+**Analysis:**  
+- No overlap or semantic equivalence between response and target.  
+- Titles are entirely different.  
+
+**Score:** 0
+
+---
+
+### Final scoring in requested JSON format
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0
+}
+```","playingwithfire（불장난）
+stay
+whistle（acousticver.）","pinkvenom,lols(feat.dojacat),how'sitgoingtobe(feat.dojacat),goodbye(feat.cardib)",0.0,"exact not match, response: 2023年04月26日, target: 2016年11月1日",2016年11月1日,2023年04月26日,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary: Responses that have the same semantics or refer to the same entity as the target answer should get a full score of 1. Exact word-for-word matching is not necessary.
+
+---
+
+Analysis:
+
+- idx_0: response = ""aespa"", target = ""aespa""
+  - Same entity, exactly matches.
+  - Score: 1
+
+- idx_1: response = ""blackpink"", target = ""blackpink""
+  - Same entity, exactly matches.
+  - Score: 1
+
+- idx_2: response = ""blackpink"", target = ""blackpink""
+  - Same entity, exactly matches.
+  - Score: 1
+
+- idx_3: response = ""blackpink"", target = ""blackpink""
+  - Same entity, exactly matches.
+  - Score: 1
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1
+}
+```",blackpink,blackpink,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- The response only needs to have roughly the same meaning or point to the same entity as the standard answer.  
+- Exact matching of letters is not strictly necessary, as long as the entity is correctly identified.
+
+---
+
+### idx_0
+
+- Target: ""sm"" (SM Entertainment)  
+- Response: ""smentertainment""  
+- Analysis:  
+  The response explicitly includes ""sm"" and ""entertainment,"" clearly indicating ""SM Entertainment,"" which matches the entity ""sm.""  
+- Judgment: Correct and matches the entity. Score = 1
+
+---
+
+### idx_1
+
+- Target: ""yg"" (YG Entertainment)  
+- Response: ""ygentertainment""  
+- Analysis:  
+  The response explicitly says ""ygentertainment,"" clearly identifying ""YG Entertainment,"" matching the entity ""yg.""  
+- Judgment: Correct. Score = 1
+
+---
+
+### idx_2
+
+- Target: ""yg""  
+- Response: ""ygentertainment""  
+- Analysis:  
+  Same as above. Matches the target entity.  
+- Judgment: Correct. Score = 1
+
+---
+
+### idx_3
+
+- Target: ""yg""  
+- Response: ""ygentertainment""  
+- Analysis:  
+  Same reasoning as idx_1 and idx_2.  
+- Judgment: Correct. Score = 1
+
+---
+
+### Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1
+}
+```",yg,ygentertainment
+1.0,,armageddon,,,,,,2020年11月17日,,,,"supernova
+armageddon
+setthetone
+mine
+licorice
+bahama
+longchat(#♥)
+prologue
+livemylife
+声音（목소리；melody）",,,,2024年5月27日,,,,aespa,,,,sm,
+1.0,,babymons7er,,,,,,2023年11月27日,,,,"monsters
+sheesh
+likethat
+stuckinthemiddle(7ver.)
+batterup(7ver.)
+dream
+stuckinthemiddle(remix)",,,,2024年4月1日,,,,babymonster,,,,yg,
+1.0,,blackpink,,,,,,2016年8月8日,,,,"boombayah
+whistle
+playingwithfire
+stay
+asifit'syourlast
+whistle(acousticver.)",,,,2017年8月30日,,,,blackpink,,,,yg,
+1.0,,blackpinkinyourarea,,,,,,2016年8月8日,,,,"boombayah-jpver.-
+whistle-jpver.-
+stay-jpver.-
+asifit'syourlast-jpver.-
+foreveryoung-jpver.-
+really-jpver.-
+seeulater-jpver.-",,,,2018年11月23日,,,,blackpink,,,,yg,
+1.0,,bornpink,,,,,,2016年8月8日,,,,"pinkvenom
+shutdown
+typagirl
+yeahyeahyeah
+hardtolove
+thehappiestgirl
+tally
+readyforlove",,,,2022年9月16日,,,,blackpink,,,,yg,
+1.0,,drama,,,,,,2020年11月17日,,,,"drama
+trickortrick
+don'tblink
+hotairballoon
+yolo
+you",,,,2023年11月10日,,,,aespa,,,,sm,
+1.0,,drip,,,,,,2023年11月27日,,,,"clikclak
+drip
+love,maybe
+reallylikeyou
+billionaire
+loveinmyheart
+wokeupintokyo(ruka&asa)
+forever
+batterup(remix)",,,,2024年11月1日,,,,babymonster,,,,yg,
+,1.0,ive,IVE,,,,,,2022年10月26日,,,,"ive,soonerorlater,you'remine,stay,somuchforus,i'mnotalone",,,,2022年10月26日,,,,ive,,,,smentertainment
+,1.0,ivesecret,IVE SECRET,,,,,,2022年10月26日,,,,xoxz,,,,2025年08月25日,,,,ive,,,,smentertainment
+1.0,,killthislove,,,,,,2016年8月8日,,,,"killthislove
+don'tknowwhattodo
+kickit
+hopenot
+ddu-duddu-du(remix)",,,,2019年4月4日,,,,blackpink,,,,yg,
+1.0,,myworld,,,,,,2020年11月17日,,,,"welcometomyworld
+spicy
+salty&sweet
+thirsty
+i'munhappy
+'tilwemeetagain",,,,2023年5月8日,,,,aespa,,,,sm,
+1.0,,re：blackpink,,,,,,2016年8月8日,,,,"boombayah(붐바야)(japanesever.)
+whistle(japanesever.)
+playingwithfire(japanesever.)
+stay(japanesever.)
+asifit'syourlast(마지막처럼)(japanesever.)
+whistle(휘파람)(acousticver.)
+boombayah(붐바야)(koreanver.)
+whistle(휘파람)(koreanver.)
+playingwithfire(koreanver.)
+stay(koreanver.)",,,,2018年3月28日,,,,blackpink,,,,yg,
+1.0,,savage,,,,,,2020年11月17日,,,,"ænergy
+savage
+i'llmakeyoucry
+yeppiyeppi
+iconic
+luciddream（자각몽）",,,,2021年10月5日,,,,aespa,,,,sm,
+1.0,,squareup,,,,,,2016年8月8日,,,,"ddu-duddu-du
+foreveryoung
+really
+seeulater",,,,2018年6月15日,,,,blackpink,,,,yg,
+1.0,,synk:parallelline-specialdigitalsingle,,,,,,2020年11月17日,,,,"up
+dopamine
+bored!
+spark",,,,2024年10月9日,,,,aespa,,,,sm,
+1.0,,thechase,,,,,,2025年2月24日,,,,"thechase
+butterflies",,,,2025年2月24日,,,,hearts2hearts,,,,sm,
+1.0,,whiplash,,,,,,2020年11月17日,,,,"whiplash
+killit
+flights,notfeelings
+pinkhoodie
+flowers
+justanothergirl",,,,2024年10月21日,,,,aespa,,,,sm,

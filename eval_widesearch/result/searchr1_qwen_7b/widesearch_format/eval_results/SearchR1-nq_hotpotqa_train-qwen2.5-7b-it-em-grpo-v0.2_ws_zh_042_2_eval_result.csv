@@ -1,0 +1,156 @@
+exist_flag_gt,exist_flag_response,作品名称,作品名称_before_map,作品名称_exact_match,作品名称_exact_match_eval_msg,制片国家/地区_llm_judge,制片国家/地区_llm_judge_eval_msg,制片国家/地区_query,制片国家/地区_response,导演_llm_judge,导演_llm_judge_eval_msg,导演_query,导演_response,片长_number_near,片长_number_near_eval_msg,片长_query,片长_response,类型_llm_judge,类型_llm_judge_eval_msg,类型_query,类型_response
+,,星际探索,星际探索,1.0,key_match,1.0,"Let's analyze each response item by item according to the given criteria:
+
+- Criterion is that the response's semantics should be roughly the same or point to the same entity/entities as the target. It's not necessary to be word-for-word. Also, if the response is a subset of the answer, it can be considered correct.
+
+---
+
+**idx_0**  
+- Target: 美国 / 巴西 / 中国大陆 (USA / Brazil / Mainland China)  
+- Response: 美国 (USA)  
+- Analysis: The response is one of the entities listed in the target, which counts as a subset of the answer. According to the criterion, this should be considered correct.  
+- Score: 1
+
+**idx_1**  
+- Target: 捷克 / 斯洛伐克 / 乌克兰 (Czech / Slovakia / Ukraine)  
+- Response: 法国 (France)  
+- Analysis: The response is France, which is not in the target list. Although all entities are countries, the response entity is not in the target's entity set or a subset. So this is incorrect.  
+- Score: 0
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0
+}
+```",美国/巴西/中国大陆,美国,1.0,"首先，阅读标准答案和对应的回答，然后根据评分标准判定是否语义相同或指向的实体一致。
+
+1. idx_0
+- 标准答案：詹姆斯·格雷
+- 回答：詹姆斯·格雷
+- 两者完全相同，指向同一实体，符合“语义相同大致或者指向实体一致即可”的要求。
+- 评分：1
+
+2. idx_1
+- 标准答案：瓦茨拉夫·马尔豪尔
+- 回答：达内兄弟
+- 两者指向不同实体，不语义相同。达内兄弟一般指的是丹尼尔·达内和大卫·达内，而瓦茨拉夫·马尔豪尔是一个不同的人物。
+- 评分：0
+
+综上：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0
+}
+```",詹姆斯·格雷,詹姆斯·格雷,0.0,"number not near, response: 104.0, target: 124.0",124,104,1.0,"分析过程：
+
+idx_0：
+- 标准答案为“科幻/冒险”
+- 回答为“科幻”
+- 根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可”，“类型答出子集且其他内容符合电影内容可算对”
+- “科幻”是“科幻/冒险”的子集，语义符合，因此得分1。
+
+idx_1：
+- 标准答案为“剧情/战争”
+- 回答为“剧情”
+- 同样，“剧情”是“剧情/战争”的子集，语义符合，因此得分1。
+
+最终评分结果：
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1
+}
+```",科幻/冒险,科幻
+,,被涂污的鸟,被涂污的鸟,1.0,key_match,0.0,"Let's analyze each response item by item according to the given criteria:
+
+- Criterion is that the response's semantics should be roughly the same or point to the same entity/entities as the target. It's not necessary to be word-for-word. Also, if the response is a subset of the answer, it can be considered correct.
+
+---
+
+**idx_0**  
+- Target: 美国 / 巴西 / 中国大陆 (USA / Brazil / Mainland China)  
+- Response: 美国 (USA)  
+- Analysis: The response is one of the entities listed in the target, which counts as a subset of the answer. According to the criterion, this should be considered correct.  
+- Score: 1
+
+**idx_1**  
+- Target: 捷克 / 斯洛伐克 / 乌克兰 (Czech / Slovakia / Ukraine)  
+- Response: 法国 (France)  
+- Analysis: The response is France, which is not in the target list. Although all entities are countries, the response entity is not in the target's entity set or a subset. So this is incorrect.  
+- Score: 0
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0
+}
+```",捷克/斯洛伐克/乌克兰,法国,0.0,"首先，阅读标准答案和对应的回答，然后根据评分标准判定是否语义相同或指向的实体一致。
+
+1. idx_0
+- 标准答案：詹姆斯·格雷
+- 回答：詹姆斯·格雷
+- 两者完全相同，指向同一实体，符合“语义相同大致或者指向实体一致即可”的要求。
+- 评分：1
+
+2. idx_1
+- 标准答案：瓦茨拉夫·马尔豪尔
+- 回答：达内兄弟
+- 两者指向不同实体，不语义相同。达内兄弟一般指的是丹尼尔·达内和大卫·达内，而瓦茨拉夫·马尔豪尔是一个不同的人物。
+- 评分：0
+
+综上：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0
+}
+```",瓦茨拉夫·马尔豪尔,达内兄弟,0.0,"number not near, response: 110.0, target: 169.0",169,110,1.0,"分析过程：
+
+idx_0：
+- 标准答案为“科幻/冒险”
+- 回答为“科幻”
+- 根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可”，“类型答出子集且其他内容符合电影内容可算对”
+- “科幻”是“科幻/冒险”的子集，语义符合，因此得分1。
+
+idx_1：
+- 标准答案为“剧情/战争”
+- 回答为“剧情”
+- 同样，“剧情”是“剧情/战争”的子集，语义符合，因此得分1。
+
+最终评分结果：
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1
+}
+```",剧情/战争,剧情
+1.0,,世界的胜利,,,,,,法国/意大利,,,,罗贝尔·盖迪吉昂,,,,107,,,,剧情,
+1.0,,乳牙,,,,,,澳大利亚,,,,香农·墨菲,,,,120,,,,剧情/喜剧,
+1.0,,兰心大剧院,,,,,,中国大陆,,,,娄烨,,,,126,,,,剧情,
+1.0,,关于无尽,,,,,,瑞典/德国/挪威,,,,罗伊·安德森,,,,76,,,,剧情,
+1.0,,厄玛,,,,,,智利,,,,帕布罗·拉雷恩,,,,102,,,,剧情/爱情/音乐,
+1.0,,婚姻故事,,,,,,英国/美国,,,,诺亚·鲍姆巴赫,,,,135,,,,剧情/爱情,
+1.0,,完美候选人,,,,,,沙特阿拉伯/德国,,,,海法·曼苏尔,,,,101,,,,剧情,
+1.0,,小丑,,,,,,美国/加拿大,,,,托德·菲利普斯,,,,118,,,,剧情/惊悚/犯罪,
+1.0,,庄园,,,,,,葡萄牙/法国,,,,蒂亚戈·盖吉思,,,,164,,,,剧情,
+1.0,,我控诉,,,,,,法国/意大利,,,,罗曼·波兰斯基,,,,132,,,,剧情,
+1.0,,真相,,,,,,法国/日本,,,,是枝裕和,,,,106,,,,剧情,
+1.0,,等待野蛮人,,,,,,意大利/美国,,,,西罗·格拉,,,,112,,,,剧情,
+1.0,,继园台七号,,,,,,中国香港/中国大陆,,,,杨凡,,,,125,,,,动画,
+1.0,,自助洗衣店,,,,,,美国,,,,史蒂文·索德伯格,,,,96,,,,喜剧/剧情,
+1.0,,荣誉之客,,,,,,加拿大,,,,阿托姆·伊戈扬,,,,104,,,,剧情,
+1.0,,非常市长,,,,,,意大利,,,,马里奥·马尔托内,,,,118,,,,剧情,
+1.0,,马丁·伊登,,,,,,意大利/法国/德国,,,,皮耶特罗·马切罗,,,,129,,,,剧情,
+1.0,,黄蜂网络,,,,,,法国/西班牙/比利时/巴西,,,,奥利维耶·阿萨亚斯,,,,123,,,,惊悚,
+1.0,,黑手党不再是曾经,,,,,,意大利,,,,弗兰科·马雷斯科,,,,107,,,,纪录片,

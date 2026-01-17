@@ -1,0 +1,1483 @@
+exist_flag_gt,exist_flag_response,restaurant,restaurant_before_map,address_llm_judge,address_llm_judge_eval_msg,address_query,address_response,maincuisinestyle_llm_judge,maincuisinestyle_llm_judge_eval_msg,maincuisinestyle_query,maincuisinestyle_response,restaurant_exact_match,restaurant_exact_match_eval_msg
+,,allénoparisaupavillonledoyen,Alléno Paris au Pavillon Ledoyen,0.0,"Let's analyze each pair item by item according to the given criterion:
+
+Criterion:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- No need for word-for-word correspondence.
+
+---
+
+**idx_0**  
+Response: ""32avenuemontaigne,75008paris""  
+Target: ""8av.dutuit,75008paris""  
+- Different street names (""avenue montaigne"" vs ""avenue dutuit"") and numbers (32 vs 8).  
+- Although both in 75008, clearly different addresses, so not the same entity.  
+Score: 0
+
+---
+
+**idx_1**  
+Response: ""2placedesvosges,75004paris""  
+Target: ""84ruedevarenne,75007paris""  
+- Different streets, different arrondissements (04 vs 07), very different addresses.  
+- Different entities.  
+Score: 0
+
+---
+
+**idx_2**  
+Response: ""18ruedelafontaine-au-roi,75004paris""  
+Target: ""5ruecoqhéron,75001paris""  
+- Different streets, different numbers, different arrondissements (75004 vs 75001).  
+- Not the same entity.  
+Score: 0
+
+---
+
+**idx_3**  
+Response: ""9placedesvosges,75004paris""  
+Target: ""9placedesvosges,75004paris""  
+- Exactly the same address.  
+Score: 1
+
+---
+
+**idx_4**  
+Response: ""20avenuemontaigne,75008paris""  
+Target: ""31av.georgev,75008paris""  
+- Different streets (avenue montaigne vs avenue george v), different street numbers. Both in 75008.  
+- Different entities.  
+Score: 0
+
+---
+
+**idx_5**  
+Response: ""14ruedesèvres,75006paris""  
+Target: ""42av.gabriel,75008paris""  
+- Different street and arrondissement.  
+- Different entities.  
+Score: 0
+
+---
+
+**idx_6**  
+Response: ""7ruedel'abreuvoir,75008paris""  
+Target: ""8quaidulouvre,75001paris(chevalblancparishotel)""  
+- Different street, different arrondissement (75008 vs 75001).  
+- Different entity.  
+Score: 0
+
+---
+
+**idx_7**  
+Response: ""12avenuemontaigne,75008paris""  
+Target: ""112ruedufaubourgsaint-honoré,75008paris""  
+- Different street, different number (12 avenue montaigne vs 112 rue du faubourg saint-honoré).  
+- Both in 75008 but distinct addresses.  
+Score: 0
+
+---
+
+### Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```","8av.dutuit,75008paris","32avenuemontaigne,75008paris",1.0,"Let's analyze each pair carefully based on the criterion:  
+- Semantics should be approximately the same or pointing to the same entity.  
+- Word-for-word match is not necessary.  
+- One-to-one phrase matching is also not necessary, just relevant content.
+
+---
+
+### idx_0  
+- Response: ""frenchfinedining""  
+- Target: ""refinedfrenchclassicwithmorderntechniques""  
+Analysis:  
+Both refer to French cuisine, with the target emphasizing refinement, classic style with modern techniques—which aligns tightly with the concept of French fine dining. ""French fine dining"" is a reasonable summary of ""refined French classic with modern techniques.""  
+**Score: 1**
+
+---
+
+### idx_1  
+- Response: ""frenchfinedining""  
+- Target: ""vegetable-forward，garden-inspired french""  
+Analysis:  
+Target emphasizes a vegetable-forward, garden-inspired style of French cuisine—this is more specific than generic ""fine dining,"" focusing on ingredient theme. While ""frenchfinedining"" covers the cuisine type, it misses the key qualifier (vegetable-forward, garden-inspired). It does not approximate or particularly indicate the exact theme.  
+**Score: 0**
+
+---
+
+### idx_2  
+- Response: ""japanesefinedining""  
+- Target: ""franco-japanesefusion""  
+Analysis:  
+Target describes a fusion between French and Japanese cuisine. Response is Japanese fine dining only, ignoring the French fusion aspect. The meaning is close but missing the fusion concept, which is an important part of the target’s meaning. ""Japanese fine dining"" alone does not capture that.  
+**Score: 0**
+
+---
+
+### idx_3  
+- Response: ""frenchfinedining""  
+- Target: ""timelessfrenchhautecuisine""  
+Analysis:  
+Both refer to classic or haute French cuisine, i.e., high-end French fine dining. The response captures the essence correctly since haute cuisine is high fine dining.  
+**Score: 1**
+
+---
+
+### idx_4  
+- Response: ""frenchfinedining""  
+- Target: ""contemporaryfrench""  
+Analysis:  
+Contemporary French is a modern style of French cuisine, ""frenchfinedining"" is a broader category but includes contemporary styles. The response aligns sufficiently with the target as it conveys French cuisine in a fine dining context.  
+**Score: 1**
+
+---
+
+### idx_5  
+- Response: ""frenchfinedining""  
+- Target: ""frenchwithglobalinspirations""  
+Analysis:  
+Target indicates French cuisine influenced by global elements. ""French fine dining"" covers the French fine dining aspect but doesn’t mention global inspirations. However, since the broad category of french fine dining could include global inspirations, the semantics approximately overlap enough.  
+**Score: 1**
+
+---
+
+### idx_6  
+- Response: ""frenchfinedining""  
+- Target: ""artisticfrenchwithsauce-centricdishes""  
+Analysis:  
+Target is French cuisine with artistic style and emphasis on sauces. Response just states ""French fine dining,"" which is broad but does imply high quality French cuisine including sauce techniques. This is a sufficiently close semantic match given the criterion.  
+**Score: 1**
+
+---
+
+### idx_7  
+- Response: ""frenchfinedining""  
+- Target: ""hautefrench(traditionalwithinnovativetwists)""  
+Analysis:  
+Target is traditional haute French cuisine with innovation. Response ""french fine dining"" correctly summarizes haute French style. The response captures the target well enough.  
+**Score: 1**
+
+---
+
+### Final Scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1
+}
+```",refinedfrenchclassicwithmorderntechniques,frenchfinedining,1.0,key_match
+,,arpège,Arpège,0.0,"Let's analyze each pair item by item according to the given criterion:
+
+Criterion:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- No need for word-for-word correspondence.
+
+---
+
+**idx_0**  
+Response: ""32avenuemontaigne,75008paris""  
+Target: ""8av.dutuit,75008paris""  
+- Different street names (""avenue montaigne"" vs ""avenue dutuit"") and numbers (32 vs 8).  
+- Although both in 75008, clearly different addresses, so not the same entity.  
+Score: 0
+
+---
+
+**idx_1**  
+Response: ""2placedesvosges,75004paris""  
+Target: ""84ruedevarenne,75007paris""  
+- Different streets, different arrondissements (04 vs 07), very different addresses.  
+- Different entities.  
+Score: 0
+
+---
+
+**idx_2**  
+Response: ""18ruedelafontaine-au-roi,75004paris""  
+Target: ""5ruecoqhéron,75001paris""  
+- Different streets, different numbers, different arrondissements (75004 vs 75001).  
+- Not the same entity.  
+Score: 0
+
+---
+
+**idx_3**  
+Response: ""9placedesvosges,75004paris""  
+Target: ""9placedesvosges,75004paris""  
+- Exactly the same address.  
+Score: 1
+
+---
+
+**idx_4**  
+Response: ""20avenuemontaigne,75008paris""  
+Target: ""31av.georgev,75008paris""  
+- Different streets (avenue montaigne vs avenue george v), different street numbers. Both in 75008.  
+- Different entities.  
+Score: 0
+
+---
+
+**idx_5**  
+Response: ""14ruedesèvres,75006paris""  
+Target: ""42av.gabriel,75008paris""  
+- Different street and arrondissement.  
+- Different entities.  
+Score: 0
+
+---
+
+**idx_6**  
+Response: ""7ruedel'abreuvoir,75008paris""  
+Target: ""8quaidulouvre,75001paris(chevalblancparishotel)""  
+- Different street, different arrondissement (75008 vs 75001).  
+- Different entity.  
+Score: 0
+
+---
+
+**idx_7**  
+Response: ""12avenuemontaigne,75008paris""  
+Target: ""112ruedufaubourgsaint-honoré,75008paris""  
+- Different street, different number (12 avenue montaigne vs 112 rue du faubourg saint-honoré).  
+- Both in 75008 but distinct addresses.  
+Score: 0
+
+---
+
+### Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```","84ruedevarenne,75007paris","2placedesvosges,75004paris",0.0,"Let's analyze each pair carefully based on the criterion:  
+- Semantics should be approximately the same or pointing to the same entity.  
+- Word-for-word match is not necessary.  
+- One-to-one phrase matching is also not necessary, just relevant content.
+
+---
+
+### idx_0  
+- Response: ""frenchfinedining""  
+- Target: ""refinedfrenchclassicwithmorderntechniques""  
+Analysis:  
+Both refer to French cuisine, with the target emphasizing refinement, classic style with modern techniques—which aligns tightly with the concept of French fine dining. ""French fine dining"" is a reasonable summary of ""refined French classic with modern techniques.""  
+**Score: 1**
+
+---
+
+### idx_1  
+- Response: ""frenchfinedining""  
+- Target: ""vegetable-forward，garden-inspired french""  
+Analysis:  
+Target emphasizes a vegetable-forward, garden-inspired style of French cuisine—this is more specific than generic ""fine dining,"" focusing on ingredient theme. While ""frenchfinedining"" covers the cuisine type, it misses the key qualifier (vegetable-forward, garden-inspired). It does not approximate or particularly indicate the exact theme.  
+**Score: 0**
+
+---
+
+### idx_2  
+- Response: ""japanesefinedining""  
+- Target: ""franco-japanesefusion""  
+Analysis:  
+Target describes a fusion between French and Japanese cuisine. Response is Japanese fine dining only, ignoring the French fusion aspect. The meaning is close but missing the fusion concept, which is an important part of the target’s meaning. ""Japanese fine dining"" alone does not capture that.  
+**Score: 0**
+
+---
+
+### idx_3  
+- Response: ""frenchfinedining""  
+- Target: ""timelessfrenchhautecuisine""  
+Analysis:  
+Both refer to classic or haute French cuisine, i.e., high-end French fine dining. The response captures the essence correctly since haute cuisine is high fine dining.  
+**Score: 1**
+
+---
+
+### idx_4  
+- Response: ""frenchfinedining""  
+- Target: ""contemporaryfrench""  
+Analysis:  
+Contemporary French is a modern style of French cuisine, ""frenchfinedining"" is a broader category but includes contemporary styles. The response aligns sufficiently with the target as it conveys French cuisine in a fine dining context.  
+**Score: 1**
+
+---
+
+### idx_5  
+- Response: ""frenchfinedining""  
+- Target: ""frenchwithglobalinspirations""  
+Analysis:  
+Target indicates French cuisine influenced by global elements. ""French fine dining"" covers the French fine dining aspect but doesn’t mention global inspirations. However, since the broad category of french fine dining could include global inspirations, the semantics approximately overlap enough.  
+**Score: 1**
+
+---
+
+### idx_6  
+- Response: ""frenchfinedining""  
+- Target: ""artisticfrenchwithsauce-centricdishes""  
+Analysis:  
+Target is French cuisine with artistic style and emphasis on sauces. Response just states ""French fine dining,"" which is broad but does imply high quality French cuisine including sauce techniques. This is a sufficiently close semantic match given the criterion.  
+**Score: 1**
+
+---
+
+### idx_7  
+- Response: ""frenchfinedining""  
+- Target: ""hautefrench(traditionalwithinnovativetwists)""  
+Analysis:  
+Target is traditional haute French cuisine with innovation. Response ""french fine dining"" correctly summarizes haute French style. The response captures the target well enough.  
+**Score: 1**
+
+---
+
+### Final Scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1
+}
+```",vegetable-forward，garden-inspiredfrench,frenchfinedining,1.0,key_match
+,,kei,Kei,0.0,"Let's analyze each pair item by item according to the given criterion:
+
+Criterion:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- No need for word-for-word correspondence.
+
+---
+
+**idx_0**  
+Response: ""32avenuemontaigne,75008paris""  
+Target: ""8av.dutuit,75008paris""  
+- Different street names (""avenue montaigne"" vs ""avenue dutuit"") and numbers (32 vs 8).  
+- Although both in 75008, clearly different addresses, so not the same entity.  
+Score: 0
+
+---
+
+**idx_1**  
+Response: ""2placedesvosges,75004paris""  
+Target: ""84ruedevarenne,75007paris""  
+- Different streets, different arrondissements (04 vs 07), very different addresses.  
+- Different entities.  
+Score: 0
+
+---
+
+**idx_2**  
+Response: ""18ruedelafontaine-au-roi,75004paris""  
+Target: ""5ruecoqhéron,75001paris""  
+- Different streets, different numbers, different arrondissements (75004 vs 75001).  
+- Not the same entity.  
+Score: 0
+
+---
+
+**idx_3**  
+Response: ""9placedesvosges,75004paris""  
+Target: ""9placedesvosges,75004paris""  
+- Exactly the same address.  
+Score: 1
+
+---
+
+**idx_4**  
+Response: ""20avenuemontaigne,75008paris""  
+Target: ""31av.georgev,75008paris""  
+- Different streets (avenue montaigne vs avenue george v), different street numbers. Both in 75008.  
+- Different entities.  
+Score: 0
+
+---
+
+**idx_5**  
+Response: ""14ruedesèvres,75006paris""  
+Target: ""42av.gabriel,75008paris""  
+- Different street and arrondissement.  
+- Different entities.  
+Score: 0
+
+---
+
+**idx_6**  
+Response: ""7ruedel'abreuvoir,75008paris""  
+Target: ""8quaidulouvre,75001paris(chevalblancparishotel)""  
+- Different street, different arrondissement (75008 vs 75001).  
+- Different entity.  
+Score: 0
+
+---
+
+**idx_7**  
+Response: ""12avenuemontaigne,75008paris""  
+Target: ""112ruedufaubourgsaint-honoré,75008paris""  
+- Different street, different number (12 avenue montaigne vs 112 rue du faubourg saint-honoré).  
+- Both in 75008 but distinct addresses.  
+Score: 0
+
+---
+
+### Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```","5ruecoqhéron,75001paris","18ruedelafontaine-au-roi,75004paris",0.0,"Let's analyze each pair carefully based on the criterion:  
+- Semantics should be approximately the same or pointing to the same entity.  
+- Word-for-word match is not necessary.  
+- One-to-one phrase matching is also not necessary, just relevant content.
+
+---
+
+### idx_0  
+- Response: ""frenchfinedining""  
+- Target: ""refinedfrenchclassicwithmorderntechniques""  
+Analysis:  
+Both refer to French cuisine, with the target emphasizing refinement, classic style with modern techniques—which aligns tightly with the concept of French fine dining. ""French fine dining"" is a reasonable summary of ""refined French classic with modern techniques.""  
+**Score: 1**
+
+---
+
+### idx_1  
+- Response: ""frenchfinedining""  
+- Target: ""vegetable-forward，garden-inspired french""  
+Analysis:  
+Target emphasizes a vegetable-forward, garden-inspired style of French cuisine—this is more specific than generic ""fine dining,"" focusing on ingredient theme. While ""frenchfinedining"" covers the cuisine type, it misses the key qualifier (vegetable-forward, garden-inspired). It does not approximate or particularly indicate the exact theme.  
+**Score: 0**
+
+---
+
+### idx_2  
+- Response: ""japanesefinedining""  
+- Target: ""franco-japanesefusion""  
+Analysis:  
+Target describes a fusion between French and Japanese cuisine. Response is Japanese fine dining only, ignoring the French fusion aspect. The meaning is close but missing the fusion concept, which is an important part of the target’s meaning. ""Japanese fine dining"" alone does not capture that.  
+**Score: 0**
+
+---
+
+### idx_3  
+- Response: ""frenchfinedining""  
+- Target: ""timelessfrenchhautecuisine""  
+Analysis:  
+Both refer to classic or haute French cuisine, i.e., high-end French fine dining. The response captures the essence correctly since haute cuisine is high fine dining.  
+**Score: 1**
+
+---
+
+### idx_4  
+- Response: ""frenchfinedining""  
+- Target: ""contemporaryfrench""  
+Analysis:  
+Contemporary French is a modern style of French cuisine, ""frenchfinedining"" is a broader category but includes contemporary styles. The response aligns sufficiently with the target as it conveys French cuisine in a fine dining context.  
+**Score: 1**
+
+---
+
+### idx_5  
+- Response: ""frenchfinedining""  
+- Target: ""frenchwithglobalinspirations""  
+Analysis:  
+Target indicates French cuisine influenced by global elements. ""French fine dining"" covers the French fine dining aspect but doesn’t mention global inspirations. However, since the broad category of french fine dining could include global inspirations, the semantics approximately overlap enough.  
+**Score: 1**
+
+---
+
+### idx_6  
+- Response: ""frenchfinedining""  
+- Target: ""artisticfrenchwithsauce-centricdishes""  
+Analysis:  
+Target is French cuisine with artistic style and emphasis on sauces. Response just states ""French fine dining,"" which is broad but does imply high quality French cuisine including sauce techniques. This is a sufficiently close semantic match given the criterion.  
+**Score: 1**
+
+---
+
+### idx_7  
+- Response: ""frenchfinedining""  
+- Target: ""hautefrench(traditionalwithinnovativetwists)""  
+Analysis:  
+Target is traditional haute French cuisine with innovation. Response ""french fine dining"" correctly summarizes haute French style. The response captures the target well enough.  
+**Score: 1**
+
+---
+
+### Final Scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1
+}
+```",franco-japanesefusion,japanesefinedining,1.0,key_match
+,,l'ambroisie,L'Ambroisie,1.0,"Let's analyze each pair item by item according to the given criterion:
+
+Criterion:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- No need for word-for-word correspondence.
+
+---
+
+**idx_0**  
+Response: ""32avenuemontaigne,75008paris""  
+Target: ""8av.dutuit,75008paris""  
+- Different street names (""avenue montaigne"" vs ""avenue dutuit"") and numbers (32 vs 8).  
+- Although both in 75008, clearly different addresses, so not the same entity.  
+Score: 0
+
+---
+
+**idx_1**  
+Response: ""2placedesvosges,75004paris""  
+Target: ""84ruedevarenne,75007paris""  
+- Different streets, different arrondissements (04 vs 07), very different addresses.  
+- Different entities.  
+Score: 0
+
+---
+
+**idx_2**  
+Response: ""18ruedelafontaine-au-roi,75004paris""  
+Target: ""5ruecoqhéron,75001paris""  
+- Different streets, different numbers, different arrondissements (75004 vs 75001).  
+- Not the same entity.  
+Score: 0
+
+---
+
+**idx_3**  
+Response: ""9placedesvosges,75004paris""  
+Target: ""9placedesvosges,75004paris""  
+- Exactly the same address.  
+Score: 1
+
+---
+
+**idx_4**  
+Response: ""20avenuemontaigne,75008paris""  
+Target: ""31av.georgev,75008paris""  
+- Different streets (avenue montaigne vs avenue george v), different street numbers. Both in 75008.  
+- Different entities.  
+Score: 0
+
+---
+
+**idx_5**  
+Response: ""14ruedesèvres,75006paris""  
+Target: ""42av.gabriel,75008paris""  
+- Different street and arrondissement.  
+- Different entities.  
+Score: 0
+
+---
+
+**idx_6**  
+Response: ""7ruedel'abreuvoir,75008paris""  
+Target: ""8quaidulouvre,75001paris(chevalblancparishotel)""  
+- Different street, different arrondissement (75008 vs 75001).  
+- Different entity.  
+Score: 0
+
+---
+
+**idx_7**  
+Response: ""12avenuemontaigne,75008paris""  
+Target: ""112ruedufaubourgsaint-honoré,75008paris""  
+- Different street, different number (12 avenue montaigne vs 112 rue du faubourg saint-honoré).  
+- Both in 75008 but distinct addresses.  
+Score: 0
+
+---
+
+### Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```","9placedesvosges,75004paris","9placedesvosges,75004paris",1.0,"Let's analyze each pair carefully based on the criterion:  
+- Semantics should be approximately the same or pointing to the same entity.  
+- Word-for-word match is not necessary.  
+- One-to-one phrase matching is also not necessary, just relevant content.
+
+---
+
+### idx_0  
+- Response: ""frenchfinedining""  
+- Target: ""refinedfrenchclassicwithmorderntechniques""  
+Analysis:  
+Both refer to French cuisine, with the target emphasizing refinement, classic style with modern techniques—which aligns tightly with the concept of French fine dining. ""French fine dining"" is a reasonable summary of ""refined French classic with modern techniques.""  
+**Score: 1**
+
+---
+
+### idx_1  
+- Response: ""frenchfinedining""  
+- Target: ""vegetable-forward，garden-inspired french""  
+Analysis:  
+Target emphasizes a vegetable-forward, garden-inspired style of French cuisine—this is more specific than generic ""fine dining,"" focusing on ingredient theme. While ""frenchfinedining"" covers the cuisine type, it misses the key qualifier (vegetable-forward, garden-inspired). It does not approximate or particularly indicate the exact theme.  
+**Score: 0**
+
+---
+
+### idx_2  
+- Response: ""japanesefinedining""  
+- Target: ""franco-japanesefusion""  
+Analysis:  
+Target describes a fusion between French and Japanese cuisine. Response is Japanese fine dining only, ignoring the French fusion aspect. The meaning is close but missing the fusion concept, which is an important part of the target’s meaning. ""Japanese fine dining"" alone does not capture that.  
+**Score: 0**
+
+---
+
+### idx_3  
+- Response: ""frenchfinedining""  
+- Target: ""timelessfrenchhautecuisine""  
+Analysis:  
+Both refer to classic or haute French cuisine, i.e., high-end French fine dining. The response captures the essence correctly since haute cuisine is high fine dining.  
+**Score: 1**
+
+---
+
+### idx_4  
+- Response: ""frenchfinedining""  
+- Target: ""contemporaryfrench""  
+Analysis:  
+Contemporary French is a modern style of French cuisine, ""frenchfinedining"" is a broader category but includes contemporary styles. The response aligns sufficiently with the target as it conveys French cuisine in a fine dining context.  
+**Score: 1**
+
+---
+
+### idx_5  
+- Response: ""frenchfinedining""  
+- Target: ""frenchwithglobalinspirations""  
+Analysis:  
+Target indicates French cuisine influenced by global elements. ""French fine dining"" covers the French fine dining aspect but doesn’t mention global inspirations. However, since the broad category of french fine dining could include global inspirations, the semantics approximately overlap enough.  
+**Score: 1**
+
+---
+
+### idx_6  
+- Response: ""frenchfinedining""  
+- Target: ""artisticfrenchwithsauce-centricdishes""  
+Analysis:  
+Target is French cuisine with artistic style and emphasis on sauces. Response just states ""French fine dining,"" which is broad but does imply high quality French cuisine including sauce techniques. This is a sufficiently close semantic match given the criterion.  
+**Score: 1**
+
+---
+
+### idx_7  
+- Response: ""frenchfinedining""  
+- Target: ""hautefrench(traditionalwithinnovativetwists)""  
+Analysis:  
+Target is traditional haute French cuisine with innovation. Response ""french fine dining"" correctly summarizes haute French style. The response captures the target well enough.  
+**Score: 1**
+
+---
+
+### Final Scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1
+}
+```",timelessfrenchhautecuisine,frenchfinedining,1.0,key_match
+,,lecinq,Le Cinq,0.0,"Let's analyze each pair item by item according to the given criterion:
+
+Criterion:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- No need for word-for-word correspondence.
+
+---
+
+**idx_0**  
+Response: ""32avenuemontaigne,75008paris""  
+Target: ""8av.dutuit,75008paris""  
+- Different street names (""avenue montaigne"" vs ""avenue dutuit"") and numbers (32 vs 8).  
+- Although both in 75008, clearly different addresses, so not the same entity.  
+Score: 0
+
+---
+
+**idx_1**  
+Response: ""2placedesvosges,75004paris""  
+Target: ""84ruedevarenne,75007paris""  
+- Different streets, different arrondissements (04 vs 07), very different addresses.  
+- Different entities.  
+Score: 0
+
+---
+
+**idx_2**  
+Response: ""18ruedelafontaine-au-roi,75004paris""  
+Target: ""5ruecoqhéron,75001paris""  
+- Different streets, different numbers, different arrondissements (75004 vs 75001).  
+- Not the same entity.  
+Score: 0
+
+---
+
+**idx_3**  
+Response: ""9placedesvosges,75004paris""  
+Target: ""9placedesvosges,75004paris""  
+- Exactly the same address.  
+Score: 1
+
+---
+
+**idx_4**  
+Response: ""20avenuemontaigne,75008paris""  
+Target: ""31av.georgev,75008paris""  
+- Different streets (avenue montaigne vs avenue george v), different street numbers. Both in 75008.  
+- Different entities.  
+Score: 0
+
+---
+
+**idx_5**  
+Response: ""14ruedesèvres,75006paris""  
+Target: ""42av.gabriel,75008paris""  
+- Different street and arrondissement.  
+- Different entities.  
+Score: 0
+
+---
+
+**idx_6**  
+Response: ""7ruedel'abreuvoir,75008paris""  
+Target: ""8quaidulouvre,75001paris(chevalblancparishotel)""  
+- Different street, different arrondissement (75008 vs 75001).  
+- Different entity.  
+Score: 0
+
+---
+
+**idx_7**  
+Response: ""12avenuemontaigne,75008paris""  
+Target: ""112ruedufaubourgsaint-honoré,75008paris""  
+- Different street, different number (12 avenue montaigne vs 112 rue du faubourg saint-honoré).  
+- Both in 75008 but distinct addresses.  
+Score: 0
+
+---
+
+### Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```","31av.georgev,75008paris","20avenuemontaigne,75008paris",1.0,"Let's analyze each pair carefully based on the criterion:  
+- Semantics should be approximately the same or pointing to the same entity.  
+- Word-for-word match is not necessary.  
+- One-to-one phrase matching is also not necessary, just relevant content.
+
+---
+
+### idx_0  
+- Response: ""frenchfinedining""  
+- Target: ""refinedfrenchclassicwithmorderntechniques""  
+Analysis:  
+Both refer to French cuisine, with the target emphasizing refinement, classic style with modern techniques—which aligns tightly with the concept of French fine dining. ""French fine dining"" is a reasonable summary of ""refined French classic with modern techniques.""  
+**Score: 1**
+
+---
+
+### idx_1  
+- Response: ""frenchfinedining""  
+- Target: ""vegetable-forward，garden-inspired french""  
+Analysis:  
+Target emphasizes a vegetable-forward, garden-inspired style of French cuisine—this is more specific than generic ""fine dining,"" focusing on ingredient theme. While ""frenchfinedining"" covers the cuisine type, it misses the key qualifier (vegetable-forward, garden-inspired). It does not approximate or particularly indicate the exact theme.  
+**Score: 0**
+
+---
+
+### idx_2  
+- Response: ""japanesefinedining""  
+- Target: ""franco-japanesefusion""  
+Analysis:  
+Target describes a fusion between French and Japanese cuisine. Response is Japanese fine dining only, ignoring the French fusion aspect. The meaning is close but missing the fusion concept, which is an important part of the target’s meaning. ""Japanese fine dining"" alone does not capture that.  
+**Score: 0**
+
+---
+
+### idx_3  
+- Response: ""frenchfinedining""  
+- Target: ""timelessfrenchhautecuisine""  
+Analysis:  
+Both refer to classic or haute French cuisine, i.e., high-end French fine dining. The response captures the essence correctly since haute cuisine is high fine dining.  
+**Score: 1**
+
+---
+
+### idx_4  
+- Response: ""frenchfinedining""  
+- Target: ""contemporaryfrench""  
+Analysis:  
+Contemporary French is a modern style of French cuisine, ""frenchfinedining"" is a broader category but includes contemporary styles. The response aligns sufficiently with the target as it conveys French cuisine in a fine dining context.  
+**Score: 1**
+
+---
+
+### idx_5  
+- Response: ""frenchfinedining""  
+- Target: ""frenchwithglobalinspirations""  
+Analysis:  
+Target indicates French cuisine influenced by global elements. ""French fine dining"" covers the French fine dining aspect but doesn’t mention global inspirations. However, since the broad category of french fine dining could include global inspirations, the semantics approximately overlap enough.  
+**Score: 1**
+
+---
+
+### idx_6  
+- Response: ""frenchfinedining""  
+- Target: ""artisticfrenchwithsauce-centricdishes""  
+Analysis:  
+Target is French cuisine with artistic style and emphasis on sauces. Response just states ""French fine dining,"" which is broad but does imply high quality French cuisine including sauce techniques. This is a sufficiently close semantic match given the criterion.  
+**Score: 1**
+
+---
+
+### idx_7  
+- Response: ""frenchfinedining""  
+- Target: ""hautefrench(traditionalwithinnovativetwists)""  
+Analysis:  
+Target is traditional haute French cuisine with innovation. Response ""french fine dining"" correctly summarizes haute French style. The response captures the target well enough.  
+**Score: 1**
+
+---
+
+### Final Scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1
+}
+```",contemporaryfrench,frenchfinedining,1.0,key_match
+,,legabriel-lareserveparis,Le Gabriel - La Réserve Paris,0.0,"Let's analyze each pair item by item according to the given criterion:
+
+Criterion:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- No need for word-for-word correspondence.
+
+---
+
+**idx_0**  
+Response: ""32avenuemontaigne,75008paris""  
+Target: ""8av.dutuit,75008paris""  
+- Different street names (""avenue montaigne"" vs ""avenue dutuit"") and numbers (32 vs 8).  
+- Although both in 75008, clearly different addresses, so not the same entity.  
+Score: 0
+
+---
+
+**idx_1**  
+Response: ""2placedesvosges,75004paris""  
+Target: ""84ruedevarenne,75007paris""  
+- Different streets, different arrondissements (04 vs 07), very different addresses.  
+- Different entities.  
+Score: 0
+
+---
+
+**idx_2**  
+Response: ""18ruedelafontaine-au-roi,75004paris""  
+Target: ""5ruecoqhéron,75001paris""  
+- Different streets, different numbers, different arrondissements (75004 vs 75001).  
+- Not the same entity.  
+Score: 0
+
+---
+
+**idx_3**  
+Response: ""9placedesvosges,75004paris""  
+Target: ""9placedesvosges,75004paris""  
+- Exactly the same address.  
+Score: 1
+
+---
+
+**idx_4**  
+Response: ""20avenuemontaigne,75008paris""  
+Target: ""31av.georgev,75008paris""  
+- Different streets (avenue montaigne vs avenue george v), different street numbers. Both in 75008.  
+- Different entities.  
+Score: 0
+
+---
+
+**idx_5**  
+Response: ""14ruedesèvres,75006paris""  
+Target: ""42av.gabriel,75008paris""  
+- Different street and arrondissement.  
+- Different entities.  
+Score: 0
+
+---
+
+**idx_6**  
+Response: ""7ruedel'abreuvoir,75008paris""  
+Target: ""8quaidulouvre,75001paris(chevalblancparishotel)""  
+- Different street, different arrondissement (75008 vs 75001).  
+- Different entity.  
+Score: 0
+
+---
+
+**idx_7**  
+Response: ""12avenuemontaigne,75008paris""  
+Target: ""112ruedufaubourgsaint-honoré,75008paris""  
+- Different street, different number (12 avenue montaigne vs 112 rue du faubourg saint-honoré).  
+- Both in 75008 but distinct addresses.  
+Score: 0
+
+---
+
+### Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```","42av.gabriel,75008paris","14ruedesèvres,75006paris",1.0,"Let's analyze each pair carefully based on the criterion:  
+- Semantics should be approximately the same or pointing to the same entity.  
+- Word-for-word match is not necessary.  
+- One-to-one phrase matching is also not necessary, just relevant content.
+
+---
+
+### idx_0  
+- Response: ""frenchfinedining""  
+- Target: ""refinedfrenchclassicwithmorderntechniques""  
+Analysis:  
+Both refer to French cuisine, with the target emphasizing refinement, classic style with modern techniques—which aligns tightly with the concept of French fine dining. ""French fine dining"" is a reasonable summary of ""refined French classic with modern techniques.""  
+**Score: 1**
+
+---
+
+### idx_1  
+- Response: ""frenchfinedining""  
+- Target: ""vegetable-forward，garden-inspired french""  
+Analysis:  
+Target emphasizes a vegetable-forward, garden-inspired style of French cuisine—this is more specific than generic ""fine dining,"" focusing on ingredient theme. While ""frenchfinedining"" covers the cuisine type, it misses the key qualifier (vegetable-forward, garden-inspired). It does not approximate or particularly indicate the exact theme.  
+**Score: 0**
+
+---
+
+### idx_2  
+- Response: ""japanesefinedining""  
+- Target: ""franco-japanesefusion""  
+Analysis:  
+Target describes a fusion between French and Japanese cuisine. Response is Japanese fine dining only, ignoring the French fusion aspect. The meaning is close but missing the fusion concept, which is an important part of the target’s meaning. ""Japanese fine dining"" alone does not capture that.  
+**Score: 0**
+
+---
+
+### idx_3  
+- Response: ""frenchfinedining""  
+- Target: ""timelessfrenchhautecuisine""  
+Analysis:  
+Both refer to classic or haute French cuisine, i.e., high-end French fine dining. The response captures the essence correctly since haute cuisine is high fine dining.  
+**Score: 1**
+
+---
+
+### idx_4  
+- Response: ""frenchfinedining""  
+- Target: ""contemporaryfrench""  
+Analysis:  
+Contemporary French is a modern style of French cuisine, ""frenchfinedining"" is a broader category but includes contemporary styles. The response aligns sufficiently with the target as it conveys French cuisine in a fine dining context.  
+**Score: 1**
+
+---
+
+### idx_5  
+- Response: ""frenchfinedining""  
+- Target: ""frenchwithglobalinspirations""  
+Analysis:  
+Target indicates French cuisine influenced by global elements. ""French fine dining"" covers the French fine dining aspect but doesn’t mention global inspirations. However, since the broad category of french fine dining could include global inspirations, the semantics approximately overlap enough.  
+**Score: 1**
+
+---
+
+### idx_6  
+- Response: ""frenchfinedining""  
+- Target: ""artisticfrenchwithsauce-centricdishes""  
+Analysis:  
+Target is French cuisine with artistic style and emphasis on sauces. Response just states ""French fine dining,"" which is broad but does imply high quality French cuisine including sauce techniques. This is a sufficiently close semantic match given the criterion.  
+**Score: 1**
+
+---
+
+### idx_7  
+- Response: ""frenchfinedining""  
+- Target: ""hautefrench(traditionalwithinnovativetwists)""  
+Analysis:  
+Target is traditional haute French cuisine with innovation. Response ""french fine dining"" correctly summarizes haute French style. The response captures the target well enough.  
+**Score: 1**
+
+---
+
+### Final Scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1
+}
+```",frenchwithglobalinspirations,frenchfinedining,1.0,key_match
+,,plénitude,Plénitude - Cheval Blanc Paris,0.0,"Let's analyze each pair item by item according to the given criterion:
+
+Criterion:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- No need for word-for-word correspondence.
+
+---
+
+**idx_0**  
+Response: ""32avenuemontaigne,75008paris""  
+Target: ""8av.dutuit,75008paris""  
+- Different street names (""avenue montaigne"" vs ""avenue dutuit"") and numbers (32 vs 8).  
+- Although both in 75008, clearly different addresses, so not the same entity.  
+Score: 0
+
+---
+
+**idx_1**  
+Response: ""2placedesvosges,75004paris""  
+Target: ""84ruedevarenne,75007paris""  
+- Different streets, different arrondissements (04 vs 07), very different addresses.  
+- Different entities.  
+Score: 0
+
+---
+
+**idx_2**  
+Response: ""18ruedelafontaine-au-roi,75004paris""  
+Target: ""5ruecoqhéron,75001paris""  
+- Different streets, different numbers, different arrondissements (75004 vs 75001).  
+- Not the same entity.  
+Score: 0
+
+---
+
+**idx_3**  
+Response: ""9placedesvosges,75004paris""  
+Target: ""9placedesvosges,75004paris""  
+- Exactly the same address.  
+Score: 1
+
+---
+
+**idx_4**  
+Response: ""20avenuemontaigne,75008paris""  
+Target: ""31av.georgev,75008paris""  
+- Different streets (avenue montaigne vs avenue george v), different street numbers. Both in 75008.  
+- Different entities.  
+Score: 0
+
+---
+
+**idx_5**  
+Response: ""14ruedesèvres,75006paris""  
+Target: ""42av.gabriel,75008paris""  
+- Different street and arrondissement.  
+- Different entities.  
+Score: 0
+
+---
+
+**idx_6**  
+Response: ""7ruedel'abreuvoir,75008paris""  
+Target: ""8quaidulouvre,75001paris(chevalblancparishotel)""  
+- Different street, different arrondissement (75008 vs 75001).  
+- Different entity.  
+Score: 0
+
+---
+
+**idx_7**  
+Response: ""12avenuemontaigne,75008paris""  
+Target: ""112ruedufaubourgsaint-honoré,75008paris""  
+- Different street, different number (12 avenue montaigne vs 112 rue du faubourg saint-honoré).  
+- Both in 75008 but distinct addresses.  
+Score: 0
+
+---
+
+### Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```","8quaidulouvre,75001paris(chevalblancparishotel)","7ruedel'abreuvoir,75008paris",1.0,"Let's analyze each pair carefully based on the criterion:  
+- Semantics should be approximately the same or pointing to the same entity.  
+- Word-for-word match is not necessary.  
+- One-to-one phrase matching is also not necessary, just relevant content.
+
+---
+
+### idx_0  
+- Response: ""frenchfinedining""  
+- Target: ""refinedfrenchclassicwithmorderntechniques""  
+Analysis:  
+Both refer to French cuisine, with the target emphasizing refinement, classic style with modern techniques—which aligns tightly with the concept of French fine dining. ""French fine dining"" is a reasonable summary of ""refined French classic with modern techniques.""  
+**Score: 1**
+
+---
+
+### idx_1  
+- Response: ""frenchfinedining""  
+- Target: ""vegetable-forward，garden-inspired french""  
+Analysis:  
+Target emphasizes a vegetable-forward, garden-inspired style of French cuisine—this is more specific than generic ""fine dining,"" focusing on ingredient theme. While ""frenchfinedining"" covers the cuisine type, it misses the key qualifier (vegetable-forward, garden-inspired). It does not approximate or particularly indicate the exact theme.  
+**Score: 0**
+
+---
+
+### idx_2  
+- Response: ""japanesefinedining""  
+- Target: ""franco-japanesefusion""  
+Analysis:  
+Target describes a fusion between French and Japanese cuisine. Response is Japanese fine dining only, ignoring the French fusion aspect. The meaning is close but missing the fusion concept, which is an important part of the target’s meaning. ""Japanese fine dining"" alone does not capture that.  
+**Score: 0**
+
+---
+
+### idx_3  
+- Response: ""frenchfinedining""  
+- Target: ""timelessfrenchhautecuisine""  
+Analysis:  
+Both refer to classic or haute French cuisine, i.e., high-end French fine dining. The response captures the essence correctly since haute cuisine is high fine dining.  
+**Score: 1**
+
+---
+
+### idx_4  
+- Response: ""frenchfinedining""  
+- Target: ""contemporaryfrench""  
+Analysis:  
+Contemporary French is a modern style of French cuisine, ""frenchfinedining"" is a broader category but includes contemporary styles. The response aligns sufficiently with the target as it conveys French cuisine in a fine dining context.  
+**Score: 1**
+
+---
+
+### idx_5  
+- Response: ""frenchfinedining""  
+- Target: ""frenchwithglobalinspirations""  
+Analysis:  
+Target indicates French cuisine influenced by global elements. ""French fine dining"" covers the French fine dining aspect but doesn’t mention global inspirations. However, since the broad category of french fine dining could include global inspirations, the semantics approximately overlap enough.  
+**Score: 1**
+
+---
+
+### idx_6  
+- Response: ""frenchfinedining""  
+- Target: ""artisticfrenchwithsauce-centricdishes""  
+Analysis:  
+Target is French cuisine with artistic style and emphasis on sauces. Response just states ""French fine dining,"" which is broad but does imply high quality French cuisine including sauce techniques. This is a sufficiently close semantic match given the criterion.  
+**Score: 1**
+
+---
+
+### idx_7  
+- Response: ""frenchfinedining""  
+- Target: ""hautefrench(traditionalwithinnovativetwists)""  
+Analysis:  
+Target is traditional haute French cuisine with innovation. Response ""french fine dining"" correctly summarizes haute French style. The response captures the target well enough.  
+**Score: 1**
+
+---
+
+### Final Scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1
+}
+```",artisticfrenchwithsauce-centricdishes,frenchfinedining,1.0,key_match
+,,épicure,Épicure,0.0,"Let's analyze each pair item by item according to the given criterion:
+
+Criterion:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- No need for word-for-word correspondence.
+
+---
+
+**idx_0**  
+Response: ""32avenuemontaigne,75008paris""  
+Target: ""8av.dutuit,75008paris""  
+- Different street names (""avenue montaigne"" vs ""avenue dutuit"") and numbers (32 vs 8).  
+- Although both in 75008, clearly different addresses, so not the same entity.  
+Score: 0
+
+---
+
+**idx_1**  
+Response: ""2placedesvosges,75004paris""  
+Target: ""84ruedevarenne,75007paris""  
+- Different streets, different arrondissements (04 vs 07), very different addresses.  
+- Different entities.  
+Score: 0
+
+---
+
+**idx_2**  
+Response: ""18ruedelafontaine-au-roi,75004paris""  
+Target: ""5ruecoqhéron,75001paris""  
+- Different streets, different numbers, different arrondissements (75004 vs 75001).  
+- Not the same entity.  
+Score: 0
+
+---
+
+**idx_3**  
+Response: ""9placedesvosges,75004paris""  
+Target: ""9placedesvosges,75004paris""  
+- Exactly the same address.  
+Score: 1
+
+---
+
+**idx_4**  
+Response: ""20avenuemontaigne,75008paris""  
+Target: ""31av.georgev,75008paris""  
+- Different streets (avenue montaigne vs avenue george v), different street numbers. Both in 75008.  
+- Different entities.  
+Score: 0
+
+---
+
+**idx_5**  
+Response: ""14ruedesèvres,75006paris""  
+Target: ""42av.gabriel,75008paris""  
+- Different street and arrondissement.  
+- Different entities.  
+Score: 0
+
+---
+
+**idx_6**  
+Response: ""7ruedel'abreuvoir,75008paris""  
+Target: ""8quaidulouvre,75001paris(chevalblancparishotel)""  
+- Different street, different arrondissement (75008 vs 75001).  
+- Different entity.  
+Score: 0
+
+---
+
+**idx_7**  
+Response: ""12avenuemontaigne,75008paris""  
+Target: ""112ruedufaubourgsaint-honoré,75008paris""  
+- Different street, different number (12 avenue montaigne vs 112 rue du faubourg saint-honoré).  
+- Both in 75008 but distinct addresses.  
+Score: 0
+
+---
+
+### Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```","112ruedufaubourgsaint-honoré,75008paris","12avenuemontaigne,75008paris",1.0,"Let's analyze each pair carefully based on the criterion:  
+- Semantics should be approximately the same or pointing to the same entity.  
+- Word-for-word match is not necessary.  
+- One-to-one phrase matching is also not necessary, just relevant content.
+
+---
+
+### idx_0  
+- Response: ""frenchfinedining""  
+- Target: ""refinedfrenchclassicwithmorderntechniques""  
+Analysis:  
+Both refer to French cuisine, with the target emphasizing refinement, classic style with modern techniques—which aligns tightly with the concept of French fine dining. ""French fine dining"" is a reasonable summary of ""refined French classic with modern techniques.""  
+**Score: 1**
+
+---
+
+### idx_1  
+- Response: ""frenchfinedining""  
+- Target: ""vegetable-forward，garden-inspired french""  
+Analysis:  
+Target emphasizes a vegetable-forward, garden-inspired style of French cuisine—this is more specific than generic ""fine dining,"" focusing on ingredient theme. While ""frenchfinedining"" covers the cuisine type, it misses the key qualifier (vegetable-forward, garden-inspired). It does not approximate or particularly indicate the exact theme.  
+**Score: 0**
+
+---
+
+### idx_2  
+- Response: ""japanesefinedining""  
+- Target: ""franco-japanesefusion""  
+Analysis:  
+Target describes a fusion between French and Japanese cuisine. Response is Japanese fine dining only, ignoring the French fusion aspect. The meaning is close but missing the fusion concept, which is an important part of the target’s meaning. ""Japanese fine dining"" alone does not capture that.  
+**Score: 0**
+
+---
+
+### idx_3  
+- Response: ""frenchfinedining""  
+- Target: ""timelessfrenchhautecuisine""  
+Analysis:  
+Both refer to classic or haute French cuisine, i.e., high-end French fine dining. The response captures the essence correctly since haute cuisine is high fine dining.  
+**Score: 1**
+
+---
+
+### idx_4  
+- Response: ""frenchfinedining""  
+- Target: ""contemporaryfrench""  
+Analysis:  
+Contemporary French is a modern style of French cuisine, ""frenchfinedining"" is a broader category but includes contemporary styles. The response aligns sufficiently with the target as it conveys French cuisine in a fine dining context.  
+**Score: 1**
+
+---
+
+### idx_5  
+- Response: ""frenchfinedining""  
+- Target: ""frenchwithglobalinspirations""  
+Analysis:  
+Target indicates French cuisine influenced by global elements. ""French fine dining"" covers the French fine dining aspect but doesn’t mention global inspirations. However, since the broad category of french fine dining could include global inspirations, the semantics approximately overlap enough.  
+**Score: 1**
+
+---
+
+### idx_6  
+- Response: ""frenchfinedining""  
+- Target: ""artisticfrenchwithsauce-centricdishes""  
+Analysis:  
+Target is French cuisine with artistic style and emphasis on sauces. Response just states ""French fine dining,"" which is broad but does imply high quality French cuisine including sauce techniques. This is a sufficiently close semantic match given the criterion.  
+**Score: 1**
+
+---
+
+### idx_7  
+- Response: ""frenchfinedining""  
+- Target: ""hautefrench(traditionalwithinnovativetwists)""  
+Analysis:  
+Target is traditional haute French cuisine with innovation. Response ""french fine dining"" correctly summarizes haute French style. The response captures the target well enough.  
+**Score: 1**
+
+---
+
+### Final Scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1
+}
+```",hautefrench(traditionalwithinnovativetwists),frenchfinedining,1.0,key_match
+1.0,,leprécatelan,,,,"routedesuresnes–boisdeboulogne,75016paris",,,,"creative,contemporary",,,
+1.0,,pierregagnaire,,,,"6ruebalzac,75008paris",,,,avant-gardefrench,,,

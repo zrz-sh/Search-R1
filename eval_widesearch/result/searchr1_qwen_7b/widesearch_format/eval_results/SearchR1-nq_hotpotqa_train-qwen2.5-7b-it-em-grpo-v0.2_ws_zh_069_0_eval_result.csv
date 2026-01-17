@@ -1,0 +1,268 @@
+exist_flag_gt,exist_flag_response,论文名称,论文名称_before_map,公司名称_llm_judge,公司名称_llm_judge_eval_msg,公司名称_query,公司名称_response,发表日期_exact_match,发表日期_exact_match_eval_msg,发表日期_query,发表日期_response,论文作者_llm_judge,论文作者_llm_judge_eval_msg,论文作者_query,论文作者_response,论文名称_exact_match,论文名称_exact_match_eval_msg
+,,autokaggle:amulti-agentframeworkforautonomousdatasciencecompetitions,FinRL Contests 2023-2025,0.0,"首先根据题目提供的判定标准：
+
+- 只要语义相同大致或者指向的实体一致即可，回答不要求字字对应，但必须是在语义或实体上的对应。
+
+针对每一项：
+
+1. idx_0:
+   - 标准答案（target）是 “北京字节跳动科技有限公司”
+   - 回答（response）是 “seed”
+   - “seed”与“北京字节跳动科技有限公司”没有语义上的一致，也没有指向同一实体。
+   - 因此答案错误，得分0。
+
+2. idx_1:
+   - 标准答案（target）是 “杭州深度求索人工智能基础技术研究有限公司”
+   - 回答（response）是 “deepseek”
+   - “deepseek”可能是“深度求索”（deep seek）的英文表达或简写，且和公司名字中的“深度求索”部分对应，实体指向有一定关联。
+   - 因此语义上指向一致，得分1。
+
+最终评分结果为：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1
+}
+```",北京字节跳动科技有限公司,seed,0.0,"exact not match, response: 2025-05-16, target: 2024-10-27",2024-10-27,2025-05-16,1.0,"Let's analyze each response against the target according to the criterion:
+
+Criterion: 和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。  
+(As long as the meaning is roughly the same or refers to the same entity, it's acceptable; no need for exact word-by-word matching.)
+
+---
+
+**idx_0**  
+- Response: ""renetal.""  
+- Target: List of 15 names separated by commas.
+
+Analysis:  
+- The response ""renetal."" is likely a shorthand or an abbreviation referring to ""Ren et al."" which usually means Ren and collaborators/authors.  
+- The target is a list of specific authors.  
+- ""Ren et al."" implicitly includes the authors after Ren, so it is semantically referring to multiple authors including one with surname Ren (assuming that ""renetal."" is a shortened form).  
+- Therefore, it can be considered as pointing to the same entity (the author/group of authors), even though the full list is not explicitly written.  
+- Since the criterion allows rough semantic matching or referring to the same entity, this response should be considered acceptable.
+
+Score: 1
+
+---
+
+**idx_1**  
+- Response: ""renetal.""  
+- Target: Much longer list of authors (over 100 names plus ""wangdingzengetal."" at the end).
+
+Analysis:  
+- Same as above, ""renetal."" is short, but it still points to ""Ren et al."" which is a shorthand for multiple authors, presumably including Ren.  
+- The target is a very long list of authors, so ""ren et al."" would be an appropriate shorthand, assuming the original source agrees with this naming.  
+- Criterion allows rough semantic equivalence or pointing to the same entity, so shorthand ""renetal."" counts as correct if it implies the entire group.  
+- Thus, response is acceptable.
+
+Score: 1
+
+---
+
+### Final scoring output:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1
+}
+```
+","zimingli,qianbozang,davidma,jiaweiguo,tuneyzheng,minghaoliu,xinyaoniu,yuewang,jianyang,jiahengliu,wanjunzhong,wangchunshuzhou,wenhaohuang,gezhang",renetal.,1.0,key_match
+,,deepseek-v3technicalreport,DeepSeek-V3.2: Pushing the Frontier,1.0,"首先根据题目提供的判定标准：
+
+- 只要语义相同大致或者指向的实体一致即可，回答不要求字字对应，但必须是在语义或实体上的对应。
+
+针对每一项：
+
+1. idx_0:
+   - 标准答案（target）是 “北京字节跳动科技有限公司”
+   - 回答（response）是 “seed”
+   - “seed”与“北京字节跳动科技有限公司”没有语义上的一致，也没有指向同一实体。
+   - 因此答案错误，得分0。
+
+2. idx_1:
+   - 标准答案（target）是 “杭州深度求索人工智能基础技术研究有限公司”
+   - 回答（response）是 “deepseek”
+   - “deepseek”可能是“深度求索”（deep seek）的英文表达或简写，且和公司名字中的“深度求索”部分对应，实体指向有一定关联。
+   - 因此语义上指向一致，得分1。
+
+最终评分结果为：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1
+}
+```",杭州深度求索人工智能基础技术研究有限公司,deepseek,0.0,"exact not match, response: 2025-12-02, target: 2024-12-27",2024-12-27,2025-12-02,1.0,"Let's analyze each response against the target according to the criterion:
+
+Criterion: 和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。  
+(As long as the meaning is roughly the same or refers to the same entity, it's acceptable; no need for exact word-by-word matching.)
+
+---
+
+**idx_0**  
+- Response: ""renetal.""  
+- Target: List of 15 names separated by commas.
+
+Analysis:  
+- The response ""renetal."" is likely a shorthand or an abbreviation referring to ""Ren et al."" which usually means Ren and collaborators/authors.  
+- The target is a list of specific authors.  
+- ""Ren et al."" implicitly includes the authors after Ren, so it is semantically referring to multiple authors including one with surname Ren (assuming that ""renetal."" is a shortened form).  
+- Therefore, it can be considered as pointing to the same entity (the author/group of authors), even though the full list is not explicitly written.  
+- Since the criterion allows rough semantic matching or referring to the same entity, this response should be considered acceptable.
+
+Score: 1
+
+---
+
+**idx_1**  
+- Response: ""renetal.""  
+- Target: Much longer list of authors (over 100 names plus ""wangdingzengetal."" at the end).
+
+Analysis:  
+- Same as above, ""renetal."" is short, but it still points to ""Ren et al."" which is a shorthand for multiple authors, presumably including Ren.  
+- The target is a very long list of authors, so ""ren et al."" would be an appropriate shorthand, assuming the original source agrees with this naming.  
+- Criterion allows rough semantic equivalence or pointing to the same entity, so shorthand ""renetal."" counts as correct if it implies the entire group.  
+- Thus, response is acceptable.
+
+Score: 1
+
+---
+
+### Final scoring output:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1
+}
+```
+","deepseek-ai,aixinliu,beifeng,bingxue,bingxuanwang,bochaowu,chengdalu,chenggangzhao,chengqideng,chenyuzhang,chongruan,damaidai,dayaguo,dejianyang,delichen,dongjieji,erhangli,fangyunlin,fucongdai,fuliluo,guangbohao,guantingchen,guoweili,h.zhang,hanbao,hanweixu,haochengwang,haoweizhang,honghuiding,huajianxin,huazuogao,huili,huiqu,j.l.cai,jianliang,jianzhongguo,jiaqini,jiashili,jiaweiwang,jinchen,jingchangchen,jingyangyuan,junjieqiu,junlongli,junxiaosong,kaidong,kaihu,kaigegao,kangguan,kexinhuang,kuaiyu,leanwang,lecongzhang,leixu,leyixia,liangzhao,litongwang,liyuezhang,mengli,miaojunwang,mingchuanzhang,minghuazhang,minghuitang,mingmingli,ningtian,panpanhuang,peiyiwang,pengzhang,qianchengwang,qihaozhu,qinyuchen,qiushidu,r.j.chen,r.l.jin,ruiqige,ruisongzhang,ruizhepan,runjiwang,runxinxu,ruoyuzhang,ruyichen,s.s.li,shanghaolu,shangyanzhou,shanhuangchen,shaoqingwu,shengfengye,shengfengye,shirongma,shiyuwang,shuangzhou,shuipingyu,shunfengzhou,shutingpan,t.wang,taoyun,tianpei,tianyusun,w.l.xiao,wangdingzengetal.(100additionalauthorsnotshown)",renetal.,1.0,key_match
+1.0,,3ditscene:editinganyscenevialanguage-guideddisentangledgaussiansplatting,,,,北京字节跳动科技有限公司,,,,2024-05-28,,,,"qihangzhang,yinghaoxu,chaoyangwang,hsin-yinglee,gordonwetzstein,boleizhou,ceyuanyang",,,
+1.0,,activerewardmodeling:adaptivepreferencelabelingforlargelanguagemodelalignment,,,,北京字节跳动科技有限公司,,,,2025-06-26,,,,"yunyishen,haosun,jean-francoiston",,,
+1.0,,anall-atomgenerativemodelfordesigningproteincomplexes,,,,北京字节跳动科技有限公司,,,,2025-05-31,,,,"ruizhechen,dongyuxue,xiangxinzhou,zaixiangzheng,xiangxiangzeng,quanquangu",,,
+1.0,,animageisworth32tokensforreconstructionandgeneration,,,,北京字节跳动科技有限公司,,,,2024-06-11,,,,"qihangyu,markweber,xueqingdeng,xiaohuishen,danielcremers,liang-chiehchen",,,
+1.0,,"anx-raysignificantlyvariable,luminous,type2quasaratz=2.99withamassivehostgalaxy",,,,北京字节跳动科技有限公司,,,,2024-09-03,,,,"xiuruizhao,stefanomarchesi,marcoajello,francescacivano,robertogilli,giorgiolanzuisi,iváne.lópez,rosssilver,nuriatorres-albà,peterg.boorman,andrealunapizzetti",,,
+1.0,,astra:towardgeneral-purposemobilerobotsviahierarchicalmultimodallearning,,,,北京字节跳动科技有限公司,,,,2025-06-06,,,,"shengchen,peiyuhe,jiaxinhu,ziyangliu,yanshengwang,taoxu,chizhang,chongchongzhang,chaoan,shiyucai,duocao,kangpingchen,shuaichu,tianweichu,mingdidan,mindu,weiweifang,pengyoufu,junkaihu,xiaoweijiang,zhaodijiang,fuxuanli,junli,minghuili,mingyaoli,yanchangli,zhibinli,guangmingliu,kairuiliu,lihaoliu,weizhiliu,xiaoshunliu,yufeiliu,yunfeiliu,qianglu,yuanfeiluo,xianglv,hongyingma,saima,lingxianmi,shasa,hongxiangshu,leitian,chengzhiwang,jiayuwang,kaijiewang,qingyiwang,renwenwang,taowang,weiwang,xiruiwang,chaowei,xuguangwei,zijunxia,zhaohaoxiao,tingshuaiyan,liyanyang,yifanyang,zhikaiyang,zhongyin,liyuan,liuchunyuan,chizhang,jinyangzhang,junhuizhang,lingezhang,zhenyizhang,zheyuzhang,dongjiezhu,hangli,yangangzhang",,,
+1.0,,audioldm2:learningholisticaudiogenerationwithself-supervisedpretraining,,,,北京字节跳动科技有限公司,,,,2023-09-09,,,,"haoheliu,qiaotian,yiyuan,xuboliu,xinhaomei,qiuqiangkong,yupingwang,wenwuwang,yuxuanwang,markd.plumbley",,,
+1.0,,autoregressivepretrainingwithmambainvision,,,,北京字节跳动科技有限公司,,,,2024-06-11,,,,"suchengren,xianhangli,haoqintu,fengwang,fangxunshu,leizhang,jierumei,linjieyang,pengwang,hengwang,alanyuille,cihangxie",,,
+1.0,,bfs-prover:scalablebest-firsttreesearchforllm-basedautomatictheoremproving,,,,北京字节跳动科技有限公司,,,,2025-02-05,,,,"ranxin,chenguangxi,jieyang,fengchen,hangwu,xiaxiao,yifansun,shenzheng,kaishen",,,
+1.0,,brite:bootstrappingreinforcedthinkingprocesstoenhancelanguagemodelreasoning,,,,北京字节跳动科技有限公司,,,,2025-06-06,,,,"hanzhong,yutongyin,shenaozhang,xiaojunxu,yuanxinliu,yifeizuo,zhihanliu,boyiliu,siruizheng,hongyiguo,liweiwang,mingyihong,zhaoranwang",,,
+1.0,,bytecheckpoint:aunifiedcheckpointingsystemforlargefoundationmodeldevelopment,,,,北京字节跳动科技有限公司,,,,2024-07-29,,,,"boruiwan,mingjihan,yiyaosheng,yanghuapeng,haibinlin,mofanzhang,zhichaolai,menghanyu,jundazhang,zuquansong,xinliu,chuanwu",,,
+1.0,,bytetransformer:ahigh-performancetransformerboostedforvariable-lengthinputs,,,,北京字节跳动科技有限公司,,,,2023-02-20,,,,"yujiazhai,chengquanjiang,leyuanwang,xiaoyingjia,shangzhang,zizhongchen,xinliu,yibozhu",,,
+1.0,,classdiffusion:morealignedpersonalizationtuningwithexplicitclassguidance,,,,北京字节跳动科技有限公司,,,,2025-03-14,,,,"jiannanhuang,junhaoliew,hanshuyan,yuyangyin,yaozhao,humphreyshi,yunchaowei",,,
+1.0,,classificationdonerightforvision-languagepre-training,,,,北京字节跳动科技有限公司,,,,2024-11-05,,,,"zilonghuang,qinghaoye,bingyikang,jiashifeng,haoqifan",,,
+1.0,,comet:fine-grainedcomputation-communicationoverlappingformixture-of-experts,,,,北京字节跳动科技有限公司,,,,2025-02-27,,,,"shulaizhang,ningxinzheng,haibinlin,zihengjiang,wenleibao,chengquanjiang,qihou,weihaocui,sizezheng,li-wenchang,quanchen,xinliu",,,
+1.0,,"dapo:anopen-sourcellmreinforcementlearningsystematscale
+downloadpaper",,,,北京字节跳动科技有限公司,,,,2025-03-18,,,,"qiyingyu,zhengzhang,ruofeizhu,yufengyuan,xiaochenzuo,yuyue,tiantianfan,gaohongliu,lingjunliu,xinliu,haibinlin,zhiqilin,bolema,guangmingsheng,yuxuantong,chizhang,mofanzhang,wangzhang,hangzhu,jinhuazhu,jiazechen,jiangjiechen,chengyiwang,hongliyu,weinandai,yuxuansong,xiangpengwei,haozhou,jingjingliu,wei-yingma,ya-qinzhang,linyan,muqiao,yonghuiwu,mingxuanwang",,,
+1.0,,deepseek-coder-v2:breakingthebarrierofclosed-sourcemodelsincodeintelligence,,,,杭州深度求索人工智能基础技术研究有限公司,,,,2024-06-17,,,,"deepseek-ai,qihaozhu,dayaguo,zhihongshao,dejianyang,peiyiwang,runxinxu,y.wu,yukunli,huazuogao,shirongma,wangdingzeng,xiaobi,zihuigu,hanweixu,damaidai,kaidong,liyuezhang,yishipiao,zhibingou,zhendaxie,zhewenhao,bingxuanwang,junxiaosong,delichen,xinxie,kangguan,yuxiangyou,aixinliu,qiushidu,wenjungao,xuanlu,qinyuchen,yaohuiwang,chengqideng,jiashili,chenggangzhao,chongruan,fuliluo,wenfengliang",,,
+1.0,,deepseek-coder:whenthelargelanguagemodelmeetsprogramming--theriseofcodeintelligence,,,,杭州深度求索人工智能基础技术研究有限公司,,,,2024-01-25,,,,"dayaguo,qihaozhu,dejianyang,zhendaxie,kaidong,wentaozhang,guantingchen,xiaobi,y.wu,y.k.li,fuliluo,yingfeixiong,wenfengliang",,,
+1.0,,deepseek-prover:advancingtheoremprovinginllmsthroughlarge-scalesyntheticdata,,,,杭州深度求索人工智能基础技术研究有限公司,,,,2024-05-23,,,,"huajianxin,dayaguo,zhihongshao,zhizhouren,qihaozhu,boliu,chongruan,wendali,xiaodanliang",,,
+1.0,,deepseek-r1:incentivizingreasoningcapabilityinllmsviareinforcementlearning,,,,杭州深度求索人工智能基础技术研究有限公司,,,,2025-01-22,,,,"deepseek-ai,dayaguo,dejianyang,haoweizhang,junxiaosong,ruoyuzhang,runxinxu,qihaozhu,shirongma,peiyiwang,xiaobi,xiaokangzhang,xingkaiyu,yuwu,z.f.wu,zhibingou,zhihongshao,zhuoshuli,ziyigao,aixinliu,bingxue,bingxuanwang,bochaowu,beifeng,chengdalu,chenggangzhao,chengqideng,chenyuzhang,chongruan,damaidai,delichen,dongjieji,erhangli,fangyunlin,fucongdai,fuliluo,guangbohao,guantingchen,guoweili,h.zhang,hanbao,hanweixu,haochengwang,honghuiding,huajianxin,huazuogao,huiqu,huili,jianzhongguo,jiashili,jiaweiwang,jingchangchen,jingyangyuan,junjieqiu,junlongli,j.l.cai,jiaqini,jianliang,jinchen,kaidong,kaihu,kaigegao,kangguan,kexinhuang,kuaiyu,leanwang,lecongzhang,liangzhao,litongwang,liyuezhang,leixu,leyixia,mingchuanzhang,minghuazhang,minghuitang,mengli,miaojunwang,mingmingli,ningtian,panpanhuang,pengzhang,qianchengwang,qinyuchen,qiushidu,ruiqige,ruisongzhang,ruizhepan,runjiwang,r.j.chen,r.l.jin,ruyichen,shanghaolu,shangyanzhou,shanhuangchen,shengfengye,shiyuwang,shuipingyu,shunfengzhou,shutingpan,s.s.lietal.(100additionalauthorsnotshown)",,,
+1.0,,"deepseek-v2:astrong,economical,andefficientmixture-of-expertslanguagemodel",,,,杭州深度求索人工智能基础技术研究有限公司,,,,2024-05-07,,,,"deepseek-ai,aixinliu,beifeng,binwang,bingxuanwang,boliu,chenggangzhao,chengqidengr,chongruan,damaidai,dayaguo,dejianyang,delichen,dongjieji,erhangli,fangyunlin,fuliluo,guangbohao,guantingchen,guoweili,h.zhang,hanweixu,haoyang,haoweizhang,honghuiding,huajianxin,huazuogao,huili,huiqu,j.l.cai,jianliang,jianzhongguo,jiaqini,jiashili,jinchen,jingyangyuan,junjieqiu,junxiaosong,kaidong,kaigegao,kangguan,leanwang,lecongzhang,leixu,leyixia,liangzhao,liyuezhang,mengli,miaojunwang,mingchuanzhang,minghuazhang,minghuitang,mingmingli,ningtian,panpanhuang,peiyiwang,pengzhang,qihaozhu,qinyuchen,qiushidu,r.j.chen,r.l.jin,ruiqige,ruizhepan,runxinxu,ruyichen,s.s.li,shanghaolu,shangyanzhou,shanhuangchen,shaoqingwu,shengfengye,shirongma,shiyuwang,shuangzhou,shuipingyu,shunfengzhou,sizezheng,t.wang,tianpei,tianyuan,tianyusun,w.l.xiao,wangdingzeng,weian,wenliu,wenfengliang,wenjungao,wentaozhang,x.q.li,xiangyuejin,xianzuwang,xiaobi,xiaodongliu,xiaohanwang,xiaojinshen,xiaokangchen,xiaoshachen,xiaotaonie,xiaowensunetal.(57additionalauthorsnotshown)",,,
+1.0,,deepseekllm:scalingopen-sourcelanguagemodelswithlongtermism,,,,杭州深度求索人工智能基础技术研究有限公司,,,,2024-01-05,,,,"xiaobi,delichen,guantingchen,shanhuangchen,damaidai,chengqideng,honghuiding,kaidong,qiushidu,zhefu,huazuogao,kaigegao,wenjungao,ruiqige,kangguan,dayaguo,jianzhongguo,guangbohao,zhewenhao,yinghe,wenjiehu,panpanhuang,erhangli,guoweili,jiashili,yaoli,y.k.li,wenfengliang,fangyunlin,a.x.liu,boliu,wenliu,xiaodongliu,xinliu,yiyuanliu,haoyulu,shanghaolu,fuliluo,shirongma,xiaotaonie,tianpei,yishipiao,junjieqiu,huiqu,tongzhengren,zehuiren,chongruan,zhanglisha,zhihongshao,junxiaosong,xuechengsu,jingxiangsun,yaofengsun,minghuitang,bingxuanwang,peiyiwang,shiyuwang,yaohuiwang,yongjiwang,tongwu,y.wu,xinxie,zhendaxie,ziweixie,yiliangxiong,hanweixu,r.x.xu,yanhongxu,dejianyang,yuxiangyou,shuipingyu,xingkaiyu,b.zhang,haoweizhang,lecongzhang,liyuezhang,mingchuanzhang,minghuazhang,wentaozhang,yichaozhang,chenggangzhao,yaozhao,shangyanzhou,shunfengzhou,qihaozhu,yuhengzou",,,
+1.0,,deepseekmath:pushingthelimitsofmathematicalreasoninginopenlanguagemodels,,,,杭州深度求索人工智能基础技术研究有限公司,,,,2024-02-05,,,,"zhihongshao,peiyiwang,qihaozhu,runxinxu,junxiaosong,xiaobi,haoweizhang,mingchuanzhang,y.k.li,y.wu,dayaguo",,,
+1.0,,deepseekvl2:mixture-of-expertsvision-languagemodelsforadvancedmultimodalunderstanding,,,,杭州深度求索人工智能基础技术研究有限公司,,,,2024-12-13,,,,"zhiyuwu,xiaokangchen,zizhengpan,xingchaoliu,wenliu,damaidai,huazuogao,yiyangma,chengyuewu,bingxuanwang,zhendaxie,yuwu,kaihu,jiaweiwang,yaofengsun,yukunli,yishipiao,kangguan,aixinliu,xinxie,yuxiangyou,kaidong,xingkaiyu,haoweizhang,liangzhao,yisongwang,chongruan",,,
+1.0,,deepseekvl:towardsreal-worldvision-languageunderstanding,,,,杭州深度求索人工智能基础技术研究有限公司,,,,2024-03-08,,,,"haoyulu,wenliu,bozhang,bingxuanwang,kaidong,boliu,jingxiangsun,tongzhengren,zhuoshuli,haoyang,yaofengsun,chengqideng,hanweixu,zhendaxie,chongruan",,,
+1.0,,depthanything:unleashingthepoweroflarge-scaleunlabeleddata,,,,北京字节跳动科技有限公司,,,,2024-01-19,,,,"liheyang,bingyikang,zilonghuang,xiaogangxu,jiashifeng,hengshuangzhao",,,
+1.0,,depthanythingv2,,,,北京字节跳动科技有限公司,,,,2024-06-13,,,,"liheyang,bingyikang,zilonghuang,zhenzhao,xiaogangxu,jiashifeng,hengshuangzhao",,,
+1.0,,designingcyclicpeptidesviaharmonicsdewithatom-bondmodeling,,,,北京字节跳动科技有限公司,,,,2025-05-27,,,,"xiangxinzhou,mingyuli,yixiao,jiahanli,dongyuxue,zaixiangzheng,jianzhuma,quanquangu",,,
+1.0,,diffusionadversarialpost-trainingforone-stepvideogeneration,,,,北京字节跳动科技有限公司,,,,2025-01-14,,,,"shanchuanlin,xinxia,yuxiren,ceyuanyang,xuefengxiao,lujiang",,,
+1.0,,diffusionglancingtransformerforparallelsequencetosequencelearning,,,,北京字节跳动科技有限公司,,,,2023-11-29,,,,"lihuaqian,mingxuanwang,yangliu,haozhou",,,
+1.0,,dig:scalableandefficientdiffusionmodelswithgatedlinearattention,,,,北京字节跳动科技有限公司,,,,2024-11-26,,,,"lianghuizhu,zilonghuang,benchengliao,junhaoliew,hanshuyan,jiashifeng,xinggangwang",,,
+1.0,,dinoiser:diffusedconditionalsequencelearningbymanipulatingnoises,,,,北京字节跳动科技有限公司,,,,2024-05-01,,,,"jiashengye,zaixiangzheng,yubao,lihuaqian,mingxuanwang",,,
+1.0,,ditar:diffusiontransformerautoregressivemodelingforspeechgeneration,,,,北京字节跳动科技有限公司,,,,2025-05-25,,,,"dongyajia,zhuochen,jiaweichen,chenpengdu,jianwu,jiancong,xiaobinzhuang,chuminli,zhenwei,yupingwang,yuxuanwang",,,
+1.0,,dora:samplingandbenchmarkingfor3dshapevariationalauto-encoders,,,,北京字节跳动科技有限公司,,,,2025-03-24,,,,"ruichen,jianfengzhang,yixunliang,guanluo,weiyuli,jiaruiliu,xiuli,xiaoxiaolong,jiashifeng,pingtan",,,
+1.0,,dstc:directpreferencelearningwithonlyself-generatedtestsandcodetoimprovecodelms,,,,北京字节跳动科技有限公司,,,,2024-11-20,,,,"zhihanliu,shenaozhang,yongfeiliu,boyiliu,yingxiangyang,zhaoranwang",,,
+1.0,,efficientneuralmusicgeneration,,,,北京字节跳动科技有限公司,,,,2023-05-25,,,,"maxw.y.lam,qiaotian,tangli,zongyuyin,siyuanfeng,mingtu,yuliangji,ruixia,mingboma,xuchensong,jitongchen,yupingwang,yuxuanwang",,,
+1.0,,emergingpropertiesinunifiedmultimodalpretraining,,,,北京字节跳动科技有限公司,,,,2025-05-20,,,,"chaoruideng,deyaozhu,kunchangli,chenhuigou,fengli,zeyuwang,shuzhong,weihaoyu,xiaonannie,ziangsong,guangshi,haoqifan",,,
+1.0,,expertrace:aflexibleroutingstrategyforscalingdiffusiontransformerwithmixtureofexperts,,,,北京字节跳动科技有限公司,,,,2025-06-12,,,,"yikeyuan,ziyuwang,zihaohuang,defazhu,xunzhou,jingyiyu,qiyangmin",,,
+1.0,,fan:fourieranalysisnetworks,,,,北京字节跳动科技有限公司,,,,2024-10-03,,,,"yihongdong,geli,yongdingtao,xuejiang,kechizhang,jiali,jingsu,junzhang,jingjingxu",,,
+1.0,,flexprefill:acontext-awaresparseattentionmechanismforefficientlong-sequenceinference,,,,北京字节跳动科技有限公司,,,,2025-02-28,,,,"xunhaolai,jianqiaolu,yaoluo,yiyuanma,xunzhou",,,
+1.0,,flexworld:progressivelyexpanding3dscenesforflexiable-viewsynthesis,,,,北京字节跳动科技有限公司,,,,2025-03-17,,,,"luxichen,zihanzhou,minzhao,yikaiwang,gezhang,wenhaohuang,haosun,ji-rongwen,chongxuanli",,,
+1.0,,fullstackbench:evaluatingllmsasfullstackcoders,,,,北京字节跳动科技有限公司,,,,2024-12-03,,,,"siyaoliu,hezhu,jerryliu,shulinxin,aoyanli,ruilong,lichen,jackyang,jinxiangxia,z.y,peng,shukailiu,zhaoxiangzhang,jingmai,gezhang,wenhaohuang,kaishen,liangxiang",,,
+1.0,,howfarisvideogenerationfromworldmodel:aphysicallawperspective,,,,北京字节跳动科技有限公司,,,,2024-11-04,,,,"bingyikang,yangyue,ruilu,zhijielin,yangzhao,kaixinwang,gaohuang,jiashifeng",,,
+1.0,,hq-edit:ahigh-qualitydatasetforinstruction-basedimageediting,,,,北京字节跳动科技有限公司,,,,2024-04-15,,,,"mudehui,siweiyang,bingchenzhao,yichunshi,hengwang,pengwang,yuyinzhou,cihangxie",,,
+1.0,,hybridflow:aflexibleandefficientrlhfframework,,,,北京字节跳动科技有限公司,,,,2024-10-02,,,,"guangmingsheng,chizhang,zilingfengye,xibinwu,wangzhang,ruzhang,yanghuapeng,haibinlin,chuanwu",,,
+1.0,,hyper-connections,,,,北京字节跳动科技有限公司,,,,2025-03-18,,,,"defazhu,hongzhihuang,zihaohuang,yutaozeng,yunyaomao,bangguwu,qiyangmin,xunzhou",,,
+1.0,,hyper-sd:trajectorysegmentedconsistencymodelforefficientimagesynthesis,,,,北京字节跳动科技有限公司,,,,2024-04-21,,,,"yuxiren,xinxia,yanzuolu,jiachengzhang,jiewu,panxie,xingwang,xuefengxiao",,,
+1.0,,ida-vlm:towardsmovieunderstandingviaid-awarelargevision-languagemodel,,,,北京字节跳动科技有限公司,,,,2024-07-10,,,,"yataiji,shilongzhang,jiewu,peizesun,weifengchen,xuefengxiao,sidiyang,yujiuyang,pingluo",,,
+1.0,,improvingzero-shotadversarialrobustnessinvision-languagemodelsbyclosed-formalignmentofadversarialpathsimplices,,,,北京字节跳动科技有限公司,,,,2025-06-15,,,,"junhaodong,piotrkoniusz,yifeizhang,haozhu,weimingliu,xinghuaqu,yew-soonong",,,
+1.0,,inference-timescalingforgeneralistrewardmodeling,,,,杭州深度求索人工智能基础技术研究有限公司,,,,2025-04-03,,,,"zijunliu,peiyiwang,runxinxu,shirongma,chongruan,pengli,yangliu,yuwu",,,
+1.0,,investigatingtheoverlookedhessianstructure:fromcnnstollms,,,,北京字节跳动科技有限公司,,,,2025-06-27,,,,qian-yuantang1yufeigu2yunfengcai3mingmingsun4pingli5xunzhou6zekexie†,,,
+1.0,,kor-bench:benchmarkinglanguagemodelsonknowledge-orthogonalreasoningtasks,,,,北京字节跳动科技有限公司,,,,2024-10-09,,,,"kaijingma,xinrundu,yunranwang,haoranzhang,zhoufutuwen,xingweiqu,jianyang,jiahengliu,minghaoliu,xiangyue,wenhaohuang,gezhang",,,
+1.0,,letthecodellmedititselfwhenyoueditthecode,,,,北京字节跳动科技有限公司,,,,2025-04-24,,,,"zhenyuhe,junzhang,shengjieluo,jingjingxu,zhizhang,dihe",,,
+1.0,,llava-critic:learningtoevaluatemultimodalmodels,,,,北京字节跳动科技有限公司,,,,2025-03-04,,,,"tianyixiong,xiyaowang,dongguo,qinghaoye,haoqifan,quanquangu,henghuang,chunyuanli",,,
+1.0,,"llava-next-interleave:tacklingmulti-image,video,and3dinlargemultimodalmodels",,,,北京字节跳动科技有限公司,,,,2024-07-28,,,,"fengli,renruizhang,haozhang,yuanhanzhang,boli,weili,zejunma,chunyuanli",,,
+1.0,,loong:generatingminute-levellongvideoswithautoregressivelanguagemodels,,,,北京字节跳动科技有限公司,,,,2024-10-03,,,,"yuqingwang,tianweixiong,daquanzhou,zhijielin,yangzhao,bingyikang,jiashifeng,xihuiliu",,,
+1.0,,lsh-moe:communication-efficientmoetrainingvialocality-sensitivehashing,,,,北京字节跳动科技有限公司,,,,2024-11-13,,,,"xiaonannie,qibinliu,fangchengfu,shenhanzhu,xupengmiao,xiaoyangli,yangzhang,shoudaliu,bincui",,,
+1.0,,magic-boost:boost3dgenerationwithmutli-viewconditioneddiffusion,,,,北京字节跳动科技有限公司,,,,2024-04-09,,,,"fanyang,jianfengzhang,yichunshi,bowenchen,chenxuzhang,huichaozhang,xiaofengyang,jiashifeng,guoshenglin",,,
+1.0,,magic-me:identity-specificvideocustomizeddiffusion,,,,北京字节跳动科技有限公司,,,,2024-03-20,,,,"zema,daquanzhou,chun-hsiaoyeh,xue-shewang,xiuyuli,huanruiyang,zhendong,kurtkeutzer,jiashifeng",,,
+1.0,,magicanimate:temporallyconsistenthumanimageanimationusingdiffusionmodel,,,,北京字节跳动科技有限公司,,,,2023-11-27,,,,"zhongcongxu,jianfengzhang,junhaoliew,hanshuyan,jia-weiliu,chenxuzhang,jiashifeng,mikezhengshou",,,
+1.0,,magicarticulate:makeyour3dmodelsarticulation-ready,,,,北京字节跳动科技有限公司,,,,2025-02-17,,,,"chaoyuesong,jianfengzhang,xiuli,fanyang,yiwenchen,zhongcongxu,junhaoliew,xiaoyangguo,fayaoliu,jiashifeng,guoshenglin",,,
+1.0,,magicedit:high-fidelityandtemporallycoherentvideoediting,,,,北京字节跳动科技有限公司,,,,2023-08-28,,,,"junhaoliew,hanshuyan,jianfengzhang,zhongcongxu,jiashifeng",,,
+1.0,,makepixelsdance:high-dynamicvideogeneration,,,,北京字节跳动科技有限公司,,,,2023-11-18,,,,"yanzeng,guoqiangwei,jianizheng,jiaxinzou,yangwei,yuchenzhang,hangli",,,
+1.0,,mars:unleashingthepowerofvariancereductionfortraininglargemodels,,,,北京字节跳动科技有限公司,,,,2025-02-10,,,,"huizhuoyuan,yifengliu,shuangwu,xunzhou,quanquangu",,,
+1.0,,maskbit:embedding-freeimagegenerationviabittokens,,,,北京字节跳动科技有限公司,,,,2024-12-08,,,,"markweber,lijunyu,qihangyu,xueqingdeng,xiaohuishen,danielcremers,liang-chiehchen",,,
+1.0,,"megascale:scalinglargelanguagemodeltrainingtomorethan10,000gpus",,,,北京字节跳动科技有限公司,,,,2024-02-23,,,,"zihengjiang,haibinlin,yinminzhong,qihuang,yangruichen,zhizhang,yanghuapeng,xiangli,congxie,shibiaonong,yulujia,sunhe,hongminchen,zhihaobai,qihou,shipengyan,dingzhou,yiyaosheng,zhuojiang,haohanxu,haoranwei,zhangzhang,pengfeinie,leqizou,sidazhao,liangxiang,zheruiliu,zheli,xiaoyingjia,jianxiye,xinjin,xinliu",,,
+1.0,,mergingloraslikeplayinglego:pushingthemodularityofloratoextremesthroughrank-wiseclustering,,,,北京字节跳动科技有限公司,,,,2024-10-22,,,,"ziyuzhao,taoshen,didizhu,zexili,jingsu,xuwuwang,kunkuang,feiwu",,,
+1.0,,mmada:multimodallargediffusionlanguagemodels,,,,北京字节跳动科技有限公司,,,,2025-05-21,,,,"lingyang,yetian,bowenli,xinchenzhang,keshen,yunhaitong,mengdiwang",,,
+1.0,,"mme-cot:benchmarkingchain-of-thoughtinlargemultimodalmodelsforreasoningquality,robustness,andefficiency",,,,北京字节跳动科技有限公司,,,,2025-02-13,,,,"dongzhijiang,renruizhang,ziyuguo,yanweili,yuqi,xinyanchen,liuhuiwang,jianhanjin,claireguo,shenyan,bozhang,chaoyoufu,penggao,hongshengli",,,
+1.0,,modelmerginginpre-trainingoflargelanguagemodels,,,,北京字节跳动科技有限公司,,,,2025-05-17,,,,"yunshuili,yiyuanma,shenyan,chaoyizhang,jingliu,jianqiaolu,ziwenxu,mengzhaochen,minruiwang,shiyizhan,jinma,xunhaolai,deyiliu,yaoluo,xingyanbin,hongbinren,mingjihan,wenhaohao,bairenyi,lingjunliu,bolema,xiaoyingjia,xunzhou,siyuanqiao,liangxiang,yonghuiwu",,,
+1.0,,multi-rewardasconditionforinstruction-basedimageediting,,,,北京字节跳动科技有限公司,,,,2025-03-20,,,,"xingu,mingli,libozhang,fanchen,longyinwen,tiejianluo,sijiezhu",,,
+1.0,,multi-swe-bench:amultilingualbenchmarkforissueresolving,,,,北京字节跳动科技有限公司,,,,2025-04-03,,,,"daoguangzan,zhironghuang,weiliu,hanwuchen,linhaozhang,shulinxin,luchen,qiliu,xiaojianzhong,aoyanli,siyaoliu,yongshengxiao,liangqiangchen,yuyuzhang,jingsu,tianyuliu,ruilong,kaishen,liangxiang",,,
+1.0,,mxmoe:mixed-precisionquantizationformoewithaccuracyandperformanceco-design,,,,北京字节跳动科技有限公司,,,,2025-05-05,,,,"haojieduanmu,xiuhongli,zhihangyuan,sizezheng,jiangfeiduan,xingchengzhang,dahualin",,,
+1.0,,"oneexampleshown,manyconceptsknown!counterexample-drivenconceptualreasoninginmathematicalllms",,,,北京字节跳动科技有限公司,,,,2025-02-12,,,,"yinghuili,jiayikuang,haojinghuang,zhikunxu,xinnianliang,yiyu,wenlianlu,yangningli,xiaoyutan,chaoqu,yingshen,hai-taozheng,philips.yu",,,
+1.0,,over-tokenizedtransformer:vocabularyisgenerallyworthscaling,,,,北京字节跳动科技有限公司,,,,2025-05-23,,,,"hongzhihuang,defazhu,bangguwu,yutaozeng,yawang,qiyangmin,xunzhou",,,
+1.0,,paintingwithwords:elevatingdetailedimagecaptioningwithbenchmarkandalignmentlearning,,,,北京字节跳动科技有限公司,,,,2024-03-10,,,,"qinghaoye,xianhanzeng,fuli,chunyuanli,haoqifan",,,
+1.0,,parallelizedautoregressivevisualgeneration,,,,北京字节跳动科技有限公司,,,,2024-12-19,,,,"yuqingwang,shuhuairen,zhijielin,yujinhan,haoyuanguo,zhenhengyang,difanzou,jiashifeng,xihuiliu",,,
+1.0,,pasa:anllmagentforcomprehensiveacademicpapersearch,,,,北京字节跳动科技有限公司,,,,2025-05-27,,,,"yichenhe,guanhuahuang,peiyuanfeng,yuanlin,yuchenzhang,hangli,weinane",,,
+1.0,,perflow:piecewiserectifiedflowasuniversalplug-and-playaccelerator,,,,北京字节跳动科技有限公司,,,,2024-05-29,,,,"hanshuyan,xingchaoliu,jiachunpan,junhaoliew,qiangliu,jiashifeng",,,
+1.0,,pixellm:pixelreasoningwithlargemultimodalmodel,,,,北京字节跳动科技有限公司,,,,2023-12-04,,,,"zhongweiren,zhichenghuang,yunchaowei,yaozhao,dongmeifu,jiashifeng,xiaojiejin",,,
+1.0,,pllava:parameter-freellavaextensionfromimagestovideosforvideodensecaptioning,,,,北京字节跳动科技有限公司,,,,2024-04-29,,,,"linxu,yilinzhao,daquanzhou,zhijielin,seekiongng,jiashifeng",,,
+1.0,,polybasicspeculativedecodingthroughatheoreticalperspective,,,,北京字节跳动科技有限公司,,,,2025-06-20,,,,"ruilinwang,huixiali,yuexiaoma,xiawuzheng,feichao,xuefengxiao,rongrongji",,,
+1.0,,polynomialcompositionactivations:unleashingthedynamicsoflargelanguagemodels,,,,北京字节跳动科技有限公司,,,,2024-11-06,,,,"zhijianzhuo,yawang,yutaozeng,xiaoqingli,xunzhou,jinwenma",,,
+1.0,,polyvoice:languagemodelsforspeechtospeechtranslation,,,,北京字节跳动科技有限公司,,,,2023-06-13,,,,"qianqiandong,zhiyinghuang,qiaotian,chenxu,tomko,yunlongzhao,siyuanfeng,tangli,kexinwang,xuxincheng,fengpengyue,yebai,xichen,lulu,zejunma,yupingwang,mingxuanwang,yuxuanwang",,,
+1.0,,promptingdepthanythingfor4kresolutionaccuratemetricdepthestimation,,,,北京字节跳动科技有限公司,,,,2025-04-22,,,,"haotonglin,sidapeng,jingxiaochen,songyoupeng,jiamingsun,minghuanliu,hujunbao,jiashifeng,xiaoweizhou,bingyikang",,,
+1.0,,rayflow:instance-awarediffusionaccelerationviaadaptiveflowtrajectories,,,,北京字节跳动科技有限公司,,,,2025-03-25,,,,"huiyangshao,xinxia,yuhongyang,yuxiren,xingwang,xuefengxiao",,,
+1.0,,recitationoverreasoning:howcutting-edgelanguagemodelscanfailonelementaryschool-levelreasoningproblems?,,,,北京字节跳动科技有限公司,,,,2025-04-01,,,,"kaiyan,yufeixu,zhengyindu,xuesongyao,zheyuwang,xiaowenguo,jiecaochen",,,
+1.0,,reward-augmenteddataenhancesdirectpreferencealignmentofllms,,,,北京字节跳动科技有限公司,,,,2024-10-10,,,,"shenaozhang,zhihanliu,zhaoranwang",,,
+1.0,,robustmulti-bittextwatermarkwithllm-basedparaphrasers,,,,北京字节跳动科技有限公司,,,,2025-06-16,,,,"xiaojunxu,jinghanjia,yuanshunyao,yangliu,hangli",,,
+1.0,,salmonn:towardsgenerichearingabilitiesforlargelanguagemodels,,,,北京字节跳动科技有限公司,,,,2023-10-20,,,,"changlitang,wenyiyu,guangzhisun,xianzhaochen,tiantan,weili,lulu,zejunma,chaozhang",,,
+1.0,,sd-eval:abenchmarkdatasetforspokendialogueunderstandingbeyondwords,,,,北京字节跳动科技有限公司,,,,2024-06-19,,,,"junyiao,yuanchengwang,xiaohaitian,dekunchen,junzhang,lulu,yuxuanwang,haizhouli,zhizhengwu",,,
+1.0,,sdxl-lightning:progressiveadversarialdiffusiondistillation,,,,北京字节跳动科技有限公司,,,,2024-03-02,,,,"shanchuanlin,anranwang,xiaoyang",,,
+1.0,,seed-asr:understandingdiversespeechandcontextswithllm-basedspeechrecognition,,,,北京字节跳动科技有限公司,,,,2024-07-10,,,,"yebai,jingpingchen,jitongchen,weichen,zhuochen,chuangding,linhaodong,qianqiandong,yujiaodu,kepangao,lugao,yiguo,minglunhan,tinghan,wenchaohu,xinyinghu,yuxianghu,deyuhua,luhuang,mingkunhuang,youjiahuang,jishuojin,fanliukong,zongweilan,tianyuli,xiaoyangli,zeyangli,zehualin,ruiliu,shoudaliu,lulu,yizhoulu,jingtingma,shengtaoma,yulinpei,chenshen,tiantan,xiaogangtian,mingtu,bowang,haowang,yupingwang,yuxuanwang,hanzhangxia,ruixia,shuangyixie,hongminxu,mengyang,bihongzhang,junzhang,wanyizhang,yangzhang,yaweizhang,yijiezheng,mingzou",,,
+1.0,,seed-music:aunifiedframeworkforhighqualityandcontrolledmusicgeneration,,,,北京字节跳动科技有限公司,,,,2024-09-13,,,,"yebai,haonanchen,jitongchen,zhuochen,yideng,xiaohongdong,lamtharnhantrakul,weituohao,qingqinghuang,zhongyihuang,dongyajia,feihula,ducle,bochenli,chuminli,huili,xingxingli,shoudaliu,wei-tsunglu,yiqinglu,andrewshaw,jannespijkervet,yakunsun,bowang,ju-chiangwang,yupingwang,yuxuanwang,lingxu,yifengyang,chaoyao,shuozhang,yangzhang,yilinzhang,hangzhao,ziyizhao,dejianzhong,shicenzhou,peizou",,,
+1.0,,seed-thinking-v1.5:advancingsuperbreasoningmodelswithreinforcementlearning,,,,北京字节跳动科技有限公司,,,,2025-04-10,,,,"jiazechen,tiantianfan,xinliu,lingjunliu,zhiqilin,mingxuanwang,chengyiwang,xiangpengwei,wenyuanxu,yufengyuan,yuyue,linyan,qiyingyu,xiaochenzuo,chizhang",,,
+1.0,,seed-tts:afamilyofhigh-qualityversatilespeechgenerationmodels,,,,北京字节跳动科技有限公司,,,,2024-06-04,,,,"philipanastassiou,jiaweichen,jitongchen,yuanzhechen,zhuochen,ziyichen,jiancong,lelaideng,chuangding,lugao,mingqinggong,peisonghuang,qingqinghuang,zhiyinghuang,yuanyuanhuo,dongyajia,chuminli,feiyali,huili,jiaxinli,xiaoyangli,xingxingli,linliu,shoudaliu,sichaoliu,xudongliu,yuchenliu,zhengxiliu,lulu,junjiepan,xinwang,yupingwang,yuxuanwang,zhenwei,jianwu,chaoyao,yifengyang,yuanhaoyi,juntengzhang,qidizhang,shuozhang,wenjiezhang,yangzhang,zilinzhao,dejianzhong,xiaobinzhuang",,,
+1.0,,seed1.5-vltechnicalreport,,,,北京字节跳动科技有限公司,,,,2025-05-13,,,,"dongguo,famingwu,feidazhu,fuxingleng,guangshi,haobinchen,haoqifan,jianwang,jianyujiang,jiaweiwang,jingjichen,jingjiahuang,kanglei,lipingyuan,lishuluo,pengfeiliu,qinghaoye,ruiqian,shenyan,shixiongzhao,shuaipeng,shuangyeli,sihangyuan,sijinwu,tianhengcheng,weiweiliu,wenqianwang,xianhanzeng,xiaoliu,xiaoboqin,xiaohanding,xiaojunxiao,xiaoyingzhang,xuanweizhang,xuehanxiong,yanghuapeng,yangruichen,yanweili,yanxuhu,yilin,yiyuanhu,yiyuanzhang,youbinwu,yuli,yudongliu,yueling,yujiaqin,zanbowang,zhiwuhe,aoxuezhang,bairenyi,benchengliao,canhuang,canzhang,chaoruideng,chaoyideng,chenglin,chengyuan,chenggangli,chenhuigou,chenweilou,chengzhiwei,chundianliu,chunyuanli,deyaozhu,donghongzhong,fengli,fengzhang,gangwu,guodongli,guohongxiao,haibinlin,haihuayang,haomingwang,hengji,hongxianghao,huishen,huixiali,jiahaoli,jialongwu,jianhuazhu,jianpengjiao,jiashifeng,jiazechen,jianhuiduan,jihaoliu,jinzeng,jingquntang,jingyusun,joyachen,junlong,jundafeng,junfengzhan,junjiefang,juntinglu,kaihua,kailiu,kaishen,kaiyuanzhang,keshenetal.(97additionalauthorsnotshown)",,,
+1.0,,seedance1.0:exploringtheboundariesofvideogenerationmodels,,,,北京字节跳动科技有限公司,,,,2025-06-11,,,,"yugao,haoyuanguo,tuyenhoang,weilinhuang,lujiang,fangyuankong,huixiali,jiashili,liangli,xiaojieli,xunsongli,yifuli,shanchuanlin,zhijielin,jiaweiliu,shuliu,xiaonannie,zhiwuqing,yuxiren,lisun,zhitian,ruiwang,senwang,guoqiangwei,guohongwu,jiewu,ruiqixia,feixiao,xuefengxiao,jiangqiaoyan,ceyuanyang,jianchaoyang,runkaiyang,taoyang,yihangyang,zilyuye,xuejiaozeng,yanzeng,hengzhang,yangzhao,xiaozhengzheng,peihaozhu,jiaxinzou,feilongzuo",,,
+1.0,,seededit3.0:fastandhigh-qualitygenerativeimageediting,,,,北京字节跳动科技有限公司,,,,2025-06-05,,,,"pengwang,yichunshi,xiaochenlian,zhonghuazhai,xinxia,xuefengxiao,weilinhuang,jianchaoyang",,,
+1.0,,seededit:alignimagere-generationtoimageediting,,,,北京字节跳动科技有限公司,,,,2024-11-11,,,,"yichunshi,pengwang,weilinhuang",,,
+1.0,,seedream2.0:anativechinese-englishbilingualimagegenerationfoundationmodel,,,,北京字节跳动科技有限公司,,,,2025-03-10,,,,"lixuegong,xiaoxiahou,fanshili,liangli,xiaochenlian,feiliu,liyangliu,weiliu,weilu,yichunshi,shiqisun,yutian,zhitian,pengwang,xunwang,yewang,guofengwu,jiewu,xinxia,xuefengxiao,linjieyang,zhonghuazhai,xinyuzhang,qizhang,yuweizhang,shijiazhao,jianchaoyang,weilinhuang",,,
+1.0,,seedream3.0technicalreport,,,,北京字节跳动科技有限公司,,,,2025-04-15,,,,"yugao,haoyuanguo,tuyenhoang,weilinhuang,lujiang,fangyuankong,huixiali,jiashili,liangli,xiaojieli,xunsongli,yifuli,shanchuanlin,zhijielin,jiaweiliu,shuliu,xiaonannie,zhiwuqing,yuxiren,lisun,zhitian,ruiwang,senwang,guoqiangwei,guohongwu,jiewu,ruiqixia,feixiao,xuefengxiao,jiangqiaoyan,ceyuanyang,jianchaoyang,runkaiyang,taoyang,yihangyang,zilyuye,xuejiaozeng,yanzeng,hengzhang,yangzhao,xiaozhengzheng,peihaozhu,jiaxinzou,feilongzuo",,,
+1.0,,seedvr:seedinginfinityindiffusiontransformertowardsgenericvideorestoration,,,,北京字节跳动科技有限公司,,,,2025-03-22,,,,"jianyiwang,zhijielin,mengwei,yangzhao,ceyuanyang,feixiao,chenchangeloy,lujiang",,,
+1.0,,seeingtheimage:prioritizingvisualcorrelationbycontrastivealignment,,,,北京字节跳动科技有限公司,,,,2024-05-28,,,,"xinxiao,bohongwu,jiacongwang,chunyuanli,xunzhou,haoyuanguo",,,
+1.0,,shadowkv:kvcacheinshadowsforhigh-throughputlong-contextllminference,,,,北京字节跳动科技有限公司,,,,2025-04-25,,,,"hanshisun,li-wenchang,wenleibao,sizezheng,ningxinzheng,xinliu,harrydong,yuejiechi,beidichen",,,
+1.0,,shot2story:anewbenchmarkforcomprehensiveunderstandingofmulti-shotvideos,,,,北京字节跳动科技有限公司,,,,2025-02-05,,,,"mingfeihan,linjieyang,xiaojunchang,linayao,hengwang",,,
+1.0,,soundingthatobject:interactiveobject-awareimagetoaudiogeneration,,,,北京字节跳动科技有限公司,,,,2025-06-04,,,,"tingleli,baihehuang,xiaobinzhuang,dongyajia,jiaweichen,yupingwang,zhuochen,gopalaanumanchipalli,yuxuanwang",,,
+1.0,,storydiffusion:consistentself-attentionforlong-rangeimageandvideogeneration,,,,北京字节跳动科技有限公司,,,,2024-05-02,,,,"yupengzhou,daquanzhou,ming-mingcheng,jiashifeng,qibinhou",,,
+1.0,,supergpqa:scalingllmevaluationacross285graduatedisciplines,,,,北京字节跳动科技有限公司,,,,2025-02-27,,,,"m-a-pteam,xinrundu,yifanyao,kaijingma,bingliwang,tianyuzheng,kangzhu,minghaoliu,yimingliang,xiaolongjin,zhenlinwei,chujiezheng,kaixindeng,shianjia,sichaojiang,yiyanliao,ruili,qinruili,sirunli,yizhili,yunwenli,dehuama,yuanshengni,haoranque,qiyaowang,zhoufutuwen,siweiwu,tianshunxing,mingxu,zhenzhuyang,zekunmoorewang,juntingzhou,yuelinbai,xingyuanbu,chenglincai,liangchen,yifanchen,chengtuocheng,tianhaocheng,keyiding,siminghuang,yunhuang,yaoruli,yizheli,zhaoqunli,tianhaoliang,chengdonglin,hongquanlin,yinghaoma,tianyangpang,zhongyuanpeng,zifanpeng,qigeqi,shiqiu,xingweiqu,shanghaoranquan,yizhoutan,ziliwang,chenqingwang,haowang,yiyawang,yubowang,jiajunxu,kexinyang,ruibinyuan,yuanhaoyue,tianyangzhan,chunzhang,jinyangzhang,xiyuezhang,xingjianzhang,yuezhang,yongchizhao,xiangyuzheng,chenghuazhong,yanggao,zhoujunli,dayihengliu,qianliu,tianyuliu,shiwenni,junran",,,
+1.0,,tc-moe:augmentingmixtureofexpertswithternaryexpertchoicedownloadpaper,,,,北京字节跳动科技有限公司,,,,2025-03-01,,,,"shenyan,xingyanbin,sijunzhang,yisenwang,zhouchenlin",,,
+1.0,,teachinglanguagemodelstocritiqueviareinforcementlearning,,,,北京字节跳动科技有限公司,,,,2025-02-05,,,,"zhihuixie,jiechen,liyuchen,weichaomao,jingjingxu,lingpengkong",,,
+1.0,,theriseanddownofbabeltower:investigatingtheevolutionprocessofmultilingualcodelargelanguagemodel,,,,北京字节跳动科技有限公司,,,,2025-03-03,,,,"jiaweichen,wentaochen,jingsu,jingjingxu,hongyulin,mengjieren,yaojielu,xianpeihan,lesun",,,
+1.0,,towardssemanticequivalenceoftokenizationinmultimodalllm,,,,北京字节跳动科技有限公司,,,,2025-02-26,,,,"shengqiongwu,haofei,xiangtaili,jiayiji,hanwangzhang,tat-sengchua,shuichengyan",,,
+1.0,,ui-tars:pioneeringautomatedguiinteractionwithnativeagents,,,,北京字节跳动科技有限公司,,,,2025-01-21,,,,"yujiaqin,yiningye,junjiefang,haomingwang,shihaoliang,shizuotian,jundazhang,jiahaoli,yunxinli,shijuehuang,wanjunzhong,kuanyeli,jialeyang,yumiao,woyulin,longxiangliu,xujiang,qianlima,jingyuli,xiaojunxiao,kaicai,chuangli,yaoweizheng,chaolinjin,chenli,xiaozhou,minchaowang,haolichen,zhaojianli,haihuayang,haifengliu,fenglin,taopeng,xinliu,guangshi",,,
+1.0,,ultra-sparsememorynetwork,,,,北京字节跳动科技有限公司,,,,2025-02-06,,,,"zihaohuang,qiyangmin,hongzhihuang,defazhu,yutaozeng,ranguo,xunzhou",,,
+1.0,,understandingstragglersinlargemodeltrainingusingwhat-ifanalysis,,,,北京字节跳动科技有限公司,,,,2025-05-09,,,,"jinkunlin,zihengjiang,zuquansong,sidazhao,menghanyu,zhanghanwang,chenyuanwang,zuochengshi,xiangshi,weijia,zheruiliu,shuguangwang,haibinlin,xinliu,aurojitpanda,jinyangli",,,
+1.0,,unveilingthetapestryofconsistencyinlargevision-languagemodels,,,,北京字节跳动科技有限公司,,,,2024-05-23,,,,"yuanzhang,feixiao,taohuang,chun-kaifan,hongyuandong,jiawenli,jiacongwang,kuancheng,shanghangzhang,haoyuanguo",,,
+1.0,,vicas:adatasetforcombiningholisticandpixel-levelvideounderstandingusingcaptionswithgroundedsegmentation,,,,北京字节跳动科技有限公司,,,,2025-04-03,,,,"aliathar,xueqingdeng,liang-chiehchen",,,
+1.0,,videodepthanything:consistentdepthestimationforsuper-longvideos,,,,北京字节跳动科技有限公司,,,,2025-01-21,,,,"silichen,hengkaiguo,shengnanzhu,feihuzhang,zilonghuang,jiashifeng,bingyikang",,,
+1.0,,videoinstructiontuningwithsyntheticdata,,,,北京字节跳动科技有限公司,,,,2024-10-03,,,,"yuanhanzhang,jinmingwu,weili,boli,zejunma,ziweiliu,chunyuanli",,,
+1.0,,videoworld:exploringknowledgelearningfromunlabeledvideos,,,,北京字节跳动科技有限公司,,,,2025-03-05,,,,"zhongweiren,yunchaowei,xunguo,yaozhao,bingyikang,jiashifeng,xiaojiejin",,,
+1.0,,vista-llama:reliablevideonarratorviaequaldistancetovisualtokens,,,,北京字节跳动科技有限公司,,,,2023-12-12,,,,"fanma,xiaojiejin,hengwang,yuchenxian,jiashifeng,yiyang",,,
+1.0,,whydoestheeffectivecontextlengthofllmsfallshort?,,,,北京字节跳动科技有限公司,,,,2024-10-24,,,,"chenxinan,junzhang,mingzhong,leili,shansangong,yaoluo,jingjingxu,lingpengkong",,,
+1.0,,x-dyna:expressivedynamichumanimageanimation,,,,北京字节跳动科技有限公司,,,,2025-01-20,,,,"dichang,hongyixu,youxie,yipenggao,zhengfeikuang,shengqucai,chenxuzhang,guoxiansong,chaowang,yichunshi,zeyuanchen,shijiezhou,linjieluo,gordonwetzstein,mohammadsoleymani",,,
+1.0,,x-nemo:expressiveneuralmotionreenactmentviadisentangledlatentattention,,,,北京字节跳动科技有限公司,,,,2025-02-25,,,,"xiaochenzhao,hongyixu,guoxiansong,youxie,chenxuzhang,xiuli,linjieluo,jinlisuo,yebinliu",,,
+1.0,,youonlysampleonce:tamingone-steptext-to-imagesynthesisbyself-cooperativediffusiongans,,,,北京字节跳动科技有限公司,,,,2025-02-25,,,,"yihongluo,xiaolongchen,xinghuaqu,tianyanghu,jingtang",,,

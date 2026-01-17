@@ -1,0 +1,1456 @@
+exist_flag_gt,exist_flag_response,title,title_before_map,country/regionofproduction_llm_judge,country/regionofproduction_llm_judge_eval_msg,country/regionofproduction_query,country/regionofproduction_response,director_llm_judge,director_llm_judge_eval_msg,director_query,director_response,genre_llm_judge,genre_llm_judge_eval_msg,genre_query,genre_response,runtime_llm_judge,runtime_llm_judge_eval_msg,runtime_query,runtime_response,title_exact_match,title_exact_match_eval_msg
+,,joker,Joker,1.0,"Let's analyze each response against its target according to the given criterion:
+
+Criterion summary:
+- Semantics approximately the same or pointing to the same entity is sufficient.
+- Content to be evaluated only needs to be a subset of the target.
+- Score is 0 or 1 only.
+
+---
+
+**idx_0:**
+
+- Response: ""unitedstates""
+- Target: ""usa/canada""
+- Is ""unitedstates"" approximately the same as ""usa""? Yes, ""usa"" and ""unitedstates"" refer to the same entity.
+- Given that, the response matches one part of the target.
+- Score: 1
+
+---
+
+**idx_1:**
+
+- Response: ""australia""
+- Target: ""australia""
+- Exact match.
+- Score: 1
+
+---
+
+**idx_2:**
+
+- Response: ""unitedstates""
+- Target: ""usa/brazil/mainlandchina""
+- ""unitedstates"" ≈ ""usa""
+- Response matches one part of the target.
+- Score: 1
+
+---
+
+**idx_3:**
+
+- Response: ""unitedstates""
+- Target: ""uk/usa""
+- ""unitedstates"" ≈ ""usa""
+- Response matches one part of the target.
+- Score: 1
+
+---
+
+**idx_4:**
+
+- Response: ""sweden""
+- Target: ""sweden/germany/norway""
+- Exact match with one of the multiple targets.
+- Score: 1
+
+---
+
+**idx_5:**
+
+- Response: ""unitedstates""
+- Target: ""usa""
+- ""unitedstates"" ≈ ""usa""
+- Score: 1
+
+---
+
+All responses refer to entities included in their corresponding target lists.
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1
+}
+```",usa/canada,unitedstates,1.0,"Let's analyze each pair according to the criterion:
+
+- idx_0: response = ""toddphillips"", target = ""toddphillips""  
+  They are exactly the same, so score = 1.
+
+- idx_1: response = ""shannonmurphy"", target = ""shannonmurphy""  
+  Exact match, score = 1.
+
+- idx_2: response = ""jamesgray"", target = ""jamesgray""  
+  Exact match, score = 1.
+
+- idx_3: response = ""noahbaumbach"", target = ""noahbaumbach""  
+  Exact match, score = 1.
+
+- idx_4: response = ""royandersson"", target = ""royandersson""  
+  Exact match, score = 1.
+
+- idx_5: response = ""adammckay"", target = ""stevensoderbergh""  
+  Different responses, they point to different entities, so score = 0.
+
+Final scoring in JSON format:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0
+}
+```",toddphillips,toddphillips,1.0,"Let's analyze each pair step-by-step according to the criterion:
+
+Criterion recap:
+- Semantics roughly the same or pointing to the same entity is sufficient.
+- Relevance to the reference answer only.
+- Inconsistencies in classification with the reference answer are permitted.
+- Score either 0 or 1.
+
+---
+
+**idx_0**  
+- Target: ""drama/thriller/crime""  
+- Response: ""crime,thriller""  
+Analysis: Response includes two of the three genres from target (thriller and crime). Drama is missing but inclusion of two relevant genres indicates strong semantic overlap. Since the criterion allows approximate semantics and pointing to the same entity, this should get 1.
+
+**idx_1**  
+- Target: ""drama/comedy/romance""  
+- Response: ""drama""  
+Analysis: Response contains one main genre ""drama"" which is included in the target set. It is relevant and points to the same entity broadly. Response is less comprehensive but criterion does not require full coverage. Score: 1.
+
+**idx_2**  
+- Target: ""sciencefiction/adventure""  
+- Response: ""sci-fi""  
+Analysis: ""sci-fi"" is a synonym/short for ""sciencefiction"". Response is semantically correct and relevant. Even though ""adventure"" is missing, not required to cover all. Score: 1.
+
+**idx_3**  
+- Target: ""drama/romance""  
+- Response: ""comedy,drama""  
+Analysis: Response shares ""drama"" with target, but adds comedy which is not in target. The presence of ""drama"" suggests relevance. Adding other genres is allowed as per the criterion. Score: 1.
+
+**idx_4**  
+- Target: ""drama""  
+- Response: ""drama""  
+Analysis: Exact match. Score: 1.
+
+**idx_5**  
+- Target: ""comedy/drama/thriller/crime""  
+- Response: ""comedy,drama""  
+Analysis: Response includes comedy and drama, both included in target. Missing thriller and crime, but partial match is sufficient. Score: 1.
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1
+}
+```",drama/thriller/crime,"crime,thriller",1.0,"Let's analyze each pair of response and target according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+In this context, the answers are numerical values (times in minutes). The reference answers are exact numbers (e.g., 118min), and the responses are close or different numbers.
+
+Since the answers are numeric, and the question likely asks for a specific time, the standard practice would be to require an exact or nearly exact answer to be fully correct. However, the criterion states semantics approximately the same or pointing to the same entity is sufficient.
+
+Numbers close to each other might be considered roughly the same value (depending on the tolerance). But the criterion does not define any numeric tolerance.
+
+Given just numbers, ""approximately the same"" probably means close in value.
+
+Let's inspect each:
+
+1. idx_0  
+   Response: 122 mins  
+   Target: 118 min  
+   Difference: 4 min  
+   122 is close to 118, likely acceptable as approx same.
+
+2. idx_1  
+   Response: 94 mins  
+   Target: 120 min  
+   Difference: 26 min  
+   Quite far apart, not approximately the same.
+
+3. idx_2  
+   Response: 134 mins  
+   Target: 124 min  
+   Difference: 10 min  
+   Slightly farther, but possibly still approx the same?  
+   10 min difference might be borderline. Without precise tolerance, let's consider ""approximately"" to mean within ~5 min. 10 min likely too far.
+
+4. idx_3  
+   Response: 135 mins  
+   Target: 135 min  
+   Exact match. Definitely correct.
+
+5. idx_4  
+   Response: 105 mins  
+   Target: 76 min  
+   Difference: 29 min  
+   Not approximately same.
+
+6. idx_5  
+   Response: 103 mins  
+   Target: 96 min  
+   Difference: 7 min  
+   Possibly borderline, but difference greater than 5 min. Probably no.
+
+Given this, an assumed tolerance of ±5 minutes would suffice as ""approximately the same"". Above that, score 0; within or equal to 5, score 1.
+
+Re-evaluate with this:
+
+- idx_0: 4 min difference → score 1  
+- idx_1: 26 min difference → score 0  
+- idx_2: 10 min difference → score 0  
+- idx_3: exactly same → score 1  
+- idx_4: 29 min difference → score 0  
+- idx_5: 7 min difference → score 0
+
+Thus the final scores are:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0
+}
+```
+
+---
+
+**Note:** Since the criterion does not specify numeric tolerance explicitly, making a reasonable assumption about ""approximately"" is necessary. The chosen ±5 minutes range is a common sense approach for evaluating times expressed in minutes.",118min,122mins,1.0,key_match
+,,babyteeth,Babyteeth,1.0,"Let's analyze each response against its target according to the given criterion:
+
+Criterion summary:
+- Semantics approximately the same or pointing to the same entity is sufficient.
+- Content to be evaluated only needs to be a subset of the target.
+- Score is 0 or 1 only.
+
+---
+
+**idx_0:**
+
+- Response: ""unitedstates""
+- Target: ""usa/canada""
+- Is ""unitedstates"" approximately the same as ""usa""? Yes, ""usa"" and ""unitedstates"" refer to the same entity.
+- Given that, the response matches one part of the target.
+- Score: 1
+
+---
+
+**idx_1:**
+
+- Response: ""australia""
+- Target: ""australia""
+- Exact match.
+- Score: 1
+
+---
+
+**idx_2:**
+
+- Response: ""unitedstates""
+- Target: ""usa/brazil/mainlandchina""
+- ""unitedstates"" ≈ ""usa""
+- Response matches one part of the target.
+- Score: 1
+
+---
+
+**idx_3:**
+
+- Response: ""unitedstates""
+- Target: ""uk/usa""
+- ""unitedstates"" ≈ ""usa""
+- Response matches one part of the target.
+- Score: 1
+
+---
+
+**idx_4:**
+
+- Response: ""sweden""
+- Target: ""sweden/germany/norway""
+- Exact match with one of the multiple targets.
+- Score: 1
+
+---
+
+**idx_5:**
+
+- Response: ""unitedstates""
+- Target: ""usa""
+- ""unitedstates"" ≈ ""usa""
+- Score: 1
+
+---
+
+All responses refer to entities included in their corresponding target lists.
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1
+}
+```",australia,australia,1.0,"Let's analyze each pair according to the criterion:
+
+- idx_0: response = ""toddphillips"", target = ""toddphillips""  
+  They are exactly the same, so score = 1.
+
+- idx_1: response = ""shannonmurphy"", target = ""shannonmurphy""  
+  Exact match, score = 1.
+
+- idx_2: response = ""jamesgray"", target = ""jamesgray""  
+  Exact match, score = 1.
+
+- idx_3: response = ""noahbaumbach"", target = ""noahbaumbach""  
+  Exact match, score = 1.
+
+- idx_4: response = ""royandersson"", target = ""royandersson""  
+  Exact match, score = 1.
+
+- idx_5: response = ""adammckay"", target = ""stevensoderbergh""  
+  Different responses, they point to different entities, so score = 0.
+
+Final scoring in JSON format:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0
+}
+```",shannonmurphy,shannonmurphy,1.0,"Let's analyze each pair step-by-step according to the criterion:
+
+Criterion recap:
+- Semantics roughly the same or pointing to the same entity is sufficient.
+- Relevance to the reference answer only.
+- Inconsistencies in classification with the reference answer are permitted.
+- Score either 0 or 1.
+
+---
+
+**idx_0**  
+- Target: ""drama/thriller/crime""  
+- Response: ""crime,thriller""  
+Analysis: Response includes two of the three genres from target (thriller and crime). Drama is missing but inclusion of two relevant genres indicates strong semantic overlap. Since the criterion allows approximate semantics and pointing to the same entity, this should get 1.
+
+**idx_1**  
+- Target: ""drama/comedy/romance""  
+- Response: ""drama""  
+Analysis: Response contains one main genre ""drama"" which is included in the target set. It is relevant and points to the same entity broadly. Response is less comprehensive but criterion does not require full coverage. Score: 1.
+
+**idx_2**  
+- Target: ""sciencefiction/adventure""  
+- Response: ""sci-fi""  
+Analysis: ""sci-fi"" is a synonym/short for ""sciencefiction"". Response is semantically correct and relevant. Even though ""adventure"" is missing, not required to cover all. Score: 1.
+
+**idx_3**  
+- Target: ""drama/romance""  
+- Response: ""comedy,drama""  
+Analysis: Response shares ""drama"" with target, but adds comedy which is not in target. The presence of ""drama"" suggests relevance. Adding other genres is allowed as per the criterion. Score: 1.
+
+**idx_4**  
+- Target: ""drama""  
+- Response: ""drama""  
+Analysis: Exact match. Score: 1.
+
+**idx_5**  
+- Target: ""comedy/drama/thriller/crime""  
+- Response: ""comedy,drama""  
+Analysis: Response includes comedy and drama, both included in target. Missing thriller and crime, but partial match is sufficient. Score: 1.
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1
+}
+```",drama/comedy/romance,drama,0.0,"Let's analyze each pair of response and target according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+In this context, the answers are numerical values (times in minutes). The reference answers are exact numbers (e.g., 118min), and the responses are close or different numbers.
+
+Since the answers are numeric, and the question likely asks for a specific time, the standard practice would be to require an exact or nearly exact answer to be fully correct. However, the criterion states semantics approximately the same or pointing to the same entity is sufficient.
+
+Numbers close to each other might be considered roughly the same value (depending on the tolerance). But the criterion does not define any numeric tolerance.
+
+Given just numbers, ""approximately the same"" probably means close in value.
+
+Let's inspect each:
+
+1. idx_0  
+   Response: 122 mins  
+   Target: 118 min  
+   Difference: 4 min  
+   122 is close to 118, likely acceptable as approx same.
+
+2. idx_1  
+   Response: 94 mins  
+   Target: 120 min  
+   Difference: 26 min  
+   Quite far apart, not approximately the same.
+
+3. idx_2  
+   Response: 134 mins  
+   Target: 124 min  
+   Difference: 10 min  
+   Slightly farther, but possibly still approx the same?  
+   10 min difference might be borderline. Without precise tolerance, let's consider ""approximately"" to mean within ~5 min. 10 min likely too far.
+
+4. idx_3  
+   Response: 135 mins  
+   Target: 135 min  
+   Exact match. Definitely correct.
+
+5. idx_4  
+   Response: 105 mins  
+   Target: 76 min  
+   Difference: 29 min  
+   Not approximately same.
+
+6. idx_5  
+   Response: 103 mins  
+   Target: 96 min  
+   Difference: 7 min  
+   Possibly borderline, but difference greater than 5 min. Probably no.
+
+Given this, an assumed tolerance of ±5 minutes would suffice as ""approximately the same"". Above that, score 0; within or equal to 5, score 1.
+
+Re-evaluate with this:
+
+- idx_0: 4 min difference → score 1  
+- idx_1: 26 min difference → score 0  
+- idx_2: 10 min difference → score 0  
+- idx_3: exactly same → score 1  
+- idx_4: 29 min difference → score 0  
+- idx_5: 7 min difference → score 0
+
+Thus the final scores are:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0
+}
+```
+
+---
+
+**Note:** Since the criterion does not specify numeric tolerance explicitly, making a reasonable assumption about ""approximately"" is necessary. The chosen ±5 minutes range is a common sense approach for evaluating times expressed in minutes.",120min,94mins,1.0,key_match
+,,adastra,Ad Astra,1.0,"Let's analyze each response against its target according to the given criterion:
+
+Criterion summary:
+- Semantics approximately the same or pointing to the same entity is sufficient.
+- Content to be evaluated only needs to be a subset of the target.
+- Score is 0 or 1 only.
+
+---
+
+**idx_0:**
+
+- Response: ""unitedstates""
+- Target: ""usa/canada""
+- Is ""unitedstates"" approximately the same as ""usa""? Yes, ""usa"" and ""unitedstates"" refer to the same entity.
+- Given that, the response matches one part of the target.
+- Score: 1
+
+---
+
+**idx_1:**
+
+- Response: ""australia""
+- Target: ""australia""
+- Exact match.
+- Score: 1
+
+---
+
+**idx_2:**
+
+- Response: ""unitedstates""
+- Target: ""usa/brazil/mainlandchina""
+- ""unitedstates"" ≈ ""usa""
+- Response matches one part of the target.
+- Score: 1
+
+---
+
+**idx_3:**
+
+- Response: ""unitedstates""
+- Target: ""uk/usa""
+- ""unitedstates"" ≈ ""usa""
+- Response matches one part of the target.
+- Score: 1
+
+---
+
+**idx_4:**
+
+- Response: ""sweden""
+- Target: ""sweden/germany/norway""
+- Exact match with one of the multiple targets.
+- Score: 1
+
+---
+
+**idx_5:**
+
+- Response: ""unitedstates""
+- Target: ""usa""
+- ""unitedstates"" ≈ ""usa""
+- Score: 1
+
+---
+
+All responses refer to entities included in their corresponding target lists.
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1
+}
+```",usa/brazil/mainlandchina,unitedstates,1.0,"Let's analyze each pair according to the criterion:
+
+- idx_0: response = ""toddphillips"", target = ""toddphillips""  
+  They are exactly the same, so score = 1.
+
+- idx_1: response = ""shannonmurphy"", target = ""shannonmurphy""  
+  Exact match, score = 1.
+
+- idx_2: response = ""jamesgray"", target = ""jamesgray""  
+  Exact match, score = 1.
+
+- idx_3: response = ""noahbaumbach"", target = ""noahbaumbach""  
+  Exact match, score = 1.
+
+- idx_4: response = ""royandersson"", target = ""royandersson""  
+  Exact match, score = 1.
+
+- idx_5: response = ""adammckay"", target = ""stevensoderbergh""  
+  Different responses, they point to different entities, so score = 0.
+
+Final scoring in JSON format:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0
+}
+```",jamesgray,jamesgray,1.0,"Let's analyze each pair step-by-step according to the criterion:
+
+Criterion recap:
+- Semantics roughly the same or pointing to the same entity is sufficient.
+- Relevance to the reference answer only.
+- Inconsistencies in classification with the reference answer are permitted.
+- Score either 0 or 1.
+
+---
+
+**idx_0**  
+- Target: ""drama/thriller/crime""  
+- Response: ""crime,thriller""  
+Analysis: Response includes two of the three genres from target (thriller and crime). Drama is missing but inclusion of two relevant genres indicates strong semantic overlap. Since the criterion allows approximate semantics and pointing to the same entity, this should get 1.
+
+**idx_1**  
+- Target: ""drama/comedy/romance""  
+- Response: ""drama""  
+Analysis: Response contains one main genre ""drama"" which is included in the target set. It is relevant and points to the same entity broadly. Response is less comprehensive but criterion does not require full coverage. Score: 1.
+
+**idx_2**  
+- Target: ""sciencefiction/adventure""  
+- Response: ""sci-fi""  
+Analysis: ""sci-fi"" is a synonym/short for ""sciencefiction"". Response is semantically correct and relevant. Even though ""adventure"" is missing, not required to cover all. Score: 1.
+
+**idx_3**  
+- Target: ""drama/romance""  
+- Response: ""comedy,drama""  
+Analysis: Response shares ""drama"" with target, but adds comedy which is not in target. The presence of ""drama"" suggests relevance. Adding other genres is allowed as per the criterion. Score: 1.
+
+**idx_4**  
+- Target: ""drama""  
+- Response: ""drama""  
+Analysis: Exact match. Score: 1.
+
+**idx_5**  
+- Target: ""comedy/drama/thriller/crime""  
+- Response: ""comedy,drama""  
+Analysis: Response includes comedy and drama, both included in target. Missing thriller and crime, but partial match is sufficient. Score: 1.
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1
+}
+```",sciencefiction/adventure,sci-fi,0.0,"Let's analyze each pair of response and target according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+In this context, the answers are numerical values (times in minutes). The reference answers are exact numbers (e.g., 118min), and the responses are close or different numbers.
+
+Since the answers are numeric, and the question likely asks for a specific time, the standard practice would be to require an exact or nearly exact answer to be fully correct. However, the criterion states semantics approximately the same or pointing to the same entity is sufficient.
+
+Numbers close to each other might be considered roughly the same value (depending on the tolerance). But the criterion does not define any numeric tolerance.
+
+Given just numbers, ""approximately the same"" probably means close in value.
+
+Let's inspect each:
+
+1. idx_0  
+   Response: 122 mins  
+   Target: 118 min  
+   Difference: 4 min  
+   122 is close to 118, likely acceptable as approx same.
+
+2. idx_1  
+   Response: 94 mins  
+   Target: 120 min  
+   Difference: 26 min  
+   Quite far apart, not approximately the same.
+
+3. idx_2  
+   Response: 134 mins  
+   Target: 124 min  
+   Difference: 10 min  
+   Slightly farther, but possibly still approx the same?  
+   10 min difference might be borderline. Without precise tolerance, let's consider ""approximately"" to mean within ~5 min. 10 min likely too far.
+
+4. idx_3  
+   Response: 135 mins  
+   Target: 135 min  
+   Exact match. Definitely correct.
+
+5. idx_4  
+   Response: 105 mins  
+   Target: 76 min  
+   Difference: 29 min  
+   Not approximately same.
+
+6. idx_5  
+   Response: 103 mins  
+   Target: 96 min  
+   Difference: 7 min  
+   Possibly borderline, but difference greater than 5 min. Probably no.
+
+Given this, an assumed tolerance of ±5 minutes would suffice as ""approximately the same"". Above that, score 0; within or equal to 5, score 1.
+
+Re-evaluate with this:
+
+- idx_0: 4 min difference → score 1  
+- idx_1: 26 min difference → score 0  
+- idx_2: 10 min difference → score 0  
+- idx_3: exactly same → score 1  
+- idx_4: 29 min difference → score 0  
+- idx_5: 7 min difference → score 0
+
+Thus the final scores are:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0
+}
+```
+
+---
+
+**Note:** Since the criterion does not specify numeric tolerance explicitly, making a reasonable assumption about ""approximately"" is necessary. The chosen ±5 minutes range is a common sense approach for evaluating times expressed in minutes.",124min,134mins,1.0,key_match
+,,marriagestory,Marriage Story,1.0,"Let's analyze each response against its target according to the given criterion:
+
+Criterion summary:
+- Semantics approximately the same or pointing to the same entity is sufficient.
+- Content to be evaluated only needs to be a subset of the target.
+- Score is 0 or 1 only.
+
+---
+
+**idx_0:**
+
+- Response: ""unitedstates""
+- Target: ""usa/canada""
+- Is ""unitedstates"" approximately the same as ""usa""? Yes, ""usa"" and ""unitedstates"" refer to the same entity.
+- Given that, the response matches one part of the target.
+- Score: 1
+
+---
+
+**idx_1:**
+
+- Response: ""australia""
+- Target: ""australia""
+- Exact match.
+- Score: 1
+
+---
+
+**idx_2:**
+
+- Response: ""unitedstates""
+- Target: ""usa/brazil/mainlandchina""
+- ""unitedstates"" ≈ ""usa""
+- Response matches one part of the target.
+- Score: 1
+
+---
+
+**idx_3:**
+
+- Response: ""unitedstates""
+- Target: ""uk/usa""
+- ""unitedstates"" ≈ ""usa""
+- Response matches one part of the target.
+- Score: 1
+
+---
+
+**idx_4:**
+
+- Response: ""sweden""
+- Target: ""sweden/germany/norway""
+- Exact match with one of the multiple targets.
+- Score: 1
+
+---
+
+**idx_5:**
+
+- Response: ""unitedstates""
+- Target: ""usa""
+- ""unitedstates"" ≈ ""usa""
+- Score: 1
+
+---
+
+All responses refer to entities included in their corresponding target lists.
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1
+}
+```",uk/usa,unitedstates,1.0,"Let's analyze each pair according to the criterion:
+
+- idx_0: response = ""toddphillips"", target = ""toddphillips""  
+  They are exactly the same, so score = 1.
+
+- idx_1: response = ""shannonmurphy"", target = ""shannonmurphy""  
+  Exact match, score = 1.
+
+- idx_2: response = ""jamesgray"", target = ""jamesgray""  
+  Exact match, score = 1.
+
+- idx_3: response = ""noahbaumbach"", target = ""noahbaumbach""  
+  Exact match, score = 1.
+
+- idx_4: response = ""royandersson"", target = ""royandersson""  
+  Exact match, score = 1.
+
+- idx_5: response = ""adammckay"", target = ""stevensoderbergh""  
+  Different responses, they point to different entities, so score = 0.
+
+Final scoring in JSON format:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0
+}
+```",noahbaumbach,noahbaumbach,1.0,"Let's analyze each pair step-by-step according to the criterion:
+
+Criterion recap:
+- Semantics roughly the same or pointing to the same entity is sufficient.
+- Relevance to the reference answer only.
+- Inconsistencies in classification with the reference answer are permitted.
+- Score either 0 or 1.
+
+---
+
+**idx_0**  
+- Target: ""drama/thriller/crime""  
+- Response: ""crime,thriller""  
+Analysis: Response includes two of the three genres from target (thriller and crime). Drama is missing but inclusion of two relevant genres indicates strong semantic overlap. Since the criterion allows approximate semantics and pointing to the same entity, this should get 1.
+
+**idx_1**  
+- Target: ""drama/comedy/romance""  
+- Response: ""drama""  
+Analysis: Response contains one main genre ""drama"" which is included in the target set. It is relevant and points to the same entity broadly. Response is less comprehensive but criterion does not require full coverage. Score: 1.
+
+**idx_2**  
+- Target: ""sciencefiction/adventure""  
+- Response: ""sci-fi""  
+Analysis: ""sci-fi"" is a synonym/short for ""sciencefiction"". Response is semantically correct and relevant. Even though ""adventure"" is missing, not required to cover all. Score: 1.
+
+**idx_3**  
+- Target: ""drama/romance""  
+- Response: ""comedy,drama""  
+Analysis: Response shares ""drama"" with target, but adds comedy which is not in target. The presence of ""drama"" suggests relevance. Adding other genres is allowed as per the criterion. Score: 1.
+
+**idx_4**  
+- Target: ""drama""  
+- Response: ""drama""  
+Analysis: Exact match. Score: 1.
+
+**idx_5**  
+- Target: ""comedy/drama/thriller/crime""  
+- Response: ""comedy,drama""  
+Analysis: Response includes comedy and drama, both included in target. Missing thriller and crime, but partial match is sufficient. Score: 1.
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1
+}
+```",drama/romance,"comedy,drama",1.0,"Let's analyze each pair of response and target according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+In this context, the answers are numerical values (times in minutes). The reference answers are exact numbers (e.g., 118min), and the responses are close or different numbers.
+
+Since the answers are numeric, and the question likely asks for a specific time, the standard practice would be to require an exact or nearly exact answer to be fully correct. However, the criterion states semantics approximately the same or pointing to the same entity is sufficient.
+
+Numbers close to each other might be considered roughly the same value (depending on the tolerance). But the criterion does not define any numeric tolerance.
+
+Given just numbers, ""approximately the same"" probably means close in value.
+
+Let's inspect each:
+
+1. idx_0  
+   Response: 122 mins  
+   Target: 118 min  
+   Difference: 4 min  
+   122 is close to 118, likely acceptable as approx same.
+
+2. idx_1  
+   Response: 94 mins  
+   Target: 120 min  
+   Difference: 26 min  
+   Quite far apart, not approximately the same.
+
+3. idx_2  
+   Response: 134 mins  
+   Target: 124 min  
+   Difference: 10 min  
+   Slightly farther, but possibly still approx the same?  
+   10 min difference might be borderline. Without precise tolerance, let's consider ""approximately"" to mean within ~5 min. 10 min likely too far.
+
+4. idx_3  
+   Response: 135 mins  
+   Target: 135 min  
+   Exact match. Definitely correct.
+
+5. idx_4  
+   Response: 105 mins  
+   Target: 76 min  
+   Difference: 29 min  
+   Not approximately same.
+
+6. idx_5  
+   Response: 103 mins  
+   Target: 96 min  
+   Difference: 7 min  
+   Possibly borderline, but difference greater than 5 min. Probably no.
+
+Given this, an assumed tolerance of ±5 minutes would suffice as ""approximately the same"". Above that, score 0; within or equal to 5, score 1.
+
+Re-evaluate with this:
+
+- idx_0: 4 min difference → score 1  
+- idx_1: 26 min difference → score 0  
+- idx_2: 10 min difference → score 0  
+- idx_3: exactly same → score 1  
+- idx_4: 29 min difference → score 0  
+- idx_5: 7 min difference → score 0
+
+Thus the final scores are:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0
+}
+```
+
+---
+
+**Note:** Since the criterion does not specify numeric tolerance explicitly, making a reasonable assumption about ""approximately"" is necessary. The chosen ±5 minutes range is a common sense approach for evaluating times expressed in minutes.",135min,135mins,1.0,key_match
+,,aboutendlessness,About Endlessness,1.0,"Let's analyze each response against its target according to the given criterion:
+
+Criterion summary:
+- Semantics approximately the same or pointing to the same entity is sufficient.
+- Content to be evaluated only needs to be a subset of the target.
+- Score is 0 or 1 only.
+
+---
+
+**idx_0:**
+
+- Response: ""unitedstates""
+- Target: ""usa/canada""
+- Is ""unitedstates"" approximately the same as ""usa""? Yes, ""usa"" and ""unitedstates"" refer to the same entity.
+- Given that, the response matches one part of the target.
+- Score: 1
+
+---
+
+**idx_1:**
+
+- Response: ""australia""
+- Target: ""australia""
+- Exact match.
+- Score: 1
+
+---
+
+**idx_2:**
+
+- Response: ""unitedstates""
+- Target: ""usa/brazil/mainlandchina""
+- ""unitedstates"" ≈ ""usa""
+- Response matches one part of the target.
+- Score: 1
+
+---
+
+**idx_3:**
+
+- Response: ""unitedstates""
+- Target: ""uk/usa""
+- ""unitedstates"" ≈ ""usa""
+- Response matches one part of the target.
+- Score: 1
+
+---
+
+**idx_4:**
+
+- Response: ""sweden""
+- Target: ""sweden/germany/norway""
+- Exact match with one of the multiple targets.
+- Score: 1
+
+---
+
+**idx_5:**
+
+- Response: ""unitedstates""
+- Target: ""usa""
+- ""unitedstates"" ≈ ""usa""
+- Score: 1
+
+---
+
+All responses refer to entities included in their corresponding target lists.
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1
+}
+```",sweden/germany/norway,sweden,1.0,"Let's analyze each pair according to the criterion:
+
+- idx_0: response = ""toddphillips"", target = ""toddphillips""  
+  They are exactly the same, so score = 1.
+
+- idx_1: response = ""shannonmurphy"", target = ""shannonmurphy""  
+  Exact match, score = 1.
+
+- idx_2: response = ""jamesgray"", target = ""jamesgray""  
+  Exact match, score = 1.
+
+- idx_3: response = ""noahbaumbach"", target = ""noahbaumbach""  
+  Exact match, score = 1.
+
+- idx_4: response = ""royandersson"", target = ""royandersson""  
+  Exact match, score = 1.
+
+- idx_5: response = ""adammckay"", target = ""stevensoderbergh""  
+  Different responses, they point to different entities, so score = 0.
+
+Final scoring in JSON format:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0
+}
+```",royandersson,royandersson,1.0,"Let's analyze each pair step-by-step according to the criterion:
+
+Criterion recap:
+- Semantics roughly the same or pointing to the same entity is sufficient.
+- Relevance to the reference answer only.
+- Inconsistencies in classification with the reference answer are permitted.
+- Score either 0 or 1.
+
+---
+
+**idx_0**  
+- Target: ""drama/thriller/crime""  
+- Response: ""crime,thriller""  
+Analysis: Response includes two of the three genres from target (thriller and crime). Drama is missing but inclusion of two relevant genres indicates strong semantic overlap. Since the criterion allows approximate semantics and pointing to the same entity, this should get 1.
+
+**idx_1**  
+- Target: ""drama/comedy/romance""  
+- Response: ""drama""  
+Analysis: Response contains one main genre ""drama"" which is included in the target set. It is relevant and points to the same entity broadly. Response is less comprehensive but criterion does not require full coverage. Score: 1.
+
+**idx_2**  
+- Target: ""sciencefiction/adventure""  
+- Response: ""sci-fi""  
+Analysis: ""sci-fi"" is a synonym/short for ""sciencefiction"". Response is semantically correct and relevant. Even though ""adventure"" is missing, not required to cover all. Score: 1.
+
+**idx_3**  
+- Target: ""drama/romance""  
+- Response: ""comedy,drama""  
+Analysis: Response shares ""drama"" with target, but adds comedy which is not in target. The presence of ""drama"" suggests relevance. Adding other genres is allowed as per the criterion. Score: 1.
+
+**idx_4**  
+- Target: ""drama""  
+- Response: ""drama""  
+Analysis: Exact match. Score: 1.
+
+**idx_5**  
+- Target: ""comedy/drama/thriller/crime""  
+- Response: ""comedy,drama""  
+Analysis: Response includes comedy and drama, both included in target. Missing thriller and crime, but partial match is sufficient. Score: 1.
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1
+}
+```",drama,drama,0.0,"Let's analyze each pair of response and target according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+In this context, the answers are numerical values (times in minutes). The reference answers are exact numbers (e.g., 118min), and the responses are close or different numbers.
+
+Since the answers are numeric, and the question likely asks for a specific time, the standard practice would be to require an exact or nearly exact answer to be fully correct. However, the criterion states semantics approximately the same or pointing to the same entity is sufficient.
+
+Numbers close to each other might be considered roughly the same value (depending on the tolerance). But the criterion does not define any numeric tolerance.
+
+Given just numbers, ""approximately the same"" probably means close in value.
+
+Let's inspect each:
+
+1. idx_0  
+   Response: 122 mins  
+   Target: 118 min  
+   Difference: 4 min  
+   122 is close to 118, likely acceptable as approx same.
+
+2. idx_1  
+   Response: 94 mins  
+   Target: 120 min  
+   Difference: 26 min  
+   Quite far apart, not approximately the same.
+
+3. idx_2  
+   Response: 134 mins  
+   Target: 124 min  
+   Difference: 10 min  
+   Slightly farther, but possibly still approx the same?  
+   10 min difference might be borderline. Without precise tolerance, let's consider ""approximately"" to mean within ~5 min. 10 min likely too far.
+
+4. idx_3  
+   Response: 135 mins  
+   Target: 135 min  
+   Exact match. Definitely correct.
+
+5. idx_4  
+   Response: 105 mins  
+   Target: 76 min  
+   Difference: 29 min  
+   Not approximately same.
+
+6. idx_5  
+   Response: 103 mins  
+   Target: 96 min  
+   Difference: 7 min  
+   Possibly borderline, but difference greater than 5 min. Probably no.
+
+Given this, an assumed tolerance of ±5 minutes would suffice as ""approximately the same"". Above that, score 0; within or equal to 5, score 1.
+
+Re-evaluate with this:
+
+- idx_0: 4 min difference → score 1  
+- idx_1: 26 min difference → score 0  
+- idx_2: 10 min difference → score 0  
+- idx_3: exactly same → score 1  
+- idx_4: 29 min difference → score 0  
+- idx_5: 7 min difference → score 0
+
+Thus the final scores are:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0
+}
+```
+
+---
+
+**Note:** Since the criterion does not specify numeric tolerance explicitly, making a reasonable assumption about ""approximately"" is necessary. The chosen ±5 minutes range is a common sense approach for evaluating times expressed in minutes.",76min,105mins,1.0,key_match
+,,thelaundromat,The Laundromat,1.0,"Let's analyze each response against its target according to the given criterion:
+
+Criterion summary:
+- Semantics approximately the same or pointing to the same entity is sufficient.
+- Content to be evaluated only needs to be a subset of the target.
+- Score is 0 or 1 only.
+
+---
+
+**idx_0:**
+
+- Response: ""unitedstates""
+- Target: ""usa/canada""
+- Is ""unitedstates"" approximately the same as ""usa""? Yes, ""usa"" and ""unitedstates"" refer to the same entity.
+- Given that, the response matches one part of the target.
+- Score: 1
+
+---
+
+**idx_1:**
+
+- Response: ""australia""
+- Target: ""australia""
+- Exact match.
+- Score: 1
+
+---
+
+**idx_2:**
+
+- Response: ""unitedstates""
+- Target: ""usa/brazil/mainlandchina""
+- ""unitedstates"" ≈ ""usa""
+- Response matches one part of the target.
+- Score: 1
+
+---
+
+**idx_3:**
+
+- Response: ""unitedstates""
+- Target: ""uk/usa""
+- ""unitedstates"" ≈ ""usa""
+- Response matches one part of the target.
+- Score: 1
+
+---
+
+**idx_4:**
+
+- Response: ""sweden""
+- Target: ""sweden/germany/norway""
+- Exact match with one of the multiple targets.
+- Score: 1
+
+---
+
+**idx_5:**
+
+- Response: ""unitedstates""
+- Target: ""usa""
+- ""unitedstates"" ≈ ""usa""
+- Score: 1
+
+---
+
+All responses refer to entities included in their corresponding target lists.
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1
+}
+```",usa,unitedstates,0.0,"Let's analyze each pair according to the criterion:
+
+- idx_0: response = ""toddphillips"", target = ""toddphillips""  
+  They are exactly the same, so score = 1.
+
+- idx_1: response = ""shannonmurphy"", target = ""shannonmurphy""  
+  Exact match, score = 1.
+
+- idx_2: response = ""jamesgray"", target = ""jamesgray""  
+  Exact match, score = 1.
+
+- idx_3: response = ""noahbaumbach"", target = ""noahbaumbach""  
+  Exact match, score = 1.
+
+- idx_4: response = ""royandersson"", target = ""royandersson""  
+  Exact match, score = 1.
+
+- idx_5: response = ""adammckay"", target = ""stevensoderbergh""  
+  Different responses, they point to different entities, so score = 0.
+
+Final scoring in JSON format:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0
+}
+```",stevensoderbergh,adammckay,1.0,"Let's analyze each pair step-by-step according to the criterion:
+
+Criterion recap:
+- Semantics roughly the same or pointing to the same entity is sufficient.
+- Relevance to the reference answer only.
+- Inconsistencies in classification with the reference answer are permitted.
+- Score either 0 or 1.
+
+---
+
+**idx_0**  
+- Target: ""drama/thriller/crime""  
+- Response: ""crime,thriller""  
+Analysis: Response includes two of the three genres from target (thriller and crime). Drama is missing but inclusion of two relevant genres indicates strong semantic overlap. Since the criterion allows approximate semantics and pointing to the same entity, this should get 1.
+
+**idx_1**  
+- Target: ""drama/comedy/romance""  
+- Response: ""drama""  
+Analysis: Response contains one main genre ""drama"" which is included in the target set. It is relevant and points to the same entity broadly. Response is less comprehensive but criterion does not require full coverage. Score: 1.
+
+**idx_2**  
+- Target: ""sciencefiction/adventure""  
+- Response: ""sci-fi""  
+Analysis: ""sci-fi"" is a synonym/short for ""sciencefiction"". Response is semantically correct and relevant. Even though ""adventure"" is missing, not required to cover all. Score: 1.
+
+**idx_3**  
+- Target: ""drama/romance""  
+- Response: ""comedy,drama""  
+Analysis: Response shares ""drama"" with target, but adds comedy which is not in target. The presence of ""drama"" suggests relevance. Adding other genres is allowed as per the criterion. Score: 1.
+
+**idx_4**  
+- Target: ""drama""  
+- Response: ""drama""  
+Analysis: Exact match. Score: 1.
+
+**idx_5**  
+- Target: ""comedy/drama/thriller/crime""  
+- Response: ""comedy,drama""  
+Analysis: Response includes comedy and drama, both included in target. Missing thriller and crime, but partial match is sufficient. Score: 1.
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1
+}
+```",comedy/drama/thriller/crime,"comedy,drama",0.0,"Let's analyze each pair of response and target according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+In this context, the answers are numerical values (times in minutes). The reference answers are exact numbers (e.g., 118min), and the responses are close or different numbers.
+
+Since the answers are numeric, and the question likely asks for a specific time, the standard practice would be to require an exact or nearly exact answer to be fully correct. However, the criterion states semantics approximately the same or pointing to the same entity is sufficient.
+
+Numbers close to each other might be considered roughly the same value (depending on the tolerance). But the criterion does not define any numeric tolerance.
+
+Given just numbers, ""approximately the same"" probably means close in value.
+
+Let's inspect each:
+
+1. idx_0  
+   Response: 122 mins  
+   Target: 118 min  
+   Difference: 4 min  
+   122 is close to 118, likely acceptable as approx same.
+
+2. idx_1  
+   Response: 94 mins  
+   Target: 120 min  
+   Difference: 26 min  
+   Quite far apart, not approximately the same.
+
+3. idx_2  
+   Response: 134 mins  
+   Target: 124 min  
+   Difference: 10 min  
+   Slightly farther, but possibly still approx the same?  
+   10 min difference might be borderline. Without precise tolerance, let's consider ""approximately"" to mean within ~5 min. 10 min likely too far.
+
+4. idx_3  
+   Response: 135 mins  
+   Target: 135 min  
+   Exact match. Definitely correct.
+
+5. idx_4  
+   Response: 105 mins  
+   Target: 76 min  
+   Difference: 29 min  
+   Not approximately same.
+
+6. idx_5  
+   Response: 103 mins  
+   Target: 96 min  
+   Difference: 7 min  
+   Possibly borderline, but difference greater than 5 min. Probably no.
+
+Given this, an assumed tolerance of ±5 minutes would suffice as ""approximately the same"". Above that, score 0; within or equal to 5, score 1.
+
+Re-evaluate with this:
+
+- idx_0: 4 min difference → score 1  
+- idx_1: 26 min difference → score 0  
+- idx_2: 10 min difference → score 0  
+- idx_3: exactly same → score 1  
+- idx_4: 29 min difference → score 0  
+- idx_5: 7 min difference → score 0
+
+Thus the final scores are:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0
+}
+```
+
+---
+
+**Note:** Since the criterion does not specify numeric tolerance explicitly, making a reasonable assumption about ""approximately"" is necessary. The chosen ±5 minutes range is a common sense approach for evaluating times expressed in minutes.",96min,103mins,1.0,key_match
+1.0,,anofficerandaspy,,,,france/italy,,,,romanpolanski,,,,drama,,,,132min,,,
+1.0,,ema,,,,chile,,,,pablolarraín,,,,drama/romance/music,,,,102min,,,
+1.0,,gloriamundi,,,,france/italy,,,,robertguédiguian,,,,drama,,,,107min,,,
+1.0,,guestofhonour,,,,canada,,,,atomegoyan,,,,drama,,,,104min,,,
+1.0,,martineden,,,,italy/france/germany,,,,pietromarcello,,,,drama,,,,129min,,,
+1.0,,no.7cherrylane,,,,"hongkongsar,china",,,,yonfan,,,,animation,,,,125min,,,
+1.0,,saturdayfiction,,,,china,,,,yelou,,,,"drama,thriller",,,,126min,,,
+1.0,,thedomain,,,,portugal/france,,,,tiagoguedes,,,,drama,,,,164min,,,
+1.0,,themafiaisnolongerwhatitusedtobe,,,,italy,,,,francomaresco,,,,documentary,,,,107min,,,
+1.0,,themayorofrionesanità,,,,italy,,,,mariomartone,,,,drama,,,,118min,,,
+1.0,,thepaintedbird,,,,czechrepublic/slovakia/ukraine,,,,václavmarhoul,,,,drama/war,,,,169min,,,
+1.0,,theperfectcandidate,,,,saudiarabia/germany,,,,haifaaalmansour,,,,drama,,,,101min,,,
+1.0,,thetruth,,,,france/japan,,,,hirokazukore-eda,,,,drama,,,,106min,,,
+1.0,,waitingforthebarbarians,,,,italy/usa,,,,ciroguerra,,,,drama,,,,112min,,,
+1.0,,waspnetwork,,,,france/spain/belgium/brazil,,,,olivierassayas,,,,thriller,,,,123min,,,

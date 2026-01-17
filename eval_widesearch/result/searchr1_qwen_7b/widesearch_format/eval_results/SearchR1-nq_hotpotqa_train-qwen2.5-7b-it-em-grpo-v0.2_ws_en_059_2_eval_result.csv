@@ -1,0 +1,1329 @@
+exist_flag_gt,exist_flag_response,laureate,laureate_before_map,awardyear_exact_match,awardyear_exact_match_eval_msg,awardyear_query,awardyear_response,eventcity_llm_judge,eventcity_llm_judge_eval_msg,eventcity_query,eventcity_response,laureate_exact_match,laureate_exact_match_eval_msg,talktitle_llm_judge,talktitle_llm_judge_eval_msg,talktitle_query,talktitle_response
+,,edwardburtynsky,Edward Burtynsky,1.0,"exact match, response: 2005, target: 2005",2005,2005,0.0,"Let's analyze and score each idx based on the given standard answer (target) and the response, using the criterion:
+
+- It is sufficient if the semantics are approximately the same or if they point to the same entity.
+- No need for exact word match.
+
+---
+
+**idx_0**  
+- response: ""nan""  
+- target: ""monterey""  
+Analysis: The response is ""nan"" which likely means no answer or not a number, no semantic match to ""monterey"".  
+Score: 0
+
+**idx_1**  
+- response: ""nan""  
+- target: ""monterey""  
+Same reasoning as idx_0.  
+Score: 0
+
+**idx_2**  
+- response: ""longbeach,ca""  
+- target: ""longbeach""  
+""longbeach,ca"" is specifying the city with state abbreviation. This clearly points to the same entity ""longbeach"".  
+Score: 1
+
+**idx_3**  
+- response: ""vancouver,bc""  
+- target: ""longbeach""  
+Different cities: Vancouver, BC (British Columbia, Canada) vs Long Beach (likely in California, US). Different entities.  
+Score: 0
+
+**idx_4**  
+- response: ""vancouver,bc""  
+- target: ""nan""  
+Target is ""nan"" (likely no specified target). Since no target to compare, difficult to consider it meaningfully correct. The criterion does not specify partial credit or neutral score for this case. So likely 0.  
+Score: 0
+
+**idx_5**  
+- response: ""edinburgh,scotland""  
+- target: ""longbeach""  
+Different cities. Response does not point to ""longbeach"".  
+Score: 0
+
+**idx_6**  
+- response: ""edinburgh,scotland""  
+- target: ""vancouver""  
+Different cities again. Not semantically equivalent.  
+Score: 0
+
+**idx_7**  
+- response: ""edinburgh,scotland""  
+- target: ""vancouver""  
+Same as idx_6.  
+Score: 0
+
+---
+
+### Final Scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```",monterey,nan,1.0,key_match,1.0,"Let's analyze each idx item one by one based on the criterion:
+
+Criterion reminder:  
+> It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.
+
+---
+
+**idx_0:**  
+- response: ""aglobalvisionforourplanet""  
+- target: ""mywish:manufacturedlandscapesandgreeneducation""  
+Analysis:  
+The target is focused on ""manufactured landscapes and green education,"" i.e. eco/environment themed wish related to education and landscapes made by humans. The response ""a global vision for our planet"" is more general but closely related to the environment and global ecological awareness. It roughly points to the same idea of caring for the planet’s environment.  
+Score: 1
+
+---
+
+**idx_1:**  
+- response: ""newcuresforbraindisorders""  
+- target: ""mywish:threeunusualmedicalinventions""  
+Analysis:  
+Target mentions ""three unusual medical inventions,"" likely related to new medical technology or discoveries. The response talks about ""new cures for brain disorders."" While not exactly the same phrase, medical inventions could reasonably include new cures for brain disorders - it does point to the medical innovation domain but maybe more specific to brain disorders rather than 3 inventions in general.  
+However, the criterion allows approximate semantics or same entity. Both deal with medical innovations. So they are related enough.  
+Score: 1
+
+---
+
+**idx_2:**  
+- response: ""foodrevolution""  
+- target: ""teacheverychildaboutfood""  
+Analysis:  
+""Food revolution"" implies a large change or movement related to food. ""Teach every child about food"" is an initiative or wish focused on food education specifically for children. The semantics are related: both involve food awareness and change. The response is broader. The overlap is clear and points to food education or improvement.  
+Score: 1
+
+---
+
+**idx_3:**  
+- response: ""weareallbornequal""  
+- target: ""mywish:usearttoturntheworldinsideout""  
+Analysis:  
+Response is about equality at birth (""we are all born equal""). Target is ""use art to turn the world inside out,"" which is about using art to change perspectives or the status quo. The semantics are different. The response focuses on equality/human rights, while the target focuses on art and world view transformation. Not pointing to the same concept or entity.  
+Score: 0
+
+---
+
+**idx_4:**  
+- response: ""city2.0""  
+- target: ""thecity2.0reimaginesthefuture""  
+Analysis:  
+Response is exactly ""city2.0,"" and target is ""the city2.0 reimagines the future."" The response names the same entity/idea as the target. Clearly semantically aligned.  
+Score: 1
+
+---
+
+**idx_5:**  
+- response: ""schoolinthecloud""  
+- target: ""buildaschoolinthecloud""  
+Analysis:  
+Response and target clearly reference the same concept: a school in the cloud (probably an online learning platform). Minor difference in phrasing (missing ""build a""), but semantically the same.  
+Score: 1
+
+---
+
+**idx_6:**  
+- response: ""whistleblowers""  
+- target: ""mywish:tolaunchaneweraofopennessinbusiness""  
+Analysis:  
+Target refers to launching a new era of openness in business, which aligns well with the concept of whistleblowers who expose wrongdoing to increase transparency. The response points to the key actors encouraging business openness. Semantics align well enough.  
+Score: 1
+
+---
+
+**idx_7:**  
+- response: ""storycorps""  
+- target: ""everyonearoundyouhasastorytheworldneedstohear""  
+Analysis:  
+The target is about everyone's story needing to be heard. ""StoryCorps"" is a well-known project to record and share stories from everyday people. The response points to a concrete entity that embodies the target idea. Semantically, they align.  
+Score: 1
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1
+}
+```",mywish:manufacturedlandscapesandgreeneducation,aglobalvisionforourplanet
+,,robertfischell,Robert Fischell,1.0,"exact match, response: 2005, target: 2005",2005,2005,0.0,"Let's analyze and score each idx based on the given standard answer (target) and the response, using the criterion:
+
+- It is sufficient if the semantics are approximately the same or if they point to the same entity.
+- No need for exact word match.
+
+---
+
+**idx_0**  
+- response: ""nan""  
+- target: ""monterey""  
+Analysis: The response is ""nan"" which likely means no answer or not a number, no semantic match to ""monterey"".  
+Score: 0
+
+**idx_1**  
+- response: ""nan""  
+- target: ""monterey""  
+Same reasoning as idx_0.  
+Score: 0
+
+**idx_2**  
+- response: ""longbeach,ca""  
+- target: ""longbeach""  
+""longbeach,ca"" is specifying the city with state abbreviation. This clearly points to the same entity ""longbeach"".  
+Score: 1
+
+**idx_3**  
+- response: ""vancouver,bc""  
+- target: ""longbeach""  
+Different cities: Vancouver, BC (British Columbia, Canada) vs Long Beach (likely in California, US). Different entities.  
+Score: 0
+
+**idx_4**  
+- response: ""vancouver,bc""  
+- target: ""nan""  
+Target is ""nan"" (likely no specified target). Since no target to compare, difficult to consider it meaningfully correct. The criterion does not specify partial credit or neutral score for this case. So likely 0.  
+Score: 0
+
+**idx_5**  
+- response: ""edinburgh,scotland""  
+- target: ""longbeach""  
+Different cities. Response does not point to ""longbeach"".  
+Score: 0
+
+**idx_6**  
+- response: ""edinburgh,scotland""  
+- target: ""vancouver""  
+Different cities again. Not semantically equivalent.  
+Score: 0
+
+**idx_7**  
+- response: ""edinburgh,scotland""  
+- target: ""vancouver""  
+Same as idx_6.  
+Score: 0
+
+---
+
+### Final Scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```",monterey,nan,1.0,key_match,1.0,"Let's analyze each idx item one by one based on the criterion:
+
+Criterion reminder:  
+> It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.
+
+---
+
+**idx_0:**  
+- response: ""aglobalvisionforourplanet""  
+- target: ""mywish:manufacturedlandscapesandgreeneducation""  
+Analysis:  
+The target is focused on ""manufactured landscapes and green education,"" i.e. eco/environment themed wish related to education and landscapes made by humans. The response ""a global vision for our planet"" is more general but closely related to the environment and global ecological awareness. It roughly points to the same idea of caring for the planet’s environment.  
+Score: 1
+
+---
+
+**idx_1:**  
+- response: ""newcuresforbraindisorders""  
+- target: ""mywish:threeunusualmedicalinventions""  
+Analysis:  
+Target mentions ""three unusual medical inventions,"" likely related to new medical technology or discoveries. The response talks about ""new cures for brain disorders."" While not exactly the same phrase, medical inventions could reasonably include new cures for brain disorders - it does point to the medical innovation domain but maybe more specific to brain disorders rather than 3 inventions in general.  
+However, the criterion allows approximate semantics or same entity. Both deal with medical innovations. So they are related enough.  
+Score: 1
+
+---
+
+**idx_2:**  
+- response: ""foodrevolution""  
+- target: ""teacheverychildaboutfood""  
+Analysis:  
+""Food revolution"" implies a large change or movement related to food. ""Teach every child about food"" is an initiative or wish focused on food education specifically for children. The semantics are related: both involve food awareness and change. The response is broader. The overlap is clear and points to food education or improvement.  
+Score: 1
+
+---
+
+**idx_3:**  
+- response: ""weareallbornequal""  
+- target: ""mywish:usearttoturntheworldinsideout""  
+Analysis:  
+Response is about equality at birth (""we are all born equal""). Target is ""use art to turn the world inside out,"" which is about using art to change perspectives or the status quo. The semantics are different. The response focuses on equality/human rights, while the target focuses on art and world view transformation. Not pointing to the same concept or entity.  
+Score: 0
+
+---
+
+**idx_4:**  
+- response: ""city2.0""  
+- target: ""thecity2.0reimaginesthefuture""  
+Analysis:  
+Response is exactly ""city2.0,"" and target is ""the city2.0 reimagines the future."" The response names the same entity/idea as the target. Clearly semantically aligned.  
+Score: 1
+
+---
+
+**idx_5:**  
+- response: ""schoolinthecloud""  
+- target: ""buildaschoolinthecloud""  
+Analysis:  
+Response and target clearly reference the same concept: a school in the cloud (probably an online learning platform). Minor difference in phrasing (missing ""build a""), but semantically the same.  
+Score: 1
+
+---
+
+**idx_6:**  
+- response: ""whistleblowers""  
+- target: ""mywish:tolaunchaneweraofopennessinbusiness""  
+Analysis:  
+Target refers to launching a new era of openness in business, which aligns well with the concept of whistleblowers who expose wrongdoing to increase transparency. The response points to the key actors encouraging business openness. Semantics align well enough.  
+Score: 1
+
+---
+
+**idx_7:**  
+- response: ""storycorps""  
+- target: ""everyonearoundyouhasastorytheworldneedstohear""  
+Analysis:  
+The target is about everyone's story needing to be heard. ""StoryCorps"" is a well-known project to record and share stories from everyday people. The response points to a concrete entity that embodies the target idea. Semantically, they align.  
+Score: 1
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1
+}
+```",mywish:threeunusualmedicalinventions,newcuresforbraindisorders
+,,jamieoliver,Jamie Oliver,1.0,"exact match, response: 2010, target: 2010",2010,2010,1.0,"Let's analyze and score each idx based on the given standard answer (target) and the response, using the criterion:
+
+- It is sufficient if the semantics are approximately the same or if they point to the same entity.
+- No need for exact word match.
+
+---
+
+**idx_0**  
+- response: ""nan""  
+- target: ""monterey""  
+Analysis: The response is ""nan"" which likely means no answer or not a number, no semantic match to ""monterey"".  
+Score: 0
+
+**idx_1**  
+- response: ""nan""  
+- target: ""monterey""  
+Same reasoning as idx_0.  
+Score: 0
+
+**idx_2**  
+- response: ""longbeach,ca""  
+- target: ""longbeach""  
+""longbeach,ca"" is specifying the city with state abbreviation. This clearly points to the same entity ""longbeach"".  
+Score: 1
+
+**idx_3**  
+- response: ""vancouver,bc""  
+- target: ""longbeach""  
+Different cities: Vancouver, BC (British Columbia, Canada) vs Long Beach (likely in California, US). Different entities.  
+Score: 0
+
+**idx_4**  
+- response: ""vancouver,bc""  
+- target: ""nan""  
+Target is ""nan"" (likely no specified target). Since no target to compare, difficult to consider it meaningfully correct. The criterion does not specify partial credit or neutral score for this case. So likely 0.  
+Score: 0
+
+**idx_5**  
+- response: ""edinburgh,scotland""  
+- target: ""longbeach""  
+Different cities. Response does not point to ""longbeach"".  
+Score: 0
+
+**idx_6**  
+- response: ""edinburgh,scotland""  
+- target: ""vancouver""  
+Different cities again. Not semantically equivalent.  
+Score: 0
+
+**idx_7**  
+- response: ""edinburgh,scotland""  
+- target: ""vancouver""  
+Same as idx_6.  
+Score: 0
+
+---
+
+### Final Scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```",longbeach,"longbeach,ca",1.0,key_match,1.0,"Let's analyze each idx item one by one based on the criterion:
+
+Criterion reminder:  
+> It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.
+
+---
+
+**idx_0:**  
+- response: ""aglobalvisionforourplanet""  
+- target: ""mywish:manufacturedlandscapesandgreeneducation""  
+Analysis:  
+The target is focused on ""manufactured landscapes and green education,"" i.e. eco/environment themed wish related to education and landscapes made by humans. The response ""a global vision for our planet"" is more general but closely related to the environment and global ecological awareness. It roughly points to the same idea of caring for the planet’s environment.  
+Score: 1
+
+---
+
+**idx_1:**  
+- response: ""newcuresforbraindisorders""  
+- target: ""mywish:threeunusualmedicalinventions""  
+Analysis:  
+Target mentions ""three unusual medical inventions,"" likely related to new medical technology or discoveries. The response talks about ""new cures for brain disorders."" While not exactly the same phrase, medical inventions could reasonably include new cures for brain disorders - it does point to the medical innovation domain but maybe more specific to brain disorders rather than 3 inventions in general.  
+However, the criterion allows approximate semantics or same entity. Both deal with medical innovations. So they are related enough.  
+Score: 1
+
+---
+
+**idx_2:**  
+- response: ""foodrevolution""  
+- target: ""teacheverychildaboutfood""  
+Analysis:  
+""Food revolution"" implies a large change or movement related to food. ""Teach every child about food"" is an initiative or wish focused on food education specifically for children. The semantics are related: both involve food awareness and change. The response is broader. The overlap is clear and points to food education or improvement.  
+Score: 1
+
+---
+
+**idx_3:**  
+- response: ""weareallbornequal""  
+- target: ""mywish:usearttoturntheworldinsideout""  
+Analysis:  
+Response is about equality at birth (""we are all born equal""). Target is ""use art to turn the world inside out,"" which is about using art to change perspectives or the status quo. The semantics are different. The response focuses on equality/human rights, while the target focuses on art and world view transformation. Not pointing to the same concept or entity.  
+Score: 0
+
+---
+
+**idx_4:**  
+- response: ""city2.0""  
+- target: ""thecity2.0reimaginesthefuture""  
+Analysis:  
+Response is exactly ""city2.0,"" and target is ""the city2.0 reimagines the future."" The response names the same entity/idea as the target. Clearly semantically aligned.  
+Score: 1
+
+---
+
+**idx_5:**  
+- response: ""schoolinthecloud""  
+- target: ""buildaschoolinthecloud""  
+Analysis:  
+Response and target clearly reference the same concept: a school in the cloud (probably an online learning platform). Minor difference in phrasing (missing ""build a""), but semantically the same.  
+Score: 1
+
+---
+
+**idx_6:**  
+- response: ""whistleblowers""  
+- target: ""mywish:tolaunchaneweraofopennessinbusiness""  
+Analysis:  
+Target refers to launching a new era of openness in business, which aligns well with the concept of whistleblowers who expose wrongdoing to increase transparency. The response points to the key actors encouraging business openness. Semantics align well enough.  
+Score: 1
+
+---
+
+**idx_7:**  
+- response: ""storycorps""  
+- target: ""everyonearoundyouhasastorytheworldneedstohear""  
+Analysis:  
+The target is about everyone's story needing to be heard. ""StoryCorps"" is a well-known project to record and share stories from everyday people. The response points to a concrete entity that embodies the target idea. Semantically, they align.  
+Score: 1
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1
+}
+```",teacheverychildaboutfood,foodrevolution
+,,jr,JR,1.0,"exact match, response: 2011, target: 2011",2011,2011,0.0,"Let's analyze and score each idx based on the given standard answer (target) and the response, using the criterion:
+
+- It is sufficient if the semantics are approximately the same or if they point to the same entity.
+- No need for exact word match.
+
+---
+
+**idx_0**  
+- response: ""nan""  
+- target: ""monterey""  
+Analysis: The response is ""nan"" which likely means no answer or not a number, no semantic match to ""monterey"".  
+Score: 0
+
+**idx_1**  
+- response: ""nan""  
+- target: ""monterey""  
+Same reasoning as idx_0.  
+Score: 0
+
+**idx_2**  
+- response: ""longbeach,ca""  
+- target: ""longbeach""  
+""longbeach,ca"" is specifying the city with state abbreviation. This clearly points to the same entity ""longbeach"".  
+Score: 1
+
+**idx_3**  
+- response: ""vancouver,bc""  
+- target: ""longbeach""  
+Different cities: Vancouver, BC (British Columbia, Canada) vs Long Beach (likely in California, US). Different entities.  
+Score: 0
+
+**idx_4**  
+- response: ""vancouver,bc""  
+- target: ""nan""  
+Target is ""nan"" (likely no specified target). Since no target to compare, difficult to consider it meaningfully correct. The criterion does not specify partial credit or neutral score for this case. So likely 0.  
+Score: 0
+
+**idx_5**  
+- response: ""edinburgh,scotland""  
+- target: ""longbeach""  
+Different cities. Response does not point to ""longbeach"".  
+Score: 0
+
+**idx_6**  
+- response: ""edinburgh,scotland""  
+- target: ""vancouver""  
+Different cities again. Not semantically equivalent.  
+Score: 0
+
+**idx_7**  
+- response: ""edinburgh,scotland""  
+- target: ""vancouver""  
+Same as idx_6.  
+Score: 0
+
+---
+
+### Final Scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```",longbeach,"vancouver,bc",1.0,key_match,0.0,"Let's analyze each idx item one by one based on the criterion:
+
+Criterion reminder:  
+> It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.
+
+---
+
+**idx_0:**  
+- response: ""aglobalvisionforourplanet""  
+- target: ""mywish:manufacturedlandscapesandgreeneducation""  
+Analysis:  
+The target is focused on ""manufactured landscapes and green education,"" i.e. eco/environment themed wish related to education and landscapes made by humans. The response ""a global vision for our planet"" is more general but closely related to the environment and global ecological awareness. It roughly points to the same idea of caring for the planet’s environment.  
+Score: 1
+
+---
+
+**idx_1:**  
+- response: ""newcuresforbraindisorders""  
+- target: ""mywish:threeunusualmedicalinventions""  
+Analysis:  
+Target mentions ""three unusual medical inventions,"" likely related to new medical technology or discoveries. The response talks about ""new cures for brain disorders."" While not exactly the same phrase, medical inventions could reasonably include new cures for brain disorders - it does point to the medical innovation domain but maybe more specific to brain disorders rather than 3 inventions in general.  
+However, the criterion allows approximate semantics or same entity. Both deal with medical innovations. So they are related enough.  
+Score: 1
+
+---
+
+**idx_2:**  
+- response: ""foodrevolution""  
+- target: ""teacheverychildaboutfood""  
+Analysis:  
+""Food revolution"" implies a large change or movement related to food. ""Teach every child about food"" is an initiative or wish focused on food education specifically for children. The semantics are related: both involve food awareness and change. The response is broader. The overlap is clear and points to food education or improvement.  
+Score: 1
+
+---
+
+**idx_3:**  
+- response: ""weareallbornequal""  
+- target: ""mywish:usearttoturntheworldinsideout""  
+Analysis:  
+Response is about equality at birth (""we are all born equal""). Target is ""use art to turn the world inside out,"" which is about using art to change perspectives or the status quo. The semantics are different. The response focuses on equality/human rights, while the target focuses on art and world view transformation. Not pointing to the same concept or entity.  
+Score: 0
+
+---
+
+**idx_4:**  
+- response: ""city2.0""  
+- target: ""thecity2.0reimaginesthefuture""  
+Analysis:  
+Response is exactly ""city2.0,"" and target is ""the city2.0 reimagines the future."" The response names the same entity/idea as the target. Clearly semantically aligned.  
+Score: 1
+
+---
+
+**idx_5:**  
+- response: ""schoolinthecloud""  
+- target: ""buildaschoolinthecloud""  
+Analysis:  
+Response and target clearly reference the same concept: a school in the cloud (probably an online learning platform). Minor difference in phrasing (missing ""build a""), but semantically the same.  
+Score: 1
+
+---
+
+**idx_6:**  
+- response: ""whistleblowers""  
+- target: ""mywish:tolaunchaneweraofopennessinbusiness""  
+Analysis:  
+Target refers to launching a new era of openness in business, which aligns well with the concept of whistleblowers who expose wrongdoing to increase transparency. The response points to the key actors encouraging business openness. Semantics align well enough.  
+Score: 1
+
+---
+
+**idx_7:**  
+- response: ""storycorps""  
+- target: ""everyonearoundyouhasastorytheworldneedstohear""  
+Analysis:  
+The target is about everyone's story needing to be heard. ""StoryCorps"" is a well-known project to record and share stories from everyday people. The response points to a concrete entity that embodies the target idea. Semantically, they align.  
+Score: 1
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1
+}
+```",mywish:usearttoturntheworldinsideout,weareallbornequal
+,,thecity2.0,City 2.0,1.0,"exact match, response: 2012, target: 2012",2012,2012,0.0,"Let's analyze and score each idx based on the given standard answer (target) and the response, using the criterion:
+
+- It is sufficient if the semantics are approximately the same or if they point to the same entity.
+- No need for exact word match.
+
+---
+
+**idx_0**  
+- response: ""nan""  
+- target: ""monterey""  
+Analysis: The response is ""nan"" which likely means no answer or not a number, no semantic match to ""monterey"".  
+Score: 0
+
+**idx_1**  
+- response: ""nan""  
+- target: ""monterey""  
+Same reasoning as idx_0.  
+Score: 0
+
+**idx_2**  
+- response: ""longbeach,ca""  
+- target: ""longbeach""  
+""longbeach,ca"" is specifying the city with state abbreviation. This clearly points to the same entity ""longbeach"".  
+Score: 1
+
+**idx_3**  
+- response: ""vancouver,bc""  
+- target: ""longbeach""  
+Different cities: Vancouver, BC (British Columbia, Canada) vs Long Beach (likely in California, US). Different entities.  
+Score: 0
+
+**idx_4**  
+- response: ""vancouver,bc""  
+- target: ""nan""  
+Target is ""nan"" (likely no specified target). Since no target to compare, difficult to consider it meaningfully correct. The criterion does not specify partial credit or neutral score for this case. So likely 0.  
+Score: 0
+
+**idx_5**  
+- response: ""edinburgh,scotland""  
+- target: ""longbeach""  
+Different cities. Response does not point to ""longbeach"".  
+Score: 0
+
+**idx_6**  
+- response: ""edinburgh,scotland""  
+- target: ""vancouver""  
+Different cities again. Not semantically equivalent.  
+Score: 0
+
+**idx_7**  
+- response: ""edinburgh,scotland""  
+- target: ""vancouver""  
+Same as idx_6.  
+Score: 0
+
+---
+
+### Final Scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```",nan,"vancouver,bc",1.0,key_match,1.0,"Let's analyze each idx item one by one based on the criterion:
+
+Criterion reminder:  
+> It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.
+
+---
+
+**idx_0:**  
+- response: ""aglobalvisionforourplanet""  
+- target: ""mywish:manufacturedlandscapesandgreeneducation""  
+Analysis:  
+The target is focused on ""manufactured landscapes and green education,"" i.e. eco/environment themed wish related to education and landscapes made by humans. The response ""a global vision for our planet"" is more general but closely related to the environment and global ecological awareness. It roughly points to the same idea of caring for the planet’s environment.  
+Score: 1
+
+---
+
+**idx_1:**  
+- response: ""newcuresforbraindisorders""  
+- target: ""mywish:threeunusualmedicalinventions""  
+Analysis:  
+Target mentions ""three unusual medical inventions,"" likely related to new medical technology or discoveries. The response talks about ""new cures for brain disorders."" While not exactly the same phrase, medical inventions could reasonably include new cures for brain disorders - it does point to the medical innovation domain but maybe more specific to brain disorders rather than 3 inventions in general.  
+However, the criterion allows approximate semantics or same entity. Both deal with medical innovations. So they are related enough.  
+Score: 1
+
+---
+
+**idx_2:**  
+- response: ""foodrevolution""  
+- target: ""teacheverychildaboutfood""  
+Analysis:  
+""Food revolution"" implies a large change or movement related to food. ""Teach every child about food"" is an initiative or wish focused on food education specifically for children. The semantics are related: both involve food awareness and change. The response is broader. The overlap is clear and points to food education or improvement.  
+Score: 1
+
+---
+
+**idx_3:**  
+- response: ""weareallbornequal""  
+- target: ""mywish:usearttoturntheworldinsideout""  
+Analysis:  
+Response is about equality at birth (""we are all born equal""). Target is ""use art to turn the world inside out,"" which is about using art to change perspectives or the status quo. The semantics are different. The response focuses on equality/human rights, while the target focuses on art and world view transformation. Not pointing to the same concept or entity.  
+Score: 0
+
+---
+
+**idx_4:**  
+- response: ""city2.0""  
+- target: ""thecity2.0reimaginesthefuture""  
+Analysis:  
+Response is exactly ""city2.0,"" and target is ""the city2.0 reimagines the future."" The response names the same entity/idea as the target. Clearly semantically aligned.  
+Score: 1
+
+---
+
+**idx_5:**  
+- response: ""schoolinthecloud""  
+- target: ""buildaschoolinthecloud""  
+Analysis:  
+Response and target clearly reference the same concept: a school in the cloud (probably an online learning platform). Minor difference in phrasing (missing ""build a""), but semantically the same.  
+Score: 1
+
+---
+
+**idx_6:**  
+- response: ""whistleblowers""  
+- target: ""mywish:tolaunchaneweraofopennessinbusiness""  
+Analysis:  
+Target refers to launching a new era of openness in business, which aligns well with the concept of whistleblowers who expose wrongdoing to increase transparency. The response points to the key actors encouraging business openness. Semantics align well enough.  
+Score: 1
+
+---
+
+**idx_7:**  
+- response: ""storycorps""  
+- target: ""everyonearoundyouhasastorytheworldneedstohear""  
+Analysis:  
+The target is about everyone's story needing to be heard. ""StoryCorps"" is a well-known project to record and share stories from everyday people. The response points to a concrete entity that embodies the target idea. Semantically, they align.  
+Score: 1
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1
+}
+```",thecity2.0reimaginesthefuture,city2.0
+,,sugatamitra,Sugata Mitra,1.0,"exact match, response: 2013, target: 2013",2013,2013,0.0,"Let's analyze and score each idx based on the given standard answer (target) and the response, using the criterion:
+
+- It is sufficient if the semantics are approximately the same or if they point to the same entity.
+- No need for exact word match.
+
+---
+
+**idx_0**  
+- response: ""nan""  
+- target: ""monterey""  
+Analysis: The response is ""nan"" which likely means no answer or not a number, no semantic match to ""monterey"".  
+Score: 0
+
+**idx_1**  
+- response: ""nan""  
+- target: ""monterey""  
+Same reasoning as idx_0.  
+Score: 0
+
+**idx_2**  
+- response: ""longbeach,ca""  
+- target: ""longbeach""  
+""longbeach,ca"" is specifying the city with state abbreviation. This clearly points to the same entity ""longbeach"".  
+Score: 1
+
+**idx_3**  
+- response: ""vancouver,bc""  
+- target: ""longbeach""  
+Different cities: Vancouver, BC (British Columbia, Canada) vs Long Beach (likely in California, US). Different entities.  
+Score: 0
+
+**idx_4**  
+- response: ""vancouver,bc""  
+- target: ""nan""  
+Target is ""nan"" (likely no specified target). Since no target to compare, difficult to consider it meaningfully correct. The criterion does not specify partial credit or neutral score for this case. So likely 0.  
+Score: 0
+
+**idx_5**  
+- response: ""edinburgh,scotland""  
+- target: ""longbeach""  
+Different cities. Response does not point to ""longbeach"".  
+Score: 0
+
+**idx_6**  
+- response: ""edinburgh,scotland""  
+- target: ""vancouver""  
+Different cities again. Not semantically equivalent.  
+Score: 0
+
+**idx_7**  
+- response: ""edinburgh,scotland""  
+- target: ""vancouver""  
+Same as idx_6.  
+Score: 0
+
+---
+
+### Final Scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```",longbeach,"edinburgh,scotland",1.0,key_match,1.0,"Let's analyze each idx item one by one based on the criterion:
+
+Criterion reminder:  
+> It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.
+
+---
+
+**idx_0:**  
+- response: ""aglobalvisionforourplanet""  
+- target: ""mywish:manufacturedlandscapesandgreeneducation""  
+Analysis:  
+The target is focused on ""manufactured landscapes and green education,"" i.e. eco/environment themed wish related to education and landscapes made by humans. The response ""a global vision for our planet"" is more general but closely related to the environment and global ecological awareness. It roughly points to the same idea of caring for the planet’s environment.  
+Score: 1
+
+---
+
+**idx_1:**  
+- response: ""newcuresforbraindisorders""  
+- target: ""mywish:threeunusualmedicalinventions""  
+Analysis:  
+Target mentions ""three unusual medical inventions,"" likely related to new medical technology or discoveries. The response talks about ""new cures for brain disorders."" While not exactly the same phrase, medical inventions could reasonably include new cures for brain disorders - it does point to the medical innovation domain but maybe more specific to brain disorders rather than 3 inventions in general.  
+However, the criterion allows approximate semantics or same entity. Both deal with medical innovations. So they are related enough.  
+Score: 1
+
+---
+
+**idx_2:**  
+- response: ""foodrevolution""  
+- target: ""teacheverychildaboutfood""  
+Analysis:  
+""Food revolution"" implies a large change or movement related to food. ""Teach every child about food"" is an initiative or wish focused on food education specifically for children. The semantics are related: both involve food awareness and change. The response is broader. The overlap is clear and points to food education or improvement.  
+Score: 1
+
+---
+
+**idx_3:**  
+- response: ""weareallbornequal""  
+- target: ""mywish:usearttoturntheworldinsideout""  
+Analysis:  
+Response is about equality at birth (""we are all born equal""). Target is ""use art to turn the world inside out,"" which is about using art to change perspectives or the status quo. The semantics are different. The response focuses on equality/human rights, while the target focuses on art and world view transformation. Not pointing to the same concept or entity.  
+Score: 0
+
+---
+
+**idx_4:**  
+- response: ""city2.0""  
+- target: ""thecity2.0reimaginesthefuture""  
+Analysis:  
+Response is exactly ""city2.0,"" and target is ""the city2.0 reimagines the future."" The response names the same entity/idea as the target. Clearly semantically aligned.  
+Score: 1
+
+---
+
+**idx_5:**  
+- response: ""schoolinthecloud""  
+- target: ""buildaschoolinthecloud""  
+Analysis:  
+Response and target clearly reference the same concept: a school in the cloud (probably an online learning platform). Minor difference in phrasing (missing ""build a""), but semantically the same.  
+Score: 1
+
+---
+
+**idx_6:**  
+- response: ""whistleblowers""  
+- target: ""mywish:tolaunchaneweraofopennessinbusiness""  
+Analysis:  
+Target refers to launching a new era of openness in business, which aligns well with the concept of whistleblowers who expose wrongdoing to increase transparency. The response points to the key actors encouraging business openness. Semantics align well enough.  
+Score: 1
+
+---
+
+**idx_7:**  
+- response: ""storycorps""  
+- target: ""everyonearoundyouhasastorytheworldneedstohear""  
+Analysis:  
+The target is about everyone's story needing to be heard. ""StoryCorps"" is a well-known project to record and share stories from everyday people. The response points to a concrete entity that embodies the target idea. Semantically, they align.  
+Score: 1
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1
+}
+```",buildaschoolinthecloud,schoolinthecloud
+,,charmiangooch,Charmian Gooch,1.0,"exact match, response: 2014, target: 2014",2014,2014,0.0,"Let's analyze and score each idx based on the given standard answer (target) and the response, using the criterion:
+
+- It is sufficient if the semantics are approximately the same or if they point to the same entity.
+- No need for exact word match.
+
+---
+
+**idx_0**  
+- response: ""nan""  
+- target: ""monterey""  
+Analysis: The response is ""nan"" which likely means no answer or not a number, no semantic match to ""monterey"".  
+Score: 0
+
+**idx_1**  
+- response: ""nan""  
+- target: ""monterey""  
+Same reasoning as idx_0.  
+Score: 0
+
+**idx_2**  
+- response: ""longbeach,ca""  
+- target: ""longbeach""  
+""longbeach,ca"" is specifying the city with state abbreviation. This clearly points to the same entity ""longbeach"".  
+Score: 1
+
+**idx_3**  
+- response: ""vancouver,bc""  
+- target: ""longbeach""  
+Different cities: Vancouver, BC (British Columbia, Canada) vs Long Beach (likely in California, US). Different entities.  
+Score: 0
+
+**idx_4**  
+- response: ""vancouver,bc""  
+- target: ""nan""  
+Target is ""nan"" (likely no specified target). Since no target to compare, difficult to consider it meaningfully correct. The criterion does not specify partial credit or neutral score for this case. So likely 0.  
+Score: 0
+
+**idx_5**  
+- response: ""edinburgh,scotland""  
+- target: ""longbeach""  
+Different cities. Response does not point to ""longbeach"".  
+Score: 0
+
+**idx_6**  
+- response: ""edinburgh,scotland""  
+- target: ""vancouver""  
+Different cities again. Not semantically equivalent.  
+Score: 0
+
+**idx_7**  
+- response: ""edinburgh,scotland""  
+- target: ""vancouver""  
+Same as idx_6.  
+Score: 0
+
+---
+
+### Final Scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```",vancouver,"edinburgh,scotland",1.0,key_match,1.0,"Let's analyze each idx item one by one based on the criterion:
+
+Criterion reminder:  
+> It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.
+
+---
+
+**idx_0:**  
+- response: ""aglobalvisionforourplanet""  
+- target: ""mywish:manufacturedlandscapesandgreeneducation""  
+Analysis:  
+The target is focused on ""manufactured landscapes and green education,"" i.e. eco/environment themed wish related to education and landscapes made by humans. The response ""a global vision for our planet"" is more general but closely related to the environment and global ecological awareness. It roughly points to the same idea of caring for the planet’s environment.  
+Score: 1
+
+---
+
+**idx_1:**  
+- response: ""newcuresforbraindisorders""  
+- target: ""mywish:threeunusualmedicalinventions""  
+Analysis:  
+Target mentions ""three unusual medical inventions,"" likely related to new medical technology or discoveries. The response talks about ""new cures for brain disorders."" While not exactly the same phrase, medical inventions could reasonably include new cures for brain disorders - it does point to the medical innovation domain but maybe more specific to brain disorders rather than 3 inventions in general.  
+However, the criterion allows approximate semantics or same entity. Both deal with medical innovations. So they are related enough.  
+Score: 1
+
+---
+
+**idx_2:**  
+- response: ""foodrevolution""  
+- target: ""teacheverychildaboutfood""  
+Analysis:  
+""Food revolution"" implies a large change or movement related to food. ""Teach every child about food"" is an initiative or wish focused on food education specifically for children. The semantics are related: both involve food awareness and change. The response is broader. The overlap is clear and points to food education or improvement.  
+Score: 1
+
+---
+
+**idx_3:**  
+- response: ""weareallbornequal""  
+- target: ""mywish:usearttoturntheworldinsideout""  
+Analysis:  
+Response is about equality at birth (""we are all born equal""). Target is ""use art to turn the world inside out,"" which is about using art to change perspectives or the status quo. The semantics are different. The response focuses on equality/human rights, while the target focuses on art and world view transformation. Not pointing to the same concept or entity.  
+Score: 0
+
+---
+
+**idx_4:**  
+- response: ""city2.0""  
+- target: ""thecity2.0reimaginesthefuture""  
+Analysis:  
+Response is exactly ""city2.0,"" and target is ""the city2.0 reimagines the future."" The response names the same entity/idea as the target. Clearly semantically aligned.  
+Score: 1
+
+---
+
+**idx_5:**  
+- response: ""schoolinthecloud""  
+- target: ""buildaschoolinthecloud""  
+Analysis:  
+Response and target clearly reference the same concept: a school in the cloud (probably an online learning platform). Minor difference in phrasing (missing ""build a""), but semantically the same.  
+Score: 1
+
+---
+
+**idx_6:**  
+- response: ""whistleblowers""  
+- target: ""mywish:tolaunchaneweraofopennessinbusiness""  
+Analysis:  
+Target refers to launching a new era of openness in business, which aligns well with the concept of whistleblowers who expose wrongdoing to increase transparency. The response points to the key actors encouraging business openness. Semantics align well enough.  
+Score: 1
+
+---
+
+**idx_7:**  
+- response: ""storycorps""  
+- target: ""everyonearoundyouhasastorytheworldneedstohear""  
+Analysis:  
+The target is about everyone's story needing to be heard. ""StoryCorps"" is a well-known project to record and share stories from everyday people. The response points to a concrete entity that embodies the target idea. Semantically, they align.  
+Score: 1
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1
+}
+```",mywish:tolaunchaneweraofopennessinbusiness,whistleblowers
+,,daveisay,David Isay,1.0,"exact match, response: 2015, target: 2015",2015,2015,0.0,"Let's analyze and score each idx based on the given standard answer (target) and the response, using the criterion:
+
+- It is sufficient if the semantics are approximately the same or if they point to the same entity.
+- No need for exact word match.
+
+---
+
+**idx_0**  
+- response: ""nan""  
+- target: ""monterey""  
+Analysis: The response is ""nan"" which likely means no answer or not a number, no semantic match to ""monterey"".  
+Score: 0
+
+**idx_1**  
+- response: ""nan""  
+- target: ""monterey""  
+Same reasoning as idx_0.  
+Score: 0
+
+**idx_2**  
+- response: ""longbeach,ca""  
+- target: ""longbeach""  
+""longbeach,ca"" is specifying the city with state abbreviation. This clearly points to the same entity ""longbeach"".  
+Score: 1
+
+**idx_3**  
+- response: ""vancouver,bc""  
+- target: ""longbeach""  
+Different cities: Vancouver, BC (British Columbia, Canada) vs Long Beach (likely in California, US). Different entities.  
+Score: 0
+
+**idx_4**  
+- response: ""vancouver,bc""  
+- target: ""nan""  
+Target is ""nan"" (likely no specified target). Since no target to compare, difficult to consider it meaningfully correct. The criterion does not specify partial credit or neutral score for this case. So likely 0.  
+Score: 0
+
+**idx_5**  
+- response: ""edinburgh,scotland""  
+- target: ""longbeach""  
+Different cities. Response does not point to ""longbeach"".  
+Score: 0
+
+**idx_6**  
+- response: ""edinburgh,scotland""  
+- target: ""vancouver""  
+Different cities again. Not semantically equivalent.  
+Score: 0
+
+**idx_7**  
+- response: ""edinburgh,scotland""  
+- target: ""vancouver""  
+Same as idx_6.  
+Score: 0
+
+---
+
+### Final Scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```",vancouver,"edinburgh,scotland",1.0,key_match,1.0,"Let's analyze each idx item one by one based on the criterion:
+
+Criterion reminder:  
+> It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.
+
+---
+
+**idx_0:**  
+- response: ""aglobalvisionforourplanet""  
+- target: ""mywish:manufacturedlandscapesandgreeneducation""  
+Analysis:  
+The target is focused on ""manufactured landscapes and green education,"" i.e. eco/environment themed wish related to education and landscapes made by humans. The response ""a global vision for our planet"" is more general but closely related to the environment and global ecological awareness. It roughly points to the same idea of caring for the planet’s environment.  
+Score: 1
+
+---
+
+**idx_1:**  
+- response: ""newcuresforbraindisorders""  
+- target: ""mywish:threeunusualmedicalinventions""  
+Analysis:  
+Target mentions ""three unusual medical inventions,"" likely related to new medical technology or discoveries. The response talks about ""new cures for brain disorders."" While not exactly the same phrase, medical inventions could reasonably include new cures for brain disorders - it does point to the medical innovation domain but maybe more specific to brain disorders rather than 3 inventions in general.  
+However, the criterion allows approximate semantics or same entity. Both deal with medical innovations. So they are related enough.  
+Score: 1
+
+---
+
+**idx_2:**  
+- response: ""foodrevolution""  
+- target: ""teacheverychildaboutfood""  
+Analysis:  
+""Food revolution"" implies a large change or movement related to food. ""Teach every child about food"" is an initiative or wish focused on food education specifically for children. The semantics are related: both involve food awareness and change. The response is broader. The overlap is clear and points to food education or improvement.  
+Score: 1
+
+---
+
+**idx_3:**  
+- response: ""weareallbornequal""  
+- target: ""mywish:usearttoturntheworldinsideout""  
+Analysis:  
+Response is about equality at birth (""we are all born equal""). Target is ""use art to turn the world inside out,"" which is about using art to change perspectives or the status quo. The semantics are different. The response focuses on equality/human rights, while the target focuses on art and world view transformation. Not pointing to the same concept or entity.  
+Score: 0
+
+---
+
+**idx_4:**  
+- response: ""city2.0""  
+- target: ""thecity2.0reimaginesthefuture""  
+Analysis:  
+Response is exactly ""city2.0,"" and target is ""the city2.0 reimagines the future."" The response names the same entity/idea as the target. Clearly semantically aligned.  
+Score: 1
+
+---
+
+**idx_5:**  
+- response: ""schoolinthecloud""  
+- target: ""buildaschoolinthecloud""  
+Analysis:  
+Response and target clearly reference the same concept: a school in the cloud (probably an online learning platform). Minor difference in phrasing (missing ""build a""), but semantically the same.  
+Score: 1
+
+---
+
+**idx_6:**  
+- response: ""whistleblowers""  
+- target: ""mywish:tolaunchaneweraofopennessinbusiness""  
+Analysis:  
+Target refers to launching a new era of openness in business, which aligns well with the concept of whistleblowers who expose wrongdoing to increase transparency. The response points to the key actors encouraging business openness. Semantics align well enough.  
+Score: 1
+
+---
+
+**idx_7:**  
+- response: ""storycorps""  
+- target: ""everyonearoundyouhasastorytheworldneedstohear""  
+Analysis:  
+The target is about everyone's story needing to be heard. ""StoryCorps"" is a well-known project to record and share stories from everyday people. The response points to a concrete entity that embodies the target idea. Semantically, they align.  
+Score: 1
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1
+}
+```",everyonearoundyouhasastorytheworldneedstohear,storycorps
+1.0,,billclinton,,,,2007,,,,monterey,,,,,,mywish:rebuildingrwanda,
+1.0,,bono,,,,2005,,,,monterey,,,,,,mywish:threeactionsforafrica,
+1.0,,cameronsinclair,,,,2006,,,,monterey,,,,,,mywish:acallforopen-sourcearchitecture,
+1.0,,daveeggers,,,,2008,,,,monterey,,,,,,mywish:onceuponaschool,
+1.0,,eowilson,,,,2007,,,,monterey,,,,,,mywish:buildtheencyclopediaoflife,
+1.0,,jamesnachtwey,,,,2007,,,,monterey,,,,,,mywish:letmyphotographsbearwitness,
+1.0,,jehanenoujaim,,,,2006,,,,monterey,,,,,,mywish:aglobaldayoffilm,
+1.0,,jilltarter,,,,2009,,,,longbeach,,,,,,jointhesetisearch,
+1.0,,joséabreu,,,,2009,,,,longbeach,,,,,,theelsistemamusicrevolution,
+1.0,,karenarmstrong,,,,2008,,,,monterey,,,,,,mywish:thecharterforcompassion,
+1.0,,lawrencebrilliant,,,,2006,,,,monterey,,,,,,mywish:helpmestoppandemics,
+,1.0,nan,nan,,,,2006,,,,nan,,,,,,nan
+1.0,,neilturok,,,,2008,,,,monterey,,,,,,mywish:findthenexteinsteininafrica,
+,1.0,rajpanjabi,Raj Panjabi,,,,2017,,,,"edinburgh,scotland",,,,,,healthforeveryone
+,1.0,sarahparcak,Sarah Parcak,,,,2016,,,,"edinburgh,scotland",,,,,,thepastisnotdead
+1.0,,sylviaearle,,,,2009,,,,longbeach,,,,,,mywish:protectouroceans,

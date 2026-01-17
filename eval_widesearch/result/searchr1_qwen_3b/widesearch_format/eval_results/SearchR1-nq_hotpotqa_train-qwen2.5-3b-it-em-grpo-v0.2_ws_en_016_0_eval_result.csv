@@ -1,0 +1,163 @@
+exist_flag_gt,exist_flag_response,time,time_before_map,bronze_llm_judge,bronze_llm_judge_eval_msg,bronze_query,bronze_response,date_llm_judge,date_llm_judge_eval_msg,date_query,date_response,event_llm_judge,event_llm_judge_eval_msg,event_query,event_response,gold_llm_judge,gold_llm_judge_eval_msg,gold_query,gold_response,location_exact_match,location_exact_match_eval_msg,location_query,location_response,meet_llm_judge,meet_llm_judge_eval_msg,meet_query,meet_response,silver_llm_judge,silver_llm_judge_eval_msg,silver_query,silver_response,standing_exact_match,standing_exact_match_eval_msg,standing_query,standing_response,time_exact_match,time_exact_match_eval_msg
+,,1:42.96,1:42.96,0.0,"Let's analyze the given pair:
+
+- idx_0:
+  - Target (standard answer): ""petervanderkaay""
+  - Response: ""-""
+  
+Analysis:
+- The target answer is a specific entity (likely a username or name).
+- The response is just a hyphen ""-"", which does not correspond to the target entity or any approximate/semantically similar answer.
+- According to the criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+- Here, the response does not match or approximate the target answer.
+  
+Final scoring: 0
+
+```json
+{
+    ""idx_0"": 0
+}
+```",petervanderkaay,-,0.0,"Let's analyze the given pair:
+
+- Target: ""08-12-2008""
+- Response: ""08-06-2016""
+
+Step-by-step analysis according to the criteria:
+
+1. Semantics approximately the same or pointing to the same entity:
+   - The target is a date in August 2008, specifically August 12, 2008.
+   - The response is a date in August 2016, specifically August 6, 2016.
+   - The year differs by 8 years, which is far beyond the allowed one-day fluctuation.
+   - The day differs by 6 days (6 vs 12), also beyond the allowed range of one day before or after.
+   - Therefore, the response does not approximate the reference answer either in semantics or entity.
+
+2. The date fluctuation allowed is only one day before or after, no allowance given for year difference.
+
+Because the response significantly deviates from the target date, it cannot be considered correct.
+
+Final score: 0
+
+```json
+{
+    ""idx_0"": 0
+}
+```",08-12-2008,08-06-2016,1.0,"Let's analyze the provided pair according to the criterion:
+
+- Target answer: ""200mfreestyle""
+- Response: ""men200freestyle""
+
+Step-by-step analysis:
+
+1. The response includes ""200freestyle"", matching the key element ""200mfreestyle"" from the target.
+2. The response adds the prefix ""men"", but since the criterion states the semantics should approximately match or point to the same entity, adding ""men"" (gender classification) does not change the fundamental entity of the swimming event ""200m freestyle"".
+3. The response omits the 'm' in ""200m"", but this is a minor format difference; ""200"" here semi-implies ""200 meters.""
+4. Overall, both convey the same fundamental entity, the ""200m freestyle"" swimming event.
+
+According to the criterion, the answer is sufficient as the semantics point to the same entity despite minor differences in expression.
+
+Therefore, the score for idx_0 is 1.
+
+```json
+{
+    ""idx_0"": 1
+}
+```",200mfreestyle,men200freestyle,0.0,"Analysis:
+
+- Standard answer (target): ""michaelphelps""
+- Response: ""-""
+
+According to the grading criterion, the response must have semantics approximately the same as the reference answer or point to the same entity. Here, the response is ""-"", which is not semantically similar nor does it point to the same entity as ""michaelphelps"".
+
+Therefore, the response should receive a score of 0.
+
+Final scoring result:
+
+```json
+{
+    ""idx_0"": 0
+}
+```",michaelphelps,-,0.0,"exact not match, response: riodejaneiro,brazil, target: beijing,china","beijing,china","riodejaneiro,brazil",0.0,"Let's analyze the pair provided:
+
+- idx_0:
+  - Target answer: ""2008beijingsummerolympics""
+  - Response: ""olympicgames""
+
+Step-by-step analysis based on the grading criterion:
+
+- The standard answer specifies the ""2008 Beijing Summer Olympics,"" which is a specific event.
+- The response says ""olympicgames,"" which is a broader term referring to the event in general, but not specifying the year or location.
+- The grading criterion states: ""It is sufficient if the semantics are approximately the same or if they point to the same entity.""
+- The response points to the general category of the event but lacks the specificity of the year and location.
+- However, since the ""Olympic Games"" always include the ""2008 Beijing Summer Olympics"" as a subset, the response is approximately on target but not exactly the same entity.
+- Does the response answer the question fully? If the question asked ""Which Olympic Games?"" or something that expects a specific event, then ""olympicgames"" is too vague.
+- Given the criterion favors approximate semantics or same entity and no word-for-word correspondence is needed, but the response fails to specify the exact Olympic Games event indicated by the target.
+
+Conclusion:
+
+- Response is related but too general; the target is specific.
+- According to the criterion, ""approximately the same"" or ""pointing to the same entity"" — the response points to a general entity, not the specific one.
+- This is a borderline case, but likely should be scored 0 as it does not specify the correct entity fully.
+
+Final judgment: score = 0
+
+```json
+{
+    ""idx_0"": 0
+}
+```",2008beijingsummerolympics,olympicgames,0.0,"Let's analyze the pair according to the criterion:
+
+- Standard answer (target): ""tae-hwanpark""
+- Response: ""-""
+
+Analysis:
+- The response ""-"" is not semantically the same nor does it point to the same entity as ""tae-hwanpark"".
+- The response does not provide any meaningful answer related to the target.
+- According to the criterion, semantics need to be approximately the same or point to the same entity for a score of 1.
+
+Since the response gives no valid or relevant information, the score should be 0.
+
+```json
+{
+    ""idx_0"": 0
+}
+```",tae-hwanpark,-,1.0,"exact match, response: 1, target: 1",1,1,1.0,key_match
+1.0,,0:49.82,,,,rafaelmuñoz,,,,08-01-2009,,,,100mbutterfly,,,,michaelphelps,,,,"rome,italy",,,,worldaquaticschampionships,,,,miloradčavić,,,,1,,,
+1.0,,0:50.58,,,,andrewlauterstein,,,,08-16-2008,,,,100mbutterfly,,,,michaelphelps,,,,"beijing,china",,,,2008beijingsummerolympics,,,,miloradčavić,,,,1,,,
+1.0,,0:50.71,,,,evgenykorotyshkin,,,,07-30-2011,,,,100mbutterfly,,,,michaelphelps,,,,"shanghai,china",,,,worldaquaticschampionships,,,,konradczerniak,,,,1,,,
+1.0,,0:50.77,,,,albertsubirats,,,,03-31-2007,,,,100mbutterfly,,,,michaelphelps,,,,"melbourne,australia",,,,worldaquaticschampionships,,,,iancrocker,,,,1,,,
+1.0,,0:51.10,,,,andriyserdinov,,,,07-26-2003,,,,100mbutterfly,,,,iancrocker,,,,"barcelona,spain",,,,worldaquaticschampionships,,,,michaelphelps,,,,2,,,
+1.0,,0:51.14,,,,-,,,,08-12-2016,,,,100mbutterfly,,,,josephschooling,,,,"riodejaneiro,brazil",,,,olympicgamesrio2016,,,,"michaelphelps,chadleclos,laszlocseh",,,,2,,,
+1.0,,0:51.21,,,,-,,,,08-03-2012,,,,100mbutterfly,,,,michaelphelps,,,,"london,uk",,,,2012londonsummerolympics,,,,"chadleclos,yevgenykorotyshkin",,,,1,,,
+1.0,,0:51.25,,,,andriyserdinov,,,,08-20-2004,,,,100mbutterfly,,,,michaelphelps,,,,"athens,greece",,,,athensolympicgames,,,,iancrocker,,,,1,,,
+1.0,,0:51.65,,,,andriiserdinov,,,,07-30-2005,,,,100mbutterfly,,,,iancrocker,,,,"montreal,canada",,,,worldaquaticschampionships,,,,michaelphelps,,,,2,,,
+1.0,,1:43.22,,,,danilaizotov,,,,07-28-2009,,,,200mfreestyle,,,,paulbiedermann,,,,"rome,italy",,,,worldaquaticschampionships,,,,michaelphelps,,,,2,,,
+1.0,,1:43.86,,,,parktae-hwan,,,,03-27-2007,,,,200mfreestyle,,,,michaelphelps,,,,"melbourne,australia",,,,worldaquaticschampionships,,,,pieterv.d.hoogenband,,,,1,,,
+1.0,,1:44.79,,,,paulbiedermanni,,,,07-26-2011,,,,200mfreestyle,,,,ryanlochte,,,,"shanghai,china",,,,worldaquaticschampionships,,,,michaelphelps,,,,2,,,
+1.0,,1:45.20,,,,rykneethling,,,,07-25-2005,,,,200mfreestyle,,,,michaelphelps,,,,"montreal,canada",,,,worldaquaticschampionships,,,,granthackett,,,,1,,,
+1.0,,1:45.32,,,,michaelphelps,,,,08-16-2004,,,,200mfreestyle,,,,lanthorpe,,,,"athens,greece",,,,athensolympicgames,,,,pietervandenhoogenband,,,,3,,,
+1.0,,1:51.51,,,,takeshimatsuda,,,,07-29-2009,,,,200mbutterfly,,,,michaelphelps,,,,"rome,italy",,,,worldaquaticschampionships,,,,pawelkorzeniowski,,,,1,,,
+1.0,,1:52.03,,,,takeshimatsuda,,,,08-13-2008,,,,200mbutterfly,,,,michaelphelps,,,,"beijing,china",,,,2008beijingsummerolympics,,,,"laszlocseh,jr.",,,,1,,,
+1.0,,1:52.09,,,,nikolayskvortsov,,,,03-29-2007,,,,200mbutterfly,,,,michaelphelps,,,,"melbourne,australia",,,,worldaquaticschampionships,,,,wupeng,,,,1,,,
+1.0,,1:53.01,,,,takeshimatsuda,,,,07-31-2012,,,,200mbutterfly,,,,chadleclos,,,,"london,uk",,,,2012londonsummerolympics,,,,michaelphelps,,,,2,,,
+1.0,,1:53.34,,,,wupeng,,,,07-27-2011,,,,200mbutterfly,,,,michaelphelps,,,,"shanghai,china",,,,worldaquaticschampionships,,,,takeshimatsuda,,,,1,,,
+1.0,,1:53.36,,,,tamáskenderesi,,,,08-09-2016,,,,200mbutterfly,,,,michaelphelps,,,,"riodejaneiro,brazil",,,,olympicgamesrio2016,,,,masatosakai,,,,1,,,
+1.0,,1:54.04,,,,steveparry,,,,08-17-2004,,,,200mbutterfly,,,,michaelphelps,,,,"athens,greece",,,,athensolympicgames,,,,takashiyamamoto,,,,1,,,
+1.0,,1:54.16,,,,laszlocseh,,,,07-28-2011,,,,200mindividualmedley,,,,ryanlochte,,,,"shanghai,china",,,,worldaquaticschampionships,,,,michaelphelps,,,,2,,,
+1.0,,1:54.23,,,,ryanlochte,,,,08-15-2008,,,,200mindividualmedley,,,,michaelphelps,,,,"beijing,china",,,,2008beijingsummerolympics,,,,"laszlocseh,jr.",,,,1,,,
+1.0,,1:54.27,,,,"laszlocseh,jr.",,,,08-02-2012,,,,200mindividualmedley,,,,michaelphelps,,,,"london,uk",,,,2012londonsummerolympics,,,,ryanlochte,,,,1,,,
+,1.0,1:54.34,1:54.34,,,,-,,,,08-08-2016,,,,men200butterfly,,,,-,,,,"riodejaneiro,brazil",,,,olympicgames,,,,-,,,,1,,
+1.0,,1:54.35,,,,tommalchow,,,,07-23-2003,,,,200mbutterfly,,,,michaelphelps,,,,"barcelona,spain",,,,worldaquaticschampionships,,,,takashiyamamoto,,,,1,,,
+,1.0,1:54.50,1:54.50,,,,-,,,,08-09-2016,,,,men200medley,,,,-,,,,"riodejaneiro,brazil",,,,olympicgames,,,,-,,,,1,,
+1.0,,1:54.58,,,,anatolypolyakov,,,,07-24-2001,,,,200mbutterfly,,,,michaelphelps,,,,"fukuoka,japan",,,,worldaquaticschampionships,,,,tommalchow,,,,1,,,
+1.0,,1:54.66,,,,shunwang,,,,08-11-2016,,,,200mindividualmedley,,,,michaelphelps,,,,"riodejaneiro,brazil",,,,olympicgamesrio2016,,,,kosukehagino,,,,1,,,
+1.0,,1:54.98,,,,lászlócseh,,,,03-29-2007,,,,200mindividualmedley,,,,michaelphelps,,,,"melbourne,australia",,,,worldaquaticschampionships,,,,ryanlochte,,,,1,,,
+1.0,,1:56.04,,,,massimilianorosolino,,,,07-23-2003,,,,200mindividualmedley,,,,michaelphelps,,,,"barcelona,spain",,,,worldaquaticschampionships,,,,ianthorpe,,,,1,,,
+1.0,,1:56.68,,,,ryanlochte,,,,07-28-2005,,,,200mindividualmedley,,,,michaelphelps,,,,"montreal,canada",,,,worldaquaticschampionships,,,,lászlócseh,,,,1,,,
+1.0,,1:57.14,,,,georgebovell,,,,08-19-2004,,,,200mindividualmedley,,,,michaelphelps,,,,"athens,greece",,,,athensolympicgames,,,,ryanlochte,,,,1,,,
+,1.0,3:05.48,3:05.48,,,,-,,,,08-10-2016,,,,men4x100freestylerelay,,,,-,,,,"riodejaneiro,brazil",,,,olympicgames,,,,-,,,,1,,
+,1.0,47.53,47.53,,,,-,,,,08-07-2016,,,,men100butterfly,,,,-,,,,"riodejaneiro,brazil",,,,olympicgames,,,,-,,,,1,,
+,1.0,48.28,48.28,,,,-,,,,08-13-2016,,,,men200fly,,,,-,,,,"riodejaneiro,brazil",,,,olympicgames,,,,-,,,,1,,
+1.0,,4:03.84,,,,ryanlochte,,,,08-10-2008,,,,400mindividualmedley,,,,michaelphelps,,,,"beijing,china",,,,2008beijingsummerolympics,,,,lászlócseh,,,,1,,,
+1.0,,4:06.22,,,,lucamarin,,,,04-01-2007,,,,400mindividualmedley,,,,michaelphelps,,,,"melbourne,australia",,,,worldaquaticschampionships,,,,ryanlochte,,,,1,,,
+1.0,,4:08.26,,,,"laszlocseh,jr.",,,,08-14-2004,,,,400mindividualmedley,,,,michaelphelps,,,,"athens,greece",,,,athensolympicgames,,,,erikvendt,,,,1,,,
+1.0,,4:09.09,,,,oussamamellouli,,,,07-27-2003,,,,400mindividualmedley,,,,michaelphelps,,,,"barcelona,spain",,,,worldaquaticschampionships,,,,laszlocseh,,,,1,,,

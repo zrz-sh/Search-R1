@@ -1,0 +1,606 @@
+exist_flag_gt,exist_flag_response,公司名称,公司名称_before_map,2024归母净利润（元）_number_near,2024归母净利润（元）_number_near_eval_msg,2024归母净利润（元）_query,2024归母净利润（元）_response,2024毛利率_number_near,2024毛利率_number_near_eval_msg,2024毛利率_query,2024毛利率_response,2024研发费用（元）_number_near,2024研发费用（元）_number_near_eval_msg,2024研发费用（元）_query,2024研发费用（元）_response,2024营业收入（元）_number_near,2024营业收入（元）_number_near_eval_msg,2024营业收入（元）_query,2024营业收入（元）_response,上市日期_exact_match,上市日期_exact_match_eval_msg,上市日期_query,上市日期_response,上市板块_llm_judge,上市板块_llm_judge_eval_msg,上市板块_query,上市板块_response,主营业务_llm_judge,主营业务_llm_judge_eval_msg,主营业务_query,主营业务_response,公司名称_exact_match,公司名称_exact_match_eval_msg,募集资金总额（元）_number_near,募集资金总额（元）_number_near_eval_msg,募集资金总额（元）_query,募集资金总额（元）_response,股票代码_exact_match,股票代码_exact_match_eval_msg,股票代码_query,股票代码_response,首发价格（元/股）_exact_match,首发价格（元/股）_exact_match_eval_msg,首发价格（元/股）_query,首发价格（元/股）_response
+,,海昇药业,海昇药业,1.0,"number near in range 5.0%, response: 50750000.0, target: 50750223.4",50750223.40,50750000,1.0,"number near in range 5.0%, response: 0.4132, target: 0.39990000000000003",39.99%,41.32%,1.0,"number near in range 5.0%, response: 10000000.0, target: 9577097.56",9577097.56,10000000,1.0,"number near in range 5.0%, response: 166209100.0, target: 166209055.55",166209055.55,166209100,1.0,"exact match, response: 2024年2月2日, target: 2024年2月2日",2024年2月2日,2024年2月2日,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:
+- The response and the target should have roughly the same meaning or refer to the same entity.
+- Abbreviations and full names are interchangeable.
+- Exact wording is not required.
+
+---
+
+**idx_0**  
+Response: 北交所  
+Target: 北京证券交易所  
+Analysis: ""北交所"" is the commonly used abbreviation for ""北京证券交易所"". They refer to the exact same entity.  
+Score: 1
+
+---
+
+**idx_1**  
+Response: 创业板  
+Target: 深圳证券交易所（创业板）  
+Analysis: The target is ""深圳证券交易所（创业板）"", where ""创业板"" is a board of the Shenzhen Stock Exchange. The response only gives ""创业板"", which is the board name but without explicitly mentioning ""深圳证券交易所"". The criterion allows for abbreviation or partial reference as long as the entity is the same or semantically equivalent. Since the 创业板 uniquely refers to that board in Shenzhen, this is acceptable.  
+Score: 1
+
+---
+
+**idx_2**  
+Response: 上交所  
+Target: 上海证券交易所主板  
+Analysis: ""上交所"" is abbreviation for ""上海证券交易所"", which includes 主板. Since the target is ""上海证券交易所主板"", and the response refers to ""上交所"", which refers to the same exchange but not specified as 主板 or other boards. The main board is generally referred to just as ""上海证券交易所"" or ""上交所"" by default. So this is acceptable.  
+Score: 1
+
+---
+
+**idx_3**  
+Response: 科创板  
+Target: 上海证券交易所科创板  
+Analysis: ""科创板"" is a specific board of the ""上海证券交易所"". Since the target explicitly mentions the board, and the response gives the board name only, this matches according to the criterion.  
+Score: 1
+
+---
+
+**idx_4**  
+Response: 上交所  
+Target: 上海证券交易所主板  
+Same as idx_2, same analysis, same score.  
+Score: 1
+
+---
+
+Final scoring output in JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1
+}
+```",北京证券交易所,北交所,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(Translation: The semantic meaning is roughly the same or points to the same entity; exact wording is not necessary.)
+
+---
+
+**idx_0**  
+- Response: ""农药兽药"" (pesticide and veterinary drugs)  
+- Target: ""兽药原料药、医药原料药及中间体的研发、生产和销售"" (the R&D, production, and sales of veterinary raw materials drugs, pharmaceutical raw materials drugs, and intermediates)  
+- Analysis: The target includes veterinary drugs but also pharmaceutical raw materials and intermediates beyond just veterinary drugs. The response only mentions ""pesticide and veterinary drugs,"" missing pharmaceutical raw materials and intermediates. Additionally, ""农药"" (pesticide) does not appear in the target at all, so it's inaccurate. The response has partial overlap (兽药) but ""农药"" is unrelated. So does it point to the same entity roughly? No, it also includes unrelated entity (pesticide) and misses part of the target scope. Although the standard is ""roughly same meaning or points to the same entity,"" here response extends beyond the target and misses significant parts. Therefore, this should get a 0.
+
+---
+
+**idx_1**  
+- Response: ""牙科材料"" (dental materials)  
+- Target: ""口腔修复材料的研发、生产和销售;口腔数字化设备的设计和销售"" (R&D, production, and sales of oral repair materials; design and sales of oral digital equipment)  
+- Analysis:  
+""牙科材料"" = ""dental materials"" which covers ""口腔修复材料"" (oral repair materials). However, the target also mentions ""口腔数字化设备"" (oral digital equipment), which is not reflected in the response. The response is narrower, only mentioning materials. But the response points to a consistent entity (materials related to oral repair). The criterion does not require completely covering all aspects, only roughly or same entity. ""牙科材料"" is a reasonable shorthand for ""口腔修复材料,"" but it misses the device part. Still, arguably it roughly refers to the same entity as part of the target. Given the criterion states ""semantic similarity or same entity,"" this is acceptable. Score 1.
+
+---
+
+**idx_2**  
+- Response: ""外用药"" (topical drugs)  
+- Target: ""外用药的研发、生产和销售"" (R&D, production and sales of topical drugs)  
+- Analysis: Fully consistent. Response exactly names the major entity of the target. Score 1.
+
+---
+
+**idx_3**  
+- Response: ""生物医药"" (biomedical)  
+- Target: ""生物医药非临床研究服务为主的综合研发服务（cro）"" (biomedical non-clinical research service oriented comprehensive R&D service (CRO))  
+- Analysis: The response ""生物医药"" is a general term meaning biomedical or biopharmaceutical. The target is more specific to biomedical non-clinical research services and comprehensive CRO services. The response is a broader term and misses ""non-clinical research"" and ""CRO"" part. However, the response points to the same general entity ""生物医药"". Given the criterion, roughly same meaning or pointing to the same entity is sufficient. Therefore, score 1.
+
+---
+
+**idx_4**  
+- Response: ""医疗器械"" (medical devices)  
+- Target: ""医用敷料等一次性医疗器械及消毒卫生用品研发、生产和销售"" (R&D, production and sales of disposable medical devices such as medical dressings and disinfectant sanitary products)  
+- Analysis: The response says ""医疗器械"" which is medical devices broadly. Target is disposable medical devices plus disinfectant and sanitary products (which are not medical devices per se). The response generalizes but points to the same main entity: medical devices. The disinfectant and sanitary products are beyond ""medical devices,"" but the overall target includes medical devices which is the core response. Given the loose criterion, it counts as roughly the same entity. Score 1.
+
+---
+
+### Summary of scores:
+
+- idx_0: 0 (response includes unrelated ""农药"" and misses pharmaceutical raw materials)
+- idx_1: 1 (response roughly corresponds to oral repair materials)
+- idx_2: 1 (fully consistent)
+- idx_3: 1 (broader but roughly the same entity)
+- idx_4: 1 (general but roughly the same entity)
+
+---
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1
+}
+```",兽药原料药、医药原料药及中间体的研发、生产和销售,农药兽药,1.0,key_match,0.0,"number not near, response: 356461800.0, target: 398000000.0",398000000.00,356461800,1.0,"exact match, response: 870656, target: 870656",870656,870656,1.0,"exact match, response: 19.9, target: 19.9",19.9,19.9
+,,爱迪特,爱迪特,0.0,"number not near, response: 23000000.0, target: 150491664.18",150491664.18,23000000,0.0,"number not near, response: 0.395, target: 0.5294",52.94%,39.50%,1.0,"number near in range 5.0%, response: 47361900.0, target: 47361902.27",47361902.27,47361900,1.0,"number near in range 5.0%, response: 888165246.91, target: 888165246.91",888165246.91,888165246.91,1.0,"exact match, response: 2024年6月26日, target: 2024年6月26日",2024年6月26日,2024年6月26日,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:
+- The response and the target should have roughly the same meaning or refer to the same entity.
+- Abbreviations and full names are interchangeable.
+- Exact wording is not required.
+
+---
+
+**idx_0**  
+Response: 北交所  
+Target: 北京证券交易所  
+Analysis: ""北交所"" is the commonly used abbreviation for ""北京证券交易所"". They refer to the exact same entity.  
+Score: 1
+
+---
+
+**idx_1**  
+Response: 创业板  
+Target: 深圳证券交易所（创业板）  
+Analysis: The target is ""深圳证券交易所（创业板）"", where ""创业板"" is a board of the Shenzhen Stock Exchange. The response only gives ""创业板"", which is the board name but without explicitly mentioning ""深圳证券交易所"". The criterion allows for abbreviation or partial reference as long as the entity is the same or semantically equivalent. Since the 创业板 uniquely refers to that board in Shenzhen, this is acceptable.  
+Score: 1
+
+---
+
+**idx_2**  
+Response: 上交所  
+Target: 上海证券交易所主板  
+Analysis: ""上交所"" is abbreviation for ""上海证券交易所"", which includes 主板. Since the target is ""上海证券交易所主板"", and the response refers to ""上交所"", which refers to the same exchange but not specified as 主板 or other boards. The main board is generally referred to just as ""上海证券交易所"" or ""上交所"" by default. So this is acceptable.  
+Score: 1
+
+---
+
+**idx_3**  
+Response: 科创板  
+Target: 上海证券交易所科创板  
+Analysis: ""科创板"" is a specific board of the ""上海证券交易所"". Since the target explicitly mentions the board, and the response gives the board name only, this matches according to the criterion.  
+Score: 1
+
+---
+
+**idx_4**  
+Response: 上交所  
+Target: 上海证券交易所主板  
+Same as idx_2, same analysis, same score.  
+Score: 1
+
+---
+
+Final scoring output in JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1
+}
+```",深圳证券交易所（创业板）,创业板,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(Translation: The semantic meaning is roughly the same or points to the same entity; exact wording is not necessary.)
+
+---
+
+**idx_0**  
+- Response: ""农药兽药"" (pesticide and veterinary drugs)  
+- Target: ""兽药原料药、医药原料药及中间体的研发、生产和销售"" (the R&D, production, and sales of veterinary raw materials drugs, pharmaceutical raw materials drugs, and intermediates)  
+- Analysis: The target includes veterinary drugs but also pharmaceutical raw materials and intermediates beyond just veterinary drugs. The response only mentions ""pesticide and veterinary drugs,"" missing pharmaceutical raw materials and intermediates. Additionally, ""农药"" (pesticide) does not appear in the target at all, so it's inaccurate. The response has partial overlap (兽药) but ""农药"" is unrelated. So does it point to the same entity roughly? No, it also includes unrelated entity (pesticide) and misses part of the target scope. Although the standard is ""roughly same meaning or points to the same entity,"" here response extends beyond the target and misses significant parts. Therefore, this should get a 0.
+
+---
+
+**idx_1**  
+- Response: ""牙科材料"" (dental materials)  
+- Target: ""口腔修复材料的研发、生产和销售;口腔数字化设备的设计和销售"" (R&D, production, and sales of oral repair materials; design and sales of oral digital equipment)  
+- Analysis:  
+""牙科材料"" = ""dental materials"" which covers ""口腔修复材料"" (oral repair materials). However, the target also mentions ""口腔数字化设备"" (oral digital equipment), which is not reflected in the response. The response is narrower, only mentioning materials. But the response points to a consistent entity (materials related to oral repair). The criterion does not require completely covering all aspects, only roughly or same entity. ""牙科材料"" is a reasonable shorthand for ""口腔修复材料,"" but it misses the device part. Still, arguably it roughly refers to the same entity as part of the target. Given the criterion states ""semantic similarity or same entity,"" this is acceptable. Score 1.
+
+---
+
+**idx_2**  
+- Response: ""外用药"" (topical drugs)  
+- Target: ""外用药的研发、生产和销售"" (R&D, production and sales of topical drugs)  
+- Analysis: Fully consistent. Response exactly names the major entity of the target. Score 1.
+
+---
+
+**idx_3**  
+- Response: ""生物医药"" (biomedical)  
+- Target: ""生物医药非临床研究服务为主的综合研发服务（cro）"" (biomedical non-clinical research service oriented comprehensive R&D service (CRO))  
+- Analysis: The response ""生物医药"" is a general term meaning biomedical or biopharmaceutical. The target is more specific to biomedical non-clinical research services and comprehensive CRO services. The response is a broader term and misses ""non-clinical research"" and ""CRO"" part. However, the response points to the same general entity ""生物医药"". Given the criterion, roughly same meaning or pointing to the same entity is sufficient. Therefore, score 1.
+
+---
+
+**idx_4**  
+- Response: ""医疗器械"" (medical devices)  
+- Target: ""医用敷料等一次性医疗器械及消毒卫生用品研发、生产和销售"" (R&D, production and sales of disposable medical devices such as medical dressings and disinfectant sanitary products)  
+- Analysis: The response says ""医疗器械"" which is medical devices broadly. Target is disposable medical devices plus disinfectant and sanitary products (which are not medical devices per se). The response generalizes but points to the same main entity: medical devices. The disinfectant and sanitary products are beyond ""medical devices,"" but the overall target includes medical devices which is the core response. Given the loose criterion, it counts as roughly the same entity. Score 1.
+
+---
+
+### Summary of scores:
+
+- idx_0: 0 (response includes unrelated ""农药"" and misses pharmaceutical raw materials)
+- idx_1: 1 (response roughly corresponds to oral repair materials)
+- idx_2: 1 (fully consistent)
+- idx_3: 1 (broader but roughly the same entity)
+- idx_4: 1 (general but roughly the same entity)
+
+---
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1
+}
+```",口腔修复材料的研发、生产和销售;口腔数字化设备的设计和销售,牙科材料,1.0,key_match,1.0,"number near in range 5.0%, response: 855000000.0, target: 855370700.0",855370700.00,855000000,1.0,"exact match, response: 301580, target: 301580",301580,301580,1.0,"exact match, response: 44.95, target: 44.95",44.95,44.95
+,,小方制药,小方制药,1.0,"number near in range 5.0%, response: 205000000.0, target: 205271095.5",205271095.50,205000000,1.0,"number near in range 5.0%, response: 0.6561, target: 0.6559",65.59%,65.61%,1.0,"number near in range 5.0%, response: 15000000.0, target: 15105418.01",15105418.01,15000000,1.0,"number near in range 5.0%, response: 475000000.0, target: 474228256.26",474228256.26,475000000,1.0,"exact match, response: 2024年8月26日, target: 2024年8月26日",2024年8月26日,2024年8月26日,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:
+- The response and the target should have roughly the same meaning or refer to the same entity.
+- Abbreviations and full names are interchangeable.
+- Exact wording is not required.
+
+---
+
+**idx_0**  
+Response: 北交所  
+Target: 北京证券交易所  
+Analysis: ""北交所"" is the commonly used abbreviation for ""北京证券交易所"". They refer to the exact same entity.  
+Score: 1
+
+---
+
+**idx_1**  
+Response: 创业板  
+Target: 深圳证券交易所（创业板）  
+Analysis: The target is ""深圳证券交易所（创业板）"", where ""创业板"" is a board of the Shenzhen Stock Exchange. The response only gives ""创业板"", which is the board name but without explicitly mentioning ""深圳证券交易所"". The criterion allows for abbreviation or partial reference as long as the entity is the same or semantically equivalent. Since the 创业板 uniquely refers to that board in Shenzhen, this is acceptable.  
+Score: 1
+
+---
+
+**idx_2**  
+Response: 上交所  
+Target: 上海证券交易所主板  
+Analysis: ""上交所"" is abbreviation for ""上海证券交易所"", which includes 主板. Since the target is ""上海证券交易所主板"", and the response refers to ""上交所"", which refers to the same exchange but not specified as 主板 or other boards. The main board is generally referred to just as ""上海证券交易所"" or ""上交所"" by default. So this is acceptable.  
+Score: 1
+
+---
+
+**idx_3**  
+Response: 科创板  
+Target: 上海证券交易所科创板  
+Analysis: ""科创板"" is a specific board of the ""上海证券交易所"". Since the target explicitly mentions the board, and the response gives the board name only, this matches according to the criterion.  
+Score: 1
+
+---
+
+**idx_4**  
+Response: 上交所  
+Target: 上海证券交易所主板  
+Same as idx_2, same analysis, same score.  
+Score: 1
+
+---
+
+Final scoring output in JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1
+}
+```",上海证券交易所主板,上交所,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(Translation: The semantic meaning is roughly the same or points to the same entity; exact wording is not necessary.)
+
+---
+
+**idx_0**  
+- Response: ""农药兽药"" (pesticide and veterinary drugs)  
+- Target: ""兽药原料药、医药原料药及中间体的研发、生产和销售"" (the R&D, production, and sales of veterinary raw materials drugs, pharmaceutical raw materials drugs, and intermediates)  
+- Analysis: The target includes veterinary drugs but also pharmaceutical raw materials and intermediates beyond just veterinary drugs. The response only mentions ""pesticide and veterinary drugs,"" missing pharmaceutical raw materials and intermediates. Additionally, ""农药"" (pesticide) does not appear in the target at all, so it's inaccurate. The response has partial overlap (兽药) but ""农药"" is unrelated. So does it point to the same entity roughly? No, it also includes unrelated entity (pesticide) and misses part of the target scope. Although the standard is ""roughly same meaning or points to the same entity,"" here response extends beyond the target and misses significant parts. Therefore, this should get a 0.
+
+---
+
+**idx_1**  
+- Response: ""牙科材料"" (dental materials)  
+- Target: ""口腔修复材料的研发、生产和销售;口腔数字化设备的设计和销售"" (R&D, production, and sales of oral repair materials; design and sales of oral digital equipment)  
+- Analysis:  
+""牙科材料"" = ""dental materials"" which covers ""口腔修复材料"" (oral repair materials). However, the target also mentions ""口腔数字化设备"" (oral digital equipment), which is not reflected in the response. The response is narrower, only mentioning materials. But the response points to a consistent entity (materials related to oral repair). The criterion does not require completely covering all aspects, only roughly or same entity. ""牙科材料"" is a reasonable shorthand for ""口腔修复材料,"" but it misses the device part. Still, arguably it roughly refers to the same entity as part of the target. Given the criterion states ""semantic similarity or same entity,"" this is acceptable. Score 1.
+
+---
+
+**idx_2**  
+- Response: ""外用药"" (topical drugs)  
+- Target: ""外用药的研发、生产和销售"" (R&D, production and sales of topical drugs)  
+- Analysis: Fully consistent. Response exactly names the major entity of the target. Score 1.
+
+---
+
+**idx_3**  
+- Response: ""生物医药"" (biomedical)  
+- Target: ""生物医药非临床研究服务为主的综合研发服务（cro）"" (biomedical non-clinical research service oriented comprehensive R&D service (CRO))  
+- Analysis: The response ""生物医药"" is a general term meaning biomedical or biopharmaceutical. The target is more specific to biomedical non-clinical research services and comprehensive CRO services. The response is a broader term and misses ""non-clinical research"" and ""CRO"" part. However, the response points to the same general entity ""生物医药"". Given the criterion, roughly same meaning or pointing to the same entity is sufficient. Therefore, score 1.
+
+---
+
+**idx_4**  
+- Response: ""医疗器械"" (medical devices)  
+- Target: ""医用敷料等一次性医疗器械及消毒卫生用品研发、生产和销售"" (R&D, production and sales of disposable medical devices such as medical dressings and disinfectant sanitary products)  
+- Analysis: The response says ""医疗器械"" which is medical devices broadly. Target is disposable medical devices plus disinfectant and sanitary products (which are not medical devices per se). The response generalizes but points to the same main entity: medical devices. The disinfectant and sanitary products are beyond ""medical devices,"" but the overall target includes medical devices which is the core response. Given the loose criterion, it counts as roughly the same entity. Score 1.
+
+---
+
+### Summary of scores:
+
+- idx_0: 0 (response includes unrelated ""农药"" and misses pharmaceutical raw materials)
+- idx_1: 1 (response roughly corresponds to oral repair materials)
+- idx_2: 1 (fully consistent)
+- idx_3: 1 (broader but roughly the same entity)
+- idx_4: 1 (general but roughly the same entity)
+
+---
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1
+}
+```",外用药的研发、生产和销售,外用药,1.0,key_match,1.0,"number near in range 5.0%, response: 498800000.0, target: 498800000.0",498800000.00,498800000,1.0,"exact match, response: 603207, target: 603207",603207,603207,1.0,"exact match, response: 12.47, target: 12.47",12.47,12.47
+,,益诺思,益诺思,1.0,"number near in range 5.0%, response: 147775836.46, target: 147775836.46",147775836.46,147775836.46,0.0,"number not near, response: 0.505, target: 0.3357",33.57%,50.50%,0.0,"number not near, response: 20000000.0, target: 60532495.25",60532495.25,20000000,0.0,"number not near, response: 1500000000.0, target: 1141669402.29",1141669402.29,1500000000,0.0,"exact not match, response: 2024年12月31日, target: 2024年9月3日",2024年9月3日,2024年12月31日,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:
+- The response and the target should have roughly the same meaning or refer to the same entity.
+- Abbreviations and full names are interchangeable.
+- Exact wording is not required.
+
+---
+
+**idx_0**  
+Response: 北交所  
+Target: 北京证券交易所  
+Analysis: ""北交所"" is the commonly used abbreviation for ""北京证券交易所"". They refer to the exact same entity.  
+Score: 1
+
+---
+
+**idx_1**  
+Response: 创业板  
+Target: 深圳证券交易所（创业板）  
+Analysis: The target is ""深圳证券交易所（创业板）"", where ""创业板"" is a board of the Shenzhen Stock Exchange. The response only gives ""创业板"", which is the board name but without explicitly mentioning ""深圳证券交易所"". The criterion allows for abbreviation or partial reference as long as the entity is the same or semantically equivalent. Since the 创业板 uniquely refers to that board in Shenzhen, this is acceptable.  
+Score: 1
+
+---
+
+**idx_2**  
+Response: 上交所  
+Target: 上海证券交易所主板  
+Analysis: ""上交所"" is abbreviation for ""上海证券交易所"", which includes 主板. Since the target is ""上海证券交易所主板"", and the response refers to ""上交所"", which refers to the same exchange but not specified as 主板 or other boards. The main board is generally referred to just as ""上海证券交易所"" or ""上交所"" by default. So this is acceptable.  
+Score: 1
+
+---
+
+**idx_3**  
+Response: 科创板  
+Target: 上海证券交易所科创板  
+Analysis: ""科创板"" is a specific board of the ""上海证券交易所"". Since the target explicitly mentions the board, and the response gives the board name only, this matches according to the criterion.  
+Score: 1
+
+---
+
+**idx_4**  
+Response: 上交所  
+Target: 上海证券交易所主板  
+Same as idx_2, same analysis, same score.  
+Score: 1
+
+---
+
+Final scoring output in JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1
+}
+```",上海证券交易所科创板,科创板,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(Translation: The semantic meaning is roughly the same or points to the same entity; exact wording is not necessary.)
+
+---
+
+**idx_0**  
+- Response: ""农药兽药"" (pesticide and veterinary drugs)  
+- Target: ""兽药原料药、医药原料药及中间体的研发、生产和销售"" (the R&D, production, and sales of veterinary raw materials drugs, pharmaceutical raw materials drugs, and intermediates)  
+- Analysis: The target includes veterinary drugs but also pharmaceutical raw materials and intermediates beyond just veterinary drugs. The response only mentions ""pesticide and veterinary drugs,"" missing pharmaceutical raw materials and intermediates. Additionally, ""农药"" (pesticide) does not appear in the target at all, so it's inaccurate. The response has partial overlap (兽药) but ""农药"" is unrelated. So does it point to the same entity roughly? No, it also includes unrelated entity (pesticide) and misses part of the target scope. Although the standard is ""roughly same meaning or points to the same entity,"" here response extends beyond the target and misses significant parts. Therefore, this should get a 0.
+
+---
+
+**idx_1**  
+- Response: ""牙科材料"" (dental materials)  
+- Target: ""口腔修复材料的研发、生产和销售;口腔数字化设备的设计和销售"" (R&D, production, and sales of oral repair materials; design and sales of oral digital equipment)  
+- Analysis:  
+""牙科材料"" = ""dental materials"" which covers ""口腔修复材料"" (oral repair materials). However, the target also mentions ""口腔数字化设备"" (oral digital equipment), which is not reflected in the response. The response is narrower, only mentioning materials. But the response points to a consistent entity (materials related to oral repair). The criterion does not require completely covering all aspects, only roughly or same entity. ""牙科材料"" is a reasonable shorthand for ""口腔修复材料,"" but it misses the device part. Still, arguably it roughly refers to the same entity as part of the target. Given the criterion states ""semantic similarity or same entity,"" this is acceptable. Score 1.
+
+---
+
+**idx_2**  
+- Response: ""外用药"" (topical drugs)  
+- Target: ""外用药的研发、生产和销售"" (R&D, production and sales of topical drugs)  
+- Analysis: Fully consistent. Response exactly names the major entity of the target. Score 1.
+
+---
+
+**idx_3**  
+- Response: ""生物医药"" (biomedical)  
+- Target: ""生物医药非临床研究服务为主的综合研发服务（cro）"" (biomedical non-clinical research service oriented comprehensive R&D service (CRO))  
+- Analysis: The response ""生物医药"" is a general term meaning biomedical or biopharmaceutical. The target is more specific to biomedical non-clinical research services and comprehensive CRO services. The response is a broader term and misses ""non-clinical research"" and ""CRO"" part. However, the response points to the same general entity ""生物医药"". Given the criterion, roughly same meaning or pointing to the same entity is sufficient. Therefore, score 1.
+
+---
+
+**idx_4**  
+- Response: ""医疗器械"" (medical devices)  
+- Target: ""医用敷料等一次性医疗器械及消毒卫生用品研发、生产和销售"" (R&D, production and sales of disposable medical devices such as medical dressings and disinfectant sanitary products)  
+- Analysis: The response says ""医疗器械"" which is medical devices broadly. Target is disposable medical devices plus disinfectant and sanitary products (which are not medical devices per se). The response generalizes but points to the same main entity: medical devices. The disinfectant and sanitary products are beyond ""medical devices,"" but the overall target includes medical devices which is the core response. Given the loose criterion, it counts as roughly the same entity. Score 1.
+
+---
+
+### Summary of scores:
+
+- idx_0: 0 (response includes unrelated ""农药"" and misses pharmaceutical raw materials)
+- idx_1: 1 (response roughly corresponds to oral repair materials)
+- idx_2: 1 (fully consistent)
+- idx_3: 1 (broader but roughly the same entity)
+- idx_4: 1 (general but roughly the same entity)
+
+---
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1
+}
+```",生物医药非临床研究服务为主的综合研发服务（cro）,生物医药,1.0,key_match,1.0,"number near in range 5.0%, response: 671767870.24, target: 671767900.0",671767900.00,671767870.24,1.0,"exact match, response: 688710, target: 688710",688710,688710,0.0,"exact not match, response: 13.5, target: 19.06",19.06,13.5
+,,健尔康,健尔康,0.0,"number not near, response: 61000000.0, target: 120218925.03",120218925.03,61000000,0.0,"number not near, response: 0.389, target: 0.23070000000000002",23.07%,38.90%,1.0,"number near in range 5.0%, response: 40720470.3, target: 40720470.3",40720470.30,40720470.30,0.0,"number not near, response: 505000000.0, target: 1045764120.28",1045764120.28,505000000,1.0,"exact match, response: 2024年11月7日, target: 2024年11月7日",2024年11月7日,2024年11月7日,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:
+- The response and the target should have roughly the same meaning or refer to the same entity.
+- Abbreviations and full names are interchangeable.
+- Exact wording is not required.
+
+---
+
+**idx_0**  
+Response: 北交所  
+Target: 北京证券交易所  
+Analysis: ""北交所"" is the commonly used abbreviation for ""北京证券交易所"". They refer to the exact same entity.  
+Score: 1
+
+---
+
+**idx_1**  
+Response: 创业板  
+Target: 深圳证券交易所（创业板）  
+Analysis: The target is ""深圳证券交易所（创业板）"", where ""创业板"" is a board of the Shenzhen Stock Exchange. The response only gives ""创业板"", which is the board name but without explicitly mentioning ""深圳证券交易所"". The criterion allows for abbreviation or partial reference as long as the entity is the same or semantically equivalent. Since the 创业板 uniquely refers to that board in Shenzhen, this is acceptable.  
+Score: 1
+
+---
+
+**idx_2**  
+Response: 上交所  
+Target: 上海证券交易所主板  
+Analysis: ""上交所"" is abbreviation for ""上海证券交易所"", which includes 主板. Since the target is ""上海证券交易所主板"", and the response refers to ""上交所"", which refers to the same exchange but not specified as 主板 or other boards. The main board is generally referred to just as ""上海证券交易所"" or ""上交所"" by default. So this is acceptable.  
+Score: 1
+
+---
+
+**idx_3**  
+Response: 科创板  
+Target: 上海证券交易所科创板  
+Analysis: ""科创板"" is a specific board of the ""上海证券交易所"". Since the target explicitly mentions the board, and the response gives the board name only, this matches according to the criterion.  
+Score: 1
+
+---
+
+**idx_4**  
+Response: 上交所  
+Target: 上海证券交易所主板  
+Same as idx_2, same analysis, same score.  
+Score: 1
+
+---
+
+Final scoring output in JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1
+}
+```",上海证券交易所主板,上交所,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(Translation: The semantic meaning is roughly the same or points to the same entity; exact wording is not necessary.)
+
+---
+
+**idx_0**  
+- Response: ""农药兽药"" (pesticide and veterinary drugs)  
+- Target: ""兽药原料药、医药原料药及中间体的研发、生产和销售"" (the R&D, production, and sales of veterinary raw materials drugs, pharmaceutical raw materials drugs, and intermediates)  
+- Analysis: The target includes veterinary drugs but also pharmaceutical raw materials and intermediates beyond just veterinary drugs. The response only mentions ""pesticide and veterinary drugs,"" missing pharmaceutical raw materials and intermediates. Additionally, ""农药"" (pesticide) does not appear in the target at all, so it's inaccurate. The response has partial overlap (兽药) but ""农药"" is unrelated. So does it point to the same entity roughly? No, it also includes unrelated entity (pesticide) and misses part of the target scope. Although the standard is ""roughly same meaning or points to the same entity,"" here response extends beyond the target and misses significant parts. Therefore, this should get a 0.
+
+---
+
+**idx_1**  
+- Response: ""牙科材料"" (dental materials)  
+- Target: ""口腔修复材料的研发、生产和销售;口腔数字化设备的设计和销售"" (R&D, production, and sales of oral repair materials; design and sales of oral digital equipment)  
+- Analysis:  
+""牙科材料"" = ""dental materials"" which covers ""口腔修复材料"" (oral repair materials). However, the target also mentions ""口腔数字化设备"" (oral digital equipment), which is not reflected in the response. The response is narrower, only mentioning materials. But the response points to a consistent entity (materials related to oral repair). The criterion does not require completely covering all aspects, only roughly or same entity. ""牙科材料"" is a reasonable shorthand for ""口腔修复材料,"" but it misses the device part. Still, arguably it roughly refers to the same entity as part of the target. Given the criterion states ""semantic similarity or same entity,"" this is acceptable. Score 1.
+
+---
+
+**idx_2**  
+- Response: ""外用药"" (topical drugs)  
+- Target: ""外用药的研发、生产和销售"" (R&D, production and sales of topical drugs)  
+- Analysis: Fully consistent. Response exactly names the major entity of the target. Score 1.
+
+---
+
+**idx_3**  
+- Response: ""生物医药"" (biomedical)  
+- Target: ""生物医药非临床研究服务为主的综合研发服务（cro）"" (biomedical non-clinical research service oriented comprehensive R&D service (CRO))  
+- Analysis: The response ""生物医药"" is a general term meaning biomedical or biopharmaceutical. The target is more specific to biomedical non-clinical research services and comprehensive CRO services. The response is a broader term and misses ""non-clinical research"" and ""CRO"" part. However, the response points to the same general entity ""生物医药"". Given the criterion, roughly same meaning or pointing to the same entity is sufficient. Therefore, score 1.
+
+---
+
+**idx_4**  
+- Response: ""医疗器械"" (medical devices)  
+- Target: ""医用敷料等一次性医疗器械及消毒卫生用品研发、生产和销售"" (R&D, production and sales of disposable medical devices such as medical dressings and disinfectant sanitary products)  
+- Analysis: The response says ""医疗器械"" which is medical devices broadly. Target is disposable medical devices plus disinfectant and sanitary products (which are not medical devices per se). The response generalizes but points to the same main entity: medical devices. The disinfectant and sanitary products are beyond ""medical devices,"" but the overall target includes medical devices which is the core response. Given the loose criterion, it counts as roughly the same entity. Score 1.
+
+---
+
+### Summary of scores:
+
+- idx_0: 0 (response includes unrelated ""农药"" and misses pharmaceutical raw materials)
+- idx_1: 1 (response roughly corresponds to oral repair materials)
+- idx_2: 1 (fully consistent)
+- idx_3: 1 (broader but roughly the same entity)
+- idx_4: 1 (general but roughly the same entity)
+
+---
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1
+}
+```",医用敷料等一次性医疗器械及消毒卫生用品研发、生产和销售,医疗器械,1.0,key_match,0.0,"number not near, response: 250000000.0, target: 439500000.0",439500000.00,250000000,1.0,"exact match, response: 603205, target: 603205",603205,603205,0.0,"exact not match, response: 21.5, target: 14.65",14.65,21.5

@@ -1,0 +1,837 @@
+exist_flag_gt,exist_flag_response,电影名,电影名_before_map,上映年份_llm_judge,上映年份_llm_judge_eval_msg,上映年份_query,上映年份_response,导演_llm_judge,导演_llm_judge_eval_msg,导演_query,导演_response,电影名_exact_match,电影名_exact_match_eval_msg,累积票房（十亿韩元）_number_near,累积票房（十亿韩元）_number_near_eval_msg,累积票房（十亿韩元）_query,累积票房（十亿韩元）_response,累积观影人次_number_near,累积观影人次_number_near_eval_msg,累积观影人次_query,累积观影人次_response,领衔主演_llm_judge,领衔主演_llm_judge_eval_msg,领衔主演_query,领衔主演_response,题材_llm_judge,题材_llm_judge_eval_msg,题材_query,题材_response
+,,与神同行：罪与罚（或者与神同行）,与神同行：最终审判,0.0,"Let's analyze each pair item by item according to the criterion:
+
+Criterion: The answer and response only need to be roughly semantically the same or point to the same entity, no need to be exactly word-for-word.
+
+---
+
+- idx_0:
+  - response: ""2024""
+  - target: ""2017""
+  - Analysis: The numbers differ by 7 years. They are clearly pointing to different years; they are not semantically the same or close.
+  - Score: 0
+
+- idx_1:
+  - response: ""2020""
+  - target: ""2018""
+  - Analysis: Different years, 2 years apart; not semantically the same or referring to the same entity.
+  - Score: 0
+
+- idx_2:
+  - response: ""2024""
+  - target: ""2019""
+  - Analysis: Different years, 5 years apart; not semantically the same or referring to the same entity.
+  - Score: 0
+
+- idx_3:
+  - response: ""2023""
+  - target: ""2023""
+  - Analysis: Identical; exactly the same.
+  - Score: 1
+
+- idx_4:
+  - response: ""2024""
+  - target: ""2024""
+  - Analysis: Identical; exactly the same.
+  - Score: 1
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",2017,2024,1.0,"分析过程：
+
+根据评分标准：
+- 回答和参考答案语义相同大致，或者指向的实体一致即可判为正确，得1分。
+- 全称或简称都可以。
+- 只要指向的实体相同，即便表达不同，也得1分。
+- 错误答案得0分。
+
+逐项分析：
+
+idx_0:
+- 回答“金容华”，参考答案“金容华”，完全相同，得1分。
+
+idx_1:
+- 回答“金容华”，参考答案“金容华”，完全相同，得1分。
+
+idx_2:
+- 回答“金知云”，参考答案“李炳宪”。
+- 两者指向不同实体，语义不符，得0分。
+
+idx_3:
+- 回答“李相龙”，参考答案“李相龙”，完全相同，得1分。
+
+idx_4:
+- 回答“许明行”，参考答案“许明行”，完全相同，得1分。
+
+总结评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",金容华,金容华,1.0,key_match,0.0,"number not near, response: 9.0, target: 68.0",68,9,0.0,"number not near, response: 352896.0, target: 8539495.0",8539495,352896,0.0,"首先分析每个 idx 的答复与参考答案的对比情况：
+
+所有 response 中的 response 内容均为 ""nan""，明显与参考答案的内容不符，也不是参考答案的子集或同一语义指向的实体。因此根据标准：
+
+- 答复为 ""nan"" ，与任何参考答案均不匹配。
+- 题目要求只要语义上相同大致或指向实体一致即可得1分，答复“nan”无意义，得分0。
+- 参考答案均为演员名单，答复均未涉及这些实体。
+
+综上，所有 idx 的得分均为0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",河正宇、车太贤、朱智勋、金香奇,nan,1.0,"Let's analyze each response against the target according to the given criteria:
+
+- The response and target need not be word-for-word identical.
+- Semantic equivalence or matching entities is sufficient.
+- Answering a subset of types or categories counts as correct.
+- Official or authoritative variations also count as correct.
+- Even if only part of the target is answered, the response can be correct.
+
+---
+
+**idx_0**  
+- Response: 奇幻片 (fantasy film)  
+- Target: 奇幻 (fantasy)  
+Analysis: ""奇幻片"" means ""fantasy film,"" which semantically contains ""奇幻."" The response clearly relates to the same entity/type. Correct.  
+Score: 1
+
+---
+
+**idx_1**  
+- Same as idx_0.  
+Score: 1
+
+---
+
+**idx_2**  
+- Response: 惊悚片 (thriller film)  
+- Target: 喜剧 (comedy)  
+Analysis: Thriller and comedy are distinct genres, no semantic overlap. Not correct.  
+Score: 0
+
+---
+
+**idx_3**  
+- Response: 犯罪片 (crime film)  
+- Target: 犯罪动作 (crime action)  
+Analysis: ""犯罪片"" covers ""犯罪"" genre, which is a subset of ""犯罪动作"" (crime + action). According to criteria, subsets are acceptable. The response covers part of the target. Correct.  
+Score: 1
+
+---
+
+**idx_4**  
+- Response: 犯罪片 (crime film)  
+- Target: 犯罪 (crime)  
+Analysis: ""犯罪片"" is a film type belonging to the ""犯罪"" genre. The entity matches. Correct.  
+Score: 1
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",奇幻,奇幻片
+,,与神同行2：因与缘,与神同行2,0.0,"Let's analyze each pair item by item according to the criterion:
+
+Criterion: The answer and response only need to be roughly semantically the same or point to the same entity, no need to be exactly word-for-word.
+
+---
+
+- idx_0:
+  - response: ""2024""
+  - target: ""2017""
+  - Analysis: The numbers differ by 7 years. They are clearly pointing to different years; they are not semantically the same or close.
+  - Score: 0
+
+- idx_1:
+  - response: ""2020""
+  - target: ""2018""
+  - Analysis: Different years, 2 years apart; not semantically the same or referring to the same entity.
+  - Score: 0
+
+- idx_2:
+  - response: ""2024""
+  - target: ""2019""
+  - Analysis: Different years, 5 years apart; not semantically the same or referring to the same entity.
+  - Score: 0
+
+- idx_3:
+  - response: ""2023""
+  - target: ""2023""
+  - Analysis: Identical; exactly the same.
+  - Score: 1
+
+- idx_4:
+  - response: ""2024""
+  - target: ""2024""
+  - Analysis: Identical; exactly the same.
+  - Score: 1
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",2018,2020,1.0,"分析过程：
+
+根据评分标准：
+- 回答和参考答案语义相同大致，或者指向的实体一致即可判为正确，得1分。
+- 全称或简称都可以。
+- 只要指向的实体相同，即便表达不同，也得1分。
+- 错误答案得0分。
+
+逐项分析：
+
+idx_0:
+- 回答“金容华”，参考答案“金容华”，完全相同，得1分。
+
+idx_1:
+- 回答“金容华”，参考答案“金容华”，完全相同，得1分。
+
+idx_2:
+- 回答“金知云”，参考答案“李炳宪”。
+- 两者指向不同实体，语义不符，得0分。
+
+idx_3:
+- 回答“李相龙”，参考答案“李相龙”，完全相同，得1分。
+
+idx_4:
+- 回答“许明行”，参考答案“许明行”，完全相同，得1分。
+
+总结评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",金容华,金容华,1.0,key_match,0.0,"number not near, response: 9.0, target: 103.0",103,9,0.0,"number not near, response: 333247.0, target: 12274996.0",12274996,333247,0.0,"首先分析每个 idx 的答复与参考答案的对比情况：
+
+所有 response 中的 response 内容均为 ""nan""，明显与参考答案的内容不符，也不是参考答案的子集或同一语义指向的实体。因此根据标准：
+
+- 答复为 ""nan"" ，与任何参考答案均不匹配。
+- 题目要求只要语义上相同大致或指向实体一致即可得1分，答复“nan”无意义，得分0。
+- 参考答案均为演员名单，答复均未涉及这些实体。
+
+综上，所有 idx 的得分均为0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",河正宇、朱智勋、金香奇、马东锡、金东旭、李政宰,nan,1.0,"Let's analyze each response against the target according to the given criteria:
+
+- The response and target need not be word-for-word identical.
+- Semantic equivalence or matching entities is sufficient.
+- Answering a subset of types or categories counts as correct.
+- Official or authoritative variations also count as correct.
+- Even if only part of the target is answered, the response can be correct.
+
+---
+
+**idx_0**  
+- Response: 奇幻片 (fantasy film)  
+- Target: 奇幻 (fantasy)  
+Analysis: ""奇幻片"" means ""fantasy film,"" which semantically contains ""奇幻."" The response clearly relates to the same entity/type. Correct.  
+Score: 1
+
+---
+
+**idx_1**  
+- Same as idx_0.  
+Score: 1
+
+---
+
+**idx_2**  
+- Response: 惊悚片 (thriller film)  
+- Target: 喜剧 (comedy)  
+Analysis: Thriller and comedy are distinct genres, no semantic overlap. Not correct.  
+Score: 0
+
+---
+
+**idx_3**  
+- Response: 犯罪片 (crime film)  
+- Target: 犯罪动作 (crime action)  
+Analysis: ""犯罪片"" covers ""犯罪"" genre, which is a subset of ""犯罪动作"" (crime + action). According to criteria, subsets are acceptable. The response covers part of the target. Correct.  
+Score: 1
+
+---
+
+**idx_4**  
+- Response: 犯罪片 (crime film)  
+- Target: 犯罪 (crime)  
+Analysis: ""犯罪片"" is a film type belonging to the ""犯罪"" genre. The entity matches. Correct.  
+Score: 1
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",奇幻,奇幻片
+,,极限职业,极限逃生,0.0,"Let's analyze each pair item by item according to the criterion:
+
+Criterion: The answer and response only need to be roughly semantically the same or point to the same entity, no need to be exactly word-for-word.
+
+---
+
+- idx_0:
+  - response: ""2024""
+  - target: ""2017""
+  - Analysis: The numbers differ by 7 years. They are clearly pointing to different years; they are not semantically the same or close.
+  - Score: 0
+
+- idx_1:
+  - response: ""2020""
+  - target: ""2018""
+  - Analysis: Different years, 2 years apart; not semantically the same or referring to the same entity.
+  - Score: 0
+
+- idx_2:
+  - response: ""2024""
+  - target: ""2019""
+  - Analysis: Different years, 5 years apart; not semantically the same or referring to the same entity.
+  - Score: 0
+
+- idx_3:
+  - response: ""2023""
+  - target: ""2023""
+  - Analysis: Identical; exactly the same.
+  - Score: 1
+
+- idx_4:
+  - response: ""2024""
+  - target: ""2024""
+  - Analysis: Identical; exactly the same.
+  - Score: 1
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",2019,2024,0.0,"分析过程：
+
+根据评分标准：
+- 回答和参考答案语义相同大致，或者指向的实体一致即可判为正确，得1分。
+- 全称或简称都可以。
+- 只要指向的实体相同，即便表达不同，也得1分。
+- 错误答案得0分。
+
+逐项分析：
+
+idx_0:
+- 回答“金容华”，参考答案“金容华”，完全相同，得1分。
+
+idx_1:
+- 回答“金容华”，参考答案“金容华”，完全相同，得1分。
+
+idx_2:
+- 回答“金知云”，参考答案“李炳宪”。
+- 两者指向不同实体，语义不符，得0分。
+
+idx_3:
+- 回答“李相龙”，参考答案“李相龙”，完全相同，得1分。
+
+idx_4:
+- 回答“许明行”，参考答案“许明行”，完全相同，得1分。
+
+总结评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",李炳宪,金知云,1.0,key_match,0.0,"number not near, response: 11.0, target: 139.0",139,11,0.0,"number not near, response: 453338.0, target: 16265618.0",16265618,453338,0.0,"首先分析每个 idx 的答复与参考答案的对比情况：
+
+所有 response 中的 response 内容均为 ""nan""，明显与参考答案的内容不符，也不是参考答案的子集或同一语义指向的实体。因此根据标准：
+
+- 答复为 ""nan"" ，与任何参考答案均不匹配。
+- 题目要求只要语义上相同大致或指向实体一致即可得1分，答复“nan”无意义，得分0。
+- 参考答案均为演员名单，答复均未涉及这些实体。
+
+综上，所有 idx 的得分均为0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",柳承龙、李东辉、李哈妮、陈善奎、孔明,nan,0.0,"Let's analyze each response against the target according to the given criteria:
+
+- The response and target need not be word-for-word identical.
+- Semantic equivalence or matching entities is sufficient.
+- Answering a subset of types or categories counts as correct.
+- Official or authoritative variations also count as correct.
+- Even if only part of the target is answered, the response can be correct.
+
+---
+
+**idx_0**  
+- Response: 奇幻片 (fantasy film)  
+- Target: 奇幻 (fantasy)  
+Analysis: ""奇幻片"" means ""fantasy film,"" which semantically contains ""奇幻."" The response clearly relates to the same entity/type. Correct.  
+Score: 1
+
+---
+
+**idx_1**  
+- Same as idx_0.  
+Score: 1
+
+---
+
+**idx_2**  
+- Response: 惊悚片 (thriller film)  
+- Target: 喜剧 (comedy)  
+Analysis: Thriller and comedy are distinct genres, no semantic overlap. Not correct.  
+Score: 0
+
+---
+
+**idx_3**  
+- Response: 犯罪片 (crime film)  
+- Target: 犯罪动作 (crime action)  
+Analysis: ""犯罪片"" covers ""犯罪"" genre, which is a subset of ""犯罪动作"" (crime + action). According to criteria, subsets are acceptable. The response covers part of the target. Correct.  
+Score: 1
+
+---
+
+**idx_4**  
+- Response: 犯罪片 (crime film)  
+- Target: 犯罪 (crime)  
+Analysis: ""犯罪片"" is a film type belonging to the ""犯罪"" genre. The entity matches. Correct.  
+Score: 1
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",喜剧,惊悚片
+,,犯罪都市3,犯罪都市3,1.0,"Let's analyze each pair item by item according to the criterion:
+
+Criterion: The answer and response only need to be roughly semantically the same or point to the same entity, no need to be exactly word-for-word.
+
+---
+
+- idx_0:
+  - response: ""2024""
+  - target: ""2017""
+  - Analysis: The numbers differ by 7 years. They are clearly pointing to different years; they are not semantically the same or close.
+  - Score: 0
+
+- idx_1:
+  - response: ""2020""
+  - target: ""2018""
+  - Analysis: Different years, 2 years apart; not semantically the same or referring to the same entity.
+  - Score: 0
+
+- idx_2:
+  - response: ""2024""
+  - target: ""2019""
+  - Analysis: Different years, 5 years apart; not semantically the same or referring to the same entity.
+  - Score: 0
+
+- idx_3:
+  - response: ""2023""
+  - target: ""2023""
+  - Analysis: Identical; exactly the same.
+  - Score: 1
+
+- idx_4:
+  - response: ""2024""
+  - target: ""2024""
+  - Analysis: Identical; exactly the same.
+  - Score: 1
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",2023,2023,1.0,"分析过程：
+
+根据评分标准：
+- 回答和参考答案语义相同大致，或者指向的实体一致即可判为正确，得1分。
+- 全称或简称都可以。
+- 只要指向的实体相同，即便表达不同，也得1分。
+- 错误答案得0分。
+
+逐项分析：
+
+idx_0:
+- 回答“金容华”，参考答案“金容华”，完全相同，得1分。
+
+idx_1:
+- 回答“金容华”，参考答案“金容华”，完全相同，得1分。
+
+idx_2:
+- 回答“金知云”，参考答案“李炳宪”。
+- 两者指向不同实体，语义不符，得0分。
+
+idx_3:
+- 回答“李相龙”，参考答案“李相龙”，完全相同，得1分。
+
+idx_4:
+- 回答“许明行”，参考答案“许明行”，完全相同，得1分。
+
+总结评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",李相龙,李相龙,1.0,key_match,0.0,"number not near, response: 10.0, target: 106.0",106,10,0.0,"number not near, response: 682813.0, target: 10682813.0",10682813,682813,0.0,"首先分析每个 idx 的答复与参考答案的对比情况：
+
+所有 response 中的 response 内容均为 ""nan""，明显与参考答案的内容不符，也不是参考答案的子集或同一语义指向的实体。因此根据标准：
+
+- 答复为 ""nan"" ，与任何参考答案均不匹配。
+- 题目要求只要语义上相同大致或指向实体一致即可得1分，答复“nan”无意义，得分0。
+- 参考答案均为演员名单，答复均未涉及这些实体。
+
+综上，所有 idx 的得分均为0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",马东锡、李浚赫、青木崇高,nan,1.0,"Let's analyze each response against the target according to the given criteria:
+
+- The response and target need not be word-for-word identical.
+- Semantic equivalence or matching entities is sufficient.
+- Answering a subset of types or categories counts as correct.
+- Official or authoritative variations also count as correct.
+- Even if only part of the target is answered, the response can be correct.
+
+---
+
+**idx_0**  
+- Response: 奇幻片 (fantasy film)  
+- Target: 奇幻 (fantasy)  
+Analysis: ""奇幻片"" means ""fantasy film,"" which semantically contains ""奇幻."" The response clearly relates to the same entity/type. Correct.  
+Score: 1
+
+---
+
+**idx_1**  
+- Same as idx_0.  
+Score: 1
+
+---
+
+**idx_2**  
+- Response: 惊悚片 (thriller film)  
+- Target: 喜剧 (comedy)  
+Analysis: Thriller and comedy are distinct genres, no semantic overlap. Not correct.  
+Score: 0
+
+---
+
+**idx_3**  
+- Response: 犯罪片 (crime film)  
+- Target: 犯罪动作 (crime action)  
+Analysis: ""犯罪片"" covers ""犯罪"" genre, which is a subset of ""犯罪动作"" (crime + action). According to criteria, subsets are acceptable. The response covers part of the target. Correct.  
+Score: 1
+
+---
+
+**idx_4**  
+- Response: 犯罪片 (crime film)  
+- Target: 犯罪 (crime)  
+Analysis: ""犯罪片"" is a film type belonging to the ""犯罪"" genre. The entity matches. Correct.  
+Score: 1
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",犯罪动作,犯罪片
+,,犯罪都市4,犯罪都市4,1.0,"Let's analyze each pair item by item according to the criterion:
+
+Criterion: The answer and response only need to be roughly semantically the same or point to the same entity, no need to be exactly word-for-word.
+
+---
+
+- idx_0:
+  - response: ""2024""
+  - target: ""2017""
+  - Analysis: The numbers differ by 7 years. They are clearly pointing to different years; they are not semantically the same or close.
+  - Score: 0
+
+- idx_1:
+  - response: ""2020""
+  - target: ""2018""
+  - Analysis: Different years, 2 years apart; not semantically the same or referring to the same entity.
+  - Score: 0
+
+- idx_2:
+  - response: ""2024""
+  - target: ""2019""
+  - Analysis: Different years, 5 years apart; not semantically the same or referring to the same entity.
+  - Score: 0
+
+- idx_3:
+  - response: ""2023""
+  - target: ""2023""
+  - Analysis: Identical; exactly the same.
+  - Score: 1
+
+- idx_4:
+  - response: ""2024""
+  - target: ""2024""
+  - Analysis: Identical; exactly the same.
+  - Score: 1
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",2024,2024,1.0,"分析过程：
+
+根据评分标准：
+- 回答和参考答案语义相同大致，或者指向的实体一致即可判为正确，得1分。
+- 全称或简称都可以。
+- 只要指向的实体相同，即便表达不同，也得1分。
+- 错误答案得0分。
+
+逐项分析：
+
+idx_0:
+- 回答“金容华”，参考答案“金容华”，完全相同，得1分。
+
+idx_1:
+- 回答“金容华”，参考答案“金容华”，完全相同，得1分。
+
+idx_2:
+- 回答“金知云”，参考答案“李炳宪”。
+- 两者指向不同实体，语义不符，得0分。
+
+idx_3:
+- 回答“李相龙”，参考答案“李相龙”，完全相同，得1分。
+
+idx_4:
+- 回答“许明行”，参考答案“许明行”，完全相同，得1分。
+
+总结评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",许明行,许明行,1.0,key_match,0.0,"number not near, response: 11.0, target: 115.0",115,11,0.0,"number not near, response: 502779.0, target: 11502928.0",11502928,502779,0.0,"首先分析每个 idx 的答复与参考答案的对比情况：
+
+所有 response 中的 response 内容均为 ""nan""，明显与参考答案的内容不符，也不是参考答案的子集或同一语义指向的实体。因此根据标准：
+
+- 答复为 ""nan"" ，与任何参考答案均不匹配。
+- 题目要求只要语义上相同大致或指向实体一致即可得1分，答复“nan”无意义，得分0。
+- 参考答案均为演员名单，答复均未涉及这些实体。
+
+综上，所有 idx 的得分均为0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",马东锡、金武烈、李东辉、朴智焕,nan,1.0,"Let's analyze each response against the target according to the given criteria:
+
+- The response and target need not be word-for-word identical.
+- Semantic equivalence or matching entities is sufficient.
+- Answering a subset of types or categories counts as correct.
+- Official or authoritative variations also count as correct.
+- Even if only part of the target is answered, the response can be correct.
+
+---
+
+**idx_0**  
+- Response: 奇幻片 (fantasy film)  
+- Target: 奇幻 (fantasy)  
+Analysis: ""奇幻片"" means ""fantasy film,"" which semantically contains ""奇幻."" The response clearly relates to the same entity/type. Correct.  
+Score: 1
+
+---
+
+**idx_1**  
+- Same as idx_0.  
+Score: 1
+
+---
+
+**idx_2**  
+- Response: 惊悚片 (thriller film)  
+- Target: 喜剧 (comedy)  
+Analysis: Thriller and comedy are distinct genres, no semantic overlap. Not correct.  
+Score: 0
+
+---
+
+**idx_3**  
+- Response: 犯罪片 (crime film)  
+- Target: 犯罪动作 (crime action)  
+Analysis: ""犯罪片"" covers ""犯罪"" genre, which is a subset of ""犯罪动作"" (crime + action). According to criteria, subsets are acceptable. The response covers part of the target. Correct.  
+Score: 1
+
+---
+
+**idx_4**  
+- Response: 犯罪片 (crime film)  
+- Target: 犯罪 (crime)  
+Analysis: ""犯罪片"" is a film type belonging to the ""犯罪"" genre. The entity matches. Correct.  
+Score: 1
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",犯罪,犯罪片
+1.0,,7号房的礼物,,,,2013,,,,李焕庆,,,,,,91,,,,12812186,,,,柳承龙、葛素媛、郑进永、朴信惠,,,,剧情喜剧,
+1.0,,sunny（又译阳光姐妹淘）,,,,2011,,,,姜炯哲,,,,,,54,,,,7375110,,,,沈恩京、姜素拉、金敏英、闵孝琳,,,,喜剧,
+1.0,,义兄弟,,,,2010,,,,张勋,,,,,,40,,,,5507106,,,,姜栋元、宋康昊,,,,动作,
+1.0,,从邪恶中拯救我,,,,2020,,,,洪元灿,,,,,,39,,,,4357873,,,,黄政民、李政宰、朴正民、朴昭怡、崔嬉序,,,,动作,
+1.0,,光海，成为王的男人（又译双面君王）,,,,2012,,,,秋昌民,,,,,,87,,,,12319390,,,,李秉宪、柳承龙、韩孝珠,,,,古装,
+1.0,,共助,,,,2017,,,,金成勋,,,,,,64,,,,7817446,,,,玄彬、刘海镇、金柱赫、林允儿、李东辉,,,,动作,
+1.0,,冰雪奇缘,,,,2014,,,,克里斯·巴克、珍妮弗·李,,,,,,82,,,,10296101,,,,克里斯汀·贝尔、伊迪娜·门泽尔、乔纳森·格罗夫、乔什·盖德、圣蒂诺·方塔纳,,,,动画,
+1.0,,冰雪奇缘2,,,,2019,,,,克里斯·巴克、珍妮弗·李,,,,,,112,,,,13369064,,,,克里斯汀·贝尔、伊迪娜·门泽尔、乔纳森·格罗夫、乔什·盖德,,,,动画,
+1.0,,出租车司机,,,,2017,,,,张薰,,,,,,95,,,,12186327,,,,宋康昊、托马斯·克莱舒曼、柳海真、柳俊烈,,,,剧情,
+1.0,,南山的部长们,,,,2020,,,,禹民镐,,,,,,41,,,,4750917,,,,李秉宪、李星民、郭道元、李熙俊,,,,剧情,
+1.0,,变形金刚3,,,,2011,,,,迈克尔·贝,,,,,,74,,,,7790434,,,,希亚·拉博夫、乔什·杜哈明、约翰·特托罗、泰瑞斯·吉布森、罗茜·汉丁顿-惠特莉,,,,科幻动作,
+1.0,,壮志凌云2：独行侠（或者壮志凌云2）,,,,2022,,,,约瑟夫·科辛斯基,,,,,,87,,,,8239497,,,,汤姆·克鲁斯、詹妮弗·康纳利、迈尔斯·特勒、乔恩·哈姆、方·基默,,,,动作,
+1.0,,复仇者联盟,,,,2012,,,,乔斯·韦登,,,,,,59,,,,7087184,,,,小罗伯特·唐尼、克里斯·埃文斯、马克·鲁法洛、克里斯·海姆斯沃斯、斯嘉丽·约翰逊、杰瑞米·雷纳、汤姆·希德勒斯顿、塞缪尔·杰克逊、克拉克·格雷格、寇碧·史莫德斯,,,,科幻,
+1.0,,复仇者联盟2,,,,2015,,,,乔斯·韦登,,,,,,88,,,,10494499,,,,小罗伯特·唐尼、克里斯·海姆斯沃斯、马克·鲁法洛、克里斯·埃文斯、斯嘉丽·约翰逊、杰瑞米·雷纳,,,,科幻冒险,
+1.0,,复仇者联盟3：无限战争(或者复仇者联盟3),,,,2018,,,,安东尼·罗素、乔·罗素,,,,,,99,,,,11211880,,,,小罗伯特·唐尼、乔什·布洛林、克里斯·埃文斯,,,,科幻动作,
+1.0,,复仇者联盟4：终局之战,,,,2019,,,,安东尼·罗素和乔·罗素,,,,,,122,,,,13934592,,,,小罗伯特·唐尼、克里斯·埃文斯、克里斯·海姆斯沃斯、马克·鲁法洛、斯嘉丽·约翰逊、杰瑞米·雷纳、保罗·路德、布丽·拉尔森、唐·钱德尔、凯伦·吉兰、乔什·布洛林,,,,科幻,
+1.0,,头脑特工队2,,,,2024,,,,凯尔西·曼,,,,,,77,,,,8799611,,,,艾米·波勒、黛安·莲恩、菲利斯·史密斯、刘易斯·布莱克,,,,奇幻动画,
+1.0,,孤胆特工（又译大叔）,,,,2010,,,,李桢凡,,,,,,48,,,,6282774,,,,元斌、金赛纶,,,,动作,
+,1.0,寄生虫,寄生虫,,,,2020,,,,奉俊昊,,,,,,11,,,,838046,,,,nan,,,,剧情片
+1.0,,摩加迪沙,,,,2021,,,,柳昇完,,,,,,34,,,,3613984,,,,金允石、赵寅成,,,,动作,
+1.0,,星际穿越,,,,2014,,,,克里斯托弗·诺兰,,,,,,80,,,,10105249,,,,马修·麦康纳、安妮·海瑟薇、杰西卡·查斯坦,,,,科幻,
+1.0,,暗杀,,,,2015,,,,崔东勋,,,,,,98,,,,12705700,,,,全智贤、李政宰、河正宇,,,,动作,
+1.0,,最终兵器：弓,,,,2011,,,,金韩民,,,,,,56,,,,7459974,,,,朴海日、文彩元、柳承龙,,,,古装动作,
+1.0,,检察官外传,,,,2016,,,,李日炯,,,,,,77,,,,9707158,,,,黄政民、姜栋元,,,,犯罪喜剧,
+1.0,,永恒族,,,,2021,,,,赵婷,,,,,,32,,,,3050132,,,,嘉玛·陈、理查德·麦登、安吉丽娜·朱莉、萨尔玛·海耶克、基特·哈灵顿、库梅尔·南贾尼、莉亚·麦克休、布莱恩·泰里·亨利、劳伦·利德洛夫、巴里·基奥汉、马东锡,,,,动作奇幻,
+1.0,,波西米亚狂想曲,,,,2018,,,,布莱恩·辛格,,,,,,80,,,,9224582,,,,皮特·摩根编剧，拉米·马雷克、露西·波顿、格林威廉·李、本·哈迪,,,,音乐传记,
+1.0,,犯罪都市2,,,,2022,,,,李相龙,,,,,,131,,,,12693415,,,,马东锡、孙锡求,,,,犯罪动作,
+1.0,,疯狂元素城,,,,2023,,,,彼得·孙,,,,,,69,,,,7241486,,,,莉娅·刘易斯、马莫多·阿西,,,,动画,
+1.0,,盗梦空间,,,,2010,,,,克里斯托弗·诺兰,,,,,,43,,,,5872548,,,,莱昂纳多·迪卡普里奥、玛丽昂·歌迪亚、约瑟夫·高登-莱维特、艾利奥特·佩吉、汤姆·哈迪,,,,科幻动作,
+1.0,,盗贼同盟（又译夺宝联盟）,,,,2012,,,,崔东勋,,,,,,93,,,,12984701,,,,金允石、金惠秀、李政宰、全智贤、任达华、金海淑、吴达洙、金秀贤、曾国祥,,,,犯罪动作,
+1.0,,破墓,,,,2024,,,,张宰贤,,,,,,119,,,,11914784,,,,崔岷植、金高银、李到晛、柳海真、洪瑞俊,,,,惊悚,
+1.0,,美国队长3,,,,2016,,,,安东尼·罗素、乔·罗素,,,,,,72,,,,8677249,,,,克里斯·埃文斯、小罗伯特·唐尼、斯嘉丽·约翰逊、塞巴斯蒂安·斯坦、安东尼·麦凯,,,,科幻动作,
+1.0,,老手（又译辣手警探）,,,,2015,,,,柳承菀,,,,,,105,,,,13414009,,,,黄政民、刘亚仁、刘海镇、吴达庶,,,,动作,
+1.0,,蜘蛛侠：英雄无归,,,,2021,,,,乔·沃茨,,,,,,56,,,,5560940,,,,汤姆·赫兰德、赞达亚·科尔曼、本尼迪克特·康伯巴奇,,,,动作科幻,
+1.0,,观相,,,,2013,,,,韩在林,,,,,,66,,,,9134586,,,,宋康昊、金惠秀、李政宰,,,,历史剧情,
+1.0,,釜山行2：半岛,,,,2020,,,,延相昊,,,,,,33,,,,3812954,,,,姜栋元、李贞贤,,,,动作类惊悚,
+1.0,,釜山行（又译尸速列车）,,,,2016,,,,延相昊,,,,,,93,,,,11565479,,,,孔刘、郑有美、金秀安、金义城、马东锡、崔宇植,,,,灾难惊悚,
+1.0,,阿凡达：水之道,,,,2022,,,,詹姆斯·卡梅隆,,,,,,90,,,,7313149,,,,萨姆·沃辛顿、佐伊·索尔达娜、西格妮·韦弗,,,,科幻,
+1.0,,雪国列车,,,,2013,,,,奉俊昊,,,,,,67,,,,9341572,,,,克里斯·埃文斯、宋康昊、蒂尔达·斯文顿、杰米·贝尔、艾德·哈里斯,,,,动作科幻,
+1.0,,首尔之春,,,,2023,,,,金成洙,,,,,,115,,,,11854812,,,,黄政民、郑雨盛、李星民,,,,剧情,
+1.0,,鸣梁海战,,,,2014,,,,金汉珉,,,,,,135,,,,17616461,,,,崔岷植、柳承龙、赵震雄、晋久、李贞贤,,,,古装战争,

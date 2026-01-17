@@ -1,0 +1,555 @@
+exist_flag_gt,exist_flag_response,论文题目,论文题目_before_map,doi号_exact_match,doi号_exact_match_eval_msg,doi号_query,doi号_response,作者_llm_judge,作者_llm_judge_eval_msg,作者_query,作者_response,关键词_llm_judge,关键词_llm_judge_eval_msg,关键词_query,关键词_response,发表刊物_llm_judge,发表刊物_llm_judge_eval_msg,发表刊物_query,发表刊物_response,发表时间_exact_match,发表时间_exact_match_eval_msg,发表时间_query,发表时间_response,基金资助_llm_judge,基金资助_llm_judge_eval_msg,基金资助_query,基金资助_response,论文题目_exact_match,论文题目_exact_match_eval_msg
+,,人工智能法律治理的路径拓展,人工智能法律治理的路径拓展,1.0,"exact match, response: nan, target: nan",nan,nan,1.0,"分析过程：
+
+1. idx_0：  
+- 标准答案为“张凌寒”  
+- 回答为“张凌寒”  
+- 语义完全相同，指向实体一致  
+- 按照标准，得分1
+
+2. idx_1：  
+- 标准答案为“张凌寒;于琳” ，这里的答案是两个实体，可能指多个人，或者多个正确选项  
+- 回答仅“张凌寒”，只包含部分正确内容且指向的实体一致  
+- 但是题目中标准允许“语义相同大致或者指向实体一致即可”，未说明是否必须包含全部标准答案内容。  
+- 在语义相同、指向实体一致的情况下，判断得分标准是否允许部分正确得满分。题目标准没有提到必须全部实体出现才算正确。  
+- 但“指向实体一致即可”——这句话可以理解为“包含标准答案里某一实体即可”，故此案例回答包含了标准答案中的“张凌寒”，指向实体一致，语义大致相同。符合得分要求。  
+- 因此，得分1
+
+3. idx_2：  
+- 标准答案为“张凌寒”  
+- 回答为“张凌寒”  
+- 完全一致，指向实体一致，语义相同  
+- 得分1
+
+总结：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```
+
+最终评分结果如下。",张凌寒,张凌寒,0.0,"逐条分析答题内容：
+
+---
+
+**idx_0:**  
+- 参考答案关键词：人工智能立法; 人工智能风险; 分级分类; 关键人工智能; 适应性治理  
+- 回复关键词：人工智能, 法律治理, 路径拓展
+
+分析：  
+- “人工智能”对应“人工智能立法”等，基本涵盖领域。  
+- “法律治理”对应“立法”、治理相关词，有模糊覆盖。  
+- “路径拓展”没有对应的具体关键词如“分级分类”、“关键人工智能”、“适应性治理”等；缺少核心细节。  
+综合来看，关键词未全部答出，只是部分覆盖，语义较为模糊。根据标准“关键词需全部答出”，此回复未完全满足。
+
+得分：0
+
+---
+
+**idx_1:**  
+- 参考答案关键词：chatgpt; 大模型; 生成式人工智能; ai治理; 包容审慎监管; 敏捷治理  
+- 回复关键词：生成式人工智能, 风险, 包容性法律治理
+
+分析：  
+- “生成式人工智能”匹配“生成式人工智能”，完全一致。  
+- “风险”是新关键词，虽然参考答案没直接出现“风险”，但“包容审慎监管”和治理中隐含风险意涵，考虑为相关词汇。  
+- “包容性法律治理”与“包容审慎监管”和“敏捷治理”有相似治理法律属性的含义，且语义接近。  
+- 但缺少“chatgpt”和“大模型”这两个重要实体。根据标准中的“关键词需全部答出”，“chatgpt”和“大模型”未出现为缺漏。  
+结论：尽管语义大致一致且部分关键词覆盖，有核心实体缺失。
+
+得分：0
+
+---
+
+**idx_2:**  
+- 参考答案关键词：生成式人工智能; 分层治理; 数字基础设施; 模型规制  
+- 回复关键词：生成式人工智能, 法律定位, 分层治理
+
+分析：  
+- “生成式人工智能”对应完全一致。  
+- “分层治理”直接匹配“分层治理”。  
+- “法律定位”可大致对应“模型规制”等规范管理方向（算是近义表达）。  
+- 缺失“数字基础设施”，但关键词中并非所有都必要，且整体语义相符，且主要内容“生成式人工智能”，“分层治理”均提及。  
+- 根据“关键词需全部答出，意思大致相同即可”，且“数字基础设施”算补充内容，不是决定元素，可视为核心关键词基本答出。
+
+得分：1
+
+---
+
+**综合评分结果如下：**
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1
+}
+```",人工智能立法;人工智能风险;分级分类;关键人工智能;适应性治理;,"人工智能,法律治理,路径拓展",0.0,"Let's analyze each pair according to the criterion:
+
+Criterion:  
+- The response only needs to have roughly the same meaning or refer to the same entity as the target. Exact word-for-word matching is not required.
+
+---
+
+### idx_0  
+- response: ""未找到具体刊物"" (translation: ""No specific publication found"")  
+- target: ""中国社会科学"" (translation: ""Chinese Social Sciences"")  
+Analysis:  
+The response explicitly states that no specific publication was found, which means it does *not* provide the same or similar meaning as the target (a journal name). They clearly do not match in meaning or entity reference.  
+Score: 0
+
+---
+
+### idx_1  
+- response: ""学术期刊"" (""academic journal"")  
+- target: ""电子政务"" (""E-Government"")  
+Analysis:  
+The target is the name of a specific journal (""电子政务""), while the response is a generic term (""academic journal""). The response does not refer specifically to the entity ""电子政务"" but only the general category. Because the criterion states ""大致相同或指向实体一致即可,"" the response points to a broader category rather than the specific entity. This means it is not considered equivalent or pointing to the same entity.  
+Score: 0
+
+---
+
+### idx_2  
+- response: ""现代法学"" (""Modern Jurisprudence"")  
+- target: ""现代法学"" (""Modern Jurisprudence"")  
+Analysis:  
+Exact match.  
+Score: 1
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1
+}
+```",中国社会科学,未找到具体刊物,0.0,"exact not match, response: 未找到具体时间, target: 2025/1/25",2025/1/25,未找到具体时间,1.0,"Let's analyze each pair step by step based on the criterion:
+
+Criterion summary:  
+- Responses are considered correct if they have roughly the same meaning or point to the same entity as the reference answer.  
+- Exact wording is not required.  
+- The score is either 0 or 1.
+
+---
+
+### idx_0
+- Response: ""无基金""  
+- Target: ""无基金""  
+
+Both are the same phrase, meaning “no fund.” They match perfectly in meaning and entity.
+
+**Score: 1**
+
+---
+
+### idx_1
+- Response: ""无基金""  
+- Target: ""2022年国家重点研发计划“社会治理与智慧社会科技支撑”重点专项“知识产权司法保护与跨部门协同服务关键技术研究”（项目编号：2022yfc3303000）；""
+
+The target clearly states a fund/project, but the response states ""无基金"" (no fund). The response does not match the target at all semantically or in terms of the entity.
+
+**Score: 0**
+
+---
+
+### idx_2
+- Response: ""国家重点研发计划重点专项“知识产权司法保护与跨部门协同服务关键技术研究”(2022yfc3303000)""  
+- Target: ""国家重点研发计划重点专项“知识产权司法保护与跨部门协同服务关键技术研究”(2022yfc3303000)；""
+
+Almost identical, just missing the trailing punctuation (；), which does not affect semantics.
+
+**Score: 1**
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1
+}
+```
+",无基金,无基金,1.0,key_match
+,,从传统治理到敏捷治理：生成式人工智能的治理范式革新,生成式人工智能的风险及其包容性法律治理,0.0,"exact not match, response: 10.15918/j.jbitss1009-3370.2023.1340, target: 10.16582/j.cnki.dzzw.2023.09.001",10.16582/j.cnki.dzzw.2023.09.001,10.15918/j.jbitss1009-3370.2023.1340,1.0,"分析过程：
+
+1. idx_0：  
+- 标准答案为“张凌寒”  
+- 回答为“张凌寒”  
+- 语义完全相同，指向实体一致  
+- 按照标准，得分1
+
+2. idx_1：  
+- 标准答案为“张凌寒;于琳” ，这里的答案是两个实体，可能指多个人，或者多个正确选项  
+- 回答仅“张凌寒”，只包含部分正确内容且指向的实体一致  
+- 但是题目中标准允许“语义相同大致或者指向实体一致即可”，未说明是否必须包含全部标准答案内容。  
+- 在语义相同、指向实体一致的情况下，判断得分标准是否允许部分正确得满分。题目标准没有提到必须全部实体出现才算正确。  
+- 但“指向实体一致即可”——这句话可以理解为“包含标准答案里某一实体即可”，故此案例回答包含了标准答案中的“张凌寒”，指向实体一致，语义大致相同。符合得分要求。  
+- 因此，得分1
+
+3. idx_2：  
+- 标准答案为“张凌寒”  
+- 回答为“张凌寒”  
+- 完全一致，指向实体一致，语义相同  
+- 得分1
+
+总结：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```
+
+最终评分结果如下。",张凌寒;于琳,张凌寒,0.0,"逐条分析答题内容：
+
+---
+
+**idx_0:**  
+- 参考答案关键词：人工智能立法; 人工智能风险; 分级分类; 关键人工智能; 适应性治理  
+- 回复关键词：人工智能, 法律治理, 路径拓展
+
+分析：  
+- “人工智能”对应“人工智能立法”等，基本涵盖领域。  
+- “法律治理”对应“立法”、治理相关词，有模糊覆盖。  
+- “路径拓展”没有对应的具体关键词如“分级分类”、“关键人工智能”、“适应性治理”等；缺少核心细节。  
+综合来看，关键词未全部答出，只是部分覆盖，语义较为模糊。根据标准“关键词需全部答出”，此回复未完全满足。
+
+得分：0
+
+---
+
+**idx_1:**  
+- 参考答案关键词：chatgpt; 大模型; 生成式人工智能; ai治理; 包容审慎监管; 敏捷治理  
+- 回复关键词：生成式人工智能, 风险, 包容性法律治理
+
+分析：  
+- “生成式人工智能”匹配“生成式人工智能”，完全一致。  
+- “风险”是新关键词，虽然参考答案没直接出现“风险”，但“包容审慎监管”和治理中隐含风险意涵，考虑为相关词汇。  
+- “包容性法律治理”与“包容审慎监管”和“敏捷治理”有相似治理法律属性的含义，且语义接近。  
+- 但缺少“chatgpt”和“大模型”这两个重要实体。根据标准中的“关键词需全部答出”，“chatgpt”和“大模型”未出现为缺漏。  
+结论：尽管语义大致一致且部分关键词覆盖，有核心实体缺失。
+
+得分：0
+
+---
+
+**idx_2:**  
+- 参考答案关键词：生成式人工智能; 分层治理; 数字基础设施; 模型规制  
+- 回复关键词：生成式人工智能, 法律定位, 分层治理
+
+分析：  
+- “生成式人工智能”对应完全一致。  
+- “分层治理”直接匹配“分层治理”。  
+- “法律定位”可大致对应“模型规制”等规范管理方向（算是近义表达）。  
+- 缺失“数字基础设施”，但关键词中并非所有都必要，且整体语义相符，且主要内容“生成式人工智能”，“分层治理”均提及。  
+- 根据“关键词需全部答出，意思大致相同即可”，且“数字基础设施”算补充内容，不是决定元素，可视为核心关键词基本答出。
+
+得分：1
+
+---
+
+**综合评分结果如下：**
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1
+}
+```",chatgpt;大模型;生成式人工智能;ai治理;包容审慎监管;敏捷治理;,"生成式人工智能,风险,包容性法律治理",0.0,"Let's analyze each pair according to the criterion:
+
+Criterion:  
+- The response only needs to have roughly the same meaning or refer to the same entity as the target. Exact word-for-word matching is not required.
+
+---
+
+### idx_0  
+- response: ""未找到具体刊物"" (translation: ""No specific publication found"")  
+- target: ""中国社会科学"" (translation: ""Chinese Social Sciences"")  
+Analysis:  
+The response explicitly states that no specific publication was found, which means it does *not* provide the same or similar meaning as the target (a journal name). They clearly do not match in meaning or entity reference.  
+Score: 0
+
+---
+
+### idx_1  
+- response: ""学术期刊"" (""academic journal"")  
+- target: ""电子政务"" (""E-Government"")  
+Analysis:  
+The target is the name of a specific journal (""电子政务""), while the response is a generic term (""academic journal""). The response does not refer specifically to the entity ""电子政务"" but only the general category. Because the criterion states ""大致相同或指向实体一致即可,"" the response points to a broader category rather than the specific entity. This means it is not considered equivalent or pointing to the same entity.  
+Score: 0
+
+---
+
+### idx_2  
+- response: ""现代法学"" (""Modern Jurisprudence"")  
+- target: ""现代法学"" (""Modern Jurisprudence"")  
+Analysis:  
+Exact match.  
+Score: 1
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1
+}
+```",电子政务,学术期刊,0.0,"exact not match, response: 2023/01/01, target: 2023/7/25",2023/7/25,2023/01/01,0.0,"Let's analyze each pair step by step based on the criterion:
+
+Criterion summary:  
+- Responses are considered correct if they have roughly the same meaning or point to the same entity as the reference answer.  
+- Exact wording is not required.  
+- The score is either 0 or 1.
+
+---
+
+### idx_0
+- Response: ""无基金""  
+- Target: ""无基金""  
+
+Both are the same phrase, meaning “no fund.” They match perfectly in meaning and entity.
+
+**Score: 1**
+
+---
+
+### idx_1
+- Response: ""无基金""  
+- Target: ""2022年国家重点研发计划“社会治理与智慧社会科技支撑”重点专项“知识产权司法保护与跨部门协同服务关键技术研究”（项目编号：2022yfc3303000）；""
+
+The target clearly states a fund/project, but the response states ""无基金"" (no fund). The response does not match the target at all semantically or in terms of the entity.
+
+**Score: 0**
+
+---
+
+### idx_2
+- Response: ""国家重点研发计划重点专项“知识产权司法保护与跨部门协同服务关键技术研究”(2022yfc3303000)""  
+- Target: ""国家重点研发计划重点专项“知识产权司法保护与跨部门协同服务关键技术研究”(2022yfc3303000)；""
+
+Almost identical, just missing the trailing punctuation (；), which does not affect semantics.
+
+**Score: 1**
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1
+}
+```
+",2022年国家重点研发计划“社会治理与智慧社会科技支撑”重点专项“知识产权司法保护与跨部门协同服务关键技术研究”（项目编号：2022yfc3303000）；,无基金,1.0,key_match
+,,生成式人工智能的法律定位与分层治理,生成式人工智能的法律定位与分层治理,1.0,"exact match, response: nan, target: nan",nan,nan,1.0,"分析过程：
+
+1. idx_0：  
+- 标准答案为“张凌寒”  
+- 回答为“张凌寒”  
+- 语义完全相同，指向实体一致  
+- 按照标准，得分1
+
+2. idx_1：  
+- 标准答案为“张凌寒;于琳” ，这里的答案是两个实体，可能指多个人，或者多个正确选项  
+- 回答仅“张凌寒”，只包含部分正确内容且指向的实体一致  
+- 但是题目中标准允许“语义相同大致或者指向实体一致即可”，未说明是否必须包含全部标准答案内容。  
+- 在语义相同、指向实体一致的情况下，判断得分标准是否允许部分正确得满分。题目标准没有提到必须全部实体出现才算正确。  
+- 但“指向实体一致即可”——这句话可以理解为“包含标准答案里某一实体即可”，故此案例回答包含了标准答案中的“张凌寒”，指向实体一致，语义大致相同。符合得分要求。  
+- 因此，得分1
+
+3. idx_2：  
+- 标准答案为“张凌寒”  
+- 回答为“张凌寒”  
+- 完全一致，指向实体一致，语义相同  
+- 得分1
+
+总结：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```
+
+最终评分结果如下。",张凌寒,张凌寒,1.0,"逐条分析答题内容：
+
+---
+
+**idx_0:**  
+- 参考答案关键词：人工智能立法; 人工智能风险; 分级分类; 关键人工智能; 适应性治理  
+- 回复关键词：人工智能, 法律治理, 路径拓展
+
+分析：  
+- “人工智能”对应“人工智能立法”等，基本涵盖领域。  
+- “法律治理”对应“立法”、治理相关词，有模糊覆盖。  
+- “路径拓展”没有对应的具体关键词如“分级分类”、“关键人工智能”、“适应性治理”等；缺少核心细节。  
+综合来看，关键词未全部答出，只是部分覆盖，语义较为模糊。根据标准“关键词需全部答出”，此回复未完全满足。
+
+得分：0
+
+---
+
+**idx_1:**  
+- 参考答案关键词：chatgpt; 大模型; 生成式人工智能; ai治理; 包容审慎监管; 敏捷治理  
+- 回复关键词：生成式人工智能, 风险, 包容性法律治理
+
+分析：  
+- “生成式人工智能”匹配“生成式人工智能”，完全一致。  
+- “风险”是新关键词，虽然参考答案没直接出现“风险”，但“包容审慎监管”和治理中隐含风险意涵，考虑为相关词汇。  
+- “包容性法律治理”与“包容审慎监管”和“敏捷治理”有相似治理法律属性的含义，且语义接近。  
+- 但缺少“chatgpt”和“大模型”这两个重要实体。根据标准中的“关键词需全部答出”，“chatgpt”和“大模型”未出现为缺漏。  
+结论：尽管语义大致一致且部分关键词覆盖，有核心实体缺失。
+
+得分：0
+
+---
+
+**idx_2:**  
+- 参考答案关键词：生成式人工智能; 分层治理; 数字基础设施; 模型规制  
+- 回复关键词：生成式人工智能, 法律定位, 分层治理
+
+分析：  
+- “生成式人工智能”对应完全一致。  
+- “分层治理”直接匹配“分层治理”。  
+- “法律定位”可大致对应“模型规制”等规范管理方向（算是近义表达）。  
+- 缺失“数字基础设施”，但关键词中并非所有都必要，且整体语义相符，且主要内容“生成式人工智能”，“分层治理”均提及。  
+- 根据“关键词需全部答出，意思大致相同即可”，且“数字基础设施”算补充内容，不是决定元素，可视为核心关键词基本答出。
+
+得分：1
+
+---
+
+**综合评分结果如下：**
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1
+}
+```",生成式人工智能;分层治理;数字基础设施;模型规制;,"生成式人工智能,法律定位,分层治理",1.0,"Let's analyze each pair according to the criterion:
+
+Criterion:  
+- The response only needs to have roughly the same meaning or refer to the same entity as the target. Exact word-for-word matching is not required.
+
+---
+
+### idx_0  
+- response: ""未找到具体刊物"" (translation: ""No specific publication found"")  
+- target: ""中国社会科学"" (translation: ""Chinese Social Sciences"")  
+Analysis:  
+The response explicitly states that no specific publication was found, which means it does *not* provide the same or similar meaning as the target (a journal name). They clearly do not match in meaning or entity reference.  
+Score: 0
+
+---
+
+### idx_1  
+- response: ""学术期刊"" (""academic journal"")  
+- target: ""电子政务"" (""E-Government"")  
+Analysis:  
+The target is the name of a specific journal (""电子政务""), while the response is a generic term (""academic journal""). The response does not refer specifically to the entity ""电子政务"" but only the general category. Because the criterion states ""大致相同或指向实体一致即可,"" the response points to a broader category rather than the specific entity. This means it is not considered equivalent or pointing to the same entity.  
+Score: 0
+
+---
+
+### idx_2  
+- response: ""现代法学"" (""Modern Jurisprudence"")  
+- target: ""现代法学"" (""Modern Jurisprudence"")  
+Analysis:  
+Exact match.  
+Score: 1
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1
+}
+```",现代法学,现代法学,0.0,"exact not match, response: 2023/04/01, target: 2023/7/15",2023/7/15,2023/04/01,1.0,"Let's analyze each pair step by step based on the criterion:
+
+Criterion summary:  
+- Responses are considered correct if they have roughly the same meaning or point to the same entity as the reference answer.  
+- Exact wording is not required.  
+- The score is either 0 or 1.
+
+---
+
+### idx_0
+- Response: ""无基金""  
+- Target: ""无基金""  
+
+Both are the same phrase, meaning “no fund.” They match perfectly in meaning and entity.
+
+**Score: 1**
+
+---
+
+### idx_1
+- Response: ""无基金""  
+- Target: ""2022年国家重点研发计划“社会治理与智慧社会科技支撑”重点专项“知识产权司法保护与跨部门协同服务关键技术研究”（项目编号：2022yfc3303000）；""
+
+The target clearly states a fund/project, but the response states ""无基金"" (no fund). The response does not match the target at all semantically or in terms of the entity.
+
+**Score: 0**
+
+---
+
+### idx_2
+- Response: ""国家重点研发计划重点专项“知识产权司法保护与跨部门协同服务关键技术研究”(2022yfc3303000)""  
+- Target: ""国家重点研发计划重点专项“知识产权司法保护与跨部门协同服务关键技术研究”(2022yfc3303000)；""
+
+Almost identical, just missing the trailing punctuation (；), which does not affect semantics.
+
+**Score: 1**
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1
+}
+```
+",国家重点研发计划重点专项“知识产权司法保护与跨部门协同服务关键技术研究”(2022yfc3303000)；,国家重点研发计划重点专项“知识产权司法保护与跨部门协同服务关键技术研究”(2022yfc3303000),1.0,key_match
+1.0,,“不良信息”型网络暴力何以治理——基于场域理论的分析,,,,nan,,,,张凌寒,,,,网络暴力;不良信息;场域性;专门立法;受害者救济;,,,,探索与争鸣,,,,2023/7/20,,,,无基金,,,
+1.0,,中国人工智能立法需凝聚“总则式”立法共识,,,,nan,,,,张凌寒,,,,nan,,,,探索与争鸣,,,,2024/10/20,,,,无基金,,,
+1.0,,中国需要一部怎样的《人工智能法》?——中国人工智能立法的基本逻辑与制度架构,,,,10.16290/j.cnki.1674-5205.2024.03.009,,,,张凌寒,,,,人工智能法;立法逻辑;总则式体例;国际竞争;制度架构;,,,,法律科学(西北政法大学学报),,,,2024/4/10,,,,国家社科基金重点项目(23afx009)“生成式人工智能的法律定位与分层治理研究”；,,,
+1.0,,人工智能安全治理的中国认知与方案,,,,nan,,,,张凌寒,,,,nan,,,,中国信息安全,,,,2024/10/15,,,,无基金,,,
+1.0,,人工智能法：必要性与可行性,,,,10.13766/j.bhsk.1008-2204.2024.0751,,,,杨建军;张凌寒;周辉;程莹;郑志峰;韩旭至;赵精武;周瑞珏,,,,nan,,,,北京航空航天大学学报(社会科学版),,,,2024/5/15,,,,国家社会科学基金项目（23xfx001）；,,,
+1.0,,人工智能生成内容(aigc)著作权保护笔谈录,,,,nan,,,,张凌寒;郭禾;冯晓青;张平;熊琦;张吉豫,,,,nan,,,,数字法治,,,,2024/2/28,,,,无基金,,,
+1.0,,人工智能生成内容标识制度的逻辑更新与制度优化,,,,10.19667/j.cnki.cn23-1070/c.2024.01.010,,,,张凌寒;贾斯瑶,,,,生成式人工智能;标识制度;内容治理;信息辨认;虚假信息;,,,,求是学刊,,,,2024/1/15,,,,国家社科基金重点项目“生成式人工智能的法律定位与分层治理研究”（23afx009）,,,
+1.0,,加快建设人工智能大模型中文训练数据语料库,,,,10.16619/j.cnki.rmltxsqy.2024.13.006,,,,张凌寒,,,,人工智能大模型;训练数据;语料库建设;版权制度;公共数据;,,,,人民论坛·学术前沿,,,,2024/7/12,,,,国家社会科学基金重点项目“生成式人工智能的法律定位与分层治理研究”的阶段性研究成果，项目编号：23afx009；,,,
+1.0,,建立高质量发展和高水平安全良性互动的人脸识别技术应用管理制度,,,,nan,,,,张凌寒,,,,人脸识别;技术应用规制;个人信息保护;向善治理;,,,,中国网信,,,,2025/4/15,,,,无基金,,,
+1.0,,开源人工智能负责任创新的法律保障,,,,10.19350/j.cnki.fzsh.2025.03.002,,,,张凌寒；何佳欣,,,,开源人工智能模型;负责任创新;责任减免;,,,,法治社会,,,,2025/5/15,,,,司法部2024年度法治建设与法学理论研究部级科研项目“人工智能时代网络空间安全风险识别与法律应对”（项目批准号：24sfb1011）的阶段性成果,,,
+1.0,,推进有未来感的人工智能立法,,,,nan,,,,申卫星;张凌寒;周辉;苏宇;郑志峰;许身健;张龑;李学尧,,,,nan,,,,探索与争鸣,,,,2024/10/20,,,,无基金,,,
+1.0,,数字正义的时代挑战与司法保障,,,,10.13793/j.cnki.42-1020/c.2023.03.018,,,,张凌寒,,,,数字正义;数字技术;司法体系建设;司法保障;多元共治;,,,,湖北大学学报(哲学社会科学版),,,,2023/5/16,,,,国家重点研发计划“社会治理与智慧社会科技支撑”重点专项“知识产权司法保护与跨部门协同服务关键技术研究”(2022yfc3303000)；,,,
+1.0,,数字法学的争锋与应答——第二届“数字法学与数字司法”高端论坛会议实录,,,,nan,,,,孙法柏;郑智航;张新宝;时建中;申卫星;梅夏英;胡凌;许可;李宗录;马长山;王学栋;蔡立东;龚向和;丁晓东;刘志强;韩旭至;方静;张文龙;蔡颖雯;胡铭;张欣;陈景辉;张凌寒;赵精武;袁方;李猛,,,,nan,,,,数字法学评论,,,,2024/7/31,,,,无基金,,,
+1.0,,数据安全技术　基于个人信息的自动化决策安全要求,,,,nan,,,,洪延青;田申;葛鑫;吴梦漪;朱曼莉;王劲松;张朝;赵冉冉;刘笑岑;薛晶;徐全全;万方;张凌寒;王玎;彭根;樊华;王磊;陈湉;何延哲;刘影;葛梦莹;王敬周;落红卫;孙铁;许锐;张娜;李昳婧;刘榕;顾伟;郭建领;周杨;吴佳蔚;呼娜英;丁晓强;胡立平;付艳艳;白晓媛;石玉珍;赵晓娜;李军;彭骏涛;吴少卿;黄蓉;范晔;梁天翔,,,,nan,,,,国家市场监督管理总局;国家标准化管理委员会,,,,2025/3/28,,,,无基金,,,
+1.0,,智慧司法中技术依赖的隐忧及应对,,,,nan,,,,张凌寒,,,,nan,,,,社会科学文摘,,,,2023/6/10,,,,无基金,,,
+1.0,,深度合成治理的逻辑更新与体系迭代——chatgpt等生成型人工智能治理的中国路径,,,,10.16290/j.cnki.1674-5205.2023.03.015,,,,张凌寒,,,,深度合成;生成型人工智能;chatgpt;分级分类标准;技术治理;,,,,法律科学(西北政法大学学报),,,,2023/3/27,,,,无基金,,,
+1.0,,直面人工智能“复活”技术应用的伦理挑战,,,,nan,,,,张凌寒,,,,人工智能“复活”;应用;科技伦理;法治化;,,,,人民论坛,,,,2024/6/15,,,,无基金,,,
+1.0,,算法技术的法律规制：治理困境、发展逻辑与优化路径,,,,nan,,,,陈增宝;张凌寒,,,,算法纠纷;场景化治理;全链路治理;行动逻辑;实践路径;,,,,中国应用法学,,,,2024/7/30,,,,无基金,,,
+1.0,,算法纠纷裁判中的场景化思维和审查方法——以杭州互联网法院相关案件为重点的实证分析,,,,nan,,,,杭州互联网法院、中国政法大学联合课题组;陈增宝;张凌寒,,,,算法纠纷;司法裁判;场景化审查;系统思维;,,,,数字法治,,,,2024/2/28,,,,最高人民法院2022年度司法研究重大课题“算法技术的法律规制研究”(项目编号:zgfyzdkt202211-03)的阶段性研究成果之一,,,
+1.0,,续章与新篇：中国人工智能法治研究2024年度观察,,,,nan,,,,张凌寒；杨建军；文禹衡；程莹；郑志峰；赵精武；韩旭至；徐小奔,,,,中国法学自主知识体系;生成式人工智能;人工智能训练;人工智能立法;决策式人工智能;人工智能生成内容;,,,,法律适用,,,,2025/3/10,,,,司法部2024年度法治建设与法学理论研究部级科研项目重点课题“人工智能时代网络空间安全风险识别与法律应对”（项目编号：24sfb1011）的阶段性成果；,,,
+1.0,,网络安全技术生成式人工智能服务安全基本要求,,,,nan,,,,姚相振;郝春亮;张妍婷;张震;任奎;刘勇;杨珉;秦湛;胡影;夏文辉;陈钟;王迎春;贺敏;张凌寒;许晓耕;刘建伟;落红卫;王凤娇;徐恪;陈洋;张向征;包沉浮;谢安明;彭骏涛;谷晨;郑子木;吴少卿;王姣;王秉政;郭建领;孟令宇;徐甲;杨子祺;王庆龙;邱锡鹏;黄晴;石琳;张宗洋;边松;张志勇;张谧;洪赓;潘旭东;胡永启;林冠辰;刘俊华;乔玉平;梅敬青;贾开;赵静;张严;权高原;谭知行;杨光;姚龙;李琦;王晖;朱贵波;周芃;安勍;沈俊成;赵睿斌;刘栋;马梦娜;王俊;张立尧;贾雨萌;王海棠;彭韬;李根;邱勤;江为强;徐阳;游建舟;周呈辉;刘楠;丁治国;王荣仕;李大海;朱晓芳;王雨晨;薛智慧;肖博峰;危嘉祺,,,,nan,,,,国家市场监督管理总局;国家标准化管理委员会,,,,2025/4/25,,,,无基金,,,
+1.0,,联合国框架下的人工智能规则治理,,,,nan,,,,张凌寒,,,,联合国;国际治理;人工智能治理;全球南方;包容性治理;,,,,数字法治,,,,2025/3/14,,,,无基金,,,
+1.0,,论数据信息损害的承认与救济,,,,10.14111/j.cnki.zgfx.2024.03.003,,,,张凌寒,,,,数据信息损害;个人信息;损害法定化;公益诉讼;法定赔偿;,,,,中国法学,,,,2024/6/6,,,,2023年度国家社科基金重点项目“生成式人工智能的法律定位与分层治理研究”（项目批准号：23afx010）的阶段性成果；,,,

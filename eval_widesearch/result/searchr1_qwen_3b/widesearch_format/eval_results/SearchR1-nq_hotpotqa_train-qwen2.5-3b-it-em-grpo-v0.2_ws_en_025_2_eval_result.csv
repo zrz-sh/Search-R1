@@ -1,0 +1,48 @@
+clinic,clinic_before_map,exist_flag_gt,exist_flag_response,clinic_exact_match,clinic_exact_match_eval_msg,county_exact_match,county_exact_match_eval_msg,county_query,county_response,fulladdress_llm_judge,fulladdress_llm_judge_eval_msg,fulladdress_query,fulladdress_response,phonenumber_exact_match,phonenumber_exact_match_eval_msg,phonenumber_query,phonenumber_response,saturdayoperationhours_llm_judge,saturdayoperationhours_llm_judge_eval_msg,saturdayoperationhours_query,saturdayoperationhours_response
+plannedparenthood-fultonstreethealthcenter,Planned Parenthood,,,1.0,key_match,1.0,"exact match, response: fresno, target: fresno",fresno,fresno,1.0,"Let's analyze the response against the target based on the given criterion:
+
+- Target: ""650n.fultonstreet,fresno,ca93728""
+- Response: ""650n.fultonstreetfresno,ca93728usa""
+
+Step-by-step analysis:
+
+1. The address number and street name ""650n.fultonstreet"" appear exactly in both.
+2. The city ""fresno"" is present in both.
+3. The postal code ""ca93728"" is present in both. Note that ""ca"" appears to be part of the state abbreviation, but it appears in both responses.
+4. The response adds ""usa"" at the end, which is an extra but does not alter the correctness of the answer.
+5. The response lacks a comma between ""street"" and ""fresno"" (""fultonstreetfresno"" vs ""fultonstreet,fresno""), but the criterion states that word-for-word isn't necessary as long as the semantics match. This seems acceptable.
+6. Overall, the response points to the same address entity as the target.
+
+Therefore, the response can be considered completely correct.
+
+Final score: 1
+
+```json
+{
+    ""idx_0"": 1
+}
+```","650n.fultonstreet,fresno,ca93728","650n.fultonstreetfresno,ca93728usa",1.0,"exact match, response: (559)488-4900, target: (559)488-4900",(559)488-4900,(559)488-4900,0.0,"Analysis:
+
+- The target (standard answer) is: ""8am-4:30pm""
+- The response is: ""closed""
+
+According to the grading criterion:
+- The response should have approximately the same semantics or point to the same entity.
+- ""closed"" means not open, no operating hours.
+- ""8am-4:30pm"" clearly indicates specific opening hours.
+- The two do not have approximately the same meaning; one indicates hours of operation, the other indicates no operation.
+- Therefore, the semantics do not match or point to the same entity.
+
+Final score: 0
+
+```json
+{
+    ""idx_0"": 0
+}
+```
+",8am-4:30pm,closed
+fpawomen'shealth-fresno,,1.0,,,,,,fresno,,,,"165northclarkstreet,fresno,ca93701",,,,(559)233-8657,,,,closed,
+fpawomen'shealth-tulare,,1.0,,,,,,tulare,,,,"1068ncherrystreet,tulare,ca93274",,,,(559)233-0990,,,,closed,
+plannedparenthood-familyfirsthealthcenter,,1.0,,,,,,fresno,,,,"6095n.1ststreet,fresno,ca93710",,,,(559)446-1515,,,,closed,
+plannedparenthood-maderahealthcenter,,1.0,,,,,,madera,,,,"500e.almondave,#1,madera,ca93637",,,,(559)675-1133,,,,closed,
+plannedparenthood-mercedhealthcenter,,1.0,,,,,,merced,,,,"3166collinsdrive,merced,ca95348",,,,(209)723-7751,,,,closed,

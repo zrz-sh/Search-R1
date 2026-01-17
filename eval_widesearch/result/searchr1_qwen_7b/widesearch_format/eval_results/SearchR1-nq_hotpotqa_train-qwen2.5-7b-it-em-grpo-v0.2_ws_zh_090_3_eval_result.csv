@@ -1,0 +1,365 @@
+exist_flag_gt,exist_flag_response,线路名称,线路名称_before_map,总站数_exact_match,总站数_exact_match_eval_msg,总站数_query,总站数_response,总里程数_number_near,总里程数_number_near_eval_msg,总里程数_query,总里程数_response,线路名称_exact_match,线路名称_exact_match_eval_msg,起点站和终点站_exact_match,起点站和终点站_exact_match_eval_msg,起点站和终点站_query,起点站和终点站_response,运营机构_llm_judge,运营机构_llm_judge_eval_msg,运营机构_query,运营机构_response,首次通车时间_llm_judge,首次通车时间_llm_judge_eval_msg,首次通车时间_query,首次通车时间_response
+,,1号线(或八通线),1号线,0.0,"exact not match, response: 28, target: 34",34,28,1.0,"number near in range 5.0%, response: 52.7, target: 52.7",52.7,52.7,1.0,key_match,0.0,"exact not match, response: 西单站、四惠东站, target: 古城站、环球度假区站",古城站、环球度假区站,西单站、四惠东站,0.0,"首先，题目要求根据标准答案和对应的回答进行评分，评分规则为0或1分，分数为1的要求是回答与标准答案语义大致相同或者指向的实体一致，不需要字字对应。
+
+一一分析每一组：
+
+- idx_0：
+  - 回复：北京市地铁运营有限公司第一分公司
+  - 标准：北京市地铁运营有限公司第二分公司
+  - 分析：两者分别是一分公司和二分公司，名称差异明显，指向的实体不同。
+  - 结论：不一致，评分0。
+
+- idx_1：
+  - 回复：北京市地铁运营有限公司第二分公司
+  - 标准：北京市地铁运营有限公司第三分公司
+  - 分析：二分公司和三分公司，指向的部门不同，实体不一致。
+  - 结论：不一致，评分0。
+
+- idx_2：
+  - 回复：北京京港地铁有限公司
+  - 标准：北京市地铁运营有限公司
+  - 分析：""北京京港地铁有限公司""和""北京市地铁运营有限公司""是两个不同公司名称，语义及实体不相同。
+  - 结论：不一致，评分0。
+
+- idx_3：
+  - 回复：北京首都机场轨道交通有限责任公司
+  - 标准：北京京城地铁有限公司
+  - 分析：两者公司名称完全不同，实体不一致。
+  - 结论：不一致，评分0。
+
+综上所有答案均不符合要求，全部0分。
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0
+}
+```",北京市地铁运营有限公司第二分公司,北京市地铁运营有限公司第一分公司,1.0,"Let's analyze each pair item by item according to the criterion:
+
+Criterion Summary: The response should be semantically the same or point to the same entity as the target. Exact date matching is required as the answers are all dates. If the dates differ, the response is incorrect.
+
+---
+
+**idx_0**  
+Response: 1969年10月1日  
+Target: 1969年10月1日  
+Same date, exactly matching.  
+Score: 1
+
+---
+
+**idx_1**  
+Response: 1971年9月10日  
+Target: 1984年9月20日  
+Dates differ, different years and days. Not the same entity.  
+Score: 0
+
+---
+
+**idx_2**  
+Response: 2007年12月28日  
+Target: 2002年9月28日  
+Dates differ, different years and months. Not the same entity.  
+Score: 0
+
+---
+
+**idx_3**  
+Response: 2008年8月1日  
+Target: 2008年7月19日  
+Same year, but different month and day. Different dates; not the same entity.  
+Score: 0
+
+---
+
+Final JSON output:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0
+}
+```",1969年10月1日,1969年10月1日
+,,2号线,2号线,0.0,"exact not match, response: 32, target: 18",18,32,0.0,"number not near, response: 41.3, target: 23.1",23.1,41.3,1.0,key_match,0.0,"exact not match, response: 西直门站、安定门站, target: 西直门站、西直门站",西直门站、西直门站,西直门站、安定门站,0.0,"首先，题目要求根据标准答案和对应的回答进行评分，评分规则为0或1分，分数为1的要求是回答与标准答案语义大致相同或者指向的实体一致，不需要字字对应。
+
+一一分析每一组：
+
+- idx_0：
+  - 回复：北京市地铁运营有限公司第一分公司
+  - 标准：北京市地铁运营有限公司第二分公司
+  - 分析：两者分别是一分公司和二分公司，名称差异明显，指向的实体不同。
+  - 结论：不一致，评分0。
+
+- idx_1：
+  - 回复：北京市地铁运营有限公司第二分公司
+  - 标准：北京市地铁运营有限公司第三分公司
+  - 分析：二分公司和三分公司，指向的部门不同，实体不一致。
+  - 结论：不一致，评分0。
+
+- idx_2：
+  - 回复：北京京港地铁有限公司
+  - 标准：北京市地铁运营有限公司
+  - 分析：""北京京港地铁有限公司""和""北京市地铁运营有限公司""是两个不同公司名称，语义及实体不相同。
+  - 结论：不一致，评分0。
+
+- idx_3：
+  - 回复：北京首都机场轨道交通有限责任公司
+  - 标准：北京京城地铁有限公司
+  - 分析：两者公司名称完全不同，实体不一致。
+  - 结论：不一致，评分0。
+
+综上所有答案均不符合要求，全部0分。
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0
+}
+```",北京市地铁运营有限公司第三分公司,北京市地铁运营有限公司第二分公司,0.0,"Let's analyze each pair item by item according to the criterion:
+
+Criterion Summary: The response should be semantically the same or point to the same entity as the target. Exact date matching is required as the answers are all dates. If the dates differ, the response is incorrect.
+
+---
+
+**idx_0**  
+Response: 1969年10月1日  
+Target: 1969年10月1日  
+Same date, exactly matching.  
+Score: 1
+
+---
+
+**idx_1**  
+Response: 1971年9月10日  
+Target: 1984年9月20日  
+Dates differ, different years and days. Not the same entity.  
+Score: 0
+
+---
+
+**idx_2**  
+Response: 2007年12月28日  
+Target: 2002年9月28日  
+Dates differ, different years and months. Not the same entity.  
+Score: 0
+
+---
+
+**idx_3**  
+Response: 2008年8月1日  
+Target: 2008年7月19日  
+Same year, but different month and day. Different dates; not the same entity.  
+Score: 0
+
+---
+
+Final JSON output:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0
+}
+```",1984年9月20日,1971年9月10日
+,,13号线,13号线,0.0,"exact not match, response: 28, target: 17",17,28,1.0,"number near in range 5.0%, response: 41.3, target: 40.5",40.5,41.3,1.0,key_match,0.0,"exact not match, response: 回龙观站、龙阳路站, target: 西直门站、东直门站",西直门站、东直门站,回龙观站、龙阳路站,0.0,"首先，题目要求根据标准答案和对应的回答进行评分，评分规则为0或1分，分数为1的要求是回答与标准答案语义大致相同或者指向的实体一致，不需要字字对应。
+
+一一分析每一组：
+
+- idx_0：
+  - 回复：北京市地铁运营有限公司第一分公司
+  - 标准：北京市地铁运营有限公司第二分公司
+  - 分析：两者分别是一分公司和二分公司，名称差异明显，指向的实体不同。
+  - 结论：不一致，评分0。
+
+- idx_1：
+  - 回复：北京市地铁运营有限公司第二分公司
+  - 标准：北京市地铁运营有限公司第三分公司
+  - 分析：二分公司和三分公司，指向的部门不同，实体不一致。
+  - 结论：不一致，评分0。
+
+- idx_2：
+  - 回复：北京京港地铁有限公司
+  - 标准：北京市地铁运营有限公司
+  - 分析：""北京京港地铁有限公司""和""北京市地铁运营有限公司""是两个不同公司名称，语义及实体不相同。
+  - 结论：不一致，评分0。
+
+- idx_3：
+  - 回复：北京首都机场轨道交通有限责任公司
+  - 标准：北京京城地铁有限公司
+  - 分析：两者公司名称完全不同，实体不一致。
+  - 结论：不一致，评分0。
+
+综上所有答案均不符合要求，全部0分。
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0
+}
+```",北京市地铁运营有限公司,北京京港地铁有限公司,0.0,"Let's analyze each pair item by item according to the criterion:
+
+Criterion Summary: The response should be semantically the same or point to the same entity as the target. Exact date matching is required as the answers are all dates. If the dates differ, the response is incorrect.
+
+---
+
+**idx_0**  
+Response: 1969年10月1日  
+Target: 1969年10月1日  
+Same date, exactly matching.  
+Score: 1
+
+---
+
+**idx_1**  
+Response: 1971年9月10日  
+Target: 1984年9月20日  
+Dates differ, different years and days. Not the same entity.  
+Score: 0
+
+---
+
+**idx_2**  
+Response: 2007年12月28日  
+Target: 2002年9月28日  
+Dates differ, different years and months. Not the same entity.  
+Score: 0
+
+---
+
+**idx_3**  
+Response: 2008年8月1日  
+Target: 2008年7月19日  
+Same year, but different month and day. Different dates; not the same entity.  
+Score: 0
+
+---
+
+Final JSON output:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0
+}
+```",2002年9月28日,2007年12月28日
+,,首都机场线,机场线,0.0,"exact not match, response: 6, target: 5",5,6,1.0,"number near in range 5.0%, response: 28.5, target: 29.8",29.8,28.5,1.0,key_match,0.0,"exact not match, response: 北京西站、顺义机场, target: 北新桥站、2号航站楼站",北新桥站、2号航站楼站,北京西站、顺义机场,0.0,"首先，题目要求根据标准答案和对应的回答进行评分，评分规则为0或1分，分数为1的要求是回答与标准答案语义大致相同或者指向的实体一致，不需要字字对应。
+
+一一分析每一组：
+
+- idx_0：
+  - 回复：北京市地铁运营有限公司第一分公司
+  - 标准：北京市地铁运营有限公司第二分公司
+  - 分析：两者分别是一分公司和二分公司，名称差异明显，指向的实体不同。
+  - 结论：不一致，评分0。
+
+- idx_1：
+  - 回复：北京市地铁运营有限公司第二分公司
+  - 标准：北京市地铁运营有限公司第三分公司
+  - 分析：二分公司和三分公司，指向的部门不同，实体不一致。
+  - 结论：不一致，评分0。
+
+- idx_2：
+  - 回复：北京京港地铁有限公司
+  - 标准：北京市地铁运营有限公司
+  - 分析：""北京京港地铁有限公司""和""北京市地铁运营有限公司""是两个不同公司名称，语义及实体不相同。
+  - 结论：不一致，评分0。
+
+- idx_3：
+  - 回复：北京首都机场轨道交通有限责任公司
+  - 标准：北京京城地铁有限公司
+  - 分析：两者公司名称完全不同，实体不一致。
+  - 结论：不一致，评分0。
+
+综上所有答案均不符合要求，全部0分。
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0
+}
+```",北京京城地铁有限公司,北京首都机场轨道交通有限责任公司,0.0,"Let's analyze each pair item by item according to the criterion:
+
+Criterion Summary: The response should be semantically the same or point to the same entity as the target. Exact date matching is required as the answers are all dates. If the dates differ, the response is incorrect.
+
+---
+
+**idx_0**  
+Response: 1969年10月1日  
+Target: 1969年10月1日  
+Same date, exactly matching.  
+Score: 1
+
+---
+
+**idx_1**  
+Response: 1971年9月10日  
+Target: 1984年9月20日  
+Dates differ, different years and days. Not the same entity.  
+Score: 0
+
+---
+
+**idx_2**  
+Response: 2007年12月28日  
+Target: 2002年9月28日  
+Dates differ, different years and months. Not the same entity.  
+Score: 0
+
+---
+
+**idx_3**  
+Response: 2008年8月1日  
+Target: 2008年7月19日  
+Same year, but different month and day. Different dates; not the same entity.  
+Score: 0
+
+---
+
+Final JSON output:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0
+}
+```",2008年7月19日,2008年8月1日
+1.0,,10号线,,,,45,,,,57.1,,,,,,巴沟站、巴沟站,,,,北京市地铁运营有限公司第三分公司,,,,2008年7月19日,
+1.0,,11号线,,,,4,,,,3.9,,,,,,模式口站、新首钢站,,,,北京地铁运营有限公司,,,,2021年12月31日,
+1.0,,12号线,,,,20,,,,27.5,,,,,,四季青桥站、东坝北站,,,,北京市地铁运营有限公司,,,,2024年12月15日,
+1.0,,14号线,,,,33,,,,50.8,,,,,,张郭庄站、善各庄站,,,,北京京港地铁有限公司,,,,2013年5月5日,
+1.0,,15号线,,,,20,,,,41.4,,,,,,俸伯站、清华东路西口站,,,,北京市地铁运营有限公司第四分公司,,,,2010年12月30日,
+1.0,,16号线,,,,30,,,,48.9,,,,,,北安河站、宛平城站,,,,北京京港地铁有限公司,,,,2016年12月31日,
+1.0,,17号线,,,,16,,,,49.7,,,,,,未来科学城北站、嘉会湖站,,,,北京京港地铁有限公司,,,,2021年12月31日,
+1.0,,19号线,,,,10,,,,20.9,,,,,,新宫站、牡丹园站,,,,北京市轨道交通运营管理有限公司,,,,2021年12月31日,
+1.0,,3号线,,,,10,,,,14.7,,,,,,东四十条站、东坝北站,,,,北京市地铁运营有限公司第四分公司,,,,2024年12月15日,
+1.0,,4号线（大兴线）,,,,35,,,,50.0,,,,,,天宫院站、安河桥北站,,,,北京京港地铁有限公司,,,,2009年9月28日,
+1.0,,5号线,,,,23,,,,27.5,,,,,,宋家庄站、天通苑北站,,,,北京市地铁运营有限公司运营一分公司,,,,2007年10月7日,
+1.0,,6号线,,,,34,,,,52.9,,,,,,金安桥站、潞城站,,,,北京市地铁运营有限公司一分公司,,,,2012年12月30日,
+1.0,,7号线,,,,30,,,,40.3,,,,,,北京西站、环球度假区站,,,,北京市地铁运营有限公司,,,,2014年12月28日,
+1.0,,8号线,,,,34,,,,51.6,,,,,,朱辛庄站、瀛海站,,,,北京地铁运营有限公司,,,,2008年7月19日,
+1.0,,9号线,,,,13,,,,16.5,,,,,,郭公庄站、国家图书馆站,,,,北京市地铁运营有限公司二分公司,,,,2011年12月31日,
+1.0,,s1线,,,,8,,,,10.2,,,,,,苹果园站、石厂站,,,,北京地铁运营有限公司,,,,2017年12月30日,
+1.0,,亦庄新城现代有轨电车t1线,,,,14,,,,13.25,,,,,,定海园站、屈庄站,,,,北京公交集团有轨电车有限公司,,,,2020年12月31日,
+1.0,,亦庄线,,,,14,,,,23.3,,,,,,宋家庄站、亦庄火车站,,,,北京市地铁运营有限公司一分公司,,,,2010年12月30日,
+,1.0,其他线路...,其他线路...,,,,...,,,,NULL,,,,,,...,,,,...,,,,...
+1.0,,大兴机场线,,,,3,,,,41.36,,,,,,草桥站、大兴机场站,,,,北京市轨道交通运营管理有限公司,,,,2019年9月26日,
+1.0,,房山线,,,,16,,,,31.8,,,,,,东管头南站、阎村东站,,,,北京市地铁运营有限公司第二分公司,,,,2010年12月30日,
+1.0,,昌平线,,,,20,,,,43.8,,,,,,昌平西山口站、蓟门桥站,,,,北京市地铁运营有限公司四分公司,,,,2010年12月30日,
+1.0,,燕房线,,,,9,,,,14.4,,,,,,阎村东站、燕山站,,,,北京市轨道交通运营管理有限公司,,,,2017年12月30日,
+1.0,,现代有轨电车西郊线,,,,6,,,,8.8,,,,,,巴沟站、香山站,,,,北京公共交通控股（集团）有限公司,,,,2017年12月30日,

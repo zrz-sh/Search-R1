@@ -1,0 +1,2426 @@
+exist_flag_gt,exist_flag_response,电影名称,电影名称_before_map,上映年份_llm_judge,上映年份_llm_judge_eval_msg,上映年份_query,上映年份_response,导演_llm_judge,导演_llm_judge_eval_msg,导演_query,导演_response,梁朝伟通过该电影所获奖项_llm_judge,梁朝伟通过该电影所获奖项_llm_judge_eval_msg,梁朝伟通过该电影所获奖项_query,梁朝伟通过该电影所获奖项_response,电影名称_exact_match,电影名称_exact_match_eval_msg
+,,侠骨仁心,辣手神探,0.0,"首先，依据评分标准：“和参考答案语义相同大致，或者指向的实体一致即可，不需要字字对应。”  
+但在此题中，被考察的是回答的年份是否与标准答案对应年份一致。  
+因为年份数字具有严格唯一的指向含义，不匹配即不一致。
+
+逐条分析：
+
+- idx_0：回答1992，标准2000年。年份不一致，得分0。  
+- idx_1：回答1994，标准2000年。年份不一致，得分0。  
+- idx_2：回答1996，标准2001年。年份不一致，得分0。  
+- idx_3：回答1997，标准2001年。年份不一致，得分0。  
+- idx_4：回答1994，标准2002年。年份不一致，得分0。  
+- idx_5：回答2003，标准2002年。年份不一致，得分0。  
+- idx_6：回答2000，标准2003年。年份不一致，得分0。  
+- idx_7：回答2004，标准2004年。一致，得分1。  
+- idx_8：回答1989，标准2006年。年份不一致，得分0。  
+- idx_9：回答2007，标准2007年。一致，得分1。  
+- idx_10：回答2012，标准2013年。年份不一致，得分0。  
+- idx_11：回答2023，标准2023年。一致，得分1。  
+- idx_12：回答2021，标准2023年。年份不一致，得分0。
+
+总结：只有3条完全一致，分值为1，其余均为0。
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0
+}
+```",2000年,1992,0.0,"分析和判断过程：
+
+根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+我们将针对每个idx的response与target对比：
+
+- idx_0: response = 'nan', target = '邓特希'  
+  response为空或无效，与目标实体不一致，得分0。
+
+- idx_1: response = 'nan', target = '王家卫'  
+  同上，0。
+
+- idx_2: response = 'nan', target = '马伟豪'  
+  同上，0。
+
+- idx_3: response = 'nan', target = '王晶'  
+  同上，0。
+
+- idx_4: response = 'nan', target = '刘镇伟'  
+  同上，0。
+
+- idx_5: response = '黄健中', target = '刘伟强、麦兆辉'  
+  两者实体不一致，虽然都是人名，但目标是刘伟强和麦兆辉，回复是黄健中，得分0。
+
+- idx_6: response = '关锦鹏', target = '马伟豪'  
+  实体不同，0。
+
+- idx_7: response = 'nan', target = '王家卫'  
+  0。
+
+- idx_8: response = '侯孝贤', target = '刘伟强、麦兆辉'  
+  不同实体，0。
+
+- idx_9: response = 'nan', target = '李安'  
+  0。
+
+- idx_10: response = 'nan', target = '王家卫'  
+  0。
+
+- idx_11: response = 'nan', target = '翁子光'  
+  0。
+
+- idx_12: response = 'nan', target = '庄文强'  
+  0。
+
+基于上述分析，所有回答都未与参考答案语义相符或者指向同一实体，全部得0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0
+}
+```",邓特希,nan,1.0,"Analysis:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Translation: The response should roughly have the same meaning as the standard answer or point to the same entity; exact wording is not necessary.
+
+For each idx, we check whether the response is semantically consistent or points to the same entity as the target.
+
+- idx_0: response = ""-"", target = ""-""  
+Both are ""-"", matching exactly (no info given). Score=1
+
+- idx_1: response = ""-"", target = ""第53届戛纳国际电影节最佳男演员\n第20届香港电影金像奖最佳男主角\n第1届华语电影传媒大奖最佳男主角""  
+Response is ""-"", target is a list of awards. They do not match. Score=0
+
+- idx_2: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_3: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_4: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_5: response = ""最佳男主角"", target = ""第22届香港电影金像奖最佳男主角\n第40届台湾电影金马奖最佳男主角奖""  
+Response only has ""最佳男主角"" (Best Actor), target has two specific awards (Hong Kong Film Awards Best Actor, Golden Horse Awards Best Actor)  
+Is ""最佳男主角"" roughly equivalent to these awards? It indicates the same entity ""Best Actor"" but does not specify the award or event, so the meaning is somewhat vague. However, per the criterion, ""或指向的实体一致即可"", roughly meaning is enough, or pointing to same entity, which is ""best actor award(s)"". Since the response points to the entity ""best actor"", albeit not specifying the same events, I judge this close enough. Score=1
+
+- idx_6: response = ""-"", target = ""第4届华语电影传媒大奖港台最佳男演员银奖""  
+Response is ""-"", target is an award. Not matching. Score=0
+
+- idx_7: response = ""-"", target = ""第24届香港电影金像奖最佳男主角""  
+No match. Score=0
+
+- idx_8: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_9: response = ""-"", target = ""第44届台湾电影金马奖最佳男演员\n第2届亚洲电影大奖最佳男演员""  
+Response is ""-"", target has awards. No match. Score=0
+
+- idx_10: response = ""-"", target = ""香港导演协会奖最佳男主角""  
+No match. Score=0
+
+- idx_11: response = ""-"", target = ""第16届亚洲电影大奖最佳男主角""  
+No match. Score=0
+
+- idx_12: response = ""-"", target = ""第42届香港电影金像奖最佳男主角""  
+No match. Score=0
+
+Summary:
+
+| idx   | Score |
+|-------|-------|
+| idx_0 | 1     |
+| idx_1 | 0     |
+| idx_2 | 1     |
+| idx_3 | 1     |
+| idx_4 | 1     |
+| idx_5 | 1     |
+| idx_6 | 0     |
+| idx_7 | 0     |
+| idx_8 | 1     |
+| idx_9 | 0     |
+| idx_10| 0     |
+| idx_11| 0     |
+| idx_12| 0     |
+
+Final output in JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0
+}
+```",-,-,1.0,key_match
+,,花样年华,重慶森林,0.0,"首先，依据评分标准：“和参考答案语义相同大致，或者指向的实体一致即可，不需要字字对应。”  
+但在此题中，被考察的是回答的年份是否与标准答案对应年份一致。  
+因为年份数字具有严格唯一的指向含义，不匹配即不一致。
+
+逐条分析：
+
+- idx_0：回答1992，标准2000年。年份不一致，得分0。  
+- idx_1：回答1994，标准2000年。年份不一致，得分0。  
+- idx_2：回答1996，标准2001年。年份不一致，得分0。  
+- idx_3：回答1997，标准2001年。年份不一致，得分0。  
+- idx_4：回答1994，标准2002年。年份不一致，得分0。  
+- idx_5：回答2003，标准2002年。年份不一致，得分0。  
+- idx_6：回答2000，标准2003年。年份不一致，得分0。  
+- idx_7：回答2004，标准2004年。一致，得分1。  
+- idx_8：回答1989，标准2006年。年份不一致，得分0。  
+- idx_9：回答2007，标准2007年。一致，得分1。  
+- idx_10：回答2012，标准2013年。年份不一致，得分0。  
+- idx_11：回答2023，标准2023年。一致，得分1。  
+- idx_12：回答2021，标准2023年。年份不一致，得分0。
+
+总结：只有3条完全一致，分值为1，其余均为0。
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0
+}
+```",2000年,1994,0.0,"分析和判断过程：
+
+根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+我们将针对每个idx的response与target对比：
+
+- idx_0: response = 'nan', target = '邓特希'  
+  response为空或无效，与目标实体不一致，得分0。
+
+- idx_1: response = 'nan', target = '王家卫'  
+  同上，0。
+
+- idx_2: response = 'nan', target = '马伟豪'  
+  同上，0。
+
+- idx_3: response = 'nan', target = '王晶'  
+  同上，0。
+
+- idx_4: response = 'nan', target = '刘镇伟'  
+  同上，0。
+
+- idx_5: response = '黄健中', target = '刘伟强、麦兆辉'  
+  两者实体不一致，虽然都是人名，但目标是刘伟强和麦兆辉，回复是黄健中，得分0。
+
+- idx_6: response = '关锦鹏', target = '马伟豪'  
+  实体不同，0。
+
+- idx_7: response = 'nan', target = '王家卫'  
+  0。
+
+- idx_8: response = '侯孝贤', target = '刘伟强、麦兆辉'  
+  不同实体，0。
+
+- idx_9: response = 'nan', target = '李安'  
+  0。
+
+- idx_10: response = 'nan', target = '王家卫'  
+  0。
+
+- idx_11: response = 'nan', target = '翁子光'  
+  0。
+
+- idx_12: response = 'nan', target = '庄文强'  
+  0。
+
+基于上述分析，所有回答都未与参考答案语义相符或者指向同一实体，全部得0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0
+}
+```",王家卫,nan,0.0,"Analysis:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Translation: The response should roughly have the same meaning as the standard answer or point to the same entity; exact wording is not necessary.
+
+For each idx, we check whether the response is semantically consistent or points to the same entity as the target.
+
+- idx_0: response = ""-"", target = ""-""  
+Both are ""-"", matching exactly (no info given). Score=1
+
+- idx_1: response = ""-"", target = ""第53届戛纳国际电影节最佳男演员\n第20届香港电影金像奖最佳男主角\n第1届华语电影传媒大奖最佳男主角""  
+Response is ""-"", target is a list of awards. They do not match. Score=0
+
+- idx_2: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_3: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_4: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_5: response = ""最佳男主角"", target = ""第22届香港电影金像奖最佳男主角\n第40届台湾电影金马奖最佳男主角奖""  
+Response only has ""最佳男主角"" (Best Actor), target has two specific awards (Hong Kong Film Awards Best Actor, Golden Horse Awards Best Actor)  
+Is ""最佳男主角"" roughly equivalent to these awards? It indicates the same entity ""Best Actor"" but does not specify the award or event, so the meaning is somewhat vague. However, per the criterion, ""或指向的实体一致即可"", roughly meaning is enough, or pointing to same entity, which is ""best actor award(s)"". Since the response points to the entity ""best actor"", albeit not specifying the same events, I judge this close enough. Score=1
+
+- idx_6: response = ""-"", target = ""第4届华语电影传媒大奖港台最佳男演员银奖""  
+Response is ""-"", target is an award. Not matching. Score=0
+
+- idx_7: response = ""-"", target = ""第24届香港电影金像奖最佳男主角""  
+No match. Score=0
+
+- idx_8: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_9: response = ""-"", target = ""第44届台湾电影金马奖最佳男演员\n第2届亚洲电影大奖最佳男演员""  
+Response is ""-"", target has awards. No match. Score=0
+
+- idx_10: response = ""-"", target = ""香港导演协会奖最佳男主角""  
+No match. Score=0
+
+- idx_11: response = ""-"", target = ""第16届亚洲电影大奖最佳男主角""  
+No match. Score=0
+
+- idx_12: response = ""-"", target = ""第42届香港电影金像奖最佳男主角""  
+No match. Score=0
+
+Summary:
+
+| idx   | Score |
+|-------|-------|
+| idx_0 | 1     |
+| idx_1 | 0     |
+| idx_2 | 1     |
+| idx_3 | 1     |
+| idx_4 | 1     |
+| idx_5 | 1     |
+| idx_6 | 0     |
+| idx_7 | 0     |
+| idx_8 | 1     |
+| idx_9 | 0     |
+| idx_10| 0     |
+| idx_11| 0     |
+| idx_12| 0     |
+
+Final output in JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0
+}
+```","第53届戛纳国际电影节最佳男演员
+第20届香港电影金像奖最佳男主角
+第1届华语电影传媒大奖最佳男主角",-,1.0,key_match
+,,同居蜜友,三輪車夫,0.0,"首先，依据评分标准：“和参考答案语义相同大致，或者指向的实体一致即可，不需要字字对应。”  
+但在此题中，被考察的是回答的年份是否与标准答案对应年份一致。  
+因为年份数字具有严格唯一的指向含义，不匹配即不一致。
+
+逐条分析：
+
+- idx_0：回答1992，标准2000年。年份不一致，得分0。  
+- idx_1：回答1994，标准2000年。年份不一致，得分0。  
+- idx_2：回答1996，标准2001年。年份不一致，得分0。  
+- idx_3：回答1997，标准2001年。年份不一致，得分0。  
+- idx_4：回答1994，标准2002年。年份不一致，得分0。  
+- idx_5：回答2003，标准2002年。年份不一致，得分0。  
+- idx_6：回答2000，标准2003年。年份不一致，得分0。  
+- idx_7：回答2004，标准2004年。一致，得分1。  
+- idx_8：回答1989，标准2006年。年份不一致，得分0。  
+- idx_9：回答2007，标准2007年。一致，得分1。  
+- idx_10：回答2012，标准2013年。年份不一致，得分0。  
+- idx_11：回答2023，标准2023年。一致，得分1。  
+- idx_12：回答2021，标准2023年。年份不一致，得分0。
+
+总结：只有3条完全一致，分值为1，其余均为0。
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0
+}
+```",2001年,1996,0.0,"分析和判断过程：
+
+根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+我们将针对每个idx的response与target对比：
+
+- idx_0: response = 'nan', target = '邓特希'  
+  response为空或无效，与目标实体不一致，得分0。
+
+- idx_1: response = 'nan', target = '王家卫'  
+  同上，0。
+
+- idx_2: response = 'nan', target = '马伟豪'  
+  同上，0。
+
+- idx_3: response = 'nan', target = '王晶'  
+  同上，0。
+
+- idx_4: response = 'nan', target = '刘镇伟'  
+  同上，0。
+
+- idx_5: response = '黄健中', target = '刘伟强、麦兆辉'  
+  两者实体不一致，虽然都是人名，但目标是刘伟强和麦兆辉，回复是黄健中，得分0。
+
+- idx_6: response = '关锦鹏', target = '马伟豪'  
+  实体不同，0。
+
+- idx_7: response = 'nan', target = '王家卫'  
+  0。
+
+- idx_8: response = '侯孝贤', target = '刘伟强、麦兆辉'  
+  不同实体，0。
+
+- idx_9: response = 'nan', target = '李安'  
+  0。
+
+- idx_10: response = 'nan', target = '王家卫'  
+  0。
+
+- idx_11: response = 'nan', target = '翁子光'  
+  0。
+
+- idx_12: response = 'nan', target = '庄文强'  
+  0。
+
+基于上述分析，所有回答都未与参考答案语义相符或者指向同一实体，全部得0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0
+}
+```",马伟豪,nan,1.0,"Analysis:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Translation: The response should roughly have the same meaning as the standard answer or point to the same entity; exact wording is not necessary.
+
+For each idx, we check whether the response is semantically consistent or points to the same entity as the target.
+
+- idx_0: response = ""-"", target = ""-""  
+Both are ""-"", matching exactly (no info given). Score=1
+
+- idx_1: response = ""-"", target = ""第53届戛纳国际电影节最佳男演员\n第20届香港电影金像奖最佳男主角\n第1届华语电影传媒大奖最佳男主角""  
+Response is ""-"", target is a list of awards. They do not match. Score=0
+
+- idx_2: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_3: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_4: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_5: response = ""最佳男主角"", target = ""第22届香港电影金像奖最佳男主角\n第40届台湾电影金马奖最佳男主角奖""  
+Response only has ""最佳男主角"" (Best Actor), target has two specific awards (Hong Kong Film Awards Best Actor, Golden Horse Awards Best Actor)  
+Is ""最佳男主角"" roughly equivalent to these awards? It indicates the same entity ""Best Actor"" but does not specify the award or event, so the meaning is somewhat vague. However, per the criterion, ""或指向的实体一致即可"", roughly meaning is enough, or pointing to same entity, which is ""best actor award(s)"". Since the response points to the entity ""best actor"", albeit not specifying the same events, I judge this close enough. Score=1
+
+- idx_6: response = ""-"", target = ""第4届华语电影传媒大奖港台最佳男演员银奖""  
+Response is ""-"", target is an award. Not matching. Score=0
+
+- idx_7: response = ""-"", target = ""第24届香港电影金像奖最佳男主角""  
+No match. Score=0
+
+- idx_8: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_9: response = ""-"", target = ""第44届台湾电影金马奖最佳男演员\n第2届亚洲电影大奖最佳男演员""  
+Response is ""-"", target has awards. No match. Score=0
+
+- idx_10: response = ""-"", target = ""香港导演协会奖最佳男主角""  
+No match. Score=0
+
+- idx_11: response = ""-"", target = ""第16届亚洲电影大奖最佳男主角""  
+No match. Score=0
+
+- idx_12: response = ""-"", target = ""第42届香港电影金像奖最佳男主角""  
+No match. Score=0
+
+Summary:
+
+| idx   | Score |
+|-------|-------|
+| idx_0 | 1     |
+| idx_1 | 0     |
+| idx_2 | 1     |
+| idx_3 | 1     |
+| idx_4 | 1     |
+| idx_5 | 1     |
+| idx_6 | 0     |
+| idx_7 | 0     |
+| idx_8 | 1     |
+| idx_9 | 0     |
+| idx_10| 0     |
+| idx_11| 0     |
+| idx_12| 0     |
+
+Final output in JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0
+}
+```",-,-,1.0,key_match
+,,有情饮水饱,春光乍泄,0.0,"首先，依据评分标准：“和参考答案语义相同大致，或者指向的实体一致即可，不需要字字对应。”  
+但在此题中，被考察的是回答的年份是否与标准答案对应年份一致。  
+因为年份数字具有严格唯一的指向含义，不匹配即不一致。
+
+逐条分析：
+
+- idx_0：回答1992，标准2000年。年份不一致，得分0。  
+- idx_1：回答1994，标准2000年。年份不一致，得分0。  
+- idx_2：回答1996，标准2001年。年份不一致，得分0。  
+- idx_3：回答1997，标准2001年。年份不一致，得分0。  
+- idx_4：回答1994，标准2002年。年份不一致，得分0。  
+- idx_5：回答2003，标准2002年。年份不一致，得分0。  
+- idx_6：回答2000，标准2003年。年份不一致，得分0。  
+- idx_7：回答2004，标准2004年。一致，得分1。  
+- idx_8：回答1989，标准2006年。年份不一致，得分0。  
+- idx_9：回答2007，标准2007年。一致，得分1。  
+- idx_10：回答2012，标准2013年。年份不一致，得分0。  
+- idx_11：回答2023，标准2023年。一致，得分1。  
+- idx_12：回答2021，标准2023年。年份不一致，得分0。
+
+总结：只有3条完全一致，分值为1，其余均为0。
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0
+}
+```",2001年,1997,0.0,"分析和判断过程：
+
+根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+我们将针对每个idx的response与target对比：
+
+- idx_0: response = 'nan', target = '邓特希'  
+  response为空或无效，与目标实体不一致，得分0。
+
+- idx_1: response = 'nan', target = '王家卫'  
+  同上，0。
+
+- idx_2: response = 'nan', target = '马伟豪'  
+  同上，0。
+
+- idx_3: response = 'nan', target = '王晶'  
+  同上，0。
+
+- idx_4: response = 'nan', target = '刘镇伟'  
+  同上，0。
+
+- idx_5: response = '黄健中', target = '刘伟强、麦兆辉'  
+  两者实体不一致，虽然都是人名，但目标是刘伟强和麦兆辉，回复是黄健中，得分0。
+
+- idx_6: response = '关锦鹏', target = '马伟豪'  
+  实体不同，0。
+
+- idx_7: response = 'nan', target = '王家卫'  
+  0。
+
+- idx_8: response = '侯孝贤', target = '刘伟强、麦兆辉'  
+  不同实体，0。
+
+- idx_9: response = 'nan', target = '李安'  
+  0。
+
+- idx_10: response = 'nan', target = '王家卫'  
+  0。
+
+- idx_11: response = 'nan', target = '翁子光'  
+  0。
+
+- idx_12: response = 'nan', target = '庄文强'  
+  0。
+
+基于上述分析，所有回答都未与参考答案语义相符或者指向同一实体，全部得0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0
+}
+```",王晶,nan,1.0,"Analysis:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Translation: The response should roughly have the same meaning as the standard answer or point to the same entity; exact wording is not necessary.
+
+For each idx, we check whether the response is semantically consistent or points to the same entity as the target.
+
+- idx_0: response = ""-"", target = ""-""  
+Both are ""-"", matching exactly (no info given). Score=1
+
+- idx_1: response = ""-"", target = ""第53届戛纳国际电影节最佳男演员\n第20届香港电影金像奖最佳男主角\n第1届华语电影传媒大奖最佳男主角""  
+Response is ""-"", target is a list of awards. They do not match. Score=0
+
+- idx_2: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_3: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_4: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_5: response = ""最佳男主角"", target = ""第22届香港电影金像奖最佳男主角\n第40届台湾电影金马奖最佳男主角奖""  
+Response only has ""最佳男主角"" (Best Actor), target has two specific awards (Hong Kong Film Awards Best Actor, Golden Horse Awards Best Actor)  
+Is ""最佳男主角"" roughly equivalent to these awards? It indicates the same entity ""Best Actor"" but does not specify the award or event, so the meaning is somewhat vague. However, per the criterion, ""或指向的实体一致即可"", roughly meaning is enough, or pointing to same entity, which is ""best actor award(s)"". Since the response points to the entity ""best actor"", albeit not specifying the same events, I judge this close enough. Score=1
+
+- idx_6: response = ""-"", target = ""第4届华语电影传媒大奖港台最佳男演员银奖""  
+Response is ""-"", target is an award. Not matching. Score=0
+
+- idx_7: response = ""-"", target = ""第24届香港电影金像奖最佳男主角""  
+No match. Score=0
+
+- idx_8: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_9: response = ""-"", target = ""第44届台湾电影金马奖最佳男演员\n第2届亚洲电影大奖最佳男演员""  
+Response is ""-"", target has awards. No match. Score=0
+
+- idx_10: response = ""-"", target = ""香港导演协会奖最佳男主角""  
+No match. Score=0
+
+- idx_11: response = ""-"", target = ""第16届亚洲电影大奖最佳男主角""  
+No match. Score=0
+
+- idx_12: response = ""-"", target = ""第42届香港电影金像奖最佳男主角""  
+No match. Score=0
+
+Summary:
+
+| idx   | Score |
+|-------|-------|
+| idx_0 | 1     |
+| idx_1 | 0     |
+| idx_2 | 1     |
+| idx_3 | 1     |
+| idx_4 | 1     |
+| idx_5 | 1     |
+| idx_6 | 0     |
+| idx_7 | 0     |
+| idx_8 | 1     |
+| idx_9 | 0     |
+| idx_10| 0     |
+| idx_11| 0     |
+| idx_12| 0     |
+
+Final output in JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0
+}
+```",-,-,1.0,key_match
+,,天下无双,東邪西毒,0.0,"首先，依据评分标准：“和参考答案语义相同大致，或者指向的实体一致即可，不需要字字对应。”  
+但在此题中，被考察的是回答的年份是否与标准答案对应年份一致。  
+因为年份数字具有严格唯一的指向含义，不匹配即不一致。
+
+逐条分析：
+
+- idx_0：回答1992，标准2000年。年份不一致，得分0。  
+- idx_1：回答1994，标准2000年。年份不一致，得分0。  
+- idx_2：回答1996，标准2001年。年份不一致，得分0。  
+- idx_3：回答1997，标准2001年。年份不一致，得分0。  
+- idx_4：回答1994，标准2002年。年份不一致，得分0。  
+- idx_5：回答2003，标准2002年。年份不一致，得分0。  
+- idx_6：回答2000，标准2003年。年份不一致，得分0。  
+- idx_7：回答2004，标准2004年。一致，得分1。  
+- idx_8：回答1989，标准2006年。年份不一致，得分0。  
+- idx_9：回答2007，标准2007年。一致，得分1。  
+- idx_10：回答2012，标准2013年。年份不一致，得分0。  
+- idx_11：回答2023，标准2023年。一致，得分1。  
+- idx_12：回答2021，标准2023年。年份不一致，得分0。
+
+总结：只有3条完全一致，分值为1，其余均为0。
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0
+}
+```",2002年,1994,0.0,"分析和判断过程：
+
+根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+我们将针对每个idx的response与target对比：
+
+- idx_0: response = 'nan', target = '邓特希'  
+  response为空或无效，与目标实体不一致，得分0。
+
+- idx_1: response = 'nan', target = '王家卫'  
+  同上，0。
+
+- idx_2: response = 'nan', target = '马伟豪'  
+  同上，0。
+
+- idx_3: response = 'nan', target = '王晶'  
+  同上，0。
+
+- idx_4: response = 'nan', target = '刘镇伟'  
+  同上，0。
+
+- idx_5: response = '黄健中', target = '刘伟强、麦兆辉'  
+  两者实体不一致，虽然都是人名，但目标是刘伟强和麦兆辉，回复是黄健中，得分0。
+
+- idx_6: response = '关锦鹏', target = '马伟豪'  
+  实体不同，0。
+
+- idx_7: response = 'nan', target = '王家卫'  
+  0。
+
+- idx_8: response = '侯孝贤', target = '刘伟强、麦兆辉'  
+  不同实体，0。
+
+- idx_9: response = 'nan', target = '李安'  
+  0。
+
+- idx_10: response = 'nan', target = '王家卫'  
+  0。
+
+- idx_11: response = 'nan', target = '翁子光'  
+  0。
+
+- idx_12: response = 'nan', target = '庄文强'  
+  0。
+
+基于上述分析，所有回答都未与参考答案语义相符或者指向同一实体，全部得0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0
+}
+```",刘镇伟,nan,1.0,"Analysis:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Translation: The response should roughly have the same meaning as the standard answer or point to the same entity; exact wording is not necessary.
+
+For each idx, we check whether the response is semantically consistent or points to the same entity as the target.
+
+- idx_0: response = ""-"", target = ""-""  
+Both are ""-"", matching exactly (no info given). Score=1
+
+- idx_1: response = ""-"", target = ""第53届戛纳国际电影节最佳男演员\n第20届香港电影金像奖最佳男主角\n第1届华语电影传媒大奖最佳男主角""  
+Response is ""-"", target is a list of awards. They do not match. Score=0
+
+- idx_2: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_3: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_4: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_5: response = ""最佳男主角"", target = ""第22届香港电影金像奖最佳男主角\n第40届台湾电影金马奖最佳男主角奖""  
+Response only has ""最佳男主角"" (Best Actor), target has two specific awards (Hong Kong Film Awards Best Actor, Golden Horse Awards Best Actor)  
+Is ""最佳男主角"" roughly equivalent to these awards? It indicates the same entity ""Best Actor"" but does not specify the award or event, so the meaning is somewhat vague. However, per the criterion, ""或指向的实体一致即可"", roughly meaning is enough, or pointing to same entity, which is ""best actor award(s)"". Since the response points to the entity ""best actor"", albeit not specifying the same events, I judge this close enough. Score=1
+
+- idx_6: response = ""-"", target = ""第4届华语电影传媒大奖港台最佳男演员银奖""  
+Response is ""-"", target is an award. Not matching. Score=0
+
+- idx_7: response = ""-"", target = ""第24届香港电影金像奖最佳男主角""  
+No match. Score=0
+
+- idx_8: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_9: response = ""-"", target = ""第44届台湾电影金马奖最佳男演员\n第2届亚洲电影大奖最佳男演员""  
+Response is ""-"", target has awards. No match. Score=0
+
+- idx_10: response = ""-"", target = ""香港导演协会奖最佳男主角""  
+No match. Score=0
+
+- idx_11: response = ""-"", target = ""第16届亚洲电影大奖最佳男主角""  
+No match. Score=0
+
+- idx_12: response = ""-"", target = ""第42届香港电影金像奖最佳男主角""  
+No match. Score=0
+
+Summary:
+
+| idx   | Score |
+|-------|-------|
+| idx_0 | 1     |
+| idx_1 | 0     |
+| idx_2 | 1     |
+| idx_3 | 1     |
+| idx_4 | 1     |
+| idx_5 | 1     |
+| idx_6 | 0     |
+| idx_7 | 0     |
+| idx_8 | 1     |
+| idx_9 | 0     |
+| idx_10| 0     |
+| idx_11| 0     |
+| idx_12| 0     |
+
+Final output in JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0
+}
+```",-,-,1.0,key_match
+,,无间道,无间道,0.0,"首先，依据评分标准：“和参考答案语义相同大致，或者指向的实体一致即可，不需要字字对应。”  
+但在此题中，被考察的是回答的年份是否与标准答案对应年份一致。  
+因为年份数字具有严格唯一的指向含义，不匹配即不一致。
+
+逐条分析：
+
+- idx_0：回答1992，标准2000年。年份不一致，得分0。  
+- idx_1：回答1994，标准2000年。年份不一致，得分0。  
+- idx_2：回答1996，标准2001年。年份不一致，得分0。  
+- idx_3：回答1997，标准2001年。年份不一致，得分0。  
+- idx_4：回答1994，标准2002年。年份不一致，得分0。  
+- idx_5：回答2003，标准2002年。年份不一致，得分0。  
+- idx_6：回答2000，标准2003年。年份不一致，得分0。  
+- idx_7：回答2004，标准2004年。一致，得分1。  
+- idx_8：回答1989，标准2006年。年份不一致，得分0。  
+- idx_9：回答2007，标准2007年。一致，得分1。  
+- idx_10：回答2012，标准2013年。年份不一致，得分0。  
+- idx_11：回答2023，标准2023年。一致，得分1。  
+- idx_12：回答2021，标准2023年。年份不一致，得分0。
+
+总结：只有3条完全一致，分值为1，其余均为0。
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0
+}
+```",2002年,2003,0.0,"分析和判断过程：
+
+根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+我们将针对每个idx的response与target对比：
+
+- idx_0: response = 'nan', target = '邓特希'  
+  response为空或无效，与目标实体不一致，得分0。
+
+- idx_1: response = 'nan', target = '王家卫'  
+  同上，0。
+
+- idx_2: response = 'nan', target = '马伟豪'  
+  同上，0。
+
+- idx_3: response = 'nan', target = '王晶'  
+  同上，0。
+
+- idx_4: response = 'nan', target = '刘镇伟'  
+  同上，0。
+
+- idx_5: response = '黄健中', target = '刘伟强、麦兆辉'  
+  两者实体不一致，虽然都是人名，但目标是刘伟强和麦兆辉，回复是黄健中，得分0。
+
+- idx_6: response = '关锦鹏', target = '马伟豪'  
+  实体不同，0。
+
+- idx_7: response = 'nan', target = '王家卫'  
+  0。
+
+- idx_8: response = '侯孝贤', target = '刘伟强、麦兆辉'  
+  不同实体，0。
+
+- idx_9: response = 'nan', target = '李安'  
+  0。
+
+- idx_10: response = 'nan', target = '王家卫'  
+  0。
+
+- idx_11: response = 'nan', target = '翁子光'  
+  0。
+
+- idx_12: response = 'nan', target = '庄文强'  
+  0。
+
+基于上述分析，所有回答都未与参考答案语义相符或者指向同一实体，全部得0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0
+}
+```",刘伟强、麦兆辉,黄健中,1.0,"Analysis:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Translation: The response should roughly have the same meaning as the standard answer or point to the same entity; exact wording is not necessary.
+
+For each idx, we check whether the response is semantically consistent or points to the same entity as the target.
+
+- idx_0: response = ""-"", target = ""-""  
+Both are ""-"", matching exactly (no info given). Score=1
+
+- idx_1: response = ""-"", target = ""第53届戛纳国际电影节最佳男演员\n第20届香港电影金像奖最佳男主角\n第1届华语电影传媒大奖最佳男主角""  
+Response is ""-"", target is a list of awards. They do not match. Score=0
+
+- idx_2: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_3: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_4: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_5: response = ""最佳男主角"", target = ""第22届香港电影金像奖最佳男主角\n第40届台湾电影金马奖最佳男主角奖""  
+Response only has ""最佳男主角"" (Best Actor), target has two specific awards (Hong Kong Film Awards Best Actor, Golden Horse Awards Best Actor)  
+Is ""最佳男主角"" roughly equivalent to these awards? It indicates the same entity ""Best Actor"" but does not specify the award or event, so the meaning is somewhat vague. However, per the criterion, ""或指向的实体一致即可"", roughly meaning is enough, or pointing to same entity, which is ""best actor award(s)"". Since the response points to the entity ""best actor"", albeit not specifying the same events, I judge this close enough. Score=1
+
+- idx_6: response = ""-"", target = ""第4届华语电影传媒大奖港台最佳男演员银奖""  
+Response is ""-"", target is an award. Not matching. Score=0
+
+- idx_7: response = ""-"", target = ""第24届香港电影金像奖最佳男主角""  
+No match. Score=0
+
+- idx_8: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_9: response = ""-"", target = ""第44届台湾电影金马奖最佳男演员\n第2届亚洲电影大奖最佳男演员""  
+Response is ""-"", target has awards. No match. Score=0
+
+- idx_10: response = ""-"", target = ""香港导演协会奖最佳男主角""  
+No match. Score=0
+
+- idx_11: response = ""-"", target = ""第16届亚洲电影大奖最佳男主角""  
+No match. Score=0
+
+- idx_12: response = ""-"", target = ""第42届香港电影金像奖最佳男主角""  
+No match. Score=0
+
+Summary:
+
+| idx   | Score |
+|-------|-------|
+| idx_0 | 1     |
+| idx_1 | 0     |
+| idx_2 | 1     |
+| idx_3 | 1     |
+| idx_4 | 1     |
+| idx_5 | 1     |
+| idx_6 | 0     |
+| idx_7 | 0     |
+| idx_8 | 1     |
+| idx_9 | 0     |
+| idx_10| 0     |
+| idx_11| 0     |
+| idx_12| 0     |
+
+Final output in JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0
+}
+```","第22届香港电影金像奖最佳男主角
+第40届台湾电影金马奖最佳男主角奖",最佳男主角,1.0,key_match
+,,地下铁,地下情,0.0,"首先，依据评分标准：“和参考答案语义相同大致，或者指向的实体一致即可，不需要字字对应。”  
+但在此题中，被考察的是回答的年份是否与标准答案对应年份一致。  
+因为年份数字具有严格唯一的指向含义，不匹配即不一致。
+
+逐条分析：
+
+- idx_0：回答1992，标准2000年。年份不一致，得分0。  
+- idx_1：回答1994，标准2000年。年份不一致，得分0。  
+- idx_2：回答1996，标准2001年。年份不一致，得分0。  
+- idx_3：回答1997，标准2001年。年份不一致，得分0。  
+- idx_4：回答1994，标准2002年。年份不一致，得分0。  
+- idx_5：回答2003，标准2002年。年份不一致，得分0。  
+- idx_6：回答2000，标准2003年。年份不一致，得分0。  
+- idx_7：回答2004，标准2004年。一致，得分1。  
+- idx_8：回答1989，标准2006年。年份不一致，得分0。  
+- idx_9：回答2007，标准2007年。一致，得分1。  
+- idx_10：回答2012，标准2013年。年份不一致，得分0。  
+- idx_11：回答2023，标准2023年。一致，得分1。  
+- idx_12：回答2021，标准2023年。年份不一致，得分0。
+
+总结：只有3条完全一致，分值为1，其余均为0。
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0
+}
+```",2003年,2000,0.0,"分析和判断过程：
+
+根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+我们将针对每个idx的response与target对比：
+
+- idx_0: response = 'nan', target = '邓特希'  
+  response为空或无效，与目标实体不一致，得分0。
+
+- idx_1: response = 'nan', target = '王家卫'  
+  同上，0。
+
+- idx_2: response = 'nan', target = '马伟豪'  
+  同上，0。
+
+- idx_3: response = 'nan', target = '王晶'  
+  同上，0。
+
+- idx_4: response = 'nan', target = '刘镇伟'  
+  同上，0。
+
+- idx_5: response = '黄健中', target = '刘伟强、麦兆辉'  
+  两者实体不一致，虽然都是人名，但目标是刘伟强和麦兆辉，回复是黄健中，得分0。
+
+- idx_6: response = '关锦鹏', target = '马伟豪'  
+  实体不同，0。
+
+- idx_7: response = 'nan', target = '王家卫'  
+  0。
+
+- idx_8: response = '侯孝贤', target = '刘伟强、麦兆辉'  
+  不同实体，0。
+
+- idx_9: response = 'nan', target = '李安'  
+  0。
+
+- idx_10: response = 'nan', target = '王家卫'  
+  0。
+
+- idx_11: response = 'nan', target = '翁子光'  
+  0。
+
+- idx_12: response = 'nan', target = '庄文强'  
+  0。
+
+基于上述分析，所有回答都未与参考答案语义相符或者指向同一实体，全部得0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0
+}
+```",马伟豪,关锦鹏,0.0,"Analysis:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Translation: The response should roughly have the same meaning as the standard answer or point to the same entity; exact wording is not necessary.
+
+For each idx, we check whether the response is semantically consistent or points to the same entity as the target.
+
+- idx_0: response = ""-"", target = ""-""  
+Both are ""-"", matching exactly (no info given). Score=1
+
+- idx_1: response = ""-"", target = ""第53届戛纳国际电影节最佳男演员\n第20届香港电影金像奖最佳男主角\n第1届华语电影传媒大奖最佳男主角""  
+Response is ""-"", target is a list of awards. They do not match. Score=0
+
+- idx_2: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_3: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_4: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_5: response = ""最佳男主角"", target = ""第22届香港电影金像奖最佳男主角\n第40届台湾电影金马奖最佳男主角奖""  
+Response only has ""最佳男主角"" (Best Actor), target has two specific awards (Hong Kong Film Awards Best Actor, Golden Horse Awards Best Actor)  
+Is ""最佳男主角"" roughly equivalent to these awards? It indicates the same entity ""Best Actor"" but does not specify the award or event, so the meaning is somewhat vague. However, per the criterion, ""或指向的实体一致即可"", roughly meaning is enough, or pointing to same entity, which is ""best actor award(s)"". Since the response points to the entity ""best actor"", albeit not specifying the same events, I judge this close enough. Score=1
+
+- idx_6: response = ""-"", target = ""第4届华语电影传媒大奖港台最佳男演员银奖""  
+Response is ""-"", target is an award. Not matching. Score=0
+
+- idx_7: response = ""-"", target = ""第24届香港电影金像奖最佳男主角""  
+No match. Score=0
+
+- idx_8: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_9: response = ""-"", target = ""第44届台湾电影金马奖最佳男演员\n第2届亚洲电影大奖最佳男演员""  
+Response is ""-"", target has awards. No match. Score=0
+
+- idx_10: response = ""-"", target = ""香港导演协会奖最佳男主角""  
+No match. Score=0
+
+- idx_11: response = ""-"", target = ""第16届亚洲电影大奖最佳男主角""  
+No match. Score=0
+
+- idx_12: response = ""-"", target = ""第42届香港电影金像奖最佳男主角""  
+No match. Score=0
+
+Summary:
+
+| idx   | Score |
+|-------|-------|
+| idx_0 | 1     |
+| idx_1 | 0     |
+| idx_2 | 1     |
+| idx_3 | 1     |
+| idx_4 | 1     |
+| idx_5 | 1     |
+| idx_6 | 0     |
+| idx_7 | 0     |
+| idx_8 | 1     |
+| idx_9 | 0     |
+| idx_10| 0     |
+| idx_11| 0     |
+| idx_12| 0     |
+
+Final output in JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0
+}
+```",第4届华语电影传媒大奖港台最佳男演员银奖,-,1.0,key_match
+,,2046,2046,1.0,"首先，依据评分标准：“和参考答案语义相同大致，或者指向的实体一致即可，不需要字字对应。”  
+但在此题中，被考察的是回答的年份是否与标准答案对应年份一致。  
+因为年份数字具有严格唯一的指向含义，不匹配即不一致。
+
+逐条分析：
+
+- idx_0：回答1992，标准2000年。年份不一致，得分0。  
+- idx_1：回答1994，标准2000年。年份不一致，得分0。  
+- idx_2：回答1996，标准2001年。年份不一致，得分0。  
+- idx_3：回答1997，标准2001年。年份不一致，得分0。  
+- idx_4：回答1994，标准2002年。年份不一致，得分0。  
+- idx_5：回答2003，标准2002年。年份不一致，得分0。  
+- idx_6：回答2000，标准2003年。年份不一致，得分0。  
+- idx_7：回答2004，标准2004年。一致，得分1。  
+- idx_8：回答1989，标准2006年。年份不一致，得分0。  
+- idx_9：回答2007，标准2007年。一致，得分1。  
+- idx_10：回答2012，标准2013年。年份不一致，得分0。  
+- idx_11：回答2023，标准2023年。一致，得分1。  
+- idx_12：回答2021，标准2023年。年份不一致，得分0。
+
+总结：只有3条完全一致，分值为1，其余均为0。
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0
+}
+```",2004年,2004,0.0,"分析和判断过程：
+
+根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+我们将针对每个idx的response与target对比：
+
+- idx_0: response = 'nan', target = '邓特希'  
+  response为空或无效，与目标实体不一致，得分0。
+
+- idx_1: response = 'nan', target = '王家卫'  
+  同上，0。
+
+- idx_2: response = 'nan', target = '马伟豪'  
+  同上，0。
+
+- idx_3: response = 'nan', target = '王晶'  
+  同上，0。
+
+- idx_4: response = 'nan', target = '刘镇伟'  
+  同上，0。
+
+- idx_5: response = '黄健中', target = '刘伟强、麦兆辉'  
+  两者实体不一致，虽然都是人名，但目标是刘伟强和麦兆辉，回复是黄健中，得分0。
+
+- idx_6: response = '关锦鹏', target = '马伟豪'  
+  实体不同，0。
+
+- idx_7: response = 'nan', target = '王家卫'  
+  0。
+
+- idx_8: response = '侯孝贤', target = '刘伟强、麦兆辉'  
+  不同实体，0。
+
+- idx_9: response = 'nan', target = '李安'  
+  0。
+
+- idx_10: response = 'nan', target = '王家卫'  
+  0。
+
+- idx_11: response = 'nan', target = '翁子光'  
+  0。
+
+- idx_12: response = 'nan', target = '庄文强'  
+  0。
+
+基于上述分析，所有回答都未与参考答案语义相符或者指向同一实体，全部得0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0
+}
+```",王家卫,nan,0.0,"Analysis:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Translation: The response should roughly have the same meaning as the standard answer or point to the same entity; exact wording is not necessary.
+
+For each idx, we check whether the response is semantically consistent or points to the same entity as the target.
+
+- idx_0: response = ""-"", target = ""-""  
+Both are ""-"", matching exactly (no info given). Score=1
+
+- idx_1: response = ""-"", target = ""第53届戛纳国际电影节最佳男演员\n第20届香港电影金像奖最佳男主角\n第1届华语电影传媒大奖最佳男主角""  
+Response is ""-"", target is a list of awards. They do not match. Score=0
+
+- idx_2: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_3: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_4: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_5: response = ""最佳男主角"", target = ""第22届香港电影金像奖最佳男主角\n第40届台湾电影金马奖最佳男主角奖""  
+Response only has ""最佳男主角"" (Best Actor), target has two specific awards (Hong Kong Film Awards Best Actor, Golden Horse Awards Best Actor)  
+Is ""最佳男主角"" roughly equivalent to these awards? It indicates the same entity ""Best Actor"" but does not specify the award or event, so the meaning is somewhat vague. However, per the criterion, ""或指向的实体一致即可"", roughly meaning is enough, or pointing to same entity, which is ""best actor award(s)"". Since the response points to the entity ""best actor"", albeit not specifying the same events, I judge this close enough. Score=1
+
+- idx_6: response = ""-"", target = ""第4届华语电影传媒大奖港台最佳男演员银奖""  
+Response is ""-"", target is an award. Not matching. Score=0
+
+- idx_7: response = ""-"", target = ""第24届香港电影金像奖最佳男主角""  
+No match. Score=0
+
+- idx_8: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_9: response = ""-"", target = ""第44届台湾电影金马奖最佳男演员\n第2届亚洲电影大奖最佳男演员""  
+Response is ""-"", target has awards. No match. Score=0
+
+- idx_10: response = ""-"", target = ""香港导演协会奖最佳男主角""  
+No match. Score=0
+
+- idx_11: response = ""-"", target = ""第16届亚洲电影大奖最佳男主角""  
+No match. Score=0
+
+- idx_12: response = ""-"", target = ""第42届香港电影金像奖最佳男主角""  
+No match. Score=0
+
+Summary:
+
+| idx   | Score |
+|-------|-------|
+| idx_0 | 1     |
+| idx_1 | 0     |
+| idx_2 | 1     |
+| idx_3 | 1     |
+| idx_4 | 1     |
+| idx_5 | 1     |
+| idx_6 | 0     |
+| idx_7 | 0     |
+| idx_8 | 1     |
+| idx_9 | 0     |
+| idx_10| 0     |
+| idx_11| 0     |
+| idx_12| 0     |
+
+Final output in JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0
+}
+```",第24届香港电影金像奖最佳男主角,-,1.0,key_match
+,,伤城,悲情城市,0.0,"首先，依据评分标准：“和参考答案语义相同大致，或者指向的实体一致即可，不需要字字对应。”  
+但在此题中，被考察的是回答的年份是否与标准答案对应年份一致。  
+因为年份数字具有严格唯一的指向含义，不匹配即不一致。
+
+逐条分析：
+
+- idx_0：回答1992，标准2000年。年份不一致，得分0。  
+- idx_1：回答1994，标准2000年。年份不一致，得分0。  
+- idx_2：回答1996，标准2001年。年份不一致，得分0。  
+- idx_3：回答1997，标准2001年。年份不一致，得分0。  
+- idx_4：回答1994，标准2002年。年份不一致，得分0。  
+- idx_5：回答2003，标准2002年。年份不一致，得分0。  
+- idx_6：回答2000，标准2003年。年份不一致，得分0。  
+- idx_7：回答2004，标准2004年。一致，得分1。  
+- idx_8：回答1989，标准2006年。年份不一致，得分0。  
+- idx_9：回答2007，标准2007年。一致，得分1。  
+- idx_10：回答2012，标准2013年。年份不一致，得分0。  
+- idx_11：回答2023，标准2023年。一致，得分1。  
+- idx_12：回答2021，标准2023年。年份不一致，得分0。
+
+总结：只有3条完全一致，分值为1，其余均为0。
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0
+}
+```",2006年,1989,0.0,"分析和判断过程：
+
+根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+我们将针对每个idx的response与target对比：
+
+- idx_0: response = 'nan', target = '邓特希'  
+  response为空或无效，与目标实体不一致，得分0。
+
+- idx_1: response = 'nan', target = '王家卫'  
+  同上，0。
+
+- idx_2: response = 'nan', target = '马伟豪'  
+  同上，0。
+
+- idx_3: response = 'nan', target = '王晶'  
+  同上，0。
+
+- idx_4: response = 'nan', target = '刘镇伟'  
+  同上，0。
+
+- idx_5: response = '黄健中', target = '刘伟强、麦兆辉'  
+  两者实体不一致，虽然都是人名，但目标是刘伟强和麦兆辉，回复是黄健中，得分0。
+
+- idx_6: response = '关锦鹏', target = '马伟豪'  
+  实体不同，0。
+
+- idx_7: response = 'nan', target = '王家卫'  
+  0。
+
+- idx_8: response = '侯孝贤', target = '刘伟强、麦兆辉'  
+  不同实体，0。
+
+- idx_9: response = 'nan', target = '李安'  
+  0。
+
+- idx_10: response = 'nan', target = '王家卫'  
+  0。
+
+- idx_11: response = 'nan', target = '翁子光'  
+  0。
+
+- idx_12: response = 'nan', target = '庄文强'  
+  0。
+
+基于上述分析，所有回答都未与参考答案语义相符或者指向同一实体，全部得0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0
+}
+```",刘伟强、麦兆辉,侯孝贤,1.0,"Analysis:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Translation: The response should roughly have the same meaning as the standard answer or point to the same entity; exact wording is not necessary.
+
+For each idx, we check whether the response is semantically consistent or points to the same entity as the target.
+
+- idx_0: response = ""-"", target = ""-""  
+Both are ""-"", matching exactly (no info given). Score=1
+
+- idx_1: response = ""-"", target = ""第53届戛纳国际电影节最佳男演员\n第20届香港电影金像奖最佳男主角\n第1届华语电影传媒大奖最佳男主角""  
+Response is ""-"", target is a list of awards. They do not match. Score=0
+
+- idx_2: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_3: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_4: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_5: response = ""最佳男主角"", target = ""第22届香港电影金像奖最佳男主角\n第40届台湾电影金马奖最佳男主角奖""  
+Response only has ""最佳男主角"" (Best Actor), target has two specific awards (Hong Kong Film Awards Best Actor, Golden Horse Awards Best Actor)  
+Is ""最佳男主角"" roughly equivalent to these awards? It indicates the same entity ""Best Actor"" but does not specify the award or event, so the meaning is somewhat vague. However, per the criterion, ""或指向的实体一致即可"", roughly meaning is enough, or pointing to same entity, which is ""best actor award(s)"". Since the response points to the entity ""best actor"", albeit not specifying the same events, I judge this close enough. Score=1
+
+- idx_6: response = ""-"", target = ""第4届华语电影传媒大奖港台最佳男演员银奖""  
+Response is ""-"", target is an award. Not matching. Score=0
+
+- idx_7: response = ""-"", target = ""第24届香港电影金像奖最佳男主角""  
+No match. Score=0
+
+- idx_8: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_9: response = ""-"", target = ""第44届台湾电影金马奖最佳男演员\n第2届亚洲电影大奖最佳男演员""  
+Response is ""-"", target has awards. No match. Score=0
+
+- idx_10: response = ""-"", target = ""香港导演协会奖最佳男主角""  
+No match. Score=0
+
+- idx_11: response = ""-"", target = ""第16届亚洲电影大奖最佳男主角""  
+No match. Score=0
+
+- idx_12: response = ""-"", target = ""第42届香港电影金像奖最佳男主角""  
+No match. Score=0
+
+Summary:
+
+| idx   | Score |
+|-------|-------|
+| idx_0 | 1     |
+| idx_1 | 0     |
+| idx_2 | 1     |
+| idx_3 | 1     |
+| idx_4 | 1     |
+| idx_5 | 1     |
+| idx_6 | 0     |
+| idx_7 | 0     |
+| idx_8 | 1     |
+| idx_9 | 0     |
+| idx_10| 0     |
+| idx_11| 0     |
+| idx_12| 0     |
+
+Final output in JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0
+}
+```",-,-,1.0,key_match
+,,色·戒,色，戒,1.0,"首先，依据评分标准：“和参考答案语义相同大致，或者指向的实体一致即可，不需要字字对应。”  
+但在此题中，被考察的是回答的年份是否与标准答案对应年份一致。  
+因为年份数字具有严格唯一的指向含义，不匹配即不一致。
+
+逐条分析：
+
+- idx_0：回答1992，标准2000年。年份不一致，得分0。  
+- idx_1：回答1994，标准2000年。年份不一致，得分0。  
+- idx_2：回答1996，标准2001年。年份不一致，得分0。  
+- idx_3：回答1997，标准2001年。年份不一致，得分0。  
+- idx_4：回答1994，标准2002年。年份不一致，得分0。  
+- idx_5：回答2003，标准2002年。年份不一致，得分0。  
+- idx_6：回答2000，标准2003年。年份不一致，得分0。  
+- idx_7：回答2004，标准2004年。一致，得分1。  
+- idx_8：回答1989，标准2006年。年份不一致，得分0。  
+- idx_9：回答2007，标准2007年。一致，得分1。  
+- idx_10：回答2012，标准2013年。年份不一致，得分0。  
+- idx_11：回答2023，标准2023年。一致，得分1。  
+- idx_12：回答2021，标准2023年。年份不一致，得分0。
+
+总结：只有3条完全一致，分值为1，其余均为0。
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0
+}
+```",2007年,2007,0.0,"分析和判断过程：
+
+根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+我们将针对每个idx的response与target对比：
+
+- idx_0: response = 'nan', target = '邓特希'  
+  response为空或无效，与目标实体不一致，得分0。
+
+- idx_1: response = 'nan', target = '王家卫'  
+  同上，0。
+
+- idx_2: response = 'nan', target = '马伟豪'  
+  同上，0。
+
+- idx_3: response = 'nan', target = '王晶'  
+  同上，0。
+
+- idx_4: response = 'nan', target = '刘镇伟'  
+  同上，0。
+
+- idx_5: response = '黄健中', target = '刘伟强、麦兆辉'  
+  两者实体不一致，虽然都是人名，但目标是刘伟强和麦兆辉，回复是黄健中，得分0。
+
+- idx_6: response = '关锦鹏', target = '马伟豪'  
+  实体不同，0。
+
+- idx_7: response = 'nan', target = '王家卫'  
+  0。
+
+- idx_8: response = '侯孝贤', target = '刘伟强、麦兆辉'  
+  不同实体，0。
+
+- idx_9: response = 'nan', target = '李安'  
+  0。
+
+- idx_10: response = 'nan', target = '王家卫'  
+  0。
+
+- idx_11: response = 'nan', target = '翁子光'  
+  0。
+
+- idx_12: response = 'nan', target = '庄文强'  
+  0。
+
+基于上述分析，所有回答都未与参考答案语义相符或者指向同一实体，全部得0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0
+}
+```",李安,nan,0.0,"Analysis:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Translation: The response should roughly have the same meaning as the standard answer or point to the same entity; exact wording is not necessary.
+
+For each idx, we check whether the response is semantically consistent or points to the same entity as the target.
+
+- idx_0: response = ""-"", target = ""-""  
+Both are ""-"", matching exactly (no info given). Score=1
+
+- idx_1: response = ""-"", target = ""第53届戛纳国际电影节最佳男演员\n第20届香港电影金像奖最佳男主角\n第1届华语电影传媒大奖最佳男主角""  
+Response is ""-"", target is a list of awards. They do not match. Score=0
+
+- idx_2: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_3: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_4: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_5: response = ""最佳男主角"", target = ""第22届香港电影金像奖最佳男主角\n第40届台湾电影金马奖最佳男主角奖""  
+Response only has ""最佳男主角"" (Best Actor), target has two specific awards (Hong Kong Film Awards Best Actor, Golden Horse Awards Best Actor)  
+Is ""最佳男主角"" roughly equivalent to these awards? It indicates the same entity ""Best Actor"" but does not specify the award or event, so the meaning is somewhat vague. However, per the criterion, ""或指向的实体一致即可"", roughly meaning is enough, or pointing to same entity, which is ""best actor award(s)"". Since the response points to the entity ""best actor"", albeit not specifying the same events, I judge this close enough. Score=1
+
+- idx_6: response = ""-"", target = ""第4届华语电影传媒大奖港台最佳男演员银奖""  
+Response is ""-"", target is an award. Not matching. Score=0
+
+- idx_7: response = ""-"", target = ""第24届香港电影金像奖最佳男主角""  
+No match. Score=0
+
+- idx_8: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_9: response = ""-"", target = ""第44届台湾电影金马奖最佳男演员\n第2届亚洲电影大奖最佳男演员""  
+Response is ""-"", target has awards. No match. Score=0
+
+- idx_10: response = ""-"", target = ""香港导演协会奖最佳男主角""  
+No match. Score=0
+
+- idx_11: response = ""-"", target = ""第16届亚洲电影大奖最佳男主角""  
+No match. Score=0
+
+- idx_12: response = ""-"", target = ""第42届香港电影金像奖最佳男主角""  
+No match. Score=0
+
+Summary:
+
+| idx   | Score |
+|-------|-------|
+| idx_0 | 1     |
+| idx_1 | 0     |
+| idx_2 | 1     |
+| idx_3 | 1     |
+| idx_4 | 1     |
+| idx_5 | 1     |
+| idx_6 | 0     |
+| idx_7 | 0     |
+| idx_8 | 1     |
+| idx_9 | 0     |
+| idx_10| 0     |
+| idx_11| 0     |
+| idx_12| 0     |
+
+Final output in JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0
+}
+```","第44届台湾电影金马奖最佳男演员
+第2届亚洲电影大奖最佳男演员",-,1.0,key_match
+,,一代宗师,一代宗师,0.0,"首先，依据评分标准：“和参考答案语义相同大致，或者指向的实体一致即可，不需要字字对应。”  
+但在此题中，被考察的是回答的年份是否与标准答案对应年份一致。  
+因为年份数字具有严格唯一的指向含义，不匹配即不一致。
+
+逐条分析：
+
+- idx_0：回答1992，标准2000年。年份不一致，得分0。  
+- idx_1：回答1994，标准2000年。年份不一致，得分0。  
+- idx_2：回答1996，标准2001年。年份不一致，得分0。  
+- idx_3：回答1997，标准2001年。年份不一致，得分0。  
+- idx_4：回答1994，标准2002年。年份不一致，得分0。  
+- idx_5：回答2003，标准2002年。年份不一致，得分0。  
+- idx_6：回答2000，标准2003年。年份不一致，得分0。  
+- idx_7：回答2004，标准2004年。一致，得分1。  
+- idx_8：回答1989，标准2006年。年份不一致，得分0。  
+- idx_9：回答2007，标准2007年。一致，得分1。  
+- idx_10：回答2012，标准2013年。年份不一致，得分0。  
+- idx_11：回答2023，标准2023年。一致，得分1。  
+- idx_12：回答2021，标准2023年。年份不一致，得分0。
+
+总结：只有3条完全一致，分值为1，其余均为0。
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0
+}
+```",2013年,2012,0.0,"分析和判断过程：
+
+根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+我们将针对每个idx的response与target对比：
+
+- idx_0: response = 'nan', target = '邓特希'  
+  response为空或无效，与目标实体不一致，得分0。
+
+- idx_1: response = 'nan', target = '王家卫'  
+  同上，0。
+
+- idx_2: response = 'nan', target = '马伟豪'  
+  同上，0。
+
+- idx_3: response = 'nan', target = '王晶'  
+  同上，0。
+
+- idx_4: response = 'nan', target = '刘镇伟'  
+  同上，0。
+
+- idx_5: response = '黄健中', target = '刘伟强、麦兆辉'  
+  两者实体不一致，虽然都是人名，但目标是刘伟强和麦兆辉，回复是黄健中，得分0。
+
+- idx_6: response = '关锦鹏', target = '马伟豪'  
+  实体不同，0。
+
+- idx_7: response = 'nan', target = '王家卫'  
+  0。
+
+- idx_8: response = '侯孝贤', target = '刘伟强、麦兆辉'  
+  不同实体，0。
+
+- idx_9: response = 'nan', target = '李安'  
+  0。
+
+- idx_10: response = 'nan', target = '王家卫'  
+  0。
+
+- idx_11: response = 'nan', target = '翁子光'  
+  0。
+
+- idx_12: response = 'nan', target = '庄文强'  
+  0。
+
+基于上述分析，所有回答都未与参考答案语义相符或者指向同一实体，全部得0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0
+}
+```",王家卫,nan,0.0,"Analysis:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Translation: The response should roughly have the same meaning as the standard answer or point to the same entity; exact wording is not necessary.
+
+For each idx, we check whether the response is semantically consistent or points to the same entity as the target.
+
+- idx_0: response = ""-"", target = ""-""  
+Both are ""-"", matching exactly (no info given). Score=1
+
+- idx_1: response = ""-"", target = ""第53届戛纳国际电影节最佳男演员\n第20届香港电影金像奖最佳男主角\n第1届华语电影传媒大奖最佳男主角""  
+Response is ""-"", target is a list of awards. They do not match. Score=0
+
+- idx_2: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_3: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_4: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_5: response = ""最佳男主角"", target = ""第22届香港电影金像奖最佳男主角\n第40届台湾电影金马奖最佳男主角奖""  
+Response only has ""最佳男主角"" (Best Actor), target has two specific awards (Hong Kong Film Awards Best Actor, Golden Horse Awards Best Actor)  
+Is ""最佳男主角"" roughly equivalent to these awards? It indicates the same entity ""Best Actor"" but does not specify the award or event, so the meaning is somewhat vague. However, per the criterion, ""或指向的实体一致即可"", roughly meaning is enough, or pointing to same entity, which is ""best actor award(s)"". Since the response points to the entity ""best actor"", albeit not specifying the same events, I judge this close enough. Score=1
+
+- idx_6: response = ""-"", target = ""第4届华语电影传媒大奖港台最佳男演员银奖""  
+Response is ""-"", target is an award. Not matching. Score=0
+
+- idx_7: response = ""-"", target = ""第24届香港电影金像奖最佳男主角""  
+No match. Score=0
+
+- idx_8: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_9: response = ""-"", target = ""第44届台湾电影金马奖最佳男演员\n第2届亚洲电影大奖最佳男演员""  
+Response is ""-"", target has awards. No match. Score=0
+
+- idx_10: response = ""-"", target = ""香港导演协会奖最佳男主角""  
+No match. Score=0
+
+- idx_11: response = ""-"", target = ""第16届亚洲电影大奖最佳男主角""  
+No match. Score=0
+
+- idx_12: response = ""-"", target = ""第42届香港电影金像奖最佳男主角""  
+No match. Score=0
+
+Summary:
+
+| idx   | Score |
+|-------|-------|
+| idx_0 | 1     |
+| idx_1 | 0     |
+| idx_2 | 1     |
+| idx_3 | 1     |
+| idx_4 | 1     |
+| idx_5 | 1     |
+| idx_6 | 0     |
+| idx_7 | 0     |
+| idx_8 | 1     |
+| idx_9 | 0     |
+| idx_10| 0     |
+| idx_11| 0     |
+| idx_12| 0     |
+
+Final output in JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0
+}
+```",香港导演协会奖最佳男主角,-,1.0,key_match
+,,风再起时,风再起时,1.0,"首先，依据评分标准：“和参考答案语义相同大致，或者指向的实体一致即可，不需要字字对应。”  
+但在此题中，被考察的是回答的年份是否与标准答案对应年份一致。  
+因为年份数字具有严格唯一的指向含义，不匹配即不一致。
+
+逐条分析：
+
+- idx_0：回答1992，标准2000年。年份不一致，得分0。  
+- idx_1：回答1994，标准2000年。年份不一致，得分0。  
+- idx_2：回答1996，标准2001年。年份不一致，得分0。  
+- idx_3：回答1997，标准2001年。年份不一致，得分0。  
+- idx_4：回答1994，标准2002年。年份不一致，得分0。  
+- idx_5：回答2003，标准2002年。年份不一致，得分0。  
+- idx_6：回答2000，标准2003年。年份不一致，得分0。  
+- idx_7：回答2004，标准2004年。一致，得分1。  
+- idx_8：回答1989，标准2006年。年份不一致，得分0。  
+- idx_9：回答2007，标准2007年。一致，得分1。  
+- idx_10：回答2012，标准2013年。年份不一致，得分0。  
+- idx_11：回答2023，标准2023年。一致，得分1。  
+- idx_12：回答2021，标准2023年。年份不一致，得分0。
+
+总结：只有3条完全一致，分值为1，其余均为0。
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0
+}
+```",2023年,2023,0.0,"分析和判断过程：
+
+根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+我们将针对每个idx的response与target对比：
+
+- idx_0: response = 'nan', target = '邓特希'  
+  response为空或无效，与目标实体不一致，得分0。
+
+- idx_1: response = 'nan', target = '王家卫'  
+  同上，0。
+
+- idx_2: response = 'nan', target = '马伟豪'  
+  同上，0。
+
+- idx_3: response = 'nan', target = '王晶'  
+  同上，0。
+
+- idx_4: response = 'nan', target = '刘镇伟'  
+  同上，0。
+
+- idx_5: response = '黄健中', target = '刘伟强、麦兆辉'  
+  两者实体不一致，虽然都是人名，但目标是刘伟强和麦兆辉，回复是黄健中，得分0。
+
+- idx_6: response = '关锦鹏', target = '马伟豪'  
+  实体不同，0。
+
+- idx_7: response = 'nan', target = '王家卫'  
+  0。
+
+- idx_8: response = '侯孝贤', target = '刘伟强、麦兆辉'  
+  不同实体，0。
+
+- idx_9: response = 'nan', target = '李安'  
+  0。
+
+- idx_10: response = 'nan', target = '王家卫'  
+  0。
+
+- idx_11: response = 'nan', target = '翁子光'  
+  0。
+
+- idx_12: response = 'nan', target = '庄文强'  
+  0。
+
+基于上述分析，所有回答都未与参考答案语义相符或者指向同一实体，全部得0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0
+}
+```",翁子光,nan,0.0,"Analysis:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Translation: The response should roughly have the same meaning as the standard answer or point to the same entity; exact wording is not necessary.
+
+For each idx, we check whether the response is semantically consistent or points to the same entity as the target.
+
+- idx_0: response = ""-"", target = ""-""  
+Both are ""-"", matching exactly (no info given). Score=1
+
+- idx_1: response = ""-"", target = ""第53届戛纳国际电影节最佳男演员\n第20届香港电影金像奖最佳男主角\n第1届华语电影传媒大奖最佳男主角""  
+Response is ""-"", target is a list of awards. They do not match. Score=0
+
+- idx_2: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_3: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_4: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_5: response = ""最佳男主角"", target = ""第22届香港电影金像奖最佳男主角\n第40届台湾电影金马奖最佳男主角奖""  
+Response only has ""最佳男主角"" (Best Actor), target has two specific awards (Hong Kong Film Awards Best Actor, Golden Horse Awards Best Actor)  
+Is ""最佳男主角"" roughly equivalent to these awards? It indicates the same entity ""Best Actor"" but does not specify the award or event, so the meaning is somewhat vague. However, per the criterion, ""或指向的实体一致即可"", roughly meaning is enough, or pointing to same entity, which is ""best actor award(s)"". Since the response points to the entity ""best actor"", albeit not specifying the same events, I judge this close enough. Score=1
+
+- idx_6: response = ""-"", target = ""第4届华语电影传媒大奖港台最佳男演员银奖""  
+Response is ""-"", target is an award. Not matching. Score=0
+
+- idx_7: response = ""-"", target = ""第24届香港电影金像奖最佳男主角""  
+No match. Score=0
+
+- idx_8: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_9: response = ""-"", target = ""第44届台湾电影金马奖最佳男演员\n第2届亚洲电影大奖最佳男演员""  
+Response is ""-"", target has awards. No match. Score=0
+
+- idx_10: response = ""-"", target = ""香港导演协会奖最佳男主角""  
+No match. Score=0
+
+- idx_11: response = ""-"", target = ""第16届亚洲电影大奖最佳男主角""  
+No match. Score=0
+
+- idx_12: response = ""-"", target = ""第42届香港电影金像奖最佳男主角""  
+No match. Score=0
+
+Summary:
+
+| idx   | Score |
+|-------|-------|
+| idx_0 | 1     |
+| idx_1 | 0     |
+| idx_2 | 1     |
+| idx_3 | 1     |
+| idx_4 | 1     |
+| idx_5 | 1     |
+| idx_6 | 0     |
+| idx_7 | 0     |
+| idx_8 | 1     |
+| idx_9 | 0     |
+| idx_10| 0     |
+| idx_11| 0     |
+| idx_12| 0     |
+
+Final output in JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0
+}
+```",第16届亚洲电影大奖最佳男主角,-,1.0,key_match
+,,金手指,金手指,0.0,"首先，依据评分标准：“和参考答案语义相同大致，或者指向的实体一致即可，不需要字字对应。”  
+但在此题中，被考察的是回答的年份是否与标准答案对应年份一致。  
+因为年份数字具有严格唯一的指向含义，不匹配即不一致。
+
+逐条分析：
+
+- idx_0：回答1992，标准2000年。年份不一致，得分0。  
+- idx_1：回答1994，标准2000年。年份不一致，得分0。  
+- idx_2：回答1996，标准2001年。年份不一致，得分0。  
+- idx_3：回答1997，标准2001年。年份不一致，得分0。  
+- idx_4：回答1994，标准2002年。年份不一致，得分0。  
+- idx_5：回答2003，标准2002年。年份不一致，得分0。  
+- idx_6：回答2000，标准2003年。年份不一致，得分0。  
+- idx_7：回答2004，标准2004年。一致，得分1。  
+- idx_8：回答1989，标准2006年。年份不一致，得分0。  
+- idx_9：回答2007，标准2007年。一致，得分1。  
+- idx_10：回答2012，标准2013年。年份不一致，得分0。  
+- idx_11：回答2023，标准2023年。一致，得分1。  
+- idx_12：回答2021，标准2023年。年份不一致，得分0。
+
+总结：只有3条完全一致，分值为1，其余均为0。
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0
+}
+```",2023年,2021,0.0,"分析和判断过程：
+
+根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+我们将针对每个idx的response与target对比：
+
+- idx_0: response = 'nan', target = '邓特希'  
+  response为空或无效，与目标实体不一致，得分0。
+
+- idx_1: response = 'nan', target = '王家卫'  
+  同上，0。
+
+- idx_2: response = 'nan', target = '马伟豪'  
+  同上，0。
+
+- idx_3: response = 'nan', target = '王晶'  
+  同上，0。
+
+- idx_4: response = 'nan', target = '刘镇伟'  
+  同上，0。
+
+- idx_5: response = '黄健中', target = '刘伟强、麦兆辉'  
+  两者实体不一致，虽然都是人名，但目标是刘伟强和麦兆辉，回复是黄健中，得分0。
+
+- idx_6: response = '关锦鹏', target = '马伟豪'  
+  实体不同，0。
+
+- idx_7: response = 'nan', target = '王家卫'  
+  0。
+
+- idx_8: response = '侯孝贤', target = '刘伟强、麦兆辉'  
+  不同实体，0。
+
+- idx_9: response = 'nan', target = '李安'  
+  0。
+
+- idx_10: response = 'nan', target = '王家卫'  
+  0。
+
+- idx_11: response = 'nan', target = '翁子光'  
+  0。
+
+- idx_12: response = 'nan', target = '庄文强'  
+  0。
+
+基于上述分析，所有回答都未与参考答案语义相符或者指向同一实体，全部得0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0
+}
+```",庄文强,nan,0.0,"Analysis:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Translation: The response should roughly have the same meaning as the standard answer or point to the same entity; exact wording is not necessary.
+
+For each idx, we check whether the response is semantically consistent or points to the same entity as the target.
+
+- idx_0: response = ""-"", target = ""-""  
+Both are ""-"", matching exactly (no info given). Score=1
+
+- idx_1: response = ""-"", target = ""第53届戛纳国际电影节最佳男演员\n第20届香港电影金像奖最佳男主角\n第1届华语电影传媒大奖最佳男主角""  
+Response is ""-"", target is a list of awards. They do not match. Score=0
+
+- idx_2: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_3: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_4: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_5: response = ""最佳男主角"", target = ""第22届香港电影金像奖最佳男主角\n第40届台湾电影金马奖最佳男主角奖""  
+Response only has ""最佳男主角"" (Best Actor), target has two specific awards (Hong Kong Film Awards Best Actor, Golden Horse Awards Best Actor)  
+Is ""最佳男主角"" roughly equivalent to these awards? It indicates the same entity ""Best Actor"" but does not specify the award or event, so the meaning is somewhat vague. However, per the criterion, ""或指向的实体一致即可"", roughly meaning is enough, or pointing to same entity, which is ""best actor award(s)"". Since the response points to the entity ""best actor"", albeit not specifying the same events, I judge this close enough. Score=1
+
+- idx_6: response = ""-"", target = ""第4届华语电影传媒大奖港台最佳男演员银奖""  
+Response is ""-"", target is an award. Not matching. Score=0
+
+- idx_7: response = ""-"", target = ""第24届香港电影金像奖最佳男主角""  
+No match. Score=0
+
+- idx_8: response = ""-"", target = ""-""  
+Both ""-"", Score=1
+
+- idx_9: response = ""-"", target = ""第44届台湾电影金马奖最佳男演员\n第2届亚洲电影大奖最佳男演员""  
+Response is ""-"", target has awards. No match. Score=0
+
+- idx_10: response = ""-"", target = ""香港导演协会奖最佳男主角""  
+No match. Score=0
+
+- idx_11: response = ""-"", target = ""第16届亚洲电影大奖最佳男主角""  
+No match. Score=0
+
+- idx_12: response = ""-"", target = ""第42届香港电影金像奖最佳男主角""  
+No match. Score=0
+
+Summary:
+
+| idx   | Score |
+|-------|-------|
+| idx_0 | 1     |
+| idx_1 | 0     |
+| idx_2 | 1     |
+| idx_3 | 1     |
+| idx_4 | 1     |
+| idx_5 | 1     |
+| idx_6 | 0     |
+| idx_7 | 0     |
+| idx_8 | 1     |
+| idx_9 | 0     |
+| idx_10| 0     |
+| idx_11| 0     |
+| idx_12| 0     |
+
+Final output in JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0
+}
+```",第42届香港电影金像奖最佳男主角,-,1.0,key_match
+1.0,,东京攻略,,,,2000年,,,,马楚成,,,,-,,,
+1.0,,听风者,,,,2012年,,,,麦兆辉、庄文强,,,,-,,,
+1.0,,嘿玛嘿玛,,,,2016年,,,,宗萨钦哲仁波切,,,,-,,,
+1.0,,大魔术师,,,,2011年,,,,尔冬升,,,,-,,,
+1.0,,尚气与十环传奇,,,,2021年,,,,德斯汀·克里顿,,,,-,,,
+1.0,,我要做model,,,,2004年,,,,谷德昭,,,,nan,,,
+1.0,,捉妖记2,,,,2018年,,,,许诚毅,,,,-,,,
+1.0,,摆渡人,,,,2016年,,,,张嘉佳,,,,-,,,
+1.0,,无名,,,,2023年,,,,程耳,,,,第36届中国电影金鸡奖最佳男主角,,,
+1.0,,无间道3：终极无间,,,,2003年,,,,刘伟强、麦兆辉,,,,-,,,
+1.0,,欧洲攻略,,,,2018年,,,,马楚成,,,,-,,,
+1.0,,英雄,,,,2002年,,,,张艺谋,,,,-,,,
+1.0,,行运超人,,,,2003年,,,,谷德昭,,,,-,,,
+1.0,,赤壁（上）,,,,2008年,,,,吴宇森,,,,-,,,
+1.0,,赤壁（下）,,,,2009年,,,,吴宇森,,,,-,,,
+1.0,,韩城攻略,,,,2005年,,,,马楚成,,,,-,,,

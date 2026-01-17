@@ -1,0 +1,1582 @@
+exist_flag_gt,exist_flag_response,university,university_before_map,2025ukguardianrankings_exact_match,2025ukguardianrankings_exact_match_eval_msg,2025ukguardianrankings_query,2025ukguardianrankings_response,2026qsworldrankings_exact_match,2026qsworldrankings_exact_match_eval_msg,2026qsworldrankings_query,2026qsworldrankings_response,foundingyear_exact_match,foundingyear_exact_match_eval_msg,foundingyear_query,foundingyear_response,governingbody_llm_judge,governingbody_llm_judge_eval_msg,governingbody_query,governingbody_response,officialwebsiteaddress_llm_judge,officialwebsiteaddress_llm_judge_eval_msg,officialwebsiteaddress_query,officialwebsiteaddress_response,university_exact_match,university_exact_match_eval_msg
+,,universityofbristol,University of Bristol,0.0,"exact not match, response: 25, target: 16",16,25,1.0,"exact match, response: 51, target: 51",51,51,0.0,"exact not match, response: 1876, target: 1909",1909,1876,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- The semantics need to be approximately the same or point to the same entity.  
+- No need for word-for-word match.  
+- If response points to the same entity as the target, score = 1; otherwise, 0.
+
+---
+
+**idx_0**  
+- response: ""universitycouncil""  
+- target: ""boardoftrustees""  
+These are different entities, so no semantic match.  
+**Score: 0**
+
+---
+
+**idx_1**  
+- response: ""cambridgeuniversitycouncil,regenthouse,generalboard""  
+- target: ""theregenthouse""  
+Target entity is ""theregenthouse.""  
+Response includes ""regenthouse"" (part of it) plus additional entities. Since response contains the target entity ""regenthouse,"" it meets the criterion of approximate semantic equivalence or same entity. Extra entities do not invalidate correctness.  
+**Score: 1**
+
+---
+
+**idx_2**  
+- response: ""universitycourt,generalcouncil""  
+- target: ""theuniversitycourt""  
+Target is ""theuniversitycourt."" Response contains ""universitycourt"" plus ""generalcouncil."" Containing the main target entity (""universitycourt"") suffices.  
+**Score: 1**
+
+---
+
+**idx_3**  
+- response: ""universitycourt""  
+- target: ""universitycourt""  
+Exact same entity.  
+**Score: 1**
+
+---
+
+**idx_4**  
+- response: ""council""  
+- target: ""universitycouncil""  
+Response is more general (""council"") compared to target ""universitycouncil."" Is ""council"" sufficient to be considered the same entity? ""Council"" alone is ambiguous and does not clearly indicate ""universitycouncil.""  
+Given the criterion for approximate semantics or pointing to the same entity, ""council"" alone is too broad and not specific enough to match ""universitycouncil.""  
+**Score: 0**
+
+---
+
+**idx_5**  
+- response: ""universityofmanchesterboardofgovernors""  
+- target: ""theboardofgovernors""  
+Response is specific ""university of manchester board of governors,"" target is generic ""board of governors."" Since the response specifies a particular board of governors (likely correct entity), the semantics are close enough pointing to the same entity.  
+**Score: 1**
+
+---
+
+**idx_6**  
+- response: ""universitycouncil,congregation""  
+- target: ""universitycouncil""  
+Response contains the target entity plus extra. This qualifies as correct.  
+**Score: 1**
+
+---
+
+**idx_7**  
+- response: ""council,senate""  
+- target: ""universitycouncil""  
+Response contains ""council"" (too vague) and ""senate."" Since ""council"" alone is not precise enough, and ""senate"" is a different body, the response does not point clearly to ""universitycouncil.""  
+**Score: 0**
+
+---
+
+**idx_8**  
+- response: ""council""  
+- target: ""universitycouncil""  
+Same as idx_4, ""council"" alone is too generic.  
+**Score: 0**
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",boardoftrustees,universitycouncil,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same or if they point to the same entity. No need for exact word-for-word correspondence.
+
+---
+
+**idx_0**  
+Response: https://www.bristol.ac.uk/  
+Target: https://bristol.ac.uk/  
+Analysis: Both URLs point to the University of Bristol. The only difference is the ""www."" prefix. Semantically the same entity.  
+Score: 1
+
+**idx_1**  
+Response: https://www.cam.ac.uk/  
+Target: https://www.cam.ac.uk/  
+Analysis: Exact match.  
+Score: 1
+
+**idx_2**  
+Response: https://www.ed.ac.uk/  
+Target: https://www.ed.ac.uk/  
+Analysis: Exact match.  
+Score: 1
+
+**idx_3**  
+Response: https://www.gla.ac.uk/  
+Target: https://gla.ac.uk/  
+Analysis: Difference only by ""www."" prefix, both represent University of Glasgow. Semantically the same.  
+Score: 1
+
+**idx_4**  
+Response: https://www.imperial.ac.uk/  
+Target: https://imperial.ac.uk/  
+Analysis: Difference only by ""www."" prefix, both same entity Imperial College London.  
+Score: 1
+
+**idx_5**  
+Response: https://www.manchester.ac.uk/  
+Target: https://manchester.ac.uk/  
+Analysis: Same entity University of Manchester, difference is ""www."" prefix.  
+Score: 1
+
+**idx_6**  
+Response: https://www.ox.ac.uk/  
+Target: https://ox.ac.uk/  
+Analysis: Same entity University of Oxford, difference is ""www."" prefix.  
+Score: 1
+
+**idx_7**  
+Response: https://warwick.ac.uk/  
+Target: https://warwick.ac.uk/  
+Analysis: Exact match.  
+Score: 1
+
+**idx_8**  
+Response: https://www.york.ac.uk/  
+Target: https://york.ac.uk/  
+Analysis: Same entity University of York, difference is ""www."" prefix.  
+Score: 1
+
+---
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1
+}
+```",https://bristol.ac.uk/,https://www.bristol.ac.uk/,1.0,key_match
+,,universityofcambridge,University of Cambridge,0.0,"exact not match, response: 9, target: 3",3,9,0.0,"exact not match, response: 3, target: 6",6,3,1.0,"exact match, response: 1209, target: 1209",1209,1209,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- The semantics need to be approximately the same or point to the same entity.  
+- No need for word-for-word match.  
+- If response points to the same entity as the target, score = 1; otherwise, 0.
+
+---
+
+**idx_0**  
+- response: ""universitycouncil""  
+- target: ""boardoftrustees""  
+These are different entities, so no semantic match.  
+**Score: 0**
+
+---
+
+**idx_1**  
+- response: ""cambridgeuniversitycouncil,regenthouse,generalboard""  
+- target: ""theregenthouse""  
+Target entity is ""theregenthouse.""  
+Response includes ""regenthouse"" (part of it) plus additional entities. Since response contains the target entity ""regenthouse,"" it meets the criterion of approximate semantic equivalence or same entity. Extra entities do not invalidate correctness.  
+**Score: 1**
+
+---
+
+**idx_2**  
+- response: ""universitycourt,generalcouncil""  
+- target: ""theuniversitycourt""  
+Target is ""theuniversitycourt."" Response contains ""universitycourt"" plus ""generalcouncil."" Containing the main target entity (""universitycourt"") suffices.  
+**Score: 1**
+
+---
+
+**idx_3**  
+- response: ""universitycourt""  
+- target: ""universitycourt""  
+Exact same entity.  
+**Score: 1**
+
+---
+
+**idx_4**  
+- response: ""council""  
+- target: ""universitycouncil""  
+Response is more general (""council"") compared to target ""universitycouncil."" Is ""council"" sufficient to be considered the same entity? ""Council"" alone is ambiguous and does not clearly indicate ""universitycouncil.""  
+Given the criterion for approximate semantics or pointing to the same entity, ""council"" alone is too broad and not specific enough to match ""universitycouncil.""  
+**Score: 0**
+
+---
+
+**idx_5**  
+- response: ""universityofmanchesterboardofgovernors""  
+- target: ""theboardofgovernors""  
+Response is specific ""university of manchester board of governors,"" target is generic ""board of governors."" Since the response specifies a particular board of governors (likely correct entity), the semantics are close enough pointing to the same entity.  
+**Score: 1**
+
+---
+
+**idx_6**  
+- response: ""universitycouncil,congregation""  
+- target: ""universitycouncil""  
+Response contains the target entity plus extra. This qualifies as correct.  
+**Score: 1**
+
+---
+
+**idx_7**  
+- response: ""council,senate""  
+- target: ""universitycouncil""  
+Response contains ""council"" (too vague) and ""senate."" Since ""council"" alone is not precise enough, and ""senate"" is a different body, the response does not point clearly to ""universitycouncil.""  
+**Score: 0**
+
+---
+
+**idx_8**  
+- response: ""council""  
+- target: ""universitycouncil""  
+Same as idx_4, ""council"" alone is too generic.  
+**Score: 0**
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",theregenthouse,"cambridgeuniversitycouncil,regenthouse,generalboard",1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same or if they point to the same entity. No need for exact word-for-word correspondence.
+
+---
+
+**idx_0**  
+Response: https://www.bristol.ac.uk/  
+Target: https://bristol.ac.uk/  
+Analysis: Both URLs point to the University of Bristol. The only difference is the ""www."" prefix. Semantically the same entity.  
+Score: 1
+
+**idx_1**  
+Response: https://www.cam.ac.uk/  
+Target: https://www.cam.ac.uk/  
+Analysis: Exact match.  
+Score: 1
+
+**idx_2**  
+Response: https://www.ed.ac.uk/  
+Target: https://www.ed.ac.uk/  
+Analysis: Exact match.  
+Score: 1
+
+**idx_3**  
+Response: https://www.gla.ac.uk/  
+Target: https://gla.ac.uk/  
+Analysis: Difference only by ""www."" prefix, both represent University of Glasgow. Semantically the same.  
+Score: 1
+
+**idx_4**  
+Response: https://www.imperial.ac.uk/  
+Target: https://imperial.ac.uk/  
+Analysis: Difference only by ""www."" prefix, both same entity Imperial College London.  
+Score: 1
+
+**idx_5**  
+Response: https://www.manchester.ac.uk/  
+Target: https://manchester.ac.uk/  
+Analysis: Same entity University of Manchester, difference is ""www."" prefix.  
+Score: 1
+
+**idx_6**  
+Response: https://www.ox.ac.uk/  
+Target: https://ox.ac.uk/  
+Analysis: Same entity University of Oxford, difference is ""www."" prefix.  
+Score: 1
+
+**idx_7**  
+Response: https://warwick.ac.uk/  
+Target: https://warwick.ac.uk/  
+Analysis: Exact match.  
+Score: 1
+
+**idx_8**  
+Response: https://www.york.ac.uk/  
+Target: https://york.ac.uk/  
+Analysis: Same entity University of York, difference is ""www."" prefix.  
+Score: 1
+
+---
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1
+}
+```",https://www.cam.ac.uk/,https://www.cam.ac.uk/,1.0,key_match
+,,universityofedinburgh,University of Edinburgh,0.0,"exact not match, response: 32, target: 15",15,32,1.0,"exact match, response: 34, target: 34",34,34,1.0,"exact match, response: 1582, target: 1582",1582,1582,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- The semantics need to be approximately the same or point to the same entity.  
+- No need for word-for-word match.  
+- If response points to the same entity as the target, score = 1; otherwise, 0.
+
+---
+
+**idx_0**  
+- response: ""universitycouncil""  
+- target: ""boardoftrustees""  
+These are different entities, so no semantic match.  
+**Score: 0**
+
+---
+
+**idx_1**  
+- response: ""cambridgeuniversitycouncil,regenthouse,generalboard""  
+- target: ""theregenthouse""  
+Target entity is ""theregenthouse.""  
+Response includes ""regenthouse"" (part of it) plus additional entities. Since response contains the target entity ""regenthouse,"" it meets the criterion of approximate semantic equivalence or same entity. Extra entities do not invalidate correctness.  
+**Score: 1**
+
+---
+
+**idx_2**  
+- response: ""universitycourt,generalcouncil""  
+- target: ""theuniversitycourt""  
+Target is ""theuniversitycourt."" Response contains ""universitycourt"" plus ""generalcouncil."" Containing the main target entity (""universitycourt"") suffices.  
+**Score: 1**
+
+---
+
+**idx_3**  
+- response: ""universitycourt""  
+- target: ""universitycourt""  
+Exact same entity.  
+**Score: 1**
+
+---
+
+**idx_4**  
+- response: ""council""  
+- target: ""universitycouncil""  
+Response is more general (""council"") compared to target ""universitycouncil."" Is ""council"" sufficient to be considered the same entity? ""Council"" alone is ambiguous and does not clearly indicate ""universitycouncil.""  
+Given the criterion for approximate semantics or pointing to the same entity, ""council"" alone is too broad and not specific enough to match ""universitycouncil.""  
+**Score: 0**
+
+---
+
+**idx_5**  
+- response: ""universityofmanchesterboardofgovernors""  
+- target: ""theboardofgovernors""  
+Response is specific ""university of manchester board of governors,"" target is generic ""board of governors."" Since the response specifies a particular board of governors (likely correct entity), the semantics are close enough pointing to the same entity.  
+**Score: 1**
+
+---
+
+**idx_6**  
+- response: ""universitycouncil,congregation""  
+- target: ""universitycouncil""  
+Response contains the target entity plus extra. This qualifies as correct.  
+**Score: 1**
+
+---
+
+**idx_7**  
+- response: ""council,senate""  
+- target: ""universitycouncil""  
+Response contains ""council"" (too vague) and ""senate."" Since ""council"" alone is not precise enough, and ""senate"" is a different body, the response does not point clearly to ""universitycouncil.""  
+**Score: 0**
+
+---
+
+**idx_8**  
+- response: ""council""  
+- target: ""universitycouncil""  
+Same as idx_4, ""council"" alone is too generic.  
+**Score: 0**
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",theuniversitycourt,"universitycourt,generalcouncil",1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same or if they point to the same entity. No need for exact word-for-word correspondence.
+
+---
+
+**idx_0**  
+Response: https://www.bristol.ac.uk/  
+Target: https://bristol.ac.uk/  
+Analysis: Both URLs point to the University of Bristol. The only difference is the ""www."" prefix. Semantically the same entity.  
+Score: 1
+
+**idx_1**  
+Response: https://www.cam.ac.uk/  
+Target: https://www.cam.ac.uk/  
+Analysis: Exact match.  
+Score: 1
+
+**idx_2**  
+Response: https://www.ed.ac.uk/  
+Target: https://www.ed.ac.uk/  
+Analysis: Exact match.  
+Score: 1
+
+**idx_3**  
+Response: https://www.gla.ac.uk/  
+Target: https://gla.ac.uk/  
+Analysis: Difference only by ""www."" prefix, both represent University of Glasgow. Semantically the same.  
+Score: 1
+
+**idx_4**  
+Response: https://www.imperial.ac.uk/  
+Target: https://imperial.ac.uk/  
+Analysis: Difference only by ""www."" prefix, both same entity Imperial College London.  
+Score: 1
+
+**idx_5**  
+Response: https://www.manchester.ac.uk/  
+Target: https://manchester.ac.uk/  
+Analysis: Same entity University of Manchester, difference is ""www."" prefix.  
+Score: 1
+
+**idx_6**  
+Response: https://www.ox.ac.uk/  
+Target: https://ox.ac.uk/  
+Analysis: Same entity University of Oxford, difference is ""www."" prefix.  
+Score: 1
+
+**idx_7**  
+Response: https://warwick.ac.uk/  
+Target: https://warwick.ac.uk/  
+Analysis: Exact match.  
+Score: 1
+
+**idx_8**  
+Response: https://www.york.ac.uk/  
+Target: https://york.ac.uk/  
+Analysis: Same entity University of York, difference is ""www."" prefix.  
+Score: 1
+
+---
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1
+}
+```",https://www.ed.ac.uk/,https://www.ed.ac.uk/,1.0,key_match
+,,universityofglasgow,University of Glasgow,0.0,"exact not match, response: 37, target: 14",14,37,1.0,"exact match, response: 79, target: 79",79,79,1.0,"exact match, response: 1451, target: 1451",1451,1451,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- The semantics need to be approximately the same or point to the same entity.  
+- No need for word-for-word match.  
+- If response points to the same entity as the target, score = 1; otherwise, 0.
+
+---
+
+**idx_0**  
+- response: ""universitycouncil""  
+- target: ""boardoftrustees""  
+These are different entities, so no semantic match.  
+**Score: 0**
+
+---
+
+**idx_1**  
+- response: ""cambridgeuniversitycouncil,regenthouse,generalboard""  
+- target: ""theregenthouse""  
+Target entity is ""theregenthouse.""  
+Response includes ""regenthouse"" (part of it) plus additional entities. Since response contains the target entity ""regenthouse,"" it meets the criterion of approximate semantic equivalence or same entity. Extra entities do not invalidate correctness.  
+**Score: 1**
+
+---
+
+**idx_2**  
+- response: ""universitycourt,generalcouncil""  
+- target: ""theuniversitycourt""  
+Target is ""theuniversitycourt."" Response contains ""universitycourt"" plus ""generalcouncil."" Containing the main target entity (""universitycourt"") suffices.  
+**Score: 1**
+
+---
+
+**idx_3**  
+- response: ""universitycourt""  
+- target: ""universitycourt""  
+Exact same entity.  
+**Score: 1**
+
+---
+
+**idx_4**  
+- response: ""council""  
+- target: ""universitycouncil""  
+Response is more general (""council"") compared to target ""universitycouncil."" Is ""council"" sufficient to be considered the same entity? ""Council"" alone is ambiguous and does not clearly indicate ""universitycouncil.""  
+Given the criterion for approximate semantics or pointing to the same entity, ""council"" alone is too broad and not specific enough to match ""universitycouncil.""  
+**Score: 0**
+
+---
+
+**idx_5**  
+- response: ""universityofmanchesterboardofgovernors""  
+- target: ""theboardofgovernors""  
+Response is specific ""university of manchester board of governors,"" target is generic ""board of governors."" Since the response specifies a particular board of governors (likely correct entity), the semantics are close enough pointing to the same entity.  
+**Score: 1**
+
+---
+
+**idx_6**  
+- response: ""universitycouncil,congregation""  
+- target: ""universitycouncil""  
+Response contains the target entity plus extra. This qualifies as correct.  
+**Score: 1**
+
+---
+
+**idx_7**  
+- response: ""council,senate""  
+- target: ""universitycouncil""  
+Response contains ""council"" (too vague) and ""senate."" Since ""council"" alone is not precise enough, and ""senate"" is a different body, the response does not point clearly to ""universitycouncil.""  
+**Score: 0**
+
+---
+
+**idx_8**  
+- response: ""council""  
+- target: ""universitycouncil""  
+Same as idx_4, ""council"" alone is too generic.  
+**Score: 0**
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",universitycourt,universitycourt,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same or if they point to the same entity. No need for exact word-for-word correspondence.
+
+---
+
+**idx_0**  
+Response: https://www.bristol.ac.uk/  
+Target: https://bristol.ac.uk/  
+Analysis: Both URLs point to the University of Bristol. The only difference is the ""www."" prefix. Semantically the same entity.  
+Score: 1
+
+**idx_1**  
+Response: https://www.cam.ac.uk/  
+Target: https://www.cam.ac.uk/  
+Analysis: Exact match.  
+Score: 1
+
+**idx_2**  
+Response: https://www.ed.ac.uk/  
+Target: https://www.ed.ac.uk/  
+Analysis: Exact match.  
+Score: 1
+
+**idx_3**  
+Response: https://www.gla.ac.uk/  
+Target: https://gla.ac.uk/  
+Analysis: Difference only by ""www."" prefix, both represent University of Glasgow. Semantically the same.  
+Score: 1
+
+**idx_4**  
+Response: https://www.imperial.ac.uk/  
+Target: https://imperial.ac.uk/  
+Analysis: Difference only by ""www."" prefix, both same entity Imperial College London.  
+Score: 1
+
+**idx_5**  
+Response: https://www.manchester.ac.uk/  
+Target: https://manchester.ac.uk/  
+Analysis: Same entity University of Manchester, difference is ""www."" prefix.  
+Score: 1
+
+**idx_6**  
+Response: https://www.ox.ac.uk/  
+Target: https://ox.ac.uk/  
+Analysis: Same entity University of Oxford, difference is ""www."" prefix.  
+Score: 1
+
+**idx_7**  
+Response: https://warwick.ac.uk/  
+Target: https://warwick.ac.uk/  
+Analysis: Exact match.  
+Score: 1
+
+**idx_8**  
+Response: https://www.york.ac.uk/  
+Target: https://york.ac.uk/  
+Analysis: Same entity University of York, difference is ""www."" prefix.  
+Score: 1
+
+---
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1
+}
+```",https://gla.ac.uk/,https://www.gla.ac.uk/,1.0,key_match
+,,imperialcollegelondon,Imperial College London,0.0,"exact not match, response: 11, target: 5",5,11,1.0,"exact match, response: 2, target: 2",2,2,1.0,"exact match, response: 1907, target: 1907",1907,1907,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- The semantics need to be approximately the same or point to the same entity.  
+- No need for word-for-word match.  
+- If response points to the same entity as the target, score = 1; otherwise, 0.
+
+---
+
+**idx_0**  
+- response: ""universitycouncil""  
+- target: ""boardoftrustees""  
+These are different entities, so no semantic match.  
+**Score: 0**
+
+---
+
+**idx_1**  
+- response: ""cambridgeuniversitycouncil,regenthouse,generalboard""  
+- target: ""theregenthouse""  
+Target entity is ""theregenthouse.""  
+Response includes ""regenthouse"" (part of it) plus additional entities. Since response contains the target entity ""regenthouse,"" it meets the criterion of approximate semantic equivalence or same entity. Extra entities do not invalidate correctness.  
+**Score: 1**
+
+---
+
+**idx_2**  
+- response: ""universitycourt,generalcouncil""  
+- target: ""theuniversitycourt""  
+Target is ""theuniversitycourt."" Response contains ""universitycourt"" plus ""generalcouncil."" Containing the main target entity (""universitycourt"") suffices.  
+**Score: 1**
+
+---
+
+**idx_3**  
+- response: ""universitycourt""  
+- target: ""universitycourt""  
+Exact same entity.  
+**Score: 1**
+
+---
+
+**idx_4**  
+- response: ""council""  
+- target: ""universitycouncil""  
+Response is more general (""council"") compared to target ""universitycouncil."" Is ""council"" sufficient to be considered the same entity? ""Council"" alone is ambiguous and does not clearly indicate ""universitycouncil.""  
+Given the criterion for approximate semantics or pointing to the same entity, ""council"" alone is too broad and not specific enough to match ""universitycouncil.""  
+**Score: 0**
+
+---
+
+**idx_5**  
+- response: ""universityofmanchesterboardofgovernors""  
+- target: ""theboardofgovernors""  
+Response is specific ""university of manchester board of governors,"" target is generic ""board of governors."" Since the response specifies a particular board of governors (likely correct entity), the semantics are close enough pointing to the same entity.  
+**Score: 1**
+
+---
+
+**idx_6**  
+- response: ""universitycouncil,congregation""  
+- target: ""universitycouncil""  
+Response contains the target entity plus extra. This qualifies as correct.  
+**Score: 1**
+
+---
+
+**idx_7**  
+- response: ""council,senate""  
+- target: ""universitycouncil""  
+Response contains ""council"" (too vague) and ""senate."" Since ""council"" alone is not precise enough, and ""senate"" is a different body, the response does not point clearly to ""universitycouncil.""  
+**Score: 0**
+
+---
+
+**idx_8**  
+- response: ""council""  
+- target: ""universitycouncil""  
+Same as idx_4, ""council"" alone is too generic.  
+**Score: 0**
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",universitycouncil,council,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same or if they point to the same entity. No need for exact word-for-word correspondence.
+
+---
+
+**idx_0**  
+Response: https://www.bristol.ac.uk/  
+Target: https://bristol.ac.uk/  
+Analysis: Both URLs point to the University of Bristol. The only difference is the ""www."" prefix. Semantically the same entity.  
+Score: 1
+
+**idx_1**  
+Response: https://www.cam.ac.uk/  
+Target: https://www.cam.ac.uk/  
+Analysis: Exact match.  
+Score: 1
+
+**idx_2**  
+Response: https://www.ed.ac.uk/  
+Target: https://www.ed.ac.uk/  
+Analysis: Exact match.  
+Score: 1
+
+**idx_3**  
+Response: https://www.gla.ac.uk/  
+Target: https://gla.ac.uk/  
+Analysis: Difference only by ""www."" prefix, both represent University of Glasgow. Semantically the same.  
+Score: 1
+
+**idx_4**  
+Response: https://www.imperial.ac.uk/  
+Target: https://imperial.ac.uk/  
+Analysis: Difference only by ""www."" prefix, both same entity Imperial College London.  
+Score: 1
+
+**idx_5**  
+Response: https://www.manchester.ac.uk/  
+Target: https://manchester.ac.uk/  
+Analysis: Same entity University of Manchester, difference is ""www."" prefix.  
+Score: 1
+
+**idx_6**  
+Response: https://www.ox.ac.uk/  
+Target: https://ox.ac.uk/  
+Analysis: Same entity University of Oxford, difference is ""www."" prefix.  
+Score: 1
+
+**idx_7**  
+Response: https://warwick.ac.uk/  
+Target: https://warwick.ac.uk/  
+Analysis: Exact match.  
+Score: 1
+
+**idx_8**  
+Response: https://www.york.ac.uk/  
+Target: https://york.ac.uk/  
+Analysis: Same entity University of York, difference is ""www."" prefix.  
+Score: 1
+
+---
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1
+}
+```",https://imperial.ac.uk/,https://www.imperial.ac.uk/,1.0,key_match
+,,universityofmanchester,University of Manchester,0.0,"exact not match, response: 28, target: 31",31,28,1.0,"exact match, response: 35, target: 35",35,35,0.0,"exact not match, response: 1824, target: 2004",2004,1824,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- The semantics need to be approximately the same or point to the same entity.  
+- No need for word-for-word match.  
+- If response points to the same entity as the target, score = 1; otherwise, 0.
+
+---
+
+**idx_0**  
+- response: ""universitycouncil""  
+- target: ""boardoftrustees""  
+These are different entities, so no semantic match.  
+**Score: 0**
+
+---
+
+**idx_1**  
+- response: ""cambridgeuniversitycouncil,regenthouse,generalboard""  
+- target: ""theregenthouse""  
+Target entity is ""theregenthouse.""  
+Response includes ""regenthouse"" (part of it) plus additional entities. Since response contains the target entity ""regenthouse,"" it meets the criterion of approximate semantic equivalence or same entity. Extra entities do not invalidate correctness.  
+**Score: 1**
+
+---
+
+**idx_2**  
+- response: ""universitycourt,generalcouncil""  
+- target: ""theuniversitycourt""  
+Target is ""theuniversitycourt."" Response contains ""universitycourt"" plus ""generalcouncil."" Containing the main target entity (""universitycourt"") suffices.  
+**Score: 1**
+
+---
+
+**idx_3**  
+- response: ""universitycourt""  
+- target: ""universitycourt""  
+Exact same entity.  
+**Score: 1**
+
+---
+
+**idx_4**  
+- response: ""council""  
+- target: ""universitycouncil""  
+Response is more general (""council"") compared to target ""universitycouncil."" Is ""council"" sufficient to be considered the same entity? ""Council"" alone is ambiguous and does not clearly indicate ""universitycouncil.""  
+Given the criterion for approximate semantics or pointing to the same entity, ""council"" alone is too broad and not specific enough to match ""universitycouncil.""  
+**Score: 0**
+
+---
+
+**idx_5**  
+- response: ""universityofmanchesterboardofgovernors""  
+- target: ""theboardofgovernors""  
+Response is specific ""university of manchester board of governors,"" target is generic ""board of governors."" Since the response specifies a particular board of governors (likely correct entity), the semantics are close enough pointing to the same entity.  
+**Score: 1**
+
+---
+
+**idx_6**  
+- response: ""universitycouncil,congregation""  
+- target: ""universitycouncil""  
+Response contains the target entity plus extra. This qualifies as correct.  
+**Score: 1**
+
+---
+
+**idx_7**  
+- response: ""council,senate""  
+- target: ""universitycouncil""  
+Response contains ""council"" (too vague) and ""senate."" Since ""council"" alone is not precise enough, and ""senate"" is a different body, the response does not point clearly to ""universitycouncil.""  
+**Score: 0**
+
+---
+
+**idx_8**  
+- response: ""council""  
+- target: ""universitycouncil""  
+Same as idx_4, ""council"" alone is too generic.  
+**Score: 0**
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",theboardofgovernors,universityofmanchesterboardofgovernors,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same or if they point to the same entity. No need for exact word-for-word correspondence.
+
+---
+
+**idx_0**  
+Response: https://www.bristol.ac.uk/  
+Target: https://bristol.ac.uk/  
+Analysis: Both URLs point to the University of Bristol. The only difference is the ""www."" prefix. Semantically the same entity.  
+Score: 1
+
+**idx_1**  
+Response: https://www.cam.ac.uk/  
+Target: https://www.cam.ac.uk/  
+Analysis: Exact match.  
+Score: 1
+
+**idx_2**  
+Response: https://www.ed.ac.uk/  
+Target: https://www.ed.ac.uk/  
+Analysis: Exact match.  
+Score: 1
+
+**idx_3**  
+Response: https://www.gla.ac.uk/  
+Target: https://gla.ac.uk/  
+Analysis: Difference only by ""www."" prefix, both represent University of Glasgow. Semantically the same.  
+Score: 1
+
+**idx_4**  
+Response: https://www.imperial.ac.uk/  
+Target: https://imperial.ac.uk/  
+Analysis: Difference only by ""www."" prefix, both same entity Imperial College London.  
+Score: 1
+
+**idx_5**  
+Response: https://www.manchester.ac.uk/  
+Target: https://manchester.ac.uk/  
+Analysis: Same entity University of Manchester, difference is ""www."" prefix.  
+Score: 1
+
+**idx_6**  
+Response: https://www.ox.ac.uk/  
+Target: https://ox.ac.uk/  
+Analysis: Same entity University of Oxford, difference is ""www."" prefix.  
+Score: 1
+
+**idx_7**  
+Response: https://warwick.ac.uk/  
+Target: https://warwick.ac.uk/  
+Analysis: Exact match.  
+Score: 1
+
+**idx_8**  
+Response: https://www.york.ac.uk/  
+Target: https://york.ac.uk/  
+Analysis: Same entity University of York, difference is ""www."" prefix.  
+Score: 1
+
+---
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1
+}
+```",https://manchester.ac.uk/,https://www.manchester.ac.uk/,1.0,key_match
+,,universityofoxford,University of Oxford,1.0,"exact match, response: 1, target: 1",1,1,0.0,"exact not match, response: 2, target: 4",4,2,0.0,"exact not match, response: 1249, target: 1096",1096,1249,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- The semantics need to be approximately the same or point to the same entity.  
+- No need for word-for-word match.  
+- If response points to the same entity as the target, score = 1; otherwise, 0.
+
+---
+
+**idx_0**  
+- response: ""universitycouncil""  
+- target: ""boardoftrustees""  
+These are different entities, so no semantic match.  
+**Score: 0**
+
+---
+
+**idx_1**  
+- response: ""cambridgeuniversitycouncil,regenthouse,generalboard""  
+- target: ""theregenthouse""  
+Target entity is ""theregenthouse.""  
+Response includes ""regenthouse"" (part of it) plus additional entities. Since response contains the target entity ""regenthouse,"" it meets the criterion of approximate semantic equivalence or same entity. Extra entities do not invalidate correctness.  
+**Score: 1**
+
+---
+
+**idx_2**  
+- response: ""universitycourt,generalcouncil""  
+- target: ""theuniversitycourt""  
+Target is ""theuniversitycourt."" Response contains ""universitycourt"" plus ""generalcouncil."" Containing the main target entity (""universitycourt"") suffices.  
+**Score: 1**
+
+---
+
+**idx_3**  
+- response: ""universitycourt""  
+- target: ""universitycourt""  
+Exact same entity.  
+**Score: 1**
+
+---
+
+**idx_4**  
+- response: ""council""  
+- target: ""universitycouncil""  
+Response is more general (""council"") compared to target ""universitycouncil."" Is ""council"" sufficient to be considered the same entity? ""Council"" alone is ambiguous and does not clearly indicate ""universitycouncil.""  
+Given the criterion for approximate semantics or pointing to the same entity, ""council"" alone is too broad and not specific enough to match ""universitycouncil.""  
+**Score: 0**
+
+---
+
+**idx_5**  
+- response: ""universityofmanchesterboardofgovernors""  
+- target: ""theboardofgovernors""  
+Response is specific ""university of manchester board of governors,"" target is generic ""board of governors."" Since the response specifies a particular board of governors (likely correct entity), the semantics are close enough pointing to the same entity.  
+**Score: 1**
+
+---
+
+**idx_6**  
+- response: ""universitycouncil,congregation""  
+- target: ""universitycouncil""  
+Response contains the target entity plus extra. This qualifies as correct.  
+**Score: 1**
+
+---
+
+**idx_7**  
+- response: ""council,senate""  
+- target: ""universitycouncil""  
+Response contains ""council"" (too vague) and ""senate."" Since ""council"" alone is not precise enough, and ""senate"" is a different body, the response does not point clearly to ""universitycouncil.""  
+**Score: 0**
+
+---
+
+**idx_8**  
+- response: ""council""  
+- target: ""universitycouncil""  
+Same as idx_4, ""council"" alone is too generic.  
+**Score: 0**
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",universitycouncil,"universitycouncil,congregation",1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same or if they point to the same entity. No need for exact word-for-word correspondence.
+
+---
+
+**idx_0**  
+Response: https://www.bristol.ac.uk/  
+Target: https://bristol.ac.uk/  
+Analysis: Both URLs point to the University of Bristol. The only difference is the ""www."" prefix. Semantically the same entity.  
+Score: 1
+
+**idx_1**  
+Response: https://www.cam.ac.uk/  
+Target: https://www.cam.ac.uk/  
+Analysis: Exact match.  
+Score: 1
+
+**idx_2**  
+Response: https://www.ed.ac.uk/  
+Target: https://www.ed.ac.uk/  
+Analysis: Exact match.  
+Score: 1
+
+**idx_3**  
+Response: https://www.gla.ac.uk/  
+Target: https://gla.ac.uk/  
+Analysis: Difference only by ""www."" prefix, both represent University of Glasgow. Semantically the same.  
+Score: 1
+
+**idx_4**  
+Response: https://www.imperial.ac.uk/  
+Target: https://imperial.ac.uk/  
+Analysis: Difference only by ""www."" prefix, both same entity Imperial College London.  
+Score: 1
+
+**idx_5**  
+Response: https://www.manchester.ac.uk/  
+Target: https://manchester.ac.uk/  
+Analysis: Same entity University of Manchester, difference is ""www."" prefix.  
+Score: 1
+
+**idx_6**  
+Response: https://www.ox.ac.uk/  
+Target: https://ox.ac.uk/  
+Analysis: Same entity University of Oxford, difference is ""www."" prefix.  
+Score: 1
+
+**idx_7**  
+Response: https://warwick.ac.uk/  
+Target: https://warwick.ac.uk/  
+Analysis: Exact match.  
+Score: 1
+
+**idx_8**  
+Response: https://www.york.ac.uk/  
+Target: https://york.ac.uk/  
+Analysis: Same entity University of York, difference is ""www."" prefix.  
+Score: 1
+
+---
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1
+}
+```",https://ox.ac.uk/,https://www.ox.ac.uk/,1.0,key_match
+,,universityofwarwick,University of Warwick,0.0,"exact not match, response: 7, target: 8",8,7,1.0,"exact match, response: 74, target: 74",74,74,1.0,"exact match, response: 1965, target: 1965",1965,1965,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- The semantics need to be approximately the same or point to the same entity.  
+- No need for word-for-word match.  
+- If response points to the same entity as the target, score = 1; otherwise, 0.
+
+---
+
+**idx_0**  
+- response: ""universitycouncil""  
+- target: ""boardoftrustees""  
+These are different entities, so no semantic match.  
+**Score: 0**
+
+---
+
+**idx_1**  
+- response: ""cambridgeuniversitycouncil,regenthouse,generalboard""  
+- target: ""theregenthouse""  
+Target entity is ""theregenthouse.""  
+Response includes ""regenthouse"" (part of it) plus additional entities. Since response contains the target entity ""regenthouse,"" it meets the criterion of approximate semantic equivalence or same entity. Extra entities do not invalidate correctness.  
+**Score: 1**
+
+---
+
+**idx_2**  
+- response: ""universitycourt,generalcouncil""  
+- target: ""theuniversitycourt""  
+Target is ""theuniversitycourt."" Response contains ""universitycourt"" plus ""generalcouncil."" Containing the main target entity (""universitycourt"") suffices.  
+**Score: 1**
+
+---
+
+**idx_3**  
+- response: ""universitycourt""  
+- target: ""universitycourt""  
+Exact same entity.  
+**Score: 1**
+
+---
+
+**idx_4**  
+- response: ""council""  
+- target: ""universitycouncil""  
+Response is more general (""council"") compared to target ""universitycouncil."" Is ""council"" sufficient to be considered the same entity? ""Council"" alone is ambiguous and does not clearly indicate ""universitycouncil.""  
+Given the criterion for approximate semantics or pointing to the same entity, ""council"" alone is too broad and not specific enough to match ""universitycouncil.""  
+**Score: 0**
+
+---
+
+**idx_5**  
+- response: ""universityofmanchesterboardofgovernors""  
+- target: ""theboardofgovernors""  
+Response is specific ""university of manchester board of governors,"" target is generic ""board of governors."" Since the response specifies a particular board of governors (likely correct entity), the semantics are close enough pointing to the same entity.  
+**Score: 1**
+
+---
+
+**idx_6**  
+- response: ""universitycouncil,congregation""  
+- target: ""universitycouncil""  
+Response contains the target entity plus extra. This qualifies as correct.  
+**Score: 1**
+
+---
+
+**idx_7**  
+- response: ""council,senate""  
+- target: ""universitycouncil""  
+Response contains ""council"" (too vague) and ""senate."" Since ""council"" alone is not precise enough, and ""senate"" is a different body, the response does not point clearly to ""universitycouncil.""  
+**Score: 0**
+
+---
+
+**idx_8**  
+- response: ""council""  
+- target: ""universitycouncil""  
+Same as idx_4, ""council"" alone is too generic.  
+**Score: 0**
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",universitycouncil,"council,senate",1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same or if they point to the same entity. No need for exact word-for-word correspondence.
+
+---
+
+**idx_0**  
+Response: https://www.bristol.ac.uk/  
+Target: https://bristol.ac.uk/  
+Analysis: Both URLs point to the University of Bristol. The only difference is the ""www."" prefix. Semantically the same entity.  
+Score: 1
+
+**idx_1**  
+Response: https://www.cam.ac.uk/  
+Target: https://www.cam.ac.uk/  
+Analysis: Exact match.  
+Score: 1
+
+**idx_2**  
+Response: https://www.ed.ac.uk/  
+Target: https://www.ed.ac.uk/  
+Analysis: Exact match.  
+Score: 1
+
+**idx_3**  
+Response: https://www.gla.ac.uk/  
+Target: https://gla.ac.uk/  
+Analysis: Difference only by ""www."" prefix, both represent University of Glasgow. Semantically the same.  
+Score: 1
+
+**idx_4**  
+Response: https://www.imperial.ac.uk/  
+Target: https://imperial.ac.uk/  
+Analysis: Difference only by ""www."" prefix, both same entity Imperial College London.  
+Score: 1
+
+**idx_5**  
+Response: https://www.manchester.ac.uk/  
+Target: https://manchester.ac.uk/  
+Analysis: Same entity University of Manchester, difference is ""www."" prefix.  
+Score: 1
+
+**idx_6**  
+Response: https://www.ox.ac.uk/  
+Target: https://ox.ac.uk/  
+Analysis: Same entity University of Oxford, difference is ""www."" prefix.  
+Score: 1
+
+**idx_7**  
+Response: https://warwick.ac.uk/  
+Target: https://warwick.ac.uk/  
+Analysis: Exact match.  
+Score: 1
+
+**idx_8**  
+Response: https://www.york.ac.uk/  
+Target: https://york.ac.uk/  
+Analysis: Same entity University of York, difference is ""www."" prefix.  
+Score: 1
+
+---
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1
+}
+```",https://warwick.ac.uk/,https://warwick.ac.uk/,1.0,key_match
+,,universityofyork,University of York,0.0,"exact not match, response: 36, target: 25",25,36,1.0,"exact match, response: 169, target: 169",169,169,1.0,"exact match, response: 1963, target: 1963",1963,1963,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- The semantics need to be approximately the same or point to the same entity.  
+- No need for word-for-word match.  
+- If response points to the same entity as the target, score = 1; otherwise, 0.
+
+---
+
+**idx_0**  
+- response: ""universitycouncil""  
+- target: ""boardoftrustees""  
+These are different entities, so no semantic match.  
+**Score: 0**
+
+---
+
+**idx_1**  
+- response: ""cambridgeuniversitycouncil,regenthouse,generalboard""  
+- target: ""theregenthouse""  
+Target entity is ""theregenthouse.""  
+Response includes ""regenthouse"" (part of it) plus additional entities. Since response contains the target entity ""regenthouse,"" it meets the criterion of approximate semantic equivalence or same entity. Extra entities do not invalidate correctness.  
+**Score: 1**
+
+---
+
+**idx_2**  
+- response: ""universitycourt,generalcouncil""  
+- target: ""theuniversitycourt""  
+Target is ""theuniversitycourt."" Response contains ""universitycourt"" plus ""generalcouncil."" Containing the main target entity (""universitycourt"") suffices.  
+**Score: 1**
+
+---
+
+**idx_3**  
+- response: ""universitycourt""  
+- target: ""universitycourt""  
+Exact same entity.  
+**Score: 1**
+
+---
+
+**idx_4**  
+- response: ""council""  
+- target: ""universitycouncil""  
+Response is more general (""council"") compared to target ""universitycouncil."" Is ""council"" sufficient to be considered the same entity? ""Council"" alone is ambiguous and does not clearly indicate ""universitycouncil.""  
+Given the criterion for approximate semantics or pointing to the same entity, ""council"" alone is too broad and not specific enough to match ""universitycouncil.""  
+**Score: 0**
+
+---
+
+**idx_5**  
+- response: ""universityofmanchesterboardofgovernors""  
+- target: ""theboardofgovernors""  
+Response is specific ""university of manchester board of governors,"" target is generic ""board of governors."" Since the response specifies a particular board of governors (likely correct entity), the semantics are close enough pointing to the same entity.  
+**Score: 1**
+
+---
+
+**idx_6**  
+- response: ""universitycouncil,congregation""  
+- target: ""universitycouncil""  
+Response contains the target entity plus extra. This qualifies as correct.  
+**Score: 1**
+
+---
+
+**idx_7**  
+- response: ""council,senate""  
+- target: ""universitycouncil""  
+Response contains ""council"" (too vague) and ""senate."" Since ""council"" alone is not precise enough, and ""senate"" is a different body, the response does not point clearly to ""universitycouncil.""  
+**Score: 0**
+
+---
+
+**idx_8**  
+- response: ""council""  
+- target: ""universitycouncil""  
+Same as idx_4, ""council"" alone is too generic.  
+**Score: 0**
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",universitycouncil,council,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same or if they point to the same entity. No need for exact word-for-word correspondence.
+
+---
+
+**idx_0**  
+Response: https://www.bristol.ac.uk/  
+Target: https://bristol.ac.uk/  
+Analysis: Both URLs point to the University of Bristol. The only difference is the ""www."" prefix. Semantically the same entity.  
+Score: 1
+
+**idx_1**  
+Response: https://www.cam.ac.uk/  
+Target: https://www.cam.ac.uk/  
+Analysis: Exact match.  
+Score: 1
+
+**idx_2**  
+Response: https://www.ed.ac.uk/  
+Target: https://www.ed.ac.uk/  
+Analysis: Exact match.  
+Score: 1
+
+**idx_3**  
+Response: https://www.gla.ac.uk/  
+Target: https://gla.ac.uk/  
+Analysis: Difference only by ""www."" prefix, both represent University of Glasgow. Semantically the same.  
+Score: 1
+
+**idx_4**  
+Response: https://www.imperial.ac.uk/  
+Target: https://imperial.ac.uk/  
+Analysis: Difference only by ""www."" prefix, both same entity Imperial College London.  
+Score: 1
+
+**idx_5**  
+Response: https://www.manchester.ac.uk/  
+Target: https://manchester.ac.uk/  
+Analysis: Same entity University of Manchester, difference is ""www."" prefix.  
+Score: 1
+
+**idx_6**  
+Response: https://www.ox.ac.uk/  
+Target: https://ox.ac.uk/  
+Analysis: Same entity University of Oxford, difference is ""www."" prefix.  
+Score: 1
+
+**idx_7**  
+Response: https://warwick.ac.uk/  
+Target: https://warwick.ac.uk/  
+Analysis: Exact match.  
+Score: 1
+
+**idx_8**  
+Response: https://www.york.ac.uk/  
+Target: https://york.ac.uk/  
+Analysis: Same entity University of York, difference is ""www."" prefix.  
+Score: 1
+
+---
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1
+}
+```",https://york.ac.uk/,https://www.york.ac.uk/,1.0,key_match
+1.0,,cardiffuniversity,,,,46,,,,181,,,,1883,,,,universitycouncil,,,,https://www.cardiff.ac.uk/,,,
+1.0,,durhamuniversity,,,,6,,,,94,,,,1832,,,,universitycouncil,,,,https://dur.ac.uk/,,,
+1.0,,king'scollegelondon,,,,28,,,,31,,,,1829,,,,universitycouncil,,,,https://kcl.ac.uk/,,,
+1.0,,newcastleuniversity,,,,63,,,,137,,,,1834,,,,universitycouncil,,,,https://ncl.ac.uk/,,,
+1.0,,queen'suniversitybelfast,,,,43,,,,199,,,,1845,,,,"universitysenate,(universitycommittee)",,,,https://qub.ac.uk/,,,
+1.0,,queenmaryuniversityoflondon,,,,74,,,,110,,,,1887,,,,universitycouncil,,,,https://qmul.ac.uk/,,,
+1.0,,thelondonschoolofeconomicsandpoliticalscience,,,,4,,,,56,,,,1895,,,,universitycouncil,,,,https://lse.ac.uk/,,,
+1.0,,universitycollegelondon,,,,9,,,,9,,,,1826,,,,universitycouncil,,,,https://ucl.ac.uk/,,,
+1.0,,universityofbirmingham,,,,36,,,,76,,,,1900,,,,universitycouncil,,,,https://www.birmingham.ac.uk/,,,
+1.0,,universityofexeter,,,,18,,,,155,,,,1955,,,,universitycouncil,,,,https://www.exeter.ac.uk/,,,
+1.0,,universityofleeds,,,,37,,,,86,,,,1904,,,,universitycouncil,,,,https://leeds.ac.uk/,,,
+1.0,,universityofliverpool,,,,27,,,,147,,,,1903,,,,universitycouncil,,,,https://liverpool.ac.uk/,,,
+1.0,,universityofnottingham,,,,62,,,,97,,,,1948,,,,universitycouncil,,,,https://nottingham.ac.uk/,,,
+1.0,,universityofsheffield,,,,20,,,,92,,,,1905,,,,universitycouncil,,,,https://sheffield.ac.uk/,,,
+1.0,,universityofsouthampton,,,,22,,,,87,,,,1952,,,,universitycouncil,,,,https://southampton.ac.uk/,,,

@@ -1,0 +1,984 @@
+exist_flag_gt,exist_flag_response,电影名称,电影名称_before_map,上映年份_llm_judge,上映年份_llm_judge_eval_msg,上映年份_query,上映年份_response,导演_llm_judge,导演_llm_judge_eval_msg,导演_query,导演_response,梁朝伟通过该电影所获奖项_llm_judge,梁朝伟通过该电影所获奖项_llm_judge_eval_msg,梁朝伟通过该电影所获奖项_query,梁朝伟通过该电影所获奖项_response,电影名称_exact_match,电影名称_exact_match_eval_msg
+,,花样年华,花樣年華,1.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(Meaning roughly the same or referring to the same entity is sufficient, exact wording is not necessary.)
+
+---
+
+**idx_0**  
+- Response: ""2000""  
+- Target: ""2000年""  
+- Analysis: ""2000"" and ""2000年"" refer to the same year. The difference is just the presence of ""年"" (year) suffix, which does not affect the meaning.  
+- Score: 1
+
+**idx_1**  
+- Response: ""2000""  
+- Target: ""2004年""  
+- Analysis: The response ""2000"" points to a different year than ""2004年"". They do not refer to the same entity or meaning here.  
+- Score: 0
+
+**idx_2**  
+- Response: ""2007""  
+- Target: ""2007年""  
+- Analysis: Same as idx_0. The response is just missing “年” but refers to the same year.  
+- Score: 1
+
+**idx_3**  
+- Response: ""2008""  
+- Target: ""2008年""  
+- Analysis: Same reasoning as above.  
+- Score: 1
+
+**idx_4**  
+- Response: ""2013""  
+- Target: ""2013年""  
+- Analysis: Same reasoning as above.  
+- Score: 1
+
+**idx_5**  
+- Response: ""2023""  
+- Target: ""2023年""  
+- Analysis: Same reasoning as above.  
+- Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1
+}
+```",2000年,2000,0.0,"Let's analyze each idx according to the grading criterion:
+
+Criterion: The response should have the same or roughly the same meaning, or should point to the same entity as the target answer; it does not have to be exactly the same characters.
+
+Given the target and response entities are all proper names of directors presumably, the requirement boils down to whether the response matches the target named entity.
+
+---
+
+**idx_0**  
+- Response: 李安 (Ang Lee)  
+- Target: 王家卫 (Wong Kar-wai)  
+- Are they the same entity? No. Different directors.  
+- Score: 0
+
+**idx_1**  
+- Response: 吴宇森 (John Woo)  
+- Target: 王家卫 (Wong Kar-wai)  
+- Different entities.  
+- Score: 0
+
+**idx_2**  
+- Response: 张艺谋 (Zhang Yimou)  
+- Target: 李安 (Ang Lee)  
+- Different entities.  
+- Score: 0
+
+**idx_3**  
+- Response: 李安 (Ang Lee)  
+- Target: 吴宇森 (John Woo)  
+- Different entities.  
+- Score: 0
+
+**idx_4**  
+- Response: 吴宇森 (John Woo)  
+- Target: 王家卫 (Wong Kar-wai)  
+- Different entities.  
+- Score: 0
+
+**idx_5**  
+- Response: 李芳芳 (Li Fangfang)  
+- Target: 程耳 (Cheng Er)  
+- Different entities.  
+- Score: 0
+
+---
+
+None of the responses match their targets, so all scores are 0.
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0
+}
+```",王家卫,李安,1.0,"首先阅读每一对的target（参考答案）和response（回答），根据评分标准判断语义是否大致相同、所指实体是否一致，只要满足这一原则即判为1，否则为0。
+
+---
+
+**idx_0**  
+- target: 包含“三个奖项”：第53届戛纳国际电影节最佳男演员、第20届香港电影金像奖最佳男主角、第1届华语电影传媒大奖最佳男主角  
+- response: 只有“坎城影展·最佳男演員”  
+- 分析：response中的“坎城影展”即“戛纳国际电影节”，对应target的第53届戛纳国际电影节最佳男演员，语义一致且指向实体相符，尽管response只提到了一个奖项，criterion没有要求全面提及，只要指向实体一致即可。故判为1。
+
+**idx_1**  
+- target: “第24届香港电影金像奖最佳男主角”  
+- response: “-” （无回答）  
+- 分析：response未回答，无法匹配，语义不一致，判为0。
+
+**idx_2**  
+- target: 两个奖项：“第44届台湾电影金马奖最佳男演员”“第2届亚洲电影大奖最佳男演员”  
+- response: “香港電影金像奖·最佳男主角”  
+- 分析：response奖项与target均不同实体（香港电影金像奖 vs 台湾电影金马奖、亚洲电影大奖），语义和实体均不一致，判为0。
+
+**idx_3**  
+- target: “-” （无内容）  
+- response: “-” （无内容）  
+- 分析：两者均无回答，语义相同（均为空），判为1。
+
+**idx_4**  
+- target: “香港导演协会奖最佳男主角”  
+- response: “-” 空回答  
+- 分析：response无回答，与target奖项不符，判为0。
+
+**idx_5**  
+- target: “第36届中国电影金鸡奖最佳男主角”  
+- response: “中国电影金鸡奖·最佳男主角”  
+- 分析：response和target均指向“中国电影金鸡奖最佳男主角”，只是response未写明届数，但根据criterion，部分信息缺失无影响，只要指向一致即可，判为1。
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 1
+}
+```","第53届戛纳国际电影节最佳男演员
+第20届香港电影金像奖最佳男主角
+第1届华语电影传媒大奖最佳男主角",坎城影展·最佳男演員,1.0,key_match
+,,2046,2046,0.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(Meaning roughly the same or referring to the same entity is sufficient, exact wording is not necessary.)
+
+---
+
+**idx_0**  
+- Response: ""2000""  
+- Target: ""2000年""  
+- Analysis: ""2000"" and ""2000年"" refer to the same year. The difference is just the presence of ""年"" (year) suffix, which does not affect the meaning.  
+- Score: 1
+
+**idx_1**  
+- Response: ""2000""  
+- Target: ""2004年""  
+- Analysis: The response ""2000"" points to a different year than ""2004年"". They do not refer to the same entity or meaning here.  
+- Score: 0
+
+**idx_2**  
+- Response: ""2007""  
+- Target: ""2007年""  
+- Analysis: Same as idx_0. The response is just missing “年” but refers to the same year.  
+- Score: 1
+
+**idx_3**  
+- Response: ""2008""  
+- Target: ""2008年""  
+- Analysis: Same reasoning as above.  
+- Score: 1
+
+**idx_4**  
+- Response: ""2013""  
+- Target: ""2013年""  
+- Analysis: Same reasoning as above.  
+- Score: 1
+
+**idx_5**  
+- Response: ""2023""  
+- Target: ""2023年""  
+- Analysis: Same reasoning as above.  
+- Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1
+}
+```",2004年,2000,0.0,"Let's analyze each idx according to the grading criterion:
+
+Criterion: The response should have the same or roughly the same meaning, or should point to the same entity as the target answer; it does not have to be exactly the same characters.
+
+Given the target and response entities are all proper names of directors presumably, the requirement boils down to whether the response matches the target named entity.
+
+---
+
+**idx_0**  
+- Response: 李安 (Ang Lee)  
+- Target: 王家卫 (Wong Kar-wai)  
+- Are they the same entity? No. Different directors.  
+- Score: 0
+
+**idx_1**  
+- Response: 吴宇森 (John Woo)  
+- Target: 王家卫 (Wong Kar-wai)  
+- Different entities.  
+- Score: 0
+
+**idx_2**  
+- Response: 张艺谋 (Zhang Yimou)  
+- Target: 李安 (Ang Lee)  
+- Different entities.  
+- Score: 0
+
+**idx_3**  
+- Response: 李安 (Ang Lee)  
+- Target: 吴宇森 (John Woo)  
+- Different entities.  
+- Score: 0
+
+**idx_4**  
+- Response: 吴宇森 (John Woo)  
+- Target: 王家卫 (Wong Kar-wai)  
+- Different entities.  
+- Score: 0
+
+**idx_5**  
+- Response: 李芳芳 (Li Fangfang)  
+- Target: 程耳 (Cheng Er)  
+- Different entities.  
+- Score: 0
+
+---
+
+None of the responses match their targets, so all scores are 0.
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0
+}
+```",王家卫,吴宇森,0.0,"首先阅读每一对的target（参考答案）和response（回答），根据评分标准判断语义是否大致相同、所指实体是否一致，只要满足这一原则即判为1，否则为0。
+
+---
+
+**idx_0**  
+- target: 包含“三个奖项”：第53届戛纳国际电影节最佳男演员、第20届香港电影金像奖最佳男主角、第1届华语电影传媒大奖最佳男主角  
+- response: 只有“坎城影展·最佳男演員”  
+- 分析：response中的“坎城影展”即“戛纳国际电影节”，对应target的第53届戛纳国际电影节最佳男演员，语义一致且指向实体相符，尽管response只提到了一个奖项，criterion没有要求全面提及，只要指向实体一致即可。故判为1。
+
+**idx_1**  
+- target: “第24届香港电影金像奖最佳男主角”  
+- response: “-” （无回答）  
+- 分析：response未回答，无法匹配，语义不一致，判为0。
+
+**idx_2**  
+- target: 两个奖项：“第44届台湾电影金马奖最佳男演员”“第2届亚洲电影大奖最佳男演员”  
+- response: “香港電影金像奖·最佳男主角”  
+- 分析：response奖项与target均不同实体（香港电影金像奖 vs 台湾电影金马奖、亚洲电影大奖），语义和实体均不一致，判为0。
+
+**idx_3**  
+- target: “-” （无内容）  
+- response: “-” （无内容）  
+- 分析：两者均无回答，语义相同（均为空），判为1。
+
+**idx_4**  
+- target: “香港导演协会奖最佳男主角”  
+- response: “-” 空回答  
+- 分析：response无回答，与target奖项不符，判为0。
+
+**idx_5**  
+- target: “第36届中国电影金鸡奖最佳男主角”  
+- response: “中国电影金鸡奖·最佳男主角”  
+- 分析：response和target均指向“中国电影金鸡奖最佳男主角”，只是response未写明届数，但根据criterion，部分信息缺失无影响，只要指向一致即可，判为1。
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 1
+}
+```",第24届香港电影金像奖最佳男主角,-,1.0,key_match
+,,色·戒,色·戒,1.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(Meaning roughly the same or referring to the same entity is sufficient, exact wording is not necessary.)
+
+---
+
+**idx_0**  
+- Response: ""2000""  
+- Target: ""2000年""  
+- Analysis: ""2000"" and ""2000年"" refer to the same year. The difference is just the presence of ""年"" (year) suffix, which does not affect the meaning.  
+- Score: 1
+
+**idx_1**  
+- Response: ""2000""  
+- Target: ""2004年""  
+- Analysis: The response ""2000"" points to a different year than ""2004年"". They do not refer to the same entity or meaning here.  
+- Score: 0
+
+**idx_2**  
+- Response: ""2007""  
+- Target: ""2007年""  
+- Analysis: Same as idx_0. The response is just missing “年” but refers to the same year.  
+- Score: 1
+
+**idx_3**  
+- Response: ""2008""  
+- Target: ""2008年""  
+- Analysis: Same reasoning as above.  
+- Score: 1
+
+**idx_4**  
+- Response: ""2013""  
+- Target: ""2013年""  
+- Analysis: Same reasoning as above.  
+- Score: 1
+
+**idx_5**  
+- Response: ""2023""  
+- Target: ""2023年""  
+- Analysis: Same reasoning as above.  
+- Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1
+}
+```",2007年,2007,0.0,"Let's analyze each idx according to the grading criterion:
+
+Criterion: The response should have the same or roughly the same meaning, or should point to the same entity as the target answer; it does not have to be exactly the same characters.
+
+Given the target and response entities are all proper names of directors presumably, the requirement boils down to whether the response matches the target named entity.
+
+---
+
+**idx_0**  
+- Response: 李安 (Ang Lee)  
+- Target: 王家卫 (Wong Kar-wai)  
+- Are they the same entity? No. Different directors.  
+- Score: 0
+
+**idx_1**  
+- Response: 吴宇森 (John Woo)  
+- Target: 王家卫 (Wong Kar-wai)  
+- Different entities.  
+- Score: 0
+
+**idx_2**  
+- Response: 张艺谋 (Zhang Yimou)  
+- Target: 李安 (Ang Lee)  
+- Different entities.  
+- Score: 0
+
+**idx_3**  
+- Response: 李安 (Ang Lee)  
+- Target: 吴宇森 (John Woo)  
+- Different entities.  
+- Score: 0
+
+**idx_4**  
+- Response: 吴宇森 (John Woo)  
+- Target: 王家卫 (Wong Kar-wai)  
+- Different entities.  
+- Score: 0
+
+**idx_5**  
+- Response: 李芳芳 (Li Fangfang)  
+- Target: 程耳 (Cheng Er)  
+- Different entities.  
+- Score: 0
+
+---
+
+None of the responses match their targets, so all scores are 0.
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0
+}
+```",李安,张艺谋,0.0,"首先阅读每一对的target（参考答案）和response（回答），根据评分标准判断语义是否大致相同、所指实体是否一致，只要满足这一原则即判为1，否则为0。
+
+---
+
+**idx_0**  
+- target: 包含“三个奖项”：第53届戛纳国际电影节最佳男演员、第20届香港电影金像奖最佳男主角、第1届华语电影传媒大奖最佳男主角  
+- response: 只有“坎城影展·最佳男演員”  
+- 分析：response中的“坎城影展”即“戛纳国际电影节”，对应target的第53届戛纳国际电影节最佳男演员，语义一致且指向实体相符，尽管response只提到了一个奖项，criterion没有要求全面提及，只要指向实体一致即可。故判为1。
+
+**idx_1**  
+- target: “第24届香港电影金像奖最佳男主角”  
+- response: “-” （无回答）  
+- 分析：response未回答，无法匹配，语义不一致，判为0。
+
+**idx_2**  
+- target: 两个奖项：“第44届台湾电影金马奖最佳男演员”“第2届亚洲电影大奖最佳男演员”  
+- response: “香港電影金像奖·最佳男主角”  
+- 分析：response奖项与target均不同实体（香港电影金像奖 vs 台湾电影金马奖、亚洲电影大奖），语义和实体均不一致，判为0。
+
+**idx_3**  
+- target: “-” （无内容）  
+- response: “-” （无内容）  
+- 分析：两者均无回答，语义相同（均为空），判为1。
+
+**idx_4**  
+- target: “香港导演协会奖最佳男主角”  
+- response: “-” 空回答  
+- 分析：response无回答，与target奖项不符，判为0。
+
+**idx_5**  
+- target: “第36届中国电影金鸡奖最佳男主角”  
+- response: “中国电影金鸡奖·最佳男主角”  
+- 分析：response和target均指向“中国电影金鸡奖最佳男主角”，只是response未写明届数，但根据criterion，部分信息缺失无影响，只要指向一致即可，判为1。
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 1
+}
+```","第44届台湾电影金马奖最佳男演员
+第2届亚洲电影大奖最佳男演员",香港電影金像奖·最佳男主角,1.0,key_match
+,,赤壁（上）,赤壁,1.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(Meaning roughly the same or referring to the same entity is sufficient, exact wording is not necessary.)
+
+---
+
+**idx_0**  
+- Response: ""2000""  
+- Target: ""2000年""  
+- Analysis: ""2000"" and ""2000年"" refer to the same year. The difference is just the presence of ""年"" (year) suffix, which does not affect the meaning.  
+- Score: 1
+
+**idx_1**  
+- Response: ""2000""  
+- Target: ""2004年""  
+- Analysis: The response ""2000"" points to a different year than ""2004年"". They do not refer to the same entity or meaning here.  
+- Score: 0
+
+**idx_2**  
+- Response: ""2007""  
+- Target: ""2007年""  
+- Analysis: Same as idx_0. The response is just missing “年” but refers to the same year.  
+- Score: 1
+
+**idx_3**  
+- Response: ""2008""  
+- Target: ""2008年""  
+- Analysis: Same reasoning as above.  
+- Score: 1
+
+**idx_4**  
+- Response: ""2013""  
+- Target: ""2013年""  
+- Analysis: Same reasoning as above.  
+- Score: 1
+
+**idx_5**  
+- Response: ""2023""  
+- Target: ""2023年""  
+- Analysis: Same reasoning as above.  
+- Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1
+}
+```",2008年,2008,0.0,"Let's analyze each idx according to the grading criterion:
+
+Criterion: The response should have the same or roughly the same meaning, or should point to the same entity as the target answer; it does not have to be exactly the same characters.
+
+Given the target and response entities are all proper names of directors presumably, the requirement boils down to whether the response matches the target named entity.
+
+---
+
+**idx_0**  
+- Response: 李安 (Ang Lee)  
+- Target: 王家卫 (Wong Kar-wai)  
+- Are they the same entity? No. Different directors.  
+- Score: 0
+
+**idx_1**  
+- Response: 吴宇森 (John Woo)  
+- Target: 王家卫 (Wong Kar-wai)  
+- Different entities.  
+- Score: 0
+
+**idx_2**  
+- Response: 张艺谋 (Zhang Yimou)  
+- Target: 李安 (Ang Lee)  
+- Different entities.  
+- Score: 0
+
+**idx_3**  
+- Response: 李安 (Ang Lee)  
+- Target: 吴宇森 (John Woo)  
+- Different entities.  
+- Score: 0
+
+**idx_4**  
+- Response: 吴宇森 (John Woo)  
+- Target: 王家卫 (Wong Kar-wai)  
+- Different entities.  
+- Score: 0
+
+**idx_5**  
+- Response: 李芳芳 (Li Fangfang)  
+- Target: 程耳 (Cheng Er)  
+- Different entities.  
+- Score: 0
+
+---
+
+None of the responses match their targets, so all scores are 0.
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0
+}
+```",吴宇森,李安,1.0,"首先阅读每一对的target（参考答案）和response（回答），根据评分标准判断语义是否大致相同、所指实体是否一致，只要满足这一原则即判为1，否则为0。
+
+---
+
+**idx_0**  
+- target: 包含“三个奖项”：第53届戛纳国际电影节最佳男演员、第20届香港电影金像奖最佳男主角、第1届华语电影传媒大奖最佳男主角  
+- response: 只有“坎城影展·最佳男演員”  
+- 分析：response中的“坎城影展”即“戛纳国际电影节”，对应target的第53届戛纳国际电影节最佳男演员，语义一致且指向实体相符，尽管response只提到了一个奖项，criterion没有要求全面提及，只要指向实体一致即可。故判为1。
+
+**idx_1**  
+- target: “第24届香港电影金像奖最佳男主角”  
+- response: “-” （无回答）  
+- 分析：response未回答，无法匹配，语义不一致，判为0。
+
+**idx_2**  
+- target: 两个奖项：“第44届台湾电影金马奖最佳男演员”“第2届亚洲电影大奖最佳男演员”  
+- response: “香港電影金像奖·最佳男主角”  
+- 分析：response奖项与target均不同实体（香港电影金像奖 vs 台湾电影金马奖、亚洲电影大奖），语义和实体均不一致，判为0。
+
+**idx_3**  
+- target: “-” （无内容）  
+- response: “-” （无内容）  
+- 分析：两者均无回答，语义相同（均为空），判为1。
+
+**idx_4**  
+- target: “香港导演协会奖最佳男主角”  
+- response: “-” 空回答  
+- 分析：response无回答，与target奖项不符，判为0。
+
+**idx_5**  
+- target: “第36届中国电影金鸡奖最佳男主角”  
+- response: “中国电影金鸡奖·最佳男主角”  
+- 分析：response和target均指向“中国电影金鸡奖最佳男主角”，只是response未写明届数，但根据criterion，部分信息缺失无影响，只要指向一致即可，判为1。
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 1
+}
+```",-,-,1.0,key_match
+,,一代宗师,一代宗师,1.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(Meaning roughly the same or referring to the same entity is sufficient, exact wording is not necessary.)
+
+---
+
+**idx_0**  
+- Response: ""2000""  
+- Target: ""2000年""  
+- Analysis: ""2000"" and ""2000年"" refer to the same year. The difference is just the presence of ""年"" (year) suffix, which does not affect the meaning.  
+- Score: 1
+
+**idx_1**  
+- Response: ""2000""  
+- Target: ""2004年""  
+- Analysis: The response ""2000"" points to a different year than ""2004年"". They do not refer to the same entity or meaning here.  
+- Score: 0
+
+**idx_2**  
+- Response: ""2007""  
+- Target: ""2007年""  
+- Analysis: Same as idx_0. The response is just missing “年” but refers to the same year.  
+- Score: 1
+
+**idx_3**  
+- Response: ""2008""  
+- Target: ""2008年""  
+- Analysis: Same reasoning as above.  
+- Score: 1
+
+**idx_4**  
+- Response: ""2013""  
+- Target: ""2013年""  
+- Analysis: Same reasoning as above.  
+- Score: 1
+
+**idx_5**  
+- Response: ""2023""  
+- Target: ""2023年""  
+- Analysis: Same reasoning as above.  
+- Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1
+}
+```",2013年,2013,0.0,"Let's analyze each idx according to the grading criterion:
+
+Criterion: The response should have the same or roughly the same meaning, or should point to the same entity as the target answer; it does not have to be exactly the same characters.
+
+Given the target and response entities are all proper names of directors presumably, the requirement boils down to whether the response matches the target named entity.
+
+---
+
+**idx_0**  
+- Response: 李安 (Ang Lee)  
+- Target: 王家卫 (Wong Kar-wai)  
+- Are they the same entity? No. Different directors.  
+- Score: 0
+
+**idx_1**  
+- Response: 吴宇森 (John Woo)  
+- Target: 王家卫 (Wong Kar-wai)  
+- Different entities.  
+- Score: 0
+
+**idx_2**  
+- Response: 张艺谋 (Zhang Yimou)  
+- Target: 李安 (Ang Lee)  
+- Different entities.  
+- Score: 0
+
+**idx_3**  
+- Response: 李安 (Ang Lee)  
+- Target: 吴宇森 (John Woo)  
+- Different entities.  
+- Score: 0
+
+**idx_4**  
+- Response: 吴宇森 (John Woo)  
+- Target: 王家卫 (Wong Kar-wai)  
+- Different entities.  
+- Score: 0
+
+**idx_5**  
+- Response: 李芳芳 (Li Fangfang)  
+- Target: 程耳 (Cheng Er)  
+- Different entities.  
+- Score: 0
+
+---
+
+None of the responses match their targets, so all scores are 0.
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0
+}
+```",王家卫,吴宇森,0.0,"首先阅读每一对的target（参考答案）和response（回答），根据评分标准判断语义是否大致相同、所指实体是否一致，只要满足这一原则即判为1，否则为0。
+
+---
+
+**idx_0**  
+- target: 包含“三个奖项”：第53届戛纳国际电影节最佳男演员、第20届香港电影金像奖最佳男主角、第1届华语电影传媒大奖最佳男主角  
+- response: 只有“坎城影展·最佳男演員”  
+- 分析：response中的“坎城影展”即“戛纳国际电影节”，对应target的第53届戛纳国际电影节最佳男演员，语义一致且指向实体相符，尽管response只提到了一个奖项，criterion没有要求全面提及，只要指向实体一致即可。故判为1。
+
+**idx_1**  
+- target: “第24届香港电影金像奖最佳男主角”  
+- response: “-” （无回答）  
+- 分析：response未回答，无法匹配，语义不一致，判为0。
+
+**idx_2**  
+- target: 两个奖项：“第44届台湾电影金马奖最佳男演员”“第2届亚洲电影大奖最佳男演员”  
+- response: “香港電影金像奖·最佳男主角”  
+- 分析：response奖项与target均不同实体（香港电影金像奖 vs 台湾电影金马奖、亚洲电影大奖），语义和实体均不一致，判为0。
+
+**idx_3**  
+- target: “-” （无内容）  
+- response: “-” （无内容）  
+- 分析：两者均无回答，语义相同（均为空），判为1。
+
+**idx_4**  
+- target: “香港导演协会奖最佳男主角”  
+- response: “-” 空回答  
+- 分析：response无回答，与target奖项不符，判为0。
+
+**idx_5**  
+- target: “第36届中国电影金鸡奖最佳男主角”  
+- response: “中国电影金鸡奖·最佳男主角”  
+- 分析：response和target均指向“中国电影金鸡奖最佳男主角”，只是response未写明届数，但根据criterion，部分信息缺失无影响，只要指向一致即可，判为1。
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 1
+}
+```",香港导演协会奖最佳男主角,-,1.0,key_match
+,,无名,无名,1.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(Meaning roughly the same or referring to the same entity is sufficient, exact wording is not necessary.)
+
+---
+
+**idx_0**  
+- Response: ""2000""  
+- Target: ""2000年""  
+- Analysis: ""2000"" and ""2000年"" refer to the same year. The difference is just the presence of ""年"" (year) suffix, which does not affect the meaning.  
+- Score: 1
+
+**idx_1**  
+- Response: ""2000""  
+- Target: ""2004年""  
+- Analysis: The response ""2000"" points to a different year than ""2004年"". They do not refer to the same entity or meaning here.  
+- Score: 0
+
+**idx_2**  
+- Response: ""2007""  
+- Target: ""2007年""  
+- Analysis: Same as idx_0. The response is just missing “年” but refers to the same year.  
+- Score: 1
+
+**idx_3**  
+- Response: ""2008""  
+- Target: ""2008年""  
+- Analysis: Same reasoning as above.  
+- Score: 1
+
+**idx_4**  
+- Response: ""2013""  
+- Target: ""2013年""  
+- Analysis: Same reasoning as above.  
+- Score: 1
+
+**idx_5**  
+- Response: ""2023""  
+- Target: ""2023年""  
+- Analysis: Same reasoning as above.  
+- Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1
+}
+```",2023年,2023,0.0,"Let's analyze each idx according to the grading criterion:
+
+Criterion: The response should have the same or roughly the same meaning, or should point to the same entity as the target answer; it does not have to be exactly the same characters.
+
+Given the target and response entities are all proper names of directors presumably, the requirement boils down to whether the response matches the target named entity.
+
+---
+
+**idx_0**  
+- Response: 李安 (Ang Lee)  
+- Target: 王家卫 (Wong Kar-wai)  
+- Are they the same entity? No. Different directors.  
+- Score: 0
+
+**idx_1**  
+- Response: 吴宇森 (John Woo)  
+- Target: 王家卫 (Wong Kar-wai)  
+- Different entities.  
+- Score: 0
+
+**idx_2**  
+- Response: 张艺谋 (Zhang Yimou)  
+- Target: 李安 (Ang Lee)  
+- Different entities.  
+- Score: 0
+
+**idx_3**  
+- Response: 李安 (Ang Lee)  
+- Target: 吴宇森 (John Woo)  
+- Different entities.  
+- Score: 0
+
+**idx_4**  
+- Response: 吴宇森 (John Woo)  
+- Target: 王家卫 (Wong Kar-wai)  
+- Different entities.  
+- Score: 0
+
+**idx_5**  
+- Response: 李芳芳 (Li Fangfang)  
+- Target: 程耳 (Cheng Er)  
+- Different entities.  
+- Score: 0
+
+---
+
+None of the responses match their targets, so all scores are 0.
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0
+}
+```",程耳,李芳芳,1.0,"首先阅读每一对的target（参考答案）和response（回答），根据评分标准判断语义是否大致相同、所指实体是否一致，只要满足这一原则即判为1，否则为0。
+
+---
+
+**idx_0**  
+- target: 包含“三个奖项”：第53届戛纳国际电影节最佳男演员、第20届香港电影金像奖最佳男主角、第1届华语电影传媒大奖最佳男主角  
+- response: 只有“坎城影展·最佳男演員”  
+- 分析：response中的“坎城影展”即“戛纳国际电影节”，对应target的第53届戛纳国际电影节最佳男演员，语义一致且指向实体相符，尽管response只提到了一个奖项，criterion没有要求全面提及，只要指向实体一致即可。故判为1。
+
+**idx_1**  
+- target: “第24届香港电影金像奖最佳男主角”  
+- response: “-” （无回答）  
+- 分析：response未回答，无法匹配，语义不一致，判为0。
+
+**idx_2**  
+- target: 两个奖项：“第44届台湾电影金马奖最佳男演员”“第2届亚洲电影大奖最佳男演员”  
+- response: “香港電影金像奖·最佳男主角”  
+- 分析：response奖项与target均不同实体（香港电影金像奖 vs 台湾电影金马奖、亚洲电影大奖），语义和实体均不一致，判为0。
+
+**idx_3**  
+- target: “-” （无内容）  
+- response: “-” （无内容）  
+- 分析：两者均无回答，语义相同（均为空），判为1。
+
+**idx_4**  
+- target: “香港导演协会奖最佳男主角”  
+- response: “-” 空回答  
+- 分析：response无回答，与target奖项不符，判为0。
+
+**idx_5**  
+- target: “第36届中国电影金鸡奖最佳男主角”  
+- response: “中国电影金鸡奖·最佳男主角”  
+- 分析：response和target均指向“中国电影金鸡奖最佳男主角”，只是response未写明届数，但根据criterion，部分信息缺失无影响，只要指向一致即可，判为1。
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 1
+}
+```",第36届中国电影金鸡奖最佳男主角,中国电影金鸡奖·最佳男主角,1.0,key_match
+1.0,,东京攻略,,,,2000年,,,,马楚成,,,,-,,,
+1.0,,伤城,,,,2006年,,,,刘伟强、麦兆辉,,,,-,,,
+1.0,,侠骨仁心,,,,2000年,,,,邓特希,,,,-,,,
+1.0,,同居蜜友,,,,2001年,,,,马伟豪,,,,-,,,
+1.0,,听风者,,,,2012年,,,,麦兆辉、庄文强,,,,-,,,
+1.0,,嘿玛嘿玛,,,,2016年,,,,宗萨钦哲仁波切,,,,-,,,
+1.0,,地下铁,,,,2003年,,,,马伟豪,,,,第4届华语电影传媒大奖港台最佳男演员银奖,,,
+1.0,,大魔术师,,,,2011年,,,,尔冬升,,,,-,,,
+1.0,,天下无双,,,,2002年,,,,刘镇伟,,,,-,,,
+1.0,,尚气与十环传奇,,,,2021年,,,,德斯汀·克里顿,,,,-,,,
+1.0,,我要做model,,,,2004年,,,,谷德昭,,,,nan,,,
+1.0,,捉妖记2,,,,2018年,,,,许诚毅,,,,-,,,
+1.0,,摆渡人,,,,2016年,,,,张嘉佳,,,,-,,,
+1.0,,无间道,,,,2002年,,,,刘伟强、麦兆辉,,,,"第22届香港电影金像奖最佳男主角
+第40届台湾电影金马奖最佳男主角奖",,,
+1.0,,无间道3：终极无间,,,,2003年,,,,刘伟强、麦兆辉,,,,-,,,
+,1.0,春光乍洩,春光乍洩,,,,1998,,,,吴宇森,,,,香港電影金像獎·最佳男主角,,
+1.0,,有情饮水饱,,,,2001年,,,,王晶,,,,-,,,
+1.0,,欧洲攻略,,,,2018年,,,,马楚成,,,,-,,,
+1.0,,英雄,,,,2002年,,,,张艺谋,,,,-,,,
+1.0,,行运超人,,,,2003年,,,,谷德昭,,,,-,,,
+1.0,,赤壁（下）,,,,2009年,,,,吴宇森,,,,-,,,
+,1.0,重慶森林,重慶森林,,,,1994,,,,刘镇伟,,,,-,,
+1.0,,金手指,,,,2023年,,,,庄文强,,,,第42届香港电影金像奖最佳男主角,,,
+1.0,,韩城攻略,,,,2005年,,,,马楚成,,,,-,,,
+1.0,,风再起时,,,,2023年,,,,翁子光,,,,第16届亚洲电影大奖最佳男主角,,,

@@ -1,0 +1,567 @@
+exist_flag_gt,exist_flag_response,museum,museum_before_map,address_llm_judge,address_llm_judge_eval_msg,address_query,address_response,admissionfeestatus(freeorcharged)_llm_judge,admissionfeestatus(freeorcharged)_llm_judge_eval_msg,admissionfeestatus(freeorcharged)_query,admissionfeestatus(freeorcharged)_response,businesshours_llm_judge,businesshours_llm_judge_eval_msg,businesshours_query,businesshours_response,museum_exact_match,museum_exact_match_eval_msg
+,,nationalfolkmuseumofkorea,National Folk Museum of Korea,0.0,"Let's analyze each pair based on the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+
+---
+
+**idx_0**
+
+- Response: ""198sejong-daero,jongno-gu,seoul""
+- Target: ""37samcheong-ro,jongnodistrict,seoul""
+
+Analysis:
+
+- Both addresses are in the Jongno district area of Seoul.
+- The road names differ (""sejong-daero"" vs ""samcheong-ro"").
+- Street numbers differ (""198"" vs ""37"").
+- Jongno-gu and Jongnodistrict can be considered equivalent as ""gu"" means district.
+- Since the addresses differ clearly in road name and number, they are not pointing to the same entity.
+- The semantics do not match or approximate the same place.
+
+Score: 0
+
+---
+
+**idx_1**
+
+- Response: ""219,gwahak-ro5-gil,yuseong-gu,daejeon""
+- Target: ""30samcheong-ro,jongnodistrict,seoul""
+
+Analysis:
+
+- Response location is in ""yuseong-gu, daejeon""
+- Target location is in ""jongnodistrict, seoul""
+- Different cities entirely.
+- Not the same entity or approximate semantics.
+
+Score: 0
+
+---
+
+**idx_2**
+
+- Response: ""435-1,gwangjangno31-gil,gangnam-gu,seoul""
+- Target: ""3seolleung-ro158-gil,gangnamdistrict,seoul""
+
+Analysis:
+
+- Both addresses in Gangnam district, Seoul.
+- The streets are different: ""gwangjangno31-gil"" vs ""seolleung-ro158-gil""
+- Street numbers differ.
+- Although located in the same district, the addresses differ enough to not be considered the same entity or approximate semantics.
+- The criterion states ""or if they point to the same entity,"" which they do not.
+- So, score 0.
+
+Score: 0
+
+---
+
+Final scoring results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0
+}
+```","37samcheong-ro,jongnodistrict,seoul","198sejong-daero,jongno-gu,seoul",1.0,"Let's analyze each pair step by step:
+
+1. idx_0:
+   - Response: ""free""
+   - Target: ""free""
+   - Analysis: The response matches exactly with the target.
+   - Score: 1
+
+2. idx_1:
+   - Response: ""charged""
+   - Target: ""charged""
+   - Analysis: The response matches exactly with the target.
+   - Score: 1
+
+3. idx_2:
+   - Response: ""charged""
+   - Target: ""charged""
+   - Analysis: The response matches exactly with the target.
+   - Score: 1
+
+All responses exactly match the targets, so all get full scores.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```",free,free,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:
+- Semantics approximately the same or pointing to the same entity is sufficient.
+- Word-for-word match is not required.
+- Closure dates are not mandatory.
+
+---
+
+### idx_0
+**Response:** ""10:00–18:00""  
+**Target:** ""marchtooctober:09:00-18:00\n※saturday:09:00-20:00""
+
+- Target hours vary by month and day; main general hours are 09:00–18:00 in March to October.
+- Response states ""10:00–18:00,"" which overlaps only partially in hours, starting one hour later than the reference.
+- The response does not mention the more detailed Saturday hours or the specific March-October time frame.
+- However, the criterion allows ignoring closure dates, but time range is slightly off.
+- Since the semantics (general opening hours) differ by one hour in the start time, and since the response lacks the weekday/weekend distinction, it does not exactly match the reference but provides a partially matching time range.
+- The question is whether ""10:00–18:00"" can be considered ""approximately the same"" as ""09:00-18:00 march to october, sat 09:00-20:00.""
+- Because the start time is off by one hour and no mention of months or Saturdays, it only partially matches.
+- But the criterion says it's sufficient if semantics are approximately the same or point to the same entity.
+- Here, the entity is opening hours. The 10:00 start vs 09:00 start isn't a big semantic deviation; the closing time is the same.
+- Therefore, the response is largely correct (only a minor shift in start time).
+
+**Score: 1**
+
+---
+
+### idx_1  
+**Response:** ""weekdays10:00–18:00;latenightopeningsonwednesdayandsaturday10:00–21:00""  
+**Target:** ""mon/tue/thu/fri/sun10:00-18:00;wed/sat10:00-21:00""
+
+- The response indicates weekdays 10:00–18:00, and late night openings Wed and Sat 10:00–21:00.
+- The target specifies Monday, Tuesday, Thursday, Friday, Sunday 10:00-18:00; Wednesday and Saturday 10:00-21:00.
+- The response says ""weekdays"" 10:00–18:00, technically weekdays usually means Mon-Fri, but target includes Sunday also with 10:00-18:00.
+- The difference is in the Sunday: target says Sunday 10:00–18:00, response does not mention Sunday.
+- The response explicitly mentions Wednesday and Saturday late openings matching target.
+- The difference is minor (missing Sunday mention).
+- The criterion states approximate semantics or same entity is sufficient.
+- Since ""weekdays"" are mostly the same as Monday, Tuesday, Thursday, Friday, Sunday is missed.
+- Given Sunday is part of “weekend” in normal classification, and the response misses it.
+- This is a minor omission but relevant.
+- However, given approximate semantics suffices, and late openings on Wed and Sat match, the overall impressions match.
+
+**Score: 1**
+
+---
+
+### idx_2  
+**Response:** ""weekdays13:00~17:00;weekends11:00~18:00""  
+**Target:** ""tuesdaytofriday:13:00-17:00\nsaturdaytosunday:11:00-18:00""
+
+- Response: weekdays 13:00–17:00; weekends 11:00–18:00  
+- Target: Tuesday to Friday 13:00-17:00; Saturday to Sunday 11:00-18:00
+
+- ""Weekdays"" typically means Monday to Friday, or Monday to Friday; target uses Tuesday to Friday only.
+- Response widens weekdays to include possibly Monday (not in target).
+- Weekend timings are the same.
+
+- The difference is minor: the target restricts weekday to Tue-Fri, response says weekdays, broader.
+
+- Criterion allows approximate semantics.
+
+**Score: 1**
+
+---
+
+### Final scoring result
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1
+}
+```","marchtooctober:09:00-18:00
+※saturday:09:00-20:00",10:00–18:00,1.0,key_match
+,,nationalmuseumofmodernandcontemporaryart(nmca),"National Museum of Modern & Contemporary Art, Korea",0.0,"Let's analyze each pair based on the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+
+---
+
+**idx_0**
+
+- Response: ""198sejong-daero,jongno-gu,seoul""
+- Target: ""37samcheong-ro,jongnodistrict,seoul""
+
+Analysis:
+
+- Both addresses are in the Jongno district area of Seoul.
+- The road names differ (""sejong-daero"" vs ""samcheong-ro"").
+- Street numbers differ (""198"" vs ""37"").
+- Jongno-gu and Jongnodistrict can be considered equivalent as ""gu"" means district.
+- Since the addresses differ clearly in road name and number, they are not pointing to the same entity.
+- The semantics do not match or approximate the same place.
+
+Score: 0
+
+---
+
+**idx_1**
+
+- Response: ""219,gwahak-ro5-gil,yuseong-gu,daejeon""
+- Target: ""30samcheong-ro,jongnodistrict,seoul""
+
+Analysis:
+
+- Response location is in ""yuseong-gu, daejeon""
+- Target location is in ""jongnodistrict, seoul""
+- Different cities entirely.
+- Not the same entity or approximate semantics.
+
+Score: 0
+
+---
+
+**idx_2**
+
+- Response: ""435-1,gwangjangno31-gil,gangnam-gu,seoul""
+- Target: ""3seolleung-ro158-gil,gangnamdistrict,seoul""
+
+Analysis:
+
+- Both addresses in Gangnam district, Seoul.
+- The streets are different: ""gwangjangno31-gil"" vs ""seolleung-ro158-gil""
+- Street numbers differ.
+- Although located in the same district, the addresses differ enough to not be considered the same entity or approximate semantics.
+- The criterion states ""or if they point to the same entity,"" which they do not.
+- So, score 0.
+
+Score: 0
+
+---
+
+Final scoring results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0
+}
+```","30samcheong-ro,jongnodistrict,seoul","219,gwahak-ro5-gil,yuseong-gu,daejeon",1.0,"Let's analyze each pair step by step:
+
+1. idx_0:
+   - Response: ""free""
+   - Target: ""free""
+   - Analysis: The response matches exactly with the target.
+   - Score: 1
+
+2. idx_1:
+   - Response: ""charged""
+   - Target: ""charged""
+   - Analysis: The response matches exactly with the target.
+   - Score: 1
+
+3. idx_2:
+   - Response: ""charged""
+   - Target: ""charged""
+   - Analysis: The response matches exactly with the target.
+   - Score: 1
+
+All responses exactly match the targets, so all get full scores.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```",charged,charged,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:
+- Semantics approximately the same or pointing to the same entity is sufficient.
+- Word-for-word match is not required.
+- Closure dates are not mandatory.
+
+---
+
+### idx_0
+**Response:** ""10:00–18:00""  
+**Target:** ""marchtooctober:09:00-18:00\n※saturday:09:00-20:00""
+
+- Target hours vary by month and day; main general hours are 09:00–18:00 in March to October.
+- Response states ""10:00–18:00,"" which overlaps only partially in hours, starting one hour later than the reference.
+- The response does not mention the more detailed Saturday hours or the specific March-October time frame.
+- However, the criterion allows ignoring closure dates, but time range is slightly off.
+- Since the semantics (general opening hours) differ by one hour in the start time, and since the response lacks the weekday/weekend distinction, it does not exactly match the reference but provides a partially matching time range.
+- The question is whether ""10:00–18:00"" can be considered ""approximately the same"" as ""09:00-18:00 march to october, sat 09:00-20:00.""
+- Because the start time is off by one hour and no mention of months or Saturdays, it only partially matches.
+- But the criterion says it's sufficient if semantics are approximately the same or point to the same entity.
+- Here, the entity is opening hours. The 10:00 start vs 09:00 start isn't a big semantic deviation; the closing time is the same.
+- Therefore, the response is largely correct (only a minor shift in start time).
+
+**Score: 1**
+
+---
+
+### idx_1  
+**Response:** ""weekdays10:00–18:00;latenightopeningsonwednesdayandsaturday10:00–21:00""  
+**Target:** ""mon/tue/thu/fri/sun10:00-18:00;wed/sat10:00-21:00""
+
+- The response indicates weekdays 10:00–18:00, and late night openings Wed and Sat 10:00–21:00.
+- The target specifies Monday, Tuesday, Thursday, Friday, Sunday 10:00-18:00; Wednesday and Saturday 10:00-21:00.
+- The response says ""weekdays"" 10:00–18:00, technically weekdays usually means Mon-Fri, but target includes Sunday also with 10:00-18:00.
+- The difference is in the Sunday: target says Sunday 10:00–18:00, response does not mention Sunday.
+- The response explicitly mentions Wednesday and Saturday late openings matching target.
+- The difference is minor (missing Sunday mention).
+- The criterion states approximate semantics or same entity is sufficient.
+- Since ""weekdays"" are mostly the same as Monday, Tuesday, Thursday, Friday, Sunday is missed.
+- Given Sunday is part of “weekend” in normal classification, and the response misses it.
+- This is a minor omission but relevant.
+- However, given approximate semantics suffices, and late openings on Wed and Sat match, the overall impressions match.
+
+**Score: 1**
+
+---
+
+### idx_2  
+**Response:** ""weekdays13:00~17:00;weekends11:00~18:00""  
+**Target:** ""tuesdaytofriday:13:00-17:00\nsaturdaytosunday:11:00-18:00""
+
+- Response: weekdays 13:00–17:00; weekends 11:00–18:00  
+- Target: Tuesday to Friday 13:00-17:00; Saturday to Sunday 11:00-18:00
+
+- ""Weekdays"" typically means Monday to Friday, or Monday to Friday; target uses Tuesday to Friday only.
+- Response widens weekdays to include possibly Monday (not in target).
+- Weekend timings are the same.
+
+- The difference is minor: the target restricts weekday to Tue-Fri, response says weekdays, broader.
+
+- Criterion allows approximate semantics.
+
+**Score: 1**
+
+---
+
+### Final scoring result
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1
+}
+```",mon/tue/thu/fri/sun10:00-18:00;wed/sat10:00-21:00,weekdays10:00–18:00;latenightopeningsonwednesdayandsaturday10:00–21:00,1.0,key_match
+,,figuremuseumw,Figure Museum W,0.0,"Let's analyze each pair based on the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+
+---
+
+**idx_0**
+
+- Response: ""198sejong-daero,jongno-gu,seoul""
+- Target: ""37samcheong-ro,jongnodistrict,seoul""
+
+Analysis:
+
+- Both addresses are in the Jongno district area of Seoul.
+- The road names differ (""sejong-daero"" vs ""samcheong-ro"").
+- Street numbers differ (""198"" vs ""37"").
+- Jongno-gu and Jongnodistrict can be considered equivalent as ""gu"" means district.
+- Since the addresses differ clearly in road name and number, they are not pointing to the same entity.
+- The semantics do not match or approximate the same place.
+
+Score: 0
+
+---
+
+**idx_1**
+
+- Response: ""219,gwahak-ro5-gil,yuseong-gu,daejeon""
+- Target: ""30samcheong-ro,jongnodistrict,seoul""
+
+Analysis:
+
+- Response location is in ""yuseong-gu, daejeon""
+- Target location is in ""jongnodistrict, seoul""
+- Different cities entirely.
+- Not the same entity or approximate semantics.
+
+Score: 0
+
+---
+
+**idx_2**
+
+- Response: ""435-1,gwangjangno31-gil,gangnam-gu,seoul""
+- Target: ""3seolleung-ro158-gil,gangnamdistrict,seoul""
+
+Analysis:
+
+- Both addresses in Gangnam district, Seoul.
+- The streets are different: ""gwangjangno31-gil"" vs ""seolleung-ro158-gil""
+- Street numbers differ.
+- Although located in the same district, the addresses differ enough to not be considered the same entity or approximate semantics.
+- The criterion states ""or if they point to the same entity,"" which they do not.
+- So, score 0.
+
+Score: 0
+
+---
+
+Final scoring results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0
+}
+```","3seolleung-ro158-gil,gangnamdistrict,seoul","435-1,gwangjangno31-gil,gangnam-gu,seoul",1.0,"Let's analyze each pair step by step:
+
+1. idx_0:
+   - Response: ""free""
+   - Target: ""free""
+   - Analysis: The response matches exactly with the target.
+   - Score: 1
+
+2. idx_1:
+   - Response: ""charged""
+   - Target: ""charged""
+   - Analysis: The response matches exactly with the target.
+   - Score: 1
+
+3. idx_2:
+   - Response: ""charged""
+   - Target: ""charged""
+   - Analysis: The response matches exactly with the target.
+   - Score: 1
+
+All responses exactly match the targets, so all get full scores.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```",charged,charged,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:
+- Semantics approximately the same or pointing to the same entity is sufficient.
+- Word-for-word match is not required.
+- Closure dates are not mandatory.
+
+---
+
+### idx_0
+**Response:** ""10:00–18:00""  
+**Target:** ""marchtooctober:09:00-18:00\n※saturday:09:00-20:00""
+
+- Target hours vary by month and day; main general hours are 09:00–18:00 in March to October.
+- Response states ""10:00–18:00,"" which overlaps only partially in hours, starting one hour later than the reference.
+- The response does not mention the more detailed Saturday hours or the specific March-October time frame.
+- However, the criterion allows ignoring closure dates, but time range is slightly off.
+- Since the semantics (general opening hours) differ by one hour in the start time, and since the response lacks the weekday/weekend distinction, it does not exactly match the reference but provides a partially matching time range.
+- The question is whether ""10:00–18:00"" can be considered ""approximately the same"" as ""09:00-18:00 march to october, sat 09:00-20:00.""
+- Because the start time is off by one hour and no mention of months or Saturdays, it only partially matches.
+- But the criterion says it's sufficient if semantics are approximately the same or point to the same entity.
+- Here, the entity is opening hours. The 10:00 start vs 09:00 start isn't a big semantic deviation; the closing time is the same.
+- Therefore, the response is largely correct (only a minor shift in start time).
+
+**Score: 1**
+
+---
+
+### idx_1  
+**Response:** ""weekdays10:00–18:00;latenightopeningsonwednesdayandsaturday10:00–21:00""  
+**Target:** ""mon/tue/thu/fri/sun10:00-18:00;wed/sat10:00-21:00""
+
+- The response indicates weekdays 10:00–18:00, and late night openings Wed and Sat 10:00–21:00.
+- The target specifies Monday, Tuesday, Thursday, Friday, Sunday 10:00-18:00; Wednesday and Saturday 10:00-21:00.
+- The response says ""weekdays"" 10:00–18:00, technically weekdays usually means Mon-Fri, but target includes Sunday also with 10:00-18:00.
+- The difference is in the Sunday: target says Sunday 10:00–18:00, response does not mention Sunday.
+- The response explicitly mentions Wednesday and Saturday late openings matching target.
+- The difference is minor (missing Sunday mention).
+- The criterion states approximate semantics or same entity is sufficient.
+- Since ""weekdays"" are mostly the same as Monday, Tuesday, Thursday, Friday, Sunday is missed.
+- Given Sunday is part of “weekend” in normal classification, and the response misses it.
+- This is a minor omission but relevant.
+- However, given approximate semantics suffices, and late openings on Wed and Sat match, the overall impressions match.
+
+**Score: 1**
+
+---
+
+### idx_2  
+**Response:** ""weekdays13:00~17:00;weekends11:00~18:00""  
+**Target:** ""tuesdaytofriday:13:00-17:00\nsaturdaytosunday:11:00-18:00""
+
+- Response: weekdays 13:00–17:00; weekends 11:00–18:00  
+- Target: Tuesday to Friday 13:00-17:00; Saturday to Sunday 11:00-18:00
+
+- ""Weekdays"" typically means Monday to Friday, or Monday to Friday; target uses Tuesday to Friday only.
+- Response widens weekdays to include possibly Monday (not in target).
+- Weekend timings are the same.
+
+- The difference is minor: the target restricts weekday to Tue-Fri, response says weekdays, broader.
+
+- Criterion allows approximate semantics.
+
+**Score: 1**
+
+---
+
+### Final scoring result
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1
+}
+```","tuesdaytofriday:13:00-17:00
+saturdaytosunday:11:00-18:00",weekdays13:00~17:00;weekends11:00~18:00,1.0,key_match
+1.0,,arariomuseuminspace,,,,"83yulgok-ro,jongnodistrict,seoul",,,,charged,,,,tuesdaytosunday:10:00–19:00,,,
+1.0,,arkoartcenter,,,,"3dongsung-gil,jongnodistrict,seoul",,,,charged,,,,tuesdaytosunday:11:00–19:00,,,
+1.0,,artsonjecenter,,,,"87yulgok-ro3-gil,jongnodistrict,seoul",,,,charged,,,,tuesdaytosunday:10:00–19:00,,,
+1.0,,bkplasticsurgery,,,,"1-2nonhyeon-dong,gangnamdistrict,seoul",,,,free,,,,"mondaytofriday:10:00-19:00
+saturday:10:00-17:00",,,
+1.0,,cheongwadae(bluehouse)sarangchae,,,,"45hyoja-ro13-gil,jongnodistrict,seoul",,,,free,,,,"tuesday：closed
+wednesdaytomonday:09:00-18:00",,,
+1.0,,coreanamuseumofart,,,,"827eonju-ro,gangnamdistrict,seoul",,,,charged,,,,"tue-fri:11:00-18:30
+sat:12:00-18:30
+sun/mon:closed",,,
+1.0,,daelimmuseum,,,,"21jahamun-ro4-gil,jongnodistrict,seoul",,,,charged,,,,"tuesdaytothursday:11:00–19:00
+friday&saturday:11:00-20:00
+sunday:11:00–19:00",,,
+1.0,,donuimunmuseumvillage,,,,"14-3songwol-gil,jongnodistrict,seoul",,,,free,,,,tuesdaytosunday:10:00–19:00,,,
+1.0,,gahoefolkpaintingmuseum,,,,"17,bukchon-ro12-gil,jongnodistrict,seoul",,,,charged,,,,tuesdaytosunday:10:00-18:00,,,
+1.0,,horimmuseumsinsabranch,,,,"317dosan-daero,gangnamdistrict,seoul",,,,charged,,,,mondaytofriday:10:30-18:00,,,
+1.0,,ilminmuseumofart,,,,"152sejong-daero,jongnodistrict,seoul",,,,charged,,,,tue-sun11:00-19:00,,,
+1.0,,kmuseumofcontemporaryart,,,,"807seolleung-ro,gangnamdistrict,seoul",,,,charged,,,,tuesdaytosunday:10:00–19:00,,,
+1.0,,koreaalpinemuseum,,,,"740-10,yeoksam-dong,gangnam-gu,seoul,southkorea",,,,free,,,,9:00-18:00,,,
+1.0,,koreacustomsmuseum,,,,"721eonju-ro,gangnamdistrict,seoul",,,,free,,,,"mondaytofriday,10:00-17:00",,,
+1.0,,kumhomuseumofart,,,,"18samcheong-ro,jongnodistrict,seoul",,,,charged,,,,tuesdaytosunday:10:00–18:00,,,
+1.0,,kyungwoonmuseum,,,,"0632429samseong-ro,gangnamdistrict,seoul",,,,free,,,,"mondaytosaturday:10:00-16:00(
+duringexhibitions)
+mon-fri10:00-17:00(regular)",,,
+1.0,,literarymuseumofpoetyundong-ju,,,,"119changuimun-ro,jongnodistrict,seoul",,,,free,,,,tuesdaytosunday:10:00–18:00,,,
+1.0,,lockmuseum,,,,"100ihwajang-gil,ihwa-dong,jongnodistrict,seoul",,,,charged,,,,"from10amto6pm,tuesthroughsat;closedmondaysandsundays.",,,
+1.0,,mokinmuseum,,,,"46-1changuimun-ro5-gil,jongnodistrict,seoul",,,,charged,,,,tuesdaytosunday:10:30-18:00,,,
+1.0,,museumkimchikan,,,,"35-4insadong-gil,jongnodistrict,seoul",,,,charged,,,,"tuesdaytosunday,10:00-18:00",,,
+1.0,,museumofkoreastrawandplantshandicraft,,,,"45sungkyunkwan-ro4-gil,jongnodistrict,seoul",,,,charged,,,,"tuesdaytosaturday,10:00-17:00",,,
+,1.0,nationalmuseumofkorea,National Museum of Korea,,,,"1cheongun-gil,dongdaemun-gu,seoul",,,,free,,,,10:00-18:00(entrycloses30minsbeforeclosing),,
+1.0,,nationalmuseumofkoreancontemporaryhistory,,,,"198sejong-daero,jongnodistrict,seoul",,,,free,,,,10:00-18:00(until21:00onwednesdaysandsaturdays),,,
+1.0,,nationalpalacemuseumofkorea,,,,"12hyoja-ro,jongnodistrict,seoul",,,,free,,,,"weekdays&sundays:10:00–18:00
+wednesdays&saturdays:10:00–21:00",,,
+1.0,,owlmuseum,,,,"143bukchon-ro,jongnodistrict,seoul,southkorea",,,,charged,,,,thursdaytosunday:10:00-19:00,,,
+1.0,,presseumnewspapermuseum,,,,"5th&6thfloors,ilminmuseumofart,152sejongno,jongno-gu,seoul",,,,charged,,,,tuesdaytosunday:10:00to18:30,,,
+1.0,,samseongmuseumofpublishing,,,,"2-2bibong-gil,jongnodistrict,seoul",,,,charged,,,,"mondaytofriday,10:00-17:00",,,
+1.0,,sangwonmuseumofart,,,,"27pyeongchang31-gil,jongnodistrict,seoul",,,,charged,,,,tuesdaytosaturday:10:30–17:30,,,
+1.0,,seoulcitywallmuseum,,,,"283yulgok-ro,jongnodistrict,seoul",,,,free,,,,tuesdaytosunday:09:00-18:00,,,
+1.0,,seoulmuseumofcraftart,,,,"4yulgok-ro3-gil,jongnodistrict,seoul",,,,free,,,,"thursdaytothursday:10:00-18:00
+friday:10:00-21:00
+saturdaytosunday:10:00-18:00",,,
+1.0,,seoulmuseumofhistory,,,,"55saemunan-ro,jongnodistrict,seoul",,,,free,,,,"weekdays/weekends:09:00–18:00
+(admissionstopsat17:30)
+everyfriday:extendedhoursfrom18:00to21:00
+restdays:january1standeverymonday",,,
+1.0,,seoulnationaluniversityhospitalmuseumofmedicine,,,,"101daehak-ro,jongnodistrict,seoul",,,,free,,,,"mondaytofriday,09:00-18:00
+saturday,10:00-15:00",,,
+1.0,,tanheomemorialbuddhistmuseum,,,,"13-51bamgogae-ro14-gil,gangnamdistrict,seoul",,,,free,,,,tuesdaytosunday:10:00~17:00,,,
+1.0,,thechildren’smuseumofthenationalfolkmuseumofkorea,,,,"37samcheong-ro,jongnodistrict,seoul",,,,free,,,,daily:10:00–18:00,,,
+1.0,,thekoreannationalpolicemuseum,,,,"162songwol-gil,jongnodistrict,seoul",,,,free,,,,tuesdaytosunday:09:30–17:30,,,
+,1.0,trickeyemuseum,Trick Eye Museum,,,,"249-13,myeongdong-ro12-gil,jung-gu,seoul",,,,charged,,,,09:30-19:00(mon-fri);11:00-18:00(sat-sun),,
+1.0,,tteokmuseum,,,,"71donhwamun-ro,jongnodistrict,seoul",,,,charged,,,,mondaytosaturday:10:00–18:00,,,
+1.0,,whankimuseum,,,,"63jahamun-ro40-gil,jongnodistrict,seoul",,,,charged,,,,tuesdaytosunday:11:00–18:00,,,
+1.0,,worldjewelrymuseum,,,,"75-3hwa-dong,jongnodistrict,seoul",,,,charged,,,,daily:10:00–17:00,,,

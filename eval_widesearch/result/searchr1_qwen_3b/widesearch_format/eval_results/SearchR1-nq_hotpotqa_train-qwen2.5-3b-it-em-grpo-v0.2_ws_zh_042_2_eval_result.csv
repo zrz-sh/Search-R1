@@ -1,0 +1,1303 @@
+exist_flag_gt,exist_flag_response,作品名称,作品名称_before_map,作品名称_exact_match,作品名称_exact_match_eval_msg,制片国家/地区_llm_judge,制片国家/地区_llm_judge_eval_msg,制片国家/地区_query,制片国家/地区_response,导演_llm_judge,导演_llm_judge_eval_msg,导演_query,导演_response,片长_number_near,片长_number_near_eval_msg,片长_query,片长_response,类型_llm_judge,类型_llm_judge_eval_msg,类型_query,类型_response
+,,小丑,小丑,1.0,key_match,1.0,"Let's analyze each pair one by one according to the criterion:
+
+**Criterion summary:**  
+- The response and the target answer are considered correct if they have roughly the same meaning or point to the same entity/entities.  
+- If the response is a subset of the target answer (i.e., all mentioned entities in response are in the target), it can be counted as correct.  
+- No need for exact word-to-word match.
+
+---
+
+**idx_0:**  
+- Response: 美国 (USA)  
+- Target: 美国/加拿大 (USA/Canada)  
+- Analysis: The response ""美国"" is a subset of the target ""美国/加拿大"". So this is correct.  
+- Score: 1
+
+**idx_1:**  
+- Response: 美国 (USA)  
+- Target: 美国/巴西/中国大陆 (USA/Brazil/China)  
+- Analysis: Response ""美国"" is subset of the target entities. Correct.  
+- Score: 1
+
+**idx_2:**  
+- Response: 秘鲁 (Peru)  
+- Target: 法国/意大利 (France/Italy)  
+- Analysis: Response is totally different from target entities, no overlap.  
+- Score: 0
+
+**idx_3:**  
+- Response: 英国 (UK)  
+- Target: 英国/美国 (UK/USA)  
+- Analysis: Response is subset of target. Correct.  
+- Score: 1
+
+**idx_4:**  
+- Response: 波兰 (Poland)  
+- Target: 捷克/斯洛伐克/乌克兰 (Czech/Slovakia/Ukraine)  
+- Analysis: Different entities, no overlap.  
+- Score: 0
+
+**idx_5:**  
+- Response: 美国 (USA)  
+- Target: 瑞典/德国/挪威 (Sweden/Germany/Norway)  
+- Analysis: No overlap, response not in target.  
+- Score: 0
+
+**idx_6:**  
+- Response: 美国 (USA)  
+- Target: 美国 (USA)  
+- Analysis: Exactly the same. Correct.  
+- Score: 1
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1
+}
+```",美国/加拿大,美国,0.0,"首先，根据给定的判分标准：
+
+- 标准答案和回答只要语义大致相同或者指向的实体一致，即判定为正确，得1分。
+- 若不一致，得0分。
+- 只允许整数分0或1。
+
+---
+
+逐条分析：
+
+**idx_0**  
+- 标准答案（target）：托德·菲利普斯  
+- 回答（response）：吉尔莫·德尔·托罗  
+- 两者均为导演名，但为不同人物，不同实体。故不符合“指向的实体一致”。得0分。
+
+**idx_1**  
+- 标准答案：詹姆斯·格雷  
+- 回答：詹姆斯·格雷  
+- 完全一致。得1分。
+
+**idx_2**  
+- 标准答案：罗曼·波兰斯基  
+- 回答：拉娜·杜尔科  
+- 两者均为电影导演，但不同人物，不符合实体一致。得0分。
+
+**idx_3**  
+- 标准答案：诺亚·鲍姆巴赫  
+- 回答：安东尼·明格拉  
+- 不同导演，实体不一致。得0分。
+
+**idx_4**  
+- 标准答案：瓦茨拉夫·马尔豪尔  
+- 回答：米哈乌·扎德尼克  
+- 不同实体。得0分。
+
+**idx_5**  
+- 标准答案：罗伊·安德森  
+- 回答：杰米·杰森  
+- 不同实体。得0分。
+
+**idx_6**  
+- 标准答案：史蒂文·索德伯格  
+- 回答：托马斯·麦卡锡  
+- 不同实体。得0分。
+
+---
+
+综上，只有 idx_1 得分为1，其余为0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",托德·菲利普斯,吉尔莫·德尔·托罗,0.0,"number not near, response: 1.0, target: 118.0",118,1,0.0,"Let's analyze each pair according to the criterion:
+
+- Criterion summary:  
+  1. Semantic meaning should be roughly the same or refer to the same entity.  
+  2. For types (genres), if the response answers a subset of the standard answer, and it matches the movie content, it's considered correct.  
+  3. Scores are 0 or 1 only.
+
+---
+
+**idx_0:**  
+- Response: 动作 (Action)  
+- Target: 剧情/惊悚/犯罪 (Drama/Thriller/Crime)  
+- Analysis: Response ""动作"" (Action) is completely different genre from the target ""剧情/惊悚/犯罪"". No overlap or subset relation here. So score = 0
+
+**idx_1:**  
+- Response: 科幻 (Sci-Fi)  
+- Target: 科幻/冒险 (Sci-Fi/Adventure)  
+- Analysis: Response is a subset of the target, matches the main type ""科幻"". So this is correct. Score =1
+
+**idx_2:**  
+- Response: 剧情 (Drama)  
+- Target: 剧情 (Drama)  
+- Analysis: Exact match, score=1
+
+**idx_3:**  
+- Response: 剧情 (Drama)  
+- Target: 剧情/爱情 (Drama/Romance)  
+- Analysis: Response is a subset of target. So score=1
+
+**idx_4:**  
+- Response: 剧情 (Drama)  
+- Target: 剧情/战争 (Drama/War)  
+- Analysis: Response is subset of target. Score=1
+
+**idx_5:**  
+- Response: 剧情 (Drama)  
+- Target: 剧情 (Drama)  
+- Analysis: Exact match. Score=1
+
+**idx_6:**  
+- Response: 剧情 (Drama)  
+- Target: 喜剧/剧情 (Comedy/Drama)  
+- Analysis: Response is subset of target. Score=1
+
+---
+
+Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",剧情/惊悚/犯罪,动作
+,,星际探索,星际探索,1.0,key_match,1.0,"Let's analyze each pair one by one according to the criterion:
+
+**Criterion summary:**  
+- The response and the target answer are considered correct if they have roughly the same meaning or point to the same entity/entities.  
+- If the response is a subset of the target answer (i.e., all mentioned entities in response are in the target), it can be counted as correct.  
+- No need for exact word-to-word match.
+
+---
+
+**idx_0:**  
+- Response: 美国 (USA)  
+- Target: 美国/加拿大 (USA/Canada)  
+- Analysis: The response ""美国"" is a subset of the target ""美国/加拿大"". So this is correct.  
+- Score: 1
+
+**idx_1:**  
+- Response: 美国 (USA)  
+- Target: 美国/巴西/中国大陆 (USA/Brazil/China)  
+- Analysis: Response ""美国"" is subset of the target entities. Correct.  
+- Score: 1
+
+**idx_2:**  
+- Response: 秘鲁 (Peru)  
+- Target: 法国/意大利 (France/Italy)  
+- Analysis: Response is totally different from target entities, no overlap.  
+- Score: 0
+
+**idx_3:**  
+- Response: 英国 (UK)  
+- Target: 英国/美国 (UK/USA)  
+- Analysis: Response is subset of target. Correct.  
+- Score: 1
+
+**idx_4:**  
+- Response: 波兰 (Poland)  
+- Target: 捷克/斯洛伐克/乌克兰 (Czech/Slovakia/Ukraine)  
+- Analysis: Different entities, no overlap.  
+- Score: 0
+
+**idx_5:**  
+- Response: 美国 (USA)  
+- Target: 瑞典/德国/挪威 (Sweden/Germany/Norway)  
+- Analysis: No overlap, response not in target.  
+- Score: 0
+
+**idx_6:**  
+- Response: 美国 (USA)  
+- Target: 美国 (USA)  
+- Analysis: Exactly the same. Correct.  
+- Score: 1
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1
+}
+```",美国/巴西/中国大陆,美国,1.0,"首先，根据给定的判分标准：
+
+- 标准答案和回答只要语义大致相同或者指向的实体一致，即判定为正确，得1分。
+- 若不一致，得0分。
+- 只允许整数分0或1。
+
+---
+
+逐条分析：
+
+**idx_0**  
+- 标准答案（target）：托德·菲利普斯  
+- 回答（response）：吉尔莫·德尔·托罗  
+- 两者均为导演名，但为不同人物，不同实体。故不符合“指向的实体一致”。得0分。
+
+**idx_1**  
+- 标准答案：詹姆斯·格雷  
+- 回答：詹姆斯·格雷  
+- 完全一致。得1分。
+
+**idx_2**  
+- 标准答案：罗曼·波兰斯基  
+- 回答：拉娜·杜尔科  
+- 两者均为电影导演，但不同人物，不符合实体一致。得0分。
+
+**idx_3**  
+- 标准答案：诺亚·鲍姆巴赫  
+- 回答：安东尼·明格拉  
+- 不同导演，实体不一致。得0分。
+
+**idx_4**  
+- 标准答案：瓦茨拉夫·马尔豪尔  
+- 回答：米哈乌·扎德尼克  
+- 不同实体。得0分。
+
+**idx_5**  
+- 标准答案：罗伊·安德森  
+- 回答：杰米·杰森  
+- 不同实体。得0分。
+
+**idx_6**  
+- 标准答案：史蒂文·索德伯格  
+- 回答：托马斯·麦卡锡  
+- 不同实体。得0分。
+
+---
+
+综上，只有 idx_1 得分为1，其余为0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",詹姆斯·格雷,詹姆斯·格雷,0.0,"number not near, response: 1.0, target: 124.0",124,1,1.0,"Let's analyze each pair according to the criterion:
+
+- Criterion summary:  
+  1. Semantic meaning should be roughly the same or refer to the same entity.  
+  2. For types (genres), if the response answers a subset of the standard answer, and it matches the movie content, it's considered correct.  
+  3. Scores are 0 or 1 only.
+
+---
+
+**idx_0:**  
+- Response: 动作 (Action)  
+- Target: 剧情/惊悚/犯罪 (Drama/Thriller/Crime)  
+- Analysis: Response ""动作"" (Action) is completely different genre from the target ""剧情/惊悚/犯罪"". No overlap or subset relation here. So score = 0
+
+**idx_1:**  
+- Response: 科幻 (Sci-Fi)  
+- Target: 科幻/冒险 (Sci-Fi/Adventure)  
+- Analysis: Response is a subset of the target, matches the main type ""科幻"". So this is correct. Score =1
+
+**idx_2:**  
+- Response: 剧情 (Drama)  
+- Target: 剧情 (Drama)  
+- Analysis: Exact match, score=1
+
+**idx_3:**  
+- Response: 剧情 (Drama)  
+- Target: 剧情/爱情 (Drama/Romance)  
+- Analysis: Response is a subset of target. So score=1
+
+**idx_4:**  
+- Response: 剧情 (Drama)  
+- Target: 剧情/战争 (Drama/War)  
+- Analysis: Response is subset of target. Score=1
+
+**idx_5:**  
+- Response: 剧情 (Drama)  
+- Target: 剧情 (Drama)  
+- Analysis: Exact match. Score=1
+
+**idx_6:**  
+- Response: 剧情 (Drama)  
+- Target: 喜剧/剧情 (Comedy/Drama)  
+- Analysis: Response is subset of target. Score=1
+
+---
+
+Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",科幻/冒险,科幻
+,,我控诉,我控诉,1.0,key_match,0.0,"Let's analyze each pair one by one according to the criterion:
+
+**Criterion summary:**  
+- The response and the target answer are considered correct if they have roughly the same meaning or point to the same entity/entities.  
+- If the response is a subset of the target answer (i.e., all mentioned entities in response are in the target), it can be counted as correct.  
+- No need for exact word-to-word match.
+
+---
+
+**idx_0:**  
+- Response: 美国 (USA)  
+- Target: 美国/加拿大 (USA/Canada)  
+- Analysis: The response ""美国"" is a subset of the target ""美国/加拿大"". So this is correct.  
+- Score: 1
+
+**idx_1:**  
+- Response: 美国 (USA)  
+- Target: 美国/巴西/中国大陆 (USA/Brazil/China)  
+- Analysis: Response ""美国"" is subset of the target entities. Correct.  
+- Score: 1
+
+**idx_2:**  
+- Response: 秘鲁 (Peru)  
+- Target: 法国/意大利 (France/Italy)  
+- Analysis: Response is totally different from target entities, no overlap.  
+- Score: 0
+
+**idx_3:**  
+- Response: 英国 (UK)  
+- Target: 英国/美国 (UK/USA)  
+- Analysis: Response is subset of target. Correct.  
+- Score: 1
+
+**idx_4:**  
+- Response: 波兰 (Poland)  
+- Target: 捷克/斯洛伐克/乌克兰 (Czech/Slovakia/Ukraine)  
+- Analysis: Different entities, no overlap.  
+- Score: 0
+
+**idx_5:**  
+- Response: 美国 (USA)  
+- Target: 瑞典/德国/挪威 (Sweden/Germany/Norway)  
+- Analysis: No overlap, response not in target.  
+- Score: 0
+
+**idx_6:**  
+- Response: 美国 (USA)  
+- Target: 美国 (USA)  
+- Analysis: Exactly the same. Correct.  
+- Score: 1
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1
+}
+```",法国/意大利,秘鲁,0.0,"首先，根据给定的判分标准：
+
+- 标准答案和回答只要语义大致相同或者指向的实体一致，即判定为正确，得1分。
+- 若不一致，得0分。
+- 只允许整数分0或1。
+
+---
+
+逐条分析：
+
+**idx_0**  
+- 标准答案（target）：托德·菲利普斯  
+- 回答（response）：吉尔莫·德尔·托罗  
+- 两者均为导演名，但为不同人物，不同实体。故不符合“指向的实体一致”。得0分。
+
+**idx_1**  
+- 标准答案：詹姆斯·格雷  
+- 回答：詹姆斯·格雷  
+- 完全一致。得1分。
+
+**idx_2**  
+- 标准答案：罗曼·波兰斯基  
+- 回答：拉娜·杜尔科  
+- 两者均为电影导演，但不同人物，不符合实体一致。得0分。
+
+**idx_3**  
+- 标准答案：诺亚·鲍姆巴赫  
+- 回答：安东尼·明格拉  
+- 不同导演，实体不一致。得0分。
+
+**idx_4**  
+- 标准答案：瓦茨拉夫·马尔豪尔  
+- 回答：米哈乌·扎德尼克  
+- 不同实体。得0分。
+
+**idx_5**  
+- 标准答案：罗伊·安德森  
+- 回答：杰米·杰森  
+- 不同实体。得0分。
+
+**idx_6**  
+- 标准答案：史蒂文·索德伯格  
+- 回答：托马斯·麦卡锡  
+- 不同实体。得0分。
+
+---
+
+综上，只有 idx_1 得分为1，其余为0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",罗曼·波兰斯基,拉娜·杜尔科,0.0,"number not near, response: 1.0, target: 132.0",132,1,1.0,"Let's analyze each pair according to the criterion:
+
+- Criterion summary:  
+  1. Semantic meaning should be roughly the same or refer to the same entity.  
+  2. For types (genres), if the response answers a subset of the standard answer, and it matches the movie content, it's considered correct.  
+  3. Scores are 0 or 1 only.
+
+---
+
+**idx_0:**  
+- Response: 动作 (Action)  
+- Target: 剧情/惊悚/犯罪 (Drama/Thriller/Crime)  
+- Analysis: Response ""动作"" (Action) is completely different genre from the target ""剧情/惊悚/犯罪"". No overlap or subset relation here. So score = 0
+
+**idx_1:**  
+- Response: 科幻 (Sci-Fi)  
+- Target: 科幻/冒险 (Sci-Fi/Adventure)  
+- Analysis: Response is a subset of the target, matches the main type ""科幻"". So this is correct. Score =1
+
+**idx_2:**  
+- Response: 剧情 (Drama)  
+- Target: 剧情 (Drama)  
+- Analysis: Exact match, score=1
+
+**idx_3:**  
+- Response: 剧情 (Drama)  
+- Target: 剧情/爱情 (Drama/Romance)  
+- Analysis: Response is a subset of target. So score=1
+
+**idx_4:**  
+- Response: 剧情 (Drama)  
+- Target: 剧情/战争 (Drama/War)  
+- Analysis: Response is subset of target. Score=1
+
+**idx_5:**  
+- Response: 剧情 (Drama)  
+- Target: 剧情 (Drama)  
+- Analysis: Exact match. Score=1
+
+**idx_6:**  
+- Response: 剧情 (Drama)  
+- Target: 喜剧/剧情 (Comedy/Drama)  
+- Analysis: Response is subset of target. Score=1
+
+---
+
+Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",剧情,剧情
+,,婚姻故事,爱情故事,1.0,key_match,1.0,"Let's analyze each pair one by one according to the criterion:
+
+**Criterion summary:**  
+- The response and the target answer are considered correct if they have roughly the same meaning or point to the same entity/entities.  
+- If the response is a subset of the target answer (i.e., all mentioned entities in response are in the target), it can be counted as correct.  
+- No need for exact word-to-word match.
+
+---
+
+**idx_0:**  
+- Response: 美国 (USA)  
+- Target: 美国/加拿大 (USA/Canada)  
+- Analysis: The response ""美国"" is a subset of the target ""美国/加拿大"". So this is correct.  
+- Score: 1
+
+**idx_1:**  
+- Response: 美国 (USA)  
+- Target: 美国/巴西/中国大陆 (USA/Brazil/China)  
+- Analysis: Response ""美国"" is subset of the target entities. Correct.  
+- Score: 1
+
+**idx_2:**  
+- Response: 秘鲁 (Peru)  
+- Target: 法国/意大利 (France/Italy)  
+- Analysis: Response is totally different from target entities, no overlap.  
+- Score: 0
+
+**idx_3:**  
+- Response: 英国 (UK)  
+- Target: 英国/美国 (UK/USA)  
+- Analysis: Response is subset of target. Correct.  
+- Score: 1
+
+**idx_4:**  
+- Response: 波兰 (Poland)  
+- Target: 捷克/斯洛伐克/乌克兰 (Czech/Slovakia/Ukraine)  
+- Analysis: Different entities, no overlap.  
+- Score: 0
+
+**idx_5:**  
+- Response: 美国 (USA)  
+- Target: 瑞典/德国/挪威 (Sweden/Germany/Norway)  
+- Analysis: No overlap, response not in target.  
+- Score: 0
+
+**idx_6:**  
+- Response: 美国 (USA)  
+- Target: 美国 (USA)  
+- Analysis: Exactly the same. Correct.  
+- Score: 1
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1
+}
+```",英国/美国,英国,0.0,"首先，根据给定的判分标准：
+
+- 标准答案和回答只要语义大致相同或者指向的实体一致，即判定为正确，得1分。
+- 若不一致，得0分。
+- 只允许整数分0或1。
+
+---
+
+逐条分析：
+
+**idx_0**  
+- 标准答案（target）：托德·菲利普斯  
+- 回答（response）：吉尔莫·德尔·托罗  
+- 两者均为导演名，但为不同人物，不同实体。故不符合“指向的实体一致”。得0分。
+
+**idx_1**  
+- 标准答案：詹姆斯·格雷  
+- 回答：詹姆斯·格雷  
+- 完全一致。得1分。
+
+**idx_2**  
+- 标准答案：罗曼·波兰斯基  
+- 回答：拉娜·杜尔科  
+- 两者均为电影导演，但不同人物，不符合实体一致。得0分。
+
+**idx_3**  
+- 标准答案：诺亚·鲍姆巴赫  
+- 回答：安东尼·明格拉  
+- 不同导演，实体不一致。得0分。
+
+**idx_4**  
+- 标准答案：瓦茨拉夫·马尔豪尔  
+- 回答：米哈乌·扎德尼克  
+- 不同实体。得0分。
+
+**idx_5**  
+- 标准答案：罗伊·安德森  
+- 回答：杰米·杰森  
+- 不同实体。得0分。
+
+**idx_6**  
+- 标准答案：史蒂文·索德伯格  
+- 回答：托马斯·麦卡锡  
+- 不同实体。得0分。
+
+---
+
+综上，只有 idx_1 得分为1，其余为0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",诺亚·鲍姆巴赫,安东尼·明格拉,0.0,"number not near, response: 1.0, target: 135.0",135,1,1.0,"Let's analyze each pair according to the criterion:
+
+- Criterion summary:  
+  1. Semantic meaning should be roughly the same or refer to the same entity.  
+  2. For types (genres), if the response answers a subset of the standard answer, and it matches the movie content, it's considered correct.  
+  3. Scores are 0 or 1 only.
+
+---
+
+**idx_0:**  
+- Response: 动作 (Action)  
+- Target: 剧情/惊悚/犯罪 (Drama/Thriller/Crime)  
+- Analysis: Response ""动作"" (Action) is completely different genre from the target ""剧情/惊悚/犯罪"". No overlap or subset relation here. So score = 0
+
+**idx_1:**  
+- Response: 科幻 (Sci-Fi)  
+- Target: 科幻/冒险 (Sci-Fi/Adventure)  
+- Analysis: Response is a subset of the target, matches the main type ""科幻"". So this is correct. Score =1
+
+**idx_2:**  
+- Response: 剧情 (Drama)  
+- Target: 剧情 (Drama)  
+- Analysis: Exact match, score=1
+
+**idx_3:**  
+- Response: 剧情 (Drama)  
+- Target: 剧情/爱情 (Drama/Romance)  
+- Analysis: Response is a subset of target. So score=1
+
+**idx_4:**  
+- Response: 剧情 (Drama)  
+- Target: 剧情/战争 (Drama/War)  
+- Analysis: Response is subset of target. Score=1
+
+**idx_5:**  
+- Response: 剧情 (Drama)  
+- Target: 剧情 (Drama)  
+- Analysis: Exact match. Score=1
+
+**idx_6:**  
+- Response: 剧情 (Drama)  
+- Target: 喜剧/剧情 (Comedy/Drama)  
+- Analysis: Response is subset of target. Score=1
+
+---
+
+Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",剧情/爱情,剧情
+,,被涂污的鸟,被涂污的鸟,1.0,key_match,0.0,"Let's analyze each pair one by one according to the criterion:
+
+**Criterion summary:**  
+- The response and the target answer are considered correct if they have roughly the same meaning or point to the same entity/entities.  
+- If the response is a subset of the target answer (i.e., all mentioned entities in response are in the target), it can be counted as correct.  
+- No need for exact word-to-word match.
+
+---
+
+**idx_0:**  
+- Response: 美国 (USA)  
+- Target: 美国/加拿大 (USA/Canada)  
+- Analysis: The response ""美国"" is a subset of the target ""美国/加拿大"". So this is correct.  
+- Score: 1
+
+**idx_1:**  
+- Response: 美国 (USA)  
+- Target: 美国/巴西/中国大陆 (USA/Brazil/China)  
+- Analysis: Response ""美国"" is subset of the target entities. Correct.  
+- Score: 1
+
+**idx_2:**  
+- Response: 秘鲁 (Peru)  
+- Target: 法国/意大利 (France/Italy)  
+- Analysis: Response is totally different from target entities, no overlap.  
+- Score: 0
+
+**idx_3:**  
+- Response: 英国 (UK)  
+- Target: 英国/美国 (UK/USA)  
+- Analysis: Response is subset of target. Correct.  
+- Score: 1
+
+**idx_4:**  
+- Response: 波兰 (Poland)  
+- Target: 捷克/斯洛伐克/乌克兰 (Czech/Slovakia/Ukraine)  
+- Analysis: Different entities, no overlap.  
+- Score: 0
+
+**idx_5:**  
+- Response: 美国 (USA)  
+- Target: 瑞典/德国/挪威 (Sweden/Germany/Norway)  
+- Analysis: No overlap, response not in target.  
+- Score: 0
+
+**idx_6:**  
+- Response: 美国 (USA)  
+- Target: 美国 (USA)  
+- Analysis: Exactly the same. Correct.  
+- Score: 1
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1
+}
+```",捷克/斯洛伐克/乌克兰,波兰,0.0,"首先，根据给定的判分标准：
+
+- 标准答案和回答只要语义大致相同或者指向的实体一致，即判定为正确，得1分。
+- 若不一致，得0分。
+- 只允许整数分0或1。
+
+---
+
+逐条分析：
+
+**idx_0**  
+- 标准答案（target）：托德·菲利普斯  
+- 回答（response）：吉尔莫·德尔·托罗  
+- 两者均为导演名，但为不同人物，不同实体。故不符合“指向的实体一致”。得0分。
+
+**idx_1**  
+- 标准答案：詹姆斯·格雷  
+- 回答：詹姆斯·格雷  
+- 完全一致。得1分。
+
+**idx_2**  
+- 标准答案：罗曼·波兰斯基  
+- 回答：拉娜·杜尔科  
+- 两者均为电影导演，但不同人物，不符合实体一致。得0分。
+
+**idx_3**  
+- 标准答案：诺亚·鲍姆巴赫  
+- 回答：安东尼·明格拉  
+- 不同导演，实体不一致。得0分。
+
+**idx_4**  
+- 标准答案：瓦茨拉夫·马尔豪尔  
+- 回答：米哈乌·扎德尼克  
+- 不同实体。得0分。
+
+**idx_5**  
+- 标准答案：罗伊·安德森  
+- 回答：杰米·杰森  
+- 不同实体。得0分。
+
+**idx_6**  
+- 标准答案：史蒂文·索德伯格  
+- 回答：托马斯·麦卡锡  
+- 不同实体。得0分。
+
+---
+
+综上，只有 idx_1 得分为1，其余为0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",瓦茨拉夫·马尔豪尔,米哈乌·扎德尼克,0.0,"number not near, response: 1.0, target: 169.0",169,1,1.0,"Let's analyze each pair according to the criterion:
+
+- Criterion summary:  
+  1. Semantic meaning should be roughly the same or refer to the same entity.  
+  2. For types (genres), if the response answers a subset of the standard answer, and it matches the movie content, it's considered correct.  
+  3. Scores are 0 or 1 only.
+
+---
+
+**idx_0:**  
+- Response: 动作 (Action)  
+- Target: 剧情/惊悚/犯罪 (Drama/Thriller/Crime)  
+- Analysis: Response ""动作"" (Action) is completely different genre from the target ""剧情/惊悚/犯罪"". No overlap or subset relation here. So score = 0
+
+**idx_1:**  
+- Response: 科幻 (Sci-Fi)  
+- Target: 科幻/冒险 (Sci-Fi/Adventure)  
+- Analysis: Response is a subset of the target, matches the main type ""科幻"". So this is correct. Score =1
+
+**idx_2:**  
+- Response: 剧情 (Drama)  
+- Target: 剧情 (Drama)  
+- Analysis: Exact match, score=1
+
+**idx_3:**  
+- Response: 剧情 (Drama)  
+- Target: 剧情/爱情 (Drama/Romance)  
+- Analysis: Response is a subset of target. So score=1
+
+**idx_4:**  
+- Response: 剧情 (Drama)  
+- Target: 剧情/战争 (Drama/War)  
+- Analysis: Response is subset of target. Score=1
+
+**idx_5:**  
+- Response: 剧情 (Drama)  
+- Target: 剧情 (Drama)  
+- Analysis: Exact match. Score=1
+
+**idx_6:**  
+- Response: 剧情 (Drama)  
+- Target: 喜剧/剧情 (Comedy/Drama)  
+- Analysis: Response is subset of target. Score=1
+
+---
+
+Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",剧情/战争,剧情
+,,关于无尽,关于无尽,1.0,key_match,0.0,"Let's analyze each pair one by one according to the criterion:
+
+**Criterion summary:**  
+- The response and the target answer are considered correct if they have roughly the same meaning or point to the same entity/entities.  
+- If the response is a subset of the target answer (i.e., all mentioned entities in response are in the target), it can be counted as correct.  
+- No need for exact word-to-word match.
+
+---
+
+**idx_0:**  
+- Response: 美国 (USA)  
+- Target: 美国/加拿大 (USA/Canada)  
+- Analysis: The response ""美国"" is a subset of the target ""美国/加拿大"". So this is correct.  
+- Score: 1
+
+**idx_1:**  
+- Response: 美国 (USA)  
+- Target: 美国/巴西/中国大陆 (USA/Brazil/China)  
+- Analysis: Response ""美国"" is subset of the target entities. Correct.  
+- Score: 1
+
+**idx_2:**  
+- Response: 秘鲁 (Peru)  
+- Target: 法国/意大利 (France/Italy)  
+- Analysis: Response is totally different from target entities, no overlap.  
+- Score: 0
+
+**idx_3:**  
+- Response: 英国 (UK)  
+- Target: 英国/美国 (UK/USA)  
+- Analysis: Response is subset of target. Correct.  
+- Score: 1
+
+**idx_4:**  
+- Response: 波兰 (Poland)  
+- Target: 捷克/斯洛伐克/乌克兰 (Czech/Slovakia/Ukraine)  
+- Analysis: Different entities, no overlap.  
+- Score: 0
+
+**idx_5:**  
+- Response: 美国 (USA)  
+- Target: 瑞典/德国/挪威 (Sweden/Germany/Norway)  
+- Analysis: No overlap, response not in target.  
+- Score: 0
+
+**idx_6:**  
+- Response: 美国 (USA)  
+- Target: 美国 (USA)  
+- Analysis: Exactly the same. Correct.  
+- Score: 1
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1
+}
+```",瑞典/德国/挪威,美国,0.0,"首先，根据给定的判分标准：
+
+- 标准答案和回答只要语义大致相同或者指向的实体一致，即判定为正确，得1分。
+- 若不一致，得0分。
+- 只允许整数分0或1。
+
+---
+
+逐条分析：
+
+**idx_0**  
+- 标准答案（target）：托德·菲利普斯  
+- 回答（response）：吉尔莫·德尔·托罗  
+- 两者均为导演名，但为不同人物，不同实体。故不符合“指向的实体一致”。得0分。
+
+**idx_1**  
+- 标准答案：詹姆斯·格雷  
+- 回答：詹姆斯·格雷  
+- 完全一致。得1分。
+
+**idx_2**  
+- 标准答案：罗曼·波兰斯基  
+- 回答：拉娜·杜尔科  
+- 两者均为电影导演，但不同人物，不符合实体一致。得0分。
+
+**idx_3**  
+- 标准答案：诺亚·鲍姆巴赫  
+- 回答：安东尼·明格拉  
+- 不同导演，实体不一致。得0分。
+
+**idx_4**  
+- 标准答案：瓦茨拉夫·马尔豪尔  
+- 回答：米哈乌·扎德尼克  
+- 不同实体。得0分。
+
+**idx_5**  
+- 标准答案：罗伊·安德森  
+- 回答：杰米·杰森  
+- 不同实体。得0分。
+
+**idx_6**  
+- 标准答案：史蒂文·索德伯格  
+- 回答：托马斯·麦卡锡  
+- 不同实体。得0分。
+
+---
+
+综上，只有 idx_1 得分为1，其余为0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",罗伊·安德森,杰米·杰森,0.0,"number not near, response: 1.0, target: 76.0",76,1,1.0,"Let's analyze each pair according to the criterion:
+
+- Criterion summary:  
+  1. Semantic meaning should be roughly the same or refer to the same entity.  
+  2. For types (genres), if the response answers a subset of the standard answer, and it matches the movie content, it's considered correct.  
+  3. Scores are 0 or 1 only.
+
+---
+
+**idx_0:**  
+- Response: 动作 (Action)  
+- Target: 剧情/惊悚/犯罪 (Drama/Thriller/Crime)  
+- Analysis: Response ""动作"" (Action) is completely different genre from the target ""剧情/惊悚/犯罪"". No overlap or subset relation here. So score = 0
+
+**idx_1:**  
+- Response: 科幻 (Sci-Fi)  
+- Target: 科幻/冒险 (Sci-Fi/Adventure)  
+- Analysis: Response is a subset of the target, matches the main type ""科幻"". So this is correct. Score =1
+
+**idx_2:**  
+- Response: 剧情 (Drama)  
+- Target: 剧情 (Drama)  
+- Analysis: Exact match, score=1
+
+**idx_3:**  
+- Response: 剧情 (Drama)  
+- Target: 剧情/爱情 (Drama/Romance)  
+- Analysis: Response is a subset of target. So score=1
+
+**idx_4:**  
+- Response: 剧情 (Drama)  
+- Target: 剧情/战争 (Drama/War)  
+- Analysis: Response is subset of target. Score=1
+
+**idx_5:**  
+- Response: 剧情 (Drama)  
+- Target: 剧情 (Drama)  
+- Analysis: Exact match. Score=1
+
+**idx_6:**  
+- Response: 剧情 (Drama)  
+- Target: 喜剧/剧情 (Comedy/Drama)  
+- Analysis: Response is subset of target. Score=1
+
+---
+
+Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",剧情,剧情
+,,自助洗衣店,自助洗衣店,1.0,key_match,1.0,"Let's analyze each pair one by one according to the criterion:
+
+**Criterion summary:**  
+- The response and the target answer are considered correct if they have roughly the same meaning or point to the same entity/entities.  
+- If the response is a subset of the target answer (i.e., all mentioned entities in response are in the target), it can be counted as correct.  
+- No need for exact word-to-word match.
+
+---
+
+**idx_0:**  
+- Response: 美国 (USA)  
+- Target: 美国/加拿大 (USA/Canada)  
+- Analysis: The response ""美国"" is a subset of the target ""美国/加拿大"". So this is correct.  
+- Score: 1
+
+**idx_1:**  
+- Response: 美国 (USA)  
+- Target: 美国/巴西/中国大陆 (USA/Brazil/China)  
+- Analysis: Response ""美国"" is subset of the target entities. Correct.  
+- Score: 1
+
+**idx_2:**  
+- Response: 秘鲁 (Peru)  
+- Target: 法国/意大利 (France/Italy)  
+- Analysis: Response is totally different from target entities, no overlap.  
+- Score: 0
+
+**idx_3:**  
+- Response: 英国 (UK)  
+- Target: 英国/美国 (UK/USA)  
+- Analysis: Response is subset of target. Correct.  
+- Score: 1
+
+**idx_4:**  
+- Response: 波兰 (Poland)  
+- Target: 捷克/斯洛伐克/乌克兰 (Czech/Slovakia/Ukraine)  
+- Analysis: Different entities, no overlap.  
+- Score: 0
+
+**idx_5:**  
+- Response: 美国 (USA)  
+- Target: 瑞典/德国/挪威 (Sweden/Germany/Norway)  
+- Analysis: No overlap, response not in target.  
+- Score: 0
+
+**idx_6:**  
+- Response: 美国 (USA)  
+- Target: 美国 (USA)  
+- Analysis: Exactly the same. Correct.  
+- Score: 1
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1
+}
+```",美国,美国,0.0,"首先，根据给定的判分标准：
+
+- 标准答案和回答只要语义大致相同或者指向的实体一致，即判定为正确，得1分。
+- 若不一致，得0分。
+- 只允许整数分0或1。
+
+---
+
+逐条分析：
+
+**idx_0**  
+- 标准答案（target）：托德·菲利普斯  
+- 回答（response）：吉尔莫·德尔·托罗  
+- 两者均为导演名，但为不同人物，不同实体。故不符合“指向的实体一致”。得0分。
+
+**idx_1**  
+- 标准答案：詹姆斯·格雷  
+- 回答：詹姆斯·格雷  
+- 完全一致。得1分。
+
+**idx_2**  
+- 标准答案：罗曼·波兰斯基  
+- 回答：拉娜·杜尔科  
+- 两者均为电影导演，但不同人物，不符合实体一致。得0分。
+
+**idx_3**  
+- 标准答案：诺亚·鲍姆巴赫  
+- 回答：安东尼·明格拉  
+- 不同导演，实体不一致。得0分。
+
+**idx_4**  
+- 标准答案：瓦茨拉夫·马尔豪尔  
+- 回答：米哈乌·扎德尼克  
+- 不同实体。得0分。
+
+**idx_5**  
+- 标准答案：罗伊·安德森  
+- 回答：杰米·杰森  
+- 不同实体。得0分。
+
+**idx_6**  
+- 标准答案：史蒂文·索德伯格  
+- 回答：托马斯·麦卡锡  
+- 不同实体。得0分。
+
+---
+
+综上，只有 idx_1 得分为1，其余为0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",史蒂文·索德伯格,托马斯·麦卡锡,0.0,"number not near, response: 1.0, target: 96.0",96,1,1.0,"Let's analyze each pair according to the criterion:
+
+- Criterion summary:  
+  1. Semantic meaning should be roughly the same or refer to the same entity.  
+  2. For types (genres), if the response answers a subset of the standard answer, and it matches the movie content, it's considered correct.  
+  3. Scores are 0 or 1 only.
+
+---
+
+**idx_0:**  
+- Response: 动作 (Action)  
+- Target: 剧情/惊悚/犯罪 (Drama/Thriller/Crime)  
+- Analysis: Response ""动作"" (Action) is completely different genre from the target ""剧情/惊悚/犯罪"". No overlap or subset relation here. So score = 0
+
+**idx_1:**  
+- Response: 科幻 (Sci-Fi)  
+- Target: 科幻/冒险 (Sci-Fi/Adventure)  
+- Analysis: Response is a subset of the target, matches the main type ""科幻"". So this is correct. Score =1
+
+**idx_2:**  
+- Response: 剧情 (Drama)  
+- Target: 剧情 (Drama)  
+- Analysis: Exact match, score=1
+
+**idx_3:**  
+- Response: 剧情 (Drama)  
+- Target: 剧情/爱情 (Drama/Romance)  
+- Analysis: Response is a subset of target. So score=1
+
+**idx_4:**  
+- Response: 剧情 (Drama)  
+- Target: 剧情/战争 (Drama/War)  
+- Analysis: Response is subset of target. Score=1
+
+**idx_5:**  
+- Response: 剧情 (Drama)  
+- Target: 剧情 (Drama)  
+- Analysis: Exact match. Score=1
+
+**idx_6:**  
+- Response: 剧情 (Drama)  
+- Target: 喜剧/剧情 (Comedy/Drama)  
+- Analysis: Response is subset of target. Score=1
+
+---
+
+Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",喜剧/剧情,剧情
+1.0,,世界的胜利,,,,,,法国/意大利,,,,罗贝尔·盖迪吉昂,,,,107,,,,剧情,
+1.0,,乳牙,,,,,,澳大利亚,,,,香农·墨菲,,,,120,,,,剧情/喜剧,
+,1.0,亲爱的弗兰克,亲爱的弗兰克,,,,,,美国,,,,西蒙·韦斯特,,,,1,,,,剧情
+1.0,,兰心大剧院,,,,,,中国大陆,,,,娄烨,,,,126,,,,剧情,
+,1.0,印度人,印度人,,,,,,美国,,,,约翰·卡拉辛斯基,,,,1,,,,动作
+1.0,,厄玛,,,,,,智利,,,,帕布罗·拉雷恩,,,,102,,,,剧情/爱情/音乐,
+,1.0,只有我们两人,只有我们两人,,,,,,美国,,,,塞巴斯蒂安·帕里诺,,,,1,,,,剧情
+,1.0,哈利·斯泰尔斯,哈利·斯泰尔斯,,,,,,美国,,,,克里斯汀·奥唐奈,,,,1,,,,剧情
+,1.0,夜间巡逻,夜间巡逻,,,,,,美国,,,,约翰·史都华德,,,,1,,,,动作
+,1.0,安迪·默克蒂的夜晚,安迪·默克蒂的夜晚,,,,,,美国,,,,奥利维亚·罗德曼,,,,1,,,,动作
+1.0,,完美候选人,,,,,,沙特阿拉伯/德国,,,,海法·曼苏尔,,,,101,,,,剧情,
+1.0,,庄园,,,,,,葡萄牙/法国,,,,蒂亚戈·盖吉思,,,,164,,,,剧情,
+,1.0,我们的名字是山姆和迈克,我们的名字是山姆和迈克,,,,,,法国,,,,安德烈·瓦伊达,,,,1,,,,剧情
+,1.0,拉扎洛的天空,拉扎洛的天空,,,,,,法国,,,,伊莎贝尔·阿佳妮,,,,1,,,,剧情
+,1.0,梅尔·莱斯的回忆录,梅尔·莱斯的回忆录,,,,,,美国,,,,凯文·康纳尼,,,,1,,,,剧情
+,1.0,没有秘密,没有秘密,,,,,,法国,,,,安德烈·萨兰廷,,,,1,,,,剧情
+,1.0,海外救援,海外救援,,,,,,美国,,,,弗朗西斯·劳伦斯,,,,1,,,,动作
+,1.0,犹大,犹大,,,,,,英国,,,,马克·菲利普斯,,,,1,,,,剧情
+,1.0,狂野的酷儿,狂野的酷儿,,,,,,美国,,,,查尔斯·麦肯齐,,,,1,,,,剧情
+1.0,,真相,,,,,,法国/日本,,,,是枝裕和,,,,106,,,,剧情,
+,1.0,神秘博士的谎言,神秘博士的谎言,,,,,,美国,,,,约翰·卡朋特,,,,1,,,,科幻
+1.0,,等待野蛮人,,,,,,意大利/美国,,,,西罗·格拉,,,,112,,,,剧情,
+1.0,,继园台七号,,,,,,中国香港/中国大陆,,,,杨凡,,,,125,,,,动画,
+,1.0,老师的老师,老师的老师,,,,,,意大利,,,,马里奥·马尔多那,,,,1,,,,剧情
+,1.0,背叛,背叛,,,,,,美国,,,,斯蒂芬·戴德利,,,,1,,,,剧情
+1.0,,荣誉之客,,,,,,加拿大,,,,阿托姆·伊戈扬,,,,104,,,,剧情,
+,1.0,萨拉的日记,萨拉的日记,,,,,,墨西哥,,,,卡洛斯·阿斯特拉,,,,1,,,,剧情
+,1.0,赞恩·马赫巴姆的旅程,赞恩·马赫巴姆的旅程,,,,,,美国,,,,艾米·沃林格,,,,1,,,,剧情
+,1.0,这是我们的夜晚,这是我们的夜晚,,,,,,意大利,,,,朱利安·科内利欧斯,,,,1,,,,剧情
+,1.0,雷电交加,雷电交加,,,,,,美国,,,,罗伯特·莱曼,,,,1,,,,剧情
+1.0,,非常市长,,,,,,意大利,,,,马里奥·马尔托内,,,,118,,,,剧情,
+1.0,,马丁·伊登,,,,,,意大利/法国/德国,,,,皮耶特罗·马切罗,,,,129,,,,剧情,
+1.0,,黄蜂网络,,,,,,法国/西班牙/比利时/巴西,,,,奥利维耶·阿萨亚斯,,,,123,,,,惊悚,
+1.0,,黑手党不再是曾经,,,,,,意大利,,,,弗兰科·马雷斯科,,,,107,,,,纪录片,
+,1.0,黑暗中的舞者,黑暗中的舞者,,,,,,美国,,,,罗伯特·雷德福,,,,1,,,,剧情

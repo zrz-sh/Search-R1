@@ -1,0 +1,817 @@
+exist_flag_gt,exist_flag_response,版本,版本_before_map,厂商_exact_match,厂商_exact_match_eval_msg,厂商_query,厂商_response,官方指导价(万)(人民币)_number_near,官方指导价(万)(人民币)_number_near_eval_msg,官方指导价(万)(人民币)_query,官方指导价(万)(人民币)_response,排名_exact_match,排名_exact_match_eval_msg,排名_query,排名_response,版本_exact_match,版本_exact_match_eval_msg,百公里耗电量(kwh/100km)_exact_match,百公里耗电量(kwh/100km)_exact_match_eval_msg,百公里耗电量(kwh/100km)_query,百公里耗电量(kwh/100km)_response,纯电续航里程(km)工信部_exact_match,纯电续航里程(km)工信部_exact_match_eval_msg,纯电续航里程(km)工信部_query,纯电续航里程(km)工信部_response,车型_llm_judge,车型_llm_judge_eval_msg,车型_query,车型_response,（电动机）最大功率(kw)_exact_match,（电动机）最大功率(kw)_exact_match_eval_msg,（电动机）最大功率(kw)_query,（电动机）最大功率(kw)_response,（电动机）最大扭矩(n·m)_exact_match,（电动机）最大扭矩(n·m)_exact_match_eval_msg,（电动机）最大扭矩(n·m)_query,（电动机）最大扭矩(n·m)_response
+,,五菱宏光miniev2024款120km磷酸铁锂,5.88万,0.0,"exact not match, response: 吉利, target: 上汽通用五菱",上汽通用五菱,吉利,0.0,"number not near, response: 5.88, target: 3.58",3.58,5.88,0.0,"exact not match, response: 5, target: 3",3,5,1.0,key_match,0.0,"exact not match, response: 14.8, target: 8.8",8.8,14.8,0.0,"exact not match, response: 301, target: 120",120,301,0.0,"First, let's identify the task and analyze the pairs one by one.
+
+**Task:**  
+Score each (response, target) pair 0 or 1 based on whether the response and target match semantically or refer to the same entity according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Translation: responses that are roughly semantically the same or refer to the same entity (car model) get score 1; otherwise 0.
+
+---
+
+### Items 0-7:  
+Target = ""五菱宏光miniev""
+
+Response:
+
+- idx_0: 吉利熊猫mini  
+- idx_1: 比亚迪海鸥  
+- idx_2: 雪佛兰畅巡  
+- idx_3: 五菱缤果  
+- idx_4: 奇瑞qq冰淇淋  
+- idx_5: 零跑t03  
+- idx_6: 长安lumin  
+- idx_7: 小米su7  
+
+These are all different electric car models from different brands. The target ""五菱宏光miniev"" is a specific model from Wuling. The response cars are:
+
+- 吉利熊猫mini: Geely car  
+- 比亚迪海鸥: BYD car  
+- 雪佛兰畅巡: Chevrolet car  
+- 五菱缤果: Another Wuling model but is not 宏光miniev, it's a distinct model (the ""缤果"" is different from ""宏光miniev""). So different car.  
+- 奇瑞qq冰淇淋: Chery model  
+- 零跑t03: Leapmotor model  
+- 长安lumin: Changan model  
+- 小米su7: Xiaomi car (SUV)
+
+None of these is the same as 五菱宏光miniev or is roughly the same entity (they are distinct car models). So according to the criterion, these should score 0.
+
+---
+
+### Items 8-9:
+
+Target = ""小米su7""
+
+Response:
+
+- idx_8: 威马w6  
+- idx_9: 极氪x  
+
+The target is a Xiaomi SU7 car. Responses are:
+
+- 威马w6: WM Motor W6 - a different brand and model  
+- 极氪x: Zeekr X - different brand and model
+
+No semantic or entity match here either, so these also get 0.
+
+---
+
+**Summary:** None of the responses match the target car entity or refer to the same entity closely enough to be scored 1.
+
+---
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```",五菱宏光miniev,吉利熊猫mini,0.0,"exact not match, response: 30, target: 20",20,30,0.0,"exact not match, response: 120, target: 85",85,120
+,,五菱宏光miniev2024款170km三元锂,8.28万,0.0,"exact not match, response: 比亚迪, target: 上汽通用五菱",上汽通用五菱,比亚迪,0.0,"number not near, response: 8.28, target: 4.18",4.18,8.28,1.0,"exact match, response: 3, target: 3",3,3,1.0,key_match,0.0,"exact not match, response: 13.8, target: 9.3",9.3,13.8,0.0,"exact not match, response: 380, target: 170",170,380,0.0,"First, let's identify the task and analyze the pairs one by one.
+
+**Task:**  
+Score each (response, target) pair 0 or 1 based on whether the response and target match semantically or refer to the same entity according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Translation: responses that are roughly semantically the same or refer to the same entity (car model) get score 1; otherwise 0.
+
+---
+
+### Items 0-7:  
+Target = ""五菱宏光miniev""
+
+Response:
+
+- idx_0: 吉利熊猫mini  
+- idx_1: 比亚迪海鸥  
+- idx_2: 雪佛兰畅巡  
+- idx_3: 五菱缤果  
+- idx_4: 奇瑞qq冰淇淋  
+- idx_5: 零跑t03  
+- idx_6: 长安lumin  
+- idx_7: 小米su7  
+
+These are all different electric car models from different brands. The target ""五菱宏光miniev"" is a specific model from Wuling. The response cars are:
+
+- 吉利熊猫mini: Geely car  
+- 比亚迪海鸥: BYD car  
+- 雪佛兰畅巡: Chevrolet car  
+- 五菱缤果: Another Wuling model but is not 宏光miniev, it's a distinct model (the ""缤果"" is different from ""宏光miniev""). So different car.  
+- 奇瑞qq冰淇淋: Chery model  
+- 零跑t03: Leapmotor model  
+- 长安lumin: Changan model  
+- 小米su7: Xiaomi car (SUV)
+
+None of these is the same as 五菱宏光miniev or is roughly the same entity (they are distinct car models). So according to the criterion, these should score 0.
+
+---
+
+### Items 8-9:
+
+Target = ""小米su7""
+
+Response:
+
+- idx_8: 威马w6  
+- idx_9: 极氪x  
+
+The target is a Xiaomi SU7 car. Responses are:
+
+- 威马w6: WM Motor W6 - a different brand and model  
+- 极氪x: Zeekr X - different brand and model
+
+No semantic or entity match here either, so these also get 0.
+
+---
+
+**Summary:** None of the responses match the target car entity or refer to the same entity closely enough to be scored 1.
+
+---
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```",五菱宏光miniev,比亚迪海鸥,0.0,"exact not match, response: 30, target: 20",20,30,0.0,"exact not match, response: 120, target: 85",85,120
+,,五菱宏光miniev2024款215km青春版磷酸铁锂,12.99万-16.99万,0.0,"exact not match, response: 雪佛兰, target: 上汽通用五菱",上汽通用五菱,雪佛兰,0.0,"number not near, response: 12.99, target: 4.08",4.08,12.99,0.0,"exact not match, response: 8, target: 3",3,8,1.0,key_match,0.0,"exact not match, response: 14.8, target: 9.0",9.0,14.8,0.0,"exact not match, response: 510, target: 215",215,510,0.0,"First, let's identify the task and analyze the pairs one by one.
+
+**Task:**  
+Score each (response, target) pair 0 or 1 based on whether the response and target match semantically or refer to the same entity according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Translation: responses that are roughly semantically the same or refer to the same entity (car model) get score 1; otherwise 0.
+
+---
+
+### Items 0-7:  
+Target = ""五菱宏光miniev""
+
+Response:
+
+- idx_0: 吉利熊猫mini  
+- idx_1: 比亚迪海鸥  
+- idx_2: 雪佛兰畅巡  
+- idx_3: 五菱缤果  
+- idx_4: 奇瑞qq冰淇淋  
+- idx_5: 零跑t03  
+- idx_6: 长安lumin  
+- idx_7: 小米su7  
+
+These are all different electric car models from different brands. The target ""五菱宏光miniev"" is a specific model from Wuling. The response cars are:
+
+- 吉利熊猫mini: Geely car  
+- 比亚迪海鸥: BYD car  
+- 雪佛兰畅巡: Chevrolet car  
+- 五菱缤果: Another Wuling model but is not 宏光miniev, it's a distinct model (the ""缤果"" is different from ""宏光miniev""). So different car.  
+- 奇瑞qq冰淇淋: Chery model  
+- 零跑t03: Leapmotor model  
+- 长安lumin: Changan model  
+- 小米su7: Xiaomi car (SUV)
+
+None of these is the same as 五菱宏光miniev or is roughly the same entity (they are distinct car models). So according to the criterion, these should score 0.
+
+---
+
+### Items 8-9:
+
+Target = ""小米su7""
+
+Response:
+
+- idx_8: 威马w6  
+- idx_9: 极氪x  
+
+The target is a Xiaomi SU7 car. Responses are:
+
+- 威马w6: WM Motor W6 - a different brand and model  
+- 极氪x: Zeekr X - different brand and model
+
+No semantic or entity match here either, so these also get 0.
+
+---
+
+**Summary:** None of the responses match the target car entity or refer to the same entity closely enough to be scored 1.
+
+---
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```",五菱宏光miniev,雪佛兰畅巡,0.0,"exact not match, response: 130, target: 30",30,130,0.0,"exact not match, response: 280, target: 92",92,280
+,,五菱宏光miniev2022款轻松款三元锂,5.68万-8.48万,0.0,"exact not match, response: 五菱, target: 上汽通用五菱",上汽通用五菱,五菱,0.0,"number not near, response: 5.68, target: 3.28",3.28,5.68,0.0,"exact not match, response: 2, target: 3",3,2,1.0,key_match,0.0,"exact not match, response: 14.3, target: 8.8",8.8,14.3,0.0,"exact not match, response: 333, target: 120",120,333,0.0,"First, let's identify the task and analyze the pairs one by one.
+
+**Task:**  
+Score each (response, target) pair 0 or 1 based on whether the response and target match semantically or refer to the same entity according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Translation: responses that are roughly semantically the same or refer to the same entity (car model) get score 1; otherwise 0.
+
+---
+
+### Items 0-7:  
+Target = ""五菱宏光miniev""
+
+Response:
+
+- idx_0: 吉利熊猫mini  
+- idx_1: 比亚迪海鸥  
+- idx_2: 雪佛兰畅巡  
+- idx_3: 五菱缤果  
+- idx_4: 奇瑞qq冰淇淋  
+- idx_5: 零跑t03  
+- idx_6: 长安lumin  
+- idx_7: 小米su7  
+
+These are all different electric car models from different brands. The target ""五菱宏光miniev"" is a specific model from Wuling. The response cars are:
+
+- 吉利熊猫mini: Geely car  
+- 比亚迪海鸥: BYD car  
+- 雪佛兰畅巡: Chevrolet car  
+- 五菱缤果: Another Wuling model but is not 宏光miniev, it's a distinct model (the ""缤果"" is different from ""宏光miniev""). So different car.  
+- 奇瑞qq冰淇淋: Chery model  
+- 零跑t03: Leapmotor model  
+- 长安lumin: Changan model  
+- 小米su7: Xiaomi car (SUV)
+
+None of these is the same as 五菱宏光miniev or is roughly the same entity (they are distinct car models). So according to the criterion, these should score 0.
+
+---
+
+### Items 8-9:
+
+Target = ""小米su7""
+
+Response:
+
+- idx_8: 威马w6  
+- idx_9: 极氪x  
+
+The target is a Xiaomi SU7 car. Responses are:
+
+- 威马w6: WM Motor W6 - a different brand and model  
+- 极氪x: Zeekr X - different brand and model
+
+No semantic or entity match here either, so these also get 0.
+
+---
+
+**Summary:** None of the responses match the target car entity or refer to the same entity closely enough to be scored 1.
+
+---
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```",五菱宏光miniev,五菱缤果,0.0,"exact not match, response: 30, target: 20",20,30,0.0,"exact not match, response: 120, target: 85",85,120
+,,五菱宏光miniev2022款轻松款磷酸铁锂,5.28万,0.0,"exact not match, response: 奇瑞, target: 上汽通用五菱",上汽通用五菱,奇瑞,0.0,"number not near, response: 5.28, target: 3.28",3.28,5.28,0.0,"exact not match, response: 4, target: 3",3,4,1.0,key_match,0.0,"exact not match, response: 14.8, target: 8.8",8.8,14.8,0.0,"exact not match, response: 301, target: 120",120,301,0.0,"First, let's identify the task and analyze the pairs one by one.
+
+**Task:**  
+Score each (response, target) pair 0 or 1 based on whether the response and target match semantically or refer to the same entity according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Translation: responses that are roughly semantically the same or refer to the same entity (car model) get score 1; otherwise 0.
+
+---
+
+### Items 0-7:  
+Target = ""五菱宏光miniev""
+
+Response:
+
+- idx_0: 吉利熊猫mini  
+- idx_1: 比亚迪海鸥  
+- idx_2: 雪佛兰畅巡  
+- idx_3: 五菱缤果  
+- idx_4: 奇瑞qq冰淇淋  
+- idx_5: 零跑t03  
+- idx_6: 长安lumin  
+- idx_7: 小米su7  
+
+These are all different electric car models from different brands. The target ""五菱宏光miniev"" is a specific model from Wuling. The response cars are:
+
+- 吉利熊猫mini: Geely car  
+- 比亚迪海鸥: BYD car  
+- 雪佛兰畅巡: Chevrolet car  
+- 五菱缤果: Another Wuling model but is not 宏光miniev, it's a distinct model (the ""缤果"" is different from ""宏光miniev""). So different car.  
+- 奇瑞qq冰淇淋: Chery model  
+- 零跑t03: Leapmotor model  
+- 长安lumin: Changan model  
+- 小米su7: Xiaomi car (SUV)
+
+None of these is the same as 五菱宏光miniev or is roughly the same entity (they are distinct car models). So according to the criterion, these should score 0.
+
+---
+
+### Items 8-9:
+
+Target = ""小米su7""
+
+Response:
+
+- idx_8: 威马w6  
+- idx_9: 极氪x  
+
+The target is a Xiaomi SU7 car. Responses are:
+
+- 威马w6: WM Motor W6 - a different brand and model  
+- 极氪x: Zeekr X - different brand and model
+
+No semantic or entity match here either, so these also get 0.
+
+---
+
+**Summary:** None of the responses match the target car entity or refer to the same entity closely enough to be scored 1.
+
+---
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```",五菱宏光miniev,奇瑞qq冰淇淋,0.0,"exact not match, response: 30, target: 20",20,30,0.0,"exact not match, response: 120, target: 85",85,120
+,,五菱宏光miniev2022款自在款三元锂,6.58万-8.18万,0.0,"exact not match, response: 零跑, target: 上汽通用五菱",上汽通用五菱,零跑,0.0,"number not near, response: 6.58, target: 3.88",3.88,6.58,0.0,"exact not match, response: 6, target: 3",3,6,1.0,key_match,0.0,"exact not match, response: 14.8, target: 8.8",8.8,14.8,0.0,"exact not match, response: 401, target: 120",120,401,0.0,"First, let's identify the task and analyze the pairs one by one.
+
+**Task:**  
+Score each (response, target) pair 0 or 1 based on whether the response and target match semantically or refer to the same entity according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Translation: responses that are roughly semantically the same or refer to the same entity (car model) get score 1; otherwise 0.
+
+---
+
+### Items 0-7:  
+Target = ""五菱宏光miniev""
+
+Response:
+
+- idx_0: 吉利熊猫mini  
+- idx_1: 比亚迪海鸥  
+- idx_2: 雪佛兰畅巡  
+- idx_3: 五菱缤果  
+- idx_4: 奇瑞qq冰淇淋  
+- idx_5: 零跑t03  
+- idx_6: 长安lumin  
+- idx_7: 小米su7  
+
+These are all different electric car models from different brands. The target ""五菱宏光miniev"" is a specific model from Wuling. The response cars are:
+
+- 吉利熊猫mini: Geely car  
+- 比亚迪海鸥: BYD car  
+- 雪佛兰畅巡: Chevrolet car  
+- 五菱缤果: Another Wuling model but is not 宏光miniev, it's a distinct model (the ""缤果"" is different from ""宏光miniev""). So different car.  
+- 奇瑞qq冰淇淋: Chery model  
+- 零跑t03: Leapmotor model  
+- 长安lumin: Changan model  
+- 小米su7: Xiaomi car (SUV)
+
+None of these is the same as 五菱宏光miniev or is roughly the same entity (they are distinct car models). So according to the criterion, these should score 0.
+
+---
+
+### Items 8-9:
+
+Target = ""小米su7""
+
+Response:
+
+- idx_8: 威马w6  
+- idx_9: 极氪x  
+
+The target is a Xiaomi SU7 car. Responses are:
+
+- 威马w6: WM Motor W6 - a different brand and model  
+- 极氪x: Zeekr X - different brand and model
+
+No semantic or entity match here either, so these also get 0.
+
+---
+
+**Summary:** None of the responses match the target car entity or refer to the same entity closely enough to be scored 1.
+
+---
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```",五菱宏光miniev,零跑t03,0.0,"exact not match, response: 30, target: 20",20,30,0.0,"exact not match, response: 120, target: 85",85,120
+,,五菱宏光miniev2022款自在款磷酸铁锂,7.19万,0.0,"exact not match, response: 长安, target: 上汽通用五菱",上汽通用五菱,长安,0.0,"number not near, response: 7.19, target: 3.88",3.88,7.19,0.0,"exact not match, response: 7, target: 3",3,7,1.0,key_match,0.0,"exact not match, response: 14.8, target: 8.8",8.8,14.8,0.0,"exact not match, response: 318, target: 120",120,318,0.0,"First, let's identify the task and analyze the pairs one by one.
+
+**Task:**  
+Score each (response, target) pair 0 or 1 based on whether the response and target match semantically or refer to the same entity according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Translation: responses that are roughly semantically the same or refer to the same entity (car model) get score 1; otherwise 0.
+
+---
+
+### Items 0-7:  
+Target = ""五菱宏光miniev""
+
+Response:
+
+- idx_0: 吉利熊猫mini  
+- idx_1: 比亚迪海鸥  
+- idx_2: 雪佛兰畅巡  
+- idx_3: 五菱缤果  
+- idx_4: 奇瑞qq冰淇淋  
+- idx_5: 零跑t03  
+- idx_6: 长安lumin  
+- idx_7: 小米su7  
+
+These are all different electric car models from different brands. The target ""五菱宏光miniev"" is a specific model from Wuling. The response cars are:
+
+- 吉利熊猫mini: Geely car  
+- 比亚迪海鸥: BYD car  
+- 雪佛兰畅巡: Chevrolet car  
+- 五菱缤果: Another Wuling model but is not 宏光miniev, it's a distinct model (the ""缤果"" is different from ""宏光miniev""). So different car.  
+- 奇瑞qq冰淇淋: Chery model  
+- 零跑t03: Leapmotor model  
+- 长安lumin: Changan model  
+- 小米su7: Xiaomi car (SUV)
+
+None of these is the same as 五菱宏光miniev or is roughly the same entity (they are distinct car models). So according to the criterion, these should score 0.
+
+---
+
+### Items 8-9:
+
+Target = ""小米su7""
+
+Response:
+
+- idx_8: 威马w6  
+- idx_9: 极氪x  
+
+The target is a Xiaomi SU7 car. Responses are:
+
+- 威马w6: WM Motor W6 - a different brand and model  
+- 极氪x: Zeekr X - different brand and model
+
+No semantic or entity match here either, so these also get 0.
+
+---
+
+**Summary:** None of the responses match the target car entity or refer to the same entity closely enough to be scored 1.
+
+---
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```",五菱宏光miniev,长安lumin,0.0,"exact not match, response: 30, target: 20",20,30,0.0,"exact not match, response: 120, target: 85",85,120
+,,五菱宏光miniev2022款gameboy300km玩咖款磷酸铁锂,21.59万,0.0,"exact not match, response: 小米, target: 上汽通用五菱",上汽通用五菱,小米,0.0,"number not near, response: 21.59, target: 6.98",6.98,21.59,0.0,"exact not match, response: 1, target: 3",3,1,1.0,key_match,0.0,"exact not match, response: 14.8, target: 9.6",9.6,14.8,0.0,"exact not match, response: 500, target: 300",300,500,0.0,"First, let's identify the task and analyze the pairs one by one.
+
+**Task:**  
+Score each (response, target) pair 0 or 1 based on whether the response and target match semantically or refer to the same entity according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Translation: responses that are roughly semantically the same or refer to the same entity (car model) get score 1; otherwise 0.
+
+---
+
+### Items 0-7:  
+Target = ""五菱宏光miniev""
+
+Response:
+
+- idx_0: 吉利熊猫mini  
+- idx_1: 比亚迪海鸥  
+- idx_2: 雪佛兰畅巡  
+- idx_3: 五菱缤果  
+- idx_4: 奇瑞qq冰淇淋  
+- idx_5: 零跑t03  
+- idx_6: 长安lumin  
+- idx_7: 小米su7  
+
+These are all different electric car models from different brands. The target ""五菱宏光miniev"" is a specific model from Wuling. The response cars are:
+
+- 吉利熊猫mini: Geely car  
+- 比亚迪海鸥: BYD car  
+- 雪佛兰畅巡: Chevrolet car  
+- 五菱缤果: Another Wuling model but is not 宏光miniev, it's a distinct model (the ""缤果"" is different from ""宏光miniev""). So different car.  
+- 奇瑞qq冰淇淋: Chery model  
+- 零跑t03: Leapmotor model  
+- 长安lumin: Changan model  
+- 小米su7: Xiaomi car (SUV)
+
+None of these is the same as 五菱宏光miniev or is roughly the same entity (they are distinct car models). So according to the criterion, these should score 0.
+
+---
+
+### Items 8-9:
+
+Target = ""小米su7""
+
+Response:
+
+- idx_8: 威马w6  
+- idx_9: 极氪x  
+
+The target is a Xiaomi SU7 car. Responses are:
+
+- 威马w6: WM Motor W6 - a different brand and model  
+- 极氪x: Zeekr X - different brand and model
+
+No semantic or entity match here either, so these also get 0.
+
+---
+
+**Summary:** None of the responses match the target car entity or refer to the same entity closely enough to be scored 1.
+
+---
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```",五菱宏光miniev,小米su7,0.0,"exact not match, response: 150, target: 30",30,150,0.0,"exact not match, response: 320, target: 110",110,320
+,,小米su72024款后驱标准长续航版,18.08万-26.08万,0.0,"exact not match, response: 威马, target: 小米汽车",小米汽车,威马,0.0,"number not near, response: 18.08, target: 21.59",21.59,18.08,0.0,"exact not match, response: 9, target: 4",4,9,1.0,key_match,0.0,"exact not match, response: 14.8, target: 12.3",12.3,14.8,0.0,"exact not match, response: 520, target: 700",700,520,0.0,"First, let's identify the task and analyze the pairs one by one.
+
+**Task:**  
+Score each (response, target) pair 0 or 1 based on whether the response and target match semantically or refer to the same entity according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Translation: responses that are roughly semantically the same or refer to the same entity (car model) get score 1; otherwise 0.
+
+---
+
+### Items 0-7:  
+Target = ""五菱宏光miniev""
+
+Response:
+
+- idx_0: 吉利熊猫mini  
+- idx_1: 比亚迪海鸥  
+- idx_2: 雪佛兰畅巡  
+- idx_3: 五菱缤果  
+- idx_4: 奇瑞qq冰淇淋  
+- idx_5: 零跑t03  
+- idx_6: 长安lumin  
+- idx_7: 小米su7  
+
+These are all different electric car models from different brands. The target ""五菱宏光miniev"" is a specific model from Wuling. The response cars are:
+
+- 吉利熊猫mini: Geely car  
+- 比亚迪海鸥: BYD car  
+- 雪佛兰畅巡: Chevrolet car  
+- 五菱缤果: Another Wuling model but is not 宏光miniev, it's a distinct model (the ""缤果"" is different from ""宏光miniev""). So different car.  
+- 奇瑞qq冰淇淋: Chery model  
+- 零跑t03: Leapmotor model  
+- 长安lumin: Changan model  
+- 小米su7: Xiaomi car (SUV)
+
+None of these is the same as 五菱宏光miniev or is roughly the same entity (they are distinct car models). So according to the criterion, these should score 0.
+
+---
+
+### Items 8-9:
+
+Target = ""小米su7""
+
+Response:
+
+- idx_8: 威马w6  
+- idx_9: 极氪x  
+
+The target is a Xiaomi SU7 car. Responses are:
+
+- 威马w6: WM Motor W6 - a different brand and model  
+- 极氪x: Zeekr X - different brand and model
+
+No semantic or entity match here either, so these also get 0.
+
+---
+
+**Summary:** None of the responses match the target car entity or refer to the same entity closely enough to be scored 1.
+
+---
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```",小米su7,威马w6,0.0,"exact not match, response: 130, target: 220",220,130,0.0,"exact not match, response: 280, target: 400",400,280
+,,小米su72024款后驱超长续航pro版,20.08万-28.88万,0.0,"exact not match, response: 极氪, target: 小米汽车",小米汽车,极氪,0.0,"number not near, response: 20.08, target: 24.59",24.59,20.08,0.0,"exact not match, response: 10, target: 4",4,10,1.0,key_match,0.0,"exact not match, response: 14.8, target: 12.9",12.9,14.8,0.0,"exact not match, response: 520, target: 830",830,520,0.0,"First, let's identify the task and analyze the pairs one by one.
+
+**Task:**  
+Score each (response, target) pair 0 or 1 based on whether the response and target match semantically or refer to the same entity according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Translation: responses that are roughly semantically the same or refer to the same entity (car model) get score 1; otherwise 0.
+
+---
+
+### Items 0-7:  
+Target = ""五菱宏光miniev""
+
+Response:
+
+- idx_0: 吉利熊猫mini  
+- idx_1: 比亚迪海鸥  
+- idx_2: 雪佛兰畅巡  
+- idx_3: 五菱缤果  
+- idx_4: 奇瑞qq冰淇淋  
+- idx_5: 零跑t03  
+- idx_6: 长安lumin  
+- idx_7: 小米su7  
+
+These are all different electric car models from different brands. The target ""五菱宏光miniev"" is a specific model from Wuling. The response cars are:
+
+- 吉利熊猫mini: Geely car  
+- 比亚迪海鸥: BYD car  
+- 雪佛兰畅巡: Chevrolet car  
+- 五菱缤果: Another Wuling model but is not 宏光miniev, it's a distinct model (the ""缤果"" is different from ""宏光miniev""). So different car.  
+- 奇瑞qq冰淇淋: Chery model  
+- 零跑t03: Leapmotor model  
+- 长安lumin: Changan model  
+- 小米su7: Xiaomi car (SUV)
+
+None of these is the same as 五菱宏光miniev or is roughly the same entity (they are distinct car models). So according to the criterion, these should score 0.
+
+---
+
+### Items 8-9:
+
+Target = ""小米su7""
+
+Response:
+
+- idx_8: 威马w6  
+- idx_9: 极氪x  
+
+The target is a Xiaomi SU7 car. Responses are:
+
+- 威马w6: WM Motor W6 - a different brand and model  
+- 极氪x: Zeekr X - different brand and model
+
+No semantic or entity match here either, so these also get 0.
+
+---
+
+**Summary:** None of the responses match the target car entity or refer to the same entity closely enough to be scored 1.
+
+---
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```",小米su7,极氪x,0.0,"exact not match, response: 130, target: 220",220,130,0.0,"exact not match, response: 280, target: 400",400,280
+1.0,,modely2025款后轮驱动版,,,,特斯拉中国,,,,26.35,,,,5,,,,,,11.9,,,,593,,,,modely,,,,220,,,,410,
+1.0,,modely2025款长续航全轮驱动,,,,特斯拉中国,,,,31.35,,,,5,,,,,,12.4,,,,719,,,,modely,,,,331,,,,559,
+1.0,,五菱宏光miniev2022款gameboy200km玩乐款磷酸铁锂,,,,上汽通用五菱,,,,5.58,,,,3,,,,,,9.0,,,,200,,,,五菱宏光miniev,,,,30,,,,110,
+1.0,,五菱宏光miniev2022款gameboy200km玩咖款磷酸铁锂,,,,上汽通用五菱,,,,5.78,,,,3,,,,,,9.0,,,,200,,,,五菱宏光miniev,,,,30,,,,110,
+1.0,,五菱宏光miniev2022款gameboy200km竞速游侠限量版,,,,上汽通用五菱,,,,6.28,,,,3,,,,,,9.0,,,,200,,,,五菱宏光miniev,,,,30,,,,110,
+1.0,,五菱宏光miniev2022款gameboy200km都市追风限量版,,,,上汽通用五菱,,,,6.28,,,,3,,,,,,9.0,,,,200,,,,五菱宏光miniev,,,,30,,,,110,
+1.0,,五菱宏光miniev2022款gameboy300km玩乐款磷酸铁锂,,,,上汽通用五菱,,,,6.78,,,,3,,,,,,9.6,,,,300,,,,五菱宏光miniev,,,,30,,,,110,
+1.0,,五菱宏光miniev2022款gameboy300km竞速游侠限量版,,,,上汽通用五菱,,,,7.28,,,,3,,,,,,9.6,,,,300,,,,五菱宏光miniev,,,,30,,,,110,
+1.0,,五菱宏光miniev2022款gameboy300km都市追风限量版,,,,上汽通用五菱,,,,7.28,,,,3,,,,,,9.6,,,,300,,,,五菱宏光miniev,,,,30,,,,110,
+1.0,,五菱宏光miniev2022款悦享款三元锂,,,,上汽通用五菱,,,,4.48,,,,3,,,,,,9.3,,,,170,,,,五菱宏光miniev,,,,20,,,,85,
+1.0,,五菱宏光miniev2022款悦享款磷酸铁锂,,,,上汽通用五菱,,,,4.48,,,,3,,,,,,9.3,,,,170,,,,五菱宏光miniev,,,,20,,,,85,
+1.0,,五菱宏光miniev2022款敞篷版,,,,上汽通用五菱,,,,9.99,,,,3,,,,,,10.7,,,,280,,,,五菱宏光miniev,,,,30,,,,110,
+1.0,,五菱宏光miniev2022款马卡龙时尚款三元锂,,,,上汽通用五菱,,,,4.38,,,,3,,,,,,8.8,,,,120,,,,五菱宏光miniev,,,,20,,,,85,
+1.0,,五菱宏光miniev2022款马卡龙时尚款磷酸铁锂,,,,上汽通用五菱,,,,4.38,,,,3,,,,,,8.8,,,,120,,,,五菱宏光miniev,,,,20,,,,85,
+1.0,,五菱宏光miniev2022款马卡龙绘色款三元锂,,,,上汽通用五菱,,,,5.28,,,,3,,,,,,9.3,,,,170,,,,五菱宏光miniev,,,,20,,,,85,
+1.0,,五菱宏光miniev2022款马卡龙绘色款磷酸铁锂,,,,上汽通用五菱,,,,5.28,,,,3,,,,,,9.3,,,,170,,,,五菱宏光miniev,,,,20,,,,85,
+1.0,,五菱宏光miniev2022款马卡龙缤纷款三元锂,,,,上汽通用五菱,,,,4.68,,,,3,,,,,,8.8,,,,120,,,,五菱宏光miniev,,,,20,,,,85,
+1.0,,五菱宏光miniev2022款马卡龙缤纷款磷酸铁锂,,,,上汽通用五菱,,,,4.68,,,,3,,,,,,8.8,,,,120,,,,五菱宏光miniev,,,,20,,,,85,
+1.0,,五菱宏光miniev2022款马卡龙臻享款三元锂,,,,上汽通用五菱,,,,4.98,,,,3,,,,,,9.3,,,,170,,,,五菱宏光miniev,,,,20,,,,85,
+1.0,,五菱宏光miniev2022款马卡龙臻享款磷酸铁锂,,,,上汽通用五菱,,,,4.98,,,,3,,,,,,9.3,,,,170,,,,五菱宏光miniev,,,,20,,,,85,
+1.0,,五菱宏光miniev2024款170km磷酸铁锂,,,,上汽通用五菱,,,,4.18,,,,3,,,,,,9.3,,,,170,,,,五菱宏光miniev,,,,20,,,,85,
+1.0,,五菱宏光miniev2024款215km进阶版磷酸铁锂,,,,上汽通用五菱,,,,4.68,,,,3,,,,,,9.0,,,,215,,,,五菱宏光miniev,,,,30,,,,92,
+1.0,,五菱宏光miniev2025款205km磷酸铁锂四门版臻享+款,,,,上汽通用五菱,,,,5.08,,,,3,,,,,,8.9,,,,205,,,,五菱宏光miniev,,,,30,,,,85,
+1.0,,五菱宏光miniev2025款205km磷酸铁锂四门版臻享款,,,,上汽通用五菱,,,,4.98,,,,3,,,,,,8.9,,,,205,,,,五菱宏光miniev,,,,30,,,,85,
+1.0,,五菱宏光miniev2025款205km磷酸铁锂四门版进阶款,,,,上汽通用五菱,,,,4.48,,,,3,,,,,,8.9,,,,205,,,,五菱宏光miniev,,,,30,,,,85,
+1.0,,小米su72024款四驱超长续航max版,,,,小米汽车,,,,29.99,,,,4,,,,,,13.7,,,,800,,,,小米su7,,,,495,,,,838,
+1.0,,星愿2025款310km梦想版,,,,吉利银河,,,,7.68,,,,1,,,,,,10.9,,,,310,,,,星愿,,,,58,,,,130,
+1.0,,星愿2025款310km青春版,,,,吉利银河,,,,6.88,,,,1,,,,,,10.9,,,,310,,,,星愿,,,,58,,,,130,
+1.0,,星愿2025款410km自由版,,,,吉利银河,,,,8.18,,,,1,,,,,,10.7,,,,410,,,,星愿,,,,85,,,,150,
+1.0,,星愿2025款up410km探索+版,,,,吉利银河,,,,9.78,,,,1,,,,,,10.7,,,,410,,,,星愿,,,,85,,,,150,
+1.0,,星愿2025款up410km探索版,,,,吉利银河,,,,8.78,,,,1,,,,,,10.7,,,,410,,,,星愿,,,,85,,,,150,
+1.0,,海豹06dm2024款dm-i120km尊享型,,,,比亚迪,,,,12.98,,,,10,,,,,,13.6,,,,90,,,,海豹06dm,,,,160,,,,260,
+1.0,,海豹06dm2024款dm-i120km尊荣型,,,,比亚迪,,,,11.98,,,,10,,,,,,13.6,,,,90,,,,海豹06dm,,,,160,,,,260,
+1.0,,海豹06dm2024款dm-i120km旗舰型,,,,比亚迪,,,,13.98,,,,10,,,,,,13.6,,,,90,,,,海豹06dm,,,,160,,,,260,
+1.0,,海豹06dm2024款dm-i80km尊贵型,,,,比亚迪,,,,10.98,,,,10,,,,,,11.1,,,,60,,,,海豹06dm,,,,120,,,,210,
+1.0,,海豹06dm2024款dm-i80km豪华型,,,,比亚迪,,,,9.98,,,,10,,,,,,11.1,,,,60,,,,海豹06dm,,,,120,,,,210,
+1.0,,海豹06dm2025款智驾版dm-i120km尊享型,,,,比亚迪,,,,12.98,,,,10,,,,,,13.6,,,,90,,,,海豹06dm,,,,160,,,,260,
+1.0,,海豹06dm2025款智驾版dm-i120km尊荣型,,,,比亚迪,,,,11.98,,,,10,,,,,,13.6,,,,90,,,,海豹06dm,,,,160,,,,260,
+1.0,,海豹06dm2025款智驾版dm-i120km旗舰型,,,,比亚迪,,,,13.98,,,,10,,,,,,13.6,,,,90,,,,海豹06dm,,,,160,,,,260,
+1.0,,海豹06dm2025款智驾版dm-i80km尊贵型,,,,比亚迪,,,,10.98,,,,10,,,,,,11.1,,,,60,,,,海豹06dm,,,,120,,,,210,
+1.0,,海豹06dm2025款智驾版dm-i80km豪华型,,,,比亚迪,,,,9.98,,,,10,,,,,,11.1,,,,60,,,,海豹06dm,,,,120,,,,210,
+1.0,,海鸥2025款305km活力版,,,,比亚迪,,,,6.98,,,,2,,,,,,9.9,,,,305,,,,海鸥,,,,55,,,,135,
+1.0,,海鸥2025款305km自由版,,,,比亚迪,,,,7.58,,,,2,,,,,,9.9,,,,305,,,,海鸥,,,,55,,,,135,
+1.0,,海鸥2025款405km飞翔版,,,,比亚迪,,,,8.58,,,,2,,,,,,10.1,,,,405,,,,海鸥,,,,55,,,,135,
+1.0,,海鸥2025款智驾版305km活力版,,,,比亚迪,,,,6.98,,,,2,,,,,,9.9,,,,305,,,,海鸥,,,,55,,,,135,
+1.0,,海鸥2025款智驾版305km自由版,,,,比亚迪,,,,7.88,,,,2,,,,,,9.9,,,,305,,,,海鸥,,,,55,,,,135,
+1.0,,海鸥2025款智驾版405km飞翔版,,,,比亚迪,,,,8.58,,,,2,,,,,,10.1,,,,405,,,,海鸥,,,,55,,,,135,
+1.0,,熊猫2023款120km熊猫mini亚运熊,,,,吉利汽车,,,,2.99,,,,9,,,,,,9.2,,,,120,,,,熊猫,,,,20,,,,85,
+1.0,,熊猫2023款120km熊猫mini超萌熊,,,,吉利汽车,,,,4.29,,,,9,,,,,,9.2,,,,120,,,,熊猫,,,,20,,,,85,
+1.0,,熊猫2023款200km熊猫mini灵动熊,,,,吉利汽车,,,,5.39,,,,9,,,,,,9.4,,,,200,,,,熊猫,,,,30,,,,110,
+1.0,,熊猫2024款200km熊猫mini耐力熊,,,,吉利汽车,,,,4.99,,,,9,,,,,,9.4,,,,200,,,,熊猫,,,,30,,,,110,
+1.0,,熊猫2024款200km熊猫mini龙腾版,,,,吉利汽车,,,,3.99,,,,9,,,,,,9.4,,,,200,,,,熊猫,,,,30,,,,110,
+1.0,,熊猫2025款210km熊猫mini元气熊,,,,吉利汽车,,,,4.99,,,,9,,,,,,9.1,,,,210,,,,熊猫,,,,30,,,,110,
+1.0,,熊猫2025款210km熊猫卡丁,,,,吉利汽车,,,,4.69,,,,9,,,,,,9.1,,,,210,,,,熊猫,,,,30,,,,110,
+1.0,,熊猫2025款210km熊猫骑士,,,,吉利汽车,,,,5.39,,,,9,,,,,,9.1,,,,210,,,,熊猫,,,,30,,,,110,
+1.0,,理想l62025款max智能焕新版,,,,理想汽车,,,,27.98,,,,8,,,,,,21.1,,,,172,,,,理想l6,,,,300,,,,529,
+1.0,,理想l62025款pro智能焕新版,,,,理想汽车,,,,24.98,,,,8,,,,,,21.1,,,,172,,,,理想l6,,,,300,,,,529,
+1.0,,秦ldm2024款dm-i120km卓越型,,,,比亚迪,,,,13.98,,,,7,,,,,,13.6,,,,90,,,,秦ldm,,,,160,,,,260,
+1.0,,秦ldm2024款dm-i120km超越型,,,,比亚迪,,,,12.98,,,,7,,,,,,13.6,,,,90,,,,秦ldm,,,,160,,,,260,
+1.0,,秦ldm2024款dm-i120km领先型,,,,比亚迪,,,,11.98,,,,7,,,,,,13.6,,,,90,,,,秦ldm,,,,160,,,,260,
+1.0,,秦ldm2024款dm-i80km超越型,,,,比亚迪,,,,10.98,,,,7,,,,,,11.1,,,,60,,,,秦ldm,,,,120,,,,210,
+1.0,,秦ldm2024款dm-i80km领先型,,,,比亚迪,,,,9.98,,,,7,,,,,,11.1,,,,60,,,,秦ldm,,,,120,,,,210,
+1.0,,秦ldm2025款智驾版dm-i120km卓越型,,,,比亚迪,,,,13.98,,,,7,,,,,,13.6,,,,90,,,,秦ldm,,,,160,,,,260,
+1.0,,秦ldm2025款智驾版dm-i120km超越型,,,,比亚迪,,,,12.98,,,,7,,,,,,13.6,,,,90,,,,秦ldm,,,,160,,,,260,
+1.0,,秦ldm2025款智驾版dm-i120km领先型,,,,比亚迪,,,,11.98,,,,7,,,,,,13.6,,,,90,,,,秦ldm,,,,160,,,,260,
+1.0,,秦ldm2025款智驾版dm-i120km领航版,,,,比亚迪,,,,15.38,,,,7,,,,,,13.6,,,,90,,,,秦ldm,,,,160,,,,260,
+1.0,,秦ldm2025款智驾版dm-i80km超越型,,,,比亚迪,,,,10.98,,,,7,,,,,,11.1,,,,60,,,,秦ldm,,,,120,,,,210,
+1.0,,秦ldm2025款智驾版dm-i80km领先型,,,,比亚迪,,,,9.98,,,,7,,,,,,11.1,,,,60,,,,秦ldm,,,,120,,,,210,
+1.0,,秦plusdm2024款荣耀版dm-i120km卓越型,,,,比亚迪,,,,12.58,,,,6,,,,,,14.5,,,,120,,,,秦plusdm,,,,145,,,,325,
+1.0,,秦plusdm2024款荣耀版dm-i120km超越型,,,,比亚迪,,,,11.58,,,,6,,,,,,14.5,,,,101,,,,秦plusdm,,,,145,,,,325,
+1.0,,秦plusdm2024款荣耀版dm-i120km领先型,,,,比亚迪,,,,10.58,,,,6,,,,,,14.5,,,,101,,,,秦plusdm,,,,145,,,,325,
+1.0,,秦plusdm2024款荣耀版dm-i55km超越型,,,,比亚迪,,,,9.58,,,,6,,,,,,11.7,,,,46,,,,秦plusdm,,,,132,,,,316,
+1.0,,秦plusdm2024款荣耀版dm-i55km领先型,,,,比亚迪,,,,7.98,,,,6,,,,,,11.7,,,,46,,,,秦plusdm,,,,132,,,,316,
+1.0,,秦plusdm2025款智驾版dm-i120km超越型,,,,比亚迪,,,,10.38,,,,6,,,,,,13.6,,,,120,,,,秦plusdm,,,,120,,,,210,
+1.0,,秦plusdm2025款智驾版dm-i55km超越型,,,,比亚迪,,,,9.38,,,,6,,,,,,11.1,,,,55,,,,秦plusdm,,,,120,,,,210,
+1.0,,秦plusdm2025款智驾版dm-i55km领先型,,,,比亚迪,,,,7.98,,,,6,,,,,,11.1,,,,55,,,,秦plusdm,,,,120,,,,210,

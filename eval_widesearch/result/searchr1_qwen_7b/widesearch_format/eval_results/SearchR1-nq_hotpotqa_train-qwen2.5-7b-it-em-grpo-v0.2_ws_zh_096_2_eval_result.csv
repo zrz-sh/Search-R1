@@ -1,0 +1,4220 @@
+exist_flag_gt,exist_flag_response,电影名称,电影名称_before_map,上映年份_llm_judge,上映年份_llm_judge_eval_msg,上映年份_query,上映年份_response,导演_llm_judge,导演_llm_judge_eval_msg,导演_query,导演_response,梁朝伟通过该电影所获奖项_llm_judge,梁朝伟通过该电影所获奖项_llm_judge_eval_msg,梁朝伟通过该电影所获奖项_query,梁朝伟通过该电影所获奖项_response,电影名称_exact_match,电影名称_exact_match_eval_msg
+,,侠骨仁心,東邪西毒,0.0,"Let's analyze each pair item by item according to the grading criterion:
+
+Criterion:
+- Semantic equivalence or matching entities are required.
+- Exact word-for-word matching is not needed.
+- Since the answers are years, the main point is whether the response year matches the target year.
+
+Analysis per idx:
+
+- idx_0: response = '1994', target = '2000年'
+  - Years differ (1994 vs 2000), so not semantically equivalent.
+  - Score = 0
+
+- idx_1: response = '1999', target = '2000年'
+  - Years differ (1999 vs 2000).
+  - Score = 0
+
+- idx_2: response = '1997', target = '2001年'
+  - Years differ (1997 vs 2001).
+  - Score = 0
+
+- idx_3: response = '2002', target = '2002年'
+  - Years match exactly.
+  - Score = 1
+
+- idx_4: response = '-', target = '2003年'
+  - Response is missing or invalid ('-').
+  - Score = 0
+
+- idx_5: response = '2004', target = '2004年'
+  - Years match exactly.
+  - Score = 1
+
+- idx_6: response = '1989', target = '2006年'
+  - Years differ.
+  - Score = 0
+
+- idx_7: response = '2007', target = '2007年'
+  - Match.
+  - Score = 1
+
+- idx_8: response = '2009', target = '2008年'
+  - Years differ.
+  - Score = 0
+
+- idx_9: response = '2013', target = '2013年'
+  - Match.
+  - Score = 1
+
+- idx_10: response = '-', target = '2016年'
+  - Missing.
+  - Score = 0
+
+- idx_11: response = '2023', target = '2023年'
+  - Match.
+  - Score = 1
+
+- idx_12: response = '1994', target = '2023年'
+  - Differ.
+  - Score = 0
+
+- idx_13: response = '-', target = '2023年'
+  - Missing.
+  - Score = 0
+
+Final scoring JSON output:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0
+}
+```",2000年,1994,0.0,"Let me analyze each pair of response and target according to the criterion:
+
+Criterion: The response should be semantically close or refer to the same entity as the ""target"". It does not require exact string match, but the key point is whether the response and target refer to the same person or entity.
+
+---
+
+**idx_0:**  
+response: 王家卫  
+target: 邓特希  
+- 王家卫 (Wong Kar Wai) and 邓特希 (Teddy Chen) are different persons, commonly known filmmakers but distinct individuals.  
+- Not the same entity or semantically equal.  
+Score: 0
+
+**idx_1:**  
+response: 王家卫  
+target: 王家卫  
+- Exact same person.  
+Score: 1
+
+**idx_2:**  
+response: 王家卫  
+target: 马伟豪  
+- Different persons.  
+Score: 0
+
+**idx_3:**  
+response: 周星馳  
+target: 刘伟强、麦兆辉  
+- 周星驰 (Stephen Chow) is a well-known filmmaker/actor, but 刘伟强 (Andrew Lau) and 麦兆辉 (Alan Mak) are distinct film directors. Different entities.  
+Score: 0
+
+**idx_4:**  
+response: 杜琪峰  
+target: 马伟豪  
+- 杜琪峰 (Johnnie To) distinct from 马伟豪 (Max Mak)  
+- Different entities.  
+Score: 0
+
+**idx_5:**  
+response: 王家卫  
+target: 王家卫  
+- Same entity.  
+Score: 1
+
+**idx_6:**  
+response: 侯孝贤  
+target: 刘伟强、麦兆辉  
+- 侯孝贤 (Hou Hsiao-Hsien) is a distinct director from 刘伟强 and 麦兆辉  
+- Different entities.  
+Score: 0
+
+**idx_7:**  
+response: 张艺谋  
+target: 李安  
+- 张艺谋 (Zhang Yimou) and 李安 (Ang Lee) are different persons.  
+Score: 0
+
+**idx_8:**  
+response: 陈凯歌  
+target: 吴宇森  
+- Different persons.  
+Score: 0
+
+**idx_9:**  
+response: 叶伟信  
+target: 王家卫  
+- Different.  
+Score: 0
+
+**idx_10:**  
+response: 刘伟强  
+target: 张嘉佳  
+- 张嘉佳 is a writer, 刘伟强 is a film director. Different persons.  
+Score: 0
+
+**idx_11:**  
+response: 钟汉良  
+target: 程耳  
+- 钟汉良 is an actor, 程耳 is a director. Different persons.  
+Score: 0
+
+**idx_12:**  
+response: 周星馳  
+target: 翁子光  
+- Different persons.  
+Score: 0
+
+**idx_13:**  
+response: 吳宇森  
+target: 庄文强  
+- 吴宇森 (John Woo) vs 庄文强 (Felix Chong) different persons.  
+Score: 0
+
+---
+
+Final scores JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0
+}
+```",邓特希,王家卫,1.0,"分析过程：
+
+根据评分标准：
+- 参考答案与回复语义相同大致，或者指向的实体一致即可得1分。
+- 回复为空（“-”）且参考答案不为空则得0分。
+- 回复与参考答案不一致或无关得0分。
+- 回复与参考答案都为空得1分。
+
+逐条分析：
+
+idx_0：
+response: ""-""
+target: ""-""
+两者均空，得1分。
+
+idx_1：
+response: ""-""
+target: ""第53届戛纳国际电影节最佳男演员\n第20届香港电影金像奖最佳男主角\n第1届华语电影传媒大奖最佳男主角""
+回复为空，参考答案不为空，得0分。
+
+idx_2：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_3：
+response: ""-""
+target: ""第22届香港电影金像奖最佳男主角\n第40届台湾电影金马奖最佳男主角奖""
+回复为空，答案不空，得0分。
+
+idx_4：
+response: ""-""
+target: ""第4届华语电影传媒大奖港台最佳男演员银奖""
+回复空，答案非空，得0分。
+
+idx_5：
+response: ""最佳男主角""
+target: ""第24届香港电影金像奖最佳男主角""
+回复虽不完全，但语义指向“最佳男主角”，与目标实体部分匹配，符合语义大致一致，得1分。
+
+idx_6：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_7：
+response: ""最佳男主角""
+target: ""第44届台湾电影金马奖最佳男演员\n第2届亚洲电影大奖最佳男演员""
+回复简略但包含“最佳男主角”，与目标语义对应，得1分。
+
+idx_8：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_9：
+response: ""-""
+target: ""香港导演协会奖最佳男主角""
+回复空，目标不空，得0分。
+
+idx_10：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_11：
+response: ""最佳男主角""
+target: ""第36届中国电影金鸡奖最佳男主角""
+回复与目标指向角色和奖项性质一致，得1分。
+
+idx_12：
+response: ""-""
+target: ""第16届亚洲电影大奖最佳男主角""
+回复空，目标不空，得0分。
+
+idx_13：
+response: ""-""
+target: ""第42届香港电影金像奖最佳男主角""
+回复空，目标不空，得0分。
+
+---
+
+最终评分汇总：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0
+}
+```",-,-,1.0,key_match
+,,花样年华,花樣年華,0.0,"Let's analyze each pair item by item according to the grading criterion:
+
+Criterion:
+- Semantic equivalence or matching entities are required.
+- Exact word-for-word matching is not needed.
+- Since the answers are years, the main point is whether the response year matches the target year.
+
+Analysis per idx:
+
+- idx_0: response = '1994', target = '2000年'
+  - Years differ (1994 vs 2000), so not semantically equivalent.
+  - Score = 0
+
+- idx_1: response = '1999', target = '2000年'
+  - Years differ (1999 vs 2000).
+  - Score = 0
+
+- idx_2: response = '1997', target = '2001年'
+  - Years differ (1997 vs 2001).
+  - Score = 0
+
+- idx_3: response = '2002', target = '2002年'
+  - Years match exactly.
+  - Score = 1
+
+- idx_4: response = '-', target = '2003年'
+  - Response is missing or invalid ('-').
+  - Score = 0
+
+- idx_5: response = '2004', target = '2004年'
+  - Years match exactly.
+  - Score = 1
+
+- idx_6: response = '1989', target = '2006年'
+  - Years differ.
+  - Score = 0
+
+- idx_7: response = '2007', target = '2007年'
+  - Match.
+  - Score = 1
+
+- idx_8: response = '2009', target = '2008年'
+  - Years differ.
+  - Score = 0
+
+- idx_9: response = '2013', target = '2013年'
+  - Match.
+  - Score = 1
+
+- idx_10: response = '-', target = '2016年'
+  - Missing.
+  - Score = 0
+
+- idx_11: response = '2023', target = '2023年'
+  - Match.
+  - Score = 1
+
+- idx_12: response = '1994', target = '2023年'
+  - Differ.
+  - Score = 0
+
+- idx_13: response = '-', target = '2023年'
+  - Missing.
+  - Score = 0
+
+Final scoring JSON output:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0
+}
+```",2000年,1999,1.0,"Let me analyze each pair of response and target according to the criterion:
+
+Criterion: The response should be semantically close or refer to the same entity as the ""target"". It does not require exact string match, but the key point is whether the response and target refer to the same person or entity.
+
+---
+
+**idx_0:**  
+response: 王家卫  
+target: 邓特希  
+- 王家卫 (Wong Kar Wai) and 邓特希 (Teddy Chen) are different persons, commonly known filmmakers but distinct individuals.  
+- Not the same entity or semantically equal.  
+Score: 0
+
+**idx_1:**  
+response: 王家卫  
+target: 王家卫  
+- Exact same person.  
+Score: 1
+
+**idx_2:**  
+response: 王家卫  
+target: 马伟豪  
+- Different persons.  
+Score: 0
+
+**idx_3:**  
+response: 周星馳  
+target: 刘伟强、麦兆辉  
+- 周星驰 (Stephen Chow) is a well-known filmmaker/actor, but 刘伟强 (Andrew Lau) and 麦兆辉 (Alan Mak) are distinct film directors. Different entities.  
+Score: 0
+
+**idx_4:**  
+response: 杜琪峰  
+target: 马伟豪  
+- 杜琪峰 (Johnnie To) distinct from 马伟豪 (Max Mak)  
+- Different entities.  
+Score: 0
+
+**idx_5:**  
+response: 王家卫  
+target: 王家卫  
+- Same entity.  
+Score: 1
+
+**idx_6:**  
+response: 侯孝贤  
+target: 刘伟强、麦兆辉  
+- 侯孝贤 (Hou Hsiao-Hsien) is a distinct director from 刘伟强 and 麦兆辉  
+- Different entities.  
+Score: 0
+
+**idx_7:**  
+response: 张艺谋  
+target: 李安  
+- 张艺谋 (Zhang Yimou) and 李安 (Ang Lee) are different persons.  
+Score: 0
+
+**idx_8:**  
+response: 陈凯歌  
+target: 吴宇森  
+- Different persons.  
+Score: 0
+
+**idx_9:**  
+response: 叶伟信  
+target: 王家卫  
+- Different.  
+Score: 0
+
+**idx_10:**  
+response: 刘伟强  
+target: 张嘉佳  
+- 张嘉佳 is a writer, 刘伟强 is a film director. Different persons.  
+Score: 0
+
+**idx_11:**  
+response: 钟汉良  
+target: 程耳  
+- 钟汉良 is an actor, 程耳 is a director. Different persons.  
+Score: 0
+
+**idx_12:**  
+response: 周星馳  
+target: 翁子光  
+- Different persons.  
+Score: 0
+
+**idx_13:**  
+response: 吳宇森  
+target: 庄文强  
+- 吴宇森 (John Woo) vs 庄文强 (Felix Chong) different persons.  
+Score: 0
+
+---
+
+Final scores JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0
+}
+```",王家卫,王家卫,0.0,"分析过程：
+
+根据评分标准：
+- 参考答案与回复语义相同大致，或者指向的实体一致即可得1分。
+- 回复为空（“-”）且参考答案不为空则得0分。
+- 回复与参考答案不一致或无关得0分。
+- 回复与参考答案都为空得1分。
+
+逐条分析：
+
+idx_0：
+response: ""-""
+target: ""-""
+两者均空，得1分。
+
+idx_1：
+response: ""-""
+target: ""第53届戛纳国际电影节最佳男演员\n第20届香港电影金像奖最佳男主角\n第1届华语电影传媒大奖最佳男主角""
+回复为空，参考答案不为空，得0分。
+
+idx_2：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_3：
+response: ""-""
+target: ""第22届香港电影金像奖最佳男主角\n第40届台湾电影金马奖最佳男主角奖""
+回复为空，答案不空，得0分。
+
+idx_4：
+response: ""-""
+target: ""第4届华语电影传媒大奖港台最佳男演员银奖""
+回复空，答案非空，得0分。
+
+idx_5：
+response: ""最佳男主角""
+target: ""第24届香港电影金像奖最佳男主角""
+回复虽不完全，但语义指向“最佳男主角”，与目标实体部分匹配，符合语义大致一致，得1分。
+
+idx_6：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_7：
+response: ""最佳男主角""
+target: ""第44届台湾电影金马奖最佳男演员\n第2届亚洲电影大奖最佳男演员""
+回复简略但包含“最佳男主角”，与目标语义对应，得1分。
+
+idx_8：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_9：
+response: ""-""
+target: ""香港导演协会奖最佳男主角""
+回复空，目标不空，得0分。
+
+idx_10：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_11：
+response: ""最佳男主角""
+target: ""第36届中国电影金鸡奖最佳男主角""
+回复与目标指向角色和奖项性质一致，得1分。
+
+idx_12：
+response: ""-""
+target: ""第16届亚洲电影大奖最佳男主角""
+回复空，目标不空，得0分。
+
+idx_13：
+response: ""-""
+target: ""第42届香港电影金像奖最佳男主角""
+回复空，目标不空，得0分。
+
+---
+
+最终评分汇总：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0
+}
+```","第53届戛纳国际电影节最佳男演员
+第20届香港电影金像奖最佳男主角
+第1届华语电影传媒大奖最佳男主角",-,1.0,key_match
+,,同居蜜友,春光乍泄,0.0,"Let's analyze each pair item by item according to the grading criterion:
+
+Criterion:
+- Semantic equivalence or matching entities are required.
+- Exact word-for-word matching is not needed.
+- Since the answers are years, the main point is whether the response year matches the target year.
+
+Analysis per idx:
+
+- idx_0: response = '1994', target = '2000年'
+  - Years differ (1994 vs 2000), so not semantically equivalent.
+  - Score = 0
+
+- idx_1: response = '1999', target = '2000年'
+  - Years differ (1999 vs 2000).
+  - Score = 0
+
+- idx_2: response = '1997', target = '2001年'
+  - Years differ (1997 vs 2001).
+  - Score = 0
+
+- idx_3: response = '2002', target = '2002年'
+  - Years match exactly.
+  - Score = 1
+
+- idx_4: response = '-', target = '2003年'
+  - Response is missing or invalid ('-').
+  - Score = 0
+
+- idx_5: response = '2004', target = '2004年'
+  - Years match exactly.
+  - Score = 1
+
+- idx_6: response = '1989', target = '2006年'
+  - Years differ.
+  - Score = 0
+
+- idx_7: response = '2007', target = '2007年'
+  - Match.
+  - Score = 1
+
+- idx_8: response = '2009', target = '2008年'
+  - Years differ.
+  - Score = 0
+
+- idx_9: response = '2013', target = '2013年'
+  - Match.
+  - Score = 1
+
+- idx_10: response = '-', target = '2016年'
+  - Missing.
+  - Score = 0
+
+- idx_11: response = '2023', target = '2023年'
+  - Match.
+  - Score = 1
+
+- idx_12: response = '1994', target = '2023年'
+  - Differ.
+  - Score = 0
+
+- idx_13: response = '-', target = '2023年'
+  - Missing.
+  - Score = 0
+
+Final scoring JSON output:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0
+}
+```",2001年,1997,0.0,"Let me analyze each pair of response and target according to the criterion:
+
+Criterion: The response should be semantically close or refer to the same entity as the ""target"". It does not require exact string match, but the key point is whether the response and target refer to the same person or entity.
+
+---
+
+**idx_0:**  
+response: 王家卫  
+target: 邓特希  
+- 王家卫 (Wong Kar Wai) and 邓特希 (Teddy Chen) are different persons, commonly known filmmakers but distinct individuals.  
+- Not the same entity or semantically equal.  
+Score: 0
+
+**idx_1:**  
+response: 王家卫  
+target: 王家卫  
+- Exact same person.  
+Score: 1
+
+**idx_2:**  
+response: 王家卫  
+target: 马伟豪  
+- Different persons.  
+Score: 0
+
+**idx_3:**  
+response: 周星馳  
+target: 刘伟强、麦兆辉  
+- 周星驰 (Stephen Chow) is a well-known filmmaker/actor, but 刘伟强 (Andrew Lau) and 麦兆辉 (Alan Mak) are distinct film directors. Different entities.  
+Score: 0
+
+**idx_4:**  
+response: 杜琪峰  
+target: 马伟豪  
+- 杜琪峰 (Johnnie To) distinct from 马伟豪 (Max Mak)  
+- Different entities.  
+Score: 0
+
+**idx_5:**  
+response: 王家卫  
+target: 王家卫  
+- Same entity.  
+Score: 1
+
+**idx_6:**  
+response: 侯孝贤  
+target: 刘伟强、麦兆辉  
+- 侯孝贤 (Hou Hsiao-Hsien) is a distinct director from 刘伟强 and 麦兆辉  
+- Different entities.  
+Score: 0
+
+**idx_7:**  
+response: 张艺谋  
+target: 李安  
+- 张艺谋 (Zhang Yimou) and 李安 (Ang Lee) are different persons.  
+Score: 0
+
+**idx_8:**  
+response: 陈凯歌  
+target: 吴宇森  
+- Different persons.  
+Score: 0
+
+**idx_9:**  
+response: 叶伟信  
+target: 王家卫  
+- Different.  
+Score: 0
+
+**idx_10:**  
+response: 刘伟强  
+target: 张嘉佳  
+- 张嘉佳 is a writer, 刘伟强 is a film director. Different persons.  
+Score: 0
+
+**idx_11:**  
+response: 钟汉良  
+target: 程耳  
+- 钟汉良 is an actor, 程耳 is a director. Different persons.  
+Score: 0
+
+**idx_12:**  
+response: 周星馳  
+target: 翁子光  
+- Different persons.  
+Score: 0
+
+**idx_13:**  
+response: 吳宇森  
+target: 庄文强  
+- 吴宇森 (John Woo) vs 庄文强 (Felix Chong) different persons.  
+Score: 0
+
+---
+
+Final scores JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0
+}
+```",马伟豪,王家卫,1.0,"分析过程：
+
+根据评分标准：
+- 参考答案与回复语义相同大致，或者指向的实体一致即可得1分。
+- 回复为空（“-”）且参考答案不为空则得0分。
+- 回复与参考答案不一致或无关得0分。
+- 回复与参考答案都为空得1分。
+
+逐条分析：
+
+idx_0：
+response: ""-""
+target: ""-""
+两者均空，得1分。
+
+idx_1：
+response: ""-""
+target: ""第53届戛纳国际电影节最佳男演员\n第20届香港电影金像奖最佳男主角\n第1届华语电影传媒大奖最佳男主角""
+回复为空，参考答案不为空，得0分。
+
+idx_2：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_3：
+response: ""-""
+target: ""第22届香港电影金像奖最佳男主角\n第40届台湾电影金马奖最佳男主角奖""
+回复为空，答案不空，得0分。
+
+idx_4：
+response: ""-""
+target: ""第4届华语电影传媒大奖港台最佳男演员银奖""
+回复空，答案非空，得0分。
+
+idx_5：
+response: ""最佳男主角""
+target: ""第24届香港电影金像奖最佳男主角""
+回复虽不完全，但语义指向“最佳男主角”，与目标实体部分匹配，符合语义大致一致，得1分。
+
+idx_6：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_7：
+response: ""最佳男主角""
+target: ""第44届台湾电影金马奖最佳男演员\n第2届亚洲电影大奖最佳男演员""
+回复简略但包含“最佳男主角”，与目标语义对应，得1分。
+
+idx_8：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_9：
+response: ""-""
+target: ""香港导演协会奖最佳男主角""
+回复空，目标不空，得0分。
+
+idx_10：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_11：
+response: ""最佳男主角""
+target: ""第36届中国电影金鸡奖最佳男主角""
+回复与目标指向角色和奖项性质一致，得1分。
+
+idx_12：
+response: ""-""
+target: ""第16届亚洲电影大奖最佳男主角""
+回复空，目标不空，得0分。
+
+idx_13：
+response: ""-""
+target: ""第42届香港电影金像奖最佳男主角""
+回复空，目标不空，得0分。
+
+---
+
+最终评分汇总：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0
+}
+```",-,-,1.0,key_match
+,,无间道,无间道,1.0,"Let's analyze each pair item by item according to the grading criterion:
+
+Criterion:
+- Semantic equivalence or matching entities are required.
+- Exact word-for-word matching is not needed.
+- Since the answers are years, the main point is whether the response year matches the target year.
+
+Analysis per idx:
+
+- idx_0: response = '1994', target = '2000年'
+  - Years differ (1994 vs 2000), so not semantically equivalent.
+  - Score = 0
+
+- idx_1: response = '1999', target = '2000年'
+  - Years differ (1999 vs 2000).
+  - Score = 0
+
+- idx_2: response = '1997', target = '2001年'
+  - Years differ (1997 vs 2001).
+  - Score = 0
+
+- idx_3: response = '2002', target = '2002年'
+  - Years match exactly.
+  - Score = 1
+
+- idx_4: response = '-', target = '2003年'
+  - Response is missing or invalid ('-').
+  - Score = 0
+
+- idx_5: response = '2004', target = '2004年'
+  - Years match exactly.
+  - Score = 1
+
+- idx_6: response = '1989', target = '2006年'
+  - Years differ.
+  - Score = 0
+
+- idx_7: response = '2007', target = '2007年'
+  - Match.
+  - Score = 1
+
+- idx_8: response = '2009', target = '2008年'
+  - Years differ.
+  - Score = 0
+
+- idx_9: response = '2013', target = '2013年'
+  - Match.
+  - Score = 1
+
+- idx_10: response = '-', target = '2016年'
+  - Missing.
+  - Score = 0
+
+- idx_11: response = '2023', target = '2023年'
+  - Match.
+  - Score = 1
+
+- idx_12: response = '1994', target = '2023年'
+  - Differ.
+  - Score = 0
+
+- idx_13: response = '-', target = '2023年'
+  - Missing.
+  - Score = 0
+
+Final scoring JSON output:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0
+}
+```",2002年,2002,0.0,"Let me analyze each pair of response and target according to the criterion:
+
+Criterion: The response should be semantically close or refer to the same entity as the ""target"". It does not require exact string match, but the key point is whether the response and target refer to the same person or entity.
+
+---
+
+**idx_0:**  
+response: 王家卫  
+target: 邓特希  
+- 王家卫 (Wong Kar Wai) and 邓特希 (Teddy Chen) are different persons, commonly known filmmakers but distinct individuals.  
+- Not the same entity or semantically equal.  
+Score: 0
+
+**idx_1:**  
+response: 王家卫  
+target: 王家卫  
+- Exact same person.  
+Score: 1
+
+**idx_2:**  
+response: 王家卫  
+target: 马伟豪  
+- Different persons.  
+Score: 0
+
+**idx_3:**  
+response: 周星馳  
+target: 刘伟强、麦兆辉  
+- 周星驰 (Stephen Chow) is a well-known filmmaker/actor, but 刘伟强 (Andrew Lau) and 麦兆辉 (Alan Mak) are distinct film directors. Different entities.  
+Score: 0
+
+**idx_4:**  
+response: 杜琪峰  
+target: 马伟豪  
+- 杜琪峰 (Johnnie To) distinct from 马伟豪 (Max Mak)  
+- Different entities.  
+Score: 0
+
+**idx_5:**  
+response: 王家卫  
+target: 王家卫  
+- Same entity.  
+Score: 1
+
+**idx_6:**  
+response: 侯孝贤  
+target: 刘伟强、麦兆辉  
+- 侯孝贤 (Hou Hsiao-Hsien) is a distinct director from 刘伟强 and 麦兆辉  
+- Different entities.  
+Score: 0
+
+**idx_7:**  
+response: 张艺谋  
+target: 李安  
+- 张艺谋 (Zhang Yimou) and 李安 (Ang Lee) are different persons.  
+Score: 0
+
+**idx_8:**  
+response: 陈凯歌  
+target: 吴宇森  
+- Different persons.  
+Score: 0
+
+**idx_9:**  
+response: 叶伟信  
+target: 王家卫  
+- Different.  
+Score: 0
+
+**idx_10:**  
+response: 刘伟强  
+target: 张嘉佳  
+- 张嘉佳 is a writer, 刘伟强 is a film director. Different persons.  
+Score: 0
+
+**idx_11:**  
+response: 钟汉良  
+target: 程耳  
+- 钟汉良 is an actor, 程耳 is a director. Different persons.  
+Score: 0
+
+**idx_12:**  
+response: 周星馳  
+target: 翁子光  
+- Different persons.  
+Score: 0
+
+**idx_13:**  
+response: 吳宇森  
+target: 庄文强  
+- 吴宇森 (John Woo) vs 庄文强 (Felix Chong) different persons.  
+Score: 0
+
+---
+
+Final scores JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0
+}
+```",刘伟强、麦兆辉,周星馳,0.0,"分析过程：
+
+根据评分标准：
+- 参考答案与回复语义相同大致，或者指向的实体一致即可得1分。
+- 回复为空（“-”）且参考答案不为空则得0分。
+- 回复与参考答案不一致或无关得0分。
+- 回复与参考答案都为空得1分。
+
+逐条分析：
+
+idx_0：
+response: ""-""
+target: ""-""
+两者均空，得1分。
+
+idx_1：
+response: ""-""
+target: ""第53届戛纳国际电影节最佳男演员\n第20届香港电影金像奖最佳男主角\n第1届华语电影传媒大奖最佳男主角""
+回复为空，参考答案不为空，得0分。
+
+idx_2：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_3：
+response: ""-""
+target: ""第22届香港电影金像奖最佳男主角\n第40届台湾电影金马奖最佳男主角奖""
+回复为空，答案不空，得0分。
+
+idx_4：
+response: ""-""
+target: ""第4届华语电影传媒大奖港台最佳男演员银奖""
+回复空，答案非空，得0分。
+
+idx_5：
+response: ""最佳男主角""
+target: ""第24届香港电影金像奖最佳男主角""
+回复虽不完全，但语义指向“最佳男主角”，与目标实体部分匹配，符合语义大致一致，得1分。
+
+idx_6：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_7：
+response: ""最佳男主角""
+target: ""第44届台湾电影金马奖最佳男演员\n第2届亚洲电影大奖最佳男演员""
+回复简略但包含“最佳男主角”，与目标语义对应，得1分。
+
+idx_8：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_9：
+response: ""-""
+target: ""香港导演协会奖最佳男主角""
+回复空，目标不空，得0分。
+
+idx_10：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_11：
+response: ""最佳男主角""
+target: ""第36届中国电影金鸡奖最佳男主角""
+回复与目标指向角色和奖项性质一致，得1分。
+
+idx_12：
+response: ""-""
+target: ""第16届亚洲电影大奖最佳男主角""
+回复空，目标不空，得0分。
+
+idx_13：
+response: ""-""
+target: ""第42届香港电影金像奖最佳男主角""
+回复空，目标不空，得0分。
+
+---
+
+最终评分汇总：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0
+}
+```","第22届香港电影金像奖最佳男主角
+第40届台湾电影金马奖最佳男主角奖",-,1.0,key_match
+,,地下铁,地下情,0.0,"Let's analyze each pair item by item according to the grading criterion:
+
+Criterion:
+- Semantic equivalence or matching entities are required.
+- Exact word-for-word matching is not needed.
+- Since the answers are years, the main point is whether the response year matches the target year.
+
+Analysis per idx:
+
+- idx_0: response = '1994', target = '2000年'
+  - Years differ (1994 vs 2000), so not semantically equivalent.
+  - Score = 0
+
+- idx_1: response = '1999', target = '2000年'
+  - Years differ (1999 vs 2000).
+  - Score = 0
+
+- idx_2: response = '1997', target = '2001年'
+  - Years differ (1997 vs 2001).
+  - Score = 0
+
+- idx_3: response = '2002', target = '2002年'
+  - Years match exactly.
+  - Score = 1
+
+- idx_4: response = '-', target = '2003年'
+  - Response is missing or invalid ('-').
+  - Score = 0
+
+- idx_5: response = '2004', target = '2004年'
+  - Years match exactly.
+  - Score = 1
+
+- idx_6: response = '1989', target = '2006年'
+  - Years differ.
+  - Score = 0
+
+- idx_7: response = '2007', target = '2007年'
+  - Match.
+  - Score = 1
+
+- idx_8: response = '2009', target = '2008年'
+  - Years differ.
+  - Score = 0
+
+- idx_9: response = '2013', target = '2013年'
+  - Match.
+  - Score = 1
+
+- idx_10: response = '-', target = '2016年'
+  - Missing.
+  - Score = 0
+
+- idx_11: response = '2023', target = '2023年'
+  - Match.
+  - Score = 1
+
+- idx_12: response = '1994', target = '2023年'
+  - Differ.
+  - Score = 0
+
+- idx_13: response = '-', target = '2023年'
+  - Missing.
+  - Score = 0
+
+Final scoring JSON output:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0
+}
+```",2003年,-,0.0,"Let me analyze each pair of response and target according to the criterion:
+
+Criterion: The response should be semantically close or refer to the same entity as the ""target"". It does not require exact string match, but the key point is whether the response and target refer to the same person or entity.
+
+---
+
+**idx_0:**  
+response: 王家卫  
+target: 邓特希  
+- 王家卫 (Wong Kar Wai) and 邓特希 (Teddy Chen) are different persons, commonly known filmmakers but distinct individuals.  
+- Not the same entity or semantically equal.  
+Score: 0
+
+**idx_1:**  
+response: 王家卫  
+target: 王家卫  
+- Exact same person.  
+Score: 1
+
+**idx_2:**  
+response: 王家卫  
+target: 马伟豪  
+- Different persons.  
+Score: 0
+
+**idx_3:**  
+response: 周星馳  
+target: 刘伟强、麦兆辉  
+- 周星驰 (Stephen Chow) is a well-known filmmaker/actor, but 刘伟强 (Andrew Lau) and 麦兆辉 (Alan Mak) are distinct film directors. Different entities.  
+Score: 0
+
+**idx_4:**  
+response: 杜琪峰  
+target: 马伟豪  
+- 杜琪峰 (Johnnie To) distinct from 马伟豪 (Max Mak)  
+- Different entities.  
+Score: 0
+
+**idx_5:**  
+response: 王家卫  
+target: 王家卫  
+- Same entity.  
+Score: 1
+
+**idx_6:**  
+response: 侯孝贤  
+target: 刘伟强、麦兆辉  
+- 侯孝贤 (Hou Hsiao-Hsien) is a distinct director from 刘伟强 and 麦兆辉  
+- Different entities.  
+Score: 0
+
+**idx_7:**  
+response: 张艺谋  
+target: 李安  
+- 张艺谋 (Zhang Yimou) and 李安 (Ang Lee) are different persons.  
+Score: 0
+
+**idx_8:**  
+response: 陈凯歌  
+target: 吴宇森  
+- Different persons.  
+Score: 0
+
+**idx_9:**  
+response: 叶伟信  
+target: 王家卫  
+- Different.  
+Score: 0
+
+**idx_10:**  
+response: 刘伟强  
+target: 张嘉佳  
+- 张嘉佳 is a writer, 刘伟强 is a film director. Different persons.  
+Score: 0
+
+**idx_11:**  
+response: 钟汉良  
+target: 程耳  
+- 钟汉良 is an actor, 程耳 is a director. Different persons.  
+Score: 0
+
+**idx_12:**  
+response: 周星馳  
+target: 翁子光  
+- Different persons.  
+Score: 0
+
+**idx_13:**  
+response: 吳宇森  
+target: 庄文强  
+- 吴宇森 (John Woo) vs 庄文强 (Felix Chong) different persons.  
+Score: 0
+
+---
+
+Final scores JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0
+}
+```",马伟豪,杜琪峰,0.0,"分析过程：
+
+根据评分标准：
+- 参考答案与回复语义相同大致，或者指向的实体一致即可得1分。
+- 回复为空（“-”）且参考答案不为空则得0分。
+- 回复与参考答案不一致或无关得0分。
+- 回复与参考答案都为空得1分。
+
+逐条分析：
+
+idx_0：
+response: ""-""
+target: ""-""
+两者均空，得1分。
+
+idx_1：
+response: ""-""
+target: ""第53届戛纳国际电影节最佳男演员\n第20届香港电影金像奖最佳男主角\n第1届华语电影传媒大奖最佳男主角""
+回复为空，参考答案不为空，得0分。
+
+idx_2：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_3：
+response: ""-""
+target: ""第22届香港电影金像奖最佳男主角\n第40届台湾电影金马奖最佳男主角奖""
+回复为空，答案不空，得0分。
+
+idx_4：
+response: ""-""
+target: ""第4届华语电影传媒大奖港台最佳男演员银奖""
+回复空，答案非空，得0分。
+
+idx_5：
+response: ""最佳男主角""
+target: ""第24届香港电影金像奖最佳男主角""
+回复虽不完全，但语义指向“最佳男主角”，与目标实体部分匹配，符合语义大致一致，得1分。
+
+idx_6：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_7：
+response: ""最佳男主角""
+target: ""第44届台湾电影金马奖最佳男演员\n第2届亚洲电影大奖最佳男演员""
+回复简略但包含“最佳男主角”，与目标语义对应，得1分。
+
+idx_8：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_9：
+response: ""-""
+target: ""香港导演协会奖最佳男主角""
+回复空，目标不空，得0分。
+
+idx_10：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_11：
+response: ""最佳男主角""
+target: ""第36届中国电影金鸡奖最佳男主角""
+回复与目标指向角色和奖项性质一致，得1分。
+
+idx_12：
+response: ""-""
+target: ""第16届亚洲电影大奖最佳男主角""
+回复空，目标不空，得0分。
+
+idx_13：
+response: ""-""
+target: ""第42届香港电影金像奖最佳男主角""
+回复空，目标不空，得0分。
+
+---
+
+最终评分汇总：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0
+}
+```",第4届华语电影传媒大奖港台最佳男演员银奖,-,1.0,key_match
+,,2046,2046,1.0,"Let's analyze each pair item by item according to the grading criterion:
+
+Criterion:
+- Semantic equivalence or matching entities are required.
+- Exact word-for-word matching is not needed.
+- Since the answers are years, the main point is whether the response year matches the target year.
+
+Analysis per idx:
+
+- idx_0: response = '1994', target = '2000年'
+  - Years differ (1994 vs 2000), so not semantically equivalent.
+  - Score = 0
+
+- idx_1: response = '1999', target = '2000年'
+  - Years differ (1999 vs 2000).
+  - Score = 0
+
+- idx_2: response = '1997', target = '2001年'
+  - Years differ (1997 vs 2001).
+  - Score = 0
+
+- idx_3: response = '2002', target = '2002年'
+  - Years match exactly.
+  - Score = 1
+
+- idx_4: response = '-', target = '2003年'
+  - Response is missing or invalid ('-').
+  - Score = 0
+
+- idx_5: response = '2004', target = '2004年'
+  - Years match exactly.
+  - Score = 1
+
+- idx_6: response = '1989', target = '2006年'
+  - Years differ.
+  - Score = 0
+
+- idx_7: response = '2007', target = '2007年'
+  - Match.
+  - Score = 1
+
+- idx_8: response = '2009', target = '2008年'
+  - Years differ.
+  - Score = 0
+
+- idx_9: response = '2013', target = '2013年'
+  - Match.
+  - Score = 1
+
+- idx_10: response = '-', target = '2016年'
+  - Missing.
+  - Score = 0
+
+- idx_11: response = '2023', target = '2023年'
+  - Match.
+  - Score = 1
+
+- idx_12: response = '1994', target = '2023年'
+  - Differ.
+  - Score = 0
+
+- idx_13: response = '-', target = '2023年'
+  - Missing.
+  - Score = 0
+
+Final scoring JSON output:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0
+}
+```",2004年,2004,1.0,"Let me analyze each pair of response and target according to the criterion:
+
+Criterion: The response should be semantically close or refer to the same entity as the ""target"". It does not require exact string match, but the key point is whether the response and target refer to the same person or entity.
+
+---
+
+**idx_0:**  
+response: 王家卫  
+target: 邓特希  
+- 王家卫 (Wong Kar Wai) and 邓特希 (Teddy Chen) are different persons, commonly known filmmakers but distinct individuals.  
+- Not the same entity or semantically equal.  
+Score: 0
+
+**idx_1:**  
+response: 王家卫  
+target: 王家卫  
+- Exact same person.  
+Score: 1
+
+**idx_2:**  
+response: 王家卫  
+target: 马伟豪  
+- Different persons.  
+Score: 0
+
+**idx_3:**  
+response: 周星馳  
+target: 刘伟强、麦兆辉  
+- 周星驰 (Stephen Chow) is a well-known filmmaker/actor, but 刘伟强 (Andrew Lau) and 麦兆辉 (Alan Mak) are distinct film directors. Different entities.  
+Score: 0
+
+**idx_4:**  
+response: 杜琪峰  
+target: 马伟豪  
+- 杜琪峰 (Johnnie To) distinct from 马伟豪 (Max Mak)  
+- Different entities.  
+Score: 0
+
+**idx_5:**  
+response: 王家卫  
+target: 王家卫  
+- Same entity.  
+Score: 1
+
+**idx_6:**  
+response: 侯孝贤  
+target: 刘伟强、麦兆辉  
+- 侯孝贤 (Hou Hsiao-Hsien) is a distinct director from 刘伟强 and 麦兆辉  
+- Different entities.  
+Score: 0
+
+**idx_7:**  
+response: 张艺谋  
+target: 李安  
+- 张艺谋 (Zhang Yimou) and 李安 (Ang Lee) are different persons.  
+Score: 0
+
+**idx_8:**  
+response: 陈凯歌  
+target: 吴宇森  
+- Different persons.  
+Score: 0
+
+**idx_9:**  
+response: 叶伟信  
+target: 王家卫  
+- Different.  
+Score: 0
+
+**idx_10:**  
+response: 刘伟强  
+target: 张嘉佳  
+- 张嘉佳 is a writer, 刘伟强 is a film director. Different persons.  
+Score: 0
+
+**idx_11:**  
+response: 钟汉良  
+target: 程耳  
+- 钟汉良 is an actor, 程耳 is a director. Different persons.  
+Score: 0
+
+**idx_12:**  
+response: 周星馳  
+target: 翁子光  
+- Different persons.  
+Score: 0
+
+**idx_13:**  
+response: 吳宇森  
+target: 庄文强  
+- 吴宇森 (John Woo) vs 庄文强 (Felix Chong) different persons.  
+Score: 0
+
+---
+
+Final scores JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0
+}
+```",王家卫,王家卫,1.0,"分析过程：
+
+根据评分标准：
+- 参考答案与回复语义相同大致，或者指向的实体一致即可得1分。
+- 回复为空（“-”）且参考答案不为空则得0分。
+- 回复与参考答案不一致或无关得0分。
+- 回复与参考答案都为空得1分。
+
+逐条分析：
+
+idx_0：
+response: ""-""
+target: ""-""
+两者均空，得1分。
+
+idx_1：
+response: ""-""
+target: ""第53届戛纳国际电影节最佳男演员\n第20届香港电影金像奖最佳男主角\n第1届华语电影传媒大奖最佳男主角""
+回复为空，参考答案不为空，得0分。
+
+idx_2：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_3：
+response: ""-""
+target: ""第22届香港电影金像奖最佳男主角\n第40届台湾电影金马奖最佳男主角奖""
+回复为空，答案不空，得0分。
+
+idx_4：
+response: ""-""
+target: ""第4届华语电影传媒大奖港台最佳男演员银奖""
+回复空，答案非空，得0分。
+
+idx_5：
+response: ""最佳男主角""
+target: ""第24届香港电影金像奖最佳男主角""
+回复虽不完全，但语义指向“最佳男主角”，与目标实体部分匹配，符合语义大致一致，得1分。
+
+idx_6：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_7：
+response: ""最佳男主角""
+target: ""第44届台湾电影金马奖最佳男演员\n第2届亚洲电影大奖最佳男演员""
+回复简略但包含“最佳男主角”，与目标语义对应，得1分。
+
+idx_8：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_9：
+response: ""-""
+target: ""香港导演协会奖最佳男主角""
+回复空，目标不空，得0分。
+
+idx_10：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_11：
+response: ""最佳男主角""
+target: ""第36届中国电影金鸡奖最佳男主角""
+回复与目标指向角色和奖项性质一致，得1分。
+
+idx_12：
+response: ""-""
+target: ""第16届亚洲电影大奖最佳男主角""
+回复空，目标不空，得0分。
+
+idx_13：
+response: ""-""
+target: ""第42届香港电影金像奖最佳男主角""
+回复空，目标不空，得0分。
+
+---
+
+最终评分汇总：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0
+}
+```",第24届香港电影金像奖最佳男主角,最佳男主角,1.0,key_match
+,,伤城,悲情城市,0.0,"Let's analyze each pair item by item according to the grading criterion:
+
+Criterion:
+- Semantic equivalence or matching entities are required.
+- Exact word-for-word matching is not needed.
+- Since the answers are years, the main point is whether the response year matches the target year.
+
+Analysis per idx:
+
+- idx_0: response = '1994', target = '2000年'
+  - Years differ (1994 vs 2000), so not semantically equivalent.
+  - Score = 0
+
+- idx_1: response = '1999', target = '2000年'
+  - Years differ (1999 vs 2000).
+  - Score = 0
+
+- idx_2: response = '1997', target = '2001年'
+  - Years differ (1997 vs 2001).
+  - Score = 0
+
+- idx_3: response = '2002', target = '2002年'
+  - Years match exactly.
+  - Score = 1
+
+- idx_4: response = '-', target = '2003年'
+  - Response is missing or invalid ('-').
+  - Score = 0
+
+- idx_5: response = '2004', target = '2004年'
+  - Years match exactly.
+  - Score = 1
+
+- idx_6: response = '1989', target = '2006年'
+  - Years differ.
+  - Score = 0
+
+- idx_7: response = '2007', target = '2007年'
+  - Match.
+  - Score = 1
+
+- idx_8: response = '2009', target = '2008年'
+  - Years differ.
+  - Score = 0
+
+- idx_9: response = '2013', target = '2013年'
+  - Match.
+  - Score = 1
+
+- idx_10: response = '-', target = '2016年'
+  - Missing.
+  - Score = 0
+
+- idx_11: response = '2023', target = '2023年'
+  - Match.
+  - Score = 1
+
+- idx_12: response = '1994', target = '2023年'
+  - Differ.
+  - Score = 0
+
+- idx_13: response = '-', target = '2023年'
+  - Missing.
+  - Score = 0
+
+Final scoring JSON output:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0
+}
+```",2006年,1989,0.0,"Let me analyze each pair of response and target according to the criterion:
+
+Criterion: The response should be semantically close or refer to the same entity as the ""target"". It does not require exact string match, but the key point is whether the response and target refer to the same person or entity.
+
+---
+
+**idx_0:**  
+response: 王家卫  
+target: 邓特希  
+- 王家卫 (Wong Kar Wai) and 邓特希 (Teddy Chen) are different persons, commonly known filmmakers but distinct individuals.  
+- Not the same entity or semantically equal.  
+Score: 0
+
+**idx_1:**  
+response: 王家卫  
+target: 王家卫  
+- Exact same person.  
+Score: 1
+
+**idx_2:**  
+response: 王家卫  
+target: 马伟豪  
+- Different persons.  
+Score: 0
+
+**idx_3:**  
+response: 周星馳  
+target: 刘伟强、麦兆辉  
+- 周星驰 (Stephen Chow) is a well-known filmmaker/actor, but 刘伟强 (Andrew Lau) and 麦兆辉 (Alan Mak) are distinct film directors. Different entities.  
+Score: 0
+
+**idx_4:**  
+response: 杜琪峰  
+target: 马伟豪  
+- 杜琪峰 (Johnnie To) distinct from 马伟豪 (Max Mak)  
+- Different entities.  
+Score: 0
+
+**idx_5:**  
+response: 王家卫  
+target: 王家卫  
+- Same entity.  
+Score: 1
+
+**idx_6:**  
+response: 侯孝贤  
+target: 刘伟强、麦兆辉  
+- 侯孝贤 (Hou Hsiao-Hsien) is a distinct director from 刘伟强 and 麦兆辉  
+- Different entities.  
+Score: 0
+
+**idx_7:**  
+response: 张艺谋  
+target: 李安  
+- 张艺谋 (Zhang Yimou) and 李安 (Ang Lee) are different persons.  
+Score: 0
+
+**idx_8:**  
+response: 陈凯歌  
+target: 吴宇森  
+- Different persons.  
+Score: 0
+
+**idx_9:**  
+response: 叶伟信  
+target: 王家卫  
+- Different.  
+Score: 0
+
+**idx_10:**  
+response: 刘伟强  
+target: 张嘉佳  
+- 张嘉佳 is a writer, 刘伟强 is a film director. Different persons.  
+Score: 0
+
+**idx_11:**  
+response: 钟汉良  
+target: 程耳  
+- 钟汉良 is an actor, 程耳 is a director. Different persons.  
+Score: 0
+
+**idx_12:**  
+response: 周星馳  
+target: 翁子光  
+- Different persons.  
+Score: 0
+
+**idx_13:**  
+response: 吳宇森  
+target: 庄文强  
+- 吴宇森 (John Woo) vs 庄文强 (Felix Chong) different persons.  
+Score: 0
+
+---
+
+Final scores JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0
+}
+```",刘伟强、麦兆辉,侯孝賢,1.0,"分析过程：
+
+根据评分标准：
+- 参考答案与回复语义相同大致，或者指向的实体一致即可得1分。
+- 回复为空（“-”）且参考答案不为空则得0分。
+- 回复与参考答案不一致或无关得0分。
+- 回复与参考答案都为空得1分。
+
+逐条分析：
+
+idx_0：
+response: ""-""
+target: ""-""
+两者均空，得1分。
+
+idx_1：
+response: ""-""
+target: ""第53届戛纳国际电影节最佳男演员\n第20届香港电影金像奖最佳男主角\n第1届华语电影传媒大奖最佳男主角""
+回复为空，参考答案不为空，得0分。
+
+idx_2：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_3：
+response: ""-""
+target: ""第22届香港电影金像奖最佳男主角\n第40届台湾电影金马奖最佳男主角奖""
+回复为空，答案不空，得0分。
+
+idx_4：
+response: ""-""
+target: ""第4届华语电影传媒大奖港台最佳男演员银奖""
+回复空，答案非空，得0分。
+
+idx_5：
+response: ""最佳男主角""
+target: ""第24届香港电影金像奖最佳男主角""
+回复虽不完全，但语义指向“最佳男主角”，与目标实体部分匹配，符合语义大致一致，得1分。
+
+idx_6：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_7：
+response: ""最佳男主角""
+target: ""第44届台湾电影金马奖最佳男演员\n第2届亚洲电影大奖最佳男演员""
+回复简略但包含“最佳男主角”，与目标语义对应，得1分。
+
+idx_8：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_9：
+response: ""-""
+target: ""香港导演协会奖最佳男主角""
+回复空，目标不空，得0分。
+
+idx_10：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_11：
+response: ""最佳男主角""
+target: ""第36届中国电影金鸡奖最佳男主角""
+回复与目标指向角色和奖项性质一致，得1分。
+
+idx_12：
+response: ""-""
+target: ""第16届亚洲电影大奖最佳男主角""
+回复空，目标不空，得0分。
+
+idx_13：
+response: ""-""
+target: ""第42届香港电影金像奖最佳男主角""
+回复空，目标不空，得0分。
+
+---
+
+最终评分汇总：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0
+}
+```",-,-,1.0,key_match
+,,色·戒,色，戒,1.0,"Let's analyze each pair item by item according to the grading criterion:
+
+Criterion:
+- Semantic equivalence or matching entities are required.
+- Exact word-for-word matching is not needed.
+- Since the answers are years, the main point is whether the response year matches the target year.
+
+Analysis per idx:
+
+- idx_0: response = '1994', target = '2000年'
+  - Years differ (1994 vs 2000), so not semantically equivalent.
+  - Score = 0
+
+- idx_1: response = '1999', target = '2000年'
+  - Years differ (1999 vs 2000).
+  - Score = 0
+
+- idx_2: response = '1997', target = '2001年'
+  - Years differ (1997 vs 2001).
+  - Score = 0
+
+- idx_3: response = '2002', target = '2002年'
+  - Years match exactly.
+  - Score = 1
+
+- idx_4: response = '-', target = '2003年'
+  - Response is missing or invalid ('-').
+  - Score = 0
+
+- idx_5: response = '2004', target = '2004年'
+  - Years match exactly.
+  - Score = 1
+
+- idx_6: response = '1989', target = '2006年'
+  - Years differ.
+  - Score = 0
+
+- idx_7: response = '2007', target = '2007年'
+  - Match.
+  - Score = 1
+
+- idx_8: response = '2009', target = '2008年'
+  - Years differ.
+  - Score = 0
+
+- idx_9: response = '2013', target = '2013年'
+  - Match.
+  - Score = 1
+
+- idx_10: response = '-', target = '2016年'
+  - Missing.
+  - Score = 0
+
+- idx_11: response = '2023', target = '2023年'
+  - Match.
+  - Score = 1
+
+- idx_12: response = '1994', target = '2023年'
+  - Differ.
+  - Score = 0
+
+- idx_13: response = '-', target = '2023年'
+  - Missing.
+  - Score = 0
+
+Final scoring JSON output:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0
+}
+```",2007年,2007,0.0,"Let me analyze each pair of response and target according to the criterion:
+
+Criterion: The response should be semantically close or refer to the same entity as the ""target"". It does not require exact string match, but the key point is whether the response and target refer to the same person or entity.
+
+---
+
+**idx_0:**  
+response: 王家卫  
+target: 邓特希  
+- 王家卫 (Wong Kar Wai) and 邓特希 (Teddy Chen) are different persons, commonly known filmmakers but distinct individuals.  
+- Not the same entity or semantically equal.  
+Score: 0
+
+**idx_1:**  
+response: 王家卫  
+target: 王家卫  
+- Exact same person.  
+Score: 1
+
+**idx_2:**  
+response: 王家卫  
+target: 马伟豪  
+- Different persons.  
+Score: 0
+
+**idx_3:**  
+response: 周星馳  
+target: 刘伟强、麦兆辉  
+- 周星驰 (Stephen Chow) is a well-known filmmaker/actor, but 刘伟强 (Andrew Lau) and 麦兆辉 (Alan Mak) are distinct film directors. Different entities.  
+Score: 0
+
+**idx_4:**  
+response: 杜琪峰  
+target: 马伟豪  
+- 杜琪峰 (Johnnie To) distinct from 马伟豪 (Max Mak)  
+- Different entities.  
+Score: 0
+
+**idx_5:**  
+response: 王家卫  
+target: 王家卫  
+- Same entity.  
+Score: 1
+
+**idx_6:**  
+response: 侯孝贤  
+target: 刘伟强、麦兆辉  
+- 侯孝贤 (Hou Hsiao-Hsien) is a distinct director from 刘伟强 and 麦兆辉  
+- Different entities.  
+Score: 0
+
+**idx_7:**  
+response: 张艺谋  
+target: 李安  
+- 张艺谋 (Zhang Yimou) and 李安 (Ang Lee) are different persons.  
+Score: 0
+
+**idx_8:**  
+response: 陈凯歌  
+target: 吴宇森  
+- Different persons.  
+Score: 0
+
+**idx_9:**  
+response: 叶伟信  
+target: 王家卫  
+- Different.  
+Score: 0
+
+**idx_10:**  
+response: 刘伟强  
+target: 张嘉佳  
+- 张嘉佳 is a writer, 刘伟强 is a film director. Different persons.  
+Score: 0
+
+**idx_11:**  
+response: 钟汉良  
+target: 程耳  
+- 钟汉良 is an actor, 程耳 is a director. Different persons.  
+Score: 0
+
+**idx_12:**  
+response: 周星馳  
+target: 翁子光  
+- Different persons.  
+Score: 0
+
+**idx_13:**  
+response: 吳宇森  
+target: 庄文强  
+- 吴宇森 (John Woo) vs 庄文强 (Felix Chong) different persons.  
+Score: 0
+
+---
+
+Final scores JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0
+}
+```",李安,张艺谋,1.0,"分析过程：
+
+根据评分标准：
+- 参考答案与回复语义相同大致，或者指向的实体一致即可得1分。
+- 回复为空（“-”）且参考答案不为空则得0分。
+- 回复与参考答案不一致或无关得0分。
+- 回复与参考答案都为空得1分。
+
+逐条分析：
+
+idx_0：
+response: ""-""
+target: ""-""
+两者均空，得1分。
+
+idx_1：
+response: ""-""
+target: ""第53届戛纳国际电影节最佳男演员\n第20届香港电影金像奖最佳男主角\n第1届华语电影传媒大奖最佳男主角""
+回复为空，参考答案不为空，得0分。
+
+idx_2：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_3：
+response: ""-""
+target: ""第22届香港电影金像奖最佳男主角\n第40届台湾电影金马奖最佳男主角奖""
+回复为空，答案不空，得0分。
+
+idx_4：
+response: ""-""
+target: ""第4届华语电影传媒大奖港台最佳男演员银奖""
+回复空，答案非空，得0分。
+
+idx_5：
+response: ""最佳男主角""
+target: ""第24届香港电影金像奖最佳男主角""
+回复虽不完全，但语义指向“最佳男主角”，与目标实体部分匹配，符合语义大致一致，得1分。
+
+idx_6：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_7：
+response: ""最佳男主角""
+target: ""第44届台湾电影金马奖最佳男演员\n第2届亚洲电影大奖最佳男演员""
+回复简略但包含“最佳男主角”，与目标语义对应，得1分。
+
+idx_8：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_9：
+response: ""-""
+target: ""香港导演协会奖最佳男主角""
+回复空，目标不空，得0分。
+
+idx_10：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_11：
+response: ""最佳男主角""
+target: ""第36届中国电影金鸡奖最佳男主角""
+回复与目标指向角色和奖项性质一致，得1分。
+
+idx_12：
+response: ""-""
+target: ""第16届亚洲电影大奖最佳男主角""
+回复空，目标不空，得0分。
+
+idx_13：
+response: ""-""
+target: ""第42届香港电影金像奖最佳男主角""
+回复空，目标不空，得0分。
+
+---
+
+最终评分汇总：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0
+}
+```","第44届台湾电影金马奖最佳男演员
+第2届亚洲电影大奖最佳男演员",最佳男主角,1.0,key_match
+,,赤壁（上）,赤壁,0.0,"Let's analyze each pair item by item according to the grading criterion:
+
+Criterion:
+- Semantic equivalence or matching entities are required.
+- Exact word-for-word matching is not needed.
+- Since the answers are years, the main point is whether the response year matches the target year.
+
+Analysis per idx:
+
+- idx_0: response = '1994', target = '2000年'
+  - Years differ (1994 vs 2000), so not semantically equivalent.
+  - Score = 0
+
+- idx_1: response = '1999', target = '2000年'
+  - Years differ (1999 vs 2000).
+  - Score = 0
+
+- idx_2: response = '1997', target = '2001年'
+  - Years differ (1997 vs 2001).
+  - Score = 0
+
+- idx_3: response = '2002', target = '2002年'
+  - Years match exactly.
+  - Score = 1
+
+- idx_4: response = '-', target = '2003年'
+  - Response is missing or invalid ('-').
+  - Score = 0
+
+- idx_5: response = '2004', target = '2004年'
+  - Years match exactly.
+  - Score = 1
+
+- idx_6: response = '1989', target = '2006年'
+  - Years differ.
+  - Score = 0
+
+- idx_7: response = '2007', target = '2007年'
+  - Match.
+  - Score = 1
+
+- idx_8: response = '2009', target = '2008年'
+  - Years differ.
+  - Score = 0
+
+- idx_9: response = '2013', target = '2013年'
+  - Match.
+  - Score = 1
+
+- idx_10: response = '-', target = '2016年'
+  - Missing.
+  - Score = 0
+
+- idx_11: response = '2023', target = '2023年'
+  - Match.
+  - Score = 1
+
+- idx_12: response = '1994', target = '2023年'
+  - Differ.
+  - Score = 0
+
+- idx_13: response = '-', target = '2023年'
+  - Missing.
+  - Score = 0
+
+Final scoring JSON output:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0
+}
+```",2008年,2009,0.0,"Let me analyze each pair of response and target according to the criterion:
+
+Criterion: The response should be semantically close or refer to the same entity as the ""target"". It does not require exact string match, but the key point is whether the response and target refer to the same person or entity.
+
+---
+
+**idx_0:**  
+response: 王家卫  
+target: 邓特希  
+- 王家卫 (Wong Kar Wai) and 邓特希 (Teddy Chen) are different persons, commonly known filmmakers but distinct individuals.  
+- Not the same entity or semantically equal.  
+Score: 0
+
+**idx_1:**  
+response: 王家卫  
+target: 王家卫  
+- Exact same person.  
+Score: 1
+
+**idx_2:**  
+response: 王家卫  
+target: 马伟豪  
+- Different persons.  
+Score: 0
+
+**idx_3:**  
+response: 周星馳  
+target: 刘伟强、麦兆辉  
+- 周星驰 (Stephen Chow) is a well-known filmmaker/actor, but 刘伟强 (Andrew Lau) and 麦兆辉 (Alan Mak) are distinct film directors. Different entities.  
+Score: 0
+
+**idx_4:**  
+response: 杜琪峰  
+target: 马伟豪  
+- 杜琪峰 (Johnnie To) distinct from 马伟豪 (Max Mak)  
+- Different entities.  
+Score: 0
+
+**idx_5:**  
+response: 王家卫  
+target: 王家卫  
+- Same entity.  
+Score: 1
+
+**idx_6:**  
+response: 侯孝贤  
+target: 刘伟强、麦兆辉  
+- 侯孝贤 (Hou Hsiao-Hsien) is a distinct director from 刘伟强 and 麦兆辉  
+- Different entities.  
+Score: 0
+
+**idx_7:**  
+response: 张艺谋  
+target: 李安  
+- 张艺谋 (Zhang Yimou) and 李安 (Ang Lee) are different persons.  
+Score: 0
+
+**idx_8:**  
+response: 陈凯歌  
+target: 吴宇森  
+- Different persons.  
+Score: 0
+
+**idx_9:**  
+response: 叶伟信  
+target: 王家卫  
+- Different.  
+Score: 0
+
+**idx_10:**  
+response: 刘伟强  
+target: 张嘉佳  
+- 张嘉佳 is a writer, 刘伟强 is a film director. Different persons.  
+Score: 0
+
+**idx_11:**  
+response: 钟汉良  
+target: 程耳  
+- 钟汉良 is an actor, 程耳 is a director. Different persons.  
+Score: 0
+
+**idx_12:**  
+response: 周星馳  
+target: 翁子光  
+- Different persons.  
+Score: 0
+
+**idx_13:**  
+response: 吳宇森  
+target: 庄文强  
+- 吴宇森 (John Woo) vs 庄文强 (Felix Chong) different persons.  
+Score: 0
+
+---
+
+Final scores JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0
+}
+```",吴宇森,陈凯歌,1.0,"分析过程：
+
+根据评分标准：
+- 参考答案与回复语义相同大致，或者指向的实体一致即可得1分。
+- 回复为空（“-”）且参考答案不为空则得0分。
+- 回复与参考答案不一致或无关得0分。
+- 回复与参考答案都为空得1分。
+
+逐条分析：
+
+idx_0：
+response: ""-""
+target: ""-""
+两者均空，得1分。
+
+idx_1：
+response: ""-""
+target: ""第53届戛纳国际电影节最佳男演员\n第20届香港电影金像奖最佳男主角\n第1届华语电影传媒大奖最佳男主角""
+回复为空，参考答案不为空，得0分。
+
+idx_2：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_3：
+response: ""-""
+target: ""第22届香港电影金像奖最佳男主角\n第40届台湾电影金马奖最佳男主角奖""
+回复为空，答案不空，得0分。
+
+idx_4：
+response: ""-""
+target: ""第4届华语电影传媒大奖港台最佳男演员银奖""
+回复空，答案非空，得0分。
+
+idx_5：
+response: ""最佳男主角""
+target: ""第24届香港电影金像奖最佳男主角""
+回复虽不完全，但语义指向“最佳男主角”，与目标实体部分匹配，符合语义大致一致，得1分。
+
+idx_6：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_7：
+response: ""最佳男主角""
+target: ""第44届台湾电影金马奖最佳男演员\n第2届亚洲电影大奖最佳男演员""
+回复简略但包含“最佳男主角”，与目标语义对应，得1分。
+
+idx_8：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_9：
+response: ""-""
+target: ""香港导演协会奖最佳男主角""
+回复空，目标不空，得0分。
+
+idx_10：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_11：
+response: ""最佳男主角""
+target: ""第36届中国电影金鸡奖最佳男主角""
+回复与目标指向角色和奖项性质一致，得1分。
+
+idx_12：
+response: ""-""
+target: ""第16届亚洲电影大奖最佳男主角""
+回复空，目标不空，得0分。
+
+idx_13：
+response: ""-""
+target: ""第42届香港电影金像奖最佳男主角""
+回复空，目标不空，得0分。
+
+---
+
+最终评分汇总：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0
+}
+```",-,-,1.0,key_match
+,,一代宗师,一代宗师,1.0,"Let's analyze each pair item by item according to the grading criterion:
+
+Criterion:
+- Semantic equivalence or matching entities are required.
+- Exact word-for-word matching is not needed.
+- Since the answers are years, the main point is whether the response year matches the target year.
+
+Analysis per idx:
+
+- idx_0: response = '1994', target = '2000年'
+  - Years differ (1994 vs 2000), so not semantically equivalent.
+  - Score = 0
+
+- idx_1: response = '1999', target = '2000年'
+  - Years differ (1999 vs 2000).
+  - Score = 0
+
+- idx_2: response = '1997', target = '2001年'
+  - Years differ (1997 vs 2001).
+  - Score = 0
+
+- idx_3: response = '2002', target = '2002年'
+  - Years match exactly.
+  - Score = 1
+
+- idx_4: response = '-', target = '2003年'
+  - Response is missing or invalid ('-').
+  - Score = 0
+
+- idx_5: response = '2004', target = '2004年'
+  - Years match exactly.
+  - Score = 1
+
+- idx_6: response = '1989', target = '2006年'
+  - Years differ.
+  - Score = 0
+
+- idx_7: response = '2007', target = '2007年'
+  - Match.
+  - Score = 1
+
+- idx_8: response = '2009', target = '2008年'
+  - Years differ.
+  - Score = 0
+
+- idx_9: response = '2013', target = '2013年'
+  - Match.
+  - Score = 1
+
+- idx_10: response = '-', target = '2016年'
+  - Missing.
+  - Score = 0
+
+- idx_11: response = '2023', target = '2023年'
+  - Match.
+  - Score = 1
+
+- idx_12: response = '1994', target = '2023年'
+  - Differ.
+  - Score = 0
+
+- idx_13: response = '-', target = '2023年'
+  - Missing.
+  - Score = 0
+
+Final scoring JSON output:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0
+}
+```",2013年,2013,0.0,"Let me analyze each pair of response and target according to the criterion:
+
+Criterion: The response should be semantically close or refer to the same entity as the ""target"". It does not require exact string match, but the key point is whether the response and target refer to the same person or entity.
+
+---
+
+**idx_0:**  
+response: 王家卫  
+target: 邓特希  
+- 王家卫 (Wong Kar Wai) and 邓特希 (Teddy Chen) are different persons, commonly known filmmakers but distinct individuals.  
+- Not the same entity or semantically equal.  
+Score: 0
+
+**idx_1:**  
+response: 王家卫  
+target: 王家卫  
+- Exact same person.  
+Score: 1
+
+**idx_2:**  
+response: 王家卫  
+target: 马伟豪  
+- Different persons.  
+Score: 0
+
+**idx_3:**  
+response: 周星馳  
+target: 刘伟强、麦兆辉  
+- 周星驰 (Stephen Chow) is a well-known filmmaker/actor, but 刘伟强 (Andrew Lau) and 麦兆辉 (Alan Mak) are distinct film directors. Different entities.  
+Score: 0
+
+**idx_4:**  
+response: 杜琪峰  
+target: 马伟豪  
+- 杜琪峰 (Johnnie To) distinct from 马伟豪 (Max Mak)  
+- Different entities.  
+Score: 0
+
+**idx_5:**  
+response: 王家卫  
+target: 王家卫  
+- Same entity.  
+Score: 1
+
+**idx_6:**  
+response: 侯孝贤  
+target: 刘伟强、麦兆辉  
+- 侯孝贤 (Hou Hsiao-Hsien) is a distinct director from 刘伟强 and 麦兆辉  
+- Different entities.  
+Score: 0
+
+**idx_7:**  
+response: 张艺谋  
+target: 李安  
+- 张艺谋 (Zhang Yimou) and 李安 (Ang Lee) are different persons.  
+Score: 0
+
+**idx_8:**  
+response: 陈凯歌  
+target: 吴宇森  
+- Different persons.  
+Score: 0
+
+**idx_9:**  
+response: 叶伟信  
+target: 王家卫  
+- Different.  
+Score: 0
+
+**idx_10:**  
+response: 刘伟强  
+target: 张嘉佳  
+- 张嘉佳 is a writer, 刘伟强 is a film director. Different persons.  
+Score: 0
+
+**idx_11:**  
+response: 钟汉良  
+target: 程耳  
+- 钟汉良 is an actor, 程耳 is a director. Different persons.  
+Score: 0
+
+**idx_12:**  
+response: 周星馳  
+target: 翁子光  
+- Different persons.  
+Score: 0
+
+**idx_13:**  
+response: 吳宇森  
+target: 庄文强  
+- 吴宇森 (John Woo) vs 庄文强 (Felix Chong) different persons.  
+Score: 0
+
+---
+
+Final scores JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0
+}
+```",王家卫,叶伟信,0.0,"分析过程：
+
+根据评分标准：
+- 参考答案与回复语义相同大致，或者指向的实体一致即可得1分。
+- 回复为空（“-”）且参考答案不为空则得0分。
+- 回复与参考答案不一致或无关得0分。
+- 回复与参考答案都为空得1分。
+
+逐条分析：
+
+idx_0：
+response: ""-""
+target: ""-""
+两者均空，得1分。
+
+idx_1：
+response: ""-""
+target: ""第53届戛纳国际电影节最佳男演员\n第20届香港电影金像奖最佳男主角\n第1届华语电影传媒大奖最佳男主角""
+回复为空，参考答案不为空，得0分。
+
+idx_2：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_3：
+response: ""-""
+target: ""第22届香港电影金像奖最佳男主角\n第40届台湾电影金马奖最佳男主角奖""
+回复为空，答案不空，得0分。
+
+idx_4：
+response: ""-""
+target: ""第4届华语电影传媒大奖港台最佳男演员银奖""
+回复空，答案非空，得0分。
+
+idx_5：
+response: ""最佳男主角""
+target: ""第24届香港电影金像奖最佳男主角""
+回复虽不完全，但语义指向“最佳男主角”，与目标实体部分匹配，符合语义大致一致，得1分。
+
+idx_6：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_7：
+response: ""最佳男主角""
+target: ""第44届台湾电影金马奖最佳男演员\n第2届亚洲电影大奖最佳男演员""
+回复简略但包含“最佳男主角”，与目标语义对应，得1分。
+
+idx_8：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_9：
+response: ""-""
+target: ""香港导演协会奖最佳男主角""
+回复空，目标不空，得0分。
+
+idx_10：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_11：
+response: ""最佳男主角""
+target: ""第36届中国电影金鸡奖最佳男主角""
+回复与目标指向角色和奖项性质一致，得1分。
+
+idx_12：
+response: ""-""
+target: ""第16届亚洲电影大奖最佳男主角""
+回复空，目标不空，得0分。
+
+idx_13：
+response: ""-""
+target: ""第42届香港电影金像奖最佳男主角""
+回复空，目标不空，得0分。
+
+---
+
+最终评分汇总：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0
+}
+```",香港导演协会奖最佳男主角,-,1.0,key_match
+,,摆渡人,三輪車夫,0.0,"Let's analyze each pair item by item according to the grading criterion:
+
+Criterion:
+- Semantic equivalence or matching entities are required.
+- Exact word-for-word matching is not needed.
+- Since the answers are years, the main point is whether the response year matches the target year.
+
+Analysis per idx:
+
+- idx_0: response = '1994', target = '2000年'
+  - Years differ (1994 vs 2000), so not semantically equivalent.
+  - Score = 0
+
+- idx_1: response = '1999', target = '2000年'
+  - Years differ (1999 vs 2000).
+  - Score = 0
+
+- idx_2: response = '1997', target = '2001年'
+  - Years differ (1997 vs 2001).
+  - Score = 0
+
+- idx_3: response = '2002', target = '2002年'
+  - Years match exactly.
+  - Score = 1
+
+- idx_4: response = '-', target = '2003年'
+  - Response is missing or invalid ('-').
+  - Score = 0
+
+- idx_5: response = '2004', target = '2004年'
+  - Years match exactly.
+  - Score = 1
+
+- idx_6: response = '1989', target = '2006年'
+  - Years differ.
+  - Score = 0
+
+- idx_7: response = '2007', target = '2007年'
+  - Match.
+  - Score = 1
+
+- idx_8: response = '2009', target = '2008年'
+  - Years differ.
+  - Score = 0
+
+- idx_9: response = '2013', target = '2013年'
+  - Match.
+  - Score = 1
+
+- idx_10: response = '-', target = '2016年'
+  - Missing.
+  - Score = 0
+
+- idx_11: response = '2023', target = '2023年'
+  - Match.
+  - Score = 1
+
+- idx_12: response = '1994', target = '2023年'
+  - Differ.
+  - Score = 0
+
+- idx_13: response = '-', target = '2023年'
+  - Missing.
+  - Score = 0
+
+Final scoring JSON output:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0
+}
+```",2016年,-,0.0,"Let me analyze each pair of response and target according to the criterion:
+
+Criterion: The response should be semantically close or refer to the same entity as the ""target"". It does not require exact string match, but the key point is whether the response and target refer to the same person or entity.
+
+---
+
+**idx_0:**  
+response: 王家卫  
+target: 邓特希  
+- 王家卫 (Wong Kar Wai) and 邓特希 (Teddy Chen) are different persons, commonly known filmmakers but distinct individuals.  
+- Not the same entity or semantically equal.  
+Score: 0
+
+**idx_1:**  
+response: 王家卫  
+target: 王家卫  
+- Exact same person.  
+Score: 1
+
+**idx_2:**  
+response: 王家卫  
+target: 马伟豪  
+- Different persons.  
+Score: 0
+
+**idx_3:**  
+response: 周星馳  
+target: 刘伟强、麦兆辉  
+- 周星驰 (Stephen Chow) is a well-known filmmaker/actor, but 刘伟强 (Andrew Lau) and 麦兆辉 (Alan Mak) are distinct film directors. Different entities.  
+Score: 0
+
+**idx_4:**  
+response: 杜琪峰  
+target: 马伟豪  
+- 杜琪峰 (Johnnie To) distinct from 马伟豪 (Max Mak)  
+- Different entities.  
+Score: 0
+
+**idx_5:**  
+response: 王家卫  
+target: 王家卫  
+- Same entity.  
+Score: 1
+
+**idx_6:**  
+response: 侯孝贤  
+target: 刘伟强、麦兆辉  
+- 侯孝贤 (Hou Hsiao-Hsien) is a distinct director from 刘伟强 and 麦兆辉  
+- Different entities.  
+Score: 0
+
+**idx_7:**  
+response: 张艺谋  
+target: 李安  
+- 张艺谋 (Zhang Yimou) and 李安 (Ang Lee) are different persons.  
+Score: 0
+
+**idx_8:**  
+response: 陈凯歌  
+target: 吴宇森  
+- Different persons.  
+Score: 0
+
+**idx_9:**  
+response: 叶伟信  
+target: 王家卫  
+- Different.  
+Score: 0
+
+**idx_10:**  
+response: 刘伟强  
+target: 张嘉佳  
+- 张嘉佳 is a writer, 刘伟强 is a film director. Different persons.  
+Score: 0
+
+**idx_11:**  
+response: 钟汉良  
+target: 程耳  
+- 钟汉良 is an actor, 程耳 is a director. Different persons.  
+Score: 0
+
+**idx_12:**  
+response: 周星馳  
+target: 翁子光  
+- Different persons.  
+Score: 0
+
+**idx_13:**  
+response: 吳宇森  
+target: 庄文强  
+- 吴宇森 (John Woo) vs 庄文强 (Felix Chong) different persons.  
+Score: 0
+
+---
+
+Final scores JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0
+}
+```",张嘉佳,刘伟强,1.0,"分析过程：
+
+根据评分标准：
+- 参考答案与回复语义相同大致，或者指向的实体一致即可得1分。
+- 回复为空（“-”）且参考答案不为空则得0分。
+- 回复与参考答案不一致或无关得0分。
+- 回复与参考答案都为空得1分。
+
+逐条分析：
+
+idx_0：
+response: ""-""
+target: ""-""
+两者均空，得1分。
+
+idx_1：
+response: ""-""
+target: ""第53届戛纳国际电影节最佳男演员\n第20届香港电影金像奖最佳男主角\n第1届华语电影传媒大奖最佳男主角""
+回复为空，参考答案不为空，得0分。
+
+idx_2：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_3：
+response: ""-""
+target: ""第22届香港电影金像奖最佳男主角\n第40届台湾电影金马奖最佳男主角奖""
+回复为空，答案不空，得0分。
+
+idx_4：
+response: ""-""
+target: ""第4届华语电影传媒大奖港台最佳男演员银奖""
+回复空，答案非空，得0分。
+
+idx_5：
+response: ""最佳男主角""
+target: ""第24届香港电影金像奖最佳男主角""
+回复虽不完全，但语义指向“最佳男主角”，与目标实体部分匹配，符合语义大致一致，得1分。
+
+idx_6：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_7：
+response: ""最佳男主角""
+target: ""第44届台湾电影金马奖最佳男演员\n第2届亚洲电影大奖最佳男演员""
+回复简略但包含“最佳男主角”，与目标语义对应，得1分。
+
+idx_8：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_9：
+response: ""-""
+target: ""香港导演协会奖最佳男主角""
+回复空，目标不空，得0分。
+
+idx_10：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_11：
+response: ""最佳男主角""
+target: ""第36届中国电影金鸡奖最佳男主角""
+回复与目标指向角色和奖项性质一致，得1分。
+
+idx_12：
+response: ""-""
+target: ""第16届亚洲电影大奖最佳男主角""
+回复空，目标不空，得0分。
+
+idx_13：
+response: ""-""
+target: ""第42届香港电影金像奖最佳男主角""
+回复空，目标不空，得0分。
+
+---
+
+最终评分汇总：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0
+}
+```",-,-,1.0,key_match
+,,无名,无名,1.0,"Let's analyze each pair item by item according to the grading criterion:
+
+Criterion:
+- Semantic equivalence or matching entities are required.
+- Exact word-for-word matching is not needed.
+- Since the answers are years, the main point is whether the response year matches the target year.
+
+Analysis per idx:
+
+- idx_0: response = '1994', target = '2000年'
+  - Years differ (1994 vs 2000), so not semantically equivalent.
+  - Score = 0
+
+- idx_1: response = '1999', target = '2000年'
+  - Years differ (1999 vs 2000).
+  - Score = 0
+
+- idx_2: response = '1997', target = '2001年'
+  - Years differ (1997 vs 2001).
+  - Score = 0
+
+- idx_3: response = '2002', target = '2002年'
+  - Years match exactly.
+  - Score = 1
+
+- idx_4: response = '-', target = '2003年'
+  - Response is missing or invalid ('-').
+  - Score = 0
+
+- idx_5: response = '2004', target = '2004年'
+  - Years match exactly.
+  - Score = 1
+
+- idx_6: response = '1989', target = '2006年'
+  - Years differ.
+  - Score = 0
+
+- idx_7: response = '2007', target = '2007年'
+  - Match.
+  - Score = 1
+
+- idx_8: response = '2009', target = '2008年'
+  - Years differ.
+  - Score = 0
+
+- idx_9: response = '2013', target = '2013年'
+  - Match.
+  - Score = 1
+
+- idx_10: response = '-', target = '2016年'
+  - Missing.
+  - Score = 0
+
+- idx_11: response = '2023', target = '2023年'
+  - Match.
+  - Score = 1
+
+- idx_12: response = '1994', target = '2023年'
+  - Differ.
+  - Score = 0
+
+- idx_13: response = '-', target = '2023年'
+  - Missing.
+  - Score = 0
+
+Final scoring JSON output:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0
+}
+```",2023年,2023,0.0,"Let me analyze each pair of response and target according to the criterion:
+
+Criterion: The response should be semantically close or refer to the same entity as the ""target"". It does not require exact string match, but the key point is whether the response and target refer to the same person or entity.
+
+---
+
+**idx_0:**  
+response: 王家卫  
+target: 邓特希  
+- 王家卫 (Wong Kar Wai) and 邓特希 (Teddy Chen) are different persons, commonly known filmmakers but distinct individuals.  
+- Not the same entity or semantically equal.  
+Score: 0
+
+**idx_1:**  
+response: 王家卫  
+target: 王家卫  
+- Exact same person.  
+Score: 1
+
+**idx_2:**  
+response: 王家卫  
+target: 马伟豪  
+- Different persons.  
+Score: 0
+
+**idx_3:**  
+response: 周星馳  
+target: 刘伟强、麦兆辉  
+- 周星驰 (Stephen Chow) is a well-known filmmaker/actor, but 刘伟强 (Andrew Lau) and 麦兆辉 (Alan Mak) are distinct film directors. Different entities.  
+Score: 0
+
+**idx_4:**  
+response: 杜琪峰  
+target: 马伟豪  
+- 杜琪峰 (Johnnie To) distinct from 马伟豪 (Max Mak)  
+- Different entities.  
+Score: 0
+
+**idx_5:**  
+response: 王家卫  
+target: 王家卫  
+- Same entity.  
+Score: 1
+
+**idx_6:**  
+response: 侯孝贤  
+target: 刘伟强、麦兆辉  
+- 侯孝贤 (Hou Hsiao-Hsien) is a distinct director from 刘伟强 and 麦兆辉  
+- Different entities.  
+Score: 0
+
+**idx_7:**  
+response: 张艺谋  
+target: 李安  
+- 张艺谋 (Zhang Yimou) and 李安 (Ang Lee) are different persons.  
+Score: 0
+
+**idx_8:**  
+response: 陈凯歌  
+target: 吴宇森  
+- Different persons.  
+Score: 0
+
+**idx_9:**  
+response: 叶伟信  
+target: 王家卫  
+- Different.  
+Score: 0
+
+**idx_10:**  
+response: 刘伟强  
+target: 张嘉佳  
+- 张嘉佳 is a writer, 刘伟强 is a film director. Different persons.  
+Score: 0
+
+**idx_11:**  
+response: 钟汉良  
+target: 程耳  
+- 钟汉良 is an actor, 程耳 is a director. Different persons.  
+Score: 0
+
+**idx_12:**  
+response: 周星馳  
+target: 翁子光  
+- Different persons.  
+Score: 0
+
+**idx_13:**  
+response: 吳宇森  
+target: 庄文强  
+- 吴宇森 (John Woo) vs 庄文强 (Felix Chong) different persons.  
+Score: 0
+
+---
+
+Final scores JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0
+}
+```",程耳,钟汉良,1.0,"分析过程：
+
+根据评分标准：
+- 参考答案与回复语义相同大致，或者指向的实体一致即可得1分。
+- 回复为空（“-”）且参考答案不为空则得0分。
+- 回复与参考答案不一致或无关得0分。
+- 回复与参考答案都为空得1分。
+
+逐条分析：
+
+idx_0：
+response: ""-""
+target: ""-""
+两者均空，得1分。
+
+idx_1：
+response: ""-""
+target: ""第53届戛纳国际电影节最佳男演员\n第20届香港电影金像奖最佳男主角\n第1届华语电影传媒大奖最佳男主角""
+回复为空，参考答案不为空，得0分。
+
+idx_2：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_3：
+response: ""-""
+target: ""第22届香港电影金像奖最佳男主角\n第40届台湾电影金马奖最佳男主角奖""
+回复为空，答案不空，得0分。
+
+idx_4：
+response: ""-""
+target: ""第4届华语电影传媒大奖港台最佳男演员银奖""
+回复空，答案非空，得0分。
+
+idx_5：
+response: ""最佳男主角""
+target: ""第24届香港电影金像奖最佳男主角""
+回复虽不完全，但语义指向“最佳男主角”，与目标实体部分匹配，符合语义大致一致，得1分。
+
+idx_6：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_7：
+response: ""最佳男主角""
+target: ""第44届台湾电影金马奖最佳男演员\n第2届亚洲电影大奖最佳男演员""
+回复简略但包含“最佳男主角”，与目标语义对应，得1分。
+
+idx_8：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_9：
+response: ""-""
+target: ""香港导演协会奖最佳男主角""
+回复空，目标不空，得0分。
+
+idx_10：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_11：
+response: ""最佳男主角""
+target: ""第36届中国电影金鸡奖最佳男主角""
+回复与目标指向角色和奖项性质一致，得1分。
+
+idx_12：
+response: ""-""
+target: ""第16届亚洲电影大奖最佳男主角""
+回复空，目标不空，得0分。
+
+idx_13：
+response: ""-""
+target: ""第42届香港电影金像奖最佳男主角""
+回复空，目标不空，得0分。
+
+---
+
+最终评分汇总：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0
+}
+```",第36届中国电影金鸡奖最佳男主角,最佳男主角,1.0,key_match
+,,风再起时,重慶森林,0.0,"Let's analyze each pair item by item according to the grading criterion:
+
+Criterion:
+- Semantic equivalence or matching entities are required.
+- Exact word-for-word matching is not needed.
+- Since the answers are years, the main point is whether the response year matches the target year.
+
+Analysis per idx:
+
+- idx_0: response = '1994', target = '2000年'
+  - Years differ (1994 vs 2000), so not semantically equivalent.
+  - Score = 0
+
+- idx_1: response = '1999', target = '2000年'
+  - Years differ (1999 vs 2000).
+  - Score = 0
+
+- idx_2: response = '1997', target = '2001年'
+  - Years differ (1997 vs 2001).
+  - Score = 0
+
+- idx_3: response = '2002', target = '2002年'
+  - Years match exactly.
+  - Score = 1
+
+- idx_4: response = '-', target = '2003年'
+  - Response is missing or invalid ('-').
+  - Score = 0
+
+- idx_5: response = '2004', target = '2004年'
+  - Years match exactly.
+  - Score = 1
+
+- idx_6: response = '1989', target = '2006年'
+  - Years differ.
+  - Score = 0
+
+- idx_7: response = '2007', target = '2007年'
+  - Match.
+  - Score = 1
+
+- idx_8: response = '2009', target = '2008年'
+  - Years differ.
+  - Score = 0
+
+- idx_9: response = '2013', target = '2013年'
+  - Match.
+  - Score = 1
+
+- idx_10: response = '-', target = '2016年'
+  - Missing.
+  - Score = 0
+
+- idx_11: response = '2023', target = '2023年'
+  - Match.
+  - Score = 1
+
+- idx_12: response = '1994', target = '2023年'
+  - Differ.
+  - Score = 0
+
+- idx_13: response = '-', target = '2023年'
+  - Missing.
+  - Score = 0
+
+Final scoring JSON output:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0
+}
+```",2023年,1994,0.0,"Let me analyze each pair of response and target according to the criterion:
+
+Criterion: The response should be semantically close or refer to the same entity as the ""target"". It does not require exact string match, but the key point is whether the response and target refer to the same person or entity.
+
+---
+
+**idx_0:**  
+response: 王家卫  
+target: 邓特希  
+- 王家卫 (Wong Kar Wai) and 邓特希 (Teddy Chen) are different persons, commonly known filmmakers but distinct individuals.  
+- Not the same entity or semantically equal.  
+Score: 0
+
+**idx_1:**  
+response: 王家卫  
+target: 王家卫  
+- Exact same person.  
+Score: 1
+
+**idx_2:**  
+response: 王家卫  
+target: 马伟豪  
+- Different persons.  
+Score: 0
+
+**idx_3:**  
+response: 周星馳  
+target: 刘伟强、麦兆辉  
+- 周星驰 (Stephen Chow) is a well-known filmmaker/actor, but 刘伟强 (Andrew Lau) and 麦兆辉 (Alan Mak) are distinct film directors. Different entities.  
+Score: 0
+
+**idx_4:**  
+response: 杜琪峰  
+target: 马伟豪  
+- 杜琪峰 (Johnnie To) distinct from 马伟豪 (Max Mak)  
+- Different entities.  
+Score: 0
+
+**idx_5:**  
+response: 王家卫  
+target: 王家卫  
+- Same entity.  
+Score: 1
+
+**idx_6:**  
+response: 侯孝贤  
+target: 刘伟强、麦兆辉  
+- 侯孝贤 (Hou Hsiao-Hsien) is a distinct director from 刘伟强 and 麦兆辉  
+- Different entities.  
+Score: 0
+
+**idx_7:**  
+response: 张艺谋  
+target: 李安  
+- 张艺谋 (Zhang Yimou) and 李安 (Ang Lee) are different persons.  
+Score: 0
+
+**idx_8:**  
+response: 陈凯歌  
+target: 吴宇森  
+- Different persons.  
+Score: 0
+
+**idx_9:**  
+response: 叶伟信  
+target: 王家卫  
+- Different.  
+Score: 0
+
+**idx_10:**  
+response: 刘伟强  
+target: 张嘉佳  
+- 张嘉佳 is a writer, 刘伟强 is a film director. Different persons.  
+Score: 0
+
+**idx_11:**  
+response: 钟汉良  
+target: 程耳  
+- 钟汉良 is an actor, 程耳 is a director. Different persons.  
+Score: 0
+
+**idx_12:**  
+response: 周星馳  
+target: 翁子光  
+- Different persons.  
+Score: 0
+
+**idx_13:**  
+response: 吳宇森  
+target: 庄文强  
+- 吴宇森 (John Woo) vs 庄文强 (Felix Chong) different persons.  
+Score: 0
+
+---
+
+Final scores JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0
+}
+```",翁子光,周星馳,0.0,"分析过程：
+
+根据评分标准：
+- 参考答案与回复语义相同大致，或者指向的实体一致即可得1分。
+- 回复为空（“-”）且参考答案不为空则得0分。
+- 回复与参考答案不一致或无关得0分。
+- 回复与参考答案都为空得1分。
+
+逐条分析：
+
+idx_0：
+response: ""-""
+target: ""-""
+两者均空，得1分。
+
+idx_1：
+response: ""-""
+target: ""第53届戛纳国际电影节最佳男演员\n第20届香港电影金像奖最佳男主角\n第1届华语电影传媒大奖最佳男主角""
+回复为空，参考答案不为空，得0分。
+
+idx_2：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_3：
+response: ""-""
+target: ""第22届香港电影金像奖最佳男主角\n第40届台湾电影金马奖最佳男主角奖""
+回复为空，答案不空，得0分。
+
+idx_4：
+response: ""-""
+target: ""第4届华语电影传媒大奖港台最佳男演员银奖""
+回复空，答案非空，得0分。
+
+idx_5：
+response: ""最佳男主角""
+target: ""第24届香港电影金像奖最佳男主角""
+回复虽不完全，但语义指向“最佳男主角”，与目标实体部分匹配，符合语义大致一致，得1分。
+
+idx_6：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_7：
+response: ""最佳男主角""
+target: ""第44届台湾电影金马奖最佳男演员\n第2届亚洲电影大奖最佳男演员""
+回复简略但包含“最佳男主角”，与目标语义对应，得1分。
+
+idx_8：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_9：
+response: ""-""
+target: ""香港导演协会奖最佳男主角""
+回复空，目标不空，得0分。
+
+idx_10：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_11：
+response: ""最佳男主角""
+target: ""第36届中国电影金鸡奖最佳男主角""
+回复与目标指向角色和奖项性质一致，得1分。
+
+idx_12：
+response: ""-""
+target: ""第16届亚洲电影大奖最佳男主角""
+回复空，目标不空，得0分。
+
+idx_13：
+response: ""-""
+target: ""第42届香港电影金像奖最佳男主角""
+回复空，目标不空，得0分。
+
+---
+
+最终评分汇总：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0
+}
+```",第16届亚洲电影大奖最佳男主角,-,1.0,key_match
+,,金手指,辣手神探,0.0,"Let's analyze each pair item by item according to the grading criterion:
+
+Criterion:
+- Semantic equivalence or matching entities are required.
+- Exact word-for-word matching is not needed.
+- Since the answers are years, the main point is whether the response year matches the target year.
+
+Analysis per idx:
+
+- idx_0: response = '1994', target = '2000年'
+  - Years differ (1994 vs 2000), so not semantically equivalent.
+  - Score = 0
+
+- idx_1: response = '1999', target = '2000年'
+  - Years differ (1999 vs 2000).
+  - Score = 0
+
+- idx_2: response = '1997', target = '2001年'
+  - Years differ (1997 vs 2001).
+  - Score = 0
+
+- idx_3: response = '2002', target = '2002年'
+  - Years match exactly.
+  - Score = 1
+
+- idx_4: response = '-', target = '2003年'
+  - Response is missing or invalid ('-').
+  - Score = 0
+
+- idx_5: response = '2004', target = '2004年'
+  - Years match exactly.
+  - Score = 1
+
+- idx_6: response = '1989', target = '2006年'
+  - Years differ.
+  - Score = 0
+
+- idx_7: response = '2007', target = '2007年'
+  - Match.
+  - Score = 1
+
+- idx_8: response = '2009', target = '2008年'
+  - Years differ.
+  - Score = 0
+
+- idx_9: response = '2013', target = '2013年'
+  - Match.
+  - Score = 1
+
+- idx_10: response = '-', target = '2016年'
+  - Missing.
+  - Score = 0
+
+- idx_11: response = '2023', target = '2023年'
+  - Match.
+  - Score = 1
+
+- idx_12: response = '1994', target = '2023年'
+  - Differ.
+  - Score = 0
+
+- idx_13: response = '-', target = '2023年'
+  - Missing.
+  - Score = 0
+
+Final scoring JSON output:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0
+}
+```",2023年,-,0.0,"Let me analyze each pair of response and target according to the criterion:
+
+Criterion: The response should be semantically close or refer to the same entity as the ""target"". It does not require exact string match, but the key point is whether the response and target refer to the same person or entity.
+
+---
+
+**idx_0:**  
+response: 王家卫  
+target: 邓特希  
+- 王家卫 (Wong Kar Wai) and 邓特希 (Teddy Chen) are different persons, commonly known filmmakers but distinct individuals.  
+- Not the same entity or semantically equal.  
+Score: 0
+
+**idx_1:**  
+response: 王家卫  
+target: 王家卫  
+- Exact same person.  
+Score: 1
+
+**idx_2:**  
+response: 王家卫  
+target: 马伟豪  
+- Different persons.  
+Score: 0
+
+**idx_3:**  
+response: 周星馳  
+target: 刘伟强、麦兆辉  
+- 周星驰 (Stephen Chow) is a well-known filmmaker/actor, but 刘伟强 (Andrew Lau) and 麦兆辉 (Alan Mak) are distinct film directors. Different entities.  
+Score: 0
+
+**idx_4:**  
+response: 杜琪峰  
+target: 马伟豪  
+- 杜琪峰 (Johnnie To) distinct from 马伟豪 (Max Mak)  
+- Different entities.  
+Score: 0
+
+**idx_5:**  
+response: 王家卫  
+target: 王家卫  
+- Same entity.  
+Score: 1
+
+**idx_6:**  
+response: 侯孝贤  
+target: 刘伟强、麦兆辉  
+- 侯孝贤 (Hou Hsiao-Hsien) is a distinct director from 刘伟强 and 麦兆辉  
+- Different entities.  
+Score: 0
+
+**idx_7:**  
+response: 张艺谋  
+target: 李安  
+- 张艺谋 (Zhang Yimou) and 李安 (Ang Lee) are different persons.  
+Score: 0
+
+**idx_8:**  
+response: 陈凯歌  
+target: 吴宇森  
+- Different persons.  
+Score: 0
+
+**idx_9:**  
+response: 叶伟信  
+target: 王家卫  
+- Different.  
+Score: 0
+
+**idx_10:**  
+response: 刘伟强  
+target: 张嘉佳  
+- 张嘉佳 is a writer, 刘伟强 is a film director. Different persons.  
+Score: 0
+
+**idx_11:**  
+response: 钟汉良  
+target: 程耳  
+- 钟汉良 is an actor, 程耳 is a director. Different persons.  
+Score: 0
+
+**idx_12:**  
+response: 周星馳  
+target: 翁子光  
+- Different persons.  
+Score: 0
+
+**idx_13:**  
+response: 吳宇森  
+target: 庄文强  
+- 吴宇森 (John Woo) vs 庄文强 (Felix Chong) different persons.  
+Score: 0
+
+---
+
+Final scores JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0
+}
+```",庄文强,吳宇森,0.0,"分析过程：
+
+根据评分标准：
+- 参考答案与回复语义相同大致，或者指向的实体一致即可得1分。
+- 回复为空（“-”）且参考答案不为空则得0分。
+- 回复与参考答案不一致或无关得0分。
+- 回复与参考答案都为空得1分。
+
+逐条分析：
+
+idx_0：
+response: ""-""
+target: ""-""
+两者均空，得1分。
+
+idx_1：
+response: ""-""
+target: ""第53届戛纳国际电影节最佳男演员\n第20届香港电影金像奖最佳男主角\n第1届华语电影传媒大奖最佳男主角""
+回复为空，参考答案不为空，得0分。
+
+idx_2：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_3：
+response: ""-""
+target: ""第22届香港电影金像奖最佳男主角\n第40届台湾电影金马奖最佳男主角奖""
+回复为空，答案不空，得0分。
+
+idx_4：
+response: ""-""
+target: ""第4届华语电影传媒大奖港台最佳男演员银奖""
+回复空，答案非空，得0分。
+
+idx_5：
+response: ""最佳男主角""
+target: ""第24届香港电影金像奖最佳男主角""
+回复虽不完全，但语义指向“最佳男主角”，与目标实体部分匹配，符合语义大致一致，得1分。
+
+idx_6：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_7：
+response: ""最佳男主角""
+target: ""第44届台湾电影金马奖最佳男演员\n第2届亚洲电影大奖最佳男演员""
+回复简略但包含“最佳男主角”，与目标语义对应，得1分。
+
+idx_8：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_9：
+response: ""-""
+target: ""香港导演协会奖最佳男主角""
+回复空，目标不空，得0分。
+
+idx_10：
+response: ""-""
+target: ""-""
+均空，得1分。
+
+idx_11：
+response: ""最佳男主角""
+target: ""第36届中国电影金鸡奖最佳男主角""
+回复与目标指向角色和奖项性质一致，得1分。
+
+idx_12：
+response: ""-""
+target: ""第16届亚洲电影大奖最佳男主角""
+回复空，目标不空，得0分。
+
+idx_13：
+response: ""-""
+target: ""第42届香港电影金像奖最佳男主角""
+回复空，目标不空，得0分。
+
+---
+
+最终评分汇总：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0
+}
+```",第42届香港电影金像奖最佳男主角,-,1.0,key_match
+1.0,,东京攻略,,,,2000年,,,,马楚成,,,,-,,,
+1.0,,听风者,,,,2012年,,,,麦兆辉、庄文强,,,,-,,,
+1.0,,嘿玛嘿玛,,,,2016年,,,,宗萨钦哲仁波切,,,,-,,,
+1.0,,大魔术师,,,,2011年,,,,尔冬升,,,,-,,,
+1.0,,天下无双,,,,2002年,,,,刘镇伟,,,,-,,,
+1.0,,尚气与十环传奇,,,,2021年,,,,德斯汀·克里顿,,,,-,,,
+1.0,,我要做model,,,,2004年,,,,谷德昭,,,,nan,,,
+1.0,,捉妖记2,,,,2018年,,,,许诚毅,,,,-,,,
+1.0,,无间道3：终极无间,,,,2003年,,,,刘伟强、麦兆辉,,,,-,,,
+1.0,,有情饮水饱,,,,2001年,,,,王晶,,,,-,,,
+1.0,,欧洲攻略,,,,2018年,,,,马楚成,,,,-,,,
+1.0,,英雄,,,,2002年,,,,张艺谋,,,,-,,,
+1.0,,行运超人,,,,2003年,,,,谷德昭,,,,-,,,
+1.0,,赤壁（下）,,,,2009年,,,,吴宇森,,,,-,,,
+1.0,,韩城攻略,,,,2005年,,,,马楚成,,,,-,,,

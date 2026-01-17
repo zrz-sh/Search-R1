@@ -1,0 +1,1388 @@
+exist_flag_gt,exist_flag_response,国家,国家_before_map,人口密度（人/平方公里）_number_near,人口密度（人/平方公里）_number_near_eval_msg,人口密度（人/平方公里）_query,人口密度（人/平方公里）_response,商品贸易（gdp的百分比）_number_near,商品贸易（gdp的百分比）_number_near_eval_msg,商品贸易（gdp的百分比）_query,商品贸易（gdp的百分比）_response,国家_exact_match,国家_exact_match_eval_msg,总人口（万）_number_near,总人口（万）_number_near_eval_msg,总人口（万）_query,总人口（万）_response,面积（平方公里）_number_near,面积（平方公里）_number_near_eval_msg,面积（平方公里）_query,面积（平方公里）_response,首都_llm_judge,首都_llm_judge_eval_msg,首都_query,首都_response
+,,埃及egypt,埃及,0.0,"number not near, response: 96.0, target: 113.0",113,96,0.0,"number not near, response: 34.8, target: 31.6",31.6,34.8,1.0,key_match,0.0,"number not near, response: 10452.0, target: 11454.0",11454,10452,1.0,"number near in range 5.0%, response: 1001450.0, target: 1001450.0",1001450,1001450,1.0,"分析过程：
+
+根据评分标准：和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。  
+这里“target”字段中英文地名后跟着该地名对应的英文拼写，而“response”为中文名。只要中文名称对应的城市是相同的，那就是正确答案。
+
+逐项分析：  
+- idx_0: response “开罗”，target “开罗cairo”，两者是同一城市，得分1  
+- idx_1: response “亚的斯亚贝巴”，target “亚的斯亚贝巴addisababa”，同一城市，得分1  
+- idx_2: response “罗安达”，target “罗安达luanda”，同一城市，得分1  
+- idx_3: response “瓦加杜古”，target “瓦加杜古ouagadougou”，同一城市，得分1  
+- idx_4: response “布琼布拉”，target “基特加gitega”，两个不同城市，布琼布拉是布隆迪前首都，基特加是当前首都，地理实体不一致，得分0  
+- idx_5: response “金沙萨”，target “金沙萨kinshasa”，同一城市，得分1  
+- idx_6: response “科纳克里”，target “科纳克里conakry”，同一城市，得分1  
+- idx_7: response “阿克拉”，target “阿克拉accra”，同一城市，得分1  
+- idx_8: response “雅温得”，target “雅温得yaounde”，同一城市，得分1  
+- idx_9: response “阿比让”，target “亚穆苏克罗yamoussoukro”，两个不同城市，亚穆苏克罗是科特迪瓦首都，阿比让是经济首都，地理实体不符，得分0  
+- idx_10: response “内罗毕”，target “内罗毕nairobi”，同一城市，得分1  
+- idx_11: response “蒙罗维亚”，target “蒙罗维亚monrovia”，同一城市，得分1  
+- idx_12: response “的黎波里”，target “的黎波里tripoli”，同一城市，得分1  
+- idx_13: response “塔那那利夫”，target “塔那那利佛antananarivo”，同一城市，拼写微差但指代同一，得分1  
+- idx_14: response “巴马科”，target “巴马科bamako”，同一城市，得分1  
+- idx_15: response “马普托”，target “马普托maputo”，同一城市，得分1  
+- idx_16: response “约翰内斯堡”，target “茨瓦内tshwane”，两个不同城市，约翰内斯堡和茨瓦内是不同城市，得分0  
+- idx_17: response “尼亚美”，target “尼亚美niamey”，同一城市，得分1  
+- idx_18: response “阿布贾”，target “阿布贾abuja”，同一城市，得分1  
+- idx_19: response “弗里敦”，target “弗里敦freetown”，同一城市，得分1  
+- idx_20: response “达喀尔”，target “达喀尔dakar”，同一城市，得分1  
+- idx_21: response “达累斯萨拉姆”，target “多多马dodoma”，两个不同城市，达累斯萨拉姆是坦桑尼亚最大城市，多多马是首都，得分0  
+- idx_22: response “卢萨卡”，target “卢萨卡lusaka”，同一城市，得分1  
+
+最终得分结果如下：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 0,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 1,
+  ""idx_21"": 0,
+  ""idx_22"": 1
+}
+```",开罗cairo,开罗
+,,埃塞俄比亚ethiopia,埃塞俄比亚,0.0,"number not near, response: 64.0, target: 117.0",117,64,0.0,"number not near, response: 29.3, target: 12.5",12.5,29.3,1.0,key_match,0.0,"number not near, response: 12011.0, target: 12869.0",12869,12011,1.0,"number near in range 5.0%, response: 1104450.0, target: 1136240.0",1136240,1104450,1.0,"分析过程：
+
+根据评分标准：和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。  
+这里“target”字段中英文地名后跟着该地名对应的英文拼写，而“response”为中文名。只要中文名称对应的城市是相同的，那就是正确答案。
+
+逐项分析：  
+- idx_0: response “开罗”，target “开罗cairo”，两者是同一城市，得分1  
+- idx_1: response “亚的斯亚贝巴”，target “亚的斯亚贝巴addisababa”，同一城市，得分1  
+- idx_2: response “罗安达”，target “罗安达luanda”，同一城市，得分1  
+- idx_3: response “瓦加杜古”，target “瓦加杜古ouagadougou”，同一城市，得分1  
+- idx_4: response “布琼布拉”，target “基特加gitega”，两个不同城市，布琼布拉是布隆迪前首都，基特加是当前首都，地理实体不一致，得分0  
+- idx_5: response “金沙萨”，target “金沙萨kinshasa”，同一城市，得分1  
+- idx_6: response “科纳克里”，target “科纳克里conakry”，同一城市，得分1  
+- idx_7: response “阿克拉”，target “阿克拉accra”，同一城市，得分1  
+- idx_8: response “雅温得”，target “雅温得yaounde”，同一城市，得分1  
+- idx_9: response “阿比让”，target “亚穆苏克罗yamoussoukro”，两个不同城市，亚穆苏克罗是科特迪瓦首都，阿比让是经济首都，地理实体不符，得分0  
+- idx_10: response “内罗毕”，target “内罗毕nairobi”，同一城市，得分1  
+- idx_11: response “蒙罗维亚”，target “蒙罗维亚monrovia”，同一城市，得分1  
+- idx_12: response “的黎波里”，target “的黎波里tripoli”，同一城市，得分1  
+- idx_13: response “塔那那利夫”，target “塔那那利佛antananarivo”，同一城市，拼写微差但指代同一，得分1  
+- idx_14: response “巴马科”，target “巴马科bamako”，同一城市，得分1  
+- idx_15: response “马普托”，target “马普托maputo”，同一城市，得分1  
+- idx_16: response “约翰内斯堡”，target “茨瓦内tshwane”，两个不同城市，约翰内斯堡和茨瓦内是不同城市，得分0  
+- idx_17: response “尼亚美”，target “尼亚美niamey”，同一城市，得分1  
+- idx_18: response “阿布贾”，target “阿布贾abuja”，同一城市，得分1  
+- idx_19: response “弗里敦”，target “弗里敦freetown”，同一城市，得分1  
+- idx_20: response “达喀尔”，target “达喀尔dakar”，同一城市，得分1  
+- idx_21: response “达累斯萨拉姆”，target “多多马dodoma”，两个不同城市，达累斯萨拉姆是坦桑尼亚最大城市，多多马是首都，得分0  
+- idx_22: response “卢萨卡”，target “卢萨卡lusaka”，同一城市，得分1  
+
+最终得分结果如下：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 0,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 1,
+  ""idx_21"": 0,
+  ""idx_22"": 1
+}
+```",亚的斯亚贝巴addisababa,亚的斯亚贝巴
+,,安哥拉angola,安哥拉,0.0,"number not near, response: 22.0, target: 29.0",29,22,0.0,"number not near, response: 35.4, target: 65.0",65.0,35.4,1.0,key_match,0.0,"number not near, response: 3277.0, target: 3675.0",3675,3277,1.0,"number near in range 5.0%, response: 1246700.0, target: 1246700.0",1246700,1246700,1.0,"分析过程：
+
+根据评分标准：和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。  
+这里“target”字段中英文地名后跟着该地名对应的英文拼写，而“response”为中文名。只要中文名称对应的城市是相同的，那就是正确答案。
+
+逐项分析：  
+- idx_0: response “开罗”，target “开罗cairo”，两者是同一城市，得分1  
+- idx_1: response “亚的斯亚贝巴”，target “亚的斯亚贝巴addisababa”，同一城市，得分1  
+- idx_2: response “罗安达”，target “罗安达luanda”，同一城市，得分1  
+- idx_3: response “瓦加杜古”，target “瓦加杜古ouagadougou”，同一城市，得分1  
+- idx_4: response “布琼布拉”，target “基特加gitega”，两个不同城市，布琼布拉是布隆迪前首都，基特加是当前首都，地理实体不一致，得分0  
+- idx_5: response “金沙萨”，target “金沙萨kinshasa”，同一城市，得分1  
+- idx_6: response “科纳克里”，target “科纳克里conakry”，同一城市，得分1  
+- idx_7: response “阿克拉”，target “阿克拉accra”，同一城市，得分1  
+- idx_8: response “雅温得”，target “雅温得yaounde”，同一城市，得分1  
+- idx_9: response “阿比让”，target “亚穆苏克罗yamoussoukro”，两个不同城市，亚穆苏克罗是科特迪瓦首都，阿比让是经济首都，地理实体不符，得分0  
+- idx_10: response “内罗毕”，target “内罗毕nairobi”，同一城市，得分1  
+- idx_11: response “蒙罗维亚”，target “蒙罗维亚monrovia”，同一城市，得分1  
+- idx_12: response “的黎波里”，target “的黎波里tripoli”，同一城市，得分1  
+- idx_13: response “塔那那利夫”，target “塔那那利佛antananarivo”，同一城市，拼写微差但指代同一，得分1  
+- idx_14: response “巴马科”，target “巴马科bamako”，同一城市，得分1  
+- idx_15: response “马普托”，target “马普托maputo”，同一城市，得分1  
+- idx_16: response “约翰内斯堡”，target “茨瓦内tshwane”，两个不同城市，约翰内斯堡和茨瓦内是不同城市，得分0  
+- idx_17: response “尼亚美”，target “尼亚美niamey”，同一城市，得分1  
+- idx_18: response “阿布贾”，target “阿布贾abuja”，同一城市，得分1  
+- idx_19: response “弗里敦”，target “弗里敦freetown”，同一城市，得分1  
+- idx_20: response “达喀尔”，target “达喀尔dakar”，同一城市，得分1  
+- idx_21: response “达累斯萨拉姆”，target “多多马dodoma”，两个不同城市，达累斯萨拉姆是坦桑尼亚最大城市，多多马是首都，得分0  
+- idx_22: response “卢萨卡”，target “卢萨卡lusaka”，同一城市，得分1  
+
+最终得分结果如下：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 0,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 1,
+  ""idx_21"": 0,
+  ""idx_22"": 1
+}
+```",罗安达luanda,罗安达
+,,布基纳法索burkinafaso,布基纳法索,0.0,"number not near, response: 109.0, target: 82.0",82,109,0.0,"number not near, response: 27.5, target: 51.0",51.0,27.5,1.0,key_match,0.0,"number not near, response: 2008.0, target: 2303.0",2303,2008,1.0,"number near in range 5.0%, response: 274200.0, target: 274200.0",274200,274200,1.0,"分析过程：
+
+根据评分标准：和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。  
+这里“target”字段中英文地名后跟着该地名对应的英文拼写，而“response”为中文名。只要中文名称对应的城市是相同的，那就是正确答案。
+
+逐项分析：  
+- idx_0: response “开罗”，target “开罗cairo”，两者是同一城市，得分1  
+- idx_1: response “亚的斯亚贝巴”，target “亚的斯亚贝巴addisababa”，同一城市，得分1  
+- idx_2: response “罗安达”，target “罗安达luanda”，同一城市，得分1  
+- idx_3: response “瓦加杜古”，target “瓦加杜古ouagadougou”，同一城市，得分1  
+- idx_4: response “布琼布拉”，target “基特加gitega”，两个不同城市，布琼布拉是布隆迪前首都，基特加是当前首都，地理实体不一致，得分0  
+- idx_5: response “金沙萨”，target “金沙萨kinshasa”，同一城市，得分1  
+- idx_6: response “科纳克里”，target “科纳克里conakry”，同一城市，得分1  
+- idx_7: response “阿克拉”，target “阿克拉accra”，同一城市，得分1  
+- idx_8: response “雅温得”，target “雅温得yaounde”，同一城市，得分1  
+- idx_9: response “阿比让”，target “亚穆苏克罗yamoussoukro”，两个不同城市，亚穆苏克罗是科特迪瓦首都，阿比让是经济首都，地理实体不符，得分0  
+- idx_10: response “内罗毕”，target “内罗毕nairobi”，同一城市，得分1  
+- idx_11: response “蒙罗维亚”，target “蒙罗维亚monrovia”，同一城市，得分1  
+- idx_12: response “的黎波里”，target “的黎波里tripoli”，同一城市，得分1  
+- idx_13: response “塔那那利夫”，target “塔那那利佛antananarivo”，同一城市，拼写微差但指代同一，得分1  
+- idx_14: response “巴马科”，target “巴马科bamako”，同一城市，得分1  
+- idx_15: response “马普托”，target “马普托maputo”，同一城市，得分1  
+- idx_16: response “约翰内斯堡”，target “茨瓦内tshwane”，两个不同城市，约翰内斯堡和茨瓦内是不同城市，得分0  
+- idx_17: response “尼亚美”，target “尼亚美niamey”，同一城市，得分1  
+- idx_18: response “阿布贾”，target “阿布贾abuja”，同一城市，得分1  
+- idx_19: response “弗里敦”，target “弗里敦freetown”，同一城市，得分1  
+- idx_20: response “达喀尔”，target “达喀尔dakar”，同一城市，得分1  
+- idx_21: response “达累斯萨拉姆”，target “多多马dodoma”，两个不同城市，达累斯萨拉姆是坦桑尼亚最大城市，多多马是首都，得分0  
+- idx_22: response “卢萨卡”，target “卢萨卡lusaka”，同一城市，得分1  
+
+最终得分结果如下：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 0,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 1,
+  ""idx_21"": 0,
+  ""idx_22"": 1
+}
+```",瓦加杜古ouagadougou,瓦加杜古
+,,布隆迪burundi,布隆迪,0.0,"number not near, response: 242.0, target: 519.0",519,242,0.0,"number not near, response: 29.2, target: 53.5",53.5,29.2,1.0,key_match,0.0,"number not near, response: 1227.0, target: 1369.0",1369,1227,1.0,"number near in range 5.0%, response: 27834.0, target: 27834.0",27834,27834,0.0,"分析过程：
+
+根据评分标准：和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。  
+这里“target”字段中英文地名后跟着该地名对应的英文拼写，而“response”为中文名。只要中文名称对应的城市是相同的，那就是正确答案。
+
+逐项分析：  
+- idx_0: response “开罗”，target “开罗cairo”，两者是同一城市，得分1  
+- idx_1: response “亚的斯亚贝巴”，target “亚的斯亚贝巴addisababa”，同一城市，得分1  
+- idx_2: response “罗安达”，target “罗安达luanda”，同一城市，得分1  
+- idx_3: response “瓦加杜古”，target “瓦加杜古ouagadougou”，同一城市，得分1  
+- idx_4: response “布琼布拉”，target “基特加gitega”，两个不同城市，布琼布拉是布隆迪前首都，基特加是当前首都，地理实体不一致，得分0  
+- idx_5: response “金沙萨”，target “金沙萨kinshasa”，同一城市，得分1  
+- idx_6: response “科纳克里”，target “科纳克里conakry”，同一城市，得分1  
+- idx_7: response “阿克拉”，target “阿克拉accra”，同一城市，得分1  
+- idx_8: response “雅温得”，target “雅温得yaounde”，同一城市，得分1  
+- idx_9: response “阿比让”，target “亚穆苏克罗yamoussoukro”，两个不同城市，亚穆苏克罗是科特迪瓦首都，阿比让是经济首都，地理实体不符，得分0  
+- idx_10: response “内罗毕”，target “内罗毕nairobi”，同一城市，得分1  
+- idx_11: response “蒙罗维亚”，target “蒙罗维亚monrovia”，同一城市，得分1  
+- idx_12: response “的黎波里”，target “的黎波里tripoli”，同一城市，得分1  
+- idx_13: response “塔那那利夫”，target “塔那那利佛antananarivo”，同一城市，拼写微差但指代同一，得分1  
+- idx_14: response “巴马科”，target “巴马科bamako”，同一城市，得分1  
+- idx_15: response “马普托”，target “马普托maputo”，同一城市，得分1  
+- idx_16: response “约翰内斯堡”，target “茨瓦内tshwane”，两个不同城市，约翰内斯堡和茨瓦内是不同城市，得分0  
+- idx_17: response “尼亚美”，target “尼亚美niamey”，同一城市，得分1  
+- idx_18: response “阿布贾”，target “阿布贾abuja”，同一城市，得分1  
+- idx_19: response “弗里敦”，target “弗里敦freetown”，同一城市，得分1  
+- idx_20: response “达喀尔”，target “达喀尔dakar”，同一城市，得分1  
+- idx_21: response “达累斯萨拉姆”，target “多多马dodoma”，两个不同城市，达累斯萨拉姆是坦桑尼亚最大城市，多多马是首都，得分0  
+- idx_22: response “卢萨卡”，target “卢萨卡lusaka”，同一城市，得分1  
+
+最终得分结果如下：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 0,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 1,
+  ""idx_21"": 0,
+  ""idx_22"": 1
+}
+```",基特加gitega,布琼布拉
+,,刚果民主共和国d.r.congo,刚果（金）,0.0,"number not near, response: 37.0, target: 45.0",45,37,0.0,"number not near, response: 31.3, target: 79.5",79.5,31.3,1.0,key_match,0.0,"number not near, response: 9301.0, target: 10579.0",10579,9301,1.0,"number near in range 5.0%, response: 2344885.0, target: 2344860.0",2344860,2344885,1.0,"分析过程：
+
+根据评分标准：和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。  
+这里“target”字段中英文地名后跟着该地名对应的英文拼写，而“response”为中文名。只要中文名称对应的城市是相同的，那就是正确答案。
+
+逐项分析：  
+- idx_0: response “开罗”，target “开罗cairo”，两者是同一城市，得分1  
+- idx_1: response “亚的斯亚贝巴”，target “亚的斯亚贝巴addisababa”，同一城市，得分1  
+- idx_2: response “罗安达”，target “罗安达luanda”，同一城市，得分1  
+- idx_3: response “瓦加杜古”，target “瓦加杜古ouagadougou”，同一城市，得分1  
+- idx_4: response “布琼布拉”，target “基特加gitega”，两个不同城市，布琼布拉是布隆迪前首都，基特加是当前首都，地理实体不一致，得分0  
+- idx_5: response “金沙萨”，target “金沙萨kinshasa”，同一城市，得分1  
+- idx_6: response “科纳克里”，target “科纳克里conakry”，同一城市，得分1  
+- idx_7: response “阿克拉”，target “阿克拉accra”，同一城市，得分1  
+- idx_8: response “雅温得”，target “雅温得yaounde”，同一城市，得分1  
+- idx_9: response “阿比让”，target “亚穆苏克罗yamoussoukro”，两个不同城市，亚穆苏克罗是科特迪瓦首都，阿比让是经济首都，地理实体不符，得分0  
+- idx_10: response “内罗毕”，target “内罗毕nairobi”，同一城市，得分1  
+- idx_11: response “蒙罗维亚”，target “蒙罗维亚monrovia”，同一城市，得分1  
+- idx_12: response “的黎波里”，target “的黎波里tripoli”，同一城市，得分1  
+- idx_13: response “塔那那利夫”，target “塔那那利佛antananarivo”，同一城市，拼写微差但指代同一，得分1  
+- idx_14: response “巴马科”，target “巴马科bamako”，同一城市，得分1  
+- idx_15: response “马普托”，target “马普托maputo”，同一城市，得分1  
+- idx_16: response “约翰内斯堡”，target “茨瓦内tshwane”，两个不同城市，约翰内斯堡和茨瓦内是不同城市，得分0  
+- idx_17: response “尼亚美”，target “尼亚美niamey”，同一城市，得分1  
+- idx_18: response “阿布贾”，target “阿布贾abuja”，同一城市，得分1  
+- idx_19: response “弗里敦”，target “弗里敦freetown”，同一城市，得分1  
+- idx_20: response “达喀尔”，target “达喀尔dakar”，同一城市，得分1  
+- idx_21: response “达累斯萨拉姆”，target “多多马dodoma”，两个不同城市，达累斯萨拉姆是坦桑尼亚最大城市，多多马是首都，得分0  
+- idx_22: response “卢萨卡”，target “卢萨卡lusaka”，同一城市，得分1  
+
+最终得分结果如下：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 0,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 1,
+  ""idx_21"": 0,
+  ""idx_22"": 1
+}
+```",金沙萨kinshasa,金沙萨
+,,几内亚guinea,几内亚,0.0,"number not near, response: 123.0, target: 57.0",57,123,0.0,"number not near, response: 22.5, target: 62.6",62.6,22.5,1.0,key_match,0.0,"number not near, response: 1349.0, target: 1441.0",1441,1349,1.0,"number near in range 5.0%, response: 245857.0, target: 245860.0",245860,245857,1.0,"分析过程：
+
+根据评分标准：和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。  
+这里“target”字段中英文地名后跟着该地名对应的英文拼写，而“response”为中文名。只要中文名称对应的城市是相同的，那就是正确答案。
+
+逐项分析：  
+- idx_0: response “开罗”，target “开罗cairo”，两者是同一城市，得分1  
+- idx_1: response “亚的斯亚贝巴”，target “亚的斯亚贝巴addisababa”，同一城市，得分1  
+- idx_2: response “罗安达”，target “罗安达luanda”，同一城市，得分1  
+- idx_3: response “瓦加杜古”，target “瓦加杜古ouagadougou”，同一城市，得分1  
+- idx_4: response “布琼布拉”，target “基特加gitega”，两个不同城市，布琼布拉是布隆迪前首都，基特加是当前首都，地理实体不一致，得分0  
+- idx_5: response “金沙萨”，target “金沙萨kinshasa”，同一城市，得分1  
+- idx_6: response “科纳克里”，target “科纳克里conakry”，同一城市，得分1  
+- idx_7: response “阿克拉”，target “阿克拉accra”，同一城市，得分1  
+- idx_8: response “雅温得”，target “雅温得yaounde”，同一城市，得分1  
+- idx_9: response “阿比让”，target “亚穆苏克罗yamoussoukro”，两个不同城市，亚穆苏克罗是科特迪瓦首都，阿比让是经济首都，地理实体不符，得分0  
+- idx_10: response “内罗毕”，target “内罗毕nairobi”，同一城市，得分1  
+- idx_11: response “蒙罗维亚”，target “蒙罗维亚monrovia”，同一城市，得分1  
+- idx_12: response “的黎波里”，target “的黎波里tripoli”，同一城市，得分1  
+- idx_13: response “塔那那利夫”，target “塔那那利佛antananarivo”，同一城市，拼写微差但指代同一，得分1  
+- idx_14: response “巴马科”，target “巴马科bamako”，同一城市，得分1  
+- idx_15: response “马普托”，target “马普托maputo”，同一城市，得分1  
+- idx_16: response “约翰内斯堡”，target “茨瓦内tshwane”，两个不同城市，约翰内斯堡和茨瓦内是不同城市，得分0  
+- idx_17: response “尼亚美”，target “尼亚美niamey”，同一城市，得分1  
+- idx_18: response “阿布贾”，target “阿布贾abuja”，同一城市，得分1  
+- idx_19: response “弗里敦”，target “弗里敦freetown”，同一城市，得分1  
+- idx_20: response “达喀尔”，target “达喀尔dakar”，同一城市，得分1  
+- idx_21: response “达累斯萨拉姆”，target “多多马dodoma”，两个不同城市，达累斯萨拉姆是坦桑尼亚最大城市，多多马是首都，得分0  
+- idx_22: response “卢萨卡”，target “卢萨卡lusaka”，同一城市，得分1  
+
+最终得分结果如下：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 0,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 1,
+  ""idx_21"": 0,
+  ""idx_22"": 1
+}
+```",科纳克里conakry,科纳克里
+,,加纳ghana,加纳,0.0,"number not near, response: 159.0, target: 146.0",146,159,0.0,"number not near, response: 30.8, target: 38.1",38.1,30.8,1.0,key_match,0.0,"number not near, response: 3057.0, target: 3379.0",3379,3057,1.0,"number near in range 5.0%, response: 238533.0, target: 238533.0",238533,238533,1.0,"分析过程：
+
+根据评分标准：和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。  
+这里“target”字段中英文地名后跟着该地名对应的英文拼写，而“response”为中文名。只要中文名称对应的城市是相同的，那就是正确答案。
+
+逐项分析：  
+- idx_0: response “开罗”，target “开罗cairo”，两者是同一城市，得分1  
+- idx_1: response “亚的斯亚贝巴”，target “亚的斯亚贝巴addisababa”，同一城市，得分1  
+- idx_2: response “罗安达”，target “罗安达luanda”，同一城市，得分1  
+- idx_3: response “瓦加杜古”，target “瓦加杜古ouagadougou”，同一城市，得分1  
+- idx_4: response “布琼布拉”，target “基特加gitega”，两个不同城市，布琼布拉是布隆迪前首都，基特加是当前首都，地理实体不一致，得分0  
+- idx_5: response “金沙萨”，target “金沙萨kinshasa”，同一城市，得分1  
+- idx_6: response “科纳克里”，target “科纳克里conakry”，同一城市，得分1  
+- idx_7: response “阿克拉”，target “阿克拉accra”，同一城市，得分1  
+- idx_8: response “雅温得”，target “雅温得yaounde”，同一城市，得分1  
+- idx_9: response “阿比让”，target “亚穆苏克罗yamoussoukro”，两个不同城市，亚穆苏克罗是科特迪瓦首都，阿比让是经济首都，地理实体不符，得分0  
+- idx_10: response “内罗毕”，target “内罗毕nairobi”，同一城市，得分1  
+- idx_11: response “蒙罗维亚”，target “蒙罗维亚monrovia”，同一城市，得分1  
+- idx_12: response “的黎波里”，target “的黎波里tripoli”，同一城市，得分1  
+- idx_13: response “塔那那利夫”，target “塔那那利佛antananarivo”，同一城市，拼写微差但指代同一，得分1  
+- idx_14: response “巴马科”，target “巴马科bamako”，同一城市，得分1  
+- idx_15: response “马普托”，target “马普托maputo”，同一城市，得分1  
+- idx_16: response “约翰内斯堡”，target “茨瓦内tshwane”，两个不同城市，约翰内斯堡和茨瓦内是不同城市，得分0  
+- idx_17: response “尼亚美”，target “尼亚美niamey”，同一城市，得分1  
+- idx_18: response “阿布贾”，target “阿布贾abuja”，同一城市，得分1  
+- idx_19: response “弗里敦”，target “弗里敦freetown”，同一城市，得分1  
+- idx_20: response “达喀尔”，target “达喀尔dakar”，同一城市，得分1  
+- idx_21: response “达累斯萨拉姆”，target “多多马dodoma”，两个不同城市，达累斯萨拉姆是坦桑尼亚最大城市，多多马是首都，得分0  
+- idx_22: response “卢萨卡”，target “卢萨卡lusaka”，同一城市，得分1  
+
+最终得分结果如下：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 0,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 1,
+  ""idx_21"": 0,
+  ""idx_22"": 1
+}
+```",阿克拉accra,阿克拉
+,,喀麦隆cameroon,喀麦隆,0.0,"number not near, response: 47.0, target: 58.0",58,47,1.0,"number near in range 5.0%, response: 25.5, target: 26.5",26.5,25.5,1.0,key_match,1.0,"number near in range 5.0%, response: 2785.0, target: 2837.0",2837,2785,1.0,"number near in range 5.0%, response: 475442.0, target: 475440.0",475440,475442,1.0,"分析过程：
+
+根据评分标准：和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。  
+这里“target”字段中英文地名后跟着该地名对应的英文拼写，而“response”为中文名。只要中文名称对应的城市是相同的，那就是正确答案。
+
+逐项分析：  
+- idx_0: response “开罗”，target “开罗cairo”，两者是同一城市，得分1  
+- idx_1: response “亚的斯亚贝巴”，target “亚的斯亚贝巴addisababa”，同一城市，得分1  
+- idx_2: response “罗安达”，target “罗安达luanda”，同一城市，得分1  
+- idx_3: response “瓦加杜古”，target “瓦加杜古ouagadougou”，同一城市，得分1  
+- idx_4: response “布琼布拉”，target “基特加gitega”，两个不同城市，布琼布拉是布隆迪前首都，基特加是当前首都，地理实体不一致，得分0  
+- idx_5: response “金沙萨”，target “金沙萨kinshasa”，同一城市，得分1  
+- idx_6: response “科纳克里”，target “科纳克里conakry”，同一城市，得分1  
+- idx_7: response “阿克拉”，target “阿克拉accra”，同一城市，得分1  
+- idx_8: response “雅温得”，target “雅温得yaounde”，同一城市，得分1  
+- idx_9: response “阿比让”，target “亚穆苏克罗yamoussoukro”，两个不同城市，亚穆苏克罗是科特迪瓦首都，阿比让是经济首都，地理实体不符，得分0  
+- idx_10: response “内罗毕”，target “内罗毕nairobi”，同一城市，得分1  
+- idx_11: response “蒙罗维亚”，target “蒙罗维亚monrovia”，同一城市，得分1  
+- idx_12: response “的黎波里”，target “的黎波里tripoli”，同一城市，得分1  
+- idx_13: response “塔那那利夫”，target “塔那那利佛antananarivo”，同一城市，拼写微差但指代同一，得分1  
+- idx_14: response “巴马科”，target “巴马科bamako”，同一城市，得分1  
+- idx_15: response “马普托”，target “马普托maputo”，同一城市，得分1  
+- idx_16: response “约翰内斯堡”，target “茨瓦内tshwane”，两个不同城市，约翰内斯堡和茨瓦内是不同城市，得分0  
+- idx_17: response “尼亚美”，target “尼亚美niamey”，同一城市，得分1  
+- idx_18: response “阿布贾”，target “阿布贾abuja”，同一城市，得分1  
+- idx_19: response “弗里敦”，target “弗里敦freetown”，同一城市，得分1  
+- idx_20: response “达喀尔”，target “达喀尔dakar”，同一城市，得分1  
+- idx_21: response “达累斯萨拉姆”，target “多多马dodoma”，两个不同城市，达累斯萨拉姆是坦桑尼亚最大城市，多多马是首都，得分0  
+- idx_22: response “卢萨卡”，target “卢萨卡lusaka”，同一城市，得分1  
+
+最终得分结果如下：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 0,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 1,
+  ""idx_21"": 0,
+  ""idx_22"": 1
+}
+```",雅温得yaounde,雅温得
+,,科特迪瓦côted'ivoire,科特迪瓦,0.0,"number not near, response: 82.0, target: 96.0",96,82,0.0,"number not near, response: 32.1, target: 46.7",46.7,32.1,1.0,key_match,0.0,"number not near, response: 2771.0, target: 3117.0",3117,2771,1.0,"number near in range 5.0%, response: 322463.0, target: 322460.0",322460,322463,0.0,"分析过程：
+
+根据评分标准：和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。  
+这里“target”字段中英文地名后跟着该地名对应的英文拼写，而“response”为中文名。只要中文名称对应的城市是相同的，那就是正确答案。
+
+逐项分析：  
+- idx_0: response “开罗”，target “开罗cairo”，两者是同一城市，得分1  
+- idx_1: response “亚的斯亚贝巴”，target “亚的斯亚贝巴addisababa”，同一城市，得分1  
+- idx_2: response “罗安达”，target “罗安达luanda”，同一城市，得分1  
+- idx_3: response “瓦加杜古”，target “瓦加杜古ouagadougou”，同一城市，得分1  
+- idx_4: response “布琼布拉”，target “基特加gitega”，两个不同城市，布琼布拉是布隆迪前首都，基特加是当前首都，地理实体不一致，得分0  
+- idx_5: response “金沙萨”，target “金沙萨kinshasa”，同一城市，得分1  
+- idx_6: response “科纳克里”，target “科纳克里conakry”，同一城市，得分1  
+- idx_7: response “阿克拉”，target “阿克拉accra”，同一城市，得分1  
+- idx_8: response “雅温得”，target “雅温得yaounde”，同一城市，得分1  
+- idx_9: response “阿比让”，target “亚穆苏克罗yamoussoukro”，两个不同城市，亚穆苏克罗是科特迪瓦首都，阿比让是经济首都，地理实体不符，得分0  
+- idx_10: response “内罗毕”，target “内罗毕nairobi”，同一城市，得分1  
+- idx_11: response “蒙罗维亚”，target “蒙罗维亚monrovia”，同一城市，得分1  
+- idx_12: response “的黎波里”，target “的黎波里tripoli”，同一城市，得分1  
+- idx_13: response “塔那那利夫”，target “塔那那利佛antananarivo”，同一城市，拼写微差但指代同一，得分1  
+- idx_14: response “巴马科”，target “巴马科bamako”，同一城市，得分1  
+- idx_15: response “马普托”，target “马普托maputo”，同一城市，得分1  
+- idx_16: response “约翰内斯堡”，target “茨瓦内tshwane”，两个不同城市，约翰内斯堡和茨瓦内是不同城市，得分0  
+- idx_17: response “尼亚美”，target “尼亚美niamey”，同一城市，得分1  
+- idx_18: response “阿布贾”，target “阿布贾abuja”，同一城市，得分1  
+- idx_19: response “弗里敦”，target “弗里敦freetown”，同一城市，得分1  
+- idx_20: response “达喀尔”，target “达喀尔dakar”，同一城市，得分1  
+- idx_21: response “达累斯萨拉姆”，target “多多马dodoma”，两个不同城市，达累斯萨拉姆是坦桑尼亚最大城市，多多马是首都，得分0  
+- idx_22: response “卢萨卡”，target “卢萨卡lusaka”，同一城市，得分1  
+
+最终得分结果如下：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 0,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 1,
+  ""idx_21"": 0,
+  ""idx_22"": 1
+}
+```",亚穆苏克罗yamoussoukro,阿比让
+,,肯尼亚kenya,肯尼亚,0.0,"number not near, response: 113.0, target: 95.0",95,113,0.0,"number not near, response: 35.7, target: 23.9",23.9,35.7,1.0,key_match,1.0,"number near in range 5.0%, response: 5385.0, target: 5534.0",5534,5385,1.0,"number near in range 5.0%, response: 582647.0, target: 580370.0",580370,582647,1.0,"分析过程：
+
+根据评分标准：和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。  
+这里“target”字段中英文地名后跟着该地名对应的英文拼写，而“response”为中文名。只要中文名称对应的城市是相同的，那就是正确答案。
+
+逐项分析：  
+- idx_0: response “开罗”，target “开罗cairo”，两者是同一城市，得分1  
+- idx_1: response “亚的斯亚贝巴”，target “亚的斯亚贝巴addisababa”，同一城市，得分1  
+- idx_2: response “罗安达”，target “罗安达luanda”，同一城市，得分1  
+- idx_3: response “瓦加杜古”，target “瓦加杜古ouagadougou”，同一城市，得分1  
+- idx_4: response “布琼布拉”，target “基特加gitega”，两个不同城市，布琼布拉是布隆迪前首都，基特加是当前首都，地理实体不一致，得分0  
+- idx_5: response “金沙萨”，target “金沙萨kinshasa”，同一城市，得分1  
+- idx_6: response “科纳克里”，target “科纳克里conakry”，同一城市，得分1  
+- idx_7: response “阿克拉”，target “阿克拉accra”，同一城市，得分1  
+- idx_8: response “雅温得”，target “雅温得yaounde”，同一城市，得分1  
+- idx_9: response “阿比让”，target “亚穆苏克罗yamoussoukro”，两个不同城市，亚穆苏克罗是科特迪瓦首都，阿比让是经济首都，地理实体不符，得分0  
+- idx_10: response “内罗毕”，target “内罗毕nairobi”，同一城市，得分1  
+- idx_11: response “蒙罗维亚”，target “蒙罗维亚monrovia”，同一城市，得分1  
+- idx_12: response “的黎波里”，target “的黎波里tripoli”，同一城市，得分1  
+- idx_13: response “塔那那利夫”，target “塔那那利佛antananarivo”，同一城市，拼写微差但指代同一，得分1  
+- idx_14: response “巴马科”，target “巴马科bamako”，同一城市，得分1  
+- idx_15: response “马普托”，target “马普托maputo”，同一城市，得分1  
+- idx_16: response “约翰内斯堡”，target “茨瓦内tshwane”，两个不同城市，约翰内斯堡和茨瓦内是不同城市，得分0  
+- idx_17: response “尼亚美”，target “尼亚美niamey”，同一城市，得分1  
+- idx_18: response “阿布贾”，target “阿布贾abuja”，同一城市，得分1  
+- idx_19: response “弗里敦”，target “弗里敦freetown”，同一城市，得分1  
+- idx_20: response “达喀尔”，target “达喀尔dakar”，同一城市，得分1  
+- idx_21: response “达累斯萨拉姆”，target “多多马dodoma”，两个不同城市，达累斯萨拉姆是坦桑尼亚最大城市，多多马是首都，得分0  
+- idx_22: response “卢萨卡”，target “卢萨卡lusaka”，同一城市，得分1  
+
+最终得分结果如下：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 0,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 1,
+  ""idx_21"": 0,
+  ""idx_22"": 1
+}
+```",内罗毕nairobi,内罗毕
+,,利比里亚liberia,利比里亚,0.0,"number not near, response: 123.0, target: 56.0",56,123,0.0,"number not near, response: 31.2, target: 69.2",69.2,31.2,1.0,key_match,0.0,"number not near, response: 485.0, target: 549.0",549,485,1.0,"number near in range 5.0%, response: 111369.0, target: 111370.0",111370,111369,1.0,"分析过程：
+
+根据评分标准：和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。  
+这里“target”字段中英文地名后跟着该地名对应的英文拼写，而“response”为中文名。只要中文名称对应的城市是相同的，那就是正确答案。
+
+逐项分析：  
+- idx_0: response “开罗”，target “开罗cairo”，两者是同一城市，得分1  
+- idx_1: response “亚的斯亚贝巴”，target “亚的斯亚贝巴addisababa”，同一城市，得分1  
+- idx_2: response “罗安达”，target “罗安达luanda”，同一城市，得分1  
+- idx_3: response “瓦加杜古”，target “瓦加杜古ouagadougou”，同一城市，得分1  
+- idx_4: response “布琼布拉”，target “基特加gitega”，两个不同城市，布琼布拉是布隆迪前首都，基特加是当前首都，地理实体不一致，得分0  
+- idx_5: response “金沙萨”，target “金沙萨kinshasa”，同一城市，得分1  
+- idx_6: response “科纳克里”，target “科纳克里conakry”，同一城市，得分1  
+- idx_7: response “阿克拉”，target “阿克拉accra”，同一城市，得分1  
+- idx_8: response “雅温得”，target “雅温得yaounde”，同一城市，得分1  
+- idx_9: response “阿比让”，target “亚穆苏克罗yamoussoukro”，两个不同城市，亚穆苏克罗是科特迪瓦首都，阿比让是经济首都，地理实体不符，得分0  
+- idx_10: response “内罗毕”，target “内罗毕nairobi”，同一城市，得分1  
+- idx_11: response “蒙罗维亚”，target “蒙罗维亚monrovia”，同一城市，得分1  
+- idx_12: response “的黎波里”，target “的黎波里tripoli”，同一城市，得分1  
+- idx_13: response “塔那那利夫”，target “塔那那利佛antananarivo”，同一城市，拼写微差但指代同一，得分1  
+- idx_14: response “巴马科”，target “巴马科bamako”，同一城市，得分1  
+- idx_15: response “马普托”，target “马普托maputo”，同一城市，得分1  
+- idx_16: response “约翰内斯堡”，target “茨瓦内tshwane”，两个不同城市，约翰内斯堡和茨瓦内是不同城市，得分0  
+- idx_17: response “尼亚美”，target “尼亚美niamey”，同一城市，得分1  
+- idx_18: response “阿布贾”，target “阿布贾abuja”，同一城市，得分1  
+- idx_19: response “弗里敦”，target “弗里敦freetown”，同一城市，得分1  
+- idx_20: response “达喀尔”，target “达喀尔dakar”，同一城市，得分1  
+- idx_21: response “达累斯萨拉姆”，target “多多马dodoma”，两个不同城市，达累斯萨拉姆是坦桑尼亚最大城市，多多马是首都，得分0  
+- idx_22: response “卢萨卡”，target “卢萨卡lusaka”，同一城市，得分1  
+
+最终得分结果如下：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 0,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 1,
+  ""idx_21"": 0,
+  ""idx_22"": 1
+}
+```",蒙罗维亚monrovia,蒙罗维亚
+,,利比亚libya,利比亚,0.0,"number not near, response: 29.0, target: 4.0",4,29,0.0,"number not near, response: 17.2, target: 113.7",113.7,17.2,1.0,key_match,1.0,"number near in range 5.0%, response: 710.0, target: 731.0",731,710,1.0,"number near in range 5.0%, response: 1759540.0, target: 1759540.0",1759540,1759540,1.0,"分析过程：
+
+根据评分标准：和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。  
+这里“target”字段中英文地名后跟着该地名对应的英文拼写，而“response”为中文名。只要中文名称对应的城市是相同的，那就是正确答案。
+
+逐项分析：  
+- idx_0: response “开罗”，target “开罗cairo”，两者是同一城市，得分1  
+- idx_1: response “亚的斯亚贝巴”，target “亚的斯亚贝巴addisababa”，同一城市，得分1  
+- idx_2: response “罗安达”，target “罗安达luanda”，同一城市，得分1  
+- idx_3: response “瓦加杜古”，target “瓦加杜古ouagadougou”，同一城市，得分1  
+- idx_4: response “布琼布拉”，target “基特加gitega”，两个不同城市，布琼布拉是布隆迪前首都，基特加是当前首都，地理实体不一致，得分0  
+- idx_5: response “金沙萨”，target “金沙萨kinshasa”，同一城市，得分1  
+- idx_6: response “科纳克里”，target “科纳克里conakry”，同一城市，得分1  
+- idx_7: response “阿克拉”，target “阿克拉accra”，同一城市，得分1  
+- idx_8: response “雅温得”，target “雅温得yaounde”，同一城市，得分1  
+- idx_9: response “阿比让”，target “亚穆苏克罗yamoussoukro”，两个不同城市，亚穆苏克罗是科特迪瓦首都，阿比让是经济首都，地理实体不符，得分0  
+- idx_10: response “内罗毕”，target “内罗毕nairobi”，同一城市，得分1  
+- idx_11: response “蒙罗维亚”，target “蒙罗维亚monrovia”，同一城市，得分1  
+- idx_12: response “的黎波里”，target “的黎波里tripoli”，同一城市，得分1  
+- idx_13: response “塔那那利夫”，target “塔那那利佛antananarivo”，同一城市，拼写微差但指代同一，得分1  
+- idx_14: response “巴马科”，target “巴马科bamako”，同一城市，得分1  
+- idx_15: response “马普托”，target “马普托maputo”，同一城市，得分1  
+- idx_16: response “约翰内斯堡”，target “茨瓦内tshwane”，两个不同城市，约翰内斯堡和茨瓦内是不同城市，得分0  
+- idx_17: response “尼亚美”，target “尼亚美niamey”，同一城市，得分1  
+- idx_18: response “阿布贾”，target “阿布贾abuja”，同一城市，得分1  
+- idx_19: response “弗里敦”，target “弗里敦freetown”，同一城市，得分1  
+- idx_20: response “达喀尔”，target “达喀尔dakar”，同一城市，得分1  
+- idx_21: response “达累斯萨拉姆”，target “多多马dodoma”，两个不同城市，达累斯萨拉姆是坦桑尼亚最大城市，多多马是首都，得分0  
+- idx_22: response “卢萨卡”，target “卢萨卡lusaka”，同一城市，得分1  
+
+最终得分结果如下：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 0,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 1,
+  ""idx_21"": 0,
+  ""idx_22"": 1
+}
+```",的黎波里tripoli,的黎波里
+,,马达加斯加madagascar,马达加斯加,0.0,"number not near, response: 32.0, target: 52.0",52,32,0.0,"number not near, response: 29.4, target: 51.7",51.7,29.4,1.0,key_match,0.0,"number not near, response: 2739.0, target: 3120.0",3120,2739,1.0,"number near in range 5.0%, response: 587041.0, target: 587295.0",587295,587041,1.0,"分析过程：
+
+根据评分标准：和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。  
+这里“target”字段中英文地名后跟着该地名对应的英文拼写，而“response”为中文名。只要中文名称对应的城市是相同的，那就是正确答案。
+
+逐项分析：  
+- idx_0: response “开罗”，target “开罗cairo”，两者是同一城市，得分1  
+- idx_1: response “亚的斯亚贝巴”，target “亚的斯亚贝巴addisababa”，同一城市，得分1  
+- idx_2: response “罗安达”，target “罗安达luanda”，同一城市，得分1  
+- idx_3: response “瓦加杜古”，target “瓦加杜古ouagadougou”，同一城市，得分1  
+- idx_4: response “布琼布拉”，target “基特加gitega”，两个不同城市，布琼布拉是布隆迪前首都，基特加是当前首都，地理实体不一致，得分0  
+- idx_5: response “金沙萨”，target “金沙萨kinshasa”，同一城市，得分1  
+- idx_6: response “科纳克里”，target “科纳克里conakry”，同一城市，得分1  
+- idx_7: response “阿克拉”，target “阿克拉accra”，同一城市，得分1  
+- idx_8: response “雅温得”，target “雅温得yaounde”，同一城市，得分1  
+- idx_9: response “阿比让”，target “亚穆苏克罗yamoussoukro”，两个不同城市，亚穆苏克罗是科特迪瓦首都，阿比让是经济首都，地理实体不符，得分0  
+- idx_10: response “内罗毕”，target “内罗毕nairobi”，同一城市，得分1  
+- idx_11: response “蒙罗维亚”，target “蒙罗维亚monrovia”，同一城市，得分1  
+- idx_12: response “的黎波里”，target “的黎波里tripoli”，同一城市，得分1  
+- idx_13: response “塔那那利夫”，target “塔那那利佛antananarivo”，同一城市，拼写微差但指代同一，得分1  
+- idx_14: response “巴马科”，target “巴马科bamako”，同一城市，得分1  
+- idx_15: response “马普托”，target “马普托maputo”，同一城市，得分1  
+- idx_16: response “约翰内斯堡”，target “茨瓦内tshwane”，两个不同城市，约翰内斯堡和茨瓦内是不同城市，得分0  
+- idx_17: response “尼亚美”，target “尼亚美niamey”，同一城市，得分1  
+- idx_18: response “阿布贾”，target “阿布贾abuja”，同一城市，得分1  
+- idx_19: response “弗里敦”，target “弗里敦freetown”，同一城市，得分1  
+- idx_20: response “达喀尔”，target “达喀尔dakar”，同一城市，得分1  
+- idx_21: response “达累斯萨拉姆”，target “多多马dodoma”，两个不同城市，达累斯萨拉姆是坦桑尼亚最大城市，多多马是首都，得分0  
+- idx_22: response “卢萨卡”，target “卢萨卡lusaka”，同一城市，得分1  
+
+最终得分结果如下：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 0,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 1,
+  ""idx_21"": 0,
+  ""idx_22"": 1
+}
+```",塔那那利佛antananarivo,塔那那利夫
+,,马里mali,马里,0.0,"number not near, response: 12.0, target: 19.0",19,12,0.0,"number not near, response: 29.8, target: 51.3",51.3,29.8,1.0,key_match,0.0,"number not near, response: 2023.0, target: 2377.0",2377,2023,1.0,"number near in range 5.0%, response: 1240192.0, target: 1240190.0",1240190,1240192,1.0,"分析过程：
+
+根据评分标准：和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。  
+这里“target”字段中英文地名后跟着该地名对应的英文拼写，而“response”为中文名。只要中文名称对应的城市是相同的，那就是正确答案。
+
+逐项分析：  
+- idx_0: response “开罗”，target “开罗cairo”，两者是同一城市，得分1  
+- idx_1: response “亚的斯亚贝巴”，target “亚的斯亚贝巴addisababa”，同一城市，得分1  
+- idx_2: response “罗安达”，target “罗安达luanda”，同一城市，得分1  
+- idx_3: response “瓦加杜古”，target “瓦加杜古ouagadougou”，同一城市，得分1  
+- idx_4: response “布琼布拉”，target “基特加gitega”，两个不同城市，布琼布拉是布隆迪前首都，基特加是当前首都，地理实体不一致，得分0  
+- idx_5: response “金沙萨”，target “金沙萨kinshasa”，同一城市，得分1  
+- idx_6: response “科纳克里”，target “科纳克里conakry”，同一城市，得分1  
+- idx_7: response “阿克拉”，target “阿克拉accra”，同一城市，得分1  
+- idx_8: response “雅温得”，target “雅温得yaounde”，同一城市，得分1  
+- idx_9: response “阿比让”，target “亚穆苏克罗yamoussoukro”，两个不同城市，亚穆苏克罗是科特迪瓦首都，阿比让是经济首都，地理实体不符，得分0  
+- idx_10: response “内罗毕”，target “内罗毕nairobi”，同一城市，得分1  
+- idx_11: response “蒙罗维亚”，target “蒙罗维亚monrovia”，同一城市，得分1  
+- idx_12: response “的黎波里”，target “的黎波里tripoli”，同一城市，得分1  
+- idx_13: response “塔那那利夫”，target “塔那那利佛antananarivo”，同一城市，拼写微差但指代同一，得分1  
+- idx_14: response “巴马科”，target “巴马科bamako”，同一城市，得分1  
+- idx_15: response “马普托”，target “马普托maputo”，同一城市，得分1  
+- idx_16: response “约翰内斯堡”，target “茨瓦内tshwane”，两个不同城市，约翰内斯堡和茨瓦内是不同城市，得分0  
+- idx_17: response “尼亚美”，target “尼亚美niamey”，同一城市，得分1  
+- idx_18: response “阿布贾”，target “阿布贾abuja”，同一城市，得分1  
+- idx_19: response “弗里敦”，target “弗里敦freetown”，同一城市，得分1  
+- idx_20: response “达喀尔”，target “达喀尔dakar”，同一城市，得分1  
+- idx_21: response “达累斯萨拉姆”，target “多多马dodoma”，两个不同城市，达累斯萨拉姆是坦桑尼亚最大城市，多多马是首都，得分0  
+- idx_22: response “卢萨卡”，target “卢萨卡lusaka”，同一城市，得分1  
+
+最终得分结果如下：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 0,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 1,
+  ""idx_21"": 0,
+  ""idx_22"": 1
+}
+```",巴马科bamako,巴马科
+,,莫桑比克mozambique,莫桑比克,0.0,"number not near, response: 30.0, target: 42.0",42,30,0.0,"number not near, response: 30.7, target: 87.7",87.7,30.7,1.0,key_match,0.0,"number not near, response: 3020.0, target: 3364.0",3364,3020,1.0,"number near in range 5.0%, response: 801590.0, target: 799380.0",799380,801590,1.0,"分析过程：
+
+根据评分标准：和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。  
+这里“target”字段中英文地名后跟着该地名对应的英文拼写，而“response”为中文名。只要中文名称对应的城市是相同的，那就是正确答案。
+
+逐项分析：  
+- idx_0: response “开罗”，target “开罗cairo”，两者是同一城市，得分1  
+- idx_1: response “亚的斯亚贝巴”，target “亚的斯亚贝巴addisababa”，同一城市，得分1  
+- idx_2: response “罗安达”，target “罗安达luanda”，同一城市，得分1  
+- idx_3: response “瓦加杜古”，target “瓦加杜古ouagadougou”，同一城市，得分1  
+- idx_4: response “布琼布拉”，target “基特加gitega”，两个不同城市，布琼布拉是布隆迪前首都，基特加是当前首都，地理实体不一致，得分0  
+- idx_5: response “金沙萨”，target “金沙萨kinshasa”，同一城市，得分1  
+- idx_6: response “科纳克里”，target “科纳克里conakry”，同一城市，得分1  
+- idx_7: response “阿克拉”，target “阿克拉accra”，同一城市，得分1  
+- idx_8: response “雅温得”，target “雅温得yaounde”，同一城市，得分1  
+- idx_9: response “阿比让”，target “亚穆苏克罗yamoussoukro”，两个不同城市，亚穆苏克罗是科特迪瓦首都，阿比让是经济首都，地理实体不符，得分0  
+- idx_10: response “内罗毕”，target “内罗毕nairobi”，同一城市，得分1  
+- idx_11: response “蒙罗维亚”，target “蒙罗维亚monrovia”，同一城市，得分1  
+- idx_12: response “的黎波里”，target “的黎波里tripoli”，同一城市，得分1  
+- idx_13: response “塔那那利夫”，target “塔那那利佛antananarivo”，同一城市，拼写微差但指代同一，得分1  
+- idx_14: response “巴马科”，target “巴马科bamako”，同一城市，得分1  
+- idx_15: response “马普托”，target “马普托maputo”，同一城市，得分1  
+- idx_16: response “约翰内斯堡”，target “茨瓦内tshwane”，两个不同城市，约翰内斯堡和茨瓦内是不同城市，得分0  
+- idx_17: response “尼亚美”，target “尼亚美niamey”，同一城市，得分1  
+- idx_18: response “阿布贾”，target “阿布贾abuja”，同一城市，得分1  
+- idx_19: response “弗里敦”，target “弗里敦freetown”，同一城市，得分1  
+- idx_20: response “达喀尔”，target “达喀尔dakar”，同一城市，得分1  
+- idx_21: response “达累斯萨拉姆”，target “多多马dodoma”，两个不同城市，达累斯萨拉姆是坦桑尼亚最大城市，多多马是首都，得分0  
+- idx_22: response “卢萨卡”，target “卢萨卡lusaka”，同一城市，得分1  
+
+最终得分结果如下：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 0,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 1,
+  ""idx_21"": 0,
+  ""idx_22"": 1
+}
+```",马普托maputo,马普托
+,,南非southafrica,南非,0.0,"number not near, response: 40.0, target: 51.0",51,40,0.0,"number not near, response: 42.5, target: 63.5",63.5,42.5,1.0,key_match,0.0,"number not near, response: 5872.0, target: 6321.0",6321,5872,1.0,"number near in range 5.0%, response: 1221037.0, target: 1219090.0",1219090,1221037,0.0,"分析过程：
+
+根据评分标准：和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。  
+这里“target”字段中英文地名后跟着该地名对应的英文拼写，而“response”为中文名。只要中文名称对应的城市是相同的，那就是正确答案。
+
+逐项分析：  
+- idx_0: response “开罗”，target “开罗cairo”，两者是同一城市，得分1  
+- idx_1: response “亚的斯亚贝巴”，target “亚的斯亚贝巴addisababa”，同一城市，得分1  
+- idx_2: response “罗安达”，target “罗安达luanda”，同一城市，得分1  
+- idx_3: response “瓦加杜古”，target “瓦加杜古ouagadougou”，同一城市，得分1  
+- idx_4: response “布琼布拉”，target “基特加gitega”，两个不同城市，布琼布拉是布隆迪前首都，基特加是当前首都，地理实体不一致，得分0  
+- idx_5: response “金沙萨”，target “金沙萨kinshasa”，同一城市，得分1  
+- idx_6: response “科纳克里”，target “科纳克里conakry”，同一城市，得分1  
+- idx_7: response “阿克拉”，target “阿克拉accra”，同一城市，得分1  
+- idx_8: response “雅温得”，target “雅温得yaounde”，同一城市，得分1  
+- idx_9: response “阿比让”，target “亚穆苏克罗yamoussoukro”，两个不同城市，亚穆苏克罗是科特迪瓦首都，阿比让是经济首都，地理实体不符，得分0  
+- idx_10: response “内罗毕”，target “内罗毕nairobi”，同一城市，得分1  
+- idx_11: response “蒙罗维亚”，target “蒙罗维亚monrovia”，同一城市，得分1  
+- idx_12: response “的黎波里”，target “的黎波里tripoli”，同一城市，得分1  
+- idx_13: response “塔那那利夫”，target “塔那那利佛antananarivo”，同一城市，拼写微差但指代同一，得分1  
+- idx_14: response “巴马科”，target “巴马科bamako”，同一城市，得分1  
+- idx_15: response “马普托”，target “马普托maputo”，同一城市，得分1  
+- idx_16: response “约翰内斯堡”，target “茨瓦内tshwane”，两个不同城市，约翰内斯堡和茨瓦内是不同城市，得分0  
+- idx_17: response “尼亚美”，target “尼亚美niamey”，同一城市，得分1  
+- idx_18: response “阿布贾”，target “阿布贾abuja”，同一城市，得分1  
+- idx_19: response “弗里敦”，target “弗里敦freetown”，同一城市，得分1  
+- idx_20: response “达喀尔”，target “达喀尔dakar”，同一城市，得分1  
+- idx_21: response “达累斯萨拉姆”，target “多多马dodoma”，两个不同城市，达累斯萨拉姆是坦桑尼亚最大城市，多多马是首都，得分0  
+- idx_22: response “卢萨卡”，target “卢萨卡lusaka”，同一城市，得分1  
+
+最终得分结果如下：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 0,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 1,
+  ""idx_21"": 0,
+  ""idx_22"": 1
+}
+```",茨瓦内tshwane,约翰内斯堡
+,,尼日尔niger,尼日尔,0.0,"number not near, response: 14.0, target: 20.0",20,14,0.0,"number not near, response: 28.9, target: 25.5",25.5,28.9,1.0,key_match,0.0,"number not near, response: 2344.0, target: 2616.0",2616,2344,1.0,"number near in range 5.0%, response: 1267000.0, target: 1267000.0",1267000,1267000,1.0,"分析过程：
+
+根据评分标准：和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。  
+这里“target”字段中英文地名后跟着该地名对应的英文拼写，而“response”为中文名。只要中文名称对应的城市是相同的，那就是正确答案。
+
+逐项分析：  
+- idx_0: response “开罗”，target “开罗cairo”，两者是同一城市，得分1  
+- idx_1: response “亚的斯亚贝巴”，target “亚的斯亚贝巴addisababa”，同一城市，得分1  
+- idx_2: response “罗安达”，target “罗安达luanda”，同一城市，得分1  
+- idx_3: response “瓦加杜古”，target “瓦加杜古ouagadougou”，同一城市，得分1  
+- idx_4: response “布琼布拉”，target “基特加gitega”，两个不同城市，布琼布拉是布隆迪前首都，基特加是当前首都，地理实体不一致，得分0  
+- idx_5: response “金沙萨”，target “金沙萨kinshasa”，同一城市，得分1  
+- idx_6: response “科纳克里”，target “科纳克里conakry”，同一城市，得分1  
+- idx_7: response “阿克拉”，target “阿克拉accra”，同一城市，得分1  
+- idx_8: response “雅温得”，target “雅温得yaounde”，同一城市，得分1  
+- idx_9: response “阿比让”，target “亚穆苏克罗yamoussoukro”，两个不同城市，亚穆苏克罗是科特迪瓦首都，阿比让是经济首都，地理实体不符，得分0  
+- idx_10: response “内罗毕”，target “内罗毕nairobi”，同一城市，得分1  
+- idx_11: response “蒙罗维亚”，target “蒙罗维亚monrovia”，同一城市，得分1  
+- idx_12: response “的黎波里”，target “的黎波里tripoli”，同一城市，得分1  
+- idx_13: response “塔那那利夫”，target “塔那那利佛antananarivo”，同一城市，拼写微差但指代同一，得分1  
+- idx_14: response “巴马科”，target “巴马科bamako”，同一城市，得分1  
+- idx_15: response “马普托”，target “马普托maputo”，同一城市，得分1  
+- idx_16: response “约翰内斯堡”，target “茨瓦内tshwane”，两个不同城市，约翰内斯堡和茨瓦内是不同城市，得分0  
+- idx_17: response “尼亚美”，target “尼亚美niamey”，同一城市，得分1  
+- idx_18: response “阿布贾”，target “阿布贾abuja”，同一城市，得分1  
+- idx_19: response “弗里敦”，target “弗里敦freetown”，同一城市，得分1  
+- idx_20: response “达喀尔”，target “达喀尔dakar”，同一城市，得分1  
+- idx_21: response “达累斯萨拉姆”，target “多多马dodoma”，两个不同城市，达累斯萨拉姆是坦桑尼亚最大城市，多多马是首都，得分0  
+- idx_22: response “卢萨卡”，target “卢萨卡lusaka”，同一城市，得分1  
+
+最终得分结果如下：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 0,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 1,
+  ""idx_21"": 0,
+  ""idx_22"": 1
+}
+```",尼亚美niamey,尼亚美
+,,尼日利亚nigeria,尼日利亚,0.0,"number not near, response: 154.0, target: 245.0",245,154,0.0,"number not near, response: 32.8, target: 28.8",28.8,32.8,1.0,key_match,0.0,"number not near, response: 20618.0, target: 22788.0",22788,20618,1.0,"number near in range 5.0%, response: 923768.0, target: 923770.0",923770,923768,1.0,"分析过程：
+
+根据评分标准：和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。  
+这里“target”字段中英文地名后跟着该地名对应的英文拼写，而“response”为中文名。只要中文名称对应的城市是相同的，那就是正确答案。
+
+逐项分析：  
+- idx_0: response “开罗”，target “开罗cairo”，两者是同一城市，得分1  
+- idx_1: response “亚的斯亚贝巴”，target “亚的斯亚贝巴addisababa”，同一城市，得分1  
+- idx_2: response “罗安达”，target “罗安达luanda”，同一城市，得分1  
+- idx_3: response “瓦加杜古”，target “瓦加杜古ouagadougou”，同一城市，得分1  
+- idx_4: response “布琼布拉”，target “基特加gitega”，两个不同城市，布琼布拉是布隆迪前首都，基特加是当前首都，地理实体不一致，得分0  
+- idx_5: response “金沙萨”，target “金沙萨kinshasa”，同一城市，得分1  
+- idx_6: response “科纳克里”，target “科纳克里conakry”，同一城市，得分1  
+- idx_7: response “阿克拉”，target “阿克拉accra”，同一城市，得分1  
+- idx_8: response “雅温得”，target “雅温得yaounde”，同一城市，得分1  
+- idx_9: response “阿比让”，target “亚穆苏克罗yamoussoukro”，两个不同城市，亚穆苏克罗是科特迪瓦首都，阿比让是经济首都，地理实体不符，得分0  
+- idx_10: response “内罗毕”，target “内罗毕nairobi”，同一城市，得分1  
+- idx_11: response “蒙罗维亚”，target “蒙罗维亚monrovia”，同一城市，得分1  
+- idx_12: response “的黎波里”，target “的黎波里tripoli”，同一城市，得分1  
+- idx_13: response “塔那那利夫”，target “塔那那利佛antananarivo”，同一城市，拼写微差但指代同一，得分1  
+- idx_14: response “巴马科”，target “巴马科bamako”，同一城市，得分1  
+- idx_15: response “马普托”，target “马普托maputo”，同一城市，得分1  
+- idx_16: response “约翰内斯堡”，target “茨瓦内tshwane”，两个不同城市，约翰内斯堡和茨瓦内是不同城市，得分0  
+- idx_17: response “尼亚美”，target “尼亚美niamey”，同一城市，得分1  
+- idx_18: response “阿布贾”，target “阿布贾abuja”，同一城市，得分1  
+- idx_19: response “弗里敦”，target “弗里敦freetown”，同一城市，得分1  
+- idx_20: response “达喀尔”，target “达喀尔dakar”，同一城市，得分1  
+- idx_21: response “达累斯萨拉姆”，target “多多马dodoma”，两个不同城市，达累斯萨拉姆是坦桑尼亚最大城市，多多马是首都，得分0  
+- idx_22: response “卢萨卡”，target “卢萨卡lusaka”，同一城市，得分1  
+
+最终得分结果如下：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 0,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 1,
+  ""idx_21"": 0,
+  ""idx_22"": 1
+}
+```",阿布贾abuja,阿布贾
+,,塞拉利昂sierraleone,塞拉利昂,0.0,"number not near, response: 199.0, target: 115.0",115,199,0.0,"number not near, response: 31.6, target: 50.7",50.7,31.6,1.0,key_match,1.0,"number near in range 5.0%, response: 879.0, target: 846.0",846,879,1.0,"number near in range 5.0%, response: 71740.0, target: 72300.0",72300,71740,1.0,"分析过程：
+
+根据评分标准：和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。  
+这里“target”字段中英文地名后跟着该地名对应的英文拼写，而“response”为中文名。只要中文名称对应的城市是相同的，那就是正确答案。
+
+逐项分析：  
+- idx_0: response “开罗”，target “开罗cairo”，两者是同一城市，得分1  
+- idx_1: response “亚的斯亚贝巴”，target “亚的斯亚贝巴addisababa”，同一城市，得分1  
+- idx_2: response “罗安达”，target “罗安达luanda”，同一城市，得分1  
+- idx_3: response “瓦加杜古”，target “瓦加杜古ouagadougou”，同一城市，得分1  
+- idx_4: response “布琼布拉”，target “基特加gitega”，两个不同城市，布琼布拉是布隆迪前首都，基特加是当前首都，地理实体不一致，得分0  
+- idx_5: response “金沙萨”，target “金沙萨kinshasa”，同一城市，得分1  
+- idx_6: response “科纳克里”，target “科纳克里conakry”，同一城市，得分1  
+- idx_7: response “阿克拉”，target “阿克拉accra”，同一城市，得分1  
+- idx_8: response “雅温得”，target “雅温得yaounde”，同一城市，得分1  
+- idx_9: response “阿比让”，target “亚穆苏克罗yamoussoukro”，两个不同城市，亚穆苏克罗是科特迪瓦首都，阿比让是经济首都，地理实体不符，得分0  
+- idx_10: response “内罗毕”，target “内罗毕nairobi”，同一城市，得分1  
+- idx_11: response “蒙罗维亚”，target “蒙罗维亚monrovia”，同一城市，得分1  
+- idx_12: response “的黎波里”，target “的黎波里tripoli”，同一城市，得分1  
+- idx_13: response “塔那那利夫”，target “塔那那利佛antananarivo”，同一城市，拼写微差但指代同一，得分1  
+- idx_14: response “巴马科”，target “巴马科bamako”，同一城市，得分1  
+- idx_15: response “马普托”，target “马普托maputo”，同一城市，得分1  
+- idx_16: response “约翰内斯堡”，target “茨瓦内tshwane”，两个不同城市，约翰内斯堡和茨瓦内是不同城市，得分0  
+- idx_17: response “尼亚美”，target “尼亚美niamey”，同一城市，得分1  
+- idx_18: response “阿布贾”，target “阿布贾abuja”，同一城市，得分1  
+- idx_19: response “弗里敦”，target “弗里敦freetown”，同一城市，得分1  
+- idx_20: response “达喀尔”，target “达喀尔dakar”，同一城市，得分1  
+- idx_21: response “达累斯萨拉姆”，target “多多马dodoma”，两个不同城市，达累斯萨拉姆是坦桑尼亚最大城市，多多马是首都，得分0  
+- idx_22: response “卢萨卡”，target “卢萨卡lusaka”，同一城市，得分1  
+
+最终得分结果如下：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 0,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 1,
+  ""idx_21"": 0,
+  ""idx_22"": 1
+}
+```",弗里敦freetown,弗里敦
+,,塞内加尔senegal,塞内加尔,0.0,"number not near, response: 115.0, target: 92.0",92,115,0.0,"number not near, response: 34.5, target: 56.0",56.0,34.5,1.0,key_match,1.0,"number near in range 5.0%, response: 1741.0, target: 1808.0",1808,1741,1.0,"number near in range 5.0%, response: 196722.0, target: 196710.0",196710,196722,1.0,"分析过程：
+
+根据评分标准：和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。  
+这里“target”字段中英文地名后跟着该地名对应的英文拼写，而“response”为中文名。只要中文名称对应的城市是相同的，那就是正确答案。
+
+逐项分析：  
+- idx_0: response “开罗”，target “开罗cairo”，两者是同一城市，得分1  
+- idx_1: response “亚的斯亚贝巴”，target “亚的斯亚贝巴addisababa”，同一城市，得分1  
+- idx_2: response “罗安达”，target “罗安达luanda”，同一城市，得分1  
+- idx_3: response “瓦加杜古”，target “瓦加杜古ouagadougou”，同一城市，得分1  
+- idx_4: response “布琼布拉”，target “基特加gitega”，两个不同城市，布琼布拉是布隆迪前首都，基特加是当前首都，地理实体不一致，得分0  
+- idx_5: response “金沙萨”，target “金沙萨kinshasa”，同一城市，得分1  
+- idx_6: response “科纳克里”，target “科纳克里conakry”，同一城市，得分1  
+- idx_7: response “阿克拉”，target “阿克拉accra”，同一城市，得分1  
+- idx_8: response “雅温得”，target “雅温得yaounde”，同一城市，得分1  
+- idx_9: response “阿比让”，target “亚穆苏克罗yamoussoukro”，两个不同城市，亚穆苏克罗是科特迪瓦首都，阿比让是经济首都，地理实体不符，得分0  
+- idx_10: response “内罗毕”，target “内罗毕nairobi”，同一城市，得分1  
+- idx_11: response “蒙罗维亚”，target “蒙罗维亚monrovia”，同一城市，得分1  
+- idx_12: response “的黎波里”，target “的黎波里tripoli”，同一城市，得分1  
+- idx_13: response “塔那那利夫”，target “塔那那利佛antananarivo”，同一城市，拼写微差但指代同一，得分1  
+- idx_14: response “巴马科”，target “巴马科bamako”，同一城市，得分1  
+- idx_15: response “马普托”，target “马普托maputo”，同一城市，得分1  
+- idx_16: response “约翰内斯堡”，target “茨瓦内tshwane”，两个不同城市，约翰内斯堡和茨瓦内是不同城市，得分0  
+- idx_17: response “尼亚美”，target “尼亚美niamey”，同一城市，得分1  
+- idx_18: response “阿布贾”，target “阿布贾abuja”，同一城市，得分1  
+- idx_19: response “弗里敦”，target “弗里敦freetown”，同一城市，得分1  
+- idx_20: response “达喀尔”，target “达喀尔dakar”，同一城市，得分1  
+- idx_21: response “达累斯萨拉姆”，target “多多马dodoma”，两个不同城市，达累斯萨拉姆是坦桑尼亚最大城市，多多马是首都，得分0  
+- idx_22: response “卢萨卡”，target “卢萨卡lusaka”，同一城市，得分1  
+
+最终得分结果如下：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 0,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 1,
+  ""idx_21"": 0,
+  ""idx_22"": 1
+}
+```",达喀尔dakar,达喀尔
+,,坦桑尼亚tanzania,坦桑尼亚,0.0,"number not near, response: 38.0, target: 73.0",73,38,0.0,"number not near, response: 35.6, target: 26.6",26.6,35.6,1.0,key_match,0.0,"number not near, response: 5831.0, target: 6662.0",6662,5831,1.0,"number near in range 5.0%, response: 947303.0, target: 945000.0",945000,947303,0.0,"分析过程：
+
+根据评分标准：和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。  
+这里“target”字段中英文地名后跟着该地名对应的英文拼写，而“response”为中文名。只要中文名称对应的城市是相同的，那就是正确答案。
+
+逐项分析：  
+- idx_0: response “开罗”，target “开罗cairo”，两者是同一城市，得分1  
+- idx_1: response “亚的斯亚贝巴”，target “亚的斯亚贝巴addisababa”，同一城市，得分1  
+- idx_2: response “罗安达”，target “罗安达luanda”，同一城市，得分1  
+- idx_3: response “瓦加杜古”，target “瓦加杜古ouagadougou”，同一城市，得分1  
+- idx_4: response “布琼布拉”，target “基特加gitega”，两个不同城市，布琼布拉是布隆迪前首都，基特加是当前首都，地理实体不一致，得分0  
+- idx_5: response “金沙萨”，target “金沙萨kinshasa”，同一城市，得分1  
+- idx_6: response “科纳克里”，target “科纳克里conakry”，同一城市，得分1  
+- idx_7: response “阿克拉”，target “阿克拉accra”，同一城市，得分1  
+- idx_8: response “雅温得”，target “雅温得yaounde”，同一城市，得分1  
+- idx_9: response “阿比让”，target “亚穆苏克罗yamoussoukro”，两个不同城市，亚穆苏克罗是科特迪瓦首都，阿比让是经济首都，地理实体不符，得分0  
+- idx_10: response “内罗毕”，target “内罗毕nairobi”，同一城市，得分1  
+- idx_11: response “蒙罗维亚”，target “蒙罗维亚monrovia”，同一城市，得分1  
+- idx_12: response “的黎波里”，target “的黎波里tripoli”，同一城市，得分1  
+- idx_13: response “塔那那利夫”，target “塔那那利佛antananarivo”，同一城市，拼写微差但指代同一，得分1  
+- idx_14: response “巴马科”，target “巴马科bamako”，同一城市，得分1  
+- idx_15: response “马普托”，target “马普托maputo”，同一城市，得分1  
+- idx_16: response “约翰内斯堡”，target “茨瓦内tshwane”，两个不同城市，约翰内斯堡和茨瓦内是不同城市，得分0  
+- idx_17: response “尼亚美”，target “尼亚美niamey”，同一城市，得分1  
+- idx_18: response “阿布贾”，target “阿布贾abuja”，同一城市，得分1  
+- idx_19: response “弗里敦”，target “弗里敦freetown”，同一城市，得分1  
+- idx_20: response “达喀尔”，target “达喀尔dakar”，同一城市，得分1  
+- idx_21: response “达累斯萨拉姆”，target “多多马dodoma”，两个不同城市，达累斯萨拉姆是坦桑尼亚最大城市，多多马是首都，得分0  
+- idx_22: response “卢萨卡”，target “卢萨卡lusaka”，同一城市，得分1  
+
+最终得分结果如下：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 0,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 1,
+  ""idx_21"": 0,
+  ""idx_22"": 1
+}
+```",多多马dodoma,达累斯萨拉姆
+,,赞比亚zambia,赞比亚,0.0,"number not near, response: 16.0, target: 27.0",27,16,0.0,"number not near, response: 33.5, target: 74.5",74.5,33.5,1.0,key_match,0.0,"number not near, response: 1939.0, target: 2072.0",2072,1939,1.0,"number near in range 5.0%, response: 752614.0, target: 752610.0",752610,752614,1.0,"分析过程：
+
+根据评分标准：和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。  
+这里“target”字段中英文地名后跟着该地名对应的英文拼写，而“response”为中文名。只要中文名称对应的城市是相同的，那就是正确答案。
+
+逐项分析：  
+- idx_0: response “开罗”，target “开罗cairo”，两者是同一城市，得分1  
+- idx_1: response “亚的斯亚贝巴”，target “亚的斯亚贝巴addisababa”，同一城市，得分1  
+- idx_2: response “罗安达”，target “罗安达luanda”，同一城市，得分1  
+- idx_3: response “瓦加杜古”，target “瓦加杜古ouagadougou”，同一城市，得分1  
+- idx_4: response “布琼布拉”，target “基特加gitega”，两个不同城市，布琼布拉是布隆迪前首都，基特加是当前首都，地理实体不一致，得分0  
+- idx_5: response “金沙萨”，target “金沙萨kinshasa”，同一城市，得分1  
+- idx_6: response “科纳克里”，target “科纳克里conakry”，同一城市，得分1  
+- idx_7: response “阿克拉”，target “阿克拉accra”，同一城市，得分1  
+- idx_8: response “雅温得”，target “雅温得yaounde”，同一城市，得分1  
+- idx_9: response “阿比让”，target “亚穆苏克罗yamoussoukro”，两个不同城市，亚穆苏克罗是科特迪瓦首都，阿比让是经济首都，地理实体不符，得分0  
+- idx_10: response “内罗毕”，target “内罗毕nairobi”，同一城市，得分1  
+- idx_11: response “蒙罗维亚”，target “蒙罗维亚monrovia”，同一城市，得分1  
+- idx_12: response “的黎波里”，target “的黎波里tripoli”，同一城市，得分1  
+- idx_13: response “塔那那利夫”，target “塔那那利佛antananarivo”，同一城市，拼写微差但指代同一，得分1  
+- idx_14: response “巴马科”，target “巴马科bamako”，同一城市，得分1  
+- idx_15: response “马普托”，target “马普托maputo”，同一城市，得分1  
+- idx_16: response “约翰内斯堡”，target “茨瓦内tshwane”，两个不同城市，约翰内斯堡和茨瓦内是不同城市，得分0  
+- idx_17: response “尼亚美”，target “尼亚美niamey”，同一城市，得分1  
+- idx_18: response “阿布贾”，target “阿布贾abuja”，同一城市，得分1  
+- idx_19: response “弗里敦”，target “弗里敦freetown”，同一城市，得分1  
+- idx_20: response “达喀尔”，target “达喀尔dakar”，同一城市，得分1  
+- idx_21: response “达累斯萨拉姆”，target “多多马dodoma”，两个不同城市，达累斯萨拉姆是坦桑尼亚最大城市，多多马是首都，得分0  
+- idx_22: response “卢萨卡”，target “卢萨卡lusaka”，同一城市，得分1  
+
+最终得分结果如下：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 0,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 1,
+  ""idx_21"": 0,
+  ""idx_22"": 1
+}
+```",卢萨卡lusaka,卢萨卡
+1.0,,中非centralafrica,,,,8,,,,26.1,,,,,,515,,,,622980,,,,班吉bangui,
+1.0,,乌干达uganda,,,,236,,,,37.1,,,,,,4866,,,,241550,,,,坎帕拉kampala,
+1.0,,乍得chad,,,,15,,,,35.0,,,,,,1932,,,,1284000,,,,恩贾梅纳n'djamena,
+1.0,,佛得角capeverde,,,,129,,,,74.4,,,,,,52,,,,4030,,,,普拉亚praia,
+1.0,,冈比亚gambia,,,,261,,,,63.2,,,,,,270,,,,11295,,,,班珠尔banjul,
+1.0,,几内亚比绍guinea-bissau,,,,75,,,,34.4,,,,,,215,,,,36125,,,,比绍bissau,
+1.0,,刚果congo,,,,18,,,,69.3,,,,,,618,,,,342000,,,,布拉柴维尔brazzaville,
+1.0,,加蓬gabon,,,,9,,,,84.3,,,,,,248,,,,267670,,,,利伯维尔libreville,
+1.0,,南苏丹southsudan,,,,17,,,,47.8,,,,,,1148,,,,646883,,,,朱巴juba,
+1.0,,博茨瓦纳botswana,,,,4,,,,63.1,,,,,,248,,,,581730,,,,哈博罗内gaborone,
+1.0,,卢旺达rwanda,,,,553,,,,44.1,,,,,,1395,,,,26338,,,,基加利kigali,
+1.0,,厄立特里亚eritrea,,,,28,,,,28.7,,,,,,347,,,,121630,,,,阿斯马拉asmara,
+1.0,,吉布提djibouti,,,,49,,,,257.3,,,,,,115,,,,23200,,,,吉布提市djibouti,
+1.0,,圣多美和普林西比sãotomé&príncipe,,,,236,,,,30.6,,,,,,23,,,,960,,,,圣多美sãotomé,
+1.0,,塞舌尔seychelles,,,,261,,,,91.1,,,,,,12,,,,460,,,,维多利亚victoria,
+1.0,,多哥togo,,,,167,,,,51.4,,,,,,930,,,,56790,,,,洛美lomé,
+,1.0,尼日尔利亚,尼日尔利亚,,,,154,,,,32.8,,,,,,20618,,,,923768,,,,阿布贾
+1.0,,摩洛哥morocco,,,,84,,,,76.4,,,,,,3771,,,,446550,,,,拉巴特rabat,
+1.0,,毛里塔尼亚mauritania,,,,5,,,,83.4,,,,,,502,,,,1030700,,,,努瓦克肖特nouakchott,
+1.0,,津巴布韦zimbabwe,,,,42,,,,46.7,,,,,,1634,,,,390760,,,,哈拉雷harare,
+1.0,,科摩罗comoros,,,,448,,,,27.2,,,,,,85,,,,1861,,,,莫罗尼moroni,
+1.0,,突尼斯tunisia,,,,78,,,,94.3,,,,,,1220,,,,162000,,,,突尼斯市tunis,
+1.0,,索马里somalia,,,,28,,,,48.1,,,,,,1836,,,,637660,,,,摩加迪沙mogadishu,
+1.0,,纳米比亚namibia,,,,4,,,,102.6,,,,,,296,,,,824290,,,,温得和克windhoek,
+1.0,,苏丹sudan,,,,26,,,,30.8,,,,,,5004,,,,1880000,,,,喀土穆khartoum,
+1.0,,莱索托lesotho,,,,75,,,,120.4,,,,,,231,,,,30360,,,,马塞卢maseru,
+1.0,,贝宁benin,,,,122,,,,47.3,,,,,,1411,,,,114760,,,,波多诺伏porto-novo,
+1.0,,赤道几内亚equatorialguinea,,,,64,,,,64.1,,,,,,185,,,,28050,,,,马拉博malabo,
+1.0,,阿尔及利亚algeria,,,,19,,,,39.8,,,,,,4616,,,,2381741,,,,阿尔及尔algiers,
+1.0,,马拉维malawi,,,,218,,,,32.3,,,,,,2110,,,,118484,,,,利隆圭lilongwe,

@@ -1,0 +1,3054 @@
+exist_flag_gt,exist_flag_response,reactorname,reactorname_before_map,commercialoperationdate_date_near,commercialoperationdate_date_near_eval_msg,commercialoperationdate_query,commercialoperationdate_response,constructionstartyear_exact_match,constructionstartyear_exact_match_eval_msg,constructionstartyear_query,constructionstartyear_response,country_llm_judge,country_llm_judge_eval_msg,country_query,country_response,currentstatus_llm_judge,currentstatus_llm_judge_eval_msg,currentstatus_query,currentstatus_response,firstgridconnectiondate_date_near,firstgridconnectiondate_date_near_eval_msg,firstgridconnectiondate_query,firstgridconnectiondate_response,netcapacity(mw)_number_near,netcapacity(mw)_number_near_eval_msg,netcapacity(mw)_query,netcapacity(mw)_response,reactorname_exact_match,reactorname_exact_match_eval_msg,reactortype_llm_judge,reactortype_llm_judge_eval_msg,reactortype_query,reactortype_response
+,,changjiang-1,Changjiang-1,0.0,"date not near, response: 2022-06-29 00:00:00, target: 2015-12-25 00:00:00",2015-12-25,2022-06-29,0.0,"exact not match, response: 2015, target: 2010",2010,2015,1.0,"Let's analyze each item according to the grading criterion:
+
+Criterion summary:  
+- The response is correct if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- Word-for-word matching is not necessary.
+
+Given:  
+- Target answer for all indices: ""china""  
+- Response for all indices: ""china""
+
+Analysis item-by-item:  
+- idx_0: response ""china"" vs target ""china"" → same entity, semantics match → score 1  
+- idx_1: same as above → score 1  
+- idx_2: same → 1  
+- idx_3: same → 1  
+- idx_4: same → 1  
+- idx_5: same → 1  
+- idx_6: same → 1  
+- idx_7: same → 1  
+- idx_8: same → 1  
+- idx_9: same → 1  
+- idx_10: same → 1  
+- idx_11: same → 1  
+- idx_12: same → 1  
+- idx_13: same → 1  
+- idx_14: same → 1  
+- idx_15: same → 1  
+- idx_16: same → 1  
+- idx_17: same → 1  
+- idx_18: same → 1
+
+All responses exactly match the targets semantically, so all receive full score 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1,
+    ""idx_16"": 1,
+    ""idx_17"": 1,
+    ""idx_18"": 1
+}
+```",china,china,1.0,"Let's analyze each pair step-by-step according to the criterion:
+
+Criterion summary:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word matching.
+
+All pairs have:  
+- response = ""operational""  
+- target = ""operational""
+
+Since the response exactly matches the target, the semantics are the same, and they point to the same entity.
+
+Hence, for each idx, the score should be 1.
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1
+}
+```",operational,operational,0.0,"date not near, response: 2022-06-29 00:00:00, target: 2015-11-07 00:00:00",2015-11-07,2022-06-29,0.0,"number not near, response: 1250.0, target: 601.0",601,1250,1.0,key_match,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for word-for-word correspondence, but the answer should convey the same entity or meaning.
+
+---
+
+Each pair has the standard answer as a specific entity or model code, e.g. ""cnp-600"", ""cpr-1000pwr"", ""eprpwr"", ""vver-1000/428m(aes-91)"", ""acpr-1000pwr"".
+
+The responses are all ""pwr"".
+
+We need to judge if ""pwr"" is a semantically equivalent or approximately the same as the target.
+
+""pwr"" is an abbreviation commonly used for ""Pressurized Water Reactor"". But here, the targets are specific reactor models/names, e.g.:
+
+- cnp-600 (CNP is a reactor type), cpr-1000pwr, acpr-1000pwr, eprpwr, vver-1000/428m(aes-91)
+
+Note that the standard answers contain reactor types with suffix ""pwr"" in some, but for others, such as ""cnp-600"", ""vver-1000/428m(aes-91)"", they are different reactor types.
+
+The key question: Does ""pwr"" alone convey the same entity or approximate meaning as the specific reactor model given as the standard answer?
+
+Analysis:
+
+- ""pwr"" is a general acronym: it stands for pressurized water reactor.  
+- The target answers are specific reactor types/models (some of which are PWRs, but named fully).  
+- The responses ""pwr"" do not specify any model or variant, only the reactor type.
+
+Given the grading criterion that says: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+""pwr"" is too generic to be considered approximately same or pointing to the same entity as the specific reactor model the target answers represent.
+
+Therefore, the responses here do NOT meet the criterion of approximately the same semantics or same entity as the targets, since the response is only a generic reactor type abbreviation.
+
+Hence, each response should be scored 0.
+
+---
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0
+}
+```
+",cnp-600,pwr
+,,changjiang-2,Changjiang-2,0.0,"date not near, response: 2023-03-29 00:00:00, target: 2016-08-12 00:00:00",2016-08-12,2023-03-29,0.0,"exact not match, response: 2015, target: 2010",2010,2015,1.0,"Let's analyze each item according to the grading criterion:
+
+Criterion summary:  
+- The response is correct if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- Word-for-word matching is not necessary.
+
+Given:  
+- Target answer for all indices: ""china""  
+- Response for all indices: ""china""
+
+Analysis item-by-item:  
+- idx_0: response ""china"" vs target ""china"" → same entity, semantics match → score 1  
+- idx_1: same as above → score 1  
+- idx_2: same → 1  
+- idx_3: same → 1  
+- idx_4: same → 1  
+- idx_5: same → 1  
+- idx_6: same → 1  
+- idx_7: same → 1  
+- idx_8: same → 1  
+- idx_9: same → 1  
+- idx_10: same → 1  
+- idx_11: same → 1  
+- idx_12: same → 1  
+- idx_13: same → 1  
+- idx_14: same → 1  
+- idx_15: same → 1  
+- idx_16: same → 1  
+- idx_17: same → 1  
+- idx_18: same → 1
+
+All responses exactly match the targets semantically, so all receive full score 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1,
+    ""idx_16"": 1,
+    ""idx_17"": 1,
+    ""idx_18"": 1
+}
+```",china,china,1.0,"Let's analyze each pair step-by-step according to the criterion:
+
+Criterion summary:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word matching.
+
+All pairs have:  
+- response = ""operational""  
+- target = ""operational""
+
+Since the response exactly matches the target, the semantics are the same, and they point to the same entity.
+
+Hence, for each idx, the score should be 1.
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1
+}
+```",operational,operational,0.0,"date not near, response: 2023-03-29 00:00:00, target: 2016-06-20 00:00:00",2016-06-20,2023-03-29,0.0,"number not near, response: 1250.0, target: 601.0",601,1250,1.0,key_match,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for word-for-word correspondence, but the answer should convey the same entity or meaning.
+
+---
+
+Each pair has the standard answer as a specific entity or model code, e.g. ""cnp-600"", ""cpr-1000pwr"", ""eprpwr"", ""vver-1000/428m(aes-91)"", ""acpr-1000pwr"".
+
+The responses are all ""pwr"".
+
+We need to judge if ""pwr"" is a semantically equivalent or approximately the same as the target.
+
+""pwr"" is an abbreviation commonly used for ""Pressurized Water Reactor"". But here, the targets are specific reactor models/names, e.g.:
+
+- cnp-600 (CNP is a reactor type), cpr-1000pwr, acpr-1000pwr, eprpwr, vver-1000/428m(aes-91)
+
+Note that the standard answers contain reactor types with suffix ""pwr"" in some, but for others, such as ""cnp-600"", ""vver-1000/428m(aes-91)"", they are different reactor types.
+
+The key question: Does ""pwr"" alone convey the same entity or approximate meaning as the specific reactor model given as the standard answer?
+
+Analysis:
+
+- ""pwr"" is a general acronym: it stands for pressurized water reactor.  
+- The target answers are specific reactor types/models (some of which are PWRs, but named fully).  
+- The responses ""pwr"" do not specify any model or variant, only the reactor type.
+
+Given the grading criterion that says: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+""pwr"" is too generic to be considered approximately same or pointing to the same entity as the specific reactor model the target answers represent.
+
+Therefore, the responses here do NOT meet the criterion of approximately the same semantics or same entity as the targets, since the response is only a generic reactor type abbreviation.
+
+Hence, each response should be scored 0.
+
+---
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0
+}
+```
+",cnp-600,pwr
+,,fuqing-3,Fuqing-3,0.0,"date not near, response: 2020-01-23 00:00:00, target: 2016-10-21 00:00:00",2016-10-21,2020-01-23,0.0,"exact not match, response: 2012, target: 2010",2010,2012,1.0,"Let's analyze each item according to the grading criterion:
+
+Criterion summary:  
+- The response is correct if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- Word-for-word matching is not necessary.
+
+Given:  
+- Target answer for all indices: ""china""  
+- Response for all indices: ""china""
+
+Analysis item-by-item:  
+- idx_0: response ""china"" vs target ""china"" → same entity, semantics match → score 1  
+- idx_1: same as above → score 1  
+- idx_2: same → 1  
+- idx_3: same → 1  
+- idx_4: same → 1  
+- idx_5: same → 1  
+- idx_6: same → 1  
+- idx_7: same → 1  
+- idx_8: same → 1  
+- idx_9: same → 1  
+- idx_10: same → 1  
+- idx_11: same → 1  
+- idx_12: same → 1  
+- idx_13: same → 1  
+- idx_14: same → 1  
+- idx_15: same → 1  
+- idx_16: same → 1  
+- idx_17: same → 1  
+- idx_18: same → 1
+
+All responses exactly match the targets semantically, so all receive full score 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1,
+    ""idx_16"": 1,
+    ""idx_17"": 1,
+    ""idx_18"": 1
+}
+```",china,china,1.0,"Let's analyze each pair step-by-step according to the criterion:
+
+Criterion summary:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word matching.
+
+All pairs have:  
+- response = ""operational""  
+- target = ""operational""
+
+Since the response exactly matches the target, the semantics are the same, and they point to the same entity.
+
+Hence, for each idx, the score should be 1.
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1
+}
+```",operational,operational,0.0,"date not near, response: 2020-01-23 00:00:00, target: 2016-09-08 00:00:00",2016-09-08,2020-01-23,0.0,"number not near, response: 1089.0, target: 1000.0",1000,1089,1.0,key_match,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for word-for-word correspondence, but the answer should convey the same entity or meaning.
+
+---
+
+Each pair has the standard answer as a specific entity or model code, e.g. ""cnp-600"", ""cpr-1000pwr"", ""eprpwr"", ""vver-1000/428m(aes-91)"", ""acpr-1000pwr"".
+
+The responses are all ""pwr"".
+
+We need to judge if ""pwr"" is a semantically equivalent or approximately the same as the target.
+
+""pwr"" is an abbreviation commonly used for ""Pressurized Water Reactor"". But here, the targets are specific reactor models/names, e.g.:
+
+- cnp-600 (CNP is a reactor type), cpr-1000pwr, acpr-1000pwr, eprpwr, vver-1000/428m(aes-91)
+
+Note that the standard answers contain reactor types with suffix ""pwr"" in some, but for others, such as ""cnp-600"", ""vver-1000/428m(aes-91)"", they are different reactor types.
+
+The key question: Does ""pwr"" alone convey the same entity or approximate meaning as the specific reactor model given as the standard answer?
+
+Analysis:
+
+- ""pwr"" is a general acronym: it stands for pressurized water reactor.  
+- The target answers are specific reactor types/models (some of which are PWRs, but named fully).  
+- The responses ""pwr"" do not specify any model or variant, only the reactor type.
+
+Given the grading criterion that says: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+""pwr"" is too generic to be considered approximately same or pointing to the same entity as the specific reactor model the target answers represent.
+
+Therefore, the responses here do NOT meet the criterion of approximately the same semantics or same entity as the targets, since the response is only a generic reactor type abbreviation.
+
+Hence, each response should be scored 0.
+
+---
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0
+}
+```
+",cpr-1000pwr,pwr
+,,fuqing-4,Fuqing-4,0.0,"date not near, response: 2021-06-23 00:00:00, target: 2017-09-17 00:00:00",2017-09-17,2021-06-23,1.0,"exact match, response: 2012, target: 2012",2012,2012,1.0,"Let's analyze each item according to the grading criterion:
+
+Criterion summary:  
+- The response is correct if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- Word-for-word matching is not necessary.
+
+Given:  
+- Target answer for all indices: ""china""  
+- Response for all indices: ""china""
+
+Analysis item-by-item:  
+- idx_0: response ""china"" vs target ""china"" → same entity, semantics match → score 1  
+- idx_1: same as above → score 1  
+- idx_2: same → 1  
+- idx_3: same → 1  
+- idx_4: same → 1  
+- idx_5: same → 1  
+- idx_6: same → 1  
+- idx_7: same → 1  
+- idx_8: same → 1  
+- idx_9: same → 1  
+- idx_10: same → 1  
+- idx_11: same → 1  
+- idx_12: same → 1  
+- idx_13: same → 1  
+- idx_14: same → 1  
+- idx_15: same → 1  
+- idx_16: same → 1  
+- idx_17: same → 1  
+- idx_18: same → 1
+
+All responses exactly match the targets semantically, so all receive full score 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1,
+    ""idx_16"": 1,
+    ""idx_17"": 1,
+    ""idx_18"": 1
+}
+```",china,china,1.0,"Let's analyze each pair step-by-step according to the criterion:
+
+Criterion summary:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word matching.
+
+All pairs have:  
+- response = ""operational""  
+- target = ""operational""
+
+Since the response exactly matches the target, the semantics are the same, and they point to the same entity.
+
+Hence, for each idx, the score should be 1.
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1
+}
+```",operational,operational,0.0,"date not near, response: 2021-06-23 00:00:00, target: 2017-07-29 00:00:00",2017-07-29,2021-06-23,0.0,"number not near, response: 1089.0, target: 1000.0",1000,1089,1.0,key_match,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for word-for-word correspondence, but the answer should convey the same entity or meaning.
+
+---
+
+Each pair has the standard answer as a specific entity or model code, e.g. ""cnp-600"", ""cpr-1000pwr"", ""eprpwr"", ""vver-1000/428m(aes-91)"", ""acpr-1000pwr"".
+
+The responses are all ""pwr"".
+
+We need to judge if ""pwr"" is a semantically equivalent or approximately the same as the target.
+
+""pwr"" is an abbreviation commonly used for ""Pressurized Water Reactor"". But here, the targets are specific reactor models/names, e.g.:
+
+- cnp-600 (CNP is a reactor type), cpr-1000pwr, acpr-1000pwr, eprpwr, vver-1000/428m(aes-91)
+
+Note that the standard answers contain reactor types with suffix ""pwr"" in some, but for others, such as ""cnp-600"", ""vver-1000/428m(aes-91)"", they are different reactor types.
+
+The key question: Does ""pwr"" alone convey the same entity or approximate meaning as the specific reactor model given as the standard answer?
+
+Analysis:
+
+- ""pwr"" is a general acronym: it stands for pressurized water reactor.  
+- The target answers are specific reactor types/models (some of which are PWRs, but named fully).  
+- The responses ""pwr"" do not specify any model or variant, only the reactor type.
+
+Given the grading criterion that says: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+""pwr"" is too generic to be considered approximately same or pointing to the same entity as the specific reactor model the target answers represent.
+
+Therefore, the responses here do NOT meet the criterion of approximately the same semantics or same entity as the targets, since the response is only a generic reactor type abbreviation.
+
+Hence, each response should be scored 0.
+
+---
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0
+}
+```
+",cpr-1000pwr,pwr
+,,hongyanhe-1,Hualong One 1,0.0,"date not near, response: 2019-03-18 00:00:00, target: 2013-06-06 00:00:00",2013-06-06,2019-03-18,0.0,"exact not match, response: 2013, target: 2007",2007,2013,1.0,"Let's analyze each item according to the grading criterion:
+
+Criterion summary:  
+- The response is correct if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- Word-for-word matching is not necessary.
+
+Given:  
+- Target answer for all indices: ""china""  
+- Response for all indices: ""china""
+
+Analysis item-by-item:  
+- idx_0: response ""china"" vs target ""china"" → same entity, semantics match → score 1  
+- idx_1: same as above → score 1  
+- idx_2: same → 1  
+- idx_3: same → 1  
+- idx_4: same → 1  
+- idx_5: same → 1  
+- idx_6: same → 1  
+- idx_7: same → 1  
+- idx_8: same → 1  
+- idx_9: same → 1  
+- idx_10: same → 1  
+- idx_11: same → 1  
+- idx_12: same → 1  
+- idx_13: same → 1  
+- idx_14: same → 1  
+- idx_15: same → 1  
+- idx_16: same → 1  
+- idx_17: same → 1  
+- idx_18: same → 1
+
+All responses exactly match the targets semantically, so all receive full score 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1,
+    ""idx_16"": 1,
+    ""idx_17"": 1,
+    ""idx_18"": 1
+}
+```",china,china,1.0,"Let's analyze each pair step-by-step according to the criterion:
+
+Criterion summary:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word matching.
+
+All pairs have:  
+- response = ""operational""  
+- target = ""operational""
+
+Since the response exactly matches the target, the semantics are the same, and they point to the same entity.
+
+Hence, for each idx, the score should be 1.
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1
+}
+```",operational,operational,0.0,"date not near, response: 2019-03-18 00:00:00, target: 2013-02-17 00:00:00",2013-02-17,2019-03-18,1.0,"number near in range 5.0%, response: 1089.0, target: 1061.0",1061,1089,1.0,key_match,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for word-for-word correspondence, but the answer should convey the same entity or meaning.
+
+---
+
+Each pair has the standard answer as a specific entity or model code, e.g. ""cnp-600"", ""cpr-1000pwr"", ""eprpwr"", ""vver-1000/428m(aes-91)"", ""acpr-1000pwr"".
+
+The responses are all ""pwr"".
+
+We need to judge if ""pwr"" is a semantically equivalent or approximately the same as the target.
+
+""pwr"" is an abbreviation commonly used for ""Pressurized Water Reactor"". But here, the targets are specific reactor models/names, e.g.:
+
+- cnp-600 (CNP is a reactor type), cpr-1000pwr, acpr-1000pwr, eprpwr, vver-1000/428m(aes-91)
+
+Note that the standard answers contain reactor types with suffix ""pwr"" in some, but for others, such as ""cnp-600"", ""vver-1000/428m(aes-91)"", they are different reactor types.
+
+The key question: Does ""pwr"" alone convey the same entity or approximate meaning as the specific reactor model given as the standard answer?
+
+Analysis:
+
+- ""pwr"" is a general acronym: it stands for pressurized water reactor.  
+- The target answers are specific reactor types/models (some of which are PWRs, but named fully).  
+- The responses ""pwr"" do not specify any model or variant, only the reactor type.
+
+Given the grading criterion that says: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+""pwr"" is too generic to be considered approximately same or pointing to the same entity as the specific reactor model the target answers represent.
+
+Therefore, the responses here do NOT meet the criterion of approximately the same semantics or same entity as the targets, since the response is only a generic reactor type abbreviation.
+
+Hence, each response should be scored 0.
+
+---
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0
+}
+```
+",cpr-1000pwr,pwr
+,,hongyanhe-1,Hongyanhe-1,0.0,"date not near, response: 2021-06-29 00:00:00, target: 2013-06-06 00:00:00",2013-06-06,2021-06-29,0.0,"exact not match, response: 2014, target: 2007",2007,2014,1.0,"Let's analyze each item according to the grading criterion:
+
+Criterion summary:  
+- The response is correct if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- Word-for-word matching is not necessary.
+
+Given:  
+- Target answer for all indices: ""china""  
+- Response for all indices: ""china""
+
+Analysis item-by-item:  
+- idx_0: response ""china"" vs target ""china"" → same entity, semantics match → score 1  
+- idx_1: same as above → score 1  
+- idx_2: same → 1  
+- idx_3: same → 1  
+- idx_4: same → 1  
+- idx_5: same → 1  
+- idx_6: same → 1  
+- idx_7: same → 1  
+- idx_8: same → 1  
+- idx_9: same → 1  
+- idx_10: same → 1  
+- idx_11: same → 1  
+- idx_12: same → 1  
+- idx_13: same → 1  
+- idx_14: same → 1  
+- idx_15: same → 1  
+- idx_16: same → 1  
+- idx_17: same → 1  
+- idx_18: same → 1
+
+All responses exactly match the targets semantically, so all receive full score 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1,
+    ""idx_16"": 1,
+    ""idx_17"": 1,
+    ""idx_18"": 1
+}
+```",china,china,1.0,"Let's analyze each pair step-by-step according to the criterion:
+
+Criterion summary:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word matching.
+
+All pairs have:  
+- response = ""operational""  
+- target = ""operational""
+
+Since the response exactly matches the target, the semantics are the same, and they point to the same entity.
+
+Hence, for each idx, the score should be 1.
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1
+}
+```",operational,operational,0.0,"date not near, response: 2021-06-29 00:00:00, target: 2013-02-17 00:00:00",2013-02-17,2021-06-29,0.0,"number not near, response: 1250.0, target: 1061.0",1061,1250,1.0,key_match,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for word-for-word correspondence, but the answer should convey the same entity or meaning.
+
+---
+
+Each pair has the standard answer as a specific entity or model code, e.g. ""cnp-600"", ""cpr-1000pwr"", ""eprpwr"", ""vver-1000/428m(aes-91)"", ""acpr-1000pwr"".
+
+The responses are all ""pwr"".
+
+We need to judge if ""pwr"" is a semantically equivalent or approximately the same as the target.
+
+""pwr"" is an abbreviation commonly used for ""Pressurized Water Reactor"". But here, the targets are specific reactor models/names, e.g.:
+
+- cnp-600 (CNP is a reactor type), cpr-1000pwr, acpr-1000pwr, eprpwr, vver-1000/428m(aes-91)
+
+Note that the standard answers contain reactor types with suffix ""pwr"" in some, but for others, such as ""cnp-600"", ""vver-1000/428m(aes-91)"", they are different reactor types.
+
+The key question: Does ""pwr"" alone convey the same entity or approximate meaning as the specific reactor model given as the standard answer?
+
+Analysis:
+
+- ""pwr"" is a general acronym: it stands for pressurized water reactor.  
+- The target answers are specific reactor types/models (some of which are PWRs, but named fully).  
+- The responses ""pwr"" do not specify any model or variant, only the reactor type.
+
+Given the grading criterion that says: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+""pwr"" is too generic to be considered approximately same or pointing to the same entity as the specific reactor model the target answers represent.
+
+Therefore, the responses here do NOT meet the criterion of approximately the same semantics or same entity as the targets, since the response is only a generic reactor type abbreviation.
+
+Hence, each response should be scored 0.
+
+---
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0
+}
+```
+",cpr-1000pwr,pwr
+,,hongyanhe-2,Hualong One 2,0.0,"date not near, response: 2019-05-28 00:00:00, target: 2014-05-13 00:00:00",2014-05-13,2019-05-28,0.0,"exact not match, response: 2013, target: 2008",2008,2013,1.0,"Let's analyze each item according to the grading criterion:
+
+Criterion summary:  
+- The response is correct if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- Word-for-word matching is not necessary.
+
+Given:  
+- Target answer for all indices: ""china""  
+- Response for all indices: ""china""
+
+Analysis item-by-item:  
+- idx_0: response ""china"" vs target ""china"" → same entity, semantics match → score 1  
+- idx_1: same as above → score 1  
+- idx_2: same → 1  
+- idx_3: same → 1  
+- idx_4: same → 1  
+- idx_5: same → 1  
+- idx_6: same → 1  
+- idx_7: same → 1  
+- idx_8: same → 1  
+- idx_9: same → 1  
+- idx_10: same → 1  
+- idx_11: same → 1  
+- idx_12: same → 1  
+- idx_13: same → 1  
+- idx_14: same → 1  
+- idx_15: same → 1  
+- idx_16: same → 1  
+- idx_17: same → 1  
+- idx_18: same → 1
+
+All responses exactly match the targets semantically, so all receive full score 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1,
+    ""idx_16"": 1,
+    ""idx_17"": 1,
+    ""idx_18"": 1
+}
+```",china,china,1.0,"Let's analyze each pair step-by-step according to the criterion:
+
+Criterion summary:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word matching.
+
+All pairs have:  
+- response = ""operational""  
+- target = ""operational""
+
+Since the response exactly matches the target, the semantics are the same, and they point to the same entity.
+
+Hence, for each idx, the score should be 1.
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1
+}
+```",operational,operational,0.0,"date not near, response: 2019-05-28 00:00:00, target: 2013-11-23 00:00:00",2013-11-23,2019-05-28,1.0,"number near in range 5.0%, response: 1089.0, target: 1061.0",1061,1089,1.0,key_match,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for word-for-word correspondence, but the answer should convey the same entity or meaning.
+
+---
+
+Each pair has the standard answer as a specific entity or model code, e.g. ""cnp-600"", ""cpr-1000pwr"", ""eprpwr"", ""vver-1000/428m(aes-91)"", ""acpr-1000pwr"".
+
+The responses are all ""pwr"".
+
+We need to judge if ""pwr"" is a semantically equivalent or approximately the same as the target.
+
+""pwr"" is an abbreviation commonly used for ""Pressurized Water Reactor"". But here, the targets are specific reactor models/names, e.g.:
+
+- cnp-600 (CNP is a reactor type), cpr-1000pwr, acpr-1000pwr, eprpwr, vver-1000/428m(aes-91)
+
+Note that the standard answers contain reactor types with suffix ""pwr"" in some, but for others, such as ""cnp-600"", ""vver-1000/428m(aes-91)"", they are different reactor types.
+
+The key question: Does ""pwr"" alone convey the same entity or approximate meaning as the specific reactor model given as the standard answer?
+
+Analysis:
+
+- ""pwr"" is a general acronym: it stands for pressurized water reactor.  
+- The target answers are specific reactor types/models (some of which are PWRs, but named fully).  
+- The responses ""pwr"" do not specify any model or variant, only the reactor type.
+
+Given the grading criterion that says: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+""pwr"" is too generic to be considered approximately same or pointing to the same entity as the specific reactor model the target answers represent.
+
+Therefore, the responses here do NOT meet the criterion of approximately the same semantics or same entity as the targets, since the response is only a generic reactor type abbreviation.
+
+Hence, each response should be scored 0.
+
+---
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0
+}
+```
+",cpr-1000pwr,pwr
+,,hongyanhe-2,Hongyanhe-2,0.0,"date not near, response: 2021-12-29 00:00:00, target: 2014-05-13 00:00:00",2014-05-13,2021-12-29,0.0,"exact not match, response: 2014, target: 2008",2008,2014,1.0,"Let's analyze each item according to the grading criterion:
+
+Criterion summary:  
+- The response is correct if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- Word-for-word matching is not necessary.
+
+Given:  
+- Target answer for all indices: ""china""  
+- Response for all indices: ""china""
+
+Analysis item-by-item:  
+- idx_0: response ""china"" vs target ""china"" → same entity, semantics match → score 1  
+- idx_1: same as above → score 1  
+- idx_2: same → 1  
+- idx_3: same → 1  
+- idx_4: same → 1  
+- idx_5: same → 1  
+- idx_6: same → 1  
+- idx_7: same → 1  
+- idx_8: same → 1  
+- idx_9: same → 1  
+- idx_10: same → 1  
+- idx_11: same → 1  
+- idx_12: same → 1  
+- idx_13: same → 1  
+- idx_14: same → 1  
+- idx_15: same → 1  
+- idx_16: same → 1  
+- idx_17: same → 1  
+- idx_18: same → 1
+
+All responses exactly match the targets semantically, so all receive full score 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1,
+    ""idx_16"": 1,
+    ""idx_17"": 1,
+    ""idx_18"": 1
+}
+```",china,china,1.0,"Let's analyze each pair step-by-step according to the criterion:
+
+Criterion summary:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word matching.
+
+All pairs have:  
+- response = ""operational""  
+- target = ""operational""
+
+Since the response exactly matches the target, the semantics are the same, and they point to the same entity.
+
+Hence, for each idx, the score should be 1.
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1
+}
+```",operational,operational,0.0,"date not near, response: 2021-12-29 00:00:00, target: 2013-11-23 00:00:00",2013-11-23,2021-12-29,0.0,"number not near, response: 1250.0, target: 1061.0",1061,1250,1.0,key_match,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for word-for-word correspondence, but the answer should convey the same entity or meaning.
+
+---
+
+Each pair has the standard answer as a specific entity or model code, e.g. ""cnp-600"", ""cpr-1000pwr"", ""eprpwr"", ""vver-1000/428m(aes-91)"", ""acpr-1000pwr"".
+
+The responses are all ""pwr"".
+
+We need to judge if ""pwr"" is a semantically equivalent or approximately the same as the target.
+
+""pwr"" is an abbreviation commonly used for ""Pressurized Water Reactor"". But here, the targets are specific reactor models/names, e.g.:
+
+- cnp-600 (CNP is a reactor type), cpr-1000pwr, acpr-1000pwr, eprpwr, vver-1000/428m(aes-91)
+
+Note that the standard answers contain reactor types with suffix ""pwr"" in some, but for others, such as ""cnp-600"", ""vver-1000/428m(aes-91)"", they are different reactor types.
+
+The key question: Does ""pwr"" alone convey the same entity or approximate meaning as the specific reactor model given as the standard answer?
+
+Analysis:
+
+- ""pwr"" is a general acronym: it stands for pressurized water reactor.  
+- The target answers are specific reactor types/models (some of which are PWRs, but named fully).  
+- The responses ""pwr"" do not specify any model or variant, only the reactor type.
+
+Given the grading criterion that says: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+""pwr"" is too generic to be considered approximately same or pointing to the same entity as the specific reactor model the target answers represent.
+
+Therefore, the responses here do NOT meet the criterion of approximately the same semantics or same entity as the targets, since the response is only a generic reactor type abbreviation.
+
+Hence, each response should be scored 0.
+
+---
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0
+}
+```
+",cpr-1000pwr,pwr
+,,lingao-3,Ling'ao-2,0.0,"date not near, response: 2020-12-30 00:00:00, target: 2010-09-15 00:00:00",2010-09-15,2020-12-30,0.0,"exact not match, response: 2013, target: 2005",2005,2013,1.0,"Let's analyze each item according to the grading criterion:
+
+Criterion summary:  
+- The response is correct if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- Word-for-word matching is not necessary.
+
+Given:  
+- Target answer for all indices: ""china""  
+- Response for all indices: ""china""
+
+Analysis item-by-item:  
+- idx_0: response ""china"" vs target ""china"" → same entity, semantics match → score 1  
+- idx_1: same as above → score 1  
+- idx_2: same → 1  
+- idx_3: same → 1  
+- idx_4: same → 1  
+- idx_5: same → 1  
+- idx_6: same → 1  
+- idx_7: same → 1  
+- idx_8: same → 1  
+- idx_9: same → 1  
+- idx_10: same → 1  
+- idx_11: same → 1  
+- idx_12: same → 1  
+- idx_13: same → 1  
+- idx_14: same → 1  
+- idx_15: same → 1  
+- idx_16: same → 1  
+- idx_17: same → 1  
+- idx_18: same → 1
+
+All responses exactly match the targets semantically, so all receive full score 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1,
+    ""idx_16"": 1,
+    ""idx_17"": 1,
+    ""idx_18"": 1
+}
+```",china,china,1.0,"Let's analyze each pair step-by-step according to the criterion:
+
+Criterion summary:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word matching.
+
+All pairs have:  
+- response = ""operational""  
+- target = ""operational""
+
+Since the response exactly matches the target, the semantics are the same, and they point to the same entity.
+
+Hence, for each idx, the score should be 1.
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1
+}
+```",operational,operational,0.0,"date not near, response: 2020-12-30 00:00:00, target: 2010-07-15 00:00:00",2010-07-15,2020-12-30,0.0,"number not near, response: 1250.0, target: 1007.0",1007,1250,1.0,key_match,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for word-for-word correspondence, but the answer should convey the same entity or meaning.
+
+---
+
+Each pair has the standard answer as a specific entity or model code, e.g. ""cnp-600"", ""cpr-1000pwr"", ""eprpwr"", ""vver-1000/428m(aes-91)"", ""acpr-1000pwr"".
+
+The responses are all ""pwr"".
+
+We need to judge if ""pwr"" is a semantically equivalent or approximately the same as the target.
+
+""pwr"" is an abbreviation commonly used for ""Pressurized Water Reactor"". But here, the targets are specific reactor models/names, e.g.:
+
+- cnp-600 (CNP is a reactor type), cpr-1000pwr, acpr-1000pwr, eprpwr, vver-1000/428m(aes-91)
+
+Note that the standard answers contain reactor types with suffix ""pwr"" in some, but for others, such as ""cnp-600"", ""vver-1000/428m(aes-91)"", they are different reactor types.
+
+The key question: Does ""pwr"" alone convey the same entity or approximate meaning as the specific reactor model given as the standard answer?
+
+Analysis:
+
+- ""pwr"" is a general acronym: it stands for pressurized water reactor.  
+- The target answers are specific reactor types/models (some of which are PWRs, but named fully).  
+- The responses ""pwr"" do not specify any model or variant, only the reactor type.
+
+Given the grading criterion that says: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+""pwr"" is too generic to be considered approximately same or pointing to the same entity as the specific reactor model the target answers represent.
+
+Therefore, the responses here do NOT meet the criterion of approximately the same semantics or same entity as the targets, since the response is only a generic reactor type abbreviation.
+
+Hence, each response should be scored 0.
+
+---
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0
+}
+```
+",cpr-1000pwr,pwr
+,,taishan-1,Taishan-1,0.0,"date not near, response: 2018-06-29 00:00:00, target: 2018-12-13 00:00:00",2018-12-13,2018-06-29,0.0,"exact not match, response: 2012, target: 2009",2009,2012,1.0,"Let's analyze each item according to the grading criterion:
+
+Criterion summary:  
+- The response is correct if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- Word-for-word matching is not necessary.
+
+Given:  
+- Target answer for all indices: ""china""  
+- Response for all indices: ""china""
+
+Analysis item-by-item:  
+- idx_0: response ""china"" vs target ""china"" → same entity, semantics match → score 1  
+- idx_1: same as above → score 1  
+- idx_2: same → 1  
+- idx_3: same → 1  
+- idx_4: same → 1  
+- idx_5: same → 1  
+- idx_6: same → 1  
+- idx_7: same → 1  
+- idx_8: same → 1  
+- idx_9: same → 1  
+- idx_10: same → 1  
+- idx_11: same → 1  
+- idx_12: same → 1  
+- idx_13: same → 1  
+- idx_14: same → 1  
+- idx_15: same → 1  
+- idx_16: same → 1  
+- idx_17: same → 1  
+- idx_18: same → 1
+
+All responses exactly match the targets semantically, so all receive full score 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1,
+    ""idx_16"": 1,
+    ""idx_17"": 1,
+    ""idx_18"": 1
+}
+```",china,china,1.0,"Let's analyze each pair step-by-step according to the criterion:
+
+Criterion summary:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word matching.
+
+All pairs have:  
+- response = ""operational""  
+- target = ""operational""
+
+Since the response exactly matches the target, the semantics are the same, and they point to the same entity.
+
+Hence, for each idx, the score should be 1.
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1
+}
+```",operational,operational,1.0,"date near, response: 2018-06-29 00:00:00, target: 2018-06-29 00:00:00",2018-06-29,2018-06-29,0.0,"number not near, response: 1250.0, target: 1660.0",1660,1250,1.0,key_match,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for word-for-word correspondence, but the answer should convey the same entity or meaning.
+
+---
+
+Each pair has the standard answer as a specific entity or model code, e.g. ""cnp-600"", ""cpr-1000pwr"", ""eprpwr"", ""vver-1000/428m(aes-91)"", ""acpr-1000pwr"".
+
+The responses are all ""pwr"".
+
+We need to judge if ""pwr"" is a semantically equivalent or approximately the same as the target.
+
+""pwr"" is an abbreviation commonly used for ""Pressurized Water Reactor"". But here, the targets are specific reactor models/names, e.g.:
+
+- cnp-600 (CNP is a reactor type), cpr-1000pwr, acpr-1000pwr, eprpwr, vver-1000/428m(aes-91)
+
+Note that the standard answers contain reactor types with suffix ""pwr"" in some, but for others, such as ""cnp-600"", ""vver-1000/428m(aes-91)"", they are different reactor types.
+
+The key question: Does ""pwr"" alone convey the same entity or approximate meaning as the specific reactor model given as the standard answer?
+
+Analysis:
+
+- ""pwr"" is a general acronym: it stands for pressurized water reactor.  
+- The target answers are specific reactor types/models (some of which are PWRs, but named fully).  
+- The responses ""pwr"" do not specify any model or variant, only the reactor type.
+
+Given the grading criterion that says: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+""pwr"" is too generic to be considered approximately same or pointing to the same entity as the specific reactor model the target answers represent.
+
+Therefore, the responses here do NOT meet the criterion of approximately the same semantics or same entity as the targets, since the response is only a generic reactor type abbreviation.
+
+Hence, each response should be scored 0.
+
+---
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0
+}
+```
+",eprpwr,pwr
+,,taishan-2,Taishan-2,0.0,"date not near, response: 2018-08-29 00:00:00, target: 2019-09-07 00:00:00",2019-09-07,2018-08-29,0.0,"exact not match, response: 2012, target: 2010",2010,2012,1.0,"Let's analyze each item according to the grading criterion:
+
+Criterion summary:  
+- The response is correct if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- Word-for-word matching is not necessary.
+
+Given:  
+- Target answer for all indices: ""china""  
+- Response for all indices: ""china""
+
+Analysis item-by-item:  
+- idx_0: response ""china"" vs target ""china"" → same entity, semantics match → score 1  
+- idx_1: same as above → score 1  
+- idx_2: same → 1  
+- idx_3: same → 1  
+- idx_4: same → 1  
+- idx_5: same → 1  
+- idx_6: same → 1  
+- idx_7: same → 1  
+- idx_8: same → 1  
+- idx_9: same → 1  
+- idx_10: same → 1  
+- idx_11: same → 1  
+- idx_12: same → 1  
+- idx_13: same → 1  
+- idx_14: same → 1  
+- idx_15: same → 1  
+- idx_16: same → 1  
+- idx_17: same → 1  
+- idx_18: same → 1
+
+All responses exactly match the targets semantically, so all receive full score 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1,
+    ""idx_16"": 1,
+    ""idx_17"": 1,
+    ""idx_18"": 1
+}
+```",china,china,1.0,"Let's analyze each pair step-by-step according to the criterion:
+
+Criterion summary:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word matching.
+
+All pairs have:  
+- response = ""operational""  
+- target = ""operational""
+
+Since the response exactly matches the target, the semantics are the same, and they point to the same entity.
+
+Hence, for each idx, the score should be 1.
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1
+}
+```",operational,operational,0.0,"date not near, response: 2018-08-29 00:00:00, target: 2019-06-25 00:00:00",2019-06-25,2018-08-29,0.0,"number not near, response: 1250.0, target: 1660.0",1660,1250,1.0,key_match,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for word-for-word correspondence, but the answer should convey the same entity or meaning.
+
+---
+
+Each pair has the standard answer as a specific entity or model code, e.g. ""cnp-600"", ""cpr-1000pwr"", ""eprpwr"", ""vver-1000/428m(aes-91)"", ""acpr-1000pwr"".
+
+The responses are all ""pwr"".
+
+We need to judge if ""pwr"" is a semantically equivalent or approximately the same as the target.
+
+""pwr"" is an abbreviation commonly used for ""Pressurized Water Reactor"". But here, the targets are specific reactor models/names, e.g.:
+
+- cnp-600 (CNP is a reactor type), cpr-1000pwr, acpr-1000pwr, eprpwr, vver-1000/428m(aes-91)
+
+Note that the standard answers contain reactor types with suffix ""pwr"" in some, but for others, such as ""cnp-600"", ""vver-1000/428m(aes-91)"", they are different reactor types.
+
+The key question: Does ""pwr"" alone convey the same entity or approximate meaning as the specific reactor model given as the standard answer?
+
+Analysis:
+
+- ""pwr"" is a general acronym: it stands for pressurized water reactor.  
+- The target answers are specific reactor types/models (some of which are PWRs, but named fully).  
+- The responses ""pwr"" do not specify any model or variant, only the reactor type.
+
+Given the grading criterion that says: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+""pwr"" is too generic to be considered approximately same or pointing to the same entity as the specific reactor model the target answers represent.
+
+Therefore, the responses here do NOT meet the criterion of approximately the same semantics or same entity as the targets, since the response is only a generic reactor type abbreviation.
+
+Hence, each response should be scored 0.
+
+---
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0
+}
+```
+",eprpwr,pwr
+,,tianwan-3,Tianwan-3,0.0,"date not near, response: 2018-07-28 00:00:00, target: 2018-02-14 00:00:00",2018-02-14,2018-07-28,1.0,"exact match, response: 2012, target: 2012",2012,2012,1.0,"Let's analyze each item according to the grading criterion:
+
+Criterion summary:  
+- The response is correct if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- Word-for-word matching is not necessary.
+
+Given:  
+- Target answer for all indices: ""china""  
+- Response for all indices: ""china""
+
+Analysis item-by-item:  
+- idx_0: response ""china"" vs target ""china"" → same entity, semantics match → score 1  
+- idx_1: same as above → score 1  
+- idx_2: same → 1  
+- idx_3: same → 1  
+- idx_4: same → 1  
+- idx_5: same → 1  
+- idx_6: same → 1  
+- idx_7: same → 1  
+- idx_8: same → 1  
+- idx_9: same → 1  
+- idx_10: same → 1  
+- idx_11: same → 1  
+- idx_12: same → 1  
+- idx_13: same → 1  
+- idx_14: same → 1  
+- idx_15: same → 1  
+- idx_16: same → 1  
+- idx_17: same → 1  
+- idx_18: same → 1
+
+All responses exactly match the targets semantically, so all receive full score 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1,
+    ""idx_16"": 1,
+    ""idx_17"": 1,
+    ""idx_18"": 1
+}
+```",china,china,1.0,"Let's analyze each pair step-by-step according to the criterion:
+
+Criterion summary:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word matching.
+
+All pairs have:  
+- response = ""operational""  
+- target = ""operational""
+
+Since the response exactly matches the target, the semantics are the same, and they point to the same entity.
+
+Hence, for each idx, the score should be 1.
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1
+}
+```",operational,operational,0.0,"date not near, response: 2018-07-28 00:00:00, target: 2017-12-30 00:00:00",2017-12-30,2018-07-28,1.0,"number near in range 5.0%, response: 1089.0, target: 1045.0",1045,1089,1.0,key_match,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for word-for-word correspondence, but the answer should convey the same entity or meaning.
+
+---
+
+Each pair has the standard answer as a specific entity or model code, e.g. ""cnp-600"", ""cpr-1000pwr"", ""eprpwr"", ""vver-1000/428m(aes-91)"", ""acpr-1000pwr"".
+
+The responses are all ""pwr"".
+
+We need to judge if ""pwr"" is a semantically equivalent or approximately the same as the target.
+
+""pwr"" is an abbreviation commonly used for ""Pressurized Water Reactor"". But here, the targets are specific reactor models/names, e.g.:
+
+- cnp-600 (CNP is a reactor type), cpr-1000pwr, acpr-1000pwr, eprpwr, vver-1000/428m(aes-91)
+
+Note that the standard answers contain reactor types with suffix ""pwr"" in some, but for others, such as ""cnp-600"", ""vver-1000/428m(aes-91)"", they are different reactor types.
+
+The key question: Does ""pwr"" alone convey the same entity or approximate meaning as the specific reactor model given as the standard answer?
+
+Analysis:
+
+- ""pwr"" is a general acronym: it stands for pressurized water reactor.  
+- The target answers are specific reactor types/models (some of which are PWRs, but named fully).  
+- The responses ""pwr"" do not specify any model or variant, only the reactor type.
+
+Given the grading criterion that says: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+""pwr"" is too generic to be considered approximately same or pointing to the same entity as the specific reactor model the target answers represent.
+
+Therefore, the responses here do NOT meet the criterion of approximately the same semantics or same entity as the targets, since the response is only a generic reactor type abbreviation.
+
+Hence, each response should be scored 0.
+
+---
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0
+}
+```
+",vver-1000/428m(aes-91),pwr
+,,tianwan-4,Tianwan-4,1.0,"date near, response: 2019-01-12 00:00:00, target: 2018-12-22 00:00:00",2018-12-22,2019-01-12,0.0,"exact not match, response: 2012, target: 2013",2013,2012,1.0,"Let's analyze each item according to the grading criterion:
+
+Criterion summary:  
+- The response is correct if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- Word-for-word matching is not necessary.
+
+Given:  
+- Target answer for all indices: ""china""  
+- Response for all indices: ""china""
+
+Analysis item-by-item:  
+- idx_0: response ""china"" vs target ""china"" → same entity, semantics match → score 1  
+- idx_1: same as above → score 1  
+- idx_2: same → 1  
+- idx_3: same → 1  
+- idx_4: same → 1  
+- idx_5: same → 1  
+- idx_6: same → 1  
+- idx_7: same → 1  
+- idx_8: same → 1  
+- idx_9: same → 1  
+- idx_10: same → 1  
+- idx_11: same → 1  
+- idx_12: same → 1  
+- idx_13: same → 1  
+- idx_14: same → 1  
+- idx_15: same → 1  
+- idx_16: same → 1  
+- idx_17: same → 1  
+- idx_18: same → 1
+
+All responses exactly match the targets semantically, so all receive full score 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1,
+    ""idx_16"": 1,
+    ""idx_17"": 1,
+    ""idx_18"": 1
+}
+```",china,china,1.0,"Let's analyze each pair step-by-step according to the criterion:
+
+Criterion summary:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word matching.
+
+All pairs have:  
+- response = ""operational""  
+- target = ""operational""
+
+Since the response exactly matches the target, the semantics are the same, and they point to the same entity.
+
+Hence, for each idx, the score should be 1.
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1
+}
+```",operational,operational,0.0,"date not near, response: 2019-01-12 00:00:00, target: 2018-10-27 00:00:00",2018-10-27,2019-01-12,1.0,"number near in range 5.0%, response: 1089.0, target: 1045.0",1045,1089,1.0,key_match,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for word-for-word correspondence, but the answer should convey the same entity or meaning.
+
+---
+
+Each pair has the standard answer as a specific entity or model code, e.g. ""cnp-600"", ""cpr-1000pwr"", ""eprpwr"", ""vver-1000/428m(aes-91)"", ""acpr-1000pwr"".
+
+The responses are all ""pwr"".
+
+We need to judge if ""pwr"" is a semantically equivalent or approximately the same as the target.
+
+""pwr"" is an abbreviation commonly used for ""Pressurized Water Reactor"". But here, the targets are specific reactor models/names, e.g.:
+
+- cnp-600 (CNP is a reactor type), cpr-1000pwr, acpr-1000pwr, eprpwr, vver-1000/428m(aes-91)
+
+Note that the standard answers contain reactor types with suffix ""pwr"" in some, but for others, such as ""cnp-600"", ""vver-1000/428m(aes-91)"", they are different reactor types.
+
+The key question: Does ""pwr"" alone convey the same entity or approximate meaning as the specific reactor model given as the standard answer?
+
+Analysis:
+
+- ""pwr"" is a general acronym: it stands for pressurized water reactor.  
+- The target answers are specific reactor types/models (some of which are PWRs, but named fully).  
+- The responses ""pwr"" do not specify any model or variant, only the reactor type.
+
+Given the grading criterion that says: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+""pwr"" is too generic to be considered approximately same or pointing to the same entity as the specific reactor model the target answers represent.
+
+Therefore, the responses here do NOT meet the criterion of approximately the same semantics or same entity as the targets, since the response is only a generic reactor type abbreviation.
+
+Hence, each response should be scored 0.
+
+---
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0
+}
+```
+",vver-1000/428m(aes-91),pwr
+,,tianwan-5,Tianwan-5,0.0,"date not near, response: 2020-06-15 00:00:00, target: 2020-09-08 00:00:00",2020-09-08,2020-06-15,0.0,"exact not match, response: 2012, target: 2015",2015,2012,1.0,"Let's analyze each item according to the grading criterion:
+
+Criterion summary:  
+- The response is correct if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- Word-for-word matching is not necessary.
+
+Given:  
+- Target answer for all indices: ""china""  
+- Response for all indices: ""china""
+
+Analysis item-by-item:  
+- idx_0: response ""china"" vs target ""china"" → same entity, semantics match → score 1  
+- idx_1: same as above → score 1  
+- idx_2: same → 1  
+- idx_3: same → 1  
+- idx_4: same → 1  
+- idx_5: same → 1  
+- idx_6: same → 1  
+- idx_7: same → 1  
+- idx_8: same → 1  
+- idx_9: same → 1  
+- idx_10: same → 1  
+- idx_11: same → 1  
+- idx_12: same → 1  
+- idx_13: same → 1  
+- idx_14: same → 1  
+- idx_15: same → 1  
+- idx_16: same → 1  
+- idx_17: same → 1  
+- idx_18: same → 1
+
+All responses exactly match the targets semantically, so all receive full score 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1,
+    ""idx_16"": 1,
+    ""idx_17"": 1,
+    ""idx_18"": 1
+}
+```",china,china,1.0,"Let's analyze each pair step-by-step according to the criterion:
+
+Criterion summary:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word matching.
+
+All pairs have:  
+- response = ""operational""  
+- target = ""operational""
+
+Since the response exactly matches the target, the semantics are the same, and they point to the same entity.
+
+Hence, for each idx, the score should be 1.
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1
+}
+```",operational,operational,0.0,"date not near, response: 2020-06-15 00:00:00, target: 2020-08-08 00:00:00",2020-08-08,2020-06-15,0.0,"number not near, response: 1089.0, target: 1000.0",1000,1089,1.0,key_match,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for word-for-word correspondence, but the answer should convey the same entity or meaning.
+
+---
+
+Each pair has the standard answer as a specific entity or model code, e.g. ""cnp-600"", ""cpr-1000pwr"", ""eprpwr"", ""vver-1000/428m(aes-91)"", ""acpr-1000pwr"".
+
+The responses are all ""pwr"".
+
+We need to judge if ""pwr"" is a semantically equivalent or approximately the same as the target.
+
+""pwr"" is an abbreviation commonly used for ""Pressurized Water Reactor"". But here, the targets are specific reactor models/names, e.g.:
+
+- cnp-600 (CNP is a reactor type), cpr-1000pwr, acpr-1000pwr, eprpwr, vver-1000/428m(aes-91)
+
+Note that the standard answers contain reactor types with suffix ""pwr"" in some, but for others, such as ""cnp-600"", ""vver-1000/428m(aes-91)"", they are different reactor types.
+
+The key question: Does ""pwr"" alone convey the same entity or approximate meaning as the specific reactor model given as the standard answer?
+
+Analysis:
+
+- ""pwr"" is a general acronym: it stands for pressurized water reactor.  
+- The target answers are specific reactor types/models (some of which are PWRs, but named fully).  
+- The responses ""pwr"" do not specify any model or variant, only the reactor type.
+
+Given the grading criterion that says: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+""pwr"" is too generic to be considered approximately same or pointing to the same entity as the specific reactor model the target answers represent.
+
+Therefore, the responses here do NOT meet the criterion of approximately the same semantics or same entity as the targets, since the response is only a generic reactor type abbreviation.
+
+Hence, each response should be scored 0.
+
+---
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0
+}
+```
+",acpr-1000pwr,pwr
+,,tianwan-6,Tianwan-6,0.0,"date not near, response: 2021-03-25 00:00:00, target: 2021-06-02 00:00:00",2021-06-02,2021-03-25,0.0,"exact not match, response: 2012, target: 2016",2016,2012,1.0,"Let's analyze each item according to the grading criterion:
+
+Criterion summary:  
+- The response is correct if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- Word-for-word matching is not necessary.
+
+Given:  
+- Target answer for all indices: ""china""  
+- Response for all indices: ""china""
+
+Analysis item-by-item:  
+- idx_0: response ""china"" vs target ""china"" → same entity, semantics match → score 1  
+- idx_1: same as above → score 1  
+- idx_2: same → 1  
+- idx_3: same → 1  
+- idx_4: same → 1  
+- idx_5: same → 1  
+- idx_6: same → 1  
+- idx_7: same → 1  
+- idx_8: same → 1  
+- idx_9: same → 1  
+- idx_10: same → 1  
+- idx_11: same → 1  
+- idx_12: same → 1  
+- idx_13: same → 1  
+- idx_14: same → 1  
+- idx_15: same → 1  
+- idx_16: same → 1  
+- idx_17: same → 1  
+- idx_18: same → 1
+
+All responses exactly match the targets semantically, so all receive full score 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1,
+    ""idx_16"": 1,
+    ""idx_17"": 1,
+    ""idx_18"": 1
+}
+```",china,china,1.0,"Let's analyze each pair step-by-step according to the criterion:
+
+Criterion summary:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word matching.
+
+All pairs have:  
+- response = ""operational""  
+- target = ""operational""
+
+Since the response exactly matches the target, the semantics are the same, and they point to the same entity.
+
+Hence, for each idx, the score should be 1.
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1
+}
+```",operational,operational,0.0,"date not near, response: 2021-03-25 00:00:00, target: 2021-05-13 00:00:00",2021-05-13,2021-03-25,0.0,"number not near, response: 1089.0, target: 1000.0",1000,1089,1.0,key_match,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for word-for-word correspondence, but the answer should convey the same entity or meaning.
+
+---
+
+Each pair has the standard answer as a specific entity or model code, e.g. ""cnp-600"", ""cpr-1000pwr"", ""eprpwr"", ""vver-1000/428m(aes-91)"", ""acpr-1000pwr"".
+
+The responses are all ""pwr"".
+
+We need to judge if ""pwr"" is a semantically equivalent or approximately the same as the target.
+
+""pwr"" is an abbreviation commonly used for ""Pressurized Water Reactor"". But here, the targets are specific reactor models/names, e.g.:
+
+- cnp-600 (CNP is a reactor type), cpr-1000pwr, acpr-1000pwr, eprpwr, vver-1000/428m(aes-91)
+
+Note that the standard answers contain reactor types with suffix ""pwr"" in some, but for others, such as ""cnp-600"", ""vver-1000/428m(aes-91)"", they are different reactor types.
+
+The key question: Does ""pwr"" alone convey the same entity or approximate meaning as the specific reactor model given as the standard answer?
+
+Analysis:
+
+- ""pwr"" is a general acronym: it stands for pressurized water reactor.  
+- The target answers are specific reactor types/models (some of which are PWRs, but named fully).  
+- The responses ""pwr"" do not specify any model or variant, only the reactor type.
+
+Given the grading criterion that says: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+""pwr"" is too generic to be considered approximately same or pointing to the same entity as the specific reactor model the target answers represent.
+
+Therefore, the responses here do NOT meet the criterion of approximately the same semantics or same entity as the targets, since the response is only a generic reactor type abbreviation.
+
+Hence, each response should be scored 0.
+
+---
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0
+}
+```
+",acpr-1000pwr,pwr
+,,yangjiang-3,Yangjiang-3,0.0,"date not near, response: 2021-03-18 00:00:00, target: 2016-01-15 00:00:00",2016-01-15,2021-03-18,0.0,"exact not match, response: 2013, target: 2010",2010,2013,1.0,"Let's analyze each item according to the grading criterion:
+
+Criterion summary:  
+- The response is correct if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- Word-for-word matching is not necessary.
+
+Given:  
+- Target answer for all indices: ""china""  
+- Response for all indices: ""china""
+
+Analysis item-by-item:  
+- idx_0: response ""china"" vs target ""china"" → same entity, semantics match → score 1  
+- idx_1: same as above → score 1  
+- idx_2: same → 1  
+- idx_3: same → 1  
+- idx_4: same → 1  
+- idx_5: same → 1  
+- idx_6: same → 1  
+- idx_7: same → 1  
+- idx_8: same → 1  
+- idx_9: same → 1  
+- idx_10: same → 1  
+- idx_11: same → 1  
+- idx_12: same → 1  
+- idx_13: same → 1  
+- idx_14: same → 1  
+- idx_15: same → 1  
+- idx_16: same → 1  
+- idx_17: same → 1  
+- idx_18: same → 1
+
+All responses exactly match the targets semantically, so all receive full score 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1,
+    ""idx_16"": 1,
+    ""idx_17"": 1,
+    ""idx_18"": 1
+}
+```",china,china,1.0,"Let's analyze each pair step-by-step according to the criterion:
+
+Criterion summary:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word matching.
+
+All pairs have:  
+- response = ""operational""  
+- target = ""operational""
+
+Since the response exactly matches the target, the semantics are the same, and they point to the same entity.
+
+Hence, for each idx, the score should be 1.
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1
+}
+```",operational,operational,0.0,"date not near, response: 2021-03-18 00:00:00, target: 2015-10-18 00:00:00",2015-10-18,2021-03-18,0.0,"number not near, response: 1250.0, target: 1000.0",1000,1250,1.0,key_match,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for word-for-word correspondence, but the answer should convey the same entity or meaning.
+
+---
+
+Each pair has the standard answer as a specific entity or model code, e.g. ""cnp-600"", ""cpr-1000pwr"", ""eprpwr"", ""vver-1000/428m(aes-91)"", ""acpr-1000pwr"".
+
+The responses are all ""pwr"".
+
+We need to judge if ""pwr"" is a semantically equivalent or approximately the same as the target.
+
+""pwr"" is an abbreviation commonly used for ""Pressurized Water Reactor"". But here, the targets are specific reactor models/names, e.g.:
+
+- cnp-600 (CNP is a reactor type), cpr-1000pwr, acpr-1000pwr, eprpwr, vver-1000/428m(aes-91)
+
+Note that the standard answers contain reactor types with suffix ""pwr"" in some, but for others, such as ""cnp-600"", ""vver-1000/428m(aes-91)"", they are different reactor types.
+
+The key question: Does ""pwr"" alone convey the same entity or approximate meaning as the specific reactor model given as the standard answer?
+
+Analysis:
+
+- ""pwr"" is a general acronym: it stands for pressurized water reactor.  
+- The target answers are specific reactor types/models (some of which are PWRs, but named fully).  
+- The responses ""pwr"" do not specify any model or variant, only the reactor type.
+
+Given the grading criterion that says: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+""pwr"" is too generic to be considered approximately same or pointing to the same entity as the specific reactor model the target answers represent.
+
+Therefore, the responses here do NOT meet the criterion of approximately the same semantics or same entity as the targets, since the response is only a generic reactor type abbreviation.
+
+Hence, each response should be scored 0.
+
+---
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0
+}
+```
+",cpr-1000pwr,pwr
+,,yangjiang-4,Yangjiang-4,0.0,"date not near, response: 2021-12-30 00:00:00, target: 2017-03-15 00:00:00",2017-03-15,2021-12-30,0.0,"exact not match, response: 2013, target: 2012",2012,2013,1.0,"Let's analyze each item according to the grading criterion:
+
+Criterion summary:  
+- The response is correct if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- Word-for-word matching is not necessary.
+
+Given:  
+- Target answer for all indices: ""china""  
+- Response for all indices: ""china""
+
+Analysis item-by-item:  
+- idx_0: response ""china"" vs target ""china"" → same entity, semantics match → score 1  
+- idx_1: same as above → score 1  
+- idx_2: same → 1  
+- idx_3: same → 1  
+- idx_4: same → 1  
+- idx_5: same → 1  
+- idx_6: same → 1  
+- idx_7: same → 1  
+- idx_8: same → 1  
+- idx_9: same → 1  
+- idx_10: same → 1  
+- idx_11: same → 1  
+- idx_12: same → 1  
+- idx_13: same → 1  
+- idx_14: same → 1  
+- idx_15: same → 1  
+- idx_16: same → 1  
+- idx_17: same → 1  
+- idx_18: same → 1
+
+All responses exactly match the targets semantically, so all receive full score 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1,
+    ""idx_16"": 1,
+    ""idx_17"": 1,
+    ""idx_18"": 1
+}
+```",china,china,1.0,"Let's analyze each pair step-by-step according to the criterion:
+
+Criterion summary:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word matching.
+
+All pairs have:  
+- response = ""operational""  
+- target = ""operational""
+
+Since the response exactly matches the target, the semantics are the same, and they point to the same entity.
+
+Hence, for each idx, the score should be 1.
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1
+}
+```",operational,operational,0.0,"date not near, response: 2021-12-30 00:00:00, target: 2017-01-08 00:00:00",2017-01-08,2021-12-30,0.0,"number not near, response: 1250.0, target: 1000.0",1000,1250,1.0,key_match,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for word-for-word correspondence, but the answer should convey the same entity or meaning.
+
+---
+
+Each pair has the standard answer as a specific entity or model code, e.g. ""cnp-600"", ""cpr-1000pwr"", ""eprpwr"", ""vver-1000/428m(aes-91)"", ""acpr-1000pwr"".
+
+The responses are all ""pwr"".
+
+We need to judge if ""pwr"" is a semantically equivalent or approximately the same as the target.
+
+""pwr"" is an abbreviation commonly used for ""Pressurized Water Reactor"". But here, the targets are specific reactor models/names, e.g.:
+
+- cnp-600 (CNP is a reactor type), cpr-1000pwr, acpr-1000pwr, eprpwr, vver-1000/428m(aes-91)
+
+Note that the standard answers contain reactor types with suffix ""pwr"" in some, but for others, such as ""cnp-600"", ""vver-1000/428m(aes-91)"", they are different reactor types.
+
+The key question: Does ""pwr"" alone convey the same entity or approximate meaning as the specific reactor model given as the standard answer?
+
+Analysis:
+
+- ""pwr"" is a general acronym: it stands for pressurized water reactor.  
+- The target answers are specific reactor types/models (some of which are PWRs, but named fully).  
+- The responses ""pwr"" do not specify any model or variant, only the reactor type.
+
+Given the grading criterion that says: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+""pwr"" is too generic to be considered approximately same or pointing to the same entity as the specific reactor model the target answers represent.
+
+Therefore, the responses here do NOT meet the criterion of approximately the same semantics or same entity as the targets, since the response is only a generic reactor type abbreviation.
+
+Hence, each response should be scored 0.
+
+---
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0
+}
+```
+",cpr-1000pwr,pwr
+,,yangjiang-5,Yangjiang-5,0.0,"date not near, response: 2023-07-18 00:00:00, target: 2018-07-12 00:00:00",2018-07-12,2023-07-18,0.0,"exact not match, response: 2015, target: 2013",2013,2015,1.0,"Let's analyze each item according to the grading criterion:
+
+Criterion summary:  
+- The response is correct if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- Word-for-word matching is not necessary.
+
+Given:  
+- Target answer for all indices: ""china""  
+- Response for all indices: ""china""
+
+Analysis item-by-item:  
+- idx_0: response ""china"" vs target ""china"" → same entity, semantics match → score 1  
+- idx_1: same as above → score 1  
+- idx_2: same → 1  
+- idx_3: same → 1  
+- idx_4: same → 1  
+- idx_5: same → 1  
+- idx_6: same → 1  
+- idx_7: same → 1  
+- idx_8: same → 1  
+- idx_9: same → 1  
+- idx_10: same → 1  
+- idx_11: same → 1  
+- idx_12: same → 1  
+- idx_13: same → 1  
+- idx_14: same → 1  
+- idx_15: same → 1  
+- idx_16: same → 1  
+- idx_17: same → 1  
+- idx_18: same → 1
+
+All responses exactly match the targets semantically, so all receive full score 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1,
+    ""idx_16"": 1,
+    ""idx_17"": 1,
+    ""idx_18"": 1
+}
+```",china,china,1.0,"Let's analyze each pair step-by-step according to the criterion:
+
+Criterion summary:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word matching.
+
+All pairs have:  
+- response = ""operational""  
+- target = ""operational""
+
+Since the response exactly matches the target, the semantics are the same, and they point to the same entity.
+
+Hence, for each idx, the score should be 1.
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1
+}
+```",operational,operational,0.0,"date not near, response: 2023-07-18 00:00:00, target: 2018-05-23 00:00:00",2018-05-23,2023-07-18,0.0,"number not near, response: 1250.0, target: 1000.0",1000,1250,1.0,key_match,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for word-for-word correspondence, but the answer should convey the same entity or meaning.
+
+---
+
+Each pair has the standard answer as a specific entity or model code, e.g. ""cnp-600"", ""cpr-1000pwr"", ""eprpwr"", ""vver-1000/428m(aes-91)"", ""acpr-1000pwr"".
+
+The responses are all ""pwr"".
+
+We need to judge if ""pwr"" is a semantically equivalent or approximately the same as the target.
+
+""pwr"" is an abbreviation commonly used for ""Pressurized Water Reactor"". But here, the targets are specific reactor models/names, e.g.:
+
+- cnp-600 (CNP is a reactor type), cpr-1000pwr, acpr-1000pwr, eprpwr, vver-1000/428m(aes-91)
+
+Note that the standard answers contain reactor types with suffix ""pwr"" in some, but for others, such as ""cnp-600"", ""vver-1000/428m(aes-91)"", they are different reactor types.
+
+The key question: Does ""pwr"" alone convey the same entity or approximate meaning as the specific reactor model given as the standard answer?
+
+Analysis:
+
+- ""pwr"" is a general acronym: it stands for pressurized water reactor.  
+- The target answers are specific reactor types/models (some of which are PWRs, but named fully).  
+- The responses ""pwr"" do not specify any model or variant, only the reactor type.
+
+Given the grading criterion that says: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+""pwr"" is too generic to be considered approximately same or pointing to the same entity as the specific reactor model the target answers represent.
+
+Therefore, the responses here do NOT meet the criterion of approximately the same semantics or same entity as the targets, since the response is only a generic reactor type abbreviation.
+
+Hence, each response should be scored 0.
+
+---
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0
+}
+```
+",acpr-1000pwr,pwr
+,,yangjiang-6,Yangjiang-6,0.0,"date not near, response: 2023-12-30 00:00:00, target: 2019-07-24 00:00:00",2019-07-24,2023-12-30,0.0,"exact not match, response: 2015, target: 2013",2013,2015,1.0,"Let's analyze each item according to the grading criterion:
+
+Criterion summary:  
+- The response is correct if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- Word-for-word matching is not necessary.
+
+Given:  
+- Target answer for all indices: ""china""  
+- Response for all indices: ""china""
+
+Analysis item-by-item:  
+- idx_0: response ""china"" vs target ""china"" → same entity, semantics match → score 1  
+- idx_1: same as above → score 1  
+- idx_2: same → 1  
+- idx_3: same → 1  
+- idx_4: same → 1  
+- idx_5: same → 1  
+- idx_6: same → 1  
+- idx_7: same → 1  
+- idx_8: same → 1  
+- idx_9: same → 1  
+- idx_10: same → 1  
+- idx_11: same → 1  
+- idx_12: same → 1  
+- idx_13: same → 1  
+- idx_14: same → 1  
+- idx_15: same → 1  
+- idx_16: same → 1  
+- idx_17: same → 1  
+- idx_18: same → 1
+
+All responses exactly match the targets semantically, so all receive full score 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1,
+    ""idx_16"": 1,
+    ""idx_17"": 1,
+    ""idx_18"": 1
+}
+```",china,china,1.0,"Let's analyze each pair step-by-step according to the criterion:
+
+Criterion summary:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word matching.
+
+All pairs have:  
+- response = ""operational""  
+- target = ""operational""
+
+Since the response exactly matches the target, the semantics are the same, and they point to the same entity.
+
+Hence, for each idx, the score should be 1.
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1
+}
+```",operational,operational,0.0,"date not near, response: 2023-12-30 00:00:00, target: 2019-06-29 00:00:00",2019-06-29,2023-12-30,0.0,"number not near, response: 1250.0, target: 1000.0",1000,1250,1.0,key_match,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for word-for-word correspondence, but the answer should convey the same entity or meaning.
+
+---
+
+Each pair has the standard answer as a specific entity or model code, e.g. ""cnp-600"", ""cpr-1000pwr"", ""eprpwr"", ""vver-1000/428m(aes-91)"", ""acpr-1000pwr"".
+
+The responses are all ""pwr"".
+
+We need to judge if ""pwr"" is a semantically equivalent or approximately the same as the target.
+
+""pwr"" is an abbreviation commonly used for ""Pressurized Water Reactor"". But here, the targets are specific reactor models/names, e.g.:
+
+- cnp-600 (CNP is a reactor type), cpr-1000pwr, acpr-1000pwr, eprpwr, vver-1000/428m(aes-91)
+
+Note that the standard answers contain reactor types with suffix ""pwr"" in some, but for others, such as ""cnp-600"", ""vver-1000/428m(aes-91)"", they are different reactor types.
+
+The key question: Does ""pwr"" alone convey the same entity or approximate meaning as the specific reactor model given as the standard answer?
+
+Analysis:
+
+- ""pwr"" is a general acronym: it stands for pressurized water reactor.  
+- The target answers are specific reactor types/models (some of which are PWRs, but named fully).  
+- The responses ""pwr"" do not specify any model or variant, only the reactor type.
+
+Given the grading criterion that says: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+""pwr"" is too generic to be considered approximately same or pointing to the same entity as the specific reactor model the target answers represent.
+
+Therefore, the responses here do NOT meet the criterion of approximately the same semantics or same entity as the targets, since the response is only a generic reactor type abbreviation.
+
+Hence, each response should be scored 0.
+
+---
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0
+}
+```
+",acpr-1000pwr,pwr
+1.0,,astravets,,,,2021-06-10,,,,2012,,,,belarus,,,,operational,,,,2019-11-07,,,,1110,,,,,,vver-1200,
+1.0,,atucha-2,,,,2016-05-26,,,,1981,,,,argentina,,,,operational,,,,2014-06-27,,,,745,,,,,,phwr-german-si,
+1.0,,barakah-1,,,,2021-04-01,,,,2012,,,,uae,,,,operational,,,,2020-08-19,,,,1337,,,,,,apr-1400pwr,
+1.0,,barakah-2,,,,2022-03-24,,,,2013,,,,uae,,,,operational,,,,2021-09-14,,,,1337,,,,,,apr-1400pwr,
+1.0,,barakah-3,,,,2023-02-24,,,,2014,,,,uae,,,,operational,,,,2022-10-10,,,,1337,,,,,,apr-1400pwr,
+1.0,,barakah-4,,,,2024-09-05,,,,2015,,,,uae,,,,operational,,,,2024-03-25,,,,1337,,,,,,apr-1400pwr,
+1.0,,belarusian-1,,,,2021-06-10,,,,2013,,,,belarus,,,,operational,,,,2020-11-03,,,,1110,,,,,,vver-1200,
+1.0,,belarusian-2,,,,2023-11-01,,,,2014,,,,belarus,,,,operational,,,,2023-05-13,,,,1110,,,,,,vver-1200,
+1.0,,beloyarsk-4,,,,2016-11-01,,,,2006,,,,russia,,,,operational,,,,2015-12-10,,,,820,,,,,,bn-800fbr,
+1.0,,bushehr-1,,,,2013-09-23,,,,1975,,,,iran,,,,operational,,,,2011-09-03,,,,915,,,,,,vver-1000,
+1.0,,cernavoda-2,,,,2007-10-28,,,,1983,,,,romania,,,,operational,,,,2007-08-07,,,,650,,,,,,phwrcandu6,
+,1.0,changjiang-3,Changjiang-3,,,,2024-06-29,,,,2015,,,,china,,,,operational,,,,2024-06-29,,,,1250,,,,,,pwr
+,1.0,changjiang-4,Changjiang-4,,,,2024-12-30,,,,2015,,,,china,,,,operational,,,,2024-12-30,,,,1250,,,,,,pwr
+1.0,,chashma-3,,,,2016-12-15,,,,2011,,,,pakistan,,,,operational,,,,2016-10-15,,,,340,,,,,,cnp-300pwr,
+1.0,,chashma-4,,,,2017-09-28,,,,2011,,,,pakistan,,,,operational,,,,2017-06-27,,,,340,,,,,,cnp-300pwr,
+1.0,,fangchenggang-3,,,,2023-03-25,,,,2015,,,,china,,,,operational,,,,2023-01-10,,,,1180,,,,,,hualongonepwr,
+1.0,,fangchenggang-4,,,,2024-05-25,,,,2016,,,,china,,,,operational,,,,2024-04-09,,,,1180,,,,,,hpr1000pwr,
+1.0,,fangjiashan-1,,,,2014-12-15,,,,2008,,,,china,,,,operational,,,,2014-11-04,,,,1012,,,,,,cpr1000pwr,
+1.0,,fangjiashan-2,,,,2015-02-12,,,,2009,,,,china,,,,operational,,,,2015-01-12,,,,1012,,,,,,cpr1000pwr,
+1.0,,fuqing-1,,,,2014-11-18,,,,2008,,,,china,,,,operational,,,,2014-08-20,,,,1089,,,,,,cpr-1000pwr,
+1.0,,fuqing-2,,,,2015-10-18,,,,2009,,,,china,,,,operational,,,,2015-08-06,,,,1089,,,,,,cpr-1000pwr,
+1.0,,fuqing-5,,,,2021-01-30,,,,2015,,,,china,,,,operational,,,,2020-11-27,,,,1075,,,,,,hualongonepwr,
+1.0,,fuqing-6,,,,2022-03-25,,,,2015,,,,china,,,,operational,,,,2022-01-01,,,,1075,,,,,,hualongonepwr,
+1.0,,haiyang-1,,,,2018-10-22,,,,2009,,,,china,,,,operational,,,,2018-08-17,,,,1170,,,,,,ap1000pwr,
+1.0,,haiyang-2,,,,2019-01-09,,,,2010,,,,china,,,,operational,,,,2018-10-13,,,,1170,,,,,,ap1000pwr,
+1.0,,hongyanhe-3,,,,2015-08-10,,,,2009,,,,china,,,,operational,,,,2015-03-23,,,,1061,,,,,,cpr-1000pwr,
+1.0,,hongyanhe-4,,,,2016-06-08,,,,2009,,,,china,,,,operational,,,,2016-04-01,,,,1061,,,,,,cpr-1000pwr,
+1.0,,hongyanhe-5,,,,2021-07-31,,,,2015,,,,china,,,,operational,,,,2021-06-25,,,,1061,,,,,,acpr-1000pwr,
+1.0,,hongyanhe-6,,,,2022-06-23,,,,2015,,,,china,,,,operational,,,,2022-05-02,,,,1061,,,,,,acpr-1000pwr,
+1.0,,kakrapar-3,,,,2023-06-30,,,,2010,,,,india,,,,operational,,,,2021-01-10,,,,630,,,,,,phwr-700,
+1.0,,kakrapar-4,,,,2024-03-31,,,,2010,,,,india,,,,operational,,,,2024-02-20,,,,630,,,,,,phwr-700,
+1.0,,kalinin-4,,,,2012-12-25,,,,1986,,,,russia,,,,operational,,,,2021-11-24,,,,950,,,,,,vverv-320,
+1.0,,karachi-2,,,,2021-05-21,,,,2015,,,,pakistan,,,,operational,,,,2021-03-18,,,,1100,,,,,,hualongonepwr,
+1.0,,karachi-3,,,,2022-04-18,,,,2016,,,,pakistan,,,,operational,,,,2022-03-04,,,,1100,,,,,,hualongonepwr,
+1.0,,kudankulam-1,,,,2014-12-31,,,,2002,,,,india,,,,operational,,,,2013-10-22,,,,917,,,,,,vver-1000,
+1.0,,kudankulam-2,,,,2017-03-31,,,,2002,,,,india,,,,operational,,,,2016-08-29,,,,917,,,,,,vver-1000,
+1.0,,leningrad-ii-1,,,,2018-10-29,,,,2008,,,,russia,,,,operational,,,,2018-03-09,,,,1085,,,,,,vver-1200,
+1.0,,leningrad-ii-2,,,,2021-03-22,,,,2010,,,,russia,,,,operational,,,,2020-10-19,,,,1085,,,,,,vver-1200,
+1.0,,lingao-4,,,,2011-08-07,,,,2006,,,,china,,,,operational,,,,2011-05-03,,,,1007,,,,,,cpr-1000pwr,
+1.0,,mochovce-3,,,,2023-10-18,,,,1987,,,,slovakia,,,,operational,,,,2023-01-31,,,,440,,,,,,vver-440v-213,
+1.0,,ningde-1,,,,2013-04-18,,,,2008,,,,china,,,,operational,,,,2012-12-28,,,,1020,,,,,,cpr-1000pwr,
+1.0,,ningde-2,,,,2014-05-04,,,,2008,,,,china,,,,operational,,,,2014-01-04,,,,1020,,,,,,cpr-1000pwr,
+1.0,,ningde-3,,,,2015-06-10,,,,2010,,,,china,,,,operational,,,,2015-03-21,,,,1020,,,,,,cpr-1000pwr,
+1.0,,ningde-4,,,,2016-07-21,,,,2010,,,,china,,,,operational,,,,2016-03-29,,,,1020,,,,,,cpr-1000pwr,
+1.0,,novovoronezh-ii-1,,,,2017-02-27,,,,2008,,,,russia,,,,operational,,,,2016-08-05,,,,1114,,,,,,vver-1200,
+1.0,,novovoronezh-ii-2,,,,2019-11-01,,,,2009,,,,russia,,,,operational,,,,2019-05-01,,,,1114,,,,,,vver-1200,
+1.0,,olkiluoto-3,,,,2023-05-01,,,,2005,,,,finland,,,,operational,,,,2022-03-12,,,,1600,,,,,,eprpwr,
+1.0,,qinshanii-3,,,,2010-10-28,,,,2006,,,,china,,,,operational,,,,2010-03-07,,,,650,,,,,,cnp-600pwr,
+1.0,,qinshanii-4,,,,2012-12-25,,,,2007,,,,china,,,,operational,,,,2012-11-30,,,,650,,,,,,cnp-600pwr,
+1.0,,rostov-2,,,,2010-12-18,,,,1983/1999,,,,russia,,,,operational,,,,2009-12-10,,,,1000,,,,,,vver-1000,
+1.0,,rostov-3,,,,2015-09-17,,,,2009,,,,russia,,,,operational,,,,2014-12-27,,,,1000,,,,,,vver-1000,
+1.0,,rostov-4,,,,2018-09-28,,,,2010,,,,russia,,,,operational,,,,2018-02-02,,,,1010,,,,,,vver-1000,
+1.0,,saeul-1(shin-kori3),,,,2016-12-20,,,,2008,,,,southkorea,,,,operational,,,,2016-01-15,,,,1392,,,,,,apr-1400pwr,
+1.0,,saeul2(shin-kori-4),,,,2019-08-29,,,,2009,,,,southkorea,,,,operational,,,,2019-04-22,,,,1392,,,,,,apr-1400pwr,
+1.0,,sanmen-1,,,,2018-09-21,,,,2009,,,,china,,,,operational,,,,2018-06-30,,,,1157,,,,,,ap1000pwr,
+1.0,,sanmen-2,,,,2018-11-05,,,,2009,,,,china,,,,operational,,,,2018-08-24,,,,1157,,,,,,ap1000pwr,
+,1.0,shidaowan-1,Shidaowan-1,,,,2019-07-15,,,,2012,,,,china,,,,operational,,,,2019-07-15,,,,1089,,,,,,pwr
+,1.0,shidaowan-2,Shidaowan-2,,,,2019-10-09,,,,2012,,,,china,,,,operational,,,,2019-10-09,,,,1089,,,,,,pwr
+1.0,,shin-hanul-1,,,,2022-12-07,,,,2012,,,,southkorea,,,,operational,,,,2022-06-09,,,,1340,,,,,,apr-1400,
+1.0,,shin-hanul-2,,,,2024-04-05,,,,2013,,,,southkorea,,,,operational,,,,2023-12-21,,,,1340,,,,,,apr-1400,
+1.0,,shin-kori-1,,,,2011-02-28,,,,2006,,,,southkorea,,,,operational,,,,2010-08-04,,,,986,,,,,,opr-1000pwr,
+1.0,,shin-kori-2,,,,2012-07-20,,,,2007,,,,southkorea,,,,operational,,,,2012-01-28,,,,982,,,,,,opr-1000pwr,
+1.0,,shin-wolsong-1,,,,2012-07-31,,,,2007,,,,southkorea,,,,operational,,,,2012-01-31,,,,997,,,,,,opr-1000,
+1.0,,shin-wolsong-2,,,,2015-07-24,,,,2008,,,,southkorea,,,,operational,,,,2015-02-26,,,,993,,,,,,opr-1000,
+1.0,,tomari-3,,,,2009-12-22,,,,2004,,,,japan,,,,long-termshutdown,,,,2009-03-20,,,,866,,,,,,m(3-loop)pwr,
+1.0,,vogtle-3,,,,2023-07-31,,,,2013,,,,usa,,,,operational,,,,2023-04-01,,,,1117,,,,,,ap1000pwr,
+1.0,,vogtle-4,,,,2024-04-29,,,,2013,,,,usa,,,,operational,,,,2024-03-01,,,,1117,,,,,,ap1000pwr,
+1.0,,watts-bar-2,,,,2016-10-19,,,,1973,,,,usa,,,,operational,,,,2016-06-03,,,,1150,,,,,,pwr(wh4-loop),
+1.0,,yangjiang-1,,,,2014-03-25,,,,2008,,,,china,,,,operational,,,,2013-12-31,,,,1000,,,,,,cpr-1000pwr,
+1.0,,yangjiang-2,,,,2015-06-13,,,,2009,,,,china,,,,operational,,,,2015-03-10,,,,1000,,,,,,cpr-1000pwr,

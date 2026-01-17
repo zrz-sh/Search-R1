@@ -1,0 +1,1694 @@
+exist_flag_gt,exist_flag_response,university,university_before_map,alliance_llm_judge,alliance_llm_judge_eval_msg,alliance_query,alliance_response,country_llm_judge,country_llm_judge_eval_msg,country_query,country_response,minimumgparequirement_llm_judge,minimumgparequirement_llm_judge_eval_msg,minimumgparequirement_query,minimumgparequirement_response,university_exact_match,university_exact_match_eval_msg
+,,brownuniversity,Brown University,1.0,"Let's analyze each item:
+
+- idx_0: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_1: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_2: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_3: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_4: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_5: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_6: response = ""groupofeight"", target = ""groupofeight""
+  - Same entity, semantics match → score 1
+
+- idx_7: response = ""groupofeight"", target = ""groupofeight""
+  - Same entity, semantics match → score 1
+
+- idx_8: response = ""groupofeight"", target = ""groupofeight""
+  - Same entity, semantics match → score 1
+
+All responses exactly match their respective targets or refer to the same entities. According to the criterion, this results in full scores.
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1
+}
+```",ivyleague,ivyleague,1.0,"Let's analyze each pair (response vs target) according to the criterion:
+
+**Criterion:**  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word matching.
+
+---
+
+### Analysis:
+
+- idx_0: response = ""usa"", target = ""us""  
+  - ""USA"" and ""US"" both refer to the United States of America, identical semantics.  
+  - Score: 1
+
+- idx_1: same as idx_0  
+  - Score: 1
+
+- idx_2: same as idx_0  
+  - Score: 1
+
+- idx_3: same as idx_0  
+  - Score: 1
+
+- idx_4: same as idx_0  
+  - Score: 1
+
+- idx_5: same as idx_0  
+  - Score: 1
+
+- idx_6: response = ""australia"", target = ""australia""  
+  - Identical strings, fully correct  
+  - Score: 1
+
+- idx_7: same as idx_6  
+  - Score: 1
+
+- idx_8: same as idx_6  
+  - Score: 1
+
+---
+
+### Final scoring results in JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1
+}
+```",us,usa,0.0,"Let's analyze each pair based on the criterion that semantics need to be approximately the same or point to the same entity, not needing word-for-word matches.
+
+---
+
+**idx_0**  
+- Response: ""4.1(weighted)""  
+- Target: ""no minimum gpa specified (but applicants below 3.0 must supply extra evidence)""  
+Analysis: The response gives a numeric GPA requirement ""4.1(weighted)"" while the target explicitly says no minimum GPA specified but mentions a condition for below 3.0. These do not match semantically — one is a specific minimum GPA; the other says no minimum GPA.  
+Score: 0  
+
+---
+
+**idx_1**  
+- Response: ""4.15(weighted)""  
+- Target: ""gpa≥2.5/4.0""  
+Analysis: The response states 4.15 weighted, target is ≥ 2.5/4.0 (unweighted scale). These are different scales and numbers with no approximate equivalence—4.15 weighted GPA is not approximately the same as ≥2.5/4.0 unweighted. They do not point to the same entity or requirement.  
+Score: 0  
+
+---
+
+**idx_2**  
+- Response: ""4.19(weighted)""  
+- Target: ""gpa≥2.7/4.0""  
+Same logic as idx_1—numbers do not match or approximately equivalent. Different scale and value.  
+Score: 0  
+
+---
+
+**idx_3**  
+- Response: ""no minimum gpa specified""  
+- Target: ""no minimum gpa specified""  
+Exact semantic match.  
+Score: 1  
+
+---
+
+**idx_4**  
+- Response: ""no minimum gpa specified""  
+- Target: ""no minimum gpa specified""  
+Exact semantic match.  
+Score: 1  
+
+---
+
+**idx_5**  
+- Response: ""no minimum gpa specified""  
+- Target: ""no minimum gpa specified""  
+Exact semantic match.  
+Score: 1  
+
+---
+
+**idx_6**  
+- Response: ""no minimum gpa specified""  
+- Target: ""gpa≥5.0/7.0""  
+Response states no minimum GPA, target specifies a minimum GPA. Not approximately the same or pointing to the same entity.  
+Score: 0  
+
+---
+
+**idx_7**  
+- Response: ""no minimum gpa specified""  
+- Target: ""wam≥65%""  
+WAM is a weighted average mark often used differently from GPA, but the response says no minimum GPA and the target specifies a minimum WAM. Conceptually, these differ and do not point to the same entity or semantics.  
+Score: 0  
+
+---
+
+**idx_8**  
+- Response: ""no minimum gpa specified""  
+- Target: ""gpa≥5.0/7.0""  
+Same as idx_6.  
+Score: 0  
+
+---
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```","nominimumgpaspecified
+（butapplicantsbelow3.0mustsupplyextraevidence）",4.1(weighted),1.0,key_match
+,,columbiauniversity,Columbia University,1.0,"Let's analyze each item:
+
+- idx_0: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_1: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_2: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_3: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_4: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_5: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_6: response = ""groupofeight"", target = ""groupofeight""
+  - Same entity, semantics match → score 1
+
+- idx_7: response = ""groupofeight"", target = ""groupofeight""
+  - Same entity, semantics match → score 1
+
+- idx_8: response = ""groupofeight"", target = ""groupofeight""
+  - Same entity, semantics match → score 1
+
+All responses exactly match their respective targets or refer to the same entities. According to the criterion, this results in full scores.
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1
+}
+```",ivyleague,ivyleague,1.0,"Let's analyze each pair (response vs target) according to the criterion:
+
+**Criterion:**  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word matching.
+
+---
+
+### Analysis:
+
+- idx_0: response = ""usa"", target = ""us""  
+  - ""USA"" and ""US"" both refer to the United States of America, identical semantics.  
+  - Score: 1
+
+- idx_1: same as idx_0  
+  - Score: 1
+
+- idx_2: same as idx_0  
+  - Score: 1
+
+- idx_3: same as idx_0  
+  - Score: 1
+
+- idx_4: same as idx_0  
+  - Score: 1
+
+- idx_5: same as idx_0  
+  - Score: 1
+
+- idx_6: response = ""australia"", target = ""australia""  
+  - Identical strings, fully correct  
+  - Score: 1
+
+- idx_7: same as idx_6  
+  - Score: 1
+
+- idx_8: same as idx_6  
+  - Score: 1
+
+---
+
+### Final scoring results in JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1
+}
+```",us,usa,0.0,"Let's analyze each pair based on the criterion that semantics need to be approximately the same or point to the same entity, not needing word-for-word matches.
+
+---
+
+**idx_0**  
+- Response: ""4.1(weighted)""  
+- Target: ""no minimum gpa specified (but applicants below 3.0 must supply extra evidence)""  
+Analysis: The response gives a numeric GPA requirement ""4.1(weighted)"" while the target explicitly says no minimum GPA specified but mentions a condition for below 3.0. These do not match semantically — one is a specific minimum GPA; the other says no minimum GPA.  
+Score: 0  
+
+---
+
+**idx_1**  
+- Response: ""4.15(weighted)""  
+- Target: ""gpa≥2.5/4.0""  
+Analysis: The response states 4.15 weighted, target is ≥ 2.5/4.0 (unweighted scale). These are different scales and numbers with no approximate equivalence—4.15 weighted GPA is not approximately the same as ≥2.5/4.0 unweighted. They do not point to the same entity or requirement.  
+Score: 0  
+
+---
+
+**idx_2**  
+- Response: ""4.19(weighted)""  
+- Target: ""gpa≥2.7/4.0""  
+Same logic as idx_1—numbers do not match or approximately equivalent. Different scale and value.  
+Score: 0  
+
+---
+
+**idx_3**  
+- Response: ""no minimum gpa specified""  
+- Target: ""no minimum gpa specified""  
+Exact semantic match.  
+Score: 1  
+
+---
+
+**idx_4**  
+- Response: ""no minimum gpa specified""  
+- Target: ""no minimum gpa specified""  
+Exact semantic match.  
+Score: 1  
+
+---
+
+**idx_5**  
+- Response: ""no minimum gpa specified""  
+- Target: ""no minimum gpa specified""  
+Exact semantic match.  
+Score: 1  
+
+---
+
+**idx_6**  
+- Response: ""no minimum gpa specified""  
+- Target: ""gpa≥5.0/7.0""  
+Response states no minimum GPA, target specifies a minimum GPA. Not approximately the same or pointing to the same entity.  
+Score: 0  
+
+---
+
+**idx_7**  
+- Response: ""no minimum gpa specified""  
+- Target: ""wam≥65%""  
+WAM is a weighted average mark often used differently from GPA, but the response says no minimum GPA and the target specifies a minimum WAM. Conceptually, these differ and do not point to the same entity or semantics.  
+Score: 0  
+
+---
+
+**idx_8**  
+- Response: ""no minimum gpa specified""  
+- Target: ""gpa≥5.0/7.0""  
+Same as idx_6.  
+Score: 0  
+
+---
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",gpa≥2.5/4.0,4.15(weighted),1.0,key_match
+,,cornelluniversity,Cornell University,1.0,"Let's analyze each item:
+
+- idx_0: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_1: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_2: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_3: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_4: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_5: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_6: response = ""groupofeight"", target = ""groupofeight""
+  - Same entity, semantics match → score 1
+
+- idx_7: response = ""groupofeight"", target = ""groupofeight""
+  - Same entity, semantics match → score 1
+
+- idx_8: response = ""groupofeight"", target = ""groupofeight""
+  - Same entity, semantics match → score 1
+
+All responses exactly match their respective targets or refer to the same entities. According to the criterion, this results in full scores.
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1
+}
+```",ivyleague,ivyleague,1.0,"Let's analyze each pair (response vs target) according to the criterion:
+
+**Criterion:**  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word matching.
+
+---
+
+### Analysis:
+
+- idx_0: response = ""usa"", target = ""us""  
+  - ""USA"" and ""US"" both refer to the United States of America, identical semantics.  
+  - Score: 1
+
+- idx_1: same as idx_0  
+  - Score: 1
+
+- idx_2: same as idx_0  
+  - Score: 1
+
+- idx_3: same as idx_0  
+  - Score: 1
+
+- idx_4: same as idx_0  
+  - Score: 1
+
+- idx_5: same as idx_0  
+  - Score: 1
+
+- idx_6: response = ""australia"", target = ""australia""  
+  - Identical strings, fully correct  
+  - Score: 1
+
+- idx_7: same as idx_6  
+  - Score: 1
+
+- idx_8: same as idx_6  
+  - Score: 1
+
+---
+
+### Final scoring results in JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1
+}
+```",us,usa,0.0,"Let's analyze each pair based on the criterion that semantics need to be approximately the same or point to the same entity, not needing word-for-word matches.
+
+---
+
+**idx_0**  
+- Response: ""4.1(weighted)""  
+- Target: ""no minimum gpa specified (but applicants below 3.0 must supply extra evidence)""  
+Analysis: The response gives a numeric GPA requirement ""4.1(weighted)"" while the target explicitly says no minimum GPA specified but mentions a condition for below 3.0. These do not match semantically — one is a specific minimum GPA; the other says no minimum GPA.  
+Score: 0  
+
+---
+
+**idx_1**  
+- Response: ""4.15(weighted)""  
+- Target: ""gpa≥2.5/4.0""  
+Analysis: The response states 4.15 weighted, target is ≥ 2.5/4.0 (unweighted scale). These are different scales and numbers with no approximate equivalence—4.15 weighted GPA is not approximately the same as ≥2.5/4.0 unweighted. They do not point to the same entity or requirement.  
+Score: 0  
+
+---
+
+**idx_2**  
+- Response: ""4.19(weighted)""  
+- Target: ""gpa≥2.7/4.0""  
+Same logic as idx_1—numbers do not match or approximately equivalent. Different scale and value.  
+Score: 0  
+
+---
+
+**idx_3**  
+- Response: ""no minimum gpa specified""  
+- Target: ""no minimum gpa specified""  
+Exact semantic match.  
+Score: 1  
+
+---
+
+**idx_4**  
+- Response: ""no minimum gpa specified""  
+- Target: ""no minimum gpa specified""  
+Exact semantic match.  
+Score: 1  
+
+---
+
+**idx_5**  
+- Response: ""no minimum gpa specified""  
+- Target: ""no minimum gpa specified""  
+Exact semantic match.  
+Score: 1  
+
+---
+
+**idx_6**  
+- Response: ""no minimum gpa specified""  
+- Target: ""gpa≥5.0/7.0""  
+Response states no minimum GPA, target specifies a minimum GPA. Not approximately the same or pointing to the same entity.  
+Score: 0  
+
+---
+
+**idx_7**  
+- Response: ""no minimum gpa specified""  
+- Target: ""wam≥65%""  
+WAM is a weighted average mark often used differently from GPA, but the response says no minimum GPA and the target specifies a minimum WAM. Conceptually, these differ and do not point to the same entity or semantics.  
+Score: 0  
+
+---
+
+**idx_8**  
+- Response: ""no minimum gpa specified""  
+- Target: ""gpa≥5.0/7.0""  
+Same as idx_6.  
+Score: 0  
+
+---
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",gpa≥2.7/4.0,4.19(weighted),1.0,key_match
+,,harvarduniversity,Harvard University,1.0,"Let's analyze each item:
+
+- idx_0: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_1: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_2: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_3: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_4: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_5: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_6: response = ""groupofeight"", target = ""groupofeight""
+  - Same entity, semantics match → score 1
+
+- idx_7: response = ""groupofeight"", target = ""groupofeight""
+  - Same entity, semantics match → score 1
+
+- idx_8: response = ""groupofeight"", target = ""groupofeight""
+  - Same entity, semantics match → score 1
+
+All responses exactly match their respective targets or refer to the same entities. According to the criterion, this results in full scores.
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1
+}
+```",ivyleague,ivyleague,1.0,"Let's analyze each pair (response vs target) according to the criterion:
+
+**Criterion:**  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word matching.
+
+---
+
+### Analysis:
+
+- idx_0: response = ""usa"", target = ""us""  
+  - ""USA"" and ""US"" both refer to the United States of America, identical semantics.  
+  - Score: 1
+
+- idx_1: same as idx_0  
+  - Score: 1
+
+- idx_2: same as idx_0  
+  - Score: 1
+
+- idx_3: same as idx_0  
+  - Score: 1
+
+- idx_4: same as idx_0  
+  - Score: 1
+
+- idx_5: same as idx_0  
+  - Score: 1
+
+- idx_6: response = ""australia"", target = ""australia""  
+  - Identical strings, fully correct  
+  - Score: 1
+
+- idx_7: same as idx_6  
+  - Score: 1
+
+- idx_8: same as idx_6  
+  - Score: 1
+
+---
+
+### Final scoring results in JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1
+}
+```",us,usa,1.0,"Let's analyze each pair based on the criterion that semantics need to be approximately the same or point to the same entity, not needing word-for-word matches.
+
+---
+
+**idx_0**  
+- Response: ""4.1(weighted)""  
+- Target: ""no minimum gpa specified (but applicants below 3.0 must supply extra evidence)""  
+Analysis: The response gives a numeric GPA requirement ""4.1(weighted)"" while the target explicitly says no minimum GPA specified but mentions a condition for below 3.0. These do not match semantically — one is a specific minimum GPA; the other says no minimum GPA.  
+Score: 0  
+
+---
+
+**idx_1**  
+- Response: ""4.15(weighted)""  
+- Target: ""gpa≥2.5/4.0""  
+Analysis: The response states 4.15 weighted, target is ≥ 2.5/4.0 (unweighted scale). These are different scales and numbers with no approximate equivalence—4.15 weighted GPA is not approximately the same as ≥2.5/4.0 unweighted. They do not point to the same entity or requirement.  
+Score: 0  
+
+---
+
+**idx_2**  
+- Response: ""4.19(weighted)""  
+- Target: ""gpa≥2.7/4.0""  
+Same logic as idx_1—numbers do not match or approximately equivalent. Different scale and value.  
+Score: 0  
+
+---
+
+**idx_3**  
+- Response: ""no minimum gpa specified""  
+- Target: ""no minimum gpa specified""  
+Exact semantic match.  
+Score: 1  
+
+---
+
+**idx_4**  
+- Response: ""no minimum gpa specified""  
+- Target: ""no minimum gpa specified""  
+Exact semantic match.  
+Score: 1  
+
+---
+
+**idx_5**  
+- Response: ""no minimum gpa specified""  
+- Target: ""no minimum gpa specified""  
+Exact semantic match.  
+Score: 1  
+
+---
+
+**idx_6**  
+- Response: ""no minimum gpa specified""  
+- Target: ""gpa≥5.0/7.0""  
+Response states no minimum GPA, target specifies a minimum GPA. Not approximately the same or pointing to the same entity.  
+Score: 0  
+
+---
+
+**idx_7**  
+- Response: ""no minimum gpa specified""  
+- Target: ""wam≥65%""  
+WAM is a weighted average mark often used differently from GPA, but the response says no minimum GPA and the target specifies a minimum WAM. Conceptually, these differ and do not point to the same entity or semantics.  
+Score: 0  
+
+---
+
+**idx_8**  
+- Response: ""no minimum gpa specified""  
+- Target: ""gpa≥5.0/7.0""  
+Same as idx_6.  
+Score: 0  
+
+---
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",nominimumgpaspecified,nominimumgpaspecified,1.0,key_match
+,,princetonuniversity,Princeton University,1.0,"Let's analyze each item:
+
+- idx_0: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_1: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_2: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_3: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_4: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_5: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_6: response = ""groupofeight"", target = ""groupofeight""
+  - Same entity, semantics match → score 1
+
+- idx_7: response = ""groupofeight"", target = ""groupofeight""
+  - Same entity, semantics match → score 1
+
+- idx_8: response = ""groupofeight"", target = ""groupofeight""
+  - Same entity, semantics match → score 1
+
+All responses exactly match their respective targets or refer to the same entities. According to the criterion, this results in full scores.
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1
+}
+```",ivyleague,ivyleague,1.0,"Let's analyze each pair (response vs target) according to the criterion:
+
+**Criterion:**  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word matching.
+
+---
+
+### Analysis:
+
+- idx_0: response = ""usa"", target = ""us""  
+  - ""USA"" and ""US"" both refer to the United States of America, identical semantics.  
+  - Score: 1
+
+- idx_1: same as idx_0  
+  - Score: 1
+
+- idx_2: same as idx_0  
+  - Score: 1
+
+- idx_3: same as idx_0  
+  - Score: 1
+
+- idx_4: same as idx_0  
+  - Score: 1
+
+- idx_5: same as idx_0  
+  - Score: 1
+
+- idx_6: response = ""australia"", target = ""australia""  
+  - Identical strings, fully correct  
+  - Score: 1
+
+- idx_7: same as idx_6  
+  - Score: 1
+
+- idx_8: same as idx_6  
+  - Score: 1
+
+---
+
+### Final scoring results in JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1
+}
+```",us,usa,1.0,"Let's analyze each pair based on the criterion that semantics need to be approximately the same or point to the same entity, not needing word-for-word matches.
+
+---
+
+**idx_0**  
+- Response: ""4.1(weighted)""  
+- Target: ""no minimum gpa specified (but applicants below 3.0 must supply extra evidence)""  
+Analysis: The response gives a numeric GPA requirement ""4.1(weighted)"" while the target explicitly says no minimum GPA specified but mentions a condition for below 3.0. These do not match semantically — one is a specific minimum GPA; the other says no minimum GPA.  
+Score: 0  
+
+---
+
+**idx_1**  
+- Response: ""4.15(weighted)""  
+- Target: ""gpa≥2.5/4.0""  
+Analysis: The response states 4.15 weighted, target is ≥ 2.5/4.0 (unweighted scale). These are different scales and numbers with no approximate equivalence—4.15 weighted GPA is not approximately the same as ≥2.5/4.0 unweighted. They do not point to the same entity or requirement.  
+Score: 0  
+
+---
+
+**idx_2**  
+- Response: ""4.19(weighted)""  
+- Target: ""gpa≥2.7/4.0""  
+Same logic as idx_1—numbers do not match or approximately equivalent. Different scale and value.  
+Score: 0  
+
+---
+
+**idx_3**  
+- Response: ""no minimum gpa specified""  
+- Target: ""no minimum gpa specified""  
+Exact semantic match.  
+Score: 1  
+
+---
+
+**idx_4**  
+- Response: ""no minimum gpa specified""  
+- Target: ""no minimum gpa specified""  
+Exact semantic match.  
+Score: 1  
+
+---
+
+**idx_5**  
+- Response: ""no minimum gpa specified""  
+- Target: ""no minimum gpa specified""  
+Exact semantic match.  
+Score: 1  
+
+---
+
+**idx_6**  
+- Response: ""no minimum gpa specified""  
+- Target: ""gpa≥5.0/7.0""  
+Response states no minimum GPA, target specifies a minimum GPA. Not approximately the same or pointing to the same entity.  
+Score: 0  
+
+---
+
+**idx_7**  
+- Response: ""no minimum gpa specified""  
+- Target: ""wam≥65%""  
+WAM is a weighted average mark often used differently from GPA, but the response says no minimum GPA and the target specifies a minimum WAM. Conceptually, these differ and do not point to the same entity or semantics.  
+Score: 0  
+
+---
+
+**idx_8**  
+- Response: ""no minimum gpa specified""  
+- Target: ""gpa≥5.0/7.0""  
+Same as idx_6.  
+Score: 0  
+
+---
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",nominimumgpaspecified,nominimumgpaspecified,1.0,key_match
+,,yaleuniversity,Yale University,1.0,"Let's analyze each item:
+
+- idx_0: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_1: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_2: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_3: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_4: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_5: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_6: response = ""groupofeight"", target = ""groupofeight""
+  - Same entity, semantics match → score 1
+
+- idx_7: response = ""groupofeight"", target = ""groupofeight""
+  - Same entity, semantics match → score 1
+
+- idx_8: response = ""groupofeight"", target = ""groupofeight""
+  - Same entity, semantics match → score 1
+
+All responses exactly match their respective targets or refer to the same entities. According to the criterion, this results in full scores.
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1
+}
+```",ivyleague,ivyleague,1.0,"Let's analyze each pair (response vs target) according to the criterion:
+
+**Criterion:**  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word matching.
+
+---
+
+### Analysis:
+
+- idx_0: response = ""usa"", target = ""us""  
+  - ""USA"" and ""US"" both refer to the United States of America, identical semantics.  
+  - Score: 1
+
+- idx_1: same as idx_0  
+  - Score: 1
+
+- idx_2: same as idx_0  
+  - Score: 1
+
+- idx_3: same as idx_0  
+  - Score: 1
+
+- idx_4: same as idx_0  
+  - Score: 1
+
+- idx_5: same as idx_0  
+  - Score: 1
+
+- idx_6: response = ""australia"", target = ""australia""  
+  - Identical strings, fully correct  
+  - Score: 1
+
+- idx_7: same as idx_6  
+  - Score: 1
+
+- idx_8: same as idx_6  
+  - Score: 1
+
+---
+
+### Final scoring results in JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1
+}
+```",us,usa,1.0,"Let's analyze each pair based on the criterion that semantics need to be approximately the same or point to the same entity, not needing word-for-word matches.
+
+---
+
+**idx_0**  
+- Response: ""4.1(weighted)""  
+- Target: ""no minimum gpa specified (but applicants below 3.0 must supply extra evidence)""  
+Analysis: The response gives a numeric GPA requirement ""4.1(weighted)"" while the target explicitly says no minimum GPA specified but mentions a condition for below 3.0. These do not match semantically — one is a specific minimum GPA; the other says no minimum GPA.  
+Score: 0  
+
+---
+
+**idx_1**  
+- Response: ""4.15(weighted)""  
+- Target: ""gpa≥2.5/4.0""  
+Analysis: The response states 4.15 weighted, target is ≥ 2.5/4.0 (unweighted scale). These are different scales and numbers with no approximate equivalence—4.15 weighted GPA is not approximately the same as ≥2.5/4.0 unweighted. They do not point to the same entity or requirement.  
+Score: 0  
+
+---
+
+**idx_2**  
+- Response: ""4.19(weighted)""  
+- Target: ""gpa≥2.7/4.0""  
+Same logic as idx_1—numbers do not match or approximately equivalent. Different scale and value.  
+Score: 0  
+
+---
+
+**idx_3**  
+- Response: ""no minimum gpa specified""  
+- Target: ""no minimum gpa specified""  
+Exact semantic match.  
+Score: 1  
+
+---
+
+**idx_4**  
+- Response: ""no minimum gpa specified""  
+- Target: ""no minimum gpa specified""  
+Exact semantic match.  
+Score: 1  
+
+---
+
+**idx_5**  
+- Response: ""no minimum gpa specified""  
+- Target: ""no minimum gpa specified""  
+Exact semantic match.  
+Score: 1  
+
+---
+
+**idx_6**  
+- Response: ""no minimum gpa specified""  
+- Target: ""gpa≥5.0/7.0""  
+Response states no minimum GPA, target specifies a minimum GPA. Not approximately the same or pointing to the same entity.  
+Score: 0  
+
+---
+
+**idx_7**  
+- Response: ""no minimum gpa specified""  
+- Target: ""wam≥65%""  
+WAM is a weighted average mark often used differently from GPA, but the response says no minimum GPA and the target specifies a minimum WAM. Conceptually, these differ and do not point to the same entity or semantics.  
+Score: 0  
+
+---
+
+**idx_8**  
+- Response: ""no minimum gpa specified""  
+- Target: ""gpa≥5.0/7.0""  
+Same as idx_6.  
+Score: 0  
+
+---
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",nominimumgpaspecified,nominimumgpaspecified,1.0,key_match
+,,australiannationaluniversity,ANU,1.0,"Let's analyze each item:
+
+- idx_0: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_1: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_2: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_3: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_4: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_5: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_6: response = ""groupofeight"", target = ""groupofeight""
+  - Same entity, semantics match → score 1
+
+- idx_7: response = ""groupofeight"", target = ""groupofeight""
+  - Same entity, semantics match → score 1
+
+- idx_8: response = ""groupofeight"", target = ""groupofeight""
+  - Same entity, semantics match → score 1
+
+All responses exactly match their respective targets or refer to the same entities. According to the criterion, this results in full scores.
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1
+}
+```",groupofeight,groupofeight,1.0,"Let's analyze each pair (response vs target) according to the criterion:
+
+**Criterion:**  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word matching.
+
+---
+
+### Analysis:
+
+- idx_0: response = ""usa"", target = ""us""  
+  - ""USA"" and ""US"" both refer to the United States of America, identical semantics.  
+  - Score: 1
+
+- idx_1: same as idx_0  
+  - Score: 1
+
+- idx_2: same as idx_0  
+  - Score: 1
+
+- idx_3: same as idx_0  
+  - Score: 1
+
+- idx_4: same as idx_0  
+  - Score: 1
+
+- idx_5: same as idx_0  
+  - Score: 1
+
+- idx_6: response = ""australia"", target = ""australia""  
+  - Identical strings, fully correct  
+  - Score: 1
+
+- idx_7: same as idx_6  
+  - Score: 1
+
+- idx_8: same as idx_6  
+  - Score: 1
+
+---
+
+### Final scoring results in JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1
+}
+```",australia,australia,0.0,"Let's analyze each pair based on the criterion that semantics need to be approximately the same or point to the same entity, not needing word-for-word matches.
+
+---
+
+**idx_0**  
+- Response: ""4.1(weighted)""  
+- Target: ""no minimum gpa specified (but applicants below 3.0 must supply extra evidence)""  
+Analysis: The response gives a numeric GPA requirement ""4.1(weighted)"" while the target explicitly says no minimum GPA specified but mentions a condition for below 3.0. These do not match semantically — one is a specific minimum GPA; the other says no minimum GPA.  
+Score: 0  
+
+---
+
+**idx_1**  
+- Response: ""4.15(weighted)""  
+- Target: ""gpa≥2.5/4.0""  
+Analysis: The response states 4.15 weighted, target is ≥ 2.5/4.0 (unweighted scale). These are different scales and numbers with no approximate equivalence—4.15 weighted GPA is not approximately the same as ≥2.5/4.0 unweighted. They do not point to the same entity or requirement.  
+Score: 0  
+
+---
+
+**idx_2**  
+- Response: ""4.19(weighted)""  
+- Target: ""gpa≥2.7/4.0""  
+Same logic as idx_1—numbers do not match or approximately equivalent. Different scale and value.  
+Score: 0  
+
+---
+
+**idx_3**  
+- Response: ""no minimum gpa specified""  
+- Target: ""no minimum gpa specified""  
+Exact semantic match.  
+Score: 1  
+
+---
+
+**idx_4**  
+- Response: ""no minimum gpa specified""  
+- Target: ""no minimum gpa specified""  
+Exact semantic match.  
+Score: 1  
+
+---
+
+**idx_5**  
+- Response: ""no minimum gpa specified""  
+- Target: ""no minimum gpa specified""  
+Exact semantic match.  
+Score: 1  
+
+---
+
+**idx_6**  
+- Response: ""no minimum gpa specified""  
+- Target: ""gpa≥5.0/7.0""  
+Response states no minimum GPA, target specifies a minimum GPA. Not approximately the same or pointing to the same entity.  
+Score: 0  
+
+---
+
+**idx_7**  
+- Response: ""no minimum gpa specified""  
+- Target: ""wam≥65%""  
+WAM is a weighted average mark often used differently from GPA, but the response says no minimum GPA and the target specifies a minimum WAM. Conceptually, these differ and do not point to the same entity or semantics.  
+Score: 0  
+
+---
+
+**idx_8**  
+- Response: ""no minimum gpa specified""  
+- Target: ""gpa≥5.0/7.0""  
+Same as idx_6.  
+Score: 0  
+
+---
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",gpa≥5.0/7.0,nominimumgpaspecified,1.0,key_match
+,,universityofnewsouthwales,UNSW,1.0,"Let's analyze each item:
+
+- idx_0: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_1: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_2: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_3: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_4: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_5: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_6: response = ""groupofeight"", target = ""groupofeight""
+  - Same entity, semantics match → score 1
+
+- idx_7: response = ""groupofeight"", target = ""groupofeight""
+  - Same entity, semantics match → score 1
+
+- idx_8: response = ""groupofeight"", target = ""groupofeight""
+  - Same entity, semantics match → score 1
+
+All responses exactly match their respective targets or refer to the same entities. According to the criterion, this results in full scores.
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1
+}
+```",groupofeight,groupofeight,1.0,"Let's analyze each pair (response vs target) according to the criterion:
+
+**Criterion:**  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word matching.
+
+---
+
+### Analysis:
+
+- idx_0: response = ""usa"", target = ""us""  
+  - ""USA"" and ""US"" both refer to the United States of America, identical semantics.  
+  - Score: 1
+
+- idx_1: same as idx_0  
+  - Score: 1
+
+- idx_2: same as idx_0  
+  - Score: 1
+
+- idx_3: same as idx_0  
+  - Score: 1
+
+- idx_4: same as idx_0  
+  - Score: 1
+
+- idx_5: same as idx_0  
+  - Score: 1
+
+- idx_6: response = ""australia"", target = ""australia""  
+  - Identical strings, fully correct  
+  - Score: 1
+
+- idx_7: same as idx_6  
+  - Score: 1
+
+- idx_8: same as idx_6  
+  - Score: 1
+
+---
+
+### Final scoring results in JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1
+}
+```",australia,australia,0.0,"Let's analyze each pair based on the criterion that semantics need to be approximately the same or point to the same entity, not needing word-for-word matches.
+
+---
+
+**idx_0**  
+- Response: ""4.1(weighted)""  
+- Target: ""no minimum gpa specified (but applicants below 3.0 must supply extra evidence)""  
+Analysis: The response gives a numeric GPA requirement ""4.1(weighted)"" while the target explicitly says no minimum GPA specified but mentions a condition for below 3.0. These do not match semantically — one is a specific minimum GPA; the other says no minimum GPA.  
+Score: 0  
+
+---
+
+**idx_1**  
+- Response: ""4.15(weighted)""  
+- Target: ""gpa≥2.5/4.0""  
+Analysis: The response states 4.15 weighted, target is ≥ 2.5/4.0 (unweighted scale). These are different scales and numbers with no approximate equivalence—4.15 weighted GPA is not approximately the same as ≥2.5/4.0 unweighted. They do not point to the same entity or requirement.  
+Score: 0  
+
+---
+
+**idx_2**  
+- Response: ""4.19(weighted)""  
+- Target: ""gpa≥2.7/4.0""  
+Same logic as idx_1—numbers do not match or approximately equivalent. Different scale and value.  
+Score: 0  
+
+---
+
+**idx_3**  
+- Response: ""no minimum gpa specified""  
+- Target: ""no minimum gpa specified""  
+Exact semantic match.  
+Score: 1  
+
+---
+
+**idx_4**  
+- Response: ""no minimum gpa specified""  
+- Target: ""no minimum gpa specified""  
+Exact semantic match.  
+Score: 1  
+
+---
+
+**idx_5**  
+- Response: ""no minimum gpa specified""  
+- Target: ""no minimum gpa specified""  
+Exact semantic match.  
+Score: 1  
+
+---
+
+**idx_6**  
+- Response: ""no minimum gpa specified""  
+- Target: ""gpa≥5.0/7.0""  
+Response states no minimum GPA, target specifies a minimum GPA. Not approximately the same or pointing to the same entity.  
+Score: 0  
+
+---
+
+**idx_7**  
+- Response: ""no minimum gpa specified""  
+- Target: ""wam≥65%""  
+WAM is a weighted average mark often used differently from GPA, but the response says no minimum GPA and the target specifies a minimum WAM. Conceptually, these differ and do not point to the same entity or semantics.  
+Score: 0  
+
+---
+
+**idx_8**  
+- Response: ""no minimum gpa specified""  
+- Target: ""gpa≥5.0/7.0""  
+Same as idx_6.  
+Score: 0  
+
+---
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",wam≥65%,nominimumgpaspecified,1.0,key_match
+,,universityofqueensland,UQ,1.0,"Let's analyze each item:
+
+- idx_0: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_1: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_2: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_3: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_4: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_5: response = ""ivyleague"", target = ""ivyleague""
+  - Same entity, semantics match → score 1
+
+- idx_6: response = ""groupofeight"", target = ""groupofeight""
+  - Same entity, semantics match → score 1
+
+- idx_7: response = ""groupofeight"", target = ""groupofeight""
+  - Same entity, semantics match → score 1
+
+- idx_8: response = ""groupofeight"", target = ""groupofeight""
+  - Same entity, semantics match → score 1
+
+All responses exactly match their respective targets or refer to the same entities. According to the criterion, this results in full scores.
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1
+}
+```",groupofeight,groupofeight,1.0,"Let's analyze each pair (response vs target) according to the criterion:
+
+**Criterion:**  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word matching.
+
+---
+
+### Analysis:
+
+- idx_0: response = ""usa"", target = ""us""  
+  - ""USA"" and ""US"" both refer to the United States of America, identical semantics.  
+  - Score: 1
+
+- idx_1: same as idx_0  
+  - Score: 1
+
+- idx_2: same as idx_0  
+  - Score: 1
+
+- idx_3: same as idx_0  
+  - Score: 1
+
+- idx_4: same as idx_0  
+  - Score: 1
+
+- idx_5: same as idx_0  
+  - Score: 1
+
+- idx_6: response = ""australia"", target = ""australia""  
+  - Identical strings, fully correct  
+  - Score: 1
+
+- idx_7: same as idx_6  
+  - Score: 1
+
+- idx_8: same as idx_6  
+  - Score: 1
+
+---
+
+### Final scoring results in JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1
+}
+```",australia,australia,0.0,"Let's analyze each pair based on the criterion that semantics need to be approximately the same or point to the same entity, not needing word-for-word matches.
+
+---
+
+**idx_0**  
+- Response: ""4.1(weighted)""  
+- Target: ""no minimum gpa specified (but applicants below 3.0 must supply extra evidence)""  
+Analysis: The response gives a numeric GPA requirement ""4.1(weighted)"" while the target explicitly says no minimum GPA specified but mentions a condition for below 3.0. These do not match semantically — one is a specific minimum GPA; the other says no minimum GPA.  
+Score: 0  
+
+---
+
+**idx_1**  
+- Response: ""4.15(weighted)""  
+- Target: ""gpa≥2.5/4.0""  
+Analysis: The response states 4.15 weighted, target is ≥ 2.5/4.0 (unweighted scale). These are different scales and numbers with no approximate equivalence—4.15 weighted GPA is not approximately the same as ≥2.5/4.0 unweighted. They do not point to the same entity or requirement.  
+Score: 0  
+
+---
+
+**idx_2**  
+- Response: ""4.19(weighted)""  
+- Target: ""gpa≥2.7/4.0""  
+Same logic as idx_1—numbers do not match or approximately equivalent. Different scale and value.  
+Score: 0  
+
+---
+
+**idx_3**  
+- Response: ""no minimum gpa specified""  
+- Target: ""no minimum gpa specified""  
+Exact semantic match.  
+Score: 1  
+
+---
+
+**idx_4**  
+- Response: ""no minimum gpa specified""  
+- Target: ""no minimum gpa specified""  
+Exact semantic match.  
+Score: 1  
+
+---
+
+**idx_5**  
+- Response: ""no minimum gpa specified""  
+- Target: ""no minimum gpa specified""  
+Exact semantic match.  
+Score: 1  
+
+---
+
+**idx_6**  
+- Response: ""no minimum gpa specified""  
+- Target: ""gpa≥5.0/7.0""  
+Response states no minimum GPA, target specifies a minimum GPA. Not approximately the same or pointing to the same entity.  
+Score: 0  
+
+---
+
+**idx_7**  
+- Response: ""no minimum gpa specified""  
+- Target: ""wam≥65%""  
+WAM is a weighted average mark often used differently from GPA, but the response says no minimum GPA and the target specifies a minimum WAM. Conceptually, these differ and do not point to the same entity or semantics.  
+Score: 0  
+
+---
+
+**idx_8**  
+- Response: ""no minimum gpa specified""  
+- Target: ""gpa≥5.0/7.0""  
+Same as idx_6.  
+Score: 0  
+
+---
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",gpa≥5.0/7.0,nominimumgpaspecified,1.0,key_match
+1.0,,dartmouthcollege,,,,ivyleague,,,,us,,,,nominimumgpaspecified,,,
+,1.0,mit,MIT,,,,ivyleague,,,,usa,,,,nominimumgpaspecified,,
+1.0,,monashuniversity,,,,groupofeight,,,,australia,,,,creditaverage≥65%,,,
+,1.0,stanforduniversity,Stanford University,,,,ivyleague,,,,usa,,,,nominimumgpaspecified,,
+1.0,,universityofadelaide,,,,groupofeight,,,,australia,,,,gpa≥4.5/7.0,,,
+1.0,,universityofmelbourne,,,,groupofeight,,,,australia,,,,wam≥65%,,,
+1.0,,universityofpennsylvania,,,,ivyleague,,,,us,,,,nominimumgpaspecified,,,
+1.0,,universityofsydney,,,,groupofeight,,,,australia,,,,wam≥65%,,,
+1.0,,universityofwesternaustralia,,,,groupofeight,,,,australia,,,,wam≥65%,,,

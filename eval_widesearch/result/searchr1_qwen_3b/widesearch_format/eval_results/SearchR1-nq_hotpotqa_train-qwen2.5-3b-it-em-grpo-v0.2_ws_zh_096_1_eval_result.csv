@@ -1,0 +1,1074 @@
+exist_flag_gt,exist_flag_response,电影名称,电影名称_before_map,上映年份_llm_judge,上映年份_llm_judge_eval_msg,上映年份_query,上映年份_response,导演_llm_judge,导演_llm_judge_eval_msg,导演_query,导演_response,梁朝伟通过该电影所获奖项_llm_judge,梁朝伟通过该电影所获奖项_llm_judge_eval_msg,梁朝伟通过该电影所获奖项_query,梁朝伟通过该电影所获奖项_response,电影名称_exact_match,电影名称_exact_match_eval_msg
+,,花样年华,花樣年華,1.0,"Let's analyze each pair of response and target according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(It means that as long as the meaning is basically the same or refers to the same entity, it is considered correct. Literal match is not required.)
+
+---
+
+**idx_0:**  
+response = ""2000""  
+target = ""2000年""  
+Meaning: Both refer to the year 2000. The response lacks the Chinese character ""年"" (year), but the numeric year is identical. According to the criterion, this is acceptable.  
+Score: 1
+
+---
+
+**idx_1:**  
+response = ""2006""  
+target = ""2004年""  
+Different years, 2006 ≠ 2004. They do not refer to the same entity.  
+Score: 0
+
+---
+
+**idx_2:**  
+response = ""2007""  
+target = ""2007年""  
+Same year, the response is missing ""年,"" but matches the reference year exactly. Acceptable.  
+Score: 1
+
+---
+
+**idx_3:**  
+response = ""2008""  
+target = ""2008年""  
+Same year, same logic as above.  
+Score: 1
+
+---
+
+**idx_4:**  
+response = ""2013""  
+target = ""2013年""  
+Same year, acceptable.  
+Score: 1
+
+---
+
+**idx_5:**  
+response = ""2023""  
+target = ""2023年""  
+Same year, acceptable.  
+Score: 1
+
+---
+
+Final summary:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1
+}
+```",2000年,2000,0.0,"分析过程：
+
+标准答案依次为（target）：
+- idx_0: 王家卫
+- idx_1: 王家卫
+- idx_2: 李安
+- idx_3: 吴宇森
+- idx_4: 王家卫
+- idx_5: 程耳
+
+对应的回答（response）分别为：
+- idx_0: 张艺谋
+- idx_1: 李安
+- idx_2: 李安
+- idx_3: 林超贤
+- idx_4: 李安
+- idx_5: 徐浩峰
+
+依据评分标准：只要语义相同大致或者指向的实体一致，即得1分；不完全对应的或指向不同实体得0分。
+
+逐条判断：
+
+idx_0：
+- 标准王家卫，回答张艺谋，两者均为著名导演，但不是同一实体，也不语义等价。
+- 分数：0
+
+idx_1：
+- 标准王家卫，回答李安，均是导演，但非同一实体。
+- 分数：0
+
+idx_2：
+- 标准李安，回答李安，完全一致。
+- 分数：1
+
+idx_3：
+- 标准吴宇森，回答林超贤，均为导演，但非同一实体。
+- 分数：0
+
+idx_4：
+- 标准王家卫，回答李安，非同一实体。
+- 分数：0
+
+idx_5：
+- 标准程耳，回答徐浩峰，非同一实体。
+- 分数：0
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```",王家卫,张艺谋,0.0,"首先，明确评分标准：  
+- 评分范围0-1。  
+- 参考答案与回复语义相同或指向实体一致即可。  
+- 评分只能为0或1。
+
+逐条分析：
+
+1. idx_0  
+   - 参考答案包含多个奖项：第53届戛纳国际电影节最佳男演员、第20届香港电影金像奖最佳男主角、第1届华语电影传媒大奖最佳男主角  
+   - 回答为 ""-"" ，即无回复。  
+   - 缺少任何内容，不符合答案要求。  
+   - 评分：0
+
+2. idx_1  
+   - 参考答案：第24届香港电影金像奖最佳男主角  
+   - 回答为 ""-""，无回复。  
+   - 缺少内容，评分0。
+
+3. idx_2  
+   - 参考答案：第44届台湾电影金马奖最佳男演员、第2届亚洲电影大奖最佳男演员  
+   - 回答为 ""-""，无回复。  
+   - 评分0。
+
+4. idx_3  
+   - 参考答案: ""-""（无内容）  
+   - 回答为 ""-""（无内容）  
+   - 两者语义一致，符合标准答案  
+   - 评分1。
+
+5. idx_4  
+   - 参考答案：香港导演协会奖最佳男主角  
+   - 回答为 ""-""，无回复  
+   - 缺少内容，评分0。
+
+6. idx_5  
+   - 参考答案：第36届中国电影金鸡奖最佳男主角  
+   - 回答：中国电影金鸡奖·最佳男主角  
+   - 虽然回答少了“第36届”，但指向相同奖项，符合条件语义相同或实体一致即可。  
+   - 评分1。
+
+最终评分结果为：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 1
+}
+```","第53届戛纳国际电影节最佳男演员
+第20届香港电影金像奖最佳男主角
+第1届华语电影传媒大奖最佳男主角",-,1.0,key_match
+,,2046,2046,0.0,"Let's analyze each pair of response and target according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(It means that as long as the meaning is basically the same or refers to the same entity, it is considered correct. Literal match is not required.)
+
+---
+
+**idx_0:**  
+response = ""2000""  
+target = ""2000年""  
+Meaning: Both refer to the year 2000. The response lacks the Chinese character ""年"" (year), but the numeric year is identical. According to the criterion, this is acceptable.  
+Score: 1
+
+---
+
+**idx_1:**  
+response = ""2006""  
+target = ""2004年""  
+Different years, 2006 ≠ 2004. They do not refer to the same entity.  
+Score: 0
+
+---
+
+**idx_2:**  
+response = ""2007""  
+target = ""2007年""  
+Same year, the response is missing ""年,"" but matches the reference year exactly. Acceptable.  
+Score: 1
+
+---
+
+**idx_3:**  
+response = ""2008""  
+target = ""2008年""  
+Same year, same logic as above.  
+Score: 1
+
+---
+
+**idx_4:**  
+response = ""2013""  
+target = ""2013年""  
+Same year, acceptable.  
+Score: 1
+
+---
+
+**idx_5:**  
+response = ""2023""  
+target = ""2023年""  
+Same year, acceptable.  
+Score: 1
+
+---
+
+Final summary:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1
+}
+```",2004年,2006,0.0,"分析过程：
+
+标准答案依次为（target）：
+- idx_0: 王家卫
+- idx_1: 王家卫
+- idx_2: 李安
+- idx_3: 吴宇森
+- idx_4: 王家卫
+- idx_5: 程耳
+
+对应的回答（response）分别为：
+- idx_0: 张艺谋
+- idx_1: 李安
+- idx_2: 李安
+- idx_3: 林超贤
+- idx_4: 李安
+- idx_5: 徐浩峰
+
+依据评分标准：只要语义相同大致或者指向的实体一致，即得1分；不完全对应的或指向不同实体得0分。
+
+逐条判断：
+
+idx_0：
+- 标准王家卫，回答张艺谋，两者均为著名导演，但不是同一实体，也不语义等价。
+- 分数：0
+
+idx_1：
+- 标准王家卫，回答李安，均是导演，但非同一实体。
+- 分数：0
+
+idx_2：
+- 标准李安，回答李安，完全一致。
+- 分数：1
+
+idx_3：
+- 标准吴宇森，回答林超贤，均为导演，但非同一实体。
+- 分数：0
+
+idx_4：
+- 标准王家卫，回答李安，非同一实体。
+- 分数：0
+
+idx_5：
+- 标准程耳，回答徐浩峰，非同一实体。
+- 分数：0
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```",王家卫,李安,0.0,"首先，明确评分标准：  
+- 评分范围0-1。  
+- 参考答案与回复语义相同或指向实体一致即可。  
+- 评分只能为0或1。
+
+逐条分析：
+
+1. idx_0  
+   - 参考答案包含多个奖项：第53届戛纳国际电影节最佳男演员、第20届香港电影金像奖最佳男主角、第1届华语电影传媒大奖最佳男主角  
+   - 回答为 ""-"" ，即无回复。  
+   - 缺少任何内容，不符合答案要求。  
+   - 评分：0
+
+2. idx_1  
+   - 参考答案：第24届香港电影金像奖最佳男主角  
+   - 回答为 ""-""，无回复。  
+   - 缺少内容，评分0。
+
+3. idx_2  
+   - 参考答案：第44届台湾电影金马奖最佳男演员、第2届亚洲电影大奖最佳男演员  
+   - 回答为 ""-""，无回复。  
+   - 评分0。
+
+4. idx_3  
+   - 参考答案: ""-""（无内容）  
+   - 回答为 ""-""（无内容）  
+   - 两者语义一致，符合标准答案  
+   - 评分1。
+
+5. idx_4  
+   - 参考答案：香港导演协会奖最佳男主角  
+   - 回答为 ""-""，无回复  
+   - 缺少内容，评分0。
+
+6. idx_5  
+   - 参考答案：第36届中国电影金鸡奖最佳男主角  
+   - 回答：中国电影金鸡奖·最佳男主角  
+   - 虽然回答少了“第36届”，但指向相同奖项，符合条件语义相同或实体一致即可。  
+   - 评分1。
+
+最终评分结果为：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 1
+}
+```",第24届香港电影金像奖最佳男主角,-,1.0,key_match
+,,色·戒,色·戒,1.0,"Let's analyze each pair of response and target according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(It means that as long as the meaning is basically the same or refers to the same entity, it is considered correct. Literal match is not required.)
+
+---
+
+**idx_0:**  
+response = ""2000""  
+target = ""2000年""  
+Meaning: Both refer to the year 2000. The response lacks the Chinese character ""年"" (year), but the numeric year is identical. According to the criterion, this is acceptable.  
+Score: 1
+
+---
+
+**idx_1:**  
+response = ""2006""  
+target = ""2004年""  
+Different years, 2006 ≠ 2004. They do not refer to the same entity.  
+Score: 0
+
+---
+
+**idx_2:**  
+response = ""2007""  
+target = ""2007年""  
+Same year, the response is missing ""年,"" but matches the reference year exactly. Acceptable.  
+Score: 1
+
+---
+
+**idx_3:**  
+response = ""2008""  
+target = ""2008年""  
+Same year, same logic as above.  
+Score: 1
+
+---
+
+**idx_4:**  
+response = ""2013""  
+target = ""2013年""  
+Same year, acceptable.  
+Score: 1
+
+---
+
+**idx_5:**  
+response = ""2023""  
+target = ""2023年""  
+Same year, acceptable.  
+Score: 1
+
+---
+
+Final summary:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1
+}
+```",2007年,2007,1.0,"分析过程：
+
+标准答案依次为（target）：
+- idx_0: 王家卫
+- idx_1: 王家卫
+- idx_2: 李安
+- idx_3: 吴宇森
+- idx_4: 王家卫
+- idx_5: 程耳
+
+对应的回答（response）分别为：
+- idx_0: 张艺谋
+- idx_1: 李安
+- idx_2: 李安
+- idx_3: 林超贤
+- idx_4: 李安
+- idx_5: 徐浩峰
+
+依据评分标准：只要语义相同大致或者指向的实体一致，即得1分；不完全对应的或指向不同实体得0分。
+
+逐条判断：
+
+idx_0：
+- 标准王家卫，回答张艺谋，两者均为著名导演，但不是同一实体，也不语义等价。
+- 分数：0
+
+idx_1：
+- 标准王家卫，回答李安，均是导演，但非同一实体。
+- 分数：0
+
+idx_2：
+- 标准李安，回答李安，完全一致。
+- 分数：1
+
+idx_3：
+- 标准吴宇森，回答林超贤，均为导演，但非同一实体。
+- 分数：0
+
+idx_4：
+- 标准王家卫，回答李安，非同一实体。
+- 分数：0
+
+idx_5：
+- 标准程耳，回答徐浩峰，非同一实体。
+- 分数：0
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```",李安,李安,0.0,"首先，明确评分标准：  
+- 评分范围0-1。  
+- 参考答案与回复语义相同或指向实体一致即可。  
+- 评分只能为0或1。
+
+逐条分析：
+
+1. idx_0  
+   - 参考答案包含多个奖项：第53届戛纳国际电影节最佳男演员、第20届香港电影金像奖最佳男主角、第1届华语电影传媒大奖最佳男主角  
+   - 回答为 ""-"" ，即无回复。  
+   - 缺少任何内容，不符合答案要求。  
+   - 评分：0
+
+2. idx_1  
+   - 参考答案：第24届香港电影金像奖最佳男主角  
+   - 回答为 ""-""，无回复。  
+   - 缺少内容，评分0。
+
+3. idx_2  
+   - 参考答案：第44届台湾电影金马奖最佳男演员、第2届亚洲电影大奖最佳男演员  
+   - 回答为 ""-""，无回复。  
+   - 评分0。
+
+4. idx_3  
+   - 参考答案: ""-""（无内容）  
+   - 回答为 ""-""（无内容）  
+   - 两者语义一致，符合标准答案  
+   - 评分1。
+
+5. idx_4  
+   - 参考答案：香港导演协会奖最佳男主角  
+   - 回答为 ""-""，无回复  
+   - 缺少内容，评分0。
+
+6. idx_5  
+   - 参考答案：第36届中国电影金鸡奖最佳男主角  
+   - 回答：中国电影金鸡奖·最佳男主角  
+   - 虽然回答少了“第36届”，但指向相同奖项，符合条件语义相同或实体一致即可。  
+   - 评分1。
+
+最终评分结果为：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 1
+}
+```","第44届台湾电影金马奖最佳男演员
+第2届亚洲电影大奖最佳男演员",-,1.0,key_match
+,,赤壁（上）,赤壁,1.0,"Let's analyze each pair of response and target according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(It means that as long as the meaning is basically the same or refers to the same entity, it is considered correct. Literal match is not required.)
+
+---
+
+**idx_0:**  
+response = ""2000""  
+target = ""2000年""  
+Meaning: Both refer to the year 2000. The response lacks the Chinese character ""年"" (year), but the numeric year is identical. According to the criterion, this is acceptable.  
+Score: 1
+
+---
+
+**idx_1:**  
+response = ""2006""  
+target = ""2004年""  
+Different years, 2006 ≠ 2004. They do not refer to the same entity.  
+Score: 0
+
+---
+
+**idx_2:**  
+response = ""2007""  
+target = ""2007年""  
+Same year, the response is missing ""年,"" but matches the reference year exactly. Acceptable.  
+Score: 1
+
+---
+
+**idx_3:**  
+response = ""2008""  
+target = ""2008年""  
+Same year, same logic as above.  
+Score: 1
+
+---
+
+**idx_4:**  
+response = ""2013""  
+target = ""2013年""  
+Same year, acceptable.  
+Score: 1
+
+---
+
+**idx_5:**  
+response = ""2023""  
+target = ""2023年""  
+Same year, acceptable.  
+Score: 1
+
+---
+
+Final summary:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1
+}
+```",2008年,2008,0.0,"分析过程：
+
+标准答案依次为（target）：
+- idx_0: 王家卫
+- idx_1: 王家卫
+- idx_2: 李安
+- idx_3: 吴宇森
+- idx_4: 王家卫
+- idx_5: 程耳
+
+对应的回答（response）分别为：
+- idx_0: 张艺谋
+- idx_1: 李安
+- idx_2: 李安
+- idx_3: 林超贤
+- idx_4: 李安
+- idx_5: 徐浩峰
+
+依据评分标准：只要语义相同大致或者指向的实体一致，即得1分；不完全对应的或指向不同实体得0分。
+
+逐条判断：
+
+idx_0：
+- 标准王家卫，回答张艺谋，两者均为著名导演，但不是同一实体，也不语义等价。
+- 分数：0
+
+idx_1：
+- 标准王家卫，回答李安，均是导演，但非同一实体。
+- 分数：0
+
+idx_2：
+- 标准李安，回答李安，完全一致。
+- 分数：1
+
+idx_3：
+- 标准吴宇森，回答林超贤，均为导演，但非同一实体。
+- 分数：0
+
+idx_4：
+- 标准王家卫，回答李安，非同一实体。
+- 分数：0
+
+idx_5：
+- 标准程耳，回答徐浩峰，非同一实体。
+- 分数：0
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```",吴宇森,林超贤,1.0,"首先，明确评分标准：  
+- 评分范围0-1。  
+- 参考答案与回复语义相同或指向实体一致即可。  
+- 评分只能为0或1。
+
+逐条分析：
+
+1. idx_0  
+   - 参考答案包含多个奖项：第53届戛纳国际电影节最佳男演员、第20届香港电影金像奖最佳男主角、第1届华语电影传媒大奖最佳男主角  
+   - 回答为 ""-"" ，即无回复。  
+   - 缺少任何内容，不符合答案要求。  
+   - 评分：0
+
+2. idx_1  
+   - 参考答案：第24届香港电影金像奖最佳男主角  
+   - 回答为 ""-""，无回复。  
+   - 缺少内容，评分0。
+
+3. idx_2  
+   - 参考答案：第44届台湾电影金马奖最佳男演员、第2届亚洲电影大奖最佳男演员  
+   - 回答为 ""-""，无回复。  
+   - 评分0。
+
+4. idx_3  
+   - 参考答案: ""-""（无内容）  
+   - 回答为 ""-""（无内容）  
+   - 两者语义一致，符合标准答案  
+   - 评分1。
+
+5. idx_4  
+   - 参考答案：香港导演协会奖最佳男主角  
+   - 回答为 ""-""，无回复  
+   - 缺少内容，评分0。
+
+6. idx_5  
+   - 参考答案：第36届中国电影金鸡奖最佳男主角  
+   - 回答：中国电影金鸡奖·最佳男主角  
+   - 虽然回答少了“第36届”，但指向相同奖项，符合条件语义相同或实体一致即可。  
+   - 评分1。
+
+最终评分结果为：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 1
+}
+```",-,-,1.0,key_match
+,,一代宗师,一代宗師,1.0,"Let's analyze each pair of response and target according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(It means that as long as the meaning is basically the same or refers to the same entity, it is considered correct. Literal match is not required.)
+
+---
+
+**idx_0:**  
+response = ""2000""  
+target = ""2000年""  
+Meaning: Both refer to the year 2000. The response lacks the Chinese character ""年"" (year), but the numeric year is identical. According to the criterion, this is acceptable.  
+Score: 1
+
+---
+
+**idx_1:**  
+response = ""2006""  
+target = ""2004年""  
+Different years, 2006 ≠ 2004. They do not refer to the same entity.  
+Score: 0
+
+---
+
+**idx_2:**  
+response = ""2007""  
+target = ""2007年""  
+Same year, the response is missing ""年,"" but matches the reference year exactly. Acceptable.  
+Score: 1
+
+---
+
+**idx_3:**  
+response = ""2008""  
+target = ""2008年""  
+Same year, same logic as above.  
+Score: 1
+
+---
+
+**idx_4:**  
+response = ""2013""  
+target = ""2013年""  
+Same year, acceptable.  
+Score: 1
+
+---
+
+**idx_5:**  
+response = ""2023""  
+target = ""2023年""  
+Same year, acceptable.  
+Score: 1
+
+---
+
+Final summary:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1
+}
+```",2013年,2013,0.0,"分析过程：
+
+标准答案依次为（target）：
+- idx_0: 王家卫
+- idx_1: 王家卫
+- idx_2: 李安
+- idx_3: 吴宇森
+- idx_4: 王家卫
+- idx_5: 程耳
+
+对应的回答（response）分别为：
+- idx_0: 张艺谋
+- idx_1: 李安
+- idx_2: 李安
+- idx_3: 林超贤
+- idx_4: 李安
+- idx_5: 徐浩峰
+
+依据评分标准：只要语义相同大致或者指向的实体一致，即得1分；不完全对应的或指向不同实体得0分。
+
+逐条判断：
+
+idx_0：
+- 标准王家卫，回答张艺谋，两者均为著名导演，但不是同一实体，也不语义等价。
+- 分数：0
+
+idx_1：
+- 标准王家卫，回答李安，均是导演，但非同一实体。
+- 分数：0
+
+idx_2：
+- 标准李安，回答李安，完全一致。
+- 分数：1
+
+idx_3：
+- 标准吴宇森，回答林超贤，均为导演，但非同一实体。
+- 分数：0
+
+idx_4：
+- 标准王家卫，回答李安，非同一实体。
+- 分数：0
+
+idx_5：
+- 标准程耳，回答徐浩峰，非同一实体。
+- 分数：0
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```",王家卫,李安,0.0,"首先，明确评分标准：  
+- 评分范围0-1。  
+- 参考答案与回复语义相同或指向实体一致即可。  
+- 评分只能为0或1。
+
+逐条分析：
+
+1. idx_0  
+   - 参考答案包含多个奖项：第53届戛纳国际电影节最佳男演员、第20届香港电影金像奖最佳男主角、第1届华语电影传媒大奖最佳男主角  
+   - 回答为 ""-"" ，即无回复。  
+   - 缺少任何内容，不符合答案要求。  
+   - 评分：0
+
+2. idx_1  
+   - 参考答案：第24届香港电影金像奖最佳男主角  
+   - 回答为 ""-""，无回复。  
+   - 缺少内容，评分0。
+
+3. idx_2  
+   - 参考答案：第44届台湾电影金马奖最佳男演员、第2届亚洲电影大奖最佳男演员  
+   - 回答为 ""-""，无回复。  
+   - 评分0。
+
+4. idx_3  
+   - 参考答案: ""-""（无内容）  
+   - 回答为 ""-""（无内容）  
+   - 两者语义一致，符合标准答案  
+   - 评分1。
+
+5. idx_4  
+   - 参考答案：香港导演协会奖最佳男主角  
+   - 回答为 ""-""，无回复  
+   - 缺少内容，评分0。
+
+6. idx_5  
+   - 参考答案：第36届中国电影金鸡奖最佳男主角  
+   - 回答：中国电影金鸡奖·最佳男主角  
+   - 虽然回答少了“第36届”，但指向相同奖项，符合条件语义相同或实体一致即可。  
+   - 评分1。
+
+最终评分结果为：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 1
+}
+```",香港导演协会奖最佳男主角,-,1.0,key_match
+,,无名,无名,1.0,"Let's analyze each pair of response and target according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(It means that as long as the meaning is basically the same or refers to the same entity, it is considered correct. Literal match is not required.)
+
+---
+
+**idx_0:**  
+response = ""2000""  
+target = ""2000年""  
+Meaning: Both refer to the year 2000. The response lacks the Chinese character ""年"" (year), but the numeric year is identical. According to the criterion, this is acceptable.  
+Score: 1
+
+---
+
+**idx_1:**  
+response = ""2006""  
+target = ""2004年""  
+Different years, 2006 ≠ 2004. They do not refer to the same entity.  
+Score: 0
+
+---
+
+**idx_2:**  
+response = ""2007""  
+target = ""2007年""  
+Same year, the response is missing ""年,"" but matches the reference year exactly. Acceptable.  
+Score: 1
+
+---
+
+**idx_3:**  
+response = ""2008""  
+target = ""2008年""  
+Same year, same logic as above.  
+Score: 1
+
+---
+
+**idx_4:**  
+response = ""2013""  
+target = ""2013年""  
+Same year, acceptable.  
+Score: 1
+
+---
+
+**idx_5:**  
+response = ""2023""  
+target = ""2023年""  
+Same year, acceptable.  
+Score: 1
+
+---
+
+Final summary:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1
+}
+```",2023年,2023,0.0,"分析过程：
+
+标准答案依次为（target）：
+- idx_0: 王家卫
+- idx_1: 王家卫
+- idx_2: 李安
+- idx_3: 吴宇森
+- idx_4: 王家卫
+- idx_5: 程耳
+
+对应的回答（response）分别为：
+- idx_0: 张艺谋
+- idx_1: 李安
+- idx_2: 李安
+- idx_3: 林超贤
+- idx_4: 李安
+- idx_5: 徐浩峰
+
+依据评分标准：只要语义相同大致或者指向的实体一致，即得1分；不完全对应的或指向不同实体得0分。
+
+逐条判断：
+
+idx_0：
+- 标准王家卫，回答张艺谋，两者均为著名导演，但不是同一实体，也不语义等价。
+- 分数：0
+
+idx_1：
+- 标准王家卫，回答李安，均是导演，但非同一实体。
+- 分数：0
+
+idx_2：
+- 标准李安，回答李安，完全一致。
+- 分数：1
+
+idx_3：
+- 标准吴宇森，回答林超贤，均为导演，但非同一实体。
+- 分数：0
+
+idx_4：
+- 标准王家卫，回答李安，非同一实体。
+- 分数：0
+
+idx_5：
+- 标准程耳，回答徐浩峰，非同一实体。
+- 分数：0
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```",程耳,徐浩峰,1.0,"首先，明确评分标准：  
+- 评分范围0-1。  
+- 参考答案与回复语义相同或指向实体一致即可。  
+- 评分只能为0或1。
+
+逐条分析：
+
+1. idx_0  
+   - 参考答案包含多个奖项：第53届戛纳国际电影节最佳男演员、第20届香港电影金像奖最佳男主角、第1届华语电影传媒大奖最佳男主角  
+   - 回答为 ""-"" ，即无回复。  
+   - 缺少任何内容，不符合答案要求。  
+   - 评分：0
+
+2. idx_1  
+   - 参考答案：第24届香港电影金像奖最佳男主角  
+   - 回答为 ""-""，无回复。  
+   - 缺少内容，评分0。
+
+3. idx_2  
+   - 参考答案：第44届台湾电影金马奖最佳男演员、第2届亚洲电影大奖最佳男演员  
+   - 回答为 ""-""，无回复。  
+   - 评分0。
+
+4. idx_3  
+   - 参考答案: ""-""（无内容）  
+   - 回答为 ""-""（无内容）  
+   - 两者语义一致，符合标准答案  
+   - 评分1。
+
+5. idx_4  
+   - 参考答案：香港导演协会奖最佳男主角  
+   - 回答为 ""-""，无回复  
+   - 缺少内容，评分0。
+
+6. idx_5  
+   - 参考答案：第36届中国电影金鸡奖最佳男主角  
+   - 回答：中国电影金鸡奖·最佳男主角  
+   - 虽然回答少了“第36届”，但指向相同奖项，符合条件语义相同或实体一致即可。  
+   - 评分1。
+
+最终评分结果为：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 1
+}
+```",第36届中国电影金鸡奖最佳男主角,中国电影金鸡奖·最佳男主角,1.0,key_match
+1.0,,东京攻略,,,,2000年,,,,马楚成,,,,-,,,
+1.0,,伤城,,,,2006年,,,,刘伟强、麦兆辉,,,,-,,,
+1.0,,侠骨仁心,,,,2000年,,,,邓特希,,,,-,,,
+1.0,,同居蜜友,,,,2001年,,,,马伟豪,,,,-,,,
+1.0,,听风者,,,,2012年,,,,麦兆辉、庄文强,,,,-,,,
+1.0,,嘿玛嘿玛,,,,2016年,,,,宗萨钦哲仁波切,,,,-,,,
+1.0,,地下铁,,,,2003年,,,,马伟豪,,,,第4届华语电影传媒大奖港台最佳男演员银奖,,,
+1.0,,大魔术师,,,,2011年,,,,尔冬升,,,,-,,,
+1.0,,天下无双,,,,2002年,,,,刘镇伟,,,,-,,,
+1.0,,尚气与十环传奇,,,,2021年,,,,德斯汀·克里顿,,,,-,,,
+1.0,,我要做model,,,,2004年,,,,谷德昭,,,,nan,,,
+1.0,,捉妖记2,,,,2018年,,,,许诚毅,,,,-,,,
+1.0,,摆渡人,,,,2016年,,,,张嘉佳,,,,-,,,
+1.0,,无间道,,,,2002年,,,,刘伟强、麦兆辉,,,,"第22届香港电影金像奖最佳男主角
+第40届台湾电影金马奖最佳男主角奖",,,
+1.0,,无间道3：终极无间,,,,2003年,,,,刘伟强、麦兆辉,,,,-,,,
+,1.0,春光乍洩,春光乍洩,,,,1998,,,,李安,,,,-,,
+1.0,,有情饮水饱,,,,2001年,,,,王晶,,,,-,,,
+1.0,,欧洲攻略,,,,2018年,,,,马楚成,,,,-,,,
+1.0,,英雄,,,,2002年,,,,张艺谋,,,,-,,,
+1.0,,行运超人,,,,2003年,,,,谷德昭,,,,-,,,
+1.0,,赤壁（下）,,,,2009年,,,,吴宇森,,,,-,,,
+,1.0,重慶森林,重慶森林,,,,1994,,,,吴宇森,,,,-,,
+1.0,,金手指,,,,2023年,,,,庄文强,,,,第42届香港电影金像奖最佳男主角,,,
+1.0,,韩城攻略,,,,2005年,,,,马楚成,,,,-,,,
+1.0,,风再起时,,,,2023年,,,,翁子光,,,,第16届亚洲电影大奖最佳男主角,,,

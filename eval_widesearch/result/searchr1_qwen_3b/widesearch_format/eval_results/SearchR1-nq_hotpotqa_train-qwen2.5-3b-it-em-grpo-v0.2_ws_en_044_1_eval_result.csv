@@ -1,0 +1,320 @@
+exist_flag_gt,exist_flag_response,museum,museum_before_map,address_llm_judge,address_llm_judge_eval_msg,address_query,address_response,admissionfeestatus(freeorcharged)_llm_judge,admissionfeestatus(freeorcharged)_llm_judge_eval_msg,admissionfeestatus(freeorcharged)_query,admissionfeestatus(freeorcharged)_response,businesshours_llm_judge,businesshours_llm_judge_eval_msg,businesshours_query,businesshours_response,museum_exact_match,museum_exact_match_eval_msg
+,,nationalfolkmuseumofkorea,National Folk Museum of Korea,0.0,"Let's analyze each pair step by step according to the criterion:
+
+Criterion:  
+- ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""  
+- No requirement for exact word-for-word matching.
+
+---
+
+**Pair idx_0:**  
+- Response: ""35jeongdong-jung-ro,jongno-gu,seoul""  
+- Target: ""37samcheong-ro,jongnodistrict,seoul""
+
+Analysis:  
+- The addresses are quite different:  
+  - Number: 35 vs. 37  
+  - Street: jeongdong-jung-ro vs. samcheong-ro  
+  - District: jongno-gu vs. jongnodistrict (equivalent names, same district)  
+  - City: seoul vs. seoul (same)
+
+- The district and city match semantically, but the street names and numbers differ. The response does not point to the same entity or approximate semantics as the target. It refers to a different location.
+
+Verdict: 0 (incorrect)
+
+---
+
+**Pair idx_1:**  
+- Response: ""152sejong-daero,jongno-gu,seoul""  
+- Target: ""152sejong-daero,jongnodistrict,seoul""
+
+Analysis:  
+- The responses and target are semantically the same:  
+  - Number: 152 vs. 152 (same)  
+  - Street: sejong-daero vs. sejong-daero (same)  
+  - District: jongno-gu vs. jongnodistrict (same entity with alternate naming)  
+  - City: seoul vs. seoul (same)
+
+- The response points to the same entity as the target.
+
+Verdict: 1 (correct)
+
+---
+
+### Final Scores in JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1
+}
+```","37samcheong-ro,jongnodistrict,seoul","35jeongdong-jung-ro,jongno-gu,seoul",1.0,"Let's analyze each pair item by item according to the criterion:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.""
+
+---
+
+**idx_0**:  
+- Response: ""free""  
+- Target: ""free""  
+- Analysis: The response matches the target exactly in semantics and wording. This is a completely correct answer.  
+- Score: 1
+
+---
+
+**idx_1**:  
+- Response: ""free""  
+- Target: ""charged""  
+- Analysis: The response ""free"" and the target ""charged"" have opposite meanings. They do not point to the same entity or have similar semantics. Therefore, this is incorrect.  
+- Score: 0
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0
+}
+```",free,free,0.0,"Let's analyze each pair one by one according to the criterion:
+
+---
+
+**Pair idx_0**  
+- Target answer:  
+  - Season: March to October  
+  - Hours: 09:00–18:00  
+  - Saturday: 09:00–20:00  
+- Response:  
+  - Mon–Fri: 9:00–17:00  
+  - Sat–Sun: 9:00–18:30  
+
+**Analysis:**  
+- The response gives weekly hours: Mon–Fri 9:00–17:00 (5PM) and Sat–Sun 9:00–18:30 (6:30PM).  
+- The target specifies a season (March to October), the hours 09:00–18:00 (6PM), and Saturday 09:00–20:00 (8PM).  
+- The response's times do not align with target times well: Mon–Fri closing is earlier (5PM vs. 6PM), Sat hours are less (6:30PM) than the target (8PM).  
+- The target includes a seasonal time range, which the response lacks; however, criterion says closure dates are acceptable to be missing. So ignoring that difference.  
+- The hours differ in closing time on both weekdays and weekends.  
+- The target’s Saturday closing is 8PM; response Saturday closing is 6:30PM, which is significantly different.  
+- The criterion says semantics approximate or pointing to the same entity is sufficient; here, both are opening hours but actual hours differ noticeably.  
+- Given these differences, the response does not sufficiently align with the target hours.
+
+**Conclusion:** Score = 0
+
+---
+
+**Pair idx_1**  
+- Target answer:  
+  - Tue–Sun 11:00–19:00  
+- Response:  
+  - Mon–Fri 9:00–18:00  
+
+**Analysis:**  
+- The response and target both describe opening hours but for different days and times.  
+- Target: Tue–Sun 11:00–19:00 (closed Monday)  
+- Response: Mon–Fri 9:00–18:00 (closed Sat–Sun)  
+- The response shifts days and time substantially: it adds Monday, removes weekend open days, and starts 2 hours earlier but closes 1 hour earlier.  
+- No alignment with the target timings or days.  
+- According to the criterion, semantics approximately the same or point to the same entity suffice, but here the day/time info is quite different and not aligned.  
+- Thus, this response is not sufficiently correct.
+
+**Conclusion:** Score = 0
+
+---
+
+### Final scoring:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0
+}
+```","marchtooctober:09:00-18:00
+※saturday:09:00-20:00",mon–fri9:00am–5:00pm;sat–sun9:00am–6:30pm,1.0,key_match
+,,ilminmuseumofart,Ilmin Museum of Art,1.0,"Let's analyze each pair step by step according to the criterion:
+
+Criterion:  
+- ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""  
+- No requirement for exact word-for-word matching.
+
+---
+
+**Pair idx_0:**  
+- Response: ""35jeongdong-jung-ro,jongno-gu,seoul""  
+- Target: ""37samcheong-ro,jongnodistrict,seoul""
+
+Analysis:  
+- The addresses are quite different:  
+  - Number: 35 vs. 37  
+  - Street: jeongdong-jung-ro vs. samcheong-ro  
+  - District: jongno-gu vs. jongnodistrict (equivalent names, same district)  
+  - City: seoul vs. seoul (same)
+
+- The district and city match semantically, but the street names and numbers differ. The response does not point to the same entity or approximate semantics as the target. It refers to a different location.
+
+Verdict: 0 (incorrect)
+
+---
+
+**Pair idx_1:**  
+- Response: ""152sejong-daero,jongno-gu,seoul""  
+- Target: ""152sejong-daero,jongnodistrict,seoul""
+
+Analysis:  
+- The responses and target are semantically the same:  
+  - Number: 152 vs. 152 (same)  
+  - Street: sejong-daero vs. sejong-daero (same)  
+  - District: jongno-gu vs. jongnodistrict (same entity with alternate naming)  
+  - City: seoul vs. seoul (same)
+
+- The response points to the same entity as the target.
+
+Verdict: 1 (correct)
+
+---
+
+### Final Scores in JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1
+}
+```","152sejong-daero,jongnodistrict,seoul","152sejong-daero,jongno-gu,seoul",0.0,"Let's analyze each pair item by item according to the criterion:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.""
+
+---
+
+**idx_0**:  
+- Response: ""free""  
+- Target: ""free""  
+- Analysis: The response matches the target exactly in semantics and wording. This is a completely correct answer.  
+- Score: 1
+
+---
+
+**idx_1**:  
+- Response: ""free""  
+- Target: ""charged""  
+- Analysis: The response ""free"" and the target ""charged"" have opposite meanings. They do not point to the same entity or have similar semantics. Therefore, this is incorrect.  
+- Score: 0
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0
+}
+```",charged,free,0.0,"Let's analyze each pair one by one according to the criterion:
+
+---
+
+**Pair idx_0**  
+- Target answer:  
+  - Season: March to October  
+  - Hours: 09:00–18:00  
+  - Saturday: 09:00–20:00  
+- Response:  
+  - Mon–Fri: 9:00–17:00  
+  - Sat–Sun: 9:00–18:30  
+
+**Analysis:**  
+- The response gives weekly hours: Mon–Fri 9:00–17:00 (5PM) and Sat–Sun 9:00–18:30 (6:30PM).  
+- The target specifies a season (March to October), the hours 09:00–18:00 (6PM), and Saturday 09:00–20:00 (8PM).  
+- The response's times do not align with target times well: Mon–Fri closing is earlier (5PM vs. 6PM), Sat hours are less (6:30PM) than the target (8PM).  
+- The target includes a seasonal time range, which the response lacks; however, criterion says closure dates are acceptable to be missing. So ignoring that difference.  
+- The hours differ in closing time on both weekdays and weekends.  
+- The target’s Saturday closing is 8PM; response Saturday closing is 6:30PM, which is significantly different.  
+- The criterion says semantics approximate or pointing to the same entity is sufficient; here, both are opening hours but actual hours differ noticeably.  
+- Given these differences, the response does not sufficiently align with the target hours.
+
+**Conclusion:** Score = 0
+
+---
+
+**Pair idx_1**  
+- Target answer:  
+  - Tue–Sun 11:00–19:00  
+- Response:  
+  - Mon–Fri 9:00–18:00  
+
+**Analysis:**  
+- The response and target both describe opening hours but for different days and times.  
+- Target: Tue–Sun 11:00–19:00 (closed Monday)  
+- Response: Mon–Fri 9:00–18:00 (closed Sat–Sun)  
+- The response shifts days and time substantially: it adds Monday, removes weekend open days, and starts 2 hours earlier but closes 1 hour earlier.  
+- No alignment with the target timings or days.  
+- According to the criterion, semantics approximately the same or point to the same entity suffice, but here the day/time info is quite different and not aligned.  
+- Thus, this response is not sufficiently correct.
+
+**Conclusion:** Score = 0
+
+---
+
+### Final scoring:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0
+}
+```",tue-sun11:00-19:00,mon–fri9:00am–6:00pm,1.0,key_match
+1.0,,arariomuseuminspace,,,,"83yulgok-ro,jongnodistrict,seoul",,,,charged,,,,tuesdaytosunday:10:00–19:00,,,
+1.0,,arkoartcenter,,,,"3dongsung-gil,jongnodistrict,seoul",,,,charged,,,,tuesdaytosunday:11:00–19:00,,,
+1.0,,artsonjecenter,,,,"87yulgok-ro3-gil,jongnodistrict,seoul",,,,charged,,,,tuesdaytosunday:10:00–19:00,,,
+1.0,,bkplasticsurgery,,,,"1-2nonhyeon-dong,gangnamdistrict,seoul",,,,free,,,,"mondaytofriday:10:00-19:00
+saturday:10:00-17:00",,,
+1.0,,cheongwadae(bluehouse)sarangchae,,,,"45hyoja-ro13-gil,jongnodistrict,seoul",,,,free,,,,"tuesday：closed
+wednesdaytomonday:09:00-18:00",,,
+1.0,,coreanamuseumofart,,,,"827eonju-ro,gangnamdistrict,seoul",,,,charged,,,,"tue-fri:11:00-18:30
+sat:12:00-18:30
+sun/mon:closed",,,
+1.0,,daelimmuseum,,,,"21jahamun-ro4-gil,jongnodistrict,seoul",,,,charged,,,,"tuesdaytothursday:11:00–19:00
+friday&saturday:11:00-20:00
+sunday:11:00–19:00",,,
+1.0,,donuimunmuseumvillage,,,,"14-3songwol-gil,jongnodistrict,seoul",,,,free,,,,tuesdaytosunday:10:00–19:00,,,
+1.0,,figuremuseumw,,,,"3seolleung-ro158-gil,gangnamdistrict,seoul",,,,charged,,,,"tuesdaytofriday:13:00-17:00
+saturdaytosunday:11:00-18:00",,,
+1.0,,gahoefolkpaintingmuseum,,,,"17,bukchon-ro12-gil,jongnodistrict,seoul",,,,charged,,,,tuesdaytosunday:10:00-18:00,,,
+1.0,,horimmuseumsinsabranch,,,,"317dosan-daero,gangnamdistrict,seoul",,,,charged,,,,mondaytofriday:10:30-18:00,,,
+,1.0,kimchimuseum,Kimchi Museum,,,,"9tehran-ro87-gil,gangnam-guseoul",,,,free,,,,mon–sun9:00am–6:00pm,,
+1.0,,kmuseumofcontemporaryart,,,,"807seolleung-ro,gangnamdistrict,seoul",,,,charged,,,,tuesdaytosunday:10:00–19:00,,,
+1.0,,koreaalpinemuseum,,,,"740-10,yeoksam-dong,gangnam-gu,seoul,southkorea",,,,free,,,,9:00-18:00,,,
+1.0,,koreacustomsmuseum,,,,"721eonju-ro,gangnamdistrict,seoul",,,,free,,,,"mondaytofriday,10:00-17:00",,,
+1.0,,kumhomuseumofart,,,,"18samcheong-ro,jongnodistrict,seoul",,,,charged,,,,tuesdaytosunday:10:00–18:00,,,
+1.0,,kyungwoonmuseum,,,,"0632429samseong-ro,gangnamdistrict,seoul",,,,free,,,,"mondaytosaturday:10:00-16:00(
+duringexhibitions)
+mon-fri10:00-17:00(regular)",,,
+1.0,,literarymuseumofpoetyundong-ju,,,,"119changuimun-ro,jongnodistrict,seoul",,,,free,,,,tuesdaytosunday:10:00–18:00,,,
+1.0,,lockmuseum,,,,"100ihwajang-gil,ihwa-dong,jongnodistrict,seoul",,,,charged,,,,"from10amto6pm,tuesthroughsat;closedmondaysandsundays.",,,
+1.0,,mokinmuseum,,,,"46-1changuimun-ro5-gil,jongnodistrict,seoul",,,,charged,,,,tuesdaytosunday:10:30-18:00,,,
+1.0,,museumkimchikan,,,,"35-4insadong-gil,jongnodistrict,seoul",,,,charged,,,,"tuesdaytosunday,10:00-18:00",,,
+1.0,,museumofkoreastrawandplantshandicraft,,,,"45sungkyunkwan-ro4-gil,jongnodistrict,seoul",,,,charged,,,,"tuesdaytosaturday,10:00-17:00",,,
+,1.0,nationalmuseumofkorea,National Museum of Korea,,,,"155jaegye-ro,jongno-gu,seoul",,,,free,,,,mon–fri10:00am–6:00pm,,
+1.0,,nationalmuseumofkoreancontemporaryhistory,,,,"198sejong-daero,jongnodistrict,seoul",,,,free,,,,10:00-18:00(until21:00onwednesdaysandsaturdays),,,
+1.0,,nationalmuseumofmodernandcontemporaryart(nmca),,,,"30samcheong-ro,jongnodistrict,seoul",,,,charged,,,,mon/tue/thu/fri/sun10:00-18:00;wed/sat10:00-21:00,,,
+1.0,,nationalpalacemuseumofkorea,,,,"12hyoja-ro,jongnodistrict,seoul",,,,free,,,,"weekdays&sundays:10:00–18:00
+wednesdays&saturdays:10:00–21:00",,,
+1.0,,owlmuseum,,,,"143bukchon-ro,jongnodistrict,seoul,southkorea",,,,charged,,,,thursdaytosunday:10:00-19:00,,,
+1.0,,presseumnewspapermuseum,,,,"5th&6thfloors,ilminmuseumofart,152sejongno,jongno-gu,seoul",,,,charged,,,,tuesdaytosunday:10:00to18:30,,,
+1.0,,samseongmuseumofpublishing,,,,"2-2bibong-gil,jongnodistrict,seoul",,,,charged,,,,"mondaytofriday,10:00-17:00",,,
+1.0,,sangwonmuseumofart,,,,"27pyeongchang31-gil,jongnodistrict,seoul",,,,charged,,,,tuesdaytosaturday:10:30–17:30,,,
+1.0,,seoulcitywallmuseum,,,,"283yulgok-ro,jongnodistrict,seoul",,,,free,,,,tuesdaytosunday:09:00-18:00,,,
+1.0,,seoulmuseumofcraftart,,,,"4yulgok-ro3-gil,jongnodistrict,seoul",,,,free,,,,"thursdaytothursday:10:00-18:00
+friday:10:00-21:00
+saturdaytosunday:10:00-18:00",,,
+1.0,,seoulmuseumofhistory,,,,"55saemunan-ro,jongnodistrict,seoul",,,,free,,,,"weekdays/weekends:09:00–18:00
+(admissionstopsat17:30)
+everyfriday:extendedhoursfrom18:00to21:00
+restdays:january1standeverymonday",,,
+1.0,,seoulnationaluniversityhospitalmuseumofmedicine,,,,"101daehak-ro,jongnodistrict,seoul",,,,free,,,,"mondaytofriday,09:00-18:00
+saturday,10:00-15:00",,,
+1.0,,tanheomemorialbuddhistmuseum,,,,"13-51bamgogae-ro14-gil,gangnamdistrict,seoul",,,,free,,,,tuesdaytosunday:10:00~17:00,,,
+1.0,,thechildren’smuseumofthenationalfolkmuseumofkorea,,,,"37samcheong-ro,jongnodistrict,seoul",,,,free,,,,daily:10:00–18:00,,,
+1.0,,thekoreannationalpolicemuseum,,,,"162songwol-gil,jongnodistrict,seoul",,,,free,,,,tuesdaytosunday:09:30–17:30,,,
+1.0,,tteokmuseum,,,,"71donhwamun-ro,jongnodistrict,seoul",,,,charged,,,,mondaytosaturday:10:00–18:00,,,
+1.0,,whankimuseum,,,,"63jahamun-ro40-gil,jongnodistrict,seoul",,,,charged,,,,tuesdaytosunday:11:00–18:00,,,
+1.0,,worldjewelrymuseum,,,,"75-3hwa-dong,jongnodistrict,seoul",,,,charged,,,,daily:10:00–17:00,,,

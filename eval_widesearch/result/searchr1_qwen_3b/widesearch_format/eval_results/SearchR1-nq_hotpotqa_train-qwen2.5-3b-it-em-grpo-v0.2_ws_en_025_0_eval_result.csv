@@ -1,0 +1,266 @@
+clinic,clinic_before_map,exist_flag_gt,exist_flag_response,clinic_exact_match,clinic_exact_match_eval_msg,county_exact_match,county_exact_match_eval_msg,county_query,county_response,fulladdress_llm_judge,fulladdress_llm_judge_eval_msg,fulladdress_query,fulladdress_response,phonenumber_exact_match,phonenumber_exact_match_eval_msg,phonenumber_query,phonenumber_response,saturdayoperationhours_llm_judge,saturdayoperationhours_llm_judge_eval_msg,saturdayoperationhours_query,saturdayoperationhours_response
+plannedparenthood-fultonstreethealthcenter,Fulton Street Health Center,,,1.0,key_match,1.0,"exact match, response: fresno, target: fresno",fresno,fresno,0.0,"Let's analyze each pair step by step according to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.
+
+---
+
+**idx_0**  
+- Response: ""304fultonst,fresno,ca93704""  
+- Target: ""650n.fultonstreet,fresno,ca93728""  
+Analysis:  
+- The street numbers are different (304 vs. 650).  
+- The street names are approximately the same (fultonst vs. fultonstreet).  
+- The ZIP codes are different (93704 vs. 93728).  
+- The city and state are the same (fresno, ca).  
+However, since the street numbers and ZIP codes differ, these addresses likely point to different locations. The criterion requires that the semantics be approximately the same or refer to the same entity, which is not the case here.  
+Score: 0
+
+---
+
+**idx_1**  
+- Response: ""1300sfresnost,fresno,ca93706""  
+- Target: ""165northclarkstreet,fresno,ca93701""  
+Analysis:  
+- Street number: 1300s vs. 165  
+- Street name: fresnost vs. northclarkstreet (completely different street names)  
+- City, state: fresno, ca (same)  
+- ZIP code differs: 93706 vs. 93701  
+Because both street name and number differ significantly and the ZIP differs, these are different locations.  
+Score: 0
+
+---
+
+**idx_2**  
+- Response: ""165nclarkst,fresno,ca93701""  
+- Target: ""165northclarkstreet,fresno,ca93701""  
+Analysis:  
+- The street number is the same (165)  
+- The street name is the same but abbreviated (nclarkst vs northclarkstreet)  
+- City, state, and ZIP code are identical.  
+The semantics match and clearly refer to the same entity.  
+Score: 1
+
+---
+
+### Final scoring results
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1
+}
+```","650n.fultonstreet,fresno,ca93728","304fultonst,fresno,ca93704",0.0,"exact not match, response: (559)235-4500, target: (559)488-4900",(559)488-4900,(559)235-4500,0.0,"Let's analyze each pair step by step based on the criterion:
+
+Criterion summary: The response is correct if the semantics are approximately the same or they point to the same entity. No need for exact wording.
+
+---
+
+**idx_0:**  
+- Response: ""closed""  
+- Target: ""8am-4:30pm""  
+- Analysis: The target indicates specific business hours (8am-4:30pm), which means the place is open during these times. The response says ""closed,"" which contradicts the target. Therefore, they do not point to the same state or entity.  
+- Score: 0
+
+**idx_1:**  
+- Response: ""closed""  
+- Target: ""closed""  
+- Analysis: Both response and target are identical and semantically match.  
+- Score: 1
+
+**idx_2:**  
+- Response: ""closed""  
+- Target: ""closed""  
+- Analysis: Both response and target are identical and semantically match.  
+- Score: 1
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```",8am-4:30pm,closed
+fpawomen'shealth-fresno,Planned Parenthood Fresno,,,1.0,key_match,1.0,"exact match, response: fresno, target: fresno",fresno,fresno,0.0,"Let's analyze each pair step by step according to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.
+
+---
+
+**idx_0**  
+- Response: ""304fultonst,fresno,ca93704""  
+- Target: ""650n.fultonstreet,fresno,ca93728""  
+Analysis:  
+- The street numbers are different (304 vs. 650).  
+- The street names are approximately the same (fultonst vs. fultonstreet).  
+- The ZIP codes are different (93704 vs. 93728).  
+- The city and state are the same (fresno, ca).  
+However, since the street numbers and ZIP codes differ, these addresses likely point to different locations. The criterion requires that the semantics be approximately the same or refer to the same entity, which is not the case here.  
+Score: 0
+
+---
+
+**idx_1**  
+- Response: ""1300sfresnost,fresno,ca93706""  
+- Target: ""165northclarkstreet,fresno,ca93701""  
+Analysis:  
+- Street number: 1300s vs. 165  
+- Street name: fresnost vs. northclarkstreet (completely different street names)  
+- City, state: fresno, ca (same)  
+- ZIP code differs: 93706 vs. 93701  
+Because both street name and number differ significantly and the ZIP differs, these are different locations.  
+Score: 0
+
+---
+
+**idx_2**  
+- Response: ""165nclarkst,fresno,ca93701""  
+- Target: ""165northclarkstreet,fresno,ca93701""  
+Analysis:  
+- The street number is the same (165)  
+- The street name is the same but abbreviated (nclarkst vs northclarkstreet)  
+- City, state, and ZIP code are identical.  
+The semantics match and clearly refer to the same entity.  
+Score: 1
+
+---
+
+### Final scoring results
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1
+}
+```","165northclarkstreet,fresno,ca93701","1300sfresnost,fresno,ca93706",0.0,"exact not match, response: (559)234-4742, target: (559)233-8657",(559)233-8657,(559)234-4742,1.0,"Let's analyze each pair step by step based on the criterion:
+
+Criterion summary: The response is correct if the semantics are approximately the same or they point to the same entity. No need for exact wording.
+
+---
+
+**idx_0:**  
+- Response: ""closed""  
+- Target: ""8am-4:30pm""  
+- Analysis: The target indicates specific business hours (8am-4:30pm), which means the place is open during these times. The response says ""closed,"" which contradicts the target. Therefore, they do not point to the same state or entity.  
+- Score: 0
+
+**idx_1:**  
+- Response: ""closed""  
+- Target: ""closed""  
+- Analysis: Both response and target are identical and semantically match.  
+- Score: 1
+
+**idx_2:**  
+- Response: ""closed""  
+- Target: ""closed""  
+- Analysis: Both response and target are identical and semantically match.  
+- Score: 1
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```",closed,closed
+fpawomen'shealth-fresno,FPA Women's Health,,,1.0,key_match,1.0,"exact match, response: fresno, target: fresno",fresno,fresno,1.0,"Let's analyze each pair step by step according to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.
+
+---
+
+**idx_0**  
+- Response: ""304fultonst,fresno,ca93704""  
+- Target: ""650n.fultonstreet,fresno,ca93728""  
+Analysis:  
+- The street numbers are different (304 vs. 650).  
+- The street names are approximately the same (fultonst vs. fultonstreet).  
+- The ZIP codes are different (93704 vs. 93728).  
+- The city and state are the same (fresno, ca).  
+However, since the street numbers and ZIP codes differ, these addresses likely point to different locations. The criterion requires that the semantics be approximately the same or refer to the same entity, which is not the case here.  
+Score: 0
+
+---
+
+**idx_1**  
+- Response: ""1300sfresnost,fresno,ca93706""  
+- Target: ""165northclarkstreet,fresno,ca93701""  
+Analysis:  
+- Street number: 1300s vs. 165  
+- Street name: fresnost vs. northclarkstreet (completely different street names)  
+- City, state: fresno, ca (same)  
+- ZIP code differs: 93706 vs. 93701  
+Because both street name and number differ significantly and the ZIP differs, these are different locations.  
+Score: 0
+
+---
+
+**idx_2**  
+- Response: ""165nclarkst,fresno,ca93701""  
+- Target: ""165northclarkstreet,fresno,ca93701""  
+Analysis:  
+- The street number is the same (165)  
+- The street name is the same but abbreviated (nclarkst vs northclarkstreet)  
+- City, state, and ZIP code are identical.  
+The semantics match and clearly refer to the same entity.  
+Score: 1
+
+---
+
+### Final scoring results
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1
+}
+```","165northclarkstreet,fresno,ca93701","165nclarkst,fresno,ca93701",1.0,"exact match, response: (559)233-8657, target: (559)233-8657",(559)233-8657,(559)233-8657,1.0,"Let's analyze each pair step by step based on the criterion:
+
+Criterion summary: The response is correct if the semantics are approximately the same or they point to the same entity. No need for exact wording.
+
+---
+
+**idx_0:**  
+- Response: ""closed""  
+- Target: ""8am-4:30pm""  
+- Analysis: The target indicates specific business hours (8am-4:30pm), which means the place is open during these times. The response says ""closed,"" which contradicts the target. Therefore, they do not point to the same state or entity.  
+- Score: 0
+
+**idx_1:**  
+- Response: ""closed""  
+- Target: ""closed""  
+- Analysis: Both response and target are identical and semantically match.  
+- Score: 1
+
+**idx_2:**  
+- Response: ""closed""  
+- Target: ""closed""  
+- Analysis: Both response and target are identical and semantically match.  
+- Score: 1
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```",closed,closed
+fpawomen'shealth-tulare,,1.0,,,,,,tulare,,,,"1068ncherrystreet,tulare,ca93274",,,,(559)233-0990,,,,closed,
+plannedparenthood-familyfirsthealthcenter,,1.0,,,,,,fresno,,,,"6095n.1ststreet,fresno,ca93710",,,,(559)446-1515,,,,closed,
+plannedparenthood-maderahealthcenter,,1.0,,,,,,madera,,,,"500e.almondave,#1,madera,ca93637",,,,(559)675-1133,,,,closed,
+plannedparenthood-mercedhealthcenter,,1.0,,,,,,merced,,,,"3166collinsdrive,merced,ca95348",,,,(209)723-7751,,,,closed,

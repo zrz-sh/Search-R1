@@ -1,0 +1,654 @@
+exist_flag_gt,exist_flag_response,startdate,startdate_before_map,duration(days)_llm_judge,duration(days)_llm_judge_eval_msg,duration(days)_query,duration(days)_response,enddate_exact_match,enddate_exact_match_eval_msg,enddate_query,enddate_response,estimatedloss(usdmillion)_number_near,estimatedloss(usdmillion)_number_near_eval_msg,estimatedloss(usdmillion)_query,estimatedloss(usdmillion)_response,furloughedemployees_number_near,furloughedemployees_number_near_eval_msg,furloughedemployees_query,furloughedemployees_response,maindisputedprovisions_llm_judge,maindisputedprovisions_llm_judge_eval_msg,maindisputedprovisions_query,maindisputedprovisions_response,president_llm_judge,president_llm_judge_eval_msg,president_query,president_response,senatemajorityleader_llm_judge,senatemajorityleader_llm_judge_eval_msg,senatemajorityleader_query,senatemajorityleader_response,speakerofthehouse_llm_judge,speakerofthehouse_llm_judge_eval_msg,speakerofthehouse_query,speakerofthehouse_response,startdate_exact_match,startdate_exact_match_eval_msg
+,,1977-09-30,1977-09-30,1.0,"Let's analyze each item individually according to the criteria:
+
+- Criterion states semantics should be approximately the same or point to the same entity.
+- The scoring range is 0 or 1 for each pair.
+- The answers given are numerical and identical in all cases, so they fully match the targets.
+
+Item-by-item analysis:
+
+1. idx_0: response = ""12"", target = ""12""
+   - Exact match, semantics fully the same.
+   - Score = 1
+
+2. idx_1: response = ""16"", target = ""16""
+   - Exact match.
+   - Score = 1
+
+3. idx_2: response = ""35"", target = ""35""
+   - Exact match.
+   - Score = 1
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```",12,12,1.0,"exact match, response: 1977-10-13, target: 1977-10-13",1977-10-13,1977-10-13,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,0.0,"Let's analyze each idx item by comparing the response with the corresponding target under the criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for a word-for-word match.
+
+---
+
+### idx_0
+
+- Response: ""taxreform""  
+- Target: ""abortion.houseandsenate\ndividedoverwhethermediaid\nshouldfundabortionsincases\nofrapeorincest""
+
+Analysis:  
+- Response mentions ""taxreform"" (tax reform) which is a political topic.  
+- Target is about abortion debates and funding media aid and abortion in cases of rape or incest.  
+- These are two different topics entirely, no semantic proximity or matching entity.  
+
+Judgment: 0
+
+---
+
+### idx_1
+
+- Response: ""healthcarereform""  
+- Target: ""housegopdemandtodelay/defundaffordablecareact(“obamacare”)""
+
+Analysis:  
+- Response is ""healthcarereform"" (a broad term).  
+- Target describes a specific healthcare reform issue: House GOP demanding to delay or defund ACA (""Obamacare"").  
+- Response matches the semantic domain of the target (healthcare reform), definitely pointing to the same entity in a broad sense.
+
+Judgment: 1
+
+---
+
+### idx_2
+
+- Response: ""borderwallfunding""  
+- Target: ""$5.7bnappropriationforu.s.–mexicoborderwall""
+
+Analysis:  
+- Response mentions ""borderwallfunding"" = funding the border wall,  
+- Target mentions an appropriation of $5.7 billion for the U.S.-Mexico border wall.  
+- The response captures the entity and semantics accurately.
+
+Judgment: 1
+
+---
+
+### Final scores in JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```","abortion.houseandsenate
+dividedoverwhethermediaid
+shouldfundabortionsincases
+ofrapeorincest",taxreform,1.0,"Let's analyze each pair according to the provided criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same or they point to the same entity.  
+- No need for word-for-word matching.
+
+---
+
+**idx_0:**  
+- Response: ""jimmycarter""  
+- Target: ""carter""  
+Analysis:  
+- ""jimmycarter"" clearly refers to ""Carter"" (former US President Jimmy Carter).  
+- They point to the same entity.  
+- Meets the criterion.  
+Score: 1
+
+---
+
+**idx_1:**  
+- Response: ""barackobama""  
+- Target: ""barackobama""  
+Analysis:  
+- Exact match.  
+- Meets the criterion completely.  
+Score: 1
+
+---
+
+**idx_2:**  
+- Response: ""donaldtrump""  
+- Target: ""donaldtrump""  
+Analysis:  
+- Exact match.  
+- Meets the criterion completely.  
+Score: 1
+
+---
+
+Final scoring in JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```",carter,jimmycarter,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion:  
+- The semantics should be approximately the same or point to the same entity.  
+- Exact word-for-word match is not necessary, but the response must correctly indicate the targeted entity.
+
+---
+
+### idx_0
+- Response: ""robertj.dole""  
+- Target: ""robertc.byrd""  
+Analysis:  
+These are two different persons. ""robertj.dole"" and ""robertc.byrd"" are clearly distinct entities, so this response does not meet the criterion of pointing to the same entity.  
+Score: 0
+
+---
+
+### idx_1
+- Response: ""harryreid""  
+- Target: ""harryreid""  
+Analysis:  
+Exact same entity; fully correct.  
+Score: 1
+
+---
+
+### idx_2
+- Response: ""mitchmcconnell""  
+- Target: ""mitchmcconnell""  
+Analysis:  
+Exact same entity; fully correct.  
+Score: 1
+
+---
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```",robertc.byrd,robertj.dole,0.0,"Let's analyze each item based on the criterion:
+
+Criterion:
+- The semantics are approximately the same or point to the same entity.
+- No need for exact word-for-word correspondence.
+
+---
+
+### idx_0
+- Response: ""carlalbert""
+- Target: ""tipo'neill""
+- Analysis: ""carlalbert"" and ""tipo'neill"" clearly refer to different persons/entities. No semantic equivalence or pointing to the same entity.
+- Score: 0
+
+### idx_1
+- Response: ""johnboehner""
+- Target: ""johnboehner""
+- Analysis: Exact same entity, clearly meets criterion.
+- Score: 1
+
+### idx_2
+- Response: ""paulryan""
+- Target: ""paulryan""
+- Analysis: Exact same entity, clearly meets criterion.
+- Score: 1
+
+---
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```",tipo'neill,carlalbert,1.0,key_match
+,,2013-10-01,2013-10-01,1.0,"Let's analyze each item individually according to the criteria:
+
+- Criterion states semantics should be approximately the same or point to the same entity.
+- The scoring range is 0 or 1 for each pair.
+- The answers given are numerical and identical in all cases, so they fully match the targets.
+
+Item-by-item analysis:
+
+1. idx_0: response = ""12"", target = ""12""
+   - Exact match, semantics fully the same.
+   - Score = 1
+
+2. idx_1: response = ""16"", target = ""16""
+   - Exact match.
+   - Score = 1
+
+3. idx_2: response = ""35"", target = ""35""
+   - Exact match.
+   - Score = 1
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```",16,16,0.0,"exact not match, response: 2013-10-16, target: 2013-10-17",2013-10-17,2013-10-16,0.0,"number not near, response: 24.0, target: 2100.0",2100,24,1.0,"number near in range 5.0%, response: 800000.0, target: 800000.0",800000,800000,1.0,"Let's analyze each idx item by comparing the response with the corresponding target under the criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for a word-for-word match.
+
+---
+
+### idx_0
+
+- Response: ""taxreform""  
+- Target: ""abortion.houseandsenate\ndividedoverwhethermediaid\nshouldfundabortionsincases\nofrapeorincest""
+
+Analysis:  
+- Response mentions ""taxreform"" (tax reform) which is a political topic.  
+- Target is about abortion debates and funding media aid and abortion in cases of rape or incest.  
+- These are two different topics entirely, no semantic proximity or matching entity.  
+
+Judgment: 0
+
+---
+
+### idx_1
+
+- Response: ""healthcarereform""  
+- Target: ""housegopdemandtodelay/defundaffordablecareact(“obamacare”)""
+
+Analysis:  
+- Response is ""healthcarereform"" (a broad term).  
+- Target describes a specific healthcare reform issue: House GOP demanding to delay or defund ACA (""Obamacare"").  
+- Response matches the semantic domain of the target (healthcare reform), definitely pointing to the same entity in a broad sense.
+
+Judgment: 1
+
+---
+
+### idx_2
+
+- Response: ""borderwallfunding""  
+- Target: ""$5.7bnappropriationforu.s.–mexicoborderwall""
+
+Analysis:  
+- Response mentions ""borderwallfunding"" = funding the border wall,  
+- Target mentions an appropriation of $5.7 billion for the U.S.-Mexico border wall.  
+- The response captures the entity and semantics accurately.
+
+Judgment: 1
+
+---
+
+### Final scores in JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```",housegopdemandtodelay/defundaffordablecareact(“obamacare”),healthcarereform,1.0,"Let's analyze each pair according to the provided criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same or they point to the same entity.  
+- No need for word-for-word matching.
+
+---
+
+**idx_0:**  
+- Response: ""jimmycarter""  
+- Target: ""carter""  
+Analysis:  
+- ""jimmycarter"" clearly refers to ""Carter"" (former US President Jimmy Carter).  
+- They point to the same entity.  
+- Meets the criterion.  
+Score: 1
+
+---
+
+**idx_1:**  
+- Response: ""barackobama""  
+- Target: ""barackobama""  
+Analysis:  
+- Exact match.  
+- Meets the criterion completely.  
+Score: 1
+
+---
+
+**idx_2:**  
+- Response: ""donaldtrump""  
+- Target: ""donaldtrump""  
+Analysis:  
+- Exact match.  
+- Meets the criterion completely.  
+Score: 1
+
+---
+
+Final scoring in JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```",barackobama,barackobama,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion:  
+- The semantics should be approximately the same or point to the same entity.  
+- Exact word-for-word match is not necessary, but the response must correctly indicate the targeted entity.
+
+---
+
+### idx_0
+- Response: ""robertj.dole""  
+- Target: ""robertc.byrd""  
+Analysis:  
+These are two different persons. ""robertj.dole"" and ""robertc.byrd"" are clearly distinct entities, so this response does not meet the criterion of pointing to the same entity.  
+Score: 0
+
+---
+
+### idx_1
+- Response: ""harryreid""  
+- Target: ""harryreid""  
+Analysis:  
+Exact same entity; fully correct.  
+Score: 1
+
+---
+
+### idx_2
+- Response: ""mitchmcconnell""  
+- Target: ""mitchmcconnell""  
+Analysis:  
+Exact same entity; fully correct.  
+Score: 1
+
+---
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```",harryreid,harryreid,1.0,"Let's analyze each item based on the criterion:
+
+Criterion:
+- The semantics are approximately the same or point to the same entity.
+- No need for exact word-for-word correspondence.
+
+---
+
+### idx_0
+- Response: ""carlalbert""
+- Target: ""tipo'neill""
+- Analysis: ""carlalbert"" and ""tipo'neill"" clearly refer to different persons/entities. No semantic equivalence or pointing to the same entity.
+- Score: 0
+
+### idx_1
+- Response: ""johnboehner""
+- Target: ""johnboehner""
+- Analysis: Exact same entity, clearly meets criterion.
+- Score: 1
+
+### idx_2
+- Response: ""paulryan""
+- Target: ""paulryan""
+- Analysis: Exact same entity, clearly meets criterion.
+- Score: 1
+
+---
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```",johnboehner,johnboehner,1.0,key_match
+,,2018-12-22,2018-12-22,1.0,"Let's analyze each item individually according to the criteria:
+
+- Criterion states semantics should be approximately the same or point to the same entity.
+- The scoring range is 0 or 1 for each pair.
+- The answers given are numerical and identical in all cases, so they fully match the targets.
+
+Item-by-item analysis:
+
+1. idx_0: response = ""12"", target = ""12""
+   - Exact match, semantics fully the same.
+   - Score = 1
+
+2. idx_1: response = ""16"", target = ""16""
+   - Exact match.
+   - Score = 1
+
+3. idx_2: response = ""35"", target = ""35""
+   - Exact match.
+   - Score = 1
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```",35,35,1.0,"exact match, response: 2019-01-25, target: 2019-01-25",2019-01-25,2019-01-25,0.0,"number not near, response: 11.0, target: 5000.0",5000,11,0.0,"number not near, response: 800000.0, target: 380000.0",380000,800000,1.0,"Let's analyze each idx item by comparing the response with the corresponding target under the criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for a word-for-word match.
+
+---
+
+### idx_0
+
+- Response: ""taxreform""  
+- Target: ""abortion.houseandsenate\ndividedoverwhethermediaid\nshouldfundabortionsincases\nofrapeorincest""
+
+Analysis:  
+- Response mentions ""taxreform"" (tax reform) which is a political topic.  
+- Target is about abortion debates and funding media aid and abortion in cases of rape or incest.  
+- These are two different topics entirely, no semantic proximity or matching entity.  
+
+Judgment: 0
+
+---
+
+### idx_1
+
+- Response: ""healthcarereform""  
+- Target: ""housegopdemandtodelay/defundaffordablecareact(“obamacare”)""
+
+Analysis:  
+- Response is ""healthcarereform"" (a broad term).  
+- Target describes a specific healthcare reform issue: House GOP demanding to delay or defund ACA (""Obamacare"").  
+- Response matches the semantic domain of the target (healthcare reform), definitely pointing to the same entity in a broad sense.
+
+Judgment: 1
+
+---
+
+### idx_2
+
+- Response: ""borderwallfunding""  
+- Target: ""$5.7bnappropriationforu.s.–mexicoborderwall""
+
+Analysis:  
+- Response mentions ""borderwallfunding"" = funding the border wall,  
+- Target mentions an appropriation of $5.7 billion for the U.S.-Mexico border wall.  
+- The response captures the entity and semantics accurately.
+
+Judgment: 1
+
+---
+
+### Final scores in JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```",$5.7bnappropriationforu.s.–mexicoborderwall,borderwallfunding,1.0,"Let's analyze each pair according to the provided criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same or they point to the same entity.  
+- No need for word-for-word matching.
+
+---
+
+**idx_0:**  
+- Response: ""jimmycarter""  
+- Target: ""carter""  
+Analysis:  
+- ""jimmycarter"" clearly refers to ""Carter"" (former US President Jimmy Carter).  
+- They point to the same entity.  
+- Meets the criterion.  
+Score: 1
+
+---
+
+**idx_1:**  
+- Response: ""barackobama""  
+- Target: ""barackobama""  
+Analysis:  
+- Exact match.  
+- Meets the criterion completely.  
+Score: 1
+
+---
+
+**idx_2:**  
+- Response: ""donaldtrump""  
+- Target: ""donaldtrump""  
+Analysis:  
+- Exact match.  
+- Meets the criterion completely.  
+Score: 1
+
+---
+
+Final scoring in JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```",donaldtrump,donaldtrump,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion:  
+- The semantics should be approximately the same or point to the same entity.  
+- Exact word-for-word match is not necessary, but the response must correctly indicate the targeted entity.
+
+---
+
+### idx_0
+- Response: ""robertj.dole""  
+- Target: ""robertc.byrd""  
+Analysis:  
+These are two different persons. ""robertj.dole"" and ""robertc.byrd"" are clearly distinct entities, so this response does not meet the criterion of pointing to the same entity.  
+Score: 0
+
+---
+
+### idx_1
+- Response: ""harryreid""  
+- Target: ""harryreid""  
+Analysis:  
+Exact same entity; fully correct.  
+Score: 1
+
+---
+
+### idx_2
+- Response: ""mitchmcconnell""  
+- Target: ""mitchmcconnell""  
+Analysis:  
+Exact same entity; fully correct.  
+Score: 1
+
+---
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```",mitchmcconnell,mitchmcconnell,1.0,"Let's analyze each item based on the criterion:
+
+Criterion:
+- The semantics are approximately the same or point to the same entity.
+- No need for exact word-for-word correspondence.
+
+---
+
+### idx_0
+- Response: ""carlalbert""
+- Target: ""tipo'neill""
+- Analysis: ""carlalbert"" and ""tipo'neill"" clearly refer to different persons/entities. No semantic equivalence or pointing to the same entity.
+- Score: 0
+
+### idx_1
+- Response: ""johnboehner""
+- Target: ""johnboehner""
+- Analysis: Exact same entity, clearly meets criterion.
+- Score: 1
+
+### idx_2
+- Response: ""paulryan""
+- Target: ""paulryan""
+- Analysis: Exact same entity, clearly meets criterion.
+- Score: 1
+
+---
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```",paulryan,paulryan,1.0,key_match
+1.0,,1976-09-30,,,,10,,,,1976-10-11,,,,NULL,,,,NULL,,,,"spendingbillfortheu.s.departmentofhealth,educationandwelfare(hew)aswellastheu.s.departmentoflabor",,,,ford,,,,michaelj.mansfield,,,,carlalbert,,,
+,1.0,1976-10-01,1976-10-01,,,,10,,,,1976-10-11,,,,NULL,,,,NULL,,,,budgetcuts,,,,geraldford,,,,robertj.dole,,,,carlalbert,,
+1.0,,1977-10-31,,,,8,,,,1977-11-09,,,,NULL,,,,NULL,,,,abortion,,,,carter,,,,robertc.byrd,,,,tipo'neill,,,
+1.0,,1977-11-30,,,,8,,,,1977-12-09,,,,NULL,,,,NULL,,,,abortion,,,,carter,,,,robertc.byrd,,,,tipo'neill,,,
+1.0,,1978-09-30,,,,17,,,,1978-10-18,,,,NULL,,,,NULL,,,,abortionanddefensespending,,,,carter,,,,robertc.byrd,,,,tipo'neill,,,
+1.0,,1979-09-30,,,,11,,,,1979-10-12,,,,NULL,,,,NULL,,,,"payraisesforcongressional
+staffandabortion",,,,carter,,,,robertc.byrd,,,,tipo'neill,,,
+1.0,,1980-05-01,,,,1,,,,1980-05-01,,,,0.7,,,,1600.0,,,,"affectedonlythefederaltradecommission.thiswasthefirsttimeashutdownofafederalagencywasenforced,basedonanewinterpretationofthe1884antideficiencyact.",,,,carter,,,,robertc.byrd,,,,tipo'neill,,,
+1.0,,1981-11-20,,,,2,,,,1981-11-23,,,,85,,,,241000,,,,domestic-spendingcutsvs.reagan’sproposeddefense-heavybudget,,,,ronaldreagan,,,,howardbaker,,,,tipo’neill,,,
+1.0,,1982-09-30,,,,1,,,,1982-10-02,,,,NULL,,,,NULL,,,,-,,,,ronaldreagan,,,,howardbaker,,,,tipo’neill,,,
+1.0,,1982-12-17,,,,3,,,,1982-12-21,,,,NULL,,,,NULL,,,,jobprogramfundingandmxmissilesfunding.,,,,ronaldreagan,,,,howardbaker,,,,tipo’neill,,,
+1.0,,1983-11-10,,,,3,,,,1983-11-14,,,,NULL,,,,NULL,,,,defenseandforeignaidspendingcuts,,,,ronaldreagan,,,,howardbaker,,,,tipo’neill,,,
+1.0,,1984-10-04,,,,1,,,,1984-10-05,,,,65,,,,500000,,,,"water-projectsearmarks,reversalofgrovecityv.bellcivil-rightsruling,nicaragua-contrafunding",,,,ronaldreagan,,,,howardbaker,,,,tipo’neill,,,
+1.0,,1986-10-17,,,,1,,,,1986-10-18,,,,62,,,,500000,,,,arms-controlridersinfy-1987omnibus,,,,ronaldreagan,,,,bobdole,,,,tipo’neill,,,
+1.0,,1987-12-18,,,,1,,,,1987-12-20,,,,NULL,,,,NULL,,,,fundingtothecontrasandfederalcommunicationscommissionstore-enforcethefairnessdoctrine,,,,ronaldreagan,,,,bobdole,,,,tipo’neill,,,
+1.0,,1990-10-06,,,,3,,,,1990-10-09,,,,2.6,,,,2800,,,,deficit-reductiondeal—taxincreasesvs.spendingcuts,,,,georgeh.w.bush,,,,georgemitchell,,,,tomfoley,,,
+1.0,,1995-11-14,,,,5,,,,1995-11-19,,,,400,,,,800000,,,,gop“contractwithamerica”balanced-budgettargets&medicaresavings,,,,billclinton,,,,bobdole,,,,newtgingrich,,,
+1.0,,1995-12-16,,,,21,,,,1996-01-06,,,,1000,,,,284000,,,,"long-termbalanced-budgetplan,education&health-carecuts",,,,billclinton,,,,bobdole,,,,newtgingrich,,,
+1.0,,2018-01-20,,,,3,,,,2018-01-22,,,,NULL,,,,692900,,,,impasseoverdacaprotectionsfor“dreamers”&border-securityoffsets,,,,donaldtrump,,,,mitchmcconnell,,,,paulryan,,,
+,1.0,2019-12-22,2019-12-22,,,,4,,,,2019-12-26,,,,2.5,,,,420000,,,,fundingforimmigration,,,,donaldtrump,,,,mitchmcconnell,,,,nancypelosi,,
+,1.0,2020-12-21,2020-12-21,,,,21,,,,2021-01-22,,,,11,,,,420000,,,,coronavirusrelief,,,,donaldtrump,,,,mitchmcconnell,,,,nancypelosi,,
+,1.0,2023-10-01,2023-10-01,,,,17,,,,2023-10-17,,,,11,,,,870000,,,,healthcarereform,,,,joebiden,,,,chuckschumer,,,,kevinmccarthy,,
+,1.0,2024-12-22,2024-12-22,,,,8,,,,2024-12-30,,,,2.5,,,,420000,,,,fundingforbordersecurity,,,,joebiden,,,,chuckschumer,,,,nancypelosi,,

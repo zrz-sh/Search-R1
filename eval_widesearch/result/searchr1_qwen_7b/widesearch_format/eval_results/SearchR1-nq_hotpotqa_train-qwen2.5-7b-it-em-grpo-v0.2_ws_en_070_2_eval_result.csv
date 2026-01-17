@@ -1,0 +1,967 @@
+exist_flag_gt,exist_flag_response,major,major_before_map,university,university_before_map,major_exact_match,major_exact_match_eval_msg,requirements_llm_judge,requirements_llm_judge_eval_msg,requirements_query,requirements_response,tuition_llm_judge,tuition_llm_judge_eval_msg,tuition_query,tuition_response,university_exact_match,university_exact_match_eval_msg
+,,masteroffamilywealthmanagement,Master of Family Wealth Management,theuniversityofhongkong,The University of Hong Kong,1.0,key_match,1.0,"Let's analyze each idx item according to the criterion:
+
+Criterion summary:  
+- Semantics should be approximately the same or point to the same entity.  
+- No need for word-for-word correspondence.
+
+---
+
+### idx_0  
+**Response:** ""applicantsshouldpossessabachelor'sdegreefromarecognizedinstitution.""  
+**Target:** ""hold a recognized bachelor’s degree or an equivalent qualification; provide two reference letters commenting on your suitability for the program, with at least one from an academic referee at the university you have graduated from or are about to graduate from; and if your previous studies were not conducted in English, you must submit a TOEFL or IELTS score. Minimum requirements: TOEFL: 80 | IELTS: 6.0 (with no sub-score below 5.5).""
+
+**Analysis:**  
+- Response only mentions bachelor's degree from a recognized institution.  
+- Target includes additional elements: 2 reference letters + English proficiency requirements.  
+- The response covers only a part of the target, missing significant parts of the requirement (references and English proficiency).  
+- According to the criterion, they must at least be approximately the same or point to the same entity. Response only covers part of it.  
+- Does the response point to the same entity? The threshold (""hold recognized bachelor’s degree or an equivalent"") is partially matched by ""applicants should possess a bachelor’s degree from a recognized institution."" But target expects more requirements.  
+- The response misses key parts; so the semantic coverage is incomplete and can't be considered fully correct. However, since partial match is allowed if semantics are approximately the same or point to the same entity—does it qualify? Because reference letters and English proficiency are essential parts of the answer, missing them reduces correctness.  
+  
+**Verdict for idx_0:** 0 (incomplete, not sufficiently approximate)
+
+---
+
+### idx_1  
+**Response:** ""applicantsshouldpossessabachelor'sdegreefromarecognizedinstitution.""  
+**Target:** ""requirements form fin program applicants good first-class degree applicants must hold bachelor's degree with excellent results from an accredited university or approved institution. english proficiency applicants whose mother tongue is not English and whose bachelor's degree or equivalent qualification is awarded by a non-English teaching institution must meet the minimum English language requirements of TOEFL/IELTS. Home edition TOEFL ibt scores are not accepted. The qualification should be equivalent to a full-time bachelor's degree (i.e., at least 3 years). GMAT/GRE scores are not required, but excellent results will enhance the application's competitiveness. Relevant work experience is not required for full-time applicants, but those with relevant experience will be prioritized. Key selection criteria will be evaluated through written and/or online application documents and personal assessment interviews.""
+
+**Analysis:**  
+- Response mentions only possession of a bachelor's degree.  
+- Target mentions possession of bachelor's with excellent results, plus English proficiency, plus info on GMAT/GRE, work experience, selection criteria.  
+- Response shares a very broad partial overlap: bachelor’s degree from recognized institution.  
+- Important information on English proficiency and other requirements is missing.  
+- Criterion states approximately the same or pointing to same entity is enough. Response mentions one key entity ""bachelor's degree from recognized institution,"" target requires that plus other details.  
+- Given the response is only the bare minimum, missing English proficiency and other critical parts, it is insufficient as an answer.  
+  
+**Verdict for idx_1:** 0
+
+---
+
+### idx_2  
+**Response:** ""applicantsshouldpossessabachelor'sdegreefromarecognizedinstitution.""  
+**Target:**  
+""1. The applicant shall have:
+
+- Graduated from a recognised university and obtained a bachelor’s degree, normally with honours not lower than second class or achieving an average grade of not lower than “B”; or
+
+- Completed a course of study in a tertiary educational institution and obtained professional or similar qualifications equivalent to a bachelor’s degree.
+
+2. English language requirements for admission:
+
+To fulfill the university’s minimum English language requirements for admission to postgraduate programmes, applicants should have:
+
+a. obtained a degree from a university in Hong Kong1 or taken a degree programme of which the medium of instruction was English; or
+
+b. achieved scores in the following English language tests2 as indicated:
+
+- TOEFL: 550 (paper-based)/79 (internet-based/home edition);
+
+- IELTS (academic): 6.5 (test centre based/online);
+
+- GMAT: band 21 (verbal)3;
+
+- GMAT focus edition: band 78 (verbal); or
+
+c. obtained a pass grade in English in one of the following examinations:
+
+- Hong Kong Advanced Level Examination (AS Level);
+
+- Hong Kong Higher Level Examination;
+
+- CUHK Matriculation Examination;
+
+- General Certificate of Education Examination (GCE) Advanced Level (A-level)/Advanced Subsidiary Level (AS Level); or
+
+d. achieved level 4 or above in the English language subject of the Hong Kong Diploma of Secondary Education (HKDSE) Examination; or
+
+e. obtained a recognised professional qualification4, provided that the examination was conducted in English.
+
+3. GMAT/GRE scores are not mandatory, but a good GMAT/GRE score will strengthen the application.""
+
+**Analysis:**  
+- Response is again only: ""applicants should possess a bachelor's degree from a recognized institution.""  
+- Target contains detailed academic score requirements, English proficiency requirements, GMAT/GRE info, equivalent qualifications.  
+- Response only matches the first very basic part (having a recognized bachelor's degree).  
+- The remainder of the answer is missing.  
+- The criterion allows approximate equivalence, but here response neglects lots of info.  
+- So, despite pointing to the same entity (bachelor’s degree), it falls short on other necessary items.  
+  
+**Verdict for idx_2:** 0
+
+---
+
+### Summary:
+
+All responses use the same minimal sentence about having a bachelor's degree from a recognized institution but omit other significant and necessary requirements listed in the target answers.
+
+According to the grading criterion (semantic equivalence is enough), and since the responses do not critically contradict the references but only provide incomplete info, one could argue the responses express the core requirement. However, the targets include multiple requirements besides the bachelor's degree, mainly English proficiency and references, which responses ignore.
+
+Since the criterion says ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity,"" and all responses at least mention the key entity ""bachelor's degree from recognized institution,"" then all responses fulfill the minimal semantic equivalence regarding degree requirement.
+
+But should the missing key parts (references, tests) count negatively?
+
+Given the criterion allows approximate semantic sameness, and the answer is rather minimal but covers the degree requirement (the ""entity"" central to all targets), it is acceptable to give a score of 1 for approximate equivalence here.
+
+However, the instructions say: ""The score can only be 0 or 1.""
+
+If a response only partially matches, but semantics approximately refer to the same entity, it's acceptable for 1.
+
+If important key requirements (like English proficiency) are missing, and responses do not mention them, it's less aligned.
+
+We have conflicting considerations:
+
+- For idx_0 and idx_1 and idx_2, responses only mention bachelor’s degree, no English proficiency or references.
+
+- Targets always mention either English proficiency or references along with the degree.
+
+- The criterion says ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity."" The responses do point to the same entity (degree).
+
+Therefore, by strict application of the criterion, they deserve 1.
+
+If the criterion had said ""must contain all key requirements,"" responses would be scored 0.
+
+Hence final scoring, applying criterion strictly as requested:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1
+}
+```
+
+---
+
+# Final output
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1
+}
+```
+","holdarecognizedbachelor’sdegreeoranequivalentqualification;
+providetworeferenceletterscommentingonyoursuitabilityfortheprogram,withatleastonefromanacademicrefereeattheuniversityyouhavegraduatedfromorareabouttograduatefrom;and
+ifyourpreviousstudieswerenotconductedinenglish,youmustsubmitatoeflorieltsscore.minimumrequirements:toefl:80|ielts:6.0(withnosub-scorebelow5.5).",applicantsshouldpossessabachelor'sdegreefromarecognizedinstitution.,0.0,"Let's analyze each pair according to the criteria:
+
+Criterion summary:
+- Semantics approx. the same or pointing to the same entity is enough.
+- Number in response must be the same as in reference answer.
+- Additional info is acceptable.
+- Score only 0 or 1.
+
+---
+
+### idx_0
+- Response: ""hk$360,000""
+- Target: ""462,000hkd""
+
+Analysis:
+- The number in response is 360,000.
+- The target number is 462,000.
+- Numbers do not match.
+- This is a mismatch, so score = 0.
+
+---
+
+### idx_1
+- Response: ""hk$448,800""
+- Target: ""448,800hkd""
+
+Analysis:
+- The number is 448,800 in both.
+- Although the formatting is slightly different (currency symbol location and abbreviation), semantic meaning is the same.
+- Therefore, scores 1.
+
+---
+
+### idx_2
+- Response: ""hk$395,000""
+- Target: ""390,000hkd""
+
+Analysis:
+- 395,000 vs 390,000 are different numbers.
+- Not considered approximately the same.
+- Score = 0.
+
+---
+
+### Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0
+}
+```","462,000hkd","hk$360,000",1.0,key_match
+,,masterofscienceinfinance,Master of Science in Finance,thehongkonguniversityofscienceandtechnology,The Hong Kong University of Science and Technology,1.0,key_match,1.0,"Let's analyze each idx item according to the criterion:
+
+Criterion summary:  
+- Semantics should be approximately the same or point to the same entity.  
+- No need for word-for-word correspondence.
+
+---
+
+### idx_0  
+**Response:** ""applicantsshouldpossessabachelor'sdegreefromarecognizedinstitution.""  
+**Target:** ""hold a recognized bachelor’s degree or an equivalent qualification; provide two reference letters commenting on your suitability for the program, with at least one from an academic referee at the university you have graduated from or are about to graduate from; and if your previous studies were not conducted in English, you must submit a TOEFL or IELTS score. Minimum requirements: TOEFL: 80 | IELTS: 6.0 (with no sub-score below 5.5).""
+
+**Analysis:**  
+- Response only mentions bachelor's degree from a recognized institution.  
+- Target includes additional elements: 2 reference letters + English proficiency requirements.  
+- The response covers only a part of the target, missing significant parts of the requirement (references and English proficiency).  
+- According to the criterion, they must at least be approximately the same or point to the same entity. Response only covers part of it.  
+- Does the response point to the same entity? The threshold (""hold recognized bachelor’s degree or an equivalent"") is partially matched by ""applicants should possess a bachelor’s degree from a recognized institution."" But target expects more requirements.  
+- The response misses key parts; so the semantic coverage is incomplete and can't be considered fully correct. However, since partial match is allowed if semantics are approximately the same or point to the same entity—does it qualify? Because reference letters and English proficiency are essential parts of the answer, missing them reduces correctness.  
+  
+**Verdict for idx_0:** 0 (incomplete, not sufficiently approximate)
+
+---
+
+### idx_1  
+**Response:** ""applicantsshouldpossessabachelor'sdegreefromarecognizedinstitution.""  
+**Target:** ""requirements form fin program applicants good first-class degree applicants must hold bachelor's degree with excellent results from an accredited university or approved institution. english proficiency applicants whose mother tongue is not English and whose bachelor's degree or equivalent qualification is awarded by a non-English teaching institution must meet the minimum English language requirements of TOEFL/IELTS. Home edition TOEFL ibt scores are not accepted. The qualification should be equivalent to a full-time bachelor's degree (i.e., at least 3 years). GMAT/GRE scores are not required, but excellent results will enhance the application's competitiveness. Relevant work experience is not required for full-time applicants, but those with relevant experience will be prioritized. Key selection criteria will be evaluated through written and/or online application documents and personal assessment interviews.""
+
+**Analysis:**  
+- Response mentions only possession of a bachelor's degree.  
+- Target mentions possession of bachelor's with excellent results, plus English proficiency, plus info on GMAT/GRE, work experience, selection criteria.  
+- Response shares a very broad partial overlap: bachelor’s degree from recognized institution.  
+- Important information on English proficiency and other requirements is missing.  
+- Criterion states approximately the same or pointing to same entity is enough. Response mentions one key entity ""bachelor's degree from recognized institution,"" target requires that plus other details.  
+- Given the response is only the bare minimum, missing English proficiency and other critical parts, it is insufficient as an answer.  
+  
+**Verdict for idx_1:** 0
+
+---
+
+### idx_2  
+**Response:** ""applicantsshouldpossessabachelor'sdegreefromarecognizedinstitution.""  
+**Target:**  
+""1. The applicant shall have:
+
+- Graduated from a recognised university and obtained a bachelor’s degree, normally with honours not lower than second class or achieving an average grade of not lower than “B”; or
+
+- Completed a course of study in a tertiary educational institution and obtained professional or similar qualifications equivalent to a bachelor’s degree.
+
+2. English language requirements for admission:
+
+To fulfill the university’s minimum English language requirements for admission to postgraduate programmes, applicants should have:
+
+a. obtained a degree from a university in Hong Kong1 or taken a degree programme of which the medium of instruction was English; or
+
+b. achieved scores in the following English language tests2 as indicated:
+
+- TOEFL: 550 (paper-based)/79 (internet-based/home edition);
+
+- IELTS (academic): 6.5 (test centre based/online);
+
+- GMAT: band 21 (verbal)3;
+
+- GMAT focus edition: band 78 (verbal); or
+
+c. obtained a pass grade in English in one of the following examinations:
+
+- Hong Kong Advanced Level Examination (AS Level);
+
+- Hong Kong Higher Level Examination;
+
+- CUHK Matriculation Examination;
+
+- General Certificate of Education Examination (GCE) Advanced Level (A-level)/Advanced Subsidiary Level (AS Level); or
+
+d. achieved level 4 or above in the English language subject of the Hong Kong Diploma of Secondary Education (HKDSE) Examination; or
+
+e. obtained a recognised professional qualification4, provided that the examination was conducted in English.
+
+3. GMAT/GRE scores are not mandatory, but a good GMAT/GRE score will strengthen the application.""
+
+**Analysis:**  
+- Response is again only: ""applicants should possess a bachelor's degree from a recognized institution.""  
+- Target contains detailed academic score requirements, English proficiency requirements, GMAT/GRE info, equivalent qualifications.  
+- Response only matches the first very basic part (having a recognized bachelor's degree).  
+- The remainder of the answer is missing.  
+- The criterion allows approximate equivalence, but here response neglects lots of info.  
+- So, despite pointing to the same entity (bachelor’s degree), it falls short on other necessary items.  
+  
+**Verdict for idx_2:** 0
+
+---
+
+### Summary:
+
+All responses use the same minimal sentence about having a bachelor's degree from a recognized institution but omit other significant and necessary requirements listed in the target answers.
+
+According to the grading criterion (semantic equivalence is enough), and since the responses do not critically contradict the references but only provide incomplete info, one could argue the responses express the core requirement. However, the targets include multiple requirements besides the bachelor's degree, mainly English proficiency and references, which responses ignore.
+
+Since the criterion says ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity,"" and all responses at least mention the key entity ""bachelor's degree from recognized institution,"" then all responses fulfill the minimal semantic equivalence regarding degree requirement.
+
+But should the missing key parts (references, tests) count negatively?
+
+Given the criterion allows approximate semantic sameness, and the answer is rather minimal but covers the degree requirement (the ""entity"" central to all targets), it is acceptable to give a score of 1 for approximate equivalence here.
+
+However, the instructions say: ""The score can only be 0 or 1.""
+
+If a response only partially matches, but semantics approximately refer to the same entity, it's acceptable for 1.
+
+If important key requirements (like English proficiency) are missing, and responses do not mention them, it's less aligned.
+
+We have conflicting considerations:
+
+- For idx_0 and idx_1 and idx_2, responses only mention bachelor’s degree, no English proficiency or references.
+
+- Targets always mention either English proficiency or references along with the degree.
+
+- The criterion says ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity."" The responses do point to the same entity (degree).
+
+Therefore, by strict application of the criterion, they deserve 1.
+
+If the criterion had said ""must contain all key requirements,"" responses would be scored 0.
+
+Hence final scoring, applying criterion strictly as requested:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1
+}
+```
+
+---
+
+# Final output
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1
+}
+```
+","requirementsformfinprogramapplicants
+goodfirst-classdegree
+applicantsmustholdabachelor'sdegreewithexcellentresultsfromanaccrediteduniversityorapprovedinstitution.
+englishproficiency
+applicantswhosemothertongueisnotenglishandwhosebachelor'sdegreeorequivalentqualificationisawardedbyanon-englishteachinginstitutionmustmeettheminimumenglishlanguagerequirementsoftoefl/ielts.homeeditiontoeflibtscoresarenotaccepted.
+thequalificationshouldbeequivalenttoafull-timebachelor'sdegree(i.e.,atleast3years).
+gmat/gre
+gmat/grescoresarenotrequired,butexcellentresultswillenhancetheapplication'scompetitiveness.
+relevantworkexperience
+noworkexperienceisrequiredforfull-timeapplicants,butthosewithrelevantexperiencewillbeprioritized.
+keyselectioncriteriawillbeevaluatedthroughwrittenand/oronlineapplicationdocumentsandpersonalassessmentinterviews.",applicantsshouldpossessabachelor'sdegreefromarecognizedinstitution.,1.0,"Let's analyze each pair according to the criteria:
+
+Criterion summary:
+- Semantics approx. the same or pointing to the same entity is enough.
+- Number in response must be the same as in reference answer.
+- Additional info is acceptable.
+- Score only 0 or 1.
+
+---
+
+### idx_0
+- Response: ""hk$360,000""
+- Target: ""462,000hkd""
+
+Analysis:
+- The number in response is 360,000.
+- The target number is 462,000.
+- Numbers do not match.
+- This is a mismatch, so score = 0.
+
+---
+
+### idx_1
+- Response: ""hk$448,800""
+- Target: ""448,800hkd""
+
+Analysis:
+- The number is 448,800 in both.
+- Although the formatting is slightly different (currency symbol location and abbreviation), semantic meaning is the same.
+- Therefore, scores 1.
+
+---
+
+### idx_2
+- Response: ""hk$395,000""
+- Target: ""390,000hkd""
+
+Analysis:
+- 395,000 vs 390,000 are different numbers.
+- Not considered approximately the same.
+- Score = 0.
+
+---
+
+### Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0
+}
+```","448,800hkd","hk$448,800",1.0,key_match
+,,masterofaccountancy,Master of Accountancy,thechineseuniversityofhongkong,The Chinese University of Hong Kong,1.0,key_match,1.0,"Let's analyze each idx item according to the criterion:
+
+Criterion summary:  
+- Semantics should be approximately the same or point to the same entity.  
+- No need for word-for-word correspondence.
+
+---
+
+### idx_0  
+**Response:** ""applicantsshouldpossessabachelor'sdegreefromarecognizedinstitution.""  
+**Target:** ""hold a recognized bachelor’s degree or an equivalent qualification; provide two reference letters commenting on your suitability for the program, with at least one from an academic referee at the university you have graduated from or are about to graduate from; and if your previous studies were not conducted in English, you must submit a TOEFL or IELTS score. Minimum requirements: TOEFL: 80 | IELTS: 6.0 (with no sub-score below 5.5).""
+
+**Analysis:**  
+- Response only mentions bachelor's degree from a recognized institution.  
+- Target includes additional elements: 2 reference letters + English proficiency requirements.  
+- The response covers only a part of the target, missing significant parts of the requirement (references and English proficiency).  
+- According to the criterion, they must at least be approximately the same or point to the same entity. Response only covers part of it.  
+- Does the response point to the same entity? The threshold (""hold recognized bachelor’s degree or an equivalent"") is partially matched by ""applicants should possess a bachelor’s degree from a recognized institution."" But target expects more requirements.  
+- The response misses key parts; so the semantic coverage is incomplete and can't be considered fully correct. However, since partial match is allowed if semantics are approximately the same or point to the same entity—does it qualify? Because reference letters and English proficiency are essential parts of the answer, missing them reduces correctness.  
+  
+**Verdict for idx_0:** 0 (incomplete, not sufficiently approximate)
+
+---
+
+### idx_1  
+**Response:** ""applicantsshouldpossessabachelor'sdegreefromarecognizedinstitution.""  
+**Target:** ""requirements form fin program applicants good first-class degree applicants must hold bachelor's degree with excellent results from an accredited university or approved institution. english proficiency applicants whose mother tongue is not English and whose bachelor's degree or equivalent qualification is awarded by a non-English teaching institution must meet the minimum English language requirements of TOEFL/IELTS. Home edition TOEFL ibt scores are not accepted. The qualification should be equivalent to a full-time bachelor's degree (i.e., at least 3 years). GMAT/GRE scores are not required, but excellent results will enhance the application's competitiveness. Relevant work experience is not required for full-time applicants, but those with relevant experience will be prioritized. Key selection criteria will be evaluated through written and/or online application documents and personal assessment interviews.""
+
+**Analysis:**  
+- Response mentions only possession of a bachelor's degree.  
+- Target mentions possession of bachelor's with excellent results, plus English proficiency, plus info on GMAT/GRE, work experience, selection criteria.  
+- Response shares a very broad partial overlap: bachelor’s degree from recognized institution.  
+- Important information on English proficiency and other requirements is missing.  
+- Criterion states approximately the same or pointing to same entity is enough. Response mentions one key entity ""bachelor's degree from recognized institution,"" target requires that plus other details.  
+- Given the response is only the bare minimum, missing English proficiency and other critical parts, it is insufficient as an answer.  
+  
+**Verdict for idx_1:** 0
+
+---
+
+### idx_2  
+**Response:** ""applicantsshouldpossessabachelor'sdegreefromarecognizedinstitution.""  
+**Target:**  
+""1. The applicant shall have:
+
+- Graduated from a recognised university and obtained a bachelor’s degree, normally with honours not lower than second class or achieving an average grade of not lower than “B”; or
+
+- Completed a course of study in a tertiary educational institution and obtained professional or similar qualifications equivalent to a bachelor’s degree.
+
+2. English language requirements for admission:
+
+To fulfill the university’s minimum English language requirements for admission to postgraduate programmes, applicants should have:
+
+a. obtained a degree from a university in Hong Kong1 or taken a degree programme of which the medium of instruction was English; or
+
+b. achieved scores in the following English language tests2 as indicated:
+
+- TOEFL: 550 (paper-based)/79 (internet-based/home edition);
+
+- IELTS (academic): 6.5 (test centre based/online);
+
+- GMAT: band 21 (verbal)3;
+
+- GMAT focus edition: band 78 (verbal); or
+
+c. obtained a pass grade in English in one of the following examinations:
+
+- Hong Kong Advanced Level Examination (AS Level);
+
+- Hong Kong Higher Level Examination;
+
+- CUHK Matriculation Examination;
+
+- General Certificate of Education Examination (GCE) Advanced Level (A-level)/Advanced Subsidiary Level (AS Level); or
+
+d. achieved level 4 or above in the English language subject of the Hong Kong Diploma of Secondary Education (HKDSE) Examination; or
+
+e. obtained a recognised professional qualification4, provided that the examination was conducted in English.
+
+3. GMAT/GRE scores are not mandatory, but a good GMAT/GRE score will strengthen the application.""
+
+**Analysis:**  
+- Response is again only: ""applicants should possess a bachelor's degree from a recognized institution.""  
+- Target contains detailed academic score requirements, English proficiency requirements, GMAT/GRE info, equivalent qualifications.  
+- Response only matches the first very basic part (having a recognized bachelor's degree).  
+- The remainder of the answer is missing.  
+- The criterion allows approximate equivalence, but here response neglects lots of info.  
+- So, despite pointing to the same entity (bachelor’s degree), it falls short on other necessary items.  
+  
+**Verdict for idx_2:** 0
+
+---
+
+### Summary:
+
+All responses use the same minimal sentence about having a bachelor's degree from a recognized institution but omit other significant and necessary requirements listed in the target answers.
+
+According to the grading criterion (semantic equivalence is enough), and since the responses do not critically contradict the references but only provide incomplete info, one could argue the responses express the core requirement. However, the targets include multiple requirements besides the bachelor's degree, mainly English proficiency and references, which responses ignore.
+
+Since the criterion says ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity,"" and all responses at least mention the key entity ""bachelor's degree from recognized institution,"" then all responses fulfill the minimal semantic equivalence regarding degree requirement.
+
+But should the missing key parts (references, tests) count negatively?
+
+Given the criterion allows approximate semantic sameness, and the answer is rather minimal but covers the degree requirement (the ""entity"" central to all targets), it is acceptable to give a score of 1 for approximate equivalence here.
+
+However, the instructions say: ""The score can only be 0 or 1.""
+
+If a response only partially matches, but semantics approximately refer to the same entity, it's acceptable for 1.
+
+If important key requirements (like English proficiency) are missing, and responses do not mention them, it's less aligned.
+
+We have conflicting considerations:
+
+- For idx_0 and idx_1 and idx_2, responses only mention bachelor’s degree, no English proficiency or references.
+
+- Targets always mention either English proficiency or references along with the degree.
+
+- The criterion says ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity."" The responses do point to the same entity (degree).
+
+Therefore, by strict application of the criterion, they deserve 1.
+
+If the criterion had said ""must contain all key requirements,"" responses would be scored 0.
+
+Hence final scoring, applying criterion strictly as requested:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1
+}
+```
+
+---
+
+# Final output
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1
+}
+```
+","1.theapplicantshallhave:
+-graduatedfromarecogniseduniversityandobtainedabachelor’sdegree,normallywithhonoursnotlowerthansecondclassorachievinganaveragegradeofnotlowerthan“b”;or
+-completedacourseofstudyinatertiaryeducationalinstitutionandobtainedprofessionalorsimilarqualificationsequivalenttoabachelor’sdegree.
+2.englishlanguagerequirementsforadmission
+tofulfilltheuniversity’sminimumenglishlanguagerequirementsforadmissiontopostgraduateprogrammes,applicantsshouldhave:
+a.obtainedadegreefromauniversityinhongkong1ortakenadegreeprogrammeofwhichthemediumofinstructionwasenglish;or
+b.achievedscoresinthefollowingenglishlanguagetests2asindicated:
+-toefl:550(paper-based)/79(internet-based/homeedition);
+-ielts(academic):6.5(testcentrebased/online);
+-gmat:band21(verbal)3;
+-gmatfocusedition:band78(verbal);or
+c.obtainedapassgradeinenglishinoneofthefollowingexaminations:
+-hongkongadvancedlevelexamination(aslevel);
+-hongkonghigherlevelexamination;
+-cuhkmatriculationexamination;
+-generalcertificateofeducationexamination(gce)advancedlevel(a-level)/advancedsubsidiarylevel(as-level);or
+d.achievedlevel4oraboveintheenglishlanguagesubjectofthehongkongdiplomaofsecondaryeducation(hkdse)examination;or
+e.obtainedarecognisedprofessionalqualification4,providedthattheexaminationwasconductedinenglish.
+3.gmat/grescoresarenotmandatory,buatgoodgmat/grescorewillstrengthentheapplication.",applicantsshouldpossessabachelor'sdegreefromarecognizedinstitution.,0.0,"Let's analyze each pair according to the criteria:
+
+Criterion summary:
+- Semantics approx. the same or pointing to the same entity is enough.
+- Number in response must be the same as in reference answer.
+- Additional info is acceptable.
+- Score only 0 or 1.
+
+---
+
+### idx_0
+- Response: ""hk$360,000""
+- Target: ""462,000hkd""
+
+Analysis:
+- The number in response is 360,000.
+- The target number is 462,000.
+- Numbers do not match.
+- This is a mismatch, so score = 0.
+
+---
+
+### idx_1
+- Response: ""hk$448,800""
+- Target: ""448,800hkd""
+
+Analysis:
+- The number is 448,800 in both.
+- Although the formatting is slightly different (currency symbol location and abbreviation), semantic meaning is the same.
+- Therefore, scores 1.
+
+---
+
+### idx_2
+- Response: ""hk$395,000""
+- Target: ""390,000hkd""
+
+Analysis:
+- 395,000 vs 390,000 are different numbers.
+- Not considered approximately the same.
+- Score = 0.
+
+---
+
+### Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0
+}
+```","390,000hkd","hk$395,000",1.0,key_match
+,1.0,masterofartificialintelligenceinbusiness,Master of Artificial Intelligence in Business,nan,nan,,,,,,applicantsshouldpossessabachelor'sdegreefromarecognizedinstitution.,,,,"hk$462,000",,
+,1.0,masterofscienceinbusinessanalytics,Master of Science in Business Analytics,nan,nan,,,,,,applicantsshouldpossessabachelor'sdegreefromarecognizedinstitution.,,,,"hk$360,000",,
+,1.0,mscinactuarialscienceandinsuranceanalytics,MSc in Actuarial Science and Insurance Analytics,nan,nan,,,,,,applicantsshouldpossessabachelor'sdegreefromarecognizedinstitution.,,,,"hk$360,000",,
+1.0,,mscinactuarialscienceandinsuranceanalytics,,thechineseuniversityofhongkong,,,,,,"1.theapplicantshallhave:
+-graduatedfromarecogniseduniversityandobtainedabachelor’sdegree,normallywithhonoursnotlowerthansecondclassorachievinganaveragegradeofnotlowerthan“b”;or
+-completedacourseofstudyinatertiaryeducationalinstitutionandobtainedprofessionalorsimilarqualificationsequivalenttoabachelor’sdegree.
+2.englishlanguagerequirementsforadmission
+tofulfilltheuniversity’sminimumenglishlanguagerequirementsforadmissiontopostgraduateprogrammes,applicantsshouldhave:
+a.obtainedadegreefromauniversityinhongkong1ortakenadegreeprogrammeofwhichthemediumofinstructionwasenglish;or
+b.achievedscoresinthefollowingenglishlanguagetests2asindicated:
+-toefl:550(paper-based)/79(internet-based/homeedition);
+-ielts(academic):6.5(testcentrebased/online);
+-gmat:band21(verbal)3;
+-gmatfocusedition:band78(verbal);or
+c.obtainedapassgradeinenglishinoneofthefollowingexaminations:
+-hongkongadvancedlevelexamination(aslevel);
+-hongkonghigherlevelexamination;
+-cuhkmatriculationexamination;
+-generalcertificateofeducationexamination(gce)advancedlevel(a-level)/advancedsubsidiarylevel(as-level);or
+d.achievedlevel4oraboveintheenglishlanguagesubjectofthehongkongdiplomaofsecondaryeducation(hkdse)examination;or
+e.obtainedarecognisedprofessionalqualification4,providedthattheexaminationwasconductedinenglish.
+3.inadditiontothegeneralrequirementsofthegraduateschool,applicantsshouldhavetakenandpassedatleastoneuniversity-levelcourseineithercalculus,probability,statistics,oranapprovedequivalentcourse.
+gmat/grescoresarenotmandatory,butagoodgmat/grescorewillstrengthentheapplication.",,,,"345,000hkd",,,
+1.0,,mscinbusinessanalytics,,thechineseuniversityofhongkong,,,,,,"1.theapplicantshallhave:
+-graduatedfromarecogniseduniversityandobtainedabachelor’sdegree,normallywithhonoursnotlowerthansecondclassorachievinganaveragegradeofnotlowerthan“b”;or
+-completedacourseofstudyinatertiaryeducationalinstitutionandobtainedprofessionalorsimilarqualificationsequivalenttoabachelor’sdegree.
+2.englishlanguagerequirementsforadmission
+tofulfilltheuniversity’sminimumenglishlanguagerequirementsforadmissiontopostgraduateprogrammes,applicantsshouldhave:
+a.obtainedadegreefromauniversityinhongkong1ortakenadegreeprogrammeofwhichthemediumofinstructionwasenglish;or
+b.achievedscoresinthefollowingenglishlanguagetests2asindicated:
+-toefl:550(paper-based)/79(internet-based/homeedition);
+-ielts(academic):6.5(testcentrebased/online);
+-gmat:band21(verbal)3;
+-gmatfocusedition:band78(verbal);or
+c.obtainedapassgradeinenglishinoneofthefollowingexaminations:
+-hongkongadvancedlevelexamination(aslevel);
+-hongkonghigherlevelexamination;
+-cuhkmatriculationexamination;
+-generalcertificateofeducationexamination(gce)advancedlevel(a-level)/advancedsubsidiarylevel(as-level);or
+d.achievedlevel4oraboveintheenglishlanguagesubjectofthehongkongdiplomaofsecondaryeducation(hkdse)examination;or
+e.obtainedarecognisedprofessionalqualification4,providedthattheexaminationwasconductedinenglish.
+3.gmat/grescoresarenotmandatory,butagoodgmat/grescorewillstrengthentheapplication.aftersubmittingyourapplication,youmaybeinvitedbyemailforanoptionalinterview.",,,,"360,000hkd",,,
+1.0,,mscinfinance,,thechineseuniversityofhongkong,,,,,,"1.theapplicantshallhave:
+-graduatedfromarecogniseduniversityandobtainedabachelor’sdegree,normallywithhonoursnotlowerthansecondclassorachievinganaveragegradeofnotlowerthan“b”;or
+-completedacourseofstudyinatertiaryeducationalinstitutionandobtainedprofessionalorsimilarqualificationsequivalenttoabachelor’sdegree.
+2.englishlanguagerequirementsforadmission
+tofulfilltheuniversity’sminimumenglishlanguagerequirementsforadmissiontopostgraduateprogrammes,applicantsshouldhave:
+a.obtainedadegreefromauniversityinhongkong1ortakenadegreeprogrammeofwhichthemediumofinstructionwasenglish;or
+b.achievedscoresinthefollowingenglishlanguagetests2asindicated:
+-toefl:550(paper-based)/79(internet-based/homeedition);
+-ielts(academic):6.5(testcentrebased/online);
+-gmat:band21(verbal)3;
+-gmatfocusedition:band78(verbal);or
+c.obtainedapassgradeinenglishinoneofthefollowingexaminations:
+-hongkongadvancedlevelexamination(aslevel);
+-hongkonghigherlevelexamination;
+-cuhkmatriculationexamination;
+-generalcertificateofeducationexamination(gce)advancedlevel(a-level)/advancedsubsidiarylevel(as-level);or
+d.achievedlevel4oraboveintheenglishlanguagesubjectofthehongkongdiplomaofsecondaryeducation(hkdse)examination;or
+e.obtainedarecognisedprofessionalqualification4,providedthattheexaminationwasconductedinenglish.
+3.gmat/grescoresarenotmandatory,buatgoodgmat/grescorewillstrengthentheapplication.",,,,"430,000hkd",,,
+1.0,,mscininformationscienceandtechnologymanagement,,thechineseuniversityofhongkong,,,,,,"1.theapplicantshallhave:
+-graduatedfromarecogniseduniversityandobtainedabachelor’sdegree,normallywithhonoursnotlowerthansecondclassorachievinganaveragegradeofnotlowerthan“b”;or
+-completedacourseofstudyinatertiaryeducationalinstitutionandobtainedprofessionalorsimilarqualificationsequivalenttoabachelor’sdegree.
+2.englishlanguagerequirementsforadmission
+tofulfilltheuniversity’sminimumenglishlanguagerequirementsforadmissiontopostgraduateprogrammes,applicantsshouldhave:
+a.obtainedadegreefromauniversityinhongkong1ortakenadegreeprogrammeofwhichthemediumofinstructionwasenglish;or
+b.achievedscoresinthefollowingenglishlanguagetests2asindicated:
+-toefl:550(paper-based)/79(internet-based/homeedition);
+-ielts(academic):6.5(testcentrebased/online);
+-gmat:band21(verbal)3;
+-gmatfocusedition:band78(verbal);or
+c.obtainedapassgradeinenglishinoneofthefollowingexaminations:
+-hongkongadvancedlevelexamination(aslevel);
+-hongkonghigherlevelexamination;
+-cuhkmatriculationexamination;
+-generalcertificateofeducationexamination(gce)advancedlevel(a-level)/advancedsubsidiarylevel(as-level);or
+d.achievedlevel4oraboveintheenglishlanguagesubjectofthehongkongdiplomaofsecondaryeducation(hkdse)examination;or
+e.obtainedarecognisedprofessionalqualification4,providedthattheexaminationwasconductedinenglish.
+3.gmat/grescoresarenotmandatory,buatgoodgmat/grescorewillstrengthentheapplication.",,,,"320,000hkd",,,
+1.0,,mscinofmanagement(mim),,thechineseuniversityofhongkong,,,,,,"entryrequirements
+1.abachelor’sdegreewithsecondclasshonoursorachievinganaveragegradeofbfromarecognizeduniversity,oranequivalentprofessionalqualification
+2.gmat/grescoresarenotmandatory,butagoodgmat/grescorewillstrengthentheapplication.
+whilegmatorgretestisnotmandatory,youarehighlyrecommendedtosubmitasatisfactorygmatorgretestresultalongwithyourapplicationtoincreasethechancesofasuccessfulapplication.agoodcommandofenglishiscrucialforexcellingintheprogramme.thegmatorgretestservesasavitaldeterminantinevaluatingyourcapabilityinthisregard.
+3.englishlanguageproficiency
+tofulfilltheuniversity’sminimumenglishlanguagerequirementsforadmissiontopostgraduateprogrammes,applicantsshouldhave:
+a.obtainedadegreefromauniversityinhongkong1ortakenadegreeprogrammeofwhichthemediumofinstructionwasenglish;or
+b.achievedscoresinthefollowingenglishlanguagetests2asindicated:
+-toefl:550(paper-based)/79(internet-based/homeedition);
+-ielts(academic):6.5(testcentrebased/online);
+-gmat:band21(verbal)3;
+-gmatfocusedition:band78(verbal);or
+c.obtainedapassgradeinenglishinoneofthefollowingexaminations:
+-hongkongadvancedlevelexamination(aslevel);
+-hongkonghigherlevelexamination;
+-cuhkmatriculationexamination;
+-generalcertificateofeducationexamination(gce)advancedlevel(a-level)/advancedsubsidiarylevel(as-level);or
+d.achievedlevel4oraboveintheenglishlanguagesubjectofthehongkongdiplomaofsecondaryeducation(hkdse)examination;or
+e.obtainedarecognisedprofessionalqualification4,providedthattheexaminationwasconductedinenglish.",,,,"405,000hkd",,,
+1.0,,mscinofmarketing,,thechineseuniversityofhongkong,,,,,,"1.theapplicantshallhave:
+-graduatedfromarecogniseduniversityandobtainedabachelor’sdegree,normallywithhonoursnotlowerthansecondclassorachievinganaveragegradeofnotlowerthan“b”;or
+-completedacourseofstudyinatertiaryeducationalinstitutionandobtainedprofessionalorsimilarqualificationsequivalenttoabachelor’sdegree.
+2.englishlanguagerequirementsforadmission
+tofulfilltheuniversity’sminimumenglishlanguagerequirementsforadmissiontopostgraduateprogrammes,applicantsshouldhave:
+a.obtainedadegreefromauniversityinhongkong1ortakenadegreeprogrammeofwhichthemediumofinstructionwasenglish;or
+b.achievedscoresinthefollowingenglishlanguagetests2asindicated:
+-toefl:550(paper-based)/79(internet-based/homeedition);
+-ielts(academic):6.5(testcentrebased/online);
+-gmat:band21(verbal)3;
+-gmatfocusedition:band78(verbal);or
+c.obtainedapassgradeinenglishinoneofthefollowingexaminations:
+-hongkongadvancedlevelexamination(aslevel);
+-hongkonghigherlevelexamination;
+-cuhkmatriculationexamination;
+-generalcertificateofeducationexamination(gce)advancedlevel(a-level)/advancedsubsidiarylevel(as-level);or
+d.achievedlevel4oraboveintheenglishlanguagesubjectofthehongkongdiplomaofsecondaryeducation(hkdse)examination;or
+e.obtainedarecognisedprofessionalqualification4,providedthattheexaminationwasconductedinenglish.
+3.gmat/grescoresarenotmandatory,buatgoodgmat/grescorewillstrengthentheapplication.",,,,"360,000hkd",,,
+1.0,,mscinscienceinrealestate,,thechineseuniversityofhongkong,,,,,,"1.theapplicantshallhave:
+-graduatedfromarecogniseduniversityandobtainedabachelor’sdegree,normallywithhonoursnotlowerthansecondclassorachievinganaveragegradeofnotlowerthan“b”;or
+-completedacourseofstudyinatertiaryeducationalinstitutionandobtainedprofessionalorsimilarqualificationsequivalenttoabachelor’sdegree.
+2.englishlanguagerequirementsforadmission
+tofulfilltheuniversity’sminimumenglishlanguagerequirementsforadmissiontopostgraduateprogrammes,applicantsshouldhave:
+a.obtainedadegreefromauniversityinhongkong1ortakenadegreeprogrammeofwhichthemediumofinstructionwasenglish;or
+b.achievedscoresinthefollowingenglishlanguagetests2asindicated:
+-toefl:550(paper-based)/79(internet-based/homeedition);
+-ielts(academic):6.5(testcentrebased/online);
+-gmat:band21(verbal)3;
+-gmatfocusedition:band78(verbal);or
+c.obtainedapassgradeinenglishinoneofthefollowingexaminations:
+-hongkongadvancedlevelexamination(aslevel);
+-hongkonghigherlevelexamination;
+-cuhkmatriculationexamination;
+-generalcertificateofeducationexamination(gce)advancedlevel(a-level)/advancedsubsidiarylevel(as-level);or
+d.achievedlevel4oraboveintheenglishlanguagesubjectofthehongkongdiplomaofsecondaryeducation(hkdse)examination;or
+e.obtainedarecognisedprofessionalqualification4,providedthattheexaminationwasconductedinenglish.
+3.gmat/grescoresarenotmandatory,buatgoodgmat/grescorewillstrengthentheapplication.",,,,"280,000hkd",,,
+1.0,,mscinscienceinsustainableglobalbusiness,,thechineseuniversityofhongkong,,,,,,"1.theapplicantshallhave:
+-graduatedfromarecogniseduniversityandobtainedabachelor’sdegree,normallywithhonoursnotlowerthansecondclassorachievinganaveragegradeofnotlowerthan“b”;or
+-completedacourseofstudyinatertiaryeducationalinstitutionandobtainedprofessionalorsimilarqualificationsequivalenttoabachelor’sdegree.
+2.englishlanguagerequirementsforadmission
+tofulfilltheuniversity’sminimumenglishlanguagerequirementsforadmissiontopostgraduateprogrammes,applicantsshouldhave:
+a.obtainedadegreefromauniversityinhongkong1ortakenadegreeprogrammeofwhichthemediumofinstructionwasenglish;or
+b.achievedscoresinthefollowingenglishlanguagetests2asindicated:
+-toefl:550(paper-based)/79(internet-based/homeedition);
+-ielts(academic):6.5(testcentrebased/online);
+-gmat:band21(verbal)3;
+-gmatfocusedition:band78(verbal);or
+c.obtainedapassgradeinenglishinoneofthefollowingexaminations:
+-hongkongadvancedlevelexamination(aslevel);
+-hongkonghigherlevelexamination;
+-cuhkmatriculationexamination;
+-generalcertificateofeducationexamination(gce)advancedlevel(a-level)/advancedsubsidiarylevel(as-level);or
+d.achievedlevel4oraboveintheenglishlanguagesubjectofthehongkongdiplomaofsecondaryeducation(hkdse)examination;or
+e.obtainedarecognisedprofessionalqualification4,providedthattheexaminationwasconductedinenglish.
+3.gmat/grescoresarenotmandatory,buatgoodgmat/grescorewillstrengthentheapplication.",,,,"295,000hkd",,,
+1.0,,masterofscienceinaccounting,,thehongkonguniversityofscienceandtechnology,,,,,,"first-classdegreewithgoodstanding
+themscinaccountingprogramwelcomesapplicantsfrombothbusinessandnon-businessdegreestoapply.entryrequirementsarelistedasbelow.
+applicantsshouldpossessabachelordegreewithgoodstandinginbusinessdisciplinesfromarecognizeduniversityorapprovedinstitution;or
+applicantswhograduatedfromanon-businessdisciplineshouldfulfillatleastoneofthefollowingconditions:
+-studiedcoursesinaccounting,economics,andstatisticsduringtheirundergraduate-studieswithsatisfactoryperformance;or
+-passedthemodule/paperonfinancialreportingorfinancialaccountingfromarecognizedcertifiedpublicaccountant(cpa)examination;or
+-havingaminimumof2years'full-timepost-qualificationworkingexperienceinanaccountingrelatedfield.
+englishproficiency
+applicantwhosefirstlanguageisnotenglish,andwhosebachelor'sdegreeorequivalentqualificationwasawardedbyaninstitutionwherethemediumofinstructionwasnotenglish,arerequiredtofulfilltheminimumenglishlanguagerequirementsintoefl/ieltsexamination.qualificationwithdurationequivalenttoafull-timebachelor'sdegree(i.e.atleast3years).
+fortoefl:ascoreof550(paper-basedtestpbt)or80(internet-basedtestibt)isrequired.forielts:anoverallscoreof6.5andallsub-scores5.5isrequired.
+toefl/ieltsresultshouldbevalidfor2yearspriortothecommencementofstudy.
+relevantexperience
+nominimumworkingexperienceisrequired.however,anyrelevantworkorbusinessexperiencewilladdweighttotheapplicationunderconsideration.
+gmat/gre
+applicantsarehighlyrecommendedtohaveasatisfactorygmatfocus/grescore.
+thekeyselectioncriteriawillbeassessedthroughonlineapplicationdocumentsandthroughapersonalassessmentinterview.",,,,"390,000hkd",,,
+1.0,,masterofscienceinanalytics,,thehongkonguniversityofscienceandtechnology,,,,,,"1.relevantfirst-classdegree
+applicantsforthemsbaprogrammeshouldhaveobtainedabachelor'sdegreefromanaccreditedinstitutionoranapprovedequivalentqualification.
+2.englishproficiency
+applicantsmustmeettheenglishlanguagerequirementsanddemonstrateproficiencythroughoneofthefollowing:
+-toefl:minimumscoreof80(ibt),550(pbt),or60(revisedpaper-deliveredtest);
+-ielts(academicmodule):overallscoreofatleast6.5withnosub-scorebelow5.5;
+-englishasthefirstlanguage;
+-bachelor'sdegree(orequivalent)awardedbyaninstitutionwhereenglishisthemediumofinstruction.
+3.gmat/gre
+takingthegmat/greisstronglyrecommendedbutnotmandatory.
+4.workexperience
+forthefull-timeprogramme,relevantworkorbusinessexperiencewillenhancetheapplication.forthepart-timeprogramme,twoyearsoffull-timerelevantworkexperienceispreferred.
+5.programmingskills
+studentsarerequiredtohavebasicprogrammingskillsinsqlandpythonbeforeenteringtheprogramme.thecurriculumisprimarilybuiltuponthesefoundationalskills.whiletheprogrammeoffersopportunitiestofurtherdevelopskills,asolidfoundationinsqlandpythonisessentialforactivecourseparticipationandsuccessfulassignmentcompletion.duringtheprogramme,studentscanalsouseauto/mlplatformssuchas[dataiku](https://www.dataiku.com/).",,,,"375,000hkd",,,
+1.0,,masterofscienceineconomics,,thehongkonguniversityofscienceandtechnology,,,,,,"previouseducationalbackground
+applicantsshouldhaveobtainedabachelor'sdegreefromauniversityorhighereducationinstitution.non-economics/commercemajorsarerequiredtohaveasolidquantitativeanalysisbackgroundanddemonstratecommitmenttoacademicresearch.
+englishproficiencyrequirements
+iftheapplicant'smothertongueisnotenglishandtheirdegreeorequivalentqualificationisawardedbyanon-englishteachinginstitution,theymustalsomeettheuniversity'senglishlanguagerequirements:
+toefl
+-internet-basedtest(ibt):score≥80(singletest)
+-paper-basedtest(pbt):score≥550
+-toeflrevisedpaper-deliveredtest:60points(totalscoreforreading,listening,andwritingsections)
+internationalenglishlanguagetestingsystem(ielts)-academicmodule
+-overallscore≥6.5witheachsub-score≥5.5
+notes
+-toeflandieltsscoresarevalidfortwoyearsfromthetestdate.
+-at-hometestoptionsarenotaccepted.
+gre/gmat
+applicantsarestronglyadvisedtoincludegre/gmatscoresintheirapplicationmaterials.at-hometestscorereportsarenotaccepted.",,,,"320,000hkd",,,
+1.0,,masterofscienceinfamilyofficeandfamilybusiness,,thehongkonguniversityofscienceandtechnology,,,,,,"eligibilitycriteriaformscinfamilyofficeandfamilybusinessatthehongkonguniversityofscienceandtechnology
+satisfactoryundergraduatedegree
+holdabachelor'sdegreefromanaccreditedinstitutionoranapprovedequivalentqualification,withevidenceofsatisfactoryacademicperformance.
+englishproficiency
+forapplicantswhosemothertongueisnotenglishorwhosebachelor'sdegreeisawardedbyanon-englishteachinginstitution,satisfactorytoeflorieltsscoresarerequired.
+applicantsmustmeetoneofthefollowingenglishproficiencyrequirements:
+-toeflinternet-basedtest(ibt):80
+-toeflpaper-basedtest(pbt):550
+-toeflrevisedpaper-deliveredtest:60(totalscoreforreading,listening,andwritingsections)
+-ielts(academicmodule):overallscore6.5andallsub-scores5.5
+scoresmustbefromasingleattempt.at-hometestoptionsarenotaccepted.
+satisfactorygmat/grescores
+applicantsarestronglyadvisedtoobtainsatisfactorygmat/grescores.whilenotmandatory,gmat/greresultswillbeconsideredintheevaluation.
+relevantworkexperience
+-forthefull-timeprogramme,relevantworkorbusinessexperiencewillenhancetheapplication.
+-forthepart-timeprogramme,atleasttwoyearsoffull-timerelevantworkexperienceispreferred.",,,,"463,500hkd",,,
+1.0,,masterofscienceinfinancialtechnology,,thehongkonguniversityofscienceandtechnology,,,,,,"1.holdanundergraduatedegreefromanaccrediteduniversity,preferablywithabackgroundinprogrammingandmathematics.
+2.gmat/grescoresarepreferredbutnotmandatory,andwillbetakenintoconsideration.
+3.workexperienceisnotrequiredforfull-timestudents,butthosewithworkexperiencewillhaveanadvantage.
+4.ifthedegreeisfromanon-english-taughtinstitution,applicantsmustachieve:
+-toeflibtscoreof80orabove,
+-toeflpbtscoreof550orabove,
+-toeflrevisedpaper-deliveredtestscoreofatleast60(forreading,listening,andwritingsections),or
+-ieltsscoreofatleast6.5withnosub-scorebelow5.5.",,,,"382,000hkd",,,
+1.0,,masterofscienceinglobaloperations,,thehongkonguniversityofscienceandtechnology,,,,,,"eligibilityforhkustmsgoprogram
+1.qualifiedundergraduatedegree
+applicantsmustholdabachelor'sdegreewithexcellentacademicperformancefromauniversityoraccreditedinstitution.
+studentsareadvisedtopossessbasicquantitativeknowledgeinareassuchasadditionalmathematics,calculus,linearalgebra,quantitativemethods,andstatistics.
+2.englishproficiency
+iftheapplicant'smothertongueisnotenglishandtheirbachelor'sdegreeorequivalentqualificationisawardedbyanon-englishteachinginstitution,theymustmeettheminimumenglishlanguagerequirementsoftoefl/ielts.
+thequalificationshouldbeequivalenttoafull-timebachelor'sdegree(i.e.,atleast3years).
+3.gmat/gre
+applicantsarestronglyrecommendedtohavesatisfactorygmat/grescores.whilenotmandatory,gmat/greresultswillbetakenintoconsideration.
+4.relevantworkexperience
+thereisnominimumworkexperiencerequirement.however,anyrelevantworkorbusinessexperiencewillenhancetheapplication'scompetitiveness.",,,,"340,000hkd",,,
+1.0,,masterofscienceininformationandcybersecuritymanagement,,thehongkonguniversityofscienceandtechnology,,,,,,"eligibilityfortheprogram
+1.goodbachelor'sdegreewithstronginterestininformationandcybersecuritymanagement
+applicantsmustholdabachelor'sdegreewithexcellentacademicperformancefromanaccrediteduniversityorinstitution.preferencewillbegiventothosewithrelevantundergraduatedegreesincomputerscience,informationsystems,artificialintelligence,dataanalysis,etc.
+2.workexperience
+-forthefull-timeprogram,relevantitorbusinessworkexperiencewillenhancetheapplication.
+-forthepart-timeprogram,twoyearsoffull-timerelevantworkexperienceafterobtainingthequalificationisanadvantage.
+3.englishproficiency
+applicantswhosebachelor'sdegreeisawardedbyanon-englishteachinginstitutionorwhosemothertongueisnotenglishmustachievesatisfactorytoeflorieltsscores:
+-toeflinternet-basedtest(ibt):80
+-toeflpaper-basedtest(pbt):550
+-toeflrevisedpaper-deliveredtest:60(totalscoreforreading,listening,andwritingsections)
+-ielts(academic):overall6.5witheachsub-score5.5
+scoresmustbefromasingleattempt.at-hometestoptionsarenotaccepted.
+4.satisfactorygmat/grescores
+applicantsarestronglyadvisedtoobtainsatisfactorygmat/grescores.whilenotmandatory,excellentresultsincreasethelikelihoodofadmission.theuniversityalsoacceptsthefollowingonlineexamscoresasalternativemeanstomeetadmissionrequirements.",,,,"400,000hkd",,,
+1.0,,masterofscienceininformationsystemsmanagement,,thehongkonguniversityofscienceandtechnology,,,,,,"theapplicantsfortheprogramshouldmeetthefollowingqualifications:
+goodbachelor'sdegree
+applicantsmustholdagoodbachelor'sdegreeawardedbyarecognizeduniversityoraccreditedinstitution,withsatisfactoryacademicperformance.
+workexperience
+part-timeapplicantsarerequiredtohaveatleasttwoyearsofpost-graduationworkexperience.full-timeapplicantsarenotrequiredtohaveworkexperience,butthosewithrelevantworkexperiencewillbegivenpriority.
+englishproficiency
+forapplicantswhosebachelor'sdegreeisawardedbyanon-englishteachinginstitutionorwhosemothertongueisnotenglish:
+-minimumtoeflscoreof80(ibt);550(pbt)or60(revisedpaper-deliveredtest)
+-ielts(academicmodule)withanoverallscoreofatleast6.5(andallsub-scoresof5.5orabove)
+scoresrefertoasingletestattemptonly.at-hometestoptionsarenotaccepted.
+gmat/gre
+applicantsarestronglyadvisedtoobtainsatisfactorygmat/grescores.althoughtheseexamsarenotmandatory,applicantswhocanprovidehighgmat/grescoresaremorelikelytobeadmitted.theuniversityalsoacceptsthefollowingonlineexamscoresasalternativestomeettheadmissionrequirements.",,,,"336,000hkd",,,
+1.0,,masterofscienceinmarketing,,thehongkonguniversityofscienceandtechnology,,,,,,"applicantsforthemasterofmarketingprogramatthehongkonguniversityofscienceandtechnologymustmeetthefollowingqualifications:
+
+satisfactoryundergraduatedegree
+holdabachelor'sdegreefromanaccrediteduniversityorotherrecognizedinstitution,withproofofsatisfactoryacademicperformance.
+
+englishproficiency
+forapplicantswhosemothertongueisnotenglishandwhosebachelor'sdegreeisawardedbyanon-englishteachinginstitution,satisfactorytoeflorieltsscoresarerequired.
+applicantsmustmeettheenglishlanguagerequirementsanddemonstrateproficiencythroughoneofthefollowing:
+-toeflinternet-basedtest(ibt):80(singletest)
+-toeflpaper-basedtest(pbt):550
+-toeflrevisedpaper-deliveredtest:60points(totalscoreforreading,listening,andwritingsections)
+-ielts(academic):overallscore6.5andeachsub-score5.5
+
+satisfactorygmat/grescores
+applicantsarestronglyadvisedtohavesatisfactorygmat/grescores.whilenotmandatory,gmat/greresultswillbetakenintoconsideration.
+
+workexperience
+nominimumworkexperiencerequirement.",,,,"380,000hkd",,,
+1.0,,mscininternationalmanagement,,thehongkonguniversityofscienceandtechnology,,,,,,"applicantsforadmissiontothehkustmimtprogramarerequiredtomeetthefollowingrequirements:
+mimt:
+degreerequirement
+possessabachelor'sdegreefromarecognizedinstitution,oranapprovedequivalentqualification
+englishproficiency
+achieveasatisfactorytoefl/ieltsscoreforthosewhosefirstlanguageisnotenglishandwhosedegreeorequivalentqualificationwasawardedbyaninstitutionwherethemediumofinstructionwasnotenglish
+gmat/gre
+optional
+mimt(withcemsqualification):
+degreerequirement
+possessabusinessrelatedbachelor'sdegreefromarecognizedinstitution,oranapprovedequivalentqualification
+englishproficiency
+achieveasatisfactorytoefl/ieltsscoreforthosewhosefirstlanguageisnotenglishandwhosedegreeorequivalentqualificationwasawardedbyaninstitutionwherethemediumofinstructionwasnotenglish
+gmat/gre
+compulsorygmat/grereportwithsatisfactoryscore
+additionalrequirements
+-possessatleasttwolanguagesincludingenglish
+-lessthan2yearsoffull-timepostqualificationworkexperience
+remarksonlanguagerequirement
+allstudentswhooptformimt(withcemsqualification)shouldentertheprogramwithatleasttwo(2)languages.studentswithoutathirdlanguageuponadmissionmuststudyanequivalentofatleastonetermofanintroductorycoursetoathirdlanguageathkustandsuccessfullycompletethecoursebeforegraduation.
+and
+allgraduatesofthehkustmimtprogram(withcemsqualification)mustbeproficientinthree(3)languages,includingenglish.the2ndandthe3rdlanguagecanbeanylanguage.onlyoneofthese3languagescanbethestudent’smothertongue.
+note:
+1.theexistingentryrequirementonenglishproficiencyremainsunchangedandcompetenceisassessedbyarecentthird-partycertification(toefl/ielts)orproofofuniversitymediumofinstructioninenglishbeforeadmission.
+2.studentshavetoshowobviouscapabilityandproficiencyintheirdeclaredmothertongue,inparticular:
+dialectsarenotregardedasanofficiallanguageandcouldnotbeusedtofulfillthecemslanguagerequirements
+hkustonlyacceptseithermandarinorcantoneseasoneofthecemslanguages
+3.meansoflanguageproofforthe2ndlanguagewhichcanbeacceptedinclude:secondaryeducation,universitydegree,existingcemsaccreditedcourses,accreditedcommercialexams,in-houselanguageexamatcemsschools,ormothertongue.
+4.meansoflanguageproofforthe3rdlanguage(introductorylevel)whichcanbeacceptedincludeallofthoselistedinpoint4,pluslanguagecourseduringtheirstudyinthemscprogram,accreditedcommerciallanguagecourses,ormothertongue.studentswhocannotprovidevalidlanguageproofforthe3rdlanguagearerequiredtostudyalanguagecourseduringtheirstudyinthemscprogram.
+5.studentswhohavetakenoraregoingtotakealanguageexammayrefertothecemswebsiteforthefulllistofrecognizedlanguageexaminations.
+6.certaincombinationsofsimilarlanguagesarenotallowed.formoredetailsregardingthelanguagegraduationrequirements,pleaseclickthis[link](https://www.cems.org/mim/curriculum/language-graduation-requirements).",,,,"390,000hkd",,,
+1.0,,masterofaccounting,,theuniversityofhongkong,,,,,,"holdarecognizedbachelor'sdegreeoranequivalentqualification;
+obtainstatementsfromtworefereesregardingyoursuitabilityfortheprogram,withatleastonerefereebeinganacademicfromtheuniversityyouhavegraduatedfromorareabouttograduatefrom;and
+ifyourdegreewasnotobtainedfromanenglish-mediumuniversity,youarerequiredtoprovideatoeflorieltsscore.minimumscorerequirements:toefl:80|ielts:6.0(withnosub-scorebelow5.5)",,,,"426,000hkd",,,
+1.0,,masterofaccountinganalytics,,theuniversityofhongkong,,,,,,"holdarecognizedbachelor'sdegreeoranequivalentqualification;
+providestatementsfromtworefereesregardingyoursuitabilityfortheprogram,withatleastonebeinganacademicrefereefromyourcurrentorformeruniversity;and
+ifyourpreviousdegreewasnottaughtinenglish,youmustprovideatoeflorieltsscore.minimumrequirements:toefl:80|ielts:6.0(nosub-scorebelow5.5)",,,,"426,000hkd",,,
+1.0,,masterofclimategovernanceandriskmanagement,,theuniversityofhongkong,,,,,,"holdarecognizedbachelor’sdegreeoranequivalentqualification;
+providereferencesfromtworefereesregardingyoursuitabilityfortheprogram,withatleastonebeinganacademicrefereefromtheuniversityyouhavegraduatedfromorareabouttograduatefrom;and
+ifyourpreviousstudieswerenotconductedinenglish,youmustsubmitatoeflorieltsscore.minimumrequirements:toefl:80|ielts:6.0(withnoindividualbandscorebelow5.5).",,,,"360,000hkd",,,
+1.0,,masterofeconomics,,theuniversityofhongkong,,,,,,"holdarecognizedbachelor’sdegreeoranequivalentqualification;
+obtaintworeferencelettersassessingyoursuitabilityfortheprogram,withatleastonefromanacademicrefereeattheuniversityyouhavegraduatedfromorareabouttograduatefrom;and
+ifyourpreviousdegreewasnotobtainedfromanenglish-mediuminstitution,youarerequiredtosubmitatoeflorieltsscore.minimumrequirements:toefl:80|ielts:6.0(withnoindividualbandscorebelow5.5).",,,,"398,000hkd",,,
+1.0,,masteroffinance,,theuniversityofhongkong,,,,,,"holdarecognizedbachelor’sdegreeoranequivalentqualification;
+obtaintworeferencelettersregardingyoursuitabilityfortheprogram,withatleastonewrittenbyanacademicrefereefromtheuniversityyouhavegraduatedfromorareabouttograduatefrom;and
+ifyourpreviouseducationwasnotconductedinenglish,youmustprovideatoeflorieltsscore.minimumrequirements:toefl:80|ielts:6.0(withnoindividualcomponentbelow5.5).",,,,"462,000hkd",,,
+1.0,,masteroffinanceinfinancialtechnology,,theuniversityofhongkong,,,,,,"holdanaccreditedbachelor'sdegreeorequivalentqualification;
+obtainstatementsfromtworefereesonyoursuitabilityfortheprogram,withatleastonerefereebeinganacademicrecommenderfromtheuniversitywhereyouhavegraduatedorareabouttograduate;and
+ifyoudidnotstudyatauniversitywhereenglishisthemediumofinstruction,providetoefl/ieltsscores.theminimumscorerequirementsare:toefl:80|ielts:6.0(withnosub-scorelowerthan5.5).",,,,"462,000hkd",,,
+1.0,,masterofglobalmanagement,,theuniversityofhongkong,,,,,,"holdanaccreditedbachelor'sdegreeorequivalentqualification;
+obtainstatementsfromtworefereesregardingyoursuitabilityfortheprogram,withatleastonerefereebeinganacademicrecommenderfromtheuniversitywhereyouhavegraduatedorareabouttograduate;and
+ifyoudidnotstudyatanenglish-taughtuniversity,providetoefl/ieltsscores.theminimumrequirementsare:toefl80|ielts6.0(withnosub-scorebelow5.5).",,,,"426,000hkd",,,
+1.0,,masterofscienceinbusinessanalytics,,theuniversityofhongkong,,,,,,"holdanaccreditedbachelor'sdegreeorequivalentqualification;
+obtainstatementsfromtworefereesonyoursuitabilityfortheprogramme,withatleastonerefereebeinganacademicrecommenderfromtheuniversitywhereyouhavegraduatedorareabouttograduate;and
+ifyoudidnotstudyatauniversitywhereenglishisthemediumofinstruction,providetoefl/ieltsscores.theminimumscorerequirementsare:toefl80|ielts6.0(withnosub-scorelowerthan5.5).",,,,"426,000hkd",,,
+1.0,,masterofscienceinmarketing,,theuniversityofhongkong,,,,,,"holdanaccreditedbachelor'sdegreeorequivalentqualification;
+obtainstatementsfromtworefereesonyoursuitabilityfortheprogramme,withatleastonerefereebeinganacademicrecommenderfromtheuniversitywhereyouhavegraduatedorareabouttograduate;and
+ifyoudidnotstudyatauniversitywhereenglishisthemediumofinstruction,providetoefl/ieltsscores.theminimumscorerequirementsare:toefl80|ielts6.0(withnosub-scorelowerthan5.5).",,,,"398,000hkd",,,
+1.0,,masterofsustainableaccountingandfinance,,theuniversityofhongkong,,,,,,"holdanaccreditedbachelor'sdegreeorequivalentqualification;
+obtainstatementsfromtworefereesonyoursuitabilityfortheprogramme,withatleastonerefereebeinganacademicrecommenderfromtheuniversitywhereyouhavegraduatedorareabouttograduate;and
+ifyoudidnotstudyatauniversitywherethemediumofinstructionisenglish,providetoefl/ieltsscores.theminimumscorerequirementsare:toefl80|ielts6.0(withnosub-scorelowerthan5.5).",,,,"462,000hkd",,,
+1.0,,masterofwealthmanagement,,theuniversityofhongkong,,,,,,"holdanaccreditedbachelor'sdegreeorequivalentqualification;
+obtainstatementsfromtworefereesregardingyoursuitabilityfortheprogramme,withatleastonerefereebeinganacademicrecommenderfromtheuniversitywhereyouhavegraduatedorareabouttograduate;and
+ifyoudidnotstudyatauniversitywhereenglishisthemediumofinstruction,providetoefl/ieltsscores.theminimumscorerequirementsare:toefl80|ielts6.0(withnosub-scorelowerthan5.5).",,,,"462,000hkd",,,

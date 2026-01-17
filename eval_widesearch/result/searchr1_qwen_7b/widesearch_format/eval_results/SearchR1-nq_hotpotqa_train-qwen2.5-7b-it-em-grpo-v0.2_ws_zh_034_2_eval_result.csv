@@ -1,0 +1,746 @@
+exist_flag_gt,exist_flag_response,公司名称,公司名称_before_map,2024归母净利润（元）_number_near,2024归母净利润（元）_number_near_eval_msg,2024归母净利润（元）_query,2024归母净利润（元）_response,2024毛利率_number_near,2024毛利率_number_near_eval_msg,2024毛利率_query,2024毛利率_response,2024研发费用（元）_number_near,2024研发费用（元）_number_near_eval_msg,2024研发费用（元）_query,2024研发费用（元）_response,2024营业收入（元）_number_near,2024营业收入（元）_number_near_eval_msg,2024营业收入（元）_query,2024营业收入（元）_response,上市日期_exact_match,上市日期_exact_match_eval_msg,上市日期_query,上市日期_response,上市板块_llm_judge,上市板块_llm_judge_eval_msg,上市板块_query,上市板块_response,主营业务_llm_judge,主营业务_llm_judge_eval_msg,主营业务_query,主营业务_response,公司名称_exact_match,公司名称_exact_match_eval_msg,募集资金总额（元）_number_near,募集资金总额（元）_number_near_eval_msg,募集资金总额（元）_query,募集资金总额（元）_response,股票代码_exact_match,股票代码_exact_match_eval_msg,股票代码_query,股票代码_response,首发价格（元/股）_exact_match,首发价格（元/股）_exact_match_eval_msg,首发价格（元/股）_query,首发价格（元/股）_response
+,,海昇药业,海昇药业,1.0,"number near in range 5.0%, response: 50750000.0, target: 50750223.4",50750223.40,50750000,0.0,"number not convertable, response: None, target: 0.39990000000000003",39.99%,NULL,0.0,"number not convertable, response: None, target: 9577097.56",9577097.56,NULL,1.0,"number near in range 5.0%, response: 166000000.0, target: 166209055.55",166209055.55,166000000,0.0,"exact not match, response: 2024-02-02, target: 2024年2月2日",2024年2月2日,2024-02-02,1.0,"Let's analyze each pair according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。简称和全称都可以""  
+That means as long as the response and the target refer roughly to the same entity, even if they use abbreviations or partial names, the score should be 1.
+
+---
+
+### idx_0  
+- response: 北交所  
+- target: 北京证券交易所  
+Analysis: ""北交所"" is a common abbreviation for ""北京证券交易所"". They refer to the same entity.  
+Score: 1
+
+### idx_1  
+- response: 创业板  
+- target: 深圳证券交易所（创业板）  
+Analysis:  
+""创业板"" refers to the ""ChiNext board"" of Shenzhen Stock Exchange. The target is Shenzhen Stock Exchange (创业板). The reference response points to the board rather than the full exchange, but since the target includes the board and the abbreviation is acceptable, the meaning is consistent.  
+Score: 1
+
+### idx_2  
+- response: 主板  
+- target: 上海证券交易所主板  
+Analysis: ""主板"" means the main board, and the target is the Shanghai Stock Exchange main board. The response gives only ""主板"" without specifying Shanghai, which could be ambiguous, but within context, it likely means the same entity. However, the criterion requires roughly the same entity which could be simplified to ""主板"" referring to 上海主板. Since it can be considered correct if the context is about Chinese exchanges, score 1.  
+
+### idx_3  
+- response: 科创板  
+- target: 上海证券交易所科创板  
+Analysis: ""科创板"" is the abbreviation for the Shanghai Stock Exchange Science and Technology Innovation Board. They refer to the same entity.  
+Score: 1
+
+### idx_4  
+- response: 上交所主板  
+- target: 上海证券交易所主板  
+Analysis: ""上交所"" is the abbreviation for 上海证券交易所. ""上交所主板"" means Shanghai Stock Exchange main board. This is consistent with the target.  
+Score: 1
+
+---
+
+## Final Scores
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",北京证券交易所,北交所,1.0,"首先，根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”也就是说，回答只需和标准答案指向的业务或实体大致一致即可得分1，否则得分0。
+
+逐条分析如下：
+
+---
+
+**idx_0**
+
+- 参考答案：兽药原料药、医药原料药及中间体的研发、生产和销售
+- 回答：医药制造
+
+分析：回答“医药制造”是一个较宽泛的概念，包括医药原料药的生产，但没有明确提到“兽药”或“中间体”，且范围比标准答案更宽泛。
+
+标准答案强调“兽药原料药、医药原料药及中间体”研发和销售，回答只是笼统的“医药制造”。
+
+但根据标准，只要指向实体大致一致即可。
+
+这里“医药制造”大部分包含“医药原料药及中间体的生产”，也是医药领域的制造，符合大致语义。
+
+因此，该回答与参考答案指向的医药制造领域基本一致，得分1。
+
+---
+
+**idx_1**
+
+- 参考答案：口腔修复材料的研发、生产和销售;口腔数字化设备的设计和销售
+- 回答：口腔修复材料的研发、生产及销售
+
+分析：回答中未提及“口腔数字化设备的设计和销售”，但回答完全涵盖了“口腔修复材料的研发、生产及销售”，且与参考答案部分完全匹配。
+
+评分标准未说明必须匹配全部内容，且答案和回答大致语义相同即可。
+
+因此该回答得分1。
+
+---
+
+**idx_2**
+
+- 参考答案：外用药的研发、生产和销售
+- 回答：化学药品原药、制剂及原料药的研发、生产和销售
+
+分析：
+
+- 参考答案范围更窄，专注“外用药”，即局部用药。
+- 回答的“化学药品原药、制剂及原料药”范围更广，包含内服药和原料药，也包含制剂，属于药品种类。
+
+两者指向的实体不完全一致。参考答案明确是“外用药”，回答仅写成“化学药品”，没有明确是“外用药”。
+
+且回答并没特别指向“外用药”或“局部用药”，不能说明覆盖该范围。
+
+基于标准，“语义大致相同或指向实体一致”是得分1的必要条件。这里指向范围差距较大。
+
+因此，该回答得分0。
+
+---
+
+**idx_3**
+
+- 参考答案：生物医药非临床研究服务为主的综合研发服务（CRO）
+- 回答：生物医药研发服务
+
+分析：
+
+- 回答是“生物医药研发服务”，比较宽泛，没有强调“非临床研究服务”为主
+- 参考答案强调“非临床研究服务”为主的综合研发服务，属于CRO
+
+回答虽然未明确“非临床研究”这种侧重点，但还是指向“生物医药研发服务”领域。
+
+根据标准，“大致语义相同或指向实体一致”，这里回答和参考是生物医药研发服务，范围上有交叉，回答没错，只是没细化。
+
+因此视为大致语义相同，得分1。
+
+---
+
+**idx_4**
+
+- 参考答案：医用敷料等一次性医疗器械及消毒卫生用品研发、生产和销售
+- 回答：健康产品的研发、生产和销售
+
+分析：
+
+- 参考答案明确是“医用敷料等一次性医疗器械及消毒卫生用品”
+- 回答“健康产品”范围非常宽泛，可能包括保健品、营养品、运动产品等，与医疗器械和消毒用品的性质和实体不一致。
+
+回答没有明确指向一次性医疗器械等，且语义间差距较大。
+
+因此得分0。
+
+---
+
+综上得分总结如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0
+}
+```",兽药原料药、医药原料药及中间体的研发、生产和销售,医药制造,1.0,key_match,0.0,"number not convertable, response: None, target: 398000000.0",398000000.00,NULL,1.0,"exact match, response: 870656, target: 870656",870656,870656,1.0,"exact match, response: 19.9, target: 19.9",19.9,19.9
+,,爱迪特,爱迪特,0.0,"number not near, response: 23000000.0, target: 150491664.18",150491664.18,23000000,0.0,"number not convertable, response: None, target: 0.5294",52.94%,NULL,1.0,"number near in range 5.0%, response: 47361900.0, target: 47361902.27",47361902.27,47361900,1.0,"number near in range 5.0%, response: 888165246.91, target: 888165246.91",888165246.91,888165246.91,0.0,"exact not match, response: 2024-06-26, target: 2024年6月26日",2024年6月26日,2024-06-26,1.0,"Let's analyze each pair according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。简称和全称都可以""  
+That means as long as the response and the target refer roughly to the same entity, even if they use abbreviations or partial names, the score should be 1.
+
+---
+
+### idx_0  
+- response: 北交所  
+- target: 北京证券交易所  
+Analysis: ""北交所"" is a common abbreviation for ""北京证券交易所"". They refer to the same entity.  
+Score: 1
+
+### idx_1  
+- response: 创业板  
+- target: 深圳证券交易所（创业板）  
+Analysis:  
+""创业板"" refers to the ""ChiNext board"" of Shenzhen Stock Exchange. The target is Shenzhen Stock Exchange (创业板). The reference response points to the board rather than the full exchange, but since the target includes the board and the abbreviation is acceptable, the meaning is consistent.  
+Score: 1
+
+### idx_2  
+- response: 主板  
+- target: 上海证券交易所主板  
+Analysis: ""主板"" means the main board, and the target is the Shanghai Stock Exchange main board. The response gives only ""主板"" without specifying Shanghai, which could be ambiguous, but within context, it likely means the same entity. However, the criterion requires roughly the same entity which could be simplified to ""主板"" referring to 上海主板. Since it can be considered correct if the context is about Chinese exchanges, score 1.  
+
+### idx_3  
+- response: 科创板  
+- target: 上海证券交易所科创板  
+Analysis: ""科创板"" is the abbreviation for the Shanghai Stock Exchange Science and Technology Innovation Board. They refer to the same entity.  
+Score: 1
+
+### idx_4  
+- response: 上交所主板  
+- target: 上海证券交易所主板  
+Analysis: ""上交所"" is the abbreviation for 上海证券交易所. ""上交所主板"" means Shanghai Stock Exchange main board. This is consistent with the target.  
+Score: 1
+
+---
+
+## Final Scores
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",深圳证券交易所（创业板）,创业板,1.0,"首先，根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”也就是说，回答只需和标准答案指向的业务或实体大致一致即可得分1，否则得分0。
+
+逐条分析如下：
+
+---
+
+**idx_0**
+
+- 参考答案：兽药原料药、医药原料药及中间体的研发、生产和销售
+- 回答：医药制造
+
+分析：回答“医药制造”是一个较宽泛的概念，包括医药原料药的生产，但没有明确提到“兽药”或“中间体”，且范围比标准答案更宽泛。
+
+标准答案强调“兽药原料药、医药原料药及中间体”研发和销售，回答只是笼统的“医药制造”。
+
+但根据标准，只要指向实体大致一致即可。
+
+这里“医药制造”大部分包含“医药原料药及中间体的生产”，也是医药领域的制造，符合大致语义。
+
+因此，该回答与参考答案指向的医药制造领域基本一致，得分1。
+
+---
+
+**idx_1**
+
+- 参考答案：口腔修复材料的研发、生产和销售;口腔数字化设备的设计和销售
+- 回答：口腔修复材料的研发、生产及销售
+
+分析：回答中未提及“口腔数字化设备的设计和销售”，但回答完全涵盖了“口腔修复材料的研发、生产及销售”，且与参考答案部分完全匹配。
+
+评分标准未说明必须匹配全部内容，且答案和回答大致语义相同即可。
+
+因此该回答得分1。
+
+---
+
+**idx_2**
+
+- 参考答案：外用药的研发、生产和销售
+- 回答：化学药品原药、制剂及原料药的研发、生产和销售
+
+分析：
+
+- 参考答案范围更窄，专注“外用药”，即局部用药。
+- 回答的“化学药品原药、制剂及原料药”范围更广，包含内服药和原料药，也包含制剂，属于药品种类。
+
+两者指向的实体不完全一致。参考答案明确是“外用药”，回答仅写成“化学药品”，没有明确是“外用药”。
+
+且回答并没特别指向“外用药”或“局部用药”，不能说明覆盖该范围。
+
+基于标准，“语义大致相同或指向实体一致”是得分1的必要条件。这里指向范围差距较大。
+
+因此，该回答得分0。
+
+---
+
+**idx_3**
+
+- 参考答案：生物医药非临床研究服务为主的综合研发服务（CRO）
+- 回答：生物医药研发服务
+
+分析：
+
+- 回答是“生物医药研发服务”，比较宽泛，没有强调“非临床研究服务”为主
+- 参考答案强调“非临床研究服务”为主的综合研发服务，属于CRO
+
+回答虽然未明确“非临床研究”这种侧重点，但还是指向“生物医药研发服务”领域。
+
+根据标准，“大致语义相同或指向实体一致”，这里回答和参考是生物医药研发服务，范围上有交叉，回答没错，只是没细化。
+
+因此视为大致语义相同，得分1。
+
+---
+
+**idx_4**
+
+- 参考答案：医用敷料等一次性医疗器械及消毒卫生用品研发、生产和销售
+- 回答：健康产品的研发、生产和销售
+
+分析：
+
+- 参考答案明确是“医用敷料等一次性医疗器械及消毒卫生用品”
+- 回答“健康产品”范围非常宽泛，可能包括保健品、营养品、运动产品等，与医疗器械和消毒用品的性质和实体不一致。
+
+回答没有明确指向一次性医疗器械等，且语义间差距较大。
+
+因此得分0。
+
+---
+
+综上得分总结如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0
+}
+```",口腔修复材料的研发、生产和销售;口腔数字化设备的设计和销售,口腔修复材料的研发、生产及销售,1.0,key_match,0.0,"number not convertable, response: None, target: 855370700.0",855370700.00,NULL,1.0,"exact match, response: 301580, target: 301580",301580,301580,1.0,"exact match, response: 44.95, target: 44.95",44.95,44.95
+,,小方制药,小方制药,1.0,"number near in range 5.0%, response: 205000000.0, target: 205271095.5",205271095.50,205000000,0.0,"number not convertable, response: None, target: 0.6559",65.59%,NULL,0.0,"number not near, response: 37000000.0, target: 15105418.01",15105418.01,37000000,1.0,"number near in range 5.0%, response: 475000000.0, target: 474228256.26",474228256.26,475000000,0.0,"exact not match, response: 2024-08-23, target: 2024年8月26日",2024年8月26日,2024-08-23,1.0,"Let's analyze each pair according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。简称和全称都可以""  
+That means as long as the response and the target refer roughly to the same entity, even if they use abbreviations or partial names, the score should be 1.
+
+---
+
+### idx_0  
+- response: 北交所  
+- target: 北京证券交易所  
+Analysis: ""北交所"" is a common abbreviation for ""北京证券交易所"". They refer to the same entity.  
+Score: 1
+
+### idx_1  
+- response: 创业板  
+- target: 深圳证券交易所（创业板）  
+Analysis:  
+""创业板"" refers to the ""ChiNext board"" of Shenzhen Stock Exchange. The target is Shenzhen Stock Exchange (创业板). The reference response points to the board rather than the full exchange, but since the target includes the board and the abbreviation is acceptable, the meaning is consistent.  
+Score: 1
+
+### idx_2  
+- response: 主板  
+- target: 上海证券交易所主板  
+Analysis: ""主板"" means the main board, and the target is the Shanghai Stock Exchange main board. The response gives only ""主板"" without specifying Shanghai, which could be ambiguous, but within context, it likely means the same entity. However, the criterion requires roughly the same entity which could be simplified to ""主板"" referring to 上海主板. Since it can be considered correct if the context is about Chinese exchanges, score 1.  
+
+### idx_3  
+- response: 科创板  
+- target: 上海证券交易所科创板  
+Analysis: ""科创板"" is the abbreviation for the Shanghai Stock Exchange Science and Technology Innovation Board. They refer to the same entity.  
+Score: 1
+
+### idx_4  
+- response: 上交所主板  
+- target: 上海证券交易所主板  
+Analysis: ""上交所"" is the abbreviation for 上海证券交易所. ""上交所主板"" means Shanghai Stock Exchange main board. This is consistent with the target.  
+Score: 1
+
+---
+
+## Final Scores
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",上海证券交易所主板,主板,0.0,"首先，根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”也就是说，回答只需和标准答案指向的业务或实体大致一致即可得分1，否则得分0。
+
+逐条分析如下：
+
+---
+
+**idx_0**
+
+- 参考答案：兽药原料药、医药原料药及中间体的研发、生产和销售
+- 回答：医药制造
+
+分析：回答“医药制造”是一个较宽泛的概念，包括医药原料药的生产，但没有明确提到“兽药”或“中间体”，且范围比标准答案更宽泛。
+
+标准答案强调“兽药原料药、医药原料药及中间体”研发和销售，回答只是笼统的“医药制造”。
+
+但根据标准，只要指向实体大致一致即可。
+
+这里“医药制造”大部分包含“医药原料药及中间体的生产”，也是医药领域的制造，符合大致语义。
+
+因此，该回答与参考答案指向的医药制造领域基本一致，得分1。
+
+---
+
+**idx_1**
+
+- 参考答案：口腔修复材料的研发、生产和销售;口腔数字化设备的设计和销售
+- 回答：口腔修复材料的研发、生产及销售
+
+分析：回答中未提及“口腔数字化设备的设计和销售”，但回答完全涵盖了“口腔修复材料的研发、生产及销售”，且与参考答案部分完全匹配。
+
+评分标准未说明必须匹配全部内容，且答案和回答大致语义相同即可。
+
+因此该回答得分1。
+
+---
+
+**idx_2**
+
+- 参考答案：外用药的研发、生产和销售
+- 回答：化学药品原药、制剂及原料药的研发、生产和销售
+
+分析：
+
+- 参考答案范围更窄，专注“外用药”，即局部用药。
+- 回答的“化学药品原药、制剂及原料药”范围更广，包含内服药和原料药，也包含制剂，属于药品种类。
+
+两者指向的实体不完全一致。参考答案明确是“外用药”，回答仅写成“化学药品”，没有明确是“外用药”。
+
+且回答并没特别指向“外用药”或“局部用药”，不能说明覆盖该范围。
+
+基于标准，“语义大致相同或指向实体一致”是得分1的必要条件。这里指向范围差距较大。
+
+因此，该回答得分0。
+
+---
+
+**idx_3**
+
+- 参考答案：生物医药非临床研究服务为主的综合研发服务（CRO）
+- 回答：生物医药研发服务
+
+分析：
+
+- 回答是“生物医药研发服务”，比较宽泛，没有强调“非临床研究服务”为主
+- 参考答案强调“非临床研究服务”为主的综合研发服务，属于CRO
+
+回答虽然未明确“非临床研究”这种侧重点，但还是指向“生物医药研发服务”领域。
+
+根据标准，“大致语义相同或指向实体一致”，这里回答和参考是生物医药研发服务，范围上有交叉，回答没错，只是没细化。
+
+因此视为大致语义相同，得分1。
+
+---
+
+**idx_4**
+
+- 参考答案：医用敷料等一次性医疗器械及消毒卫生用品研发、生产和销售
+- 回答：健康产品的研发、生产和销售
+
+分析：
+
+- 参考答案明确是“医用敷料等一次性医疗器械及消毒卫生用品”
+- 回答“健康产品”范围非常宽泛，可能包括保健品、营养品、运动产品等，与医疗器械和消毒用品的性质和实体不一致。
+
+回答没有明确指向一次性医疗器械等，且语义间差距较大。
+
+因此得分0。
+
+---
+
+综上得分总结如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0
+}
+```",外用药的研发、生产和销售,化学药品原药、制剂及原料药的研发、生产和销售,1.0,key_match,0.0,"number not convertable, response: None, target: 498800000.0",498800000.00,NULL,1.0,"exact match, response: 603207, target: 603207",603207,603207,0.0,"exact not match, response: nan, target: 12.47",12.47,nan
+,,益诺思,益诺思,1.0,"number near in range 5.0%, response: 148000000.0, target: 147775836.46",147775836.46,148000000,0.0,"number not convertable, response: None, target: 0.3357",33.57%,NULL,0.0,"number not convertable, response: None, target: 60532495.25",60532495.25,NULL,1.0,"number near in range 5.0%, response: 1142000000.0, target: 1141669402.29",1141669402.29,1142000000,0.0,"exact not match, response: 2024-07-01, target: 2024年9月3日",2024年9月3日,2024-07-01,1.0,"Let's analyze each pair according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。简称和全称都可以""  
+That means as long as the response and the target refer roughly to the same entity, even if they use abbreviations or partial names, the score should be 1.
+
+---
+
+### idx_0  
+- response: 北交所  
+- target: 北京证券交易所  
+Analysis: ""北交所"" is a common abbreviation for ""北京证券交易所"". They refer to the same entity.  
+Score: 1
+
+### idx_1  
+- response: 创业板  
+- target: 深圳证券交易所（创业板）  
+Analysis:  
+""创业板"" refers to the ""ChiNext board"" of Shenzhen Stock Exchange. The target is Shenzhen Stock Exchange (创业板). The reference response points to the board rather than the full exchange, but since the target includes the board and the abbreviation is acceptable, the meaning is consistent.  
+Score: 1
+
+### idx_2  
+- response: 主板  
+- target: 上海证券交易所主板  
+Analysis: ""主板"" means the main board, and the target is the Shanghai Stock Exchange main board. The response gives only ""主板"" without specifying Shanghai, which could be ambiguous, but within context, it likely means the same entity. However, the criterion requires roughly the same entity which could be simplified to ""主板"" referring to 上海主板. Since it can be considered correct if the context is about Chinese exchanges, score 1.  
+
+### idx_3  
+- response: 科创板  
+- target: 上海证券交易所科创板  
+Analysis: ""科创板"" is the abbreviation for the Shanghai Stock Exchange Science and Technology Innovation Board. They refer to the same entity.  
+Score: 1
+
+### idx_4  
+- response: 上交所主板  
+- target: 上海证券交易所主板  
+Analysis: ""上交所"" is the abbreviation for 上海证券交易所. ""上交所主板"" means Shanghai Stock Exchange main board. This is consistent with the target.  
+Score: 1
+
+---
+
+## Final Scores
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",上海证券交易所科创板,科创板,1.0,"首先，根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”也就是说，回答只需和标准答案指向的业务或实体大致一致即可得分1，否则得分0。
+
+逐条分析如下：
+
+---
+
+**idx_0**
+
+- 参考答案：兽药原料药、医药原料药及中间体的研发、生产和销售
+- 回答：医药制造
+
+分析：回答“医药制造”是一个较宽泛的概念，包括医药原料药的生产，但没有明确提到“兽药”或“中间体”，且范围比标准答案更宽泛。
+
+标准答案强调“兽药原料药、医药原料药及中间体”研发和销售，回答只是笼统的“医药制造”。
+
+但根据标准，只要指向实体大致一致即可。
+
+这里“医药制造”大部分包含“医药原料药及中间体的生产”，也是医药领域的制造，符合大致语义。
+
+因此，该回答与参考答案指向的医药制造领域基本一致，得分1。
+
+---
+
+**idx_1**
+
+- 参考答案：口腔修复材料的研发、生产和销售;口腔数字化设备的设计和销售
+- 回答：口腔修复材料的研发、生产及销售
+
+分析：回答中未提及“口腔数字化设备的设计和销售”，但回答完全涵盖了“口腔修复材料的研发、生产及销售”，且与参考答案部分完全匹配。
+
+评分标准未说明必须匹配全部内容，且答案和回答大致语义相同即可。
+
+因此该回答得分1。
+
+---
+
+**idx_2**
+
+- 参考答案：外用药的研发、生产和销售
+- 回答：化学药品原药、制剂及原料药的研发、生产和销售
+
+分析：
+
+- 参考答案范围更窄，专注“外用药”，即局部用药。
+- 回答的“化学药品原药、制剂及原料药”范围更广，包含内服药和原料药，也包含制剂，属于药品种类。
+
+两者指向的实体不完全一致。参考答案明确是“外用药”，回答仅写成“化学药品”，没有明确是“外用药”。
+
+且回答并没特别指向“外用药”或“局部用药”，不能说明覆盖该范围。
+
+基于标准，“语义大致相同或指向实体一致”是得分1的必要条件。这里指向范围差距较大。
+
+因此，该回答得分0。
+
+---
+
+**idx_3**
+
+- 参考答案：生物医药非临床研究服务为主的综合研发服务（CRO）
+- 回答：生物医药研发服务
+
+分析：
+
+- 回答是“生物医药研发服务”，比较宽泛，没有强调“非临床研究服务”为主
+- 参考答案强调“非临床研究服务”为主的综合研发服务，属于CRO
+
+回答虽然未明确“非临床研究”这种侧重点，但还是指向“生物医药研发服务”领域。
+
+根据标准，“大致语义相同或指向实体一致”，这里回答和参考是生物医药研发服务，范围上有交叉，回答没错，只是没细化。
+
+因此视为大致语义相同，得分1。
+
+---
+
+**idx_4**
+
+- 参考答案：医用敷料等一次性医疗器械及消毒卫生用品研发、生产和销售
+- 回答：健康产品的研发、生产和销售
+
+分析：
+
+- 参考答案明确是“医用敷料等一次性医疗器械及消毒卫生用品”
+- 回答“健康产品”范围非常宽泛，可能包括保健品、营养品、运动产品等，与医疗器械和消毒用品的性质和实体不一致。
+
+回答没有明确指向一次性医疗器械等，且语义间差距较大。
+
+因此得分0。
+
+---
+
+综上得分总结如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0
+}
+```",生物医药非临床研究服务为主的综合研发服务（cro）,生物医药研发服务,1.0,key_match,0.0,"number not convertable, response: None, target: 671767900.0",671767900.00,NULL,1.0,"exact match, response: 688710, target: 688710",688710,688710,0.0,"exact not match, response: nan, target: 19.06",19.06,nan
+,,健尔康,健尔康,0.0,"number not convertable, response: None, target: 120218925.03",120218925.03,NULL,0.0,"number not convertable, response: None, target: 0.23070000000000002",23.07%,NULL,0.0,"number not convertable, response: None, target: 40720470.3",40720470.30,NULL,0.0,"number not convertable, response: None, target: 1045764120.28",1045764120.28,NULL,0.0,"exact not match, response: 2024-09-15, target: 2024年11月7日",2024年11月7日,2024-09-15,1.0,"Let's analyze each pair according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。简称和全称都可以""  
+That means as long as the response and the target refer roughly to the same entity, even if they use abbreviations or partial names, the score should be 1.
+
+---
+
+### idx_0  
+- response: 北交所  
+- target: 北京证券交易所  
+Analysis: ""北交所"" is a common abbreviation for ""北京证券交易所"". They refer to the same entity.  
+Score: 1
+
+### idx_1  
+- response: 创业板  
+- target: 深圳证券交易所（创业板）  
+Analysis:  
+""创业板"" refers to the ""ChiNext board"" of Shenzhen Stock Exchange. The target is Shenzhen Stock Exchange (创业板). The reference response points to the board rather than the full exchange, but since the target includes the board and the abbreviation is acceptable, the meaning is consistent.  
+Score: 1
+
+### idx_2  
+- response: 主板  
+- target: 上海证券交易所主板  
+Analysis: ""主板"" means the main board, and the target is the Shanghai Stock Exchange main board. The response gives only ""主板"" without specifying Shanghai, which could be ambiguous, but within context, it likely means the same entity. However, the criterion requires roughly the same entity which could be simplified to ""主板"" referring to 上海主板. Since it can be considered correct if the context is about Chinese exchanges, score 1.  
+
+### idx_3  
+- response: 科创板  
+- target: 上海证券交易所科创板  
+Analysis: ""科创板"" is the abbreviation for the Shanghai Stock Exchange Science and Technology Innovation Board. They refer to the same entity.  
+Score: 1
+
+### idx_4  
+- response: 上交所主板  
+- target: 上海证券交易所主板  
+Analysis: ""上交所"" is the abbreviation for 上海证券交易所. ""上交所主板"" means Shanghai Stock Exchange main board. This is consistent with the target.  
+Score: 1
+
+---
+
+## Final Scores
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",上海证券交易所主板,上交所主板,0.0,"首先，根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”也就是说，回答只需和标准答案指向的业务或实体大致一致即可得分1，否则得分0。
+
+逐条分析如下：
+
+---
+
+**idx_0**
+
+- 参考答案：兽药原料药、医药原料药及中间体的研发、生产和销售
+- 回答：医药制造
+
+分析：回答“医药制造”是一个较宽泛的概念，包括医药原料药的生产，但没有明确提到“兽药”或“中间体”，且范围比标准答案更宽泛。
+
+标准答案强调“兽药原料药、医药原料药及中间体”研发和销售，回答只是笼统的“医药制造”。
+
+但根据标准，只要指向实体大致一致即可。
+
+这里“医药制造”大部分包含“医药原料药及中间体的生产”，也是医药领域的制造，符合大致语义。
+
+因此，该回答与参考答案指向的医药制造领域基本一致，得分1。
+
+---
+
+**idx_1**
+
+- 参考答案：口腔修复材料的研发、生产和销售;口腔数字化设备的设计和销售
+- 回答：口腔修复材料的研发、生产及销售
+
+分析：回答中未提及“口腔数字化设备的设计和销售”，但回答完全涵盖了“口腔修复材料的研发、生产及销售”，且与参考答案部分完全匹配。
+
+评分标准未说明必须匹配全部内容，且答案和回答大致语义相同即可。
+
+因此该回答得分1。
+
+---
+
+**idx_2**
+
+- 参考答案：外用药的研发、生产和销售
+- 回答：化学药品原药、制剂及原料药的研发、生产和销售
+
+分析：
+
+- 参考答案范围更窄，专注“外用药”，即局部用药。
+- 回答的“化学药品原药、制剂及原料药”范围更广，包含内服药和原料药，也包含制剂，属于药品种类。
+
+两者指向的实体不完全一致。参考答案明确是“外用药”，回答仅写成“化学药品”，没有明确是“外用药”。
+
+且回答并没特别指向“外用药”或“局部用药”，不能说明覆盖该范围。
+
+基于标准，“语义大致相同或指向实体一致”是得分1的必要条件。这里指向范围差距较大。
+
+因此，该回答得分0。
+
+---
+
+**idx_3**
+
+- 参考答案：生物医药非临床研究服务为主的综合研发服务（CRO）
+- 回答：生物医药研发服务
+
+分析：
+
+- 回答是“生物医药研发服务”，比较宽泛，没有强调“非临床研究服务”为主
+- 参考答案强调“非临床研究服务”为主的综合研发服务，属于CRO
+
+回答虽然未明确“非临床研究”这种侧重点，但还是指向“生物医药研发服务”领域。
+
+根据标准，“大致语义相同或指向实体一致”，这里回答和参考是生物医药研发服务，范围上有交叉，回答没错，只是没细化。
+
+因此视为大致语义相同，得分1。
+
+---
+
+**idx_4**
+
+- 参考答案：医用敷料等一次性医疗器械及消毒卫生用品研发、生产和销售
+- 回答：健康产品的研发、生产和销售
+
+分析：
+
+- 参考答案明确是“医用敷料等一次性医疗器械及消毒卫生用品”
+- 回答“健康产品”范围非常宽泛，可能包括保健品、营养品、运动产品等，与医疗器械和消毒用品的性质和实体不一致。
+
+回答没有明确指向一次性医疗器械等，且语义间差距较大。
+
+因此得分0。
+
+---
+
+综上得分总结如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0
+}
+```",医用敷料等一次性医疗器械及消毒卫生用品研发、生产和销售,健康产品的研发、生产和销售,1.0,key_match,0.0,"number not convertable, response: None, target: 439500000.0",439500000.00,NULL,1.0,"exact match, response: 603205, target: 603205",603205,603205,0.0,"exact not match, response: nan, target: 14.65",14.65,nan

@@ -1,0 +1,430 @@
+exist_flag_gt,exist_flag_response,yearofaward,yearofaward_before_map,background/occupation_llm_judge,background/occupation_llm_judge_eval_msg,background/occupation_query,background/occupation_response,countryofbirth_llm_judge,countryofbirth_llm_judge_eval_msg,countryofbirth_query,countryofbirth_response,dateofbirth_date_near,dateofbirth_date_near_eval_msg,dateofbirth_query,dateofbirth_response,devotedcountry_llm_judge,devotedcountry_llm_judge_eval_msg,devotedcountry_query,devotedcountry_response,fullname_llm_judge,fullname_llm_judge_eval_msg,fullname_query,fullname_response,gender_exact_match,gender_exact_match_eval_msg,gender_query,gender_response,majorcontributions_llm_judge,majorcontributions_llm_judge_eval_msg,majorcontributions_query,majorcontributions_response,university_llm_judge,university_llm_judge_eval_msg,university_query,university_response,yearofaward_exact_match,yearofaward_exact_match_eval_msg
+,,2023,2023,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion recap:  
+- Semantics approximately the same or refer to the same entity is sufficient.  
+- Similar semantics and approximate expressions regarding background/occupation are acceptable.
+
+---
+
+### idx_0
+
+- Target answer: ""veterinarian;founderprojectstreetvet""  
+- Response: ""doctor""  
+
+Analysis:  
+- A veterinarian is a type of doctor (doctor for animals). The response ""doctor"" is a broader term but includes ""veterinarian"" semantically.  
+- The target includes ""founder project streetvet"" which adds information about being a founder and a project name. The response does not mention that part.  
+- However, the criterion states it's sufficient if semantics are approximately the same or point to the same entity, and that approximation in background/occupation is accepted. Since ""doctor"" covers ""veterinarian"" semantically (although less specific), this should be accepted as correct under the criterion.
+
+Conclusion: score = 1
+
+---
+
+### idx_1
+
+- Target answer: ""non-profitexec;founderdogsmatter""  
+- Response: ""socialentrepreneur""  
+
+Analysis:  
+- ""non-profit executive"" is someone who runs a non-profit organization, and ""founder dogs matter"" means founding a named organization.  
+- ""social entrepreneur"" means someone who starts and runs ventures aimed at social goals, often non-profits or social enterprises.  
+- This is a very close semantic match; ""social entrepreneur"" overlaps well with ""non-profit executive/founder""  
+- According to criterion, approximate expressions on background/occupation are fine.  
+- Thus, it is semantically approximately the same and points to the same entity type.
+
+Conclusion: score = 1
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1
+}
+```",veterinarian;founderprojectstreetvet,doctor,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.
+
+---
+
+**idx_0**
+
+- Response: ""unitedstates""  
+- Target: ""unitedstates""  
+- Analysis: Both are identical, point to the same entity, fully matching.  
+- Score: 1
+
+---
+
+**idx_1**
+
+- Response: ""unitedstates""  
+- Target: ""unitedstates""  
+- Analysis: Same as idx_0, fully matching entity.  
+- Score: 1
+
+---
+
+Final scoring results in JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1
+}
+```",unitedstates,unitedstates,0.0,"date not near, response: 1965-03-14 00:00:00, target: 1974-10-04 00:00:00",1974-10-04,1965-03-14,1.0,"Analyzing each item:
+
+- idx_0:
+  - Response: ""unitedstates""
+  - Target: ""unitedstates""
+  - The response exactly matches the target. According to the criterion, approximate semantic equivalence or pointing to the same entity is sufficient.
+  - Therefore, score = 1.
+
+- idx_1:
+  - Response: ""unitedstates""
+  - Target: ""unitedstates""
+  - Again, exact match. Score = 1.
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1
+}
+```",unitedstates,unitedstates,1.0,"Let's analyze each pair step by step:
+
+**idx_0:**
+- Standard answer: ""dr.kwanestewart""
+- Response: ""dr.kwanestewart""
+- The response exactly matches the target.
+- According to the criterion, semantic equivalence or identity is sufficient.
+- So, score: 1
+
+**idx_1:**
+- Standard answer: ""stephenknight""
+- Response: ""stephenknight""
+- The response exactly matches the target.
+- So, score: 1
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1
+}
+```",dr.kwanestewart,dr.kwanestewart,0.0,"exact not match, response: female, target: male",male,female,0.0,"Let's analyze each pair step-by-step according to the criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- There is no need for word-for-word correspondence.  
+- The to-be-evaluated answer has similar semantics to the reference answer.
+
+---
+
+### idx_0  
+- Target: **""free veterinary care for pets of people experiencing homelessness""**  
+- Response: **""provided care and services for underserved communities""**
+
+Analysis:  
+- The target is specifically about free veterinary care for pets of homeless people.  
+- The response mentions ""provided care and services for underserved communities""—this is broader and vaguer.  
+- The response might include veterinary care for homeless people's pets but does not specify it and could include other types of services or other communities.  
+- The response is related but does not clearly point to the exact entity ""free veterinary care for pets of people experiencing homelessness.""  
+- The semantics are related (care to underserved groups), but it is not sufficiently precise to be considered the same as the target answer.  
+- Therefore, this is **not fully consistent** with the target answer.
+
+Conclusion for idx_0: **Score = 0**
+
+---
+
+### idx_1  
+- Target: **""temporary foster care for pets while owners enter addiction treatment""**  
+- Response: **""founded dogs matter to help dogs and people in need""**
+
+Analysis:  
+- The target answer specifies a very particular program: temporary foster care for pets during owners’ addiction treatment.  
+- The response states ""founded dogs matter to help dogs and people in need""—this is a broad mission statement (founding an organization) and does not specify the temporary foster care for pets during addiction treatment.  
+- The response is related to helping dogs and people, but lacks the specific semantic detail of the temporary foster care related to addiction treatment.  
+- The meaning is related but not approximately the same or pointing to the same entity or program described.  
+- Thus, it does not meet the criterion for full similarity.
+
+Conclusion for idx_1: **Score = 0**
+
+---
+
+### Final scoring:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0
+}
+```
+",freeveterinarycareforpetsofpeopleexperiencinghomelessness,providedcareandservicesforunderservedcommunities,0.0,"Let's analyze each idx pair according to the grading criteria:
+
+Criterion summary:
+- Semantics: approximately the same as the reference or pointing to the same entity is sufficient.
+- It suffices if the answer refers to the same university as in the reference.
+- Supplementary info like major does not matter.
+- Score only 0 or 1.
+
+---
+
+**idx_0**  
+- Target: ""coloradostateuniversity(dvm)""  
+- Response: ""nan"" (no answer or not a valid answer)  
+- The response does not refer to or even mention the university.  
+- According to the criterion, missing or non-matching university answers should get 0.
+
+Score: 0
+
+---
+
+**idx_1**  
+- Target: ""nan""  
+- Response: ""nan""  
+- Both are ""nan"", i.e., no answer/no info.  
+- Since the target is nan, the expected answer is none.  
+- Response is also none. They correspond.  
+- According to the criterion, this is sufficient. The response does not contradict or misstate the target.  
+- This should be scored as 1.
+
+Score: 1
+
+---
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1
+}
+```
+",coloradostateuniversity(dvm),nan,1.0,key_match
+,,2024,2024,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion recap:  
+- Semantics approximately the same or refer to the same entity is sufficient.  
+- Similar semantics and approximate expressions regarding background/occupation are acceptable.
+
+---
+
+### idx_0
+
+- Target answer: ""veterinarian;founderprojectstreetvet""  
+- Response: ""doctor""  
+
+Analysis:  
+- A veterinarian is a type of doctor (doctor for animals). The response ""doctor"" is a broader term but includes ""veterinarian"" semantically.  
+- The target includes ""founder project streetvet"" which adds information about being a founder and a project name. The response does not mention that part.  
+- However, the criterion states it's sufficient if semantics are approximately the same or point to the same entity, and that approximation in background/occupation is accepted. Since ""doctor"" covers ""veterinarian"" semantically (although less specific), this should be accepted as correct under the criterion.
+
+Conclusion: score = 1
+
+---
+
+### idx_1
+
+- Target answer: ""non-profitexec;founderdogsmatter""  
+- Response: ""socialentrepreneur""  
+
+Analysis:  
+- ""non-profit executive"" is someone who runs a non-profit organization, and ""founder dogs matter"" means founding a named organization.  
+- ""social entrepreneur"" means someone who starts and runs ventures aimed at social goals, often non-profits or social enterprises.  
+- This is a very close semantic match; ""social entrepreneur"" overlaps well with ""non-profit executive/founder""  
+- According to criterion, approximate expressions on background/occupation are fine.  
+- Thus, it is semantically approximately the same and points to the same entity type.
+
+Conclusion: score = 1
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1
+}
+```",non-profitexec;founderdogsmatter,socialentrepreneur,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.
+
+---
+
+**idx_0**
+
+- Response: ""unitedstates""  
+- Target: ""unitedstates""  
+- Analysis: Both are identical, point to the same entity, fully matching.  
+- Score: 1
+
+---
+
+**idx_1**
+
+- Response: ""unitedstates""  
+- Target: ""unitedstates""  
+- Analysis: Same as idx_0, fully matching entity.  
+- Score: 1
+
+---
+
+Final scoring results in JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1
+}
+```",unitedstates,unitedstates,0.0,"date not near, response: 1975-01-01 00:00:00, target: 2026-08-01 00:00:00",2026-08-01,1975-01-01,1.0,"Analyzing each item:
+
+- idx_0:
+  - Response: ""unitedstates""
+  - Target: ""unitedstates""
+  - The response exactly matches the target. According to the criterion, approximate semantic equivalence or pointing to the same entity is sufficient.
+  - Therefore, score = 1.
+
+- idx_1:
+  - Response: ""unitedstates""
+  - Target: ""unitedstates""
+  - Again, exact match. Score = 1.
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1
+}
+```",unitedstates,unitedstates,1.0,"Let's analyze each pair step by step:
+
+**idx_0:**
+- Standard answer: ""dr.kwanestewart""
+- Response: ""dr.kwanestewart""
+- The response exactly matches the target.
+- According to the criterion, semantic equivalence or identity is sufficient.
+- So, score: 1
+
+**idx_1:**
+- Standard answer: ""stephenknight""
+- Response: ""stephenknight""
+- The response exactly matches the target.
+- So, score: 1
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1
+}
+```",stephenknight,stephenknight,1.0,"exact match, response: male, target: male",male,male,0.0,"Let's analyze each pair step-by-step according to the criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- There is no need for word-for-word correspondence.  
+- The to-be-evaluated answer has similar semantics to the reference answer.
+
+---
+
+### idx_0  
+- Target: **""free veterinary care for pets of people experiencing homelessness""**  
+- Response: **""provided care and services for underserved communities""**
+
+Analysis:  
+- The target is specifically about free veterinary care for pets of homeless people.  
+- The response mentions ""provided care and services for underserved communities""—this is broader and vaguer.  
+- The response might include veterinary care for homeless people's pets but does not specify it and could include other types of services or other communities.  
+- The response is related but does not clearly point to the exact entity ""free veterinary care for pets of people experiencing homelessness.""  
+- The semantics are related (care to underserved groups), but it is not sufficiently precise to be considered the same as the target answer.  
+- Therefore, this is **not fully consistent** with the target answer.
+
+Conclusion for idx_0: **Score = 0**
+
+---
+
+### idx_1  
+- Target: **""temporary foster care for pets while owners enter addiction treatment""**  
+- Response: **""founded dogs matter to help dogs and people in need""**
+
+Analysis:  
+- The target answer specifies a very particular program: temporary foster care for pets during owners’ addiction treatment.  
+- The response states ""founded dogs matter to help dogs and people in need""—this is a broad mission statement (founding an organization) and does not specify the temporary foster care for pets during addiction treatment.  
+- The response is related to helping dogs and people, but lacks the specific semantic detail of the temporary foster care related to addiction treatment.  
+- The meaning is related but not approximately the same or pointing to the same entity or program described.  
+- Thus, it does not meet the criterion for full similarity.
+
+Conclusion for idx_1: **Score = 0**
+
+---
+
+### Final scoring:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0
+}
+```
+",temporaryfostercareforpetswhileownersenteraddictiontreatment,foundeddogsmattertohelpdogsandpeopleinneed,1.0,"Let's analyze each idx pair according to the grading criteria:
+
+Criterion summary:
+- Semantics: approximately the same as the reference or pointing to the same entity is sufficient.
+- It suffices if the answer refers to the same university as in the reference.
+- Supplementary info like major does not matter.
+- Score only 0 or 1.
+
+---
+
+**idx_0**  
+- Target: ""coloradostateuniversity(dvm)""  
+- Response: ""nan"" (no answer or not a valid answer)  
+- The response does not refer to or even mention the university.  
+- According to the criterion, missing or non-matching university answers should get 0.
+
+Score: 0
+
+---
+
+**idx_1**  
+- Target: ""nan""  
+- Response: ""nan""  
+- Both are ""nan"", i.e., no answer/no info.  
+- Since the target is nan, the expected answer is none.  
+- Response is also none. They correspond.  
+- According to the criterion, this is sufficient. The response does not contradict or misstate the target.  
+- This should be scored as 1.
+
+Score: 1
+
+---
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1
+}
+```
+",nan,nan,1.0,key_match
+1.0,,2008,,,,"co-founder,st.bernardproject(disaster-recoverynonprofitproject)",,,,unitedstates,,,,2026-08-01,,,,unitedstates,,,,lizmccartney,,,,female,,,,post-katrinahomerebuildingforlow-incomeresidents,,,,georgewashingtonuniversity,,,
+1.0,,2009,,,,filipinoteacherandsocialdevelopmentworker,,,,philippines,,,,1981-03-05,,,,philippines,,,,efrengeronimopeñafloridajr.,,,,male,,,,“pushcartclassroom”mobileschoolingforstreetchildren,,,,cavitestateuniversity,,,
+1.0,,2010,,,,"anti-trafficking
+socialactivist;foundermaitinepal,anon-profitorganizationdedicatedtohelpingvictimsofsextrafficking.",,,,"indiaor
+nepal",,,,1949-04-14,,,,nepal,,,,anuradhakoirala,,,,female,,,,"rescued+rehabilitatedthousands(50,000+)oftraffickingsurvivors",,,,stjoseph’sconventschool,,,
+1.0,,2011,,,,midwife;founderbumisehatclinics,,,,unitedstates,,,,1956-11-24,,,,indonesia,,,,robinlim(“iburobin”),,,,female,,,,freematernal&infantcareindisaster-andpoverty-strickenareas,,,,santabarbaracitycollege,,,
+1.0,,2012,,,,socialworker;founderecdc/butterflyhome,,,,nepal,,,,1984-01-01,,,,nepal,,,,pushpabasnet,,,,female,,,,supportschildrenlivingwithincarceratedparents,,,,st.xavier’scollege(socialwork),,,
+1.0,,2013,,,,environmentalactivist;founderlivinglands&waters,,,,unitedstates,,,,1974-12-04,,,,unitedstates,,,,chadpregracke,,,,male,,,,large-scalecleanupofu.s.rivers,,,,blackhawkcollege(att.),,,
+1.0,,2014,,,,formerroyalmarine;foundernowzaddogs,,,,england,,,,1969-01-01,,,,"tiverton,england/afghanistan",,,,pen(“paul”)farthing,,,,male,,,,rescuesanimalsfromconflictzones&reuniteswithtroops,,,,nan,,,
+1.0,,2015,,,,philanthropist;co-founderblinknow,,,,unitedstates,,,,1986-11-07,,,,nepal,,,,maggiedoyne,,,,female,,,,"kopilavalleychildren’shome,school&women’scenter",,,,nan,,,
+1.0,,2016,,,,disability-rightsadvocate;founderasodisvalle,,,,colombia,,,,2026-08-01,,,,colombia,,,,jeisonaristizábal,,,,male,,,,"freetherapy,education&mobilityaidsfordisabledchildren",,,,universidadsantiagodecali(law),,,
+1.0,,2017,,,,socialentrepreneur;founderbitty&beau’scoffee,,,,unitedstates,,,,1975-09-21,,,,unitedstates,,,,amywright,,,,female,,,,jobs&inclusionforpeoplewithintellectualdisabilities,,,,universityofcincinnati(music),,,
+1.0,,2018,,,,physician;founderalbergueinspira,,,,peru,,,,1971-08-03,,,,peru,,,,dr.ricardoenriquepun-chong,,,,male,,,,"freehousing,food&careforsickchildren&families",,,,universidadautónomadeguadalajara(md),,,
+1.0,,2019,,,,chemicalengineer&inventor,,,,ethiopia,,,,1965-01-01,,,,ethiopia,,,,freweinimebrahtu,,,,female,,,,reusablemenstrualpads&menstrual-healtheducation(dignityperiod),,,,"prairieviewa&muniversity
+(chemicalengineering)",,,
+1.0,,2021,,,,thefounderofthenon-profitbeauty2thestreetz,,,,unitedstates,,,,1967-12-29,,,,unitedstates,,,,shirleyraines,,,,female,,,,"beauty,hygiene,food&advocacyforunhousedpeople",,,,nan,,,
+1.0,,2022,,,,techentrepreneur;foundertechlitafrica,,,,kenya,,,,1992-11-26,,,,kenya,,,,nellycheboi,,,,female,,,,buildscomputerlabs&teachesdigitalskillsinruralschools,,,,augustanacollege(cs&appliedmath),,,

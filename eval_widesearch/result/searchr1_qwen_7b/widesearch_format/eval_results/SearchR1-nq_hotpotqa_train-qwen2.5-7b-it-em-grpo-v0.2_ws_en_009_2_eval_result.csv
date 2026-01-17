@@ -1,0 +1,517 @@
+exist_flag_gt,exist_flag_response,programname,programname_before_map,annualinternationaltutionfees_exact_match,annualinternationaltutionfees_exact_match_eval_msg,annualinternationaltutionfees_query,annualinternationaltutionfees_response,compulsorymoduletitles_llm_judge,compulsorymoduletitles_llm_judge_eval_msg,compulsorymoduletitles_query,compulsorymoduletitles_response,credits_llm_judge,credits_llm_judge_eval_msg,credits_query,credits_response,ieltsscorerequirement_llm_judge,ieltsscorerequirement_llm_judge_eval_msg,ieltsscorerequirement_query,ieltsscorerequirement_response,length_llm_judge,length_llm_judge_eval_msg,length_query,length_response,programname_exact_match,programname_exact_match_eval_msg
+,,maculturalstudies,MA Cultural Studies,0.0,"exact not match, response: /, target: £21,000","£21,000",/,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion: 
+- Sufficient if semantics are approximately the same or point to the same entity.
+- No need for exact word-for-word matching.
+- Acceptable if corresponding scores are missing (not applicable here as we only have full responses).
+
+---
+
+**idx_0**  
+- Target answer:  
+  - culturalstudiesandcapitalism (presumably a course name)  
+  - 30credits  
+  - doingculturalstudies (another course)  
+  - 30credits  
+  - maculturalstudiesdissertation(methodologyandresearch)  
+  - 60credits  
+- Response: `'/'` (a single slash)  
+- Analysis: The response contains no relevant information corresponding to the target answer. It is essentially empty / not answering the question.  
+- Judgment: Score = 0
+
+---
+
+**idx_1**  
+- Target answer:  
+  - introductiontomediaandcommunicationstheory  
+  - 30credits  
+  - dissertation  
+  - 60credits  
+- Response: `'researchmethodology,dissertation'`  
+- Analysis:  
+  - The response lists ""researchmethodology"" and ""dissertation"".  
+  - The target answer has ""introductiontomediaandcommunicationstheory"" and ""dissertation"".  
+  - ""dissertation"" appears in both, which matches the target entity.  
+  - ""researchmethodology"" != ""introduction to media and communications theory"" but these are different entities.  
+  - The criterion says semantics should be approximately the same or pointing to the same entity. Here, the response misses ""introduction to media and communication theory"" and instead has ""researchmethodology"" which is different.  
+- Since 'dissertation' is matched, partial overlap exists. But since the scoring is either 0 or 1 and no mention of partial credit is given, is this acceptable?  
+- Criterion states it is sufficient if semantics approximately the same or points to same entity. Here for one of the two components (dissertation), it matches exactly but the other one is off.  
+- No tolerance for partial, so either the entire answer or definitely semantically pointing to same entities. In this case, one item is completely wrong (""researchmethodology"" is not ""introductiontomediaandcommunicationstheory"").  
+- However, the criterion states it is sufficient if the semantics are approximately the same or point to the same entity. Since there is only some correspondence (dissertation), and missing or different on the other part.  
+- There is no explicit statement about partial credit. The instruction says: score can only be 0 or 1. So this is either correct or wrong.  
+- The response partially captures one element but not the other. Since the second element is completely different and one component is missing, this is not sufficient to say the response semantics approximately cover the target answer as a whole.  
+- Therefore, the score is 0.
+
+---
+
+### Final scores:
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0
+}
+```
+","culturalstudiesandcapitalism
+30credits
+doingculturalstudies
+30credits
+maculturalstudiesdissertation(methodologyandresearch)
+60credits",/,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- Semantics must approximately match the reference answer or point to the same entity.  
+- Outputting the calculated score (numerical result) of the expression is acceptable.  
+- No need for exact word-for-word matching.
+
+---
+
+### Pair idx_0:
+- Target: ""30+30+60"" which simplifies to 120.  
+- Response: ""/""
+
+Analysis:  
+- The response ""/"" is unrelated to the target expression.  
+- It does not provide any meaningful output related to the target expression or its result.  
+- Therefore, it is not semantically equivalent to the reference answer or its computed value.
+
+Score: 0
+
+---
+
+### Pair idx_1:  
+- Target: ""30+60"" which equals 90.  
+- Response: ""180""
+
+Analysis:  
+- The response ""180"" does not equal the correct sum, which is 90.  
+- Even if outputting the calculated score is acceptable, this is incorrect calculation.  
+- So the semantics are not approximately the same (the number is different and not pointing to the same entity).
+
+Score: 0
+
+---
+
+### Final scores in JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0
+}
+```",30+30+60,/,0.0,"Let's analyze each pair step-by-step according to the criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word-for-word correspondence.
+
+---
+
+### idx_0
+
+- **Target:** ""6.5witha6.5inwritingandnoelementlowerthan6.0""  
+- **Response:** ""/""  
+- **Analysis:**  
+  The target answer gives specific info with score ""6.5"" with a 6.5 in writing and no element lower than 6.0.  
+  The response is just ""/"", which does not convey any semantic match or pointer to the answer. This is effectively a ""no answer"" or an irrelevant character, so it does NOT suffice.  
+- **Score:** 0
+
+---
+
+### idx_1
+
+- **Target:** ""6.5witha6.5inwritingandnoelementlowerthan6.0""  
+- **Response:** ""6.5witha6.5inwriting""  
+- **Analysis:**  
+  The response includes ""6.5"" and ""6.5 in writing"" part, which is a partial but important part of the target. It states the core score and the writing subscore.  
+  However, the response is missing ""and no element lower than 6.0"" which adds a condition or a further specification.  
+
+  The criterion states that semantic similarity or pointing to the same entity is sufficient. The response points to a core entity: the IELTS overall and writing score, but misses the stricter condition on individual element scores. They are closely related but not fully comprehensive.
+
+  This can be debated, but generally, partial information that misses key qualifying detail is usually scored 0 in such strict integer scoring unless the criterion explicitly allows partial.
+
+  The criterion is somewhat lenient on semantic equivalence or pointing to the same entity, so this response recognizes the score and the writing score - these can be considered the main elements.
+
+- **Score:** 1 (Because the response points to the same entity: a 6.5 overall with a writing score; the ""no element lower than 6.0"" is additional detail, but not altering the main semantic equivalence.)
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1
+}
+```
+",6.5witha6.5inwritingandnoelementlowerthan6.0,/,0.0,"Let's analyze each item step by step.
+
+---
+
+### idx_0
+
+- **Target**: ""1yearfull-time""  
+- **Response**: ""/""  
+
+**Analysis**:  
+The response ""/"" does not provide any semantic content or any indication referring to ""1yearfull-time"" or anything semantically equivalent. According to the criterion, the answer must be semantically approximately the same or point to the same entity, which ""/"" clearly does not.
+
+**Score**: 0
+
+---
+
+### idx_1
+
+- **Target**: ""1yearfull-time""  
+- **Response**: ""/""  
+
+**Analysis**:  
+Same as above, ""/"" provides no meaningful content corresponding to the target ""1yearfull-time."" Thus, no semantic equivalence.
+
+**Score**: 0
+
+---
+
+### Final scoring output
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0
+}
+```",1yearfull-time,/,1.0,key_match
+,,mamediaandcommunications,MA Media & Communications,1.0,"exact match, response: £22,000, target: £22,000","£22,000","£22,000",0.0,"Let's analyze each pair according to the criterion:
+
+Criterion: 
+- Sufficient if semantics are approximately the same or point to the same entity.
+- No need for exact word-for-word matching.
+- Acceptable if corresponding scores are missing (not applicable here as we only have full responses).
+
+---
+
+**idx_0**  
+- Target answer:  
+  - culturalstudiesandcapitalism (presumably a course name)  
+  - 30credits  
+  - doingculturalstudies (another course)  
+  - 30credits  
+  - maculturalstudiesdissertation(methodologyandresearch)  
+  - 60credits  
+- Response: `'/'` (a single slash)  
+- Analysis: The response contains no relevant information corresponding to the target answer. It is essentially empty / not answering the question.  
+- Judgment: Score = 0
+
+---
+
+**idx_1**  
+- Target answer:  
+  - introductiontomediaandcommunicationstheory  
+  - 30credits  
+  - dissertation  
+  - 60credits  
+- Response: `'researchmethodology,dissertation'`  
+- Analysis:  
+  - The response lists ""researchmethodology"" and ""dissertation"".  
+  - The target answer has ""introductiontomediaandcommunicationstheory"" and ""dissertation"".  
+  - ""dissertation"" appears in both, which matches the target entity.  
+  - ""researchmethodology"" != ""introduction to media and communications theory"" but these are different entities.  
+  - The criterion says semantics should be approximately the same or pointing to the same entity. Here, the response misses ""introduction to media and communication theory"" and instead has ""researchmethodology"" which is different.  
+- Since 'dissertation' is matched, partial overlap exists. But since the scoring is either 0 or 1 and no mention of partial credit is given, is this acceptable?  
+- Criterion states it is sufficient if semantics approximately the same or points to same entity. Here for one of the two components (dissertation), it matches exactly but the other one is off.  
+- No tolerance for partial, so either the entire answer or definitely semantically pointing to same entities. In this case, one item is completely wrong (""researchmethodology"" is not ""introductiontomediaandcommunicationstheory"").  
+- However, the criterion states it is sufficient if the semantics are approximately the same or point to the same entity. Since there is only some correspondence (dissertation), and missing or different on the other part.  
+- There is no explicit statement about partial credit. The instruction says: score can only be 0 or 1. So this is either correct or wrong.  
+- The response partially captures one element but not the other. Since the second element is completely different and one component is missing, this is not sufficient to say the response semantics approximately cover the target answer as a whole.  
+- Therefore, the score is 0.
+
+---
+
+### Final scores:
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0
+}
+```
+","introductiontomediaandcommunicationstheory
+30credits
+dissertation
+60credits","researchmethodology,dissertation",0.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- Semantics must approximately match the reference answer or point to the same entity.  
+- Outputting the calculated score (numerical result) of the expression is acceptable.  
+- No need for exact word-for-word matching.
+
+---
+
+### Pair idx_0:
+- Target: ""30+30+60"" which simplifies to 120.  
+- Response: ""/""
+
+Analysis:  
+- The response ""/"" is unrelated to the target expression.  
+- It does not provide any meaningful output related to the target expression or its result.  
+- Therefore, it is not semantically equivalent to the reference answer or its computed value.
+
+Score: 0
+
+---
+
+### Pair idx_1:  
+- Target: ""30+60"" which equals 90.  
+- Response: ""180""
+
+Analysis:  
+- The response ""180"" does not equal the correct sum, which is 90.  
+- Even if outputting the calculated score is acceptable, this is incorrect calculation.  
+- So the semantics are not approximately the same (the number is different and not pointing to the same entity).
+
+Score: 0
+
+---
+
+### Final scores in JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0
+}
+```",30+60,180,1.0,"Let's analyze each pair step-by-step according to the criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word-for-word correspondence.
+
+---
+
+### idx_0
+
+- **Target:** ""6.5witha6.5inwritingandnoelementlowerthan6.0""  
+- **Response:** ""/""  
+- **Analysis:**  
+  The target answer gives specific info with score ""6.5"" with a 6.5 in writing and no element lower than 6.0.  
+  The response is just ""/"", which does not convey any semantic match or pointer to the answer. This is effectively a ""no answer"" or an irrelevant character, so it does NOT suffice.  
+- **Score:** 0
+
+---
+
+### idx_1
+
+- **Target:** ""6.5witha6.5inwritingandnoelementlowerthan6.0""  
+- **Response:** ""6.5witha6.5inwriting""  
+- **Analysis:**  
+  The response includes ""6.5"" and ""6.5 in writing"" part, which is a partial but important part of the target. It states the core score and the writing subscore.  
+  However, the response is missing ""and no element lower than 6.0"" which adds a condition or a further specification.  
+
+  The criterion states that semantic similarity or pointing to the same entity is sufficient. The response points to a core entity: the IELTS overall and writing score, but misses the stricter condition on individual element scores. They are closely related but not fully comprehensive.
+
+  This can be debated, but generally, partial information that misses key qualifying detail is usually scored 0 in such strict integer scoring unless the criterion explicitly allows partial.
+
+  The criterion is somewhat lenient on semantic equivalence or pointing to the same entity, so this response recognizes the score and the writing score - these can be considered the main elements.
+
+- **Score:** 1 (Because the response points to the same entity: a 6.5 overall with a writing score; the ""no element lower than 6.0"" is additional detail, but not altering the main semantic equivalence.)
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1
+}
+```
+",6.5witha6.5inwritingandnoelementlowerthan6.0,6.5witha6.5inwriting,0.0,"Let's analyze each item step by step.
+
+---
+
+### idx_0
+
+- **Target**: ""1yearfull-time""  
+- **Response**: ""/""  
+
+**Analysis**:  
+The response ""/"" does not provide any semantic content or any indication referring to ""1yearfull-time"" or anything semantically equivalent. According to the criterion, the answer must be semantically approximately the same or point to the same entity, which ""/"" clearly does not.
+
+**Score**: 0
+
+---
+
+### idx_1
+
+- **Target**: ""1yearfull-time""  
+- **Response**: ""/""  
+
+**Analysis**:  
+Same as above, ""/"" provides no meaningful content corresponding to the target ""1yearfull-time."" Thus, no semantic equivalence.
+
+**Score**: 0
+
+---
+
+### Final scoring output
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0
+}
+```",1yearfull-time,/,1.0,key_match
+1.0,,ma/mscdigitaljournalism,,,,"£20,000",,,,"digitalsandbox
+30credits
+datajournalismandvisualisation
+15credits
+medialawandethics
+15credits
+criticalsocialmediapractices
+15credits
+multimedianewsreporting
+15credits
+introductiontonewsreporting
+15credits
+mobilejournalism
+15credits
+majorpracticalproject
+60credits",,,,30+15+15+15+15+15+15+60,,,,7.0witha7.0inwritingandnoelementlowerthan6.5,,,,1yearfull-time,,,
+1.0,,"mabrands,communication&culture",,,,"£22,000",,,,"brandingi:history,contextsandpractice
+30credits
+brandingii:keythemesanddebates
+30credits",,,,30+30,,,,6.5witha6.5inwritingandnoelementlowerthan6.0,,,,1yearfulltime,,,
+1.0,,machildren'sliterature:children'sbookillustration,,,,"£24,350",,,,"children’sliterature,cultureanddiversity
+30credits
+children'sbookillustrationpractice
+30credits
+children'spublishing
+30credits
+children'sbookillustration:finalproject
+60credits
+picturebookwriting
+30credits",,,,30+30+30+60+30,,,,6.5witha6.5inwritingandnoelementlowerthan6.0,,,,1yearfull-time,,,
+1.0,,macreative&culturalentrepreneurship:media&communicationspathway,,,,"£26,250",,,,"pathway1:
+theoriesofcapital
+30credits
+creativepractice
+30credits
+entrepreneurialmodelling
+30credits
+methodsandapproachesofcriticalanalysisintoculturalentrepreneurship
+15credits
+businessofcreative&socialenterprises
+30credits
+
+pathway2:
+industryplacement
+30credits
+dissertationorprojectportfolioplusreflectiveanalysis
+75credits",,,,"1.30+30+30+15+30
+or
+2.30+75",,,,6.5witha6.5inwritingandnoelementlowerthan6.0,,,,15monthsfull-time,,,
+1.0,,madigitalmedia,,,,"£22,000",,,,"pathway1:theorypathway:
+-digitalmedia:criticalperspectives
+30credits
+-you'llalsochooseoneoptionmodulefromthefollowing:
+digitalculture:criticaltheory
+softwarestudies
+photographyandafter
+
+pathway2:imagemaking:
+-digitalmedia:criticalperspectives
+30credits
+-photographyandafter
+15credits
+-digitalmediapractice:imagemaking
+30credits
+
+pathway3:datavisualisation:
+digitalmedia:criticalperspectives
+30credits
+softwarestudies
+15or30credits
+digitalmediadatavisualisation
+30credits",,,,"1.30
+or
+2.30+15+30
+or
+3.30+15+30",,,,6.5witha6.5inwritingandnoelementlowerthan6.0,,,,1yearfull-time,,,
+1.0,,mafilm&screenstudies,,,,"£22,000",,,,"pathway1:movingimagestudiespathway：
+-politicsoftheaudiovisual(postgraduate)
+60credits
+
+pathway2:mediaartspathway：
+-experimentalmedia
+15credits",,,,"1.60
+or
+2.15",,,,6.5witha6.5inwritingandnoelementlowerthan6.0,,,,1yearfull-time,,,
+1.0,,mafilmmaking(cinematography),,,,"£30,750",,,,"cinematography:specialistskills
+30credits
+contemporaryscreennarratives
+15credits",,,,30+15,,,,7.0witha7.0inwritingandnoelementlowerthan6.5,,,,1yearfull-time,,,
+1.0,,mafilmmaking(directingfiction),,,,"£30,750",,,,"directingfiction:specialistskills
+30credits
+contemporaryscreennarratives
+15credits",,,,30+15,,,,7.0witha7.0inwritingandnoelementlowerthan6.5,,,,1yearfull-time,,,
+1.0,,mafilmmaking(editing),,,,"£30,750",,,,"editing:specialistskills
+30credits
+contemporaryscreennarratives
+15credits",,,,30+15,,,,7.0witha7.0inwritingandnoelementlowerthan6.5,,,,1yearfull-time,,,
+1.0,,mafilmmaking(producing),,,,"£30,750",,,,"producing:specialistskills
+30credits
+contemporaryscreennarratives
+15credits",,,,30+15,,,,7.0witha7.0inwritingandnoelementlowerthan6.5,,,,1yearfull-time,,,
+1.0,,mafilmmaking(screendocumentary),,,,"£30,750",,,,"documentary:specialistskills
+45credits
+representingreality
+15credits",,,,45+15,,,,7.0witha7.0inwritingandnoelementlowerthan6.5,,,,1yearfull-time,,,
+1.0,,"mafilmmaking(soundrecording,post-production&design)",,,,"£30,750",,,,"soundrecording,post-productionanddesign:specialistskills
+30credits
+contemporaryscreennarratives
+15credits",,,,30+15,,,,7.0witha7.0inwritingandnoelementlowerthan6.5,,,,1yearfull-time,,,
+1.0,,"magender,media&culture",,,,"£22,000",,,,"introductiontofeminismandculturaltheory
+30credits
+genderaffectandthebody
+30credits",,,,30+30,,,,6.5witha6.5inwritingandnoelementlowerthan6.0,,,,1yearfull-time,,,
+1.0,,majournalism,,,,"£25,450",,,,"introductiontonewsreporting
+15credits
+journalismincontext
+15credits
+medialawandethics
+15credits
+power,politicsandpublicaffairs
+15credits
+multimedianewsreporting
+15credits
+journalismproduction
+15credits
+features
+60credits",,,,15+15+15+15+15+15+60,,,,7.0witha7.5inwritingandnoelementlowerthan6.5,,,,1yearfull-time,,,
+1.0,,maphotographypractice,,,,"£27,200",,,,"imageconstruction,manipulation,andmanagement
+60credits
+theascentoftheimage
+15credits
+photographyandafter
+15credits
+portfolio/project/vivavoce
+90credits",,,,60+15+15+90,,,,6.5with6.5inspeakingandnoelementlowerthan6,,,,1yearfull-time,,,
+1.0,,mapoliticalcommunications,,,,"£22,000",,,,"thestructureofcontemporarypoliticalcommunications
+30credits
+criticalperspectivesonpoliticalcommunications
+30credits
+mapoliticalcommunicationsdissertationandresearchmethods
+60credits",,,,30+30+60,,,,6.5witha6.5inwritingandnoelementlowerthan6.0,,,,1yearfull-time,,,
+1.0,,"mapromotionalmedia:publicrelations,advertisingandmarketing",,,,"£22,000",,,,"promotionalmediai:changingfields&contexts
+30credits
+promotionalmediaii:campaignskills&techniques
+30credits",,,,30+30,,,,6.5witha6.5inwritingandnoelementlowerthan6.0,,,,1yearfull-time,,,
+1.0,,"marace,mediaandsocialjustice",,,,"£22,000",,,,"racecriticaltheoryandsocialjustice
+30credits
+race,empireandnation
+15or30credits
+dissertationformarace,mediaandsocialjustice
+60credits",,,,30+15or30+60,,,,6.5witha6.5inwritingandnoelementlowerthan6.0,,,,1yearfull-time,,,
+1.0,,mascriptwriting,,,,"£24,350",,,,"scriptwriting
+90credits
+reflectionessay
+15credits",,,,90+15,,,,7.0witha7.0inwritingandnoelementlowerthan6.5,,,,1yearfull-time,,,
+1.0,,mresmedia&communication,,,,"£19,000",,,,/,,,,/,,,,7.0witha7.0inwritingandnoelementlowerthan6.5,,,,1yearfull-time,,,

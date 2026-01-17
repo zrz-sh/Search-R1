@@ -1,0 +1,471 @@
+exist_flag_gt,exist_flag_response,国家,国家_before_map,年份,年份_before_map,全球排名_exact_match,全球排名_exact_match_eval_msg,全球排名_query,全球排名_response,军费支出_number_near,军费支出_number_near_eval_msg,军费支出_query,军费支出_response,国家_exact_match,国家_exact_match_eval_msg,国防部长_llm_judge,国防部长_llm_judge_eval_msg,国防部长_query,国防部长_response,年份_exact_match,年份_exact_match_eval_msg,当年gdp_number_near,当年gdp_number_near_eval_msg,当年gdp_query,当年gdp_response,总统_llm_judge,总统_llm_judge_eval_msg,总统_query,总统_response
+,,美国,美国,2019,2019,1.0,"exact match, response: 1, target: 1",1,1,1.0,"number near in range 10.0%, response: 7340.0, target: 7320.0",7320,7340,1.0,key_match,1.0,"分析过程：
+
+根据给定评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+逐项分析：
+
+- idx_0：
+  - response: 马克·埃斯珀
+  - target: 马克·埃斯柏
+  - 两者指向同一实体（美国前国防部长Mark Esper），只是在姓氏的拼写上有细微差异。
+  - 满足评分标准，得1分。
+
+- idx_1：
+  - response: 尤里·鲍里索夫
+  - target: 谢尔盖·绍伊古
+  - 两个人名完全不同，指向实体也不一样（尤里·鲍里索夫是俄罗斯总理，谢尔盖·绍伊古是俄罗斯国防部长），不符。
+  - 得0分。
+
+- idx_2：
+  - response: 蒂莫西·莫尔
+  - target: 乌尔苏拉·冯德莱恩
+  - 不同人物，完全不符。
+  - 得0分。
+
+- idx_3：
+  - response: 帕杰尔·辛格
+  - target: 拉杰纳特·辛格
+  - 姓氏相同，但名字完全不同，且指向不同人物。
+  - 不满足指向实体一致的条件。
+  - 得0分。
+
+- idx_4：
+  - response: 岩屋毅
+  - target: 岩屋毅
+  - 一致，得1分。
+
+综合以上分析，最终评分为：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1
+}
+```",马克·埃斯柏,马克·埃斯珀,1.0,key_match,1.0,"number near in range 10.0%, response: 21.42, target: 20.5",20.50,21.42,1.0,"Let me analyze each pair based on the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(If the semantic meaning is roughly the same or they point to the same entity, it is acceptable.)
+
+---
+
+**idx_0:**  
+- Target: ""特朗普""  
+- Response: ""唐纳德·特朗普""  
+Analysis: ""唐纳德·特朗普"" is the full name of ""特朗普"". They refer to the same entity. Pass.
+
+**idx_1:**  
+- Target: ""普京""  
+- Response: ""普京""  
+Analysis: Exact same. Pass.
+
+**idx_2:**  
+- Target: ""默克尔""  
+- Response: ""安格拉·默克尔""  
+Analysis: ""安格拉·默克尔"" is the full name of ""默克尔"". Same entity. Pass.
+
+**idx_3:**  
+- Target: ""莫迪""  
+- Response: ""拉姆·纳伦德拉·莫迪""  
+Analysis: ""拉姆·纳伦德拉·莫迪"" is the full name of ""莫迪"". Same entity. Pass.
+
+**idx_4:**  
+- Target: ""安倍晋三""  
+- Response: ""菅义伟""  
+Analysis: Different persons (菅义伟 succeeded 安倍晋三 but they are distinct individuals). Not the same entity. Fail.
+
+---
+
+Final JSON scoring:  
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0
+}
+```",特朗普,唐纳德·特朗普
+,,俄罗斯,俄罗斯,2019,2019,1.0,"exact match, response: 4, target: 4",4,4,1.0,"number near in range 10.0%, response: 652.0, target: 651.0",651,652,1.0,key_match,0.0,"分析过程：
+
+根据给定评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+逐项分析：
+
+- idx_0：
+  - response: 马克·埃斯珀
+  - target: 马克·埃斯柏
+  - 两者指向同一实体（美国前国防部长Mark Esper），只是在姓氏的拼写上有细微差异。
+  - 满足评分标准，得1分。
+
+- idx_1：
+  - response: 尤里·鲍里索夫
+  - target: 谢尔盖·绍伊古
+  - 两个人名完全不同，指向实体也不一样（尤里·鲍里索夫是俄罗斯总理，谢尔盖·绍伊古是俄罗斯国防部长），不符。
+  - 得0分。
+
+- idx_2：
+  - response: 蒂莫西·莫尔
+  - target: 乌尔苏拉·冯德莱恩
+  - 不同人物，完全不符。
+  - 得0分。
+
+- idx_3：
+  - response: 帕杰尔·辛格
+  - target: 拉杰纳特·辛格
+  - 姓氏相同，但名字完全不同，且指向不同人物。
+  - 不满足指向实体一致的条件。
+  - 得0分。
+
+- idx_4：
+  - response: 岩屋毅
+  - target: 岩屋毅
+  - 一致，得1分。
+
+综合以上分析，最终评分为：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1
+}
+```",谢尔盖·绍伊古,尤里·鲍里索夫,1.0,key_match,1.0,"number near in range 10.0%, response: 1.73, target: 1.65",1.65,1.73,1.0,"Let me analyze each pair based on the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(If the semantic meaning is roughly the same or they point to the same entity, it is acceptable.)
+
+---
+
+**idx_0:**  
+- Target: ""特朗普""  
+- Response: ""唐纳德·特朗普""  
+Analysis: ""唐纳德·特朗普"" is the full name of ""特朗普"". They refer to the same entity. Pass.
+
+**idx_1:**  
+- Target: ""普京""  
+- Response: ""普京""  
+Analysis: Exact same. Pass.
+
+**idx_2:**  
+- Target: ""默克尔""  
+- Response: ""安格拉·默克尔""  
+Analysis: ""安格拉·默克尔"" is the full name of ""默克尔"". Same entity. Pass.
+
+**idx_3:**  
+- Target: ""莫迪""  
+- Response: ""拉姆·纳伦德拉·莫迪""  
+Analysis: ""拉姆·纳伦德拉·莫迪"" is the full name of ""莫迪"". Same entity. Pass.
+
+**idx_4:**  
+- Target: ""安倍晋三""  
+- Response: ""菅义伟""  
+Analysis: Different persons (菅义伟 succeeded 安倍晋三 but they are distinct individuals). Not the same entity. Fail.
+
+---
+
+Final JSON scoring:  
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0
+}
+```",普京,普京
+,,德国,德国,2019,2019,0.0,"exact not match, response: 11, target: 7",7,11,0.0,"number not near, response: 438.0, target: 493.0",493,438,1.0,key_match,0.0,"分析过程：
+
+根据给定评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+逐项分析：
+
+- idx_0：
+  - response: 马克·埃斯珀
+  - target: 马克·埃斯柏
+  - 两者指向同一实体（美国前国防部长Mark Esper），只是在姓氏的拼写上有细微差异。
+  - 满足评分标准，得1分。
+
+- idx_1：
+  - response: 尤里·鲍里索夫
+  - target: 谢尔盖·绍伊古
+  - 两个人名完全不同，指向实体也不一样（尤里·鲍里索夫是俄罗斯总理，谢尔盖·绍伊古是俄罗斯国防部长），不符。
+  - 得0分。
+
+- idx_2：
+  - response: 蒂莫西·莫尔
+  - target: 乌尔苏拉·冯德莱恩
+  - 不同人物，完全不符。
+  - 得0分。
+
+- idx_3：
+  - response: 帕杰尔·辛格
+  - target: 拉杰纳特·辛格
+  - 姓氏相同，但名字完全不同，且指向不同人物。
+  - 不满足指向实体一致的条件。
+  - 得0分。
+
+- idx_4：
+  - response: 岩屋毅
+  - target: 岩屋毅
+  - 一致，得1分。
+
+综合以上分析，最终评分为：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1
+}
+```",乌尔苏拉·冯德莱恩,蒂莫西·莫尔,1.0,key_match,1.0,"number near in range 10.0%, response: 4.2, target: 3.85",3.85,4.2,1.0,"Let me analyze each pair based on the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(If the semantic meaning is roughly the same or they point to the same entity, it is acceptable.)
+
+---
+
+**idx_0:**  
+- Target: ""特朗普""  
+- Response: ""唐纳德·特朗普""  
+Analysis: ""唐纳德·特朗普"" is the full name of ""特朗普"". They refer to the same entity. Pass.
+
+**idx_1:**  
+- Target: ""普京""  
+- Response: ""普京""  
+Analysis: Exact same. Pass.
+
+**idx_2:**  
+- Target: ""默克尔""  
+- Response: ""安格拉·默克尔""  
+Analysis: ""安格拉·默克尔"" is the full name of ""默克尔"". Same entity. Pass.
+
+**idx_3:**  
+- Target: ""莫迪""  
+- Response: ""拉姆·纳伦德拉·莫迪""  
+Analysis: ""拉姆·纳伦德拉·莫迪"" is the full name of ""莫迪"". Same entity. Pass.
+
+**idx_4:**  
+- Target: ""安倍晋三""  
+- Response: ""菅义伟""  
+Analysis: Different persons (菅义伟 succeeded 安倍晋三 but they are distinct individuals). Not the same entity. Fail.
+
+---
+
+Final JSON scoring:  
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0
+}
+```",默克尔,安格拉·默克尔
+,,印度,印度,2019,2019,0.0,"exact not match, response: 6, target: 3",3,6,1.0,"number near in range 10.0%, response: 715.0, target: 711.0",711,715,1.0,key_match,0.0,"分析过程：
+
+根据给定评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+逐项分析：
+
+- idx_0：
+  - response: 马克·埃斯珀
+  - target: 马克·埃斯柏
+  - 两者指向同一实体（美国前国防部长Mark Esper），只是在姓氏的拼写上有细微差异。
+  - 满足评分标准，得1分。
+
+- idx_1：
+  - response: 尤里·鲍里索夫
+  - target: 谢尔盖·绍伊古
+  - 两个人名完全不同，指向实体也不一样（尤里·鲍里索夫是俄罗斯总理，谢尔盖·绍伊古是俄罗斯国防部长），不符。
+  - 得0分。
+
+- idx_2：
+  - response: 蒂莫西·莫尔
+  - target: 乌尔苏拉·冯德莱恩
+  - 不同人物，完全不符。
+  - 得0分。
+
+- idx_3：
+  - response: 帕杰尔·辛格
+  - target: 拉杰纳特·辛格
+  - 姓氏相同，但名字完全不同，且指向不同人物。
+  - 不满足指向实体一致的条件。
+  - 得0分。
+
+- idx_4：
+  - response: 岩屋毅
+  - target: 岩屋毅
+  - 一致，得1分。
+
+综合以上分析，最终评分为：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1
+}
+```",拉杰纳特·辛格,帕杰尔·辛格,1.0,key_match,1.0,"number near in range 10.0%, response: 2.9, target: 2.83",2.83,2.9,1.0,"Let me analyze each pair based on the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(If the semantic meaning is roughly the same or they point to the same entity, it is acceptable.)
+
+---
+
+**idx_0:**  
+- Target: ""特朗普""  
+- Response: ""唐纳德·特朗普""  
+Analysis: ""唐纳德·特朗普"" is the full name of ""特朗普"". They refer to the same entity. Pass.
+
+**idx_1:**  
+- Target: ""普京""  
+- Response: ""普京""  
+Analysis: Exact same. Pass.
+
+**idx_2:**  
+- Target: ""默克尔""  
+- Response: ""安格拉·默克尔""  
+Analysis: ""安格拉·默克尔"" is the full name of ""默克尔"". Same entity. Pass.
+
+**idx_3:**  
+- Target: ""莫迪""  
+- Response: ""拉姆·纳伦德拉·莫迪""  
+Analysis: ""拉姆·纳伦德拉·莫迪"" is the full name of ""莫迪"". Same entity. Pass.
+
+**idx_4:**  
+- Target: ""安倍晋三""  
+- Response: ""菅义伟""  
+Analysis: Different persons (菅义伟 succeeded 安倍晋三 but they are distinct individuals). Not the same entity. Fail.
+
+---
+
+Final JSON scoring:  
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0
+}
+```",莫迪,拉姆·纳伦德拉·莫迪
+,,日本,日本,2019,2019,0.0,"exact not match, response: 14, target: 9",9,14,1.0,"number near in range 10.0%, response: 501.0, target: 476.0",476,501,1.0,key_match,1.0,"分析过程：
+
+根据给定评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+逐项分析：
+
+- idx_0：
+  - response: 马克·埃斯珀
+  - target: 马克·埃斯柏
+  - 两者指向同一实体（美国前国防部长Mark Esper），只是在姓氏的拼写上有细微差异。
+  - 满足评分标准，得1分。
+
+- idx_1：
+  - response: 尤里·鲍里索夫
+  - target: 谢尔盖·绍伊古
+  - 两个人名完全不同，指向实体也不一样（尤里·鲍里索夫是俄罗斯总理，谢尔盖·绍伊古是俄罗斯国防部长），不符。
+  - 得0分。
+
+- idx_2：
+  - response: 蒂莫西·莫尔
+  - target: 乌尔苏拉·冯德莱恩
+  - 不同人物，完全不符。
+  - 得0分。
+
+- idx_3：
+  - response: 帕杰尔·辛格
+  - target: 拉杰纳特·辛格
+  - 姓氏相同，但名字完全不同，且指向不同人物。
+  - 不满足指向实体一致的条件。
+  - 得0分。
+
+- idx_4：
+  - response: 岩屋毅
+  - target: 岩屋毅
+  - 一致，得1分。
+
+综合以上分析，最终评分为：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1
+}
+```",岩屋毅,岩屋毅,1.0,key_match,1.0,"number near in range 10.0%, response: 5.42, target: 5.12",5.12,5.42,0.0,"Let me analyze each pair based on the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(If the semantic meaning is roughly the same or they point to the same entity, it is acceptable.)
+
+---
+
+**idx_0:**  
+- Target: ""特朗普""  
+- Response: ""唐纳德·特朗普""  
+Analysis: ""唐纳德·特朗普"" is the full name of ""特朗普"". They refer to the same entity. Pass.
+
+**idx_1:**  
+- Target: ""普京""  
+- Response: ""普京""  
+Analysis: Exact same. Pass.
+
+**idx_2:**  
+- Target: ""默克尔""  
+- Response: ""安格拉·默克尔""  
+Analysis: ""安格拉·默克尔"" is the full name of ""默克尔"". Same entity. Pass.
+
+**idx_3:**  
+- Target: ""莫迪""  
+- Response: ""拉姆·纳伦德拉·莫迪""  
+Analysis: ""拉姆·纳伦德拉·莫迪"" is the full name of ""莫迪"". Same entity. Pass.
+
+**idx_4:**  
+- Target: ""安倍晋三""  
+- Response: ""菅义伟""  
+Analysis: Different persons (菅义伟 succeeded 安倍晋三 but they are distinct individuals). Not the same entity. Fail.
+
+---
+
+Final JSON scoring:  
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0
+}
+```",安倍晋三,菅义伟
+1.0,,俄罗斯,,2020,,,,4,,,,617,,,,,,谢尔盖·绍伊古,,,,,,1.48,,,,普京,
+1.0,,印度,,2020,,,,3,,,,729,,,,,,拉杰纳特·辛格,,,,,,2.68,,,,莫迪,
+1.0,,德国,,2020,,,,7,,,,528,,,,,,安妮格雷特·克兰普-卡伦鲍尔,,,,,,3.94,,,,默克尔,
+1.0,,日本,,2020,,,,9,,,,491,,,,,,河野太郎,,,,,,5.06,,,,安倍晋三,
+1.0,,美国,,2020,,,,1,,,,7780,,,,,,马克·埃斯柏,,,,,,20.93,,,,特朗普,
+1.0,,俄罗斯,,2021,,,,5,,,,659,,,,,,谢尔盖·绍伊古,,,,,,1.84,,,,普京,
+1.0,,印度,,2021,,,,3,,,,766,,,,,,拉杰纳特·辛格,,,,,,3.16,,,,莫迪,
+1.0,,德国,,2021,,,,7,,,,560,,,,,,安妮格雷特·克兰普-卡伦鲍尔,,,,,,4.35,,,,默克尔,
+1.0,,日本,,2021,,,,9,,,,541,,,,,,岸信夫,,,,,,5.04,,,,菅义伟,
+1.0,,美国,,2021,,,,1,,,,8010,,,,,,劳埃德·奥斯汀,,,,,,23.04,,,,乔·拜登,
+1.0,,俄罗斯,,2022,,,,3,,,,864,,,,,,谢尔盖·绍伊古,,,,,,2.26,,,,普京,
+1.0,,印度,,2022,,,,4,,,,814,,,,,,拉杰纳特·辛格,,,,,,3.35,,,,莫迪,
+1.0,,德国,,2022,,,,7,,,,558,,,,,,克里斯汀·兰布雷希特,,,,,,4.16,,,,朔尔茨,
+1.0,,日本,,2022,,,,10,,,,460,,,,,,滨田靖一,,,,,,4.26,,,,岸田文雄,
+1.0,,美国,,2022,,,,1,,,,8770,,,,,,劳合·奥斯汀,,,,,,26.02,,,,乔·拜登,
+1.0,,俄罗斯,,2023,,,,3,,,,1090,,,,,,谢尔盖·绍伊古,,,,,,2.02,,,,普京,
+1.0,,印度,,2023,,,,4,,,,836,,,,,,拉杰纳特·辛格,,,,,,3.57,,,,莫迪,
+1.0,,德国,,2023,,,,7,,,,668,,,,,,鲍里斯·佩斯托瑞斯,,,,,,4.52,,,,朔尔茨,
+1.0,,日本,,2023,,,,10,,,,502,,,,,,滨田靖一,,,,,,4.20,,,,岸田文雄,
+1.0,,美国,,2023,,,,1,,,,9160,,,,,,劳埃德·奥斯汀,,,,,,27.6,,,,乔·拜登,
+1.0,,俄罗斯,,2024,,,,3,,,,1490,,,,,,安德烈·别洛乌索夫,,,,,,2.05,,,,普京,
+1.0,,印度,,2024,,,,5,,,,861,,,,,,拉杰纳特·辛格,,,,,,3.84,,,,莫迪,
+1.0,,德国,,2024,,,,4,,,,885,,,,,,鲍里斯·佩斯托瑞斯,,,,,,4.65,,,,朔尔茨,
+1.0,,日本,,2024,,,,10,,,,553,,,,,,木原稔,,,,,,4.1,,,,岸田文雄,
+1.0,,美国,,2024,,,,1,,,,9970,,,,,,劳埃德·奥斯汀,,,,,,29.20,,,,乔·拜登,

@@ -1,0 +1,684 @@
+exist_flag_gt,exist_flag_response,launchdate,launchdate_before_map,backupcrewnames_llm_judge,backupcrewnames_llm_judge_eval_msg,backupcrewnames_query,backupcrewnames_response,crewnames_llm_judge,crewnames_llm_judge_eval_msg,crewnames_query,crewnames_response,landingdate_exact_match,landingdate_exact_match_eval_msg,landingdate_query,landingdate_response,landinglocation_llm_judge,landinglocation_llm_judge_eval_msg,landinglocation_query,landinglocation_response,launchdate_exact_match,launchdate_exact_match_eval_msg,launchpad_llm_judge,launchpad_llm_judge_eval_msg,launchpad_query,launchpad_response,missionname_llm_judge,missionname_llm_judge_eval_msg,missionname_query,missionname_response,missionstatus_llm_judge,missionstatus_llm_judge_eval_msg,missionstatus_query,missionstatus_response,missiontype_llm_judge,missiontype_llm_judge_eval_msg,missiontype_query,missiontype_response,orbitduration_llm_judge,orbitduration_llm_judge_eval_msg,orbitduration_query,orbitduration_response,vehicle_llm_judge,vehicle_llm_judge_eval_msg,vehicle_query,vehicle_response
+,,1968-10-11,1968-10-11,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion:  
+- The semantics are approximately the same or point to the same entity.  
+- No word-for-word match is necessary, but the response should point to the same entity/entities as the target.
+
+---
+
+**Pair idx_0:**  
+- Target: ""thomasstafford,eugenecernan,johnyoung""  
+- Response: ""/""  
+
+Analysis:  
+- The response ""/"" contains no entities, no approximate match, no semantic relation to the target.  
+- Therefore, it does not meet the criterion.  
+- Score = 0.
+
+---
+
+**Pair idx_1:**  
+- Target: ""vanced.brand,williamb.lenoir,donl.lind""  
+- Response: ""/""  
+
+Analysis:  
+- The response is ""/"" again, no entities, and no match or approximate semantics.  
+- Score = 0.
+
+---
+
+Final scoring results in JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0
+}
+```","thomasstafford,eugenecernan,johnyoung",/,1.0,"Let's analyze each pair step by step according to the grading criteria:
+
+---
+
+### idx_0:
+- **Response:** ""walterm.schirrajr.,donnf.eisele,r.waltercunningham""
+- **Target:** ""walterschirrajr.,r.waltercunningham,donnf.eisele""
+
+**Analysis:**
+- The entities in the response are (ignoring minor formatting issues): walterm.schirrajr., donnf.eisele, r.waltercunningham
+- The target has: walterschirrajr., r.waltercunningham, donnf.eisele
+- The semantics are approximately the same because they list the same three people, just in different order.
+- The typo ""walterm"" vs ""walter"" is minor but could affect matching; however, the criterion says semantics or pointing to the same entity is sufficient, not exact spelling.
+- Given the close match of entities, the semantics are effectively identical.
+
+**Conclusion:** Score = 1
+
+---
+
+### idx_1:
+- **Response:** ""geraldp.carr,williamr.pogue,edwardg.gibson""
+- **Target:** ""alanl.bean,owenk.garriott,jackr.lousma""
+
+**Analysis:**
+- The entities do not match at all; none of the names in response appear in the target.
+- The criterion requires that semantics are approximately the same or they point to the same entity.
+- Here, completely different people are listed.
+- Therefore, no match.
+
+**Conclusion:** Score = 0
+
+---
+
+### Final scores in JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0
+}
+```","walterschirrajr.,r.waltercunningham,donnf.eisele","walterm.schirrajr.,donnf.eisele,r.waltercunningham",1.0,"exact match, response: 1968-10-22, target: 1968-10-22",1968-10-22,1968-10-22,1.0,"Let's analyze each response against its target according to the given criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.
+
+---
+
+**idx_0:**  
+- Response: ""atlanticocean""  
+- Target: ""northatlanticocean""  
+Analysis:  
+- The response mentions ""atlantic ocean"" generally, while the target specifies ""north atlantic ocean.""  
+- Since ""north atlantic ocean"" is a part of the ""atlantic ocean,"" the response points broadly to the same entity but less specifically.  
+- The criterion expects approximate semantics or the same entity. The response refers to a broader category encompassing the target.  
+- This can be considered approximately correct since the entity is the same, with minor specificity loss.  
+Score: 1  
+
+---
+
+**idx_1:**  
+- Response: ""earth""  
+- Target: ""pacificocean""  
+Analysis:  
+- The response is ""earth,"" which is the entire planet, while the target is the ""pacific ocean,"" a specific ocean on earth.  
+- The semantics differ significantly; the response is far broader and different from the target entity.  
+- The response does not point to the same entity or even a very close approximation.  
+- This should be scored 0.  
+Score: 0  
+
+---
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0
+}
+```",northatlanticocean,atlanticocean,1.0,key_match,1.0,"Let's analyze each pair in detail according to the criterion:
+
+### Criterion summary:
+- Semantics need to be approximately the same or refer to the same entity.
+- Different names of the same launch pad are acceptable.
+- No need for word-for-word matching.
+
+---
+
+### Pair idx_0:
+- **Response:** ""lc-34b""
+- **Target:** ""capekennedy,lc-34""
+
+Analysis:
+- The target is ""lc-34"" at Cape Kennedy.
+- The response is ""lc-34b"".
+- ""LC-34b"" is a subsection or a pad variant of ""LC-34.""
+- It refers to the same launch complex, just a more specific part.
+- According to the grading criterion, different names referring to the same launch pad are acceptable.
+- Therefore, ""lc-34b"" referring to ""lc-34"" is acceptable and correct.
+
+Conclusion: Score = 1
+
+---
+
+### Pair idx_1:
+- **Response:** ""lc-39a""
+- **Target:** ""capekennedy,lc-39b""
+
+Analysis:
+- The target is ""lc-39b"" at Cape Kennedy.
+- The response is ""lc-39a"".
+- LC-39A and LC-39B are two separate launch pads at Cape Kennedy.
+- They are related but clearly distinct pads.
+- Since the response specifies a different pad than the reference, it is incorrect.
+- The criterion specifies that different names are acceptable only if they refer to the same pad.
+- In this case, LC-39A ≠ LC-39B, so this response does not satisfy the criterion.
+
+Conclusion: Score = 0
+
+---
+
+### Final results in JSON format:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0
+}
+```","capekennedy,lc-34",lc-34b,1.0,"Let's analyze each pair step by step:
+
+1. idx_0:
+   - Response: ""apollo7""
+   - Target: ""apollo7""
+   - Analysis: The response matches the target exactly.
+   - Score: 1
+
+2. idx_1:
+   - Response: ""skylab3""
+   - Target: ""skylab3""
+   - Analysis: The response matches the target exactly.
+   - Score: 1
+
+Final scoring results in JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1
+}
+```",apollo7,apollo7,1.0,"Let's analyze each pair step by step:
+
+- idx_0:  
+  - Response: ""success""  
+  - Target: ""success""  
+  Semantically identical. This is a perfect match.
+
+- idx_1:  
+  - Response: ""success""  
+  - Target: ""success""  
+  Semantically identical. Perfect match.
+
+Based on the given grading criterion, both responses are fully adequate and correct.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1
+}
+```",success,success,0.0,"Let's analyze each pair step-by-step.
+
+---
+
+**Pair idx_0**
+
+- Target answer: ""crewedorbitalflight""
+- Response: ""orbital""
+
+Analysis:
+- The reference answer is ""crewedorbitalflight"" (likely meant to mean ""crewed orbital flight"").
+- The response given is ""orbital"".
+- According to the criterion, the semantics only need to be approximately the same or point to the same entity.
+- ""Orbital"" itself is just an adjective or partial term and does not indicate ""crewed"" specifically.
+- ""Orbital"" alone might refer to any orbital flight, possibly unmanned as well, so it's incomplete compared to ""crewedorbitalflight"".
+- Since the response misses the essential detail of ""crewed,"" it does not sufficiently match the target in semantics.
+
+Score: 0
+
+---
+
+**Pair idx_1**
+
+- Target answer: ""spacestation""
+- Response: ""orbital""
+
+Analysis:
+- Target is ""spacestation"".
+- Response is ""orbital"".
+- ""Orbital"" here is an adjective or descriptor; it could refer to orbital objects or orbital flight, etc., but not a ""spacestation"" explicitly.
+- The semantics are noticeably different.
+- Since ""orbital"" does not identify ""spacestation,"" it fails to meet the criterion of approximate equivalence or pointing to the same entity.
+
+Score: 0
+
+---
+
+**Final scoring results:**
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0
+}
+```",crewedorbitalflight,orbital,0.0,"Let's analyze each item according to the given criterion:
+
+Criterion summary: Semantics should be approximately the same or point to the same entity; exact wording or additional details are not necessary.
+
+---
+
+**idx_0**  
+- Target: ""10days,20hours,9minutes,3seconds""  
+- Response: ""10days22hours9minutes""  
+Analysis:  
+- The response gives days, hours, and minutes, but no seconds. Omitting seconds is acceptable since the criterion doesn't require a word-for-word match and minor difference in detail should be allowed.  
+- The total time value differs in hours: target has 20 hours, response has 22 hours. This is a difference in value, not just omission or wording difference. So the response has a time longer by 2 hours.  
+- Since the criterion says ""semantics approximately the same,"" the difference between 20h and 22h is significant enough to consider the response different.  
+- Also, the response misses the 3 seconds given in the target, but seconds might be considered a minor component and can be omitted.  
+Conclusion: The hour value differs, indicating different semantics in duration. Thus, the answer is incorrect.
+
+Score: 0
+
+---
+
+**idx_1**  
+- Target: ""59days,11hours,9minutes,1seconds""  
+- Response: ""28days19hours13minutes""  
+Analysis:  
+- The difference in days is large: 59 days vs 28 days.  
+- Hours and minutes also differ.  
+- This means the response points to a different time duration from the target.  
+- The response also omits seconds, which is acceptable alone, but here the overall time is significantly different.  
+Conclusion: The response does not reflect the same semantics or entity as the target.
+
+Score: 0
+
+---
+
+### Final scoring results
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0
+}
+```","10days,20hours,9minutes,3seconds",10days22hours9minutes,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- No need for exact, word-for-word equivalence.
+
+---
+
+**Pair idx_0**  
+- Target: ""saturn-ib""  
+- Response: ""saturnib""  
+Analysis:  
+The response omits the hyphen but phonetically and semantically represents the same rocket name ""Saturn IB"". This meets the criterion of approximate semantic equivalence and pointing to the same entity.  
+Score: 1
+
+---
+
+**Pair idx_1**  
+- Target: ""saturnib""  
+- Response: ""saturnib""  
+Analysis:  
+Exact match with the target.  
+Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1
+}
+```",saturn-ib,saturnib
+,,1973-07-28,1973-07-28,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion:  
+- The semantics are approximately the same or point to the same entity.  
+- No word-for-word match is necessary, but the response should point to the same entity/entities as the target.
+
+---
+
+**Pair idx_0:**  
+- Target: ""thomasstafford,eugenecernan,johnyoung""  
+- Response: ""/""  
+
+Analysis:  
+- The response ""/"" contains no entities, no approximate match, no semantic relation to the target.  
+- Therefore, it does not meet the criterion.  
+- Score = 0.
+
+---
+
+**Pair idx_1:**  
+- Target: ""vanced.brand,williamb.lenoir,donl.lind""  
+- Response: ""/""  
+
+Analysis:  
+- The response is ""/"" again, no entities, and no match or approximate semantics.  
+- Score = 0.
+
+---
+
+Final scoring results in JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0
+}
+```","vanced.brand,williamb.lenoir,donl.lind",/,0.0,"Let's analyze each pair step by step according to the grading criteria:
+
+---
+
+### idx_0:
+- **Response:** ""walterm.schirrajr.,donnf.eisele,r.waltercunningham""
+- **Target:** ""walterschirrajr.,r.waltercunningham,donnf.eisele""
+
+**Analysis:**
+- The entities in the response are (ignoring minor formatting issues): walterm.schirrajr., donnf.eisele, r.waltercunningham
+- The target has: walterschirrajr., r.waltercunningham, donnf.eisele
+- The semantics are approximately the same because they list the same three people, just in different order.
+- The typo ""walterm"" vs ""walter"" is minor but could affect matching; however, the criterion says semantics or pointing to the same entity is sufficient, not exact spelling.
+- Given the close match of entities, the semantics are effectively identical.
+
+**Conclusion:** Score = 1
+
+---
+
+### idx_1:
+- **Response:** ""geraldp.carr,williamr.pogue,edwardg.gibson""
+- **Target:** ""alanl.bean,owenk.garriott,jackr.lousma""
+
+**Analysis:**
+- The entities do not match at all; none of the names in response appear in the target.
+- The criterion requires that semantics are approximately the same or they point to the same entity.
+- Here, completely different people are listed.
+- Therefore, no match.
+
+**Conclusion:** Score = 0
+
+---
+
+### Final scores in JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0
+}
+```","alanl.bean,owenk.garriott,jackr.lousma","geraldp.carr,williamr.pogue,edwardg.gibson",0.0,"exact not match, response: 1973-08-29, target: 1973-09-25",1973-09-25,1973-08-29,0.0,"Let's analyze each response against its target according to the given criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.
+
+---
+
+**idx_0:**  
+- Response: ""atlanticocean""  
+- Target: ""northatlanticocean""  
+Analysis:  
+- The response mentions ""atlantic ocean"" generally, while the target specifies ""north atlantic ocean.""  
+- Since ""north atlantic ocean"" is a part of the ""atlantic ocean,"" the response points broadly to the same entity but less specifically.  
+- The criterion expects approximate semantics or the same entity. The response refers to a broader category encompassing the target.  
+- This can be considered approximately correct since the entity is the same, with minor specificity loss.  
+Score: 1  
+
+---
+
+**idx_1:**  
+- Response: ""earth""  
+- Target: ""pacificocean""  
+Analysis:  
+- The response is ""earth,"" which is the entire planet, while the target is the ""pacific ocean,"" a specific ocean on earth.  
+- The semantics differ significantly; the response is far broader and different from the target entity.  
+- The response does not point to the same entity or even a very close approximation.  
+- This should be scored 0.  
+Score: 0  
+
+---
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0
+}
+```",pacificocean,earth,1.0,key_match,0.0,"Let's analyze each pair in detail according to the criterion:
+
+### Criterion summary:
+- Semantics need to be approximately the same or refer to the same entity.
+- Different names of the same launch pad are acceptable.
+- No need for word-for-word matching.
+
+---
+
+### Pair idx_0:
+- **Response:** ""lc-34b""
+- **Target:** ""capekennedy,lc-34""
+
+Analysis:
+- The target is ""lc-34"" at Cape Kennedy.
+- The response is ""lc-34b"".
+- ""LC-34b"" is a subsection or a pad variant of ""LC-34.""
+- It refers to the same launch complex, just a more specific part.
+- According to the grading criterion, different names referring to the same launch pad are acceptable.
+- Therefore, ""lc-34b"" referring to ""lc-34"" is acceptable and correct.
+
+Conclusion: Score = 1
+
+---
+
+### Pair idx_1:
+- **Response:** ""lc-39a""
+- **Target:** ""capekennedy,lc-39b""
+
+Analysis:
+- The target is ""lc-39b"" at Cape Kennedy.
+- The response is ""lc-39a"".
+- LC-39A and LC-39B are two separate launch pads at Cape Kennedy.
+- They are related but clearly distinct pads.
+- Since the response specifies a different pad than the reference, it is incorrect.
+- The criterion specifies that different names are acceptable only if they refer to the same pad.
+- In this case, LC-39A ≠ LC-39B, so this response does not satisfy the criterion.
+
+Conclusion: Score = 0
+
+---
+
+### Final results in JSON format:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0
+}
+```","capekennedy,lc-39b",lc-39a,1.0,"Let's analyze each pair step by step:
+
+1. idx_0:
+   - Response: ""apollo7""
+   - Target: ""apollo7""
+   - Analysis: The response matches the target exactly.
+   - Score: 1
+
+2. idx_1:
+   - Response: ""skylab3""
+   - Target: ""skylab3""
+   - Analysis: The response matches the target exactly.
+   - Score: 1
+
+Final scoring results in JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1
+}
+```",skylab3,skylab3,1.0,"Let's analyze each pair step by step:
+
+- idx_0:  
+  - Response: ""success""  
+  - Target: ""success""  
+  Semantically identical. This is a perfect match.
+
+- idx_1:  
+  - Response: ""success""  
+  - Target: ""success""  
+  Semantically identical. Perfect match.
+
+Based on the given grading criterion, both responses are fully adequate and correct.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1
+}
+```",success,success,0.0,"Let's analyze each pair step-by-step.
+
+---
+
+**Pair idx_0**
+
+- Target answer: ""crewedorbitalflight""
+- Response: ""orbital""
+
+Analysis:
+- The reference answer is ""crewedorbitalflight"" (likely meant to mean ""crewed orbital flight"").
+- The response given is ""orbital"".
+- According to the criterion, the semantics only need to be approximately the same or point to the same entity.
+- ""Orbital"" itself is just an adjective or partial term and does not indicate ""crewed"" specifically.
+- ""Orbital"" alone might refer to any orbital flight, possibly unmanned as well, so it's incomplete compared to ""crewedorbitalflight"".
+- Since the response misses the essential detail of ""crewed,"" it does not sufficiently match the target in semantics.
+
+Score: 0
+
+---
+
+**Pair idx_1**
+
+- Target answer: ""spacestation""
+- Response: ""orbital""
+
+Analysis:
+- Target is ""spacestation"".
+- Response is ""orbital"".
+- ""Orbital"" here is an adjective or descriptor; it could refer to orbital objects or orbital flight, etc., but not a ""spacestation"" explicitly.
+- The semantics are noticeably different.
+- Since ""orbital"" does not identify ""spacestation,"" it fails to meet the criterion of approximate equivalence or pointing to the same entity.
+
+Score: 0
+
+---
+
+**Final scoring results:**
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0
+}
+```",spacestation,orbital,0.0,"Let's analyze each item according to the given criterion:
+
+Criterion summary: Semantics should be approximately the same or point to the same entity; exact wording or additional details are not necessary.
+
+---
+
+**idx_0**  
+- Target: ""10days,20hours,9minutes,3seconds""  
+- Response: ""10days22hours9minutes""  
+Analysis:  
+- The response gives days, hours, and minutes, but no seconds. Omitting seconds is acceptable since the criterion doesn't require a word-for-word match and minor difference in detail should be allowed.  
+- The total time value differs in hours: target has 20 hours, response has 22 hours. This is a difference in value, not just omission or wording difference. So the response has a time longer by 2 hours.  
+- Since the criterion says ""semantics approximately the same,"" the difference between 20h and 22h is significant enough to consider the response different.  
+- Also, the response misses the 3 seconds given in the target, but seconds might be considered a minor component and can be omitted.  
+Conclusion: The hour value differs, indicating different semantics in duration. Thus, the answer is incorrect.
+
+Score: 0
+
+---
+
+**idx_1**  
+- Target: ""59days,11hours,9minutes,1seconds""  
+- Response: ""28days19hours13minutes""  
+Analysis:  
+- The difference in days is large: 59 days vs 28 days.  
+- Hours and minutes also differ.  
+- This means the response points to a different time duration from the target.  
+- The response also omits seconds, which is acceptable alone, but here the overall time is significantly different.  
+Conclusion: The response does not reflect the same semantics or entity as the target.
+
+Score: 0
+
+---
+
+### Final scoring results
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0
+}
+```","59days,11hours,9minutes,1seconds",28days19hours13minutes,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- No need for exact, word-for-word equivalence.
+
+---
+
+**Pair idx_0**  
+- Target: ""saturn-ib""  
+- Response: ""saturnib""  
+Analysis:  
+The response omits the hyphen but phonetically and semantically represents the same rocket name ""Saturn IB"". This meets the criterion of approximate semantic equivalence and pointing to the same entity.  
+Score: 1
+
+---
+
+**Pair idx_1**  
+- Target: ""saturnib""  
+- Response: ""saturnib""  
+Analysis:  
+Exact match with the target.  
+Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1
+}
+```",saturnib,saturnib
+1.0,,1961-05-05,,,,"johnherschelglenn,jr.",,,,"alanb.shepard,jr.",,,,1961-05-05,,,,"75degrees53minuteslongitude,27degrees13.7minuteslatitudeintheatlanticocean",,,,,,lc-5,,,,freedom7(mr-3),,,,success,,,,humanspaceflight,,,,"0days,0hours,15minutes,28seconds",,,,redstone(5),
+1.0,,1961-07-21,,,,"johnh.glenn,jr.",,,,virgili.grissom,,,,1961-07-21,,,,atlanticocean,,,,,,lc-5,,,,libertybell7(mr-4),,,,success,,,,humanspaceflight,,,,"0days,0hours,15minutes,37seconds",,,,redstone(6),
+1.0,,1962-02-20,,,,malcolmscottcarpenter,,,,johnh.glenn,,,,1962-02-20,,,,800milessoutheastofbermuda,,,,,,lc-14,,,,friendship7(ma-6),,,,success,,,,crewedorbitalspaceflight,,,,"0days,4hours,55min,23seconds",,,,atlas(6),
+1.0,,1962-05-24,,,,"waltermartyschirra,jr.",,,,m.scottcarpenter,,,,1962-05-24,,,,"north-eastofpuertorico,caribbeansea",,,,,,lc-14,,,,aurora7(ma-7),,,,success,,,,crewedorbitalspaceflight,,,,"0days,4hours,56minutes,5seconds",,,,atlas(7),
+1.0,,1962-10-03,,,,"leroygordoncooper,jr.",,,,walterm.schirra,,,,1962-10-03,,,,centralpacificocean,,,,,,lc-14,,,,sigma7(ma-8),,,,success,,,,humanspaceflight,,,,"0days,9hours,13minutes,11seconds",,,,atlas(8),
+1.0,,1963-05-15,,,,"alanbartlettshepard,jr.",,,,"l.gordoncooper,jr.",,,,1963-05-15,,,,"south-eastofmidwayisland,pacificocean",,,,,,lc-14,,,,faith7(ma-9),,,,success,,,,humanspaceflight,,,,"1day,10hours,19minutes,49seconds",,,,atlas(9),
+1.0,,1964-04-08,,,,/,,,,/,,,,1964-04-08,,,,middleofsouthatlanticocean,,,,,,"capekennedy,lc-19",,,,geminii,,,,success,,,,uncrewedtestflight,,,,"4hours,50minutes",,,,titanii,
+1.0,,1965-01-19,,,,/,,,,/,,,,1965-01-19,,,,theatlanticocean,,,,,,"capekennedy,lc-19",,,,geminiii,,,,success,,,,uncrewedtestflight,,,,"18minutes,16seconds",,,,titanii,
+1.0,,1965-03-23,,,,"walterm.schirrajr.,thomasp.stafford",,,,"johnw.young,virgili.grissom",,,,1965-03-23,,,,theatlanticoceanneargrandturkisland,,,,,,"capekennedy,lc-19",,,,geminiiii,,,,success,,,,humanspaceflight,,,,"0days,4hours,52minutes,31seconds",,,,titanii,
+1.0,,1965-06-03,,,,"frankf.bormanii,jamesa.lovelljr.",,,,"jamesa.mcdivitt,edwardh.whiteii",,,,1965-06-07,,,,northatlanticocean,,,,,,"capekennedy,lc-19",,,,geminiiv,,,,success,,,,humanspaceflight,,,,"4days,1hour,56minutes,12seconds",,,,titanii,
+1.0,,1965-08-21,,,,"neila.armstrong,elliotm.seejr.",,,,"l.gordoncooperjr.,charles""pete""conradjr.",,,,1965-08-29,,,,theatlanticocean,,,,,,"capekennedy,lc-19",,,,geminiv,,,,success,,,,humanspaceflight,,,,"7days,22hours,55minutes,14seconds",,,,titanii,
+1.0,,1965-12-04,,,,"edwardh.whiteii,michaelcollins",,,,"frankf.bormanii,jamesa.lovelljr.",,,,1965-12-18,,,,theatlanticocean,,,,,,"capecanaveral,unitedstates",,,,geminivii,,,,success,,,,humanspaceflight,,,,"13days,18hours,35minutes,1second",,,,titanii,
+1.0,,1965-12-15,,,,"virgili.grissom,johnw.young",,,,"walterm.schirra,jr.,thomasp.stafford",,,,1965-12-16,,,,northatlanticocean,,,,,,"capecanaveral,unitedstates",,,,geminivi-a,,,,success,,,,humanspaceflight,,,,"1day,1hour,51minutes,24seconds",,,,titanii,
+1.0,,1966-03-16,,,,"charles""pete""conradjr.,richardf.gordonjr.",,,,"neila.armstrong,davidr.scott",,,,1966-03-16,,,,"800kilometerseastofokinawaand1,000kilometerssouthofyokosuka,japan.",,,,,,"capecanaveral,unitedstates",,,,geminiviii,,,,fail,,,,humanspaceflight,,,,"10hours,41minutes,26seconds",,,,titanii,
+1.0,,1966-06-03,,,,"thomasp.stafford,eugenea.cernan",,,,"elliotm.seejr.,charlesa.bassettii",,,,1966-06-06,,,,theatlanticocean,,,,,,"capecanaveral,unitedstates",,,,geminiix-a,,,,success,,,,humanspaceflight,,,,"3days,20minutes,50seconds",,,,titanii,
+1.0,,1966-07-18,,,,"alanl.bean,cliftonc.williamsjr.",,,,"johnw.young,michaelcollins",,,,1966-07-21,,,,theatlanticocean,,,,,,"capecanaveral,unitedstates",,,,geminix,,,,success,,,,humanspaceflight,,,,"2days,22hours,46minutes,39seconds",,,,titanii,
+1.0,,1966-09-12,,,,"neila.armstrong,williama.anders",,,,"charles""pete""conrad,jr.,richardf.gordon,jr.",,,,1966-09-15,,,,theatlanticocean,,,,,,"capecanaveral,unitedstates",,,,geminixi,,,,success,,,,humanspaceflight,,,,"2days,23hours,17minutes,9seconds",,,,titanii,
+1.0,,1966-11-11,,,,"l.gordoncooperjr.,eugenea.cernan",,,,"jamesa.lovell,jr.,edwine.""buzz""aldrin,jr.",,,,1966-11-15,,,,theatlanticocean,,,,,,"capecanaveral,unitedstates",,,,geminixii,,,,success,,,,humanspaceflight,,,,"3days,22hours,34minutes,31seconds",,,,titanii,
+1.0,,1967-01-27,,,,"walterm.schirrajr.,donnf.eisele,waltercunningham",,,,"virgili.grissom,edwardh.white,rogerb.chaffee",,,,1966-01-27,,,,/,,,,,,"capekennedy,lc-34",,,,apollo1,,,,fail,,,,humanspaceflight,,,,/,,,,apollo/saturnspacevehicle,
+1.0,,1967-11-09,,,,/,,,,/,,,,1967-11-09,,,,northpacificocean,,,,,,"capekennedy,lc-39a",,,,apollo4,,,,success,,,,testflight,,,,"8hours,36minutes,59seconds",,,,thesaturnvlaunchvehicle,
+1.0,,1968-01-22,,,,/,,,,/,,,,1968-01-23,,,,thepacificocean,,,,,,"capekennedy,lc-37b",,,,apollo5,,,,success,,,,testflight,,,,"11hours,10minutes",,,,composedofasaturnibfirststageandasaturns-ivbsecondstage,
+1.0,,1968-04-04,,,,/,,,,/,,,,1968-04-04,,,,thenorthpacificocean,,,,,,"capekennedy,lc-39a",,,,apollo6,,,,success,,,,testflight,,,,9hours57minutes20seconds,,,,thesaturnvlaunchvehicle,
+,1.0,1968-12-09,1968-12-09,,,,/,,,,"frankborman,jamesa.lovell,williamanders",,,,1968-12-16,,,,moon,,,,,,lc-39a,,,,apollo8,,,,success,,,,lunarorbit,,,,20hours20minutes,,,,saturnv
+1.0,,1968-12-21,,,,"neila.armstrong,edwine.aldrinjr.,fredw.haisejr.",,,,"frankborman,jameslovelljr.,williamanders",,,,1968-12-27,,,,northpacificocean,,,,,,"capekennedy,lc-39a",,,,apollo8,,,,success,,,,lunarlandingpreparation,,,,"6days,3hours,42seconds",,,,thesaturnvvehicle,
+1.0,,1969-03-03,,,,"charlesconradjr.,alanl.bean,richardf.gordonjr.",,,,"jamesa.mcdivitt,russelll.schweickart,davidr.scott",,,,1969-03-13,,,,northatlanticocean,,,,,,"capekennedy,lc-39a",,,,apollo9,,,,success,,,,earth-orbitalengineeringtest,,,,"10days,1hour,54seconds",,,,thesaturnv,
+,1.0,1969-03-31,1969-03-31,,,,/,,,,"jamesa.mcdivitt,davidr.scott,russelll.schweickart",,,,1969-04-07,,,,earth,,,,,,lc-39b,,,,apollo9,,,,success,,,,orbital,,,,10days18hours37minutes,,,,saturnv
+1.0,,1969-05-18,,,,"l.gordoncooperjr.,edgard.mitchell,donnf.eisele",,,,"thomasstafford,eugenecernan,johnyoung",,,,1969-05-26,,,,thepacificoceannearamericansamoa,,,,,,"capekennedy,lc-39b",,,,apollo10,,,,success,,,,lunarlandingpreparation,,,,"8days,3minutes,23seconds",,,,thesaturnv,
+1.0,,1969-07-16,,,,"jamesa.lovelljr.,williama.anders,fredw.haisejr.",,,,"neilarmstrong,buzzaldrin,michaelcollins",,,,1969-07-24,,,,northpacificocean,,,,,,"capekennedy,lc-39a",,,,apollo11,,,,success,,,,lunarlanding,,,,"8days,3hours,18minutes,35seconds",,,,saturnvspacevehicle,
+1.0,,1969-11-14,,,,"davidr.scott,jamesb.irwin,alfredm.worden",,,,"charlesconradjr.,alanl.bean,richardf.gordonjr.",,,,1969-11-24,,,,pacificocean,,,,,,"capekennedy,lc-39a",,,,apollo12,,,,success,,,,lunarlanding,,,,"10days,fourhours,36minutes,25seconds",,,,saturn-v,
+1.0,,1970-04-11,,,,"johnw.young,charlesm.dukejr.,johnl.“jack”swigertjr.",,,,"jameslovell,john""jack""swigert,fredhaise",,,,1970-04-17,,,,pacificocean,,,,,,"capekennedy,lc-39a",,,,apollo13,,,,fail,,,,lunarlanding,,,,"5days,22hours,54minutes,41seconds",,,,saturn-v,
+1.0,,1971-01-31,,,,"eugenea.cernan,joeh.engle,ronalde.evans",,,,"alanb.shepardjr.,edgard.mitchell,stuarta.roosa",,,,1971-02-09,,,,pacificocean,,,,,,"capekennedy,lc-39a",,,,apollo14,,,,success,,,,lunarlanding,,,,"9days,2minutes",,,,saturn-v,
+1.0,,1971-07-26,,,,"richardf.gordonjr.,harrisonh.schmitt,vancedevoebrand",,,,"davidr.scott,jamesb.irwin,alfredm.worden",,,,1971-08-07,,,,pacificocean,,,,,,"capekennedy,lc-39a",,,,apollo15,,,,success,,,,lunarlanding,,,,"12days,17hours,12minutes",,,,saturn-v,
+1.0,,1972-04-16,,,,"fredhaise,edgard.mitchell,stuarta.roosa",,,,"johnw.young,charlesm.dukejr.,thomask.mattinglyii",,,,1972-04-27,,,,pacificocean,,,,,,"capekennedy,lc-39a",,,,apollo16,,,,success,,,,lunarlanding,,,,"11days,1hour,51minutes",,,,saturn-v,
+1.0,,1972-12-07,,,,"johnw.young,charlesm.dukejr.,stuarta.roosa",,,,"eugenea.cernan,harrisonh.schmitt,ronalde.evans",,,,1972-12-19,,,,pacificocean,,,,,,"capekennedy,lc-39a",,,,apollo17,,,,success,,,,lunarlanding,,,,"12days,13hours,52minutes",,,,saturn-v,
+1.0,,1973-05-14,,,,/,,,,/,,,,1979-07-11,,,,westernaustralia,,,,,,"capekennedy,lc-39a",,,,skylab,,,,fail,,,,spacestation,,,,2249days,,,,saturn-ivb,
+,1.0,1973-05-22,1973-05-22,,,,/,,,,"alanl.bean,jackr.lousma,owenk.garriott",,,,1973-06-22,,,,earth,,,,,,lc-39a,,,,skylab2,,,,success,,,,orbital,,,,28days19hours13minutes,,,,saturnib
+1.0,,1973-05-25,,,,"russelll.schweickart,f.storymusgrave,brucemccandlessii",,,,"charles""pete""conradjr.,josephp.kerwin,paulj.weitz",,,,1973-06-22,,,,pacificocean,,,,,,"capekennedy,lc-39b",,,,skylab2,,,,success,,,,spacestation,,,,"28days,49minutes,49seconds",,,,saturnib,
+,1.0,1973-11-14,1973-11-14,,,,/,,,,"donaldk.peterson,charlesm.dukejr.,robertc.houbolt",,,,1974-02-8,,,,earth,,,,,,lc-39a,,,,skylab4,,,,success,,,,orbital,,,,84days1hour25minutes,,,,saturnib
+1.0,,1973-11-16,,,,"vanced.brand,williamlenoir,donl.lind",,,,"geraldp.carr,edwardg.gibson,williamr.pogue",,,,1974-02-08,,,,pacificocean,,,,,,"capekennedy,lc-39b",,,,skylab4,,,,success,,,,spacestation,,,,"84days,1hour,15minutes,30seconds",,,,saturnib,

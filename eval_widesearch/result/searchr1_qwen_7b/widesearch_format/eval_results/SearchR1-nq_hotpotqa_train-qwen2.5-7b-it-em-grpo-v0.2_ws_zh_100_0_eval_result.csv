@@ -1,0 +1,1118 @@
+exist_flag_gt,exist_flag_response,手机型号,手机型号_before_map,内存种类（rom）_llm_judge,内存种类（rom）_llm_judge_eval_msg,内存种类（rom）_query,内存种类（rom）_response,开售日期_exact_match,开售日期_exact_match_eval_msg,开售日期_query,开售日期_response,手机品牌_llm_judge,手机品牌_llm_judge_eval_msg,手机品牌_query,手机品牌_response,手机型号_exact_match,手机型号_exact_match_eval_msg,打开后最大屏幕尺寸_llm_judge,打开后最大屏幕尺寸_llm_judge_eval_msg,打开后最大屏幕尺寸_query,打开后最大屏幕尺寸_response,折叠后最小屏幕尺寸_llm_judge,折叠后最小屏幕尺寸_llm_judge_eval_msg,折叠后最小屏幕尺寸_query,折叠后最小屏幕尺寸_response,电池大小_llm_judge,电池大小_llm_judge_eval_msg,电池大小_query,电池大小_response
+,,huaweimatex5,Mate X5,0.0,"分析过程：
+
+- 参考答案（target）均为：“256gb、512gb、1t”或“256gb、512gb、1tb”（其中“1t”和“1tb”是同一个意思，“1tb”即1 terabyte）。
+
+- 所有待评分的回答（response）均为：“256gb/512gb”，即仅包含256GB和512GB两个选项，没有提及1TB。
+
+根据评分标准：
+
+- 只要语义大致相同或者指向实体一致即可得1分。
+
+- 这里“256gb/512gb”缺少了“1tb/1t”这个容量选项，因此与完整参考答案的语义不完全相同，明显遗漏了一项实体（1TB）。
+
+- 因为遗漏了一项容量，不能算完全正确，应该扣分。
+
+- 根据题意分数只能是0或1，不存在部分分。
+
+- 因此都给0分。
+
+最终评分结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0
+}
+```",256gb、512gb、1t,256gb/512gb,0.0,"exact not match, response: /, target: 2023-09-14",2023-09-14,/,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: The response and the target are considered correct if the meaning is roughly the same or the entity they refer to is consistent. Exact word matching is not required.
+
+---
+
+**idx_0**  
+Response: 华为  
+Target: 华为  
+Analysis: Both are exactly the same entity. Score = 1
+
+**idx_1**  
+Response: 荣耀  
+Target: 荣耀  
+Analysis: Same entity. Score = 1
+
+**idx_2**  
+Response: vivo  
+Target: vivo  
+Analysis: Same entity. Score = 1
+
+**idx_3**  
+Response: vivo  
+Target: vivo  
+Analysis: Same entity. Score = 1
+
+**idx_4**  
+Response: oppo  
+Target: oppo  
+Analysis: Same entity. Score = 1
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",华为,华为,1.0,key_match,1.0,"Let's analyze each pair based on the given criterion:
+
+Criterion:  
+- Answers must have roughly the same semantics or point to the same entity. Exact matching is not required.
+
+---
+
+**idx_0: response = ""8.0寸"", target = ""7.85英寸""**  
+- Response says 8.0 inches; target is 7.85 inches.  
+- The difference is 0.15 inches (8.0 - 7.85 = 0.15). About 2% difference.  
+- Both refer to a screen size or length in inches.  
+- The criterion allows for slight differences if semantics or entity match.  
+- Both represent the dimension of about 8 inches.  
+- Judgement: The response roughly matches the target in meaning (size ~8 inches). Score = 1
+
+---
+
+**idx_1: response = ""8.0寸"", target = ""7.92英寸""**  
+- Difference 0.08 inches (~1% difference).  
+- Same reasoning as idx_0; both represent roughly 8 inches.  
+- Score = 1
+
+---
+
+**idx_2: response = ""8.0寸"", target = ""8.03英寸""**  
+- Difference 0.03 inches, very close.  
+- Semantics clearly match.  
+- Score = 1
+
+---
+
+**idx_3: response = ""8.0寸"", target = ""8.03英寸""**  
+- Same as idx_2.  
+- Score = 1
+
+---
+
+**idx_4: response = ""8.93寸"", target = ""8.12英寸""**  
+- Difference = 0.81 inches, about 10% difference.  
+- The response provides a significantly larger number, which is not roughly the same.  
+- According to criterion, they must be ""大致"" or point to the same entity. The entity is the screen size, but 8.93 is quite different from 8.12.  
+- The semantics differ: 8.93 is closer to 9 inches, while 8.12 is closer to 8 inches. Not close enough.  
+- Score = 0
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0
+}
+```",7.85英寸,8.0寸,0.0,"Let's analyze each pair one by one according to the given criterion:
+
+Criterion:
+- The response should be semantically roughly the same or point to the same entity as the target answer.
+- Exact word-by-word matching is not required.
+- Score is either 0 or 1.
+
+---
+
+**idx_0**:  
+- Response: ""/"" (slash)  
+- Target: ""6.4英寸"" (6.4 inches)  
+- Analysis:  
+  ""/"" is not a meaningful answer and provides no information related to the target. It does not point to the same entity.  
+- Score: 0
+
+---
+
+**idx_1**:  
+- Response: ""/""  
+- Target: ""6.43英寸"" (6.43 inches)  
+- Analysis:  
+  Same as idx_0, empty/no answer.  
+- Score: 0
+
+---
+
+**idx_2**:  
+- Response: ""/""  
+- Target: ""6.53英寸"" (6.53 inches)  
+- Analysis:  
+  Same as above, no meaningful answer.  
+- Score: 0
+
+---
+
+**idx_3**:  
+- Response: ""5.4寸"" (5.4 inches)  
+- Target: ""6.53英寸"" (6.53 inches)  
+- Analysis:  
+  The sizes differ: 5.4 vs 6.53 inches. This is not approximately equal and points to a different entity (different phone size). Thus, semantics differ significantly.  
+- Score: 0
+
+---
+
+**idx_4**:  
+- Response: ""6.5寸"" (6.5 inches)  
+- Target: ""6.62英寸"" (6.62 inches)  
+- Analysis:  
+  The response is 6.5 inches, the target is 6.62 inches. This is very close, differing only about 0.12 inches. This can be considered as ""semantically roughly the same"" and they both point to the phone size.  
+- Score: 1
+
+---
+
+### Final scoring output:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 1
+}
+```",6.4英寸,/,0.0,"分析步骤：
+
+根据给出的评分标准：  
+- 答案和参考答案语义相同大致，或者指向的实体一致即可得满分1。  
+- 不需要字字对应。  
+- 评分只能是0或1。
+
+具体分析：  
+1. idx_0: 响应“4800mah”，标准答案“5060mah”，容量数值相差较大，数字不一致，且明显不是“指向的实体一致”的情况（这里的实体是电池容量，应是具体容量数值），两者不是语义相同大致的表达，只是都是电池容量值，但具体数值相差约260mah，不能认为指向同一实体或语义一致，因此得0。  
+2. idx_1: 响应“4800mah”，标准“5150mah”，相差350mah，仍属于不同容量值，语义不一致，不符合评分标准，得0。  
+3. idx_2: 响应“4600mah”，标准“5500mah”，相差900mah，量级明显不同，不语义相同，得0。  
+4. idx_3: 同idx_2，响应和标准均相同，依然不符合语义相同，得0。  
+5. idx_4: 响应“4400mah”，标准“5475mah”，差1075mah，语义不一致，得0。
+
+所有响应与标准答案容量数值相差较大，不符合语义大致一致或指向一致的条件，因此全部得0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",5060mah,4800mah
+,,荣耀magicv3,Magic V5,0.0,"分析过程：
+
+- 参考答案（target）均为：“256gb、512gb、1t”或“256gb、512gb、1tb”（其中“1t”和“1tb”是同一个意思，“1tb”即1 terabyte）。
+
+- 所有待评分的回答（response）均为：“256gb/512gb”，即仅包含256GB和512GB两个选项，没有提及1TB。
+
+根据评分标准：
+
+- 只要语义大致相同或者指向实体一致即可得1分。
+
+- 这里“256gb/512gb”缺少了“1tb/1t”这个容量选项，因此与完整参考答案的语义不完全相同，明显遗漏了一项实体（1TB）。
+
+- 因为遗漏了一项容量，不能算完全正确，应该扣分。
+
+- 根据题意分数只能是0或1，不存在部分分。
+
+- 因此都给0分。
+
+最终评分结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0
+}
+```",256gb、512gb、1tb,256gb/512gb,0.0,"exact not match, response: /, target: 2024-07-19",2024-07-19,/,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: The response and the target are considered correct if the meaning is roughly the same or the entity they refer to is consistent. Exact word matching is not required.
+
+---
+
+**idx_0**  
+Response: 华为  
+Target: 华为  
+Analysis: Both are exactly the same entity. Score = 1
+
+**idx_1**  
+Response: 荣耀  
+Target: 荣耀  
+Analysis: Same entity. Score = 1
+
+**idx_2**  
+Response: vivo  
+Target: vivo  
+Analysis: Same entity. Score = 1
+
+**idx_3**  
+Response: vivo  
+Target: vivo  
+Analysis: Same entity. Score = 1
+
+**idx_4**  
+Response: oppo  
+Target: oppo  
+Analysis: Same entity. Score = 1
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",荣耀,荣耀,1.0,key_match,1.0,"Let's analyze each pair based on the given criterion:
+
+Criterion:  
+- Answers must have roughly the same semantics or point to the same entity. Exact matching is not required.
+
+---
+
+**idx_0: response = ""8.0寸"", target = ""7.85英寸""**  
+- Response says 8.0 inches; target is 7.85 inches.  
+- The difference is 0.15 inches (8.0 - 7.85 = 0.15). About 2% difference.  
+- Both refer to a screen size or length in inches.  
+- The criterion allows for slight differences if semantics or entity match.  
+- Both represent the dimension of about 8 inches.  
+- Judgement: The response roughly matches the target in meaning (size ~8 inches). Score = 1
+
+---
+
+**idx_1: response = ""8.0寸"", target = ""7.92英寸""**  
+- Difference 0.08 inches (~1% difference).  
+- Same reasoning as idx_0; both represent roughly 8 inches.  
+- Score = 1
+
+---
+
+**idx_2: response = ""8.0寸"", target = ""8.03英寸""**  
+- Difference 0.03 inches, very close.  
+- Semantics clearly match.  
+- Score = 1
+
+---
+
+**idx_3: response = ""8.0寸"", target = ""8.03英寸""**  
+- Same as idx_2.  
+- Score = 1
+
+---
+
+**idx_4: response = ""8.93寸"", target = ""8.12英寸""**  
+- Difference = 0.81 inches, about 10% difference.  
+- The response provides a significantly larger number, which is not roughly the same.  
+- According to criterion, they must be ""大致"" or point to the same entity. The entity is the screen size, but 8.93 is quite different from 8.12.  
+- The semantics differ: 8.93 is closer to 9 inches, while 8.12 is closer to 8 inches. Not close enough.  
+- Score = 0
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0
+}
+```",7.92英寸,8.0寸,0.0,"Let's analyze each pair one by one according to the given criterion:
+
+Criterion:
+- The response should be semantically roughly the same or point to the same entity as the target answer.
+- Exact word-by-word matching is not required.
+- Score is either 0 or 1.
+
+---
+
+**idx_0**:  
+- Response: ""/"" (slash)  
+- Target: ""6.4英寸"" (6.4 inches)  
+- Analysis:  
+  ""/"" is not a meaningful answer and provides no information related to the target. It does not point to the same entity.  
+- Score: 0
+
+---
+
+**idx_1**:  
+- Response: ""/""  
+- Target: ""6.43英寸"" (6.43 inches)  
+- Analysis:  
+  Same as idx_0, empty/no answer.  
+- Score: 0
+
+---
+
+**idx_2**:  
+- Response: ""/""  
+- Target: ""6.53英寸"" (6.53 inches)  
+- Analysis:  
+  Same as above, no meaningful answer.  
+- Score: 0
+
+---
+
+**idx_3**:  
+- Response: ""5.4寸"" (5.4 inches)  
+- Target: ""6.53英寸"" (6.53 inches)  
+- Analysis:  
+  The sizes differ: 5.4 vs 6.53 inches. This is not approximately equal and points to a different entity (different phone size). Thus, semantics differ significantly.  
+- Score: 0
+
+---
+
+**idx_4**:  
+- Response: ""6.5寸"" (6.5 inches)  
+- Target: ""6.62英寸"" (6.62 inches)  
+- Analysis:  
+  The response is 6.5 inches, the target is 6.62 inches. This is very close, differing only about 0.12 inches. This can be considered as ""semantically roughly the same"" and they both point to the phone size.  
+- Score: 1
+
+---
+
+### Final scoring output:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 1
+}
+```",6.43英寸,/,0.0,"分析步骤：
+
+根据给出的评分标准：  
+- 答案和参考答案语义相同大致，或者指向的实体一致即可得满分1。  
+- 不需要字字对应。  
+- 评分只能是0或1。
+
+具体分析：  
+1. idx_0: 响应“4800mah”，标准答案“5060mah”，容量数值相差较大，数字不一致，且明显不是“指向的实体一致”的情况（这里的实体是电池容量，应是具体容量数值），两者不是语义相同大致的表达，只是都是电池容量值，但具体数值相差约260mah，不能认为指向同一实体或语义一致，因此得0。  
+2. idx_1: 响应“4800mah”，标准“5150mah”，相差350mah，仍属于不同容量值，语义不一致，不符合评分标准，得0。  
+3. idx_2: 响应“4600mah”，标准“5500mah”，相差900mah，量级明显不同，不语义相同，得0。  
+4. idx_3: 同idx_2，响应和标准均相同，依然不符合语义相同，得0。  
+5. idx_4: 响应“4400mah”，标准“5475mah”，差1075mah，语义不一致，得0。
+
+所有响应与标准答案容量数值相差较大，不符合语义大致一致或指向一致的条件，因此全部得0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",5150mah,4800mah
+,,vivoxfold3,X Fold3,0.0,"分析过程：
+
+- 参考答案（target）均为：“256gb、512gb、1t”或“256gb、512gb、1tb”（其中“1t”和“1tb”是同一个意思，“1tb”即1 terabyte）。
+
+- 所有待评分的回答（response）均为：“256gb/512gb”，即仅包含256GB和512GB两个选项，没有提及1TB。
+
+根据评分标准：
+
+- 只要语义大致相同或者指向实体一致即可得1分。
+
+- 这里“256gb/512gb”缺少了“1tb/1t”这个容量选项，因此与完整参考答案的语义不完全相同，明显遗漏了一项实体（1TB）。
+
+- 因为遗漏了一项容量，不能算完全正确，应该扣分。
+
+- 根据题意分数只能是0或1，不存在部分分。
+
+- 因此都给0分。
+
+最终评分结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0
+}
+```",256gb、512gb、1tb,256gb/512gb,0.0,"exact not match, response: /, target: 2024-04-03",2024-04-03,/,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: The response and the target are considered correct if the meaning is roughly the same or the entity they refer to is consistent. Exact word matching is not required.
+
+---
+
+**idx_0**  
+Response: 华为  
+Target: 华为  
+Analysis: Both are exactly the same entity. Score = 1
+
+**idx_1**  
+Response: 荣耀  
+Target: 荣耀  
+Analysis: Same entity. Score = 1
+
+**idx_2**  
+Response: vivo  
+Target: vivo  
+Analysis: Same entity. Score = 1
+
+**idx_3**  
+Response: vivo  
+Target: vivo  
+Analysis: Same entity. Score = 1
+
+**idx_4**  
+Response: oppo  
+Target: oppo  
+Analysis: Same entity. Score = 1
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",vivo,vivo,1.0,key_match,1.0,"Let's analyze each pair based on the given criterion:
+
+Criterion:  
+- Answers must have roughly the same semantics or point to the same entity. Exact matching is not required.
+
+---
+
+**idx_0: response = ""8.0寸"", target = ""7.85英寸""**  
+- Response says 8.0 inches; target is 7.85 inches.  
+- The difference is 0.15 inches (8.0 - 7.85 = 0.15). About 2% difference.  
+- Both refer to a screen size or length in inches.  
+- The criterion allows for slight differences if semantics or entity match.  
+- Both represent the dimension of about 8 inches.  
+- Judgement: The response roughly matches the target in meaning (size ~8 inches). Score = 1
+
+---
+
+**idx_1: response = ""8.0寸"", target = ""7.92英寸""**  
+- Difference 0.08 inches (~1% difference).  
+- Same reasoning as idx_0; both represent roughly 8 inches.  
+- Score = 1
+
+---
+
+**idx_2: response = ""8.0寸"", target = ""8.03英寸""**  
+- Difference 0.03 inches, very close.  
+- Semantics clearly match.  
+- Score = 1
+
+---
+
+**idx_3: response = ""8.0寸"", target = ""8.03英寸""**  
+- Same as idx_2.  
+- Score = 1
+
+---
+
+**idx_4: response = ""8.93寸"", target = ""8.12英寸""**  
+- Difference = 0.81 inches, about 10% difference.  
+- The response provides a significantly larger number, which is not roughly the same.  
+- According to criterion, they must be ""大致"" or point to the same entity. The entity is the screen size, but 8.93 is quite different from 8.12.  
+- The semantics differ: 8.93 is closer to 9 inches, while 8.12 is closer to 8 inches. Not close enough.  
+- Score = 0
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0
+}
+```",8.03英寸,8.0寸,0.0,"Let's analyze each pair one by one according to the given criterion:
+
+Criterion:
+- The response should be semantically roughly the same or point to the same entity as the target answer.
+- Exact word-by-word matching is not required.
+- Score is either 0 or 1.
+
+---
+
+**idx_0**:  
+- Response: ""/"" (slash)  
+- Target: ""6.4英寸"" (6.4 inches)  
+- Analysis:  
+  ""/"" is not a meaningful answer and provides no information related to the target. It does not point to the same entity.  
+- Score: 0
+
+---
+
+**idx_1**:  
+- Response: ""/""  
+- Target: ""6.43英寸"" (6.43 inches)  
+- Analysis:  
+  Same as idx_0, empty/no answer.  
+- Score: 0
+
+---
+
+**idx_2**:  
+- Response: ""/""  
+- Target: ""6.53英寸"" (6.53 inches)  
+- Analysis:  
+  Same as above, no meaningful answer.  
+- Score: 0
+
+---
+
+**idx_3**:  
+- Response: ""5.4寸"" (5.4 inches)  
+- Target: ""6.53英寸"" (6.53 inches)  
+- Analysis:  
+  The sizes differ: 5.4 vs 6.53 inches. This is not approximately equal and points to a different entity (different phone size). Thus, semantics differ significantly.  
+- Score: 0
+
+---
+
+**idx_4**:  
+- Response: ""6.5寸"" (6.5 inches)  
+- Target: ""6.62英寸"" (6.62 inches)  
+- Analysis:  
+  The response is 6.5 inches, the target is 6.62 inches. This is very close, differing only about 0.12 inches. This can be considered as ""semantically roughly the same"" and they both point to the phone size.  
+- Score: 1
+
+---
+
+### Final scoring output:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 1
+}
+```",6.53英寸,/,0.0,"分析步骤：
+
+根据给出的评分标准：  
+- 答案和参考答案语义相同大致，或者指向的实体一致即可得满分1。  
+- 不需要字字对应。  
+- 评分只能是0或1。
+
+具体分析：  
+1. idx_0: 响应“4800mah”，标准答案“5060mah”，容量数值相差较大，数字不一致，且明显不是“指向的实体一致”的情况（这里的实体是电池容量，应是具体容量数值），两者不是语义相同大致的表达，只是都是电池容量值，但具体数值相差约260mah，不能认为指向同一实体或语义一致，因此得0。  
+2. idx_1: 响应“4800mah”，标准“5150mah”，相差350mah，仍属于不同容量值，语义不一致，不符合评分标准，得0。  
+3. idx_2: 响应“4600mah”，标准“5500mah”，相差900mah，量级明显不同，不语义相同，得0。  
+4. idx_3: 同idx_2，响应和标准均相同，依然不符合语义相同，得0。  
+5. idx_4: 响应“4400mah”，标准“5475mah”，差1075mah，语义不一致，得0。
+
+所有响应与标准答案容量数值相差较大，不符合语义大致一致或指向一致的条件，因此全部得0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",5500mah,4600mah
+,,vivoxfold3,X Fold5,0.0,"分析过程：
+
+- 参考答案（target）均为：“256gb、512gb、1t”或“256gb、512gb、1tb”（其中“1t”和“1tb”是同一个意思，“1tb”即1 terabyte）。
+
+- 所有待评分的回答（response）均为：“256gb/512gb”，即仅包含256GB和512GB两个选项，没有提及1TB。
+
+根据评分标准：
+
+- 只要语义大致相同或者指向实体一致即可得1分。
+
+- 这里“256gb/512gb”缺少了“1tb/1t”这个容量选项，因此与完整参考答案的语义不完全相同，明显遗漏了一项实体（1TB）。
+
+- 因为遗漏了一项容量，不能算完全正确，应该扣分。
+
+- 根据题意分数只能是0或1，不存在部分分。
+
+- 因此都给0分。
+
+最终评分结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0
+}
+```",256gb、512gb、1tb,256gb/512gb,0.0,"exact not match, response: 2025-06-15, target: 2024-04-03",2024-04-03,2025-06-15,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: The response and the target are considered correct if the meaning is roughly the same or the entity they refer to is consistent. Exact word matching is not required.
+
+---
+
+**idx_0**  
+Response: 华为  
+Target: 华为  
+Analysis: Both are exactly the same entity. Score = 1
+
+**idx_1**  
+Response: 荣耀  
+Target: 荣耀  
+Analysis: Same entity. Score = 1
+
+**idx_2**  
+Response: vivo  
+Target: vivo  
+Analysis: Same entity. Score = 1
+
+**idx_3**  
+Response: vivo  
+Target: vivo  
+Analysis: Same entity. Score = 1
+
+**idx_4**  
+Response: oppo  
+Target: oppo  
+Analysis: Same entity. Score = 1
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",vivo,vivo,1.0,key_match,1.0,"Let's analyze each pair based on the given criterion:
+
+Criterion:  
+- Answers must have roughly the same semantics or point to the same entity. Exact matching is not required.
+
+---
+
+**idx_0: response = ""8.0寸"", target = ""7.85英寸""**  
+- Response says 8.0 inches; target is 7.85 inches.  
+- The difference is 0.15 inches (8.0 - 7.85 = 0.15). About 2% difference.  
+- Both refer to a screen size or length in inches.  
+- The criterion allows for slight differences if semantics or entity match.  
+- Both represent the dimension of about 8 inches.  
+- Judgement: The response roughly matches the target in meaning (size ~8 inches). Score = 1
+
+---
+
+**idx_1: response = ""8.0寸"", target = ""7.92英寸""**  
+- Difference 0.08 inches (~1% difference).  
+- Same reasoning as idx_0; both represent roughly 8 inches.  
+- Score = 1
+
+---
+
+**idx_2: response = ""8.0寸"", target = ""8.03英寸""**  
+- Difference 0.03 inches, very close.  
+- Semantics clearly match.  
+- Score = 1
+
+---
+
+**idx_3: response = ""8.0寸"", target = ""8.03英寸""**  
+- Same as idx_2.  
+- Score = 1
+
+---
+
+**idx_4: response = ""8.93寸"", target = ""8.12英寸""**  
+- Difference = 0.81 inches, about 10% difference.  
+- The response provides a significantly larger number, which is not roughly the same.  
+- According to criterion, they must be ""大致"" or point to the same entity. The entity is the screen size, but 8.93 is quite different from 8.12.  
+- The semantics differ: 8.93 is closer to 9 inches, while 8.12 is closer to 8 inches. Not close enough.  
+- Score = 0
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0
+}
+```",8.03英寸,8.0寸,0.0,"Let's analyze each pair one by one according to the given criterion:
+
+Criterion:
+- The response should be semantically roughly the same or point to the same entity as the target answer.
+- Exact word-by-word matching is not required.
+- Score is either 0 or 1.
+
+---
+
+**idx_0**:  
+- Response: ""/"" (slash)  
+- Target: ""6.4英寸"" (6.4 inches)  
+- Analysis:  
+  ""/"" is not a meaningful answer and provides no information related to the target. It does not point to the same entity.  
+- Score: 0
+
+---
+
+**idx_1**:  
+- Response: ""/""  
+- Target: ""6.43英寸"" (6.43 inches)  
+- Analysis:  
+  Same as idx_0, empty/no answer.  
+- Score: 0
+
+---
+
+**idx_2**:  
+- Response: ""/""  
+- Target: ""6.53英寸"" (6.53 inches)  
+- Analysis:  
+  Same as above, no meaningful answer.  
+- Score: 0
+
+---
+
+**idx_3**:  
+- Response: ""5.4寸"" (5.4 inches)  
+- Target: ""6.53英寸"" (6.53 inches)  
+- Analysis:  
+  The sizes differ: 5.4 vs 6.53 inches. This is not approximately equal and points to a different entity (different phone size). Thus, semantics differ significantly.  
+- Score: 0
+
+---
+
+**idx_4**:  
+- Response: ""6.5寸"" (6.5 inches)  
+- Target: ""6.62英寸"" (6.62 inches)  
+- Analysis:  
+  The response is 6.5 inches, the target is 6.62 inches. This is very close, differing only about 0.12 inches. This can be considered as ""semantically roughly the same"" and they both point to the phone size.  
+- Score: 1
+
+---
+
+### Final scoring output:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 1
+}
+```",6.53英寸,5.4寸,0.0,"分析步骤：
+
+根据给出的评分标准：  
+- 答案和参考答案语义相同大致，或者指向的实体一致即可得满分1。  
+- 不需要字字对应。  
+- 评分只能是0或1。
+
+具体分析：  
+1. idx_0: 响应“4800mah”，标准答案“5060mah”，容量数值相差较大，数字不一致，且明显不是“指向的实体一致”的情况（这里的实体是电池容量，应是具体容量数值），两者不是语义相同大致的表达，只是都是电池容量值，但具体数值相差约260mah，不能认为指向同一实体或语义一致，因此得0。  
+2. idx_1: 响应“4800mah”，标准“5150mah”，相差350mah，仍属于不同容量值，语义不一致，不符合评分标准，得0。  
+3. idx_2: 响应“4600mah”，标准“5500mah”，相差900mah，量级明显不同，不语义相同，得0。  
+4. idx_3: 同idx_2，响应和标准均相同，依然不符合语义相同，得0。  
+5. idx_4: 响应“4400mah”，标准“5475mah”，差1075mah，语义不一致，得0。
+
+所有响应与标准答案容量数值相差较大，不符合语义大致一致或指向一致的条件，因此全部得0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",5500mah,4600mah
+,,oppofindn5,Find N5,0.0,"分析过程：
+
+- 参考答案（target）均为：“256gb、512gb、1t”或“256gb、512gb、1tb”（其中“1t”和“1tb”是同一个意思，“1tb”即1 terabyte）。
+
+- 所有待评分的回答（response）均为：“256gb/512gb”，即仅包含256GB和512GB两个选项，没有提及1TB。
+
+根据评分标准：
+
+- 只要语义大致相同或者指向实体一致即可得1分。
+
+- 这里“256gb/512gb”缺少了“1tb/1t”这个容量选项，因此与完整参考答案的语义不完全相同，明显遗漏了一项实体（1TB）。
+
+- 因为遗漏了一项容量，不能算完全正确，应该扣分。
+
+- 根据题意分数只能是0或1，不存在部分分。
+
+- 因此都给0分。
+
+最终评分结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0
+}
+```",256gb、512gb、1tb,256gb/512gb,0.0,"exact not match, response: 2025-06-15, target: 2025-02-26",2025-02-26,2025-06-15,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: The response and the target are considered correct if the meaning is roughly the same or the entity they refer to is consistent. Exact word matching is not required.
+
+---
+
+**idx_0**  
+Response: 华为  
+Target: 华为  
+Analysis: Both are exactly the same entity. Score = 1
+
+**idx_1**  
+Response: 荣耀  
+Target: 荣耀  
+Analysis: Same entity. Score = 1
+
+**idx_2**  
+Response: vivo  
+Target: vivo  
+Analysis: Same entity. Score = 1
+
+**idx_3**  
+Response: vivo  
+Target: vivo  
+Analysis: Same entity. Score = 1
+
+**idx_4**  
+Response: oppo  
+Target: oppo  
+Analysis: Same entity. Score = 1
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",oppo,oppo,1.0,key_match,0.0,"Let's analyze each pair based on the given criterion:
+
+Criterion:  
+- Answers must have roughly the same semantics or point to the same entity. Exact matching is not required.
+
+---
+
+**idx_0: response = ""8.0寸"", target = ""7.85英寸""**  
+- Response says 8.0 inches; target is 7.85 inches.  
+- The difference is 0.15 inches (8.0 - 7.85 = 0.15). About 2% difference.  
+- Both refer to a screen size or length in inches.  
+- The criterion allows for slight differences if semantics or entity match.  
+- Both represent the dimension of about 8 inches.  
+- Judgement: The response roughly matches the target in meaning (size ~8 inches). Score = 1
+
+---
+
+**idx_1: response = ""8.0寸"", target = ""7.92英寸""**  
+- Difference 0.08 inches (~1% difference).  
+- Same reasoning as idx_0; both represent roughly 8 inches.  
+- Score = 1
+
+---
+
+**idx_2: response = ""8.0寸"", target = ""8.03英寸""**  
+- Difference 0.03 inches, very close.  
+- Semantics clearly match.  
+- Score = 1
+
+---
+
+**idx_3: response = ""8.0寸"", target = ""8.03英寸""**  
+- Same as idx_2.  
+- Score = 1
+
+---
+
+**idx_4: response = ""8.93寸"", target = ""8.12英寸""**  
+- Difference = 0.81 inches, about 10% difference.  
+- The response provides a significantly larger number, which is not roughly the same.  
+- According to criterion, they must be ""大致"" or point to the same entity. The entity is the screen size, but 8.93 is quite different from 8.12.  
+- The semantics differ: 8.93 is closer to 9 inches, while 8.12 is closer to 8 inches. Not close enough.  
+- Score = 0
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0
+}
+```",8.12英寸,8.93寸,1.0,"Let's analyze each pair one by one according to the given criterion:
+
+Criterion:
+- The response should be semantically roughly the same or point to the same entity as the target answer.
+- Exact word-by-word matching is not required.
+- Score is either 0 or 1.
+
+---
+
+**idx_0**:  
+- Response: ""/"" (slash)  
+- Target: ""6.4英寸"" (6.4 inches)  
+- Analysis:  
+  ""/"" is not a meaningful answer and provides no information related to the target. It does not point to the same entity.  
+- Score: 0
+
+---
+
+**idx_1**:  
+- Response: ""/""  
+- Target: ""6.43英寸"" (6.43 inches)  
+- Analysis:  
+  Same as idx_0, empty/no answer.  
+- Score: 0
+
+---
+
+**idx_2**:  
+- Response: ""/""  
+- Target: ""6.53英寸"" (6.53 inches)  
+- Analysis:  
+  Same as above, no meaningful answer.  
+- Score: 0
+
+---
+
+**idx_3**:  
+- Response: ""5.4寸"" (5.4 inches)  
+- Target: ""6.53英寸"" (6.53 inches)  
+- Analysis:  
+  The sizes differ: 5.4 vs 6.53 inches. This is not approximately equal and points to a different entity (different phone size). Thus, semantics differ significantly.  
+- Score: 0
+
+---
+
+**idx_4**:  
+- Response: ""6.5寸"" (6.5 inches)  
+- Target: ""6.62英寸"" (6.62 inches)  
+- Analysis:  
+  The response is 6.5 inches, the target is 6.62 inches. This is very close, differing only about 0.12 inches. This can be considered as ""semantically roughly the same"" and they both point to the phone size.  
+- Score: 1
+
+---
+
+### Final scoring output:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 1
+}
+```",6.62英寸,6.5寸,0.0,"分析步骤：
+
+根据给出的评分标准：  
+- 答案和参考答案语义相同大致，或者指向的实体一致即可得满分1。  
+- 不需要字字对应。  
+- 评分只能是0或1。
+
+具体分析：  
+1. idx_0: 响应“4800mah”，标准答案“5060mah”，容量数值相差较大，数字不一致，且明显不是“指向的实体一致”的情况（这里的实体是电池容量，应是具体容量数值），两者不是语义相同大致的表达，只是都是电池容量值，但具体数值相差约260mah，不能认为指向同一实体或语义一致，因此得0。  
+2. idx_1: 响应“4800mah”，标准“5150mah”，相差350mah，仍属于不同容量值，语义不一致，不符合评分标准，得0。  
+3. idx_2: 响应“4600mah”，标准“5500mah”，相差900mah，量级明显不同，不语义相同，得0。  
+4. idx_3: 同idx_2，响应和标准均相同，依然不符合语义相同，得0。  
+5. idx_4: 响应“4400mah”，标准“5475mah”，差1075mah，语义不一致，得0。
+
+所有响应与标准答案容量数值相差较大，不符合语义大致一致或指向一致的条件，因此全部得0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",5475mah,4400mah
+1.0,,huaweimatex,,,,512gb,,,,2019-11-15,,,,华为,,,,,,8英寸,,,,6.6英寸,,,,4500mah,
+1.0,,huaweimatex2,,,,256gb、512gb,,,,2021-02-25,,,,华为,,,,,,8英寸,,,,6.45英寸,,,,4500mah,
+1.0,,huaweimatex3,,,,256gb、512gb、1tb,,,,2023-04-07,,,,华为,,,,,,7.85英寸,,,,6.4英寸,,,,4700mah,
+1.0,,huaweimatex6,,,,256gb、512gb、1tb,,,,2024-12-06,,,,华为,,,,,,7.93英寸,,,,6.45英寸,,,,"典藏版：5080mah
+其他版本：4990mah",
+1.0,,huaweimatexs,,,,512gb,,,,2020-03-05,,,,华为,,,,,,8英寸,,,,正面：6.6英寸；背面：6.38英寸,,,,4500mah,
+1.0,,huaweimatexs2,,,,256gb、512gb,,,,2022-05-06,,,,华为,,,,,,7.8英寸,,,,6.5英寸,,,,4600mah,
+1.0,,huaweimatext非凡大师,,,,256gb、512gb、1tb,,,,2024-09-20,,,,华为,,,,,,10.2英寸,,,,6.4英寸,,,,5500mah,
+1.0,,huaweip50pocket,,,,256gb、512gb,,,,2021-12-23,,,,华为,,,,,,6.9英寸,,,,1.04英寸,,,,4000mah,
+1.0,,huaweipocket2,,,,256gb、512gb、1tb,,,,2024-03-01,,,,华为,,,,,,6.94英寸,,,,1.15英寸,,,,4420mah,
+1.0,,huaweipockets,,,,128gb/256gb/512gb,,,,2022-11-10,,,,华为,,,,,,6.9英寸,,,,1.04英寸,,,,4000mah,
+1.0,,huaweipurax,,,,256gb、512gb、1tb,,,,2025-03-30,,,,华为,,,,,,6.3英寸,,,,3.5英寸,,,,4610mah,
+1.0,,liberoflip,,,,128gb,,,,2024-02-29,,,,中兴,,,,,,6.9英寸,,,,1.43英寸,,,,4180mah,
+,1.0,mate80pro,Mate 80 Pro,,,,256gb/512gb,,,,2025-11-01,,,,华为,,,,,,8.0寸,,,,/,,,,4800mah
+1.0,,motorazr60,,,,512gb,,,,2025-05-08,,,,联想,,,,,,6.9英寸,,,,3.63英寸,,,,3880mah,
+1.0,,onepluesopen,,,,512gb,,,,2023-10-19,,,,一加,,,,,,7.82英寸,,,,6.31英寸,,,,4805mah,
+1.0,,oppofindn,,,,256gb、512g,,,,2021-12-23,,,,oppo,,,,,,7.10英寸,,,,5.49英寸,,,,4500mah,
+1.0,,oppofindn2,,,,256gb、512g,,,,2022-12-23,,,,oppo,,,,,,7.10英寸,,,,5.54英寸,,,,4520mah,
+1.0,,oppofindn2flip,,,,256gb、512g,,,,2022-12-30,,,,oppo,,,,,,6.80英寸,,,,3.26英寸,,,,4300mah,
+1.0,,oppofindn3,,,,512gb、1tb,,,,2023-10-27,,,,oppo,,,,,,7.82英寸,,,,6.31英寸,,,,4680mah,
+1.0,,oppofindn3flip,,,,256gb、512g,,,,2023-09-08,,,,oppo,,,,,,6.8英寸,,,,3.26英寸,,,,4300mah,
+1.0,,tclflexv,,,,128gb,,,,/,,,,tcl,,,,,,6.64英寸,,,,1.1英寸,,,,nan,
+1.0,,vivoxflip,,,,256gb、512g,,,,2023-04-28,,,,vivo,,,,,,6.74英寸,,,,3.0英寸,,,,4400mah,
+1.0,,vivoxfold,,,,256gb、512g,,,,2022-04-22,,,,vivo,,,,,,8.03英寸,,,,6.53英寸,,,,4600mah,
+1.0,,vivoxfold+,,,,256gb、512g,,,,2022-09-29,,,,vivo,,,,,,8.03英寸,,,,6.53英寸,,,,4730mah,
+1.0,,vivoxfold2,,,,256gb、512g,,,,2023-04-28,,,,vivo,,,,,,8.03英寸,,,,6.53英寸,,,,4800mah,
+1.0,,vivoxfold3pro,,,,512gb、1tb,,,,2024-04-03,,,,vivo,,,,,,8.03英寸,,,,6.53英寸,,,,5700mah,
+1.0,,vivoxfolds,,,,256/512gb,,,,2022-09,,,,vivo,,,,,,8.03英寸,,,,6.53英寸,,,,4700mah,
+1.0,,xiaomimixflip,,,,256gb、512gb、1tb,,,,2024-07-23,,,,小米,,,,,,6.86英寸,,,,4.01英寸,,,,4665mah,
+1.0,,xiaomimixfold,,,,256gb、512g,,,,2021-04-16,,,,小米,,,,,,8.01英寸,,,,6.52英寸,,,,5020mah,
+1.0,,xiaomimixfold2,,,,256gb、512gb、1tb,,,,2022-08-16,,,,小米,,,,,,8.02英寸,,,,6.56英寸,,,,4500mah,
+1.0,,xiaomimixfold3,,,,256gb、512gb、1tb,,,,2023-08-16,,,,小米,,,,,,8.03英寸,,,,6.56英寸,,,,4800mah,
+1.0,,xiaomimixfold4,,,,256gb、512gb、1tb,,,,2024-07-23,,,,小米,,,,,,7.98英寸,,,,6.56英寸,,,,4780mah,
+1.0,,中兴天机axonm,,,,64gb、128gb,,,,2018-01-20,,,,中兴,,,,,,6.75英寸,,,,5.2英寸,,,,3180mah,
+1.0,,努比亚flip,,,,256gb、512gb,,,,2024-04-16,,,,努比亚,,,,,,6.9英寸,,,,1.43英寸,,,,4310mah,
+1.0,,努比亚flip2,,,,256gb、512gb,,,,2025-03-04,,,,努比亚,,,,,,6.9英寸,,,,3.0英寸,,,,4325mah,
+1.0,,华为novaflip,,,,256gb、512gb、1tb,,,,2024-08-09,,,,华为,,,,,,6.94英寸,,,,2.14英寸,,,,4295mah,
+1.0,,柔宇flexpai2,,,,256gb、512gb,,,,2020-09-25,,,,柔宇,,,,,,7.8英寸,,,,主屏：5.5英寸，辅屏：5.4英寸,,,,4450mah,
+1.0,,柔宇柔派,,,,128gb、256gb、512gb,,,,2018-11-01,,,,柔宇,,,,,,7.8英寸,,,,/,,,,3970mah,
+1.0,,荣耀magicv,,,,256gb、512gb,,,,2022-01-18,,,,荣耀,,,,,,7.9英寸,,,,6.45英寸,,,,4750mah,
+1.0,,荣耀magicv2,,,,256gb、512gb、1tb,,,,2023-07-20,,,,荣耀,,,,,,7.92英寸,,,,6.43英寸,,,,5000mah,
+1.0,,荣耀magicv2rsr保时捷设计,,,,1tb,,,,2024-01-12,,,,荣耀,,,,,,7.92英寸,,,,6.43英寸,,,,4900mah,
+1.0,,荣耀magicvflip,,,,256gb、512gb、1tb,,,,2024-06-21,,,,荣耀,,,,,,6.8英寸,,,,4.0英寸,,,,4800mah,
+1.0,,荣耀magicvs,,,,256gb、512gb,,,,2022-11-30,,,,荣耀,,,,,,7.9英寸,,,,6.45英寸,,,,5000mah,
+1.0,,荣耀magicvs2,,,,256gb、512gb,,,,2023-10-17,,,,荣耀,,,,,,7.92英寸,,,,6.43英寸,,,,5000mah,
+1.0,,荣耀magicvs3,,,,256gb、512gb、1tb,,,,2024-07-19,,,,荣耀,,,,,,7.92英寸,,,,6.43英寸,,,,5000mah,
+1.0,,荣耀vpurse,,,,256gb、512g,,,,2023-09-26,,,,荣耀,,,,,,7.71英寸,,,,6.45英寸,,,,4500mah,

@@ -1,0 +1,967 @@
+exist_flag_gt,exist_flag_response,作品名称,作品名称_before_map,作品名称_exact_match,作品名称_exact_match_eval_msg,制片国家/地区_llm_judge,制片国家/地区_llm_judge_eval_msg,制片国家/地区_query,制片国家/地区_response,导演_llm_judge,导演_llm_judge_eval_msg,导演_query,导演_response,片长_number_near,片长_number_near_eval_msg,片长_query,片长_response,类型_llm_judge,类型_llm_judge_eval_msg,类型_query,类型_response
+,,小丑,小丑,1.0,key_match,1.0,"Let's analyze each response against the target answer according to the criterion:
+
+Criterion summary:
+- Semantic equivalence or consistent reference to the entities is acceptable; exact word-to-word match is not necessary.
+- The response can be considered correct if it is a subset (part or all) of the listed target entities.
+
+---
+
+**idx_0**  
+- Response: 美国  
+- Target: 美国/加拿大  
+- Analysis: The response “美国” is one of the entities in the target set (“美国” and “加拿大”). Response is a subset of the target.  
+- Score: 1  
+
+**idx_1**  
+- Response: 美国  
+- Target: 美国/巴西/中国大陆  
+- Analysis: The response “美国” is in the target set, so it is a subset.  
+- Score: 1  
+
+**idx_2**  
+- Response: 法国  
+- Target: 法国/意大利  
+- Analysis: The response “法国” is included in the target set.  
+- Score: 1  
+
+**idx_3**  
+- Response: 意大利  
+- Target: 意大利/法国/德国  
+- Analysis: The response “意大利” is in the target set.  
+- Score: 1  
+
+**idx_4**  
+- Response: 捷克  
+- Target: 捷克/斯洛伐克/乌克兰  
+- Analysis: Response “捷克” is in the target.  
+- Score: 1  
+
+**idx_5**  
+- Response: 瑞典  
+- Target: 瑞典/德国/挪威  
+- Analysis: Response “瑞典” is part of the target entities.  
+- Score: 1  
+
+**idx_6**  
+- Response: 美国  
+- Target: 美国  
+- Analysis: Exact match.  
+- Score: 1  
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",美国/加拿大,美国,1.0,"分析过程：
+
+- idx_0：回答“托德·菲利普斯”，标准答案为“托德·菲利普斯”，完全一致，得分1。
+- idx_1：回答“詹姆斯·格雷”，标准答案“詹姆斯·格雷”，一致，得分1。
+- idx_2：回答“罗曼·波兰斯基”，标准答案“罗曼·波兰斯基”，一致，得分1。
+- idx_3：回答“皮耶特罗·马切罗”，标准答案“皮耶特罗·马切罗”，一致，得分1。
+- idx_4：回答“瓦茨拉夫·马尔豪尔”，标准答案“瓦茨拉夫·马尔豪尔”，一致，得分1。
+- idx_5：回答“罗伊·安德森”，标准答案“罗伊·安德森”，一致，得分1。
+- idx_6：回答“斯派克·李”，标准答案“史蒂文·索德伯格”，两者不一致，指向实体不同，得分0。
+
+总评分如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 0
+}
+```",托德·菲利普斯,托德·菲利普斯,1.0,"number near in range 10.0%, response: 122.0, target: 118.0",118,122,0.0,"分析过程：
+
+题目要求对回答与参考答案的类型进行对比，判断语义是否大致相同或指向实体一致即可，不需要字字对应且类型答出子集且符合其他电影内容即视为正确。
+
+- idx_0  
+  - 参考答案：剧情/惊悚/犯罪  
+  - 回答：超级英雄电影  
+  - 分析：回答类别“超级英雄电影”并非参考类别中的“剧情/惊悚/犯罪”，指向实体不一致，“超级英雄”并不是参考答案类型的子集或相关类别，因此视为错误。
+
+- idx_1  
+  - 参考答案：科幻/冒险  
+  - 回答：心理科幻片  
+  - 分析：“心理科幻片”包含“科幻”，且“科幻”属于参考答案的子集，回答属实指出了类型，符合标准，所以视为正确。
+
+- idx_2  
+  - 参考答案：剧情  
+  - 回答：历史剧情片  
+  - 分析：回答包含“剧情”，且“历史剧情”是剧情的子集，符合标准，正确。
+
+- idx_3  
+  - 参考答案：剧情  
+  - 回答：剧情片  
+  - 分析：一致，正确。
+
+- idx_4  
+  - 参考答案：剧情/战争  
+  - 回答：剧情片  
+  - 分析：回答包含了“剧情”，是参考答案的子集，符合标准，正确。
+
+- idx_5  
+  - 参考答案：剧情  
+  - 回答：奇幻片  
+  - 分析：奇幻片与剧情无关，且未表现为剧情类型的子集，不符合，错误。
+
+- idx_6  
+  - 参考答案：喜剧/剧情  
+  - 回答：犯罪片  
+  - 分析：犯罪片不属于喜剧或剧情，类别不符，错误。
+
+最终评分：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",剧情/惊悚/犯罪,超级英雄电影
+,,星际探索,星际探索,1.0,key_match,1.0,"Let's analyze each response against the target answer according to the criterion:
+
+Criterion summary:
+- Semantic equivalence or consistent reference to the entities is acceptable; exact word-to-word match is not necessary.
+- The response can be considered correct if it is a subset (part or all) of the listed target entities.
+
+---
+
+**idx_0**  
+- Response: 美国  
+- Target: 美国/加拿大  
+- Analysis: The response “美国” is one of the entities in the target set (“美国” and “加拿大”). Response is a subset of the target.  
+- Score: 1  
+
+**idx_1**  
+- Response: 美国  
+- Target: 美国/巴西/中国大陆  
+- Analysis: The response “美国” is in the target set, so it is a subset.  
+- Score: 1  
+
+**idx_2**  
+- Response: 法国  
+- Target: 法国/意大利  
+- Analysis: The response “法国” is included in the target set.  
+- Score: 1  
+
+**idx_3**  
+- Response: 意大利  
+- Target: 意大利/法国/德国  
+- Analysis: The response “意大利” is in the target set.  
+- Score: 1  
+
+**idx_4**  
+- Response: 捷克  
+- Target: 捷克/斯洛伐克/乌克兰  
+- Analysis: Response “捷克” is in the target.  
+- Score: 1  
+
+**idx_5**  
+- Response: 瑞典  
+- Target: 瑞典/德国/挪威  
+- Analysis: Response “瑞典” is part of the target entities.  
+- Score: 1  
+
+**idx_6**  
+- Response: 美国  
+- Target: 美国  
+- Analysis: Exact match.  
+- Score: 1  
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",美国/巴西/中国大陆,美国,1.0,"分析过程：
+
+- idx_0：回答“托德·菲利普斯”，标准答案为“托德·菲利普斯”，完全一致，得分1。
+- idx_1：回答“詹姆斯·格雷”，标准答案“詹姆斯·格雷”，一致，得分1。
+- idx_2：回答“罗曼·波兰斯基”，标准答案“罗曼·波兰斯基”，一致，得分1。
+- idx_3：回答“皮耶特罗·马切罗”，标准答案“皮耶特罗·马切罗”，一致，得分1。
+- idx_4：回答“瓦茨拉夫·马尔豪尔”，标准答案“瓦茨拉夫·马尔豪尔”，一致，得分1。
+- idx_5：回答“罗伊·安德森”，标准答案“罗伊·安德森”，一致，得分1。
+- idx_6：回答“斯派克·李”，标准答案“史蒂文·索德伯格”，两者不一致，指向实体不同，得分0。
+
+总评分如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 0
+}
+```",詹姆斯·格雷,詹姆斯·格雷,1.0,"number near in range 10.0%, response: 135.0, target: 124.0",124,135,1.0,"分析过程：
+
+题目要求对回答与参考答案的类型进行对比，判断语义是否大致相同或指向实体一致即可，不需要字字对应且类型答出子集且符合其他电影内容即视为正确。
+
+- idx_0  
+  - 参考答案：剧情/惊悚/犯罪  
+  - 回答：超级英雄电影  
+  - 分析：回答类别“超级英雄电影”并非参考类别中的“剧情/惊悚/犯罪”，指向实体不一致，“超级英雄”并不是参考答案类型的子集或相关类别，因此视为错误。
+
+- idx_1  
+  - 参考答案：科幻/冒险  
+  - 回答：心理科幻片  
+  - 分析：“心理科幻片”包含“科幻”，且“科幻”属于参考答案的子集，回答属实指出了类型，符合标准，所以视为正确。
+
+- idx_2  
+  - 参考答案：剧情  
+  - 回答：历史剧情片  
+  - 分析：回答包含“剧情”，且“历史剧情”是剧情的子集，符合标准，正确。
+
+- idx_3  
+  - 参考答案：剧情  
+  - 回答：剧情片  
+  - 分析：一致，正确。
+
+- idx_4  
+  - 参考答案：剧情/战争  
+  - 回答：剧情片  
+  - 分析：回答包含了“剧情”，是参考答案的子集，符合标准，正确。
+
+- idx_5  
+  - 参考答案：剧情  
+  - 回答：奇幻片  
+  - 分析：奇幻片与剧情无关，且未表现为剧情类型的子集，不符合，错误。
+
+- idx_6  
+  - 参考答案：喜剧/剧情  
+  - 回答：犯罪片  
+  - 分析：犯罪片不属于喜剧或剧情，类别不符，错误。
+
+最终评分：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",科幻/冒险,心理科幻片
+,,我控诉,我控诉,1.0,key_match,1.0,"Let's analyze each response against the target answer according to the criterion:
+
+Criterion summary:
+- Semantic equivalence or consistent reference to the entities is acceptable; exact word-to-word match is not necessary.
+- The response can be considered correct if it is a subset (part or all) of the listed target entities.
+
+---
+
+**idx_0**  
+- Response: 美国  
+- Target: 美国/加拿大  
+- Analysis: The response “美国” is one of the entities in the target set (“美国” and “加拿大”). Response is a subset of the target.  
+- Score: 1  
+
+**idx_1**  
+- Response: 美国  
+- Target: 美国/巴西/中国大陆  
+- Analysis: The response “美国” is in the target set, so it is a subset.  
+- Score: 1  
+
+**idx_2**  
+- Response: 法国  
+- Target: 法国/意大利  
+- Analysis: The response “法国” is included in the target set.  
+- Score: 1  
+
+**idx_3**  
+- Response: 意大利  
+- Target: 意大利/法国/德国  
+- Analysis: The response “意大利” is in the target set.  
+- Score: 1  
+
+**idx_4**  
+- Response: 捷克  
+- Target: 捷克/斯洛伐克/乌克兰  
+- Analysis: Response “捷克” is in the target.  
+- Score: 1  
+
+**idx_5**  
+- Response: 瑞典  
+- Target: 瑞典/德国/挪威  
+- Analysis: Response “瑞典” is part of the target entities.  
+- Score: 1  
+
+**idx_6**  
+- Response: 美国  
+- Target: 美国  
+- Analysis: Exact match.  
+- Score: 1  
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",法国/意大利,法国,1.0,"分析过程：
+
+- idx_0：回答“托德·菲利普斯”，标准答案为“托德·菲利普斯”，完全一致，得分1。
+- idx_1：回答“詹姆斯·格雷”，标准答案“詹姆斯·格雷”，一致，得分1。
+- idx_2：回答“罗曼·波兰斯基”，标准答案“罗曼·波兰斯基”，一致，得分1。
+- idx_3：回答“皮耶特罗·马切罗”，标准答案“皮耶特罗·马切罗”，一致，得分1。
+- idx_4：回答“瓦茨拉夫·马尔豪尔”，标准答案“瓦茨拉夫·马尔豪尔”，一致，得分1。
+- idx_5：回答“罗伊·安德森”，标准答案“罗伊·安德森”，一致，得分1。
+- idx_6：回答“斯派克·李”，标准答案“史蒂文·索德伯格”，两者不一致，指向实体不同，得分0。
+
+总评分如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 0
+}
+```",罗曼·波兰斯基,罗曼·波兰斯基,1.0,"number near in range 10.0%, response: 134.0, target: 132.0",132,134,1.0,"分析过程：
+
+题目要求对回答与参考答案的类型进行对比，判断语义是否大致相同或指向实体一致即可，不需要字字对应且类型答出子集且符合其他电影内容即视为正确。
+
+- idx_0  
+  - 参考答案：剧情/惊悚/犯罪  
+  - 回答：超级英雄电影  
+  - 分析：回答类别“超级英雄电影”并非参考类别中的“剧情/惊悚/犯罪”，指向实体不一致，“超级英雄”并不是参考答案类型的子集或相关类别，因此视为错误。
+
+- idx_1  
+  - 参考答案：科幻/冒险  
+  - 回答：心理科幻片  
+  - 分析：“心理科幻片”包含“科幻”，且“科幻”属于参考答案的子集，回答属实指出了类型，符合标准，所以视为正确。
+
+- idx_2  
+  - 参考答案：剧情  
+  - 回答：历史剧情片  
+  - 分析：回答包含“剧情”，且“历史剧情”是剧情的子集，符合标准，正确。
+
+- idx_3  
+  - 参考答案：剧情  
+  - 回答：剧情片  
+  - 分析：一致，正确。
+
+- idx_4  
+  - 参考答案：剧情/战争  
+  - 回答：剧情片  
+  - 分析：回答包含了“剧情”，是参考答案的子集，符合标准，正确。
+
+- idx_5  
+  - 参考答案：剧情  
+  - 回答：奇幻片  
+  - 分析：奇幻片与剧情无关，且未表现为剧情类型的子集，不符合，错误。
+
+- idx_6  
+  - 参考答案：喜剧/剧情  
+  - 回答：犯罪片  
+  - 分析：犯罪片不属于喜剧或剧情，类别不符，错误。
+
+最终评分：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",剧情,历史剧情片
+,,马丁·伊登,马丁·伊登,1.0,key_match,1.0,"Let's analyze each response against the target answer according to the criterion:
+
+Criterion summary:
+- Semantic equivalence or consistent reference to the entities is acceptable; exact word-to-word match is not necessary.
+- The response can be considered correct if it is a subset (part or all) of the listed target entities.
+
+---
+
+**idx_0**  
+- Response: 美国  
+- Target: 美国/加拿大  
+- Analysis: The response “美国” is one of the entities in the target set (“美国” and “加拿大”). Response is a subset of the target.  
+- Score: 1  
+
+**idx_1**  
+- Response: 美国  
+- Target: 美国/巴西/中国大陆  
+- Analysis: The response “美国” is in the target set, so it is a subset.  
+- Score: 1  
+
+**idx_2**  
+- Response: 法国  
+- Target: 法国/意大利  
+- Analysis: The response “法国” is included in the target set.  
+- Score: 1  
+
+**idx_3**  
+- Response: 意大利  
+- Target: 意大利/法国/德国  
+- Analysis: The response “意大利” is in the target set.  
+- Score: 1  
+
+**idx_4**  
+- Response: 捷克  
+- Target: 捷克/斯洛伐克/乌克兰  
+- Analysis: Response “捷克” is in the target.  
+- Score: 1  
+
+**idx_5**  
+- Response: 瑞典  
+- Target: 瑞典/德国/挪威  
+- Analysis: Response “瑞典” is part of the target entities.  
+- Score: 1  
+
+**idx_6**  
+- Response: 美国  
+- Target: 美国  
+- Analysis: Exact match.  
+- Score: 1  
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",意大利/法国/德国,意大利,1.0,"分析过程：
+
+- idx_0：回答“托德·菲利普斯”，标准答案为“托德·菲利普斯”，完全一致，得分1。
+- idx_1：回答“詹姆斯·格雷”，标准答案“詹姆斯·格雷”，一致，得分1。
+- idx_2：回答“罗曼·波兰斯基”，标准答案“罗曼·波兰斯基”，一致，得分1。
+- idx_3：回答“皮耶特罗·马切罗”，标准答案“皮耶特罗·马切罗”，一致，得分1。
+- idx_4：回答“瓦茨拉夫·马尔豪尔”，标准答案“瓦茨拉夫·马尔豪尔”，一致，得分1。
+- idx_5：回答“罗伊·安德森”，标准答案“罗伊·安德森”，一致，得分1。
+- idx_6：回答“斯派克·李”，标准答案“史蒂文·索德伯格”，两者不一致，指向实体不同，得分0。
+
+总评分如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 0
+}
+```",皮耶特罗·马切罗,皮耶特罗·马切罗,0.0,"number not near, response: 113.0, target: 129.0",129,113,1.0,"分析过程：
+
+题目要求对回答与参考答案的类型进行对比，判断语义是否大致相同或指向实体一致即可，不需要字字对应且类型答出子集且符合其他电影内容即视为正确。
+
+- idx_0  
+  - 参考答案：剧情/惊悚/犯罪  
+  - 回答：超级英雄电影  
+  - 分析：回答类别“超级英雄电影”并非参考类别中的“剧情/惊悚/犯罪”，指向实体不一致，“超级英雄”并不是参考答案类型的子集或相关类别，因此视为错误。
+
+- idx_1  
+  - 参考答案：科幻/冒险  
+  - 回答：心理科幻片  
+  - 分析：“心理科幻片”包含“科幻”，且“科幻”属于参考答案的子集，回答属实指出了类型，符合标准，所以视为正确。
+
+- idx_2  
+  - 参考答案：剧情  
+  - 回答：历史剧情片  
+  - 分析：回答包含“剧情”，且“历史剧情”是剧情的子集，符合标准，正确。
+
+- idx_3  
+  - 参考答案：剧情  
+  - 回答：剧情片  
+  - 分析：一致，正确。
+
+- idx_4  
+  - 参考答案：剧情/战争  
+  - 回答：剧情片  
+  - 分析：回答包含了“剧情”，是参考答案的子集，符合标准，正确。
+
+- idx_5  
+  - 参考答案：剧情  
+  - 回答：奇幻片  
+  - 分析：奇幻片与剧情无关，且未表现为剧情类型的子集，不符合，错误。
+
+- idx_6  
+  - 参考答案：喜剧/剧情  
+  - 回答：犯罪片  
+  - 分析：犯罪片不属于喜剧或剧情，类别不符，错误。
+
+最终评分：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",剧情,剧情片
+,,被涂污的鸟,被涂污的鸟,1.0,key_match,1.0,"Let's analyze each response against the target answer according to the criterion:
+
+Criterion summary:
+- Semantic equivalence or consistent reference to the entities is acceptable; exact word-to-word match is not necessary.
+- The response can be considered correct if it is a subset (part or all) of the listed target entities.
+
+---
+
+**idx_0**  
+- Response: 美国  
+- Target: 美国/加拿大  
+- Analysis: The response “美国” is one of the entities in the target set (“美国” and “加拿大”). Response is a subset of the target.  
+- Score: 1  
+
+**idx_1**  
+- Response: 美国  
+- Target: 美国/巴西/中国大陆  
+- Analysis: The response “美国” is in the target set, so it is a subset.  
+- Score: 1  
+
+**idx_2**  
+- Response: 法国  
+- Target: 法国/意大利  
+- Analysis: The response “法国” is included in the target set.  
+- Score: 1  
+
+**idx_3**  
+- Response: 意大利  
+- Target: 意大利/法国/德国  
+- Analysis: The response “意大利” is in the target set.  
+- Score: 1  
+
+**idx_4**  
+- Response: 捷克  
+- Target: 捷克/斯洛伐克/乌克兰  
+- Analysis: Response “捷克” is in the target.  
+- Score: 1  
+
+**idx_5**  
+- Response: 瑞典  
+- Target: 瑞典/德国/挪威  
+- Analysis: Response “瑞典” is part of the target entities.  
+- Score: 1  
+
+**idx_6**  
+- Response: 美国  
+- Target: 美国  
+- Analysis: Exact match.  
+- Score: 1  
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",捷克/斯洛伐克/乌克兰,捷克,1.0,"分析过程：
+
+- idx_0：回答“托德·菲利普斯”，标准答案为“托德·菲利普斯”，完全一致，得分1。
+- idx_1：回答“詹姆斯·格雷”，标准答案“詹姆斯·格雷”，一致，得分1。
+- idx_2：回答“罗曼·波兰斯基”，标准答案“罗曼·波兰斯基”，一致，得分1。
+- idx_3：回答“皮耶特罗·马切罗”，标准答案“皮耶特罗·马切罗”，一致，得分1。
+- idx_4：回答“瓦茨拉夫·马尔豪尔”，标准答案“瓦茨拉夫·马尔豪尔”，一致，得分1。
+- idx_5：回答“罗伊·安德森”，标准答案“罗伊·安德森”，一致，得分1。
+- idx_6：回答“斯派克·李”，标准答案“史蒂文·索德伯格”，两者不一致，指向实体不同，得分0。
+
+总评分如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 0
+}
+```",瓦茨拉夫·马尔豪尔,瓦茨拉夫·马尔豪尔,0.0,"number not near, response: 113.0, target: 169.0",169,113,1.0,"分析过程：
+
+题目要求对回答与参考答案的类型进行对比，判断语义是否大致相同或指向实体一致即可，不需要字字对应且类型答出子集且符合其他电影内容即视为正确。
+
+- idx_0  
+  - 参考答案：剧情/惊悚/犯罪  
+  - 回答：超级英雄电影  
+  - 分析：回答类别“超级英雄电影”并非参考类别中的“剧情/惊悚/犯罪”，指向实体不一致，“超级英雄”并不是参考答案类型的子集或相关类别，因此视为错误。
+
+- idx_1  
+  - 参考答案：科幻/冒险  
+  - 回答：心理科幻片  
+  - 分析：“心理科幻片”包含“科幻”，且“科幻”属于参考答案的子集，回答属实指出了类型，符合标准，所以视为正确。
+
+- idx_2  
+  - 参考答案：剧情  
+  - 回答：历史剧情片  
+  - 分析：回答包含“剧情”，且“历史剧情”是剧情的子集，符合标准，正确。
+
+- idx_3  
+  - 参考答案：剧情  
+  - 回答：剧情片  
+  - 分析：一致，正确。
+
+- idx_4  
+  - 参考答案：剧情/战争  
+  - 回答：剧情片  
+  - 分析：回答包含了“剧情”，是参考答案的子集，符合标准，正确。
+
+- idx_5  
+  - 参考答案：剧情  
+  - 回答：奇幻片  
+  - 分析：奇幻片与剧情无关，且未表现为剧情类型的子集，不符合，错误。
+
+- idx_6  
+  - 参考答案：喜剧/剧情  
+  - 回答：犯罪片  
+  - 分析：犯罪片不属于喜剧或剧情，类别不符，错误。
+
+最终评分：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",剧情/战争,剧情片
+,,关于无尽,关于无尽,1.0,key_match,1.0,"Let's analyze each response against the target answer according to the criterion:
+
+Criterion summary:
+- Semantic equivalence or consistent reference to the entities is acceptable; exact word-to-word match is not necessary.
+- The response can be considered correct if it is a subset (part or all) of the listed target entities.
+
+---
+
+**idx_0**  
+- Response: 美国  
+- Target: 美国/加拿大  
+- Analysis: The response “美国” is one of the entities in the target set (“美国” and “加拿大”). Response is a subset of the target.  
+- Score: 1  
+
+**idx_1**  
+- Response: 美国  
+- Target: 美国/巴西/中国大陆  
+- Analysis: The response “美国” is in the target set, so it is a subset.  
+- Score: 1  
+
+**idx_2**  
+- Response: 法国  
+- Target: 法国/意大利  
+- Analysis: The response “法国” is included in the target set.  
+- Score: 1  
+
+**idx_3**  
+- Response: 意大利  
+- Target: 意大利/法国/德国  
+- Analysis: The response “意大利” is in the target set.  
+- Score: 1  
+
+**idx_4**  
+- Response: 捷克  
+- Target: 捷克/斯洛伐克/乌克兰  
+- Analysis: Response “捷克” is in the target.  
+- Score: 1  
+
+**idx_5**  
+- Response: 瑞典  
+- Target: 瑞典/德国/挪威  
+- Analysis: Response “瑞典” is part of the target entities.  
+- Score: 1  
+
+**idx_6**  
+- Response: 美国  
+- Target: 美国  
+- Analysis: Exact match.  
+- Score: 1  
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",瑞典/德国/挪威,瑞典,1.0,"分析过程：
+
+- idx_0：回答“托德·菲利普斯”，标准答案为“托德·菲利普斯”，完全一致，得分1。
+- idx_1：回答“詹姆斯·格雷”，标准答案“詹姆斯·格雷”，一致，得分1。
+- idx_2：回答“罗曼·波兰斯基”，标准答案“罗曼·波兰斯基”，一致，得分1。
+- idx_3：回答“皮耶特罗·马切罗”，标准答案“皮耶特罗·马切罗”，一致，得分1。
+- idx_4：回答“瓦茨拉夫·马尔豪尔”，标准答案“瓦茨拉夫·马尔豪尔”，一致，得分1。
+- idx_5：回答“罗伊·安德森”，标准答案“罗伊·安德森”，一致，得分1。
+- idx_6：回答“斯派克·李”，标准答案“史蒂文·索德伯格”，两者不一致，指向实体不同，得分0。
+
+总评分如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 0
+}
+```",罗伊·安德森,罗伊·安德森,0.0,"number not near, response: 121.0, target: 76.0",76,121,0.0,"分析过程：
+
+题目要求对回答与参考答案的类型进行对比，判断语义是否大致相同或指向实体一致即可，不需要字字对应且类型答出子集且符合其他电影内容即视为正确。
+
+- idx_0  
+  - 参考答案：剧情/惊悚/犯罪  
+  - 回答：超级英雄电影  
+  - 分析：回答类别“超级英雄电影”并非参考类别中的“剧情/惊悚/犯罪”，指向实体不一致，“超级英雄”并不是参考答案类型的子集或相关类别，因此视为错误。
+
+- idx_1  
+  - 参考答案：科幻/冒险  
+  - 回答：心理科幻片  
+  - 分析：“心理科幻片”包含“科幻”，且“科幻”属于参考答案的子集，回答属实指出了类型，符合标准，所以视为正确。
+
+- idx_2  
+  - 参考答案：剧情  
+  - 回答：历史剧情片  
+  - 分析：回答包含“剧情”，且“历史剧情”是剧情的子集，符合标准，正确。
+
+- idx_3  
+  - 参考答案：剧情  
+  - 回答：剧情片  
+  - 分析：一致，正确。
+
+- idx_4  
+  - 参考答案：剧情/战争  
+  - 回答：剧情片  
+  - 分析：回答包含了“剧情”，是参考答案的子集，符合标准，正确。
+
+- idx_5  
+  - 参考答案：剧情  
+  - 回答：奇幻片  
+  - 分析：奇幻片与剧情无关，且未表现为剧情类型的子集，不符合，错误。
+
+- idx_6  
+  - 参考答案：喜剧/剧情  
+  - 回答：犯罪片  
+  - 分析：犯罪片不属于喜剧或剧情，类别不符，错误。
+
+最终评分：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",剧情,奇幻片
+,,自助洗衣店,自助洗衣店,1.0,key_match,1.0,"Let's analyze each response against the target answer according to the criterion:
+
+Criterion summary:
+- Semantic equivalence or consistent reference to the entities is acceptable; exact word-to-word match is not necessary.
+- The response can be considered correct if it is a subset (part or all) of the listed target entities.
+
+---
+
+**idx_0**  
+- Response: 美国  
+- Target: 美国/加拿大  
+- Analysis: The response “美国” is one of the entities in the target set (“美国” and “加拿大”). Response is a subset of the target.  
+- Score: 1  
+
+**idx_1**  
+- Response: 美国  
+- Target: 美国/巴西/中国大陆  
+- Analysis: The response “美国” is in the target set, so it is a subset.  
+- Score: 1  
+
+**idx_2**  
+- Response: 法国  
+- Target: 法国/意大利  
+- Analysis: The response “法国” is included in the target set.  
+- Score: 1  
+
+**idx_3**  
+- Response: 意大利  
+- Target: 意大利/法国/德国  
+- Analysis: The response “意大利” is in the target set.  
+- Score: 1  
+
+**idx_4**  
+- Response: 捷克  
+- Target: 捷克/斯洛伐克/乌克兰  
+- Analysis: Response “捷克” is in the target.  
+- Score: 1  
+
+**idx_5**  
+- Response: 瑞典  
+- Target: 瑞典/德国/挪威  
+- Analysis: Response “瑞典” is part of the target entities.  
+- Score: 1  
+
+**idx_6**  
+- Response: 美国  
+- Target: 美国  
+- Analysis: Exact match.  
+- Score: 1  
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",美国,美国,0.0,"分析过程：
+
+- idx_0：回答“托德·菲利普斯”，标准答案为“托德·菲利普斯”，完全一致，得分1。
+- idx_1：回答“詹姆斯·格雷”，标准答案“詹姆斯·格雷”，一致，得分1。
+- idx_2：回答“罗曼·波兰斯基”，标准答案“罗曼·波兰斯基”，一致，得分1。
+- idx_3：回答“皮耶特罗·马切罗”，标准答案“皮耶特罗·马切罗”，一致，得分1。
+- idx_4：回答“瓦茨拉夫·马尔豪尔”，标准答案“瓦茨拉夫·马尔豪尔”，一致，得分1。
+- idx_5：回答“罗伊·安德森”，标准答案“罗伊·安德森”，一致，得分1。
+- idx_6：回答“斯派克·李”，标准答案“史蒂文·索德伯格”，两者不一致，指向实体不同，得分0。
+
+总评分如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 0
+}
+```",史蒂文·索德伯格,斯派克·李,0.0,"number not near, response: 117.0, target: 96.0",96,117,0.0,"分析过程：
+
+题目要求对回答与参考答案的类型进行对比，判断语义是否大致相同或指向实体一致即可，不需要字字对应且类型答出子集且符合其他电影内容即视为正确。
+
+- idx_0  
+  - 参考答案：剧情/惊悚/犯罪  
+  - 回答：超级英雄电影  
+  - 分析：回答类别“超级英雄电影”并非参考类别中的“剧情/惊悚/犯罪”，指向实体不一致，“超级英雄”并不是参考答案类型的子集或相关类别，因此视为错误。
+
+- idx_1  
+  - 参考答案：科幻/冒险  
+  - 回答：心理科幻片  
+  - 分析：“心理科幻片”包含“科幻”，且“科幻”属于参考答案的子集，回答属实指出了类型，符合标准，所以视为正确。
+
+- idx_2  
+  - 参考答案：剧情  
+  - 回答：历史剧情片  
+  - 分析：回答包含“剧情”，且“历史剧情”是剧情的子集，符合标准，正确。
+
+- idx_3  
+  - 参考答案：剧情  
+  - 回答：剧情片  
+  - 分析：一致，正确。
+
+- idx_4  
+  - 参考答案：剧情/战争  
+  - 回答：剧情片  
+  - 分析：回答包含了“剧情”，是参考答案的子集，符合标准，正确。
+
+- idx_5  
+  - 参考答案：剧情  
+  - 回答：奇幻片  
+  - 分析：奇幻片与剧情无关，且未表现为剧情类型的子集，不符合，错误。
+
+- idx_6  
+  - 参考答案：喜剧/剧情  
+  - 回答：犯罪片  
+  - 分析：犯罪片不属于喜剧或剧情，类别不符，错误。
+
+最终评分：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",喜剧/剧情,犯罪片
+1.0,,世界的胜利,,,,,,法国/意大利,,,,罗贝尔·盖迪吉昂,,,,107,,,,剧情,
+1.0,,乳牙,,,,,,澳大利亚,,,,香农·墨菲,,,,120,,,,剧情/喜剧,
+1.0,,兰心大剧院,,,,,,中国大陆,,,,娄烨,,,,126,,,,剧情,
+1.0,,厄玛,,,,,,智利,,,,帕布罗·拉雷恩,,,,102,,,,剧情/爱情/音乐,
+1.0,,婚姻故事,,,,,,英国/美国,,,,诺亚·鲍姆巴赫,,,,135,,,,剧情/爱情,
+1.0,,完美候选人,,,,,,沙特阿拉伯/德国,,,,海法·曼苏尔,,,,101,,,,剧情,
+1.0,,庄园,,,,,,葡萄牙/法国,,,,蒂亚戈·盖吉思,,,,164,,,,剧情,
+1.0,,真相,,,,,,法国/日本,,,,是枝裕和,,,,106,,,,剧情,
+1.0,,等待野蛮人,,,,,,意大利/美国,,,,西罗·格拉,,,,112,,,,剧情,
+1.0,,继园台七号,,,,,,中国香港/中国大陆,,,,杨凡,,,,125,,,,动画,
+1.0,,荣誉之客,,,,,,加拿大,,,,阿托姆·伊戈扬,,,,104,,,,剧情,
+1.0,,非常市长,,,,,,意大利,,,,马里奥·马尔托内,,,,118,,,,剧情,
+1.0,,黄蜂网络,,,,,,法国/西班牙/比利时/巴西,,,,奥利维耶·阿萨亚斯,,,,123,,,,惊悚,
+1.0,,黑手党不再是曾经,,,,,,意大利,,,,弗兰科·马雷斯科,,,,107,,,,纪录片,

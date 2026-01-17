@@ -1,0 +1,1771 @@
+exist_flag_gt,exist_flag_response,windfarm,windfarm_before_map,capacity(mw)_number_near,capacity(mw)_number_near_eval_msg,capacity(mw)_query,capacity(mw)_response,commissioningyear_exact_match,commissioningyear_exact_match_eval_msg,commissioningyear_query,commissioningyear_response,owner/operator_llm_judge,owner/operator_llm_judge_eval_msg,owner/operator_query,owner/operator_response,sea/basin_llm_judge,sea/basin_llm_judge_eval_msg,sea/basin_query,sea/basin_response,turbinemodel_llm_judge,turbinemodel_llm_judge_eval_msg,turbinemodel_query,turbinemodel_response,turbinesnumber_exact_match,turbinesnumber_exact_match_eval_msg,turbinesnumber_query,turbinesnumber_response,windfarm_exact_match,windfarm_exact_match_eval_msg
+,,borssele1&2,Borssele 1 & 2,1.0,"number near in range 10.0%, response: 780.0, target: 752.0",752,780,0.0,"exact not match, response: 2021, target: 2020",2020,2021,0.0,"Let's analyze each pair according to the grading criteria:
+
+- Criterion: It is sufficient if the semantics are approximately the same or if they point to the same entity. The company mentioned in the answer could be a subset of the reference answer.
+
+---
+
+**idx_0:**  
+- Response: ""eneco""  
+- Target: ""ørsted/norgesbankinvestmentmanagement(nbim)""  
+- Analysis: The response mentions ""eneco"" which is a different company than ""ørsted"" or ""norgesbankinvestmentmanagement"". No overlap or subset relation. Not the same entity or approximate semantics.  
+- Score: 0
+
+---
+
+**idx_1:**  
+- Response: ""eneco""  
+- Target: ""blauwwindconsortium""  
+- Analysis: ""eneco"" vs ""blauwwindconsortium"" are different companies/entities with no direct relation or subset relation. The answer does not match the reference.  
+- Score: 0
+
+---
+
+**idx_2:**  
+- Response: ""sserenewables""  
+- Target: ""iberdrola/gig""  
+- Analysis: ""sserenewables"" is different from ""iberdrola"" or ""gig"" (gig is often an abbreviation for Green Investment Group but here treated as an entity). The response is not the same or a subset of the target.  
+- Score: 0
+
+---
+
+**idx_3:**  
+- Response: ""ørsted""  
+- Target: ""ørsted/vattenfall""  
+- Analysis: Response is ""ørsted"" while target mentions two companies ""ørsted"" and ""vattenfall"". According to the criteria, the response being a subset (just one of the two companies) is acceptable and considered correct.  
+- Score: 1
+
+---
+
+**idx_4:**  
+- Response: ""e.onanddongenergy""  
+- Target: multiple companies: ""caissededépôtetplacementduquébec\n e.onuk\n masdar\n ørsted""  
+- Analysis: Response combines ""e.on"" and ""dongenergy"".  
+  ""e.on"" is in the target (e.onuk assumed same), but ""dongenergy"" is NOT explicitly in target. The target also includes others not in response. According to criterion: the response company could be a subset of the reference answer. However, ""dongenergy"" is not found in the reference target, and ""caissededépôtetplacementduquébec"" and others are missing from response.
+
+  Since ""e.on"" is a subset of companies mentioned, but ""dongenergy"" is extra and not in the reference, does that invalidate the response? The criteria don't mention penalty for extra entities, only that it can be a subset of the target.
+
+  The response’s overall semantics includes an extraneous company ""dongenergy"" not in the target, but it at least contains one correct company ""e.on"".
+
+  Given the criterion, ""the company mentioned in the answer could be a subset of the reference answer"". This doesn't say the response cannot have extra companies, but this is borderline. Since ""dongenergy"" is extra, the semantics are not approximately the same; the response points to at least a correct company.
+
+  The criterion also says ""It is sufficient if the semantics approximately the same or they point to the same entity."" Here, the response points partly to the same entity (""e.on""), but also includes an entity not mentioned in the target. The inclusion of ""dongenergy"" could be considered incorrect or noise.
+
+  Given the judgment rule, responses should have semantics approximately the same or point to the same entity. The addition of ""dongenergy"" which is not in the target likely makes it incorrect.
+
+  Thus, score: 0
+
+---
+
+**idx_5:**  
+- Response: ""sserenewables""  
+- Target: ""sse/totalenergies""  
+- Analysis: Response ""sserenewables"" is a division or part of SSE presumably. Target mentions ""sse"" and ""totalenergies"" (two companies). The response company can be a subset of the target answer, so pointing to ""sserenewables"" (subset of sse) is acceptable.  
+- Score: 1
+
+---
+
+**idx_6:**  
+- Response: ""e.on""  
+- Target: ""vattenfall""  
+- Analysis: Different companies, no overlap or subset relation. Not the same entity or approximate semantics.  
+- Score: 0
+
+---
+
+### Final Scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0
+}
+```",ørsted/norgesbankinvestmentmanagement(nbim),eneco,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for word-for-word correspondence.
+
+---
+
+### idx_0
+
+- Response: ""northsea""
+- Target: ""northsea(nl)""
+
+Analysis: The response is ""northsea"" while the target specifies ""northsea(nl)"", presumably meaning the North Sea near the Netherlands. Since ""northsea"" alone points to the same general entity (the North Sea), and the criterion allows approximate semantics or pointing to the same entity, this is acceptable.
+
+Score: 1
+
+---
+
+### idx_1
+
+- Response: ""northsea""
+- Target: ""northsea(nl)""
+
+Same as idx_0. Score: 1
+
+---
+
+### idx_2
+
+- Response: ""northsea""
+- Target: ""northsea""
+
+Exact match. Score: 1
+
+---
+
+### idx_3
+
+- Response: ""northsea""
+- Target: ""northsea""
+
+Exact match. Score: 1
+
+---
+
+### idx_4
+
+- Response: ""northsea""
+- Target: ""northsea(thamesest.)""
+
+The target is ""northsea(thamesest.)"" which likely specifies the North Sea at the Thames Estuary.
+
+The response ""northsea"" points to the same entity (North Sea), so approximate semantics and same entity criteria are met.
+
+Score: 1
+
+---
+
+### idx_5
+
+- Response: ""northsea""
+- Target: ""northsea""
+
+Exact match. Score: 1
+
+---
+
+### idx_6
+
+- Response: ""northsea""
+- Target: ""northsea(thamesest.)""
+
+Same as idx_4. Score: 1
+
+---
+
+### Final scoring
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",northsea(nl),northsea,1.0,"Let's analyze each pair according to the given criterion:
+
+Criterion summary:  
+- The semantics should approximately be the same or point to the same entity.  
+- Detail level can differ but must refer to the same model.  
+
+---
+
+**idx_0**  
+- Response: ""siemensgamesa""  
+- Target: ""siemenssg8.0-167dd""  
+Analysis:  
+Target mentions a specific Siemens Gamesa model (SG 8.0-167 DD). Response just says ""siemensgamesa"". The response refers to the same company/maker, though lacks the model detail. The criterion states sufficient if semantics point to the same entity and level of detail can differ. ""siemensgamesa"" is semantically the same entity.  
+Score: 1
+
+**idx_1**  
+- Response: ""siemensgamesa""  
+- Target: ""vestasv164-9.5""  
+Analysis:  
+Target is a ""vestas"" model, response is ""siemensgamesa"". Different companies/entities. So semantics do not point to the same entity.  
+Score: 0
+
+**idx_2**  
+- Response: ""siemensgamesa""  
+- Target: ""siemens(gamesa}swt-7.0-154"" (typo, but meaning Siemens Gamesa SWT 7.0-154)  
+Analysis:  
+Target clearly a Siemens Gamesa model. Response is ""siemensgamesa"". Same entity.  
+Score: 1
+
+**idx_3**  
+- Response: ""siemensgamesa""  
+- Target: ""siemensswt-7.0-154"" (Siemens SWT 7.0-154)  
+Analysis:  
+Target is ""Siemens"" only, no explicit ""Gamesa"" in the target, but it likely refers to the same entity or at least the Siemens brand with SWT series. Response ""siemensgamesa"" is a valid superset of ""siemens"". Possible that Siemens Gamesa is intended. Since criterion allows detail difference if referring to the same entity, and Siemens Gamesa is the merged company, the response is acceptable as referring to the same entity.  
+Score: 1
+
+**idx_4**  
+- Response: ""siemens""  
+- Target: ""siemensswt-3.6-120""  
+Analysis:  
+Response specifies the company only (""siemens"") whereas target specifies model ""swt-3.6-120"". The response meaningfully refers to the same entity (Siemens).  
+Score: 1
+
+**idx_5**  
+- Response: ""siemensgamesa""  
+- Target: ""vestasv164-10""  
+Analysis:  
+Response is Siemens Gamesa, target is Vestas. Different entities.  
+Score: 0
+
+**idx_6**  
+- Response: ""vestasv90""  
+- Target: ""vestasv90-3.0""  
+Analysis:  
+Response gives Vestas V90, target adds 3.0 (capacity) detail. Response captures the same model family clearly.  
+Score: 1
+
+---
+
+### Final scoring in JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1
+}
+```",siemenssg8.0-167dd,siemensgamesa,0.0,"exact not match, response: nan, target: 94.0",94.0,nan,1.0,key_match
+,,borssele3&4,Borssele 3 & 4,1.0,"number near in range 10.0%, response: 780.0, target: 731.0",731,780,0.0,"exact not match, response: 2022, target: 2021",2021,2022,0.0,"Let's analyze each pair according to the grading criteria:
+
+- Criterion: It is sufficient if the semantics are approximately the same or if they point to the same entity. The company mentioned in the answer could be a subset of the reference answer.
+
+---
+
+**idx_0:**  
+- Response: ""eneco""  
+- Target: ""ørsted/norgesbankinvestmentmanagement(nbim)""  
+- Analysis: The response mentions ""eneco"" which is a different company than ""ørsted"" or ""norgesbankinvestmentmanagement"". No overlap or subset relation. Not the same entity or approximate semantics.  
+- Score: 0
+
+---
+
+**idx_1:**  
+- Response: ""eneco""  
+- Target: ""blauwwindconsortium""  
+- Analysis: ""eneco"" vs ""blauwwindconsortium"" are different companies/entities with no direct relation or subset relation. The answer does not match the reference.  
+- Score: 0
+
+---
+
+**idx_2:**  
+- Response: ""sserenewables""  
+- Target: ""iberdrola/gig""  
+- Analysis: ""sserenewables"" is different from ""iberdrola"" or ""gig"" (gig is often an abbreviation for Green Investment Group but here treated as an entity). The response is not the same or a subset of the target.  
+- Score: 0
+
+---
+
+**idx_3:**  
+- Response: ""ørsted""  
+- Target: ""ørsted/vattenfall""  
+- Analysis: Response is ""ørsted"" while target mentions two companies ""ørsted"" and ""vattenfall"". According to the criteria, the response being a subset (just one of the two companies) is acceptable and considered correct.  
+- Score: 1
+
+---
+
+**idx_4:**  
+- Response: ""e.onanddongenergy""  
+- Target: multiple companies: ""caissededépôtetplacementduquébec\n e.onuk\n masdar\n ørsted""  
+- Analysis: Response combines ""e.on"" and ""dongenergy"".  
+  ""e.on"" is in the target (e.onuk assumed same), but ""dongenergy"" is NOT explicitly in target. The target also includes others not in response. According to criterion: the response company could be a subset of the reference answer. However, ""dongenergy"" is not found in the reference target, and ""caissededépôtetplacementduquébec"" and others are missing from response.
+
+  Since ""e.on"" is a subset of companies mentioned, but ""dongenergy"" is extra and not in the reference, does that invalidate the response? The criteria don't mention penalty for extra entities, only that it can be a subset of the target.
+
+  The response’s overall semantics includes an extraneous company ""dongenergy"" not in the target, but it at least contains one correct company ""e.on"".
+
+  Given the criterion, ""the company mentioned in the answer could be a subset of the reference answer"". This doesn't say the response cannot have extra companies, but this is borderline. Since ""dongenergy"" is extra, the semantics are not approximately the same; the response points to at least a correct company.
+
+  The criterion also says ""It is sufficient if the semantics approximately the same or they point to the same entity."" Here, the response points partly to the same entity (""e.on""), but also includes an entity not mentioned in the target. The inclusion of ""dongenergy"" could be considered incorrect or noise.
+
+  Given the judgment rule, responses should have semantics approximately the same or point to the same entity. The addition of ""dongenergy"" which is not in the target likely makes it incorrect.
+
+  Thus, score: 0
+
+---
+
+**idx_5:**  
+- Response: ""sserenewables""  
+- Target: ""sse/totalenergies""  
+- Analysis: Response ""sserenewables"" is a division or part of SSE presumably. Target mentions ""sse"" and ""totalenergies"" (two companies). The response company can be a subset of the target answer, so pointing to ""sserenewables"" (subset of sse) is acceptable.  
+- Score: 1
+
+---
+
+**idx_6:**  
+- Response: ""e.on""  
+- Target: ""vattenfall""  
+- Analysis: Different companies, no overlap or subset relation. Not the same entity or approximate semantics.  
+- Score: 0
+
+---
+
+### Final Scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0
+}
+```",blauwwindconsortium,eneco,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for word-for-word correspondence.
+
+---
+
+### idx_0
+
+- Response: ""northsea""
+- Target: ""northsea(nl)""
+
+Analysis: The response is ""northsea"" while the target specifies ""northsea(nl)"", presumably meaning the North Sea near the Netherlands. Since ""northsea"" alone points to the same general entity (the North Sea), and the criterion allows approximate semantics or pointing to the same entity, this is acceptable.
+
+Score: 1
+
+---
+
+### idx_1
+
+- Response: ""northsea""
+- Target: ""northsea(nl)""
+
+Same as idx_0. Score: 1
+
+---
+
+### idx_2
+
+- Response: ""northsea""
+- Target: ""northsea""
+
+Exact match. Score: 1
+
+---
+
+### idx_3
+
+- Response: ""northsea""
+- Target: ""northsea""
+
+Exact match. Score: 1
+
+---
+
+### idx_4
+
+- Response: ""northsea""
+- Target: ""northsea(thamesest.)""
+
+The target is ""northsea(thamesest.)"" which likely specifies the North Sea at the Thames Estuary.
+
+The response ""northsea"" points to the same entity (North Sea), so approximate semantics and same entity criteria are met.
+
+Score: 1
+
+---
+
+### idx_5
+
+- Response: ""northsea""
+- Target: ""northsea""
+
+Exact match. Score: 1
+
+---
+
+### idx_6
+
+- Response: ""northsea""
+- Target: ""northsea(thamesest.)""
+
+Same as idx_4. Score: 1
+
+---
+
+### Final scoring
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",northsea(nl),northsea,0.0,"Let's analyze each pair according to the given criterion:
+
+Criterion summary:  
+- The semantics should approximately be the same or point to the same entity.  
+- Detail level can differ but must refer to the same model.  
+
+---
+
+**idx_0**  
+- Response: ""siemensgamesa""  
+- Target: ""siemenssg8.0-167dd""  
+Analysis:  
+Target mentions a specific Siemens Gamesa model (SG 8.0-167 DD). Response just says ""siemensgamesa"". The response refers to the same company/maker, though lacks the model detail. The criterion states sufficient if semantics point to the same entity and level of detail can differ. ""siemensgamesa"" is semantically the same entity.  
+Score: 1
+
+**idx_1**  
+- Response: ""siemensgamesa""  
+- Target: ""vestasv164-9.5""  
+Analysis:  
+Target is a ""vestas"" model, response is ""siemensgamesa"". Different companies/entities. So semantics do not point to the same entity.  
+Score: 0
+
+**idx_2**  
+- Response: ""siemensgamesa""  
+- Target: ""siemens(gamesa}swt-7.0-154"" (typo, but meaning Siemens Gamesa SWT 7.0-154)  
+Analysis:  
+Target clearly a Siemens Gamesa model. Response is ""siemensgamesa"". Same entity.  
+Score: 1
+
+**idx_3**  
+- Response: ""siemensgamesa""  
+- Target: ""siemensswt-7.0-154"" (Siemens SWT 7.0-154)  
+Analysis:  
+Target is ""Siemens"" only, no explicit ""Gamesa"" in the target, but it likely refers to the same entity or at least the Siemens brand with SWT series. Response ""siemensgamesa"" is a valid superset of ""siemens"". Possible that Siemens Gamesa is intended. Since criterion allows detail difference if referring to the same entity, and Siemens Gamesa is the merged company, the response is acceptable as referring to the same entity.  
+Score: 1
+
+**idx_4**  
+- Response: ""siemens""  
+- Target: ""siemensswt-3.6-120""  
+Analysis:  
+Response specifies the company only (""siemens"") whereas target specifies model ""swt-3.6-120"". The response meaningfully refers to the same entity (Siemens).  
+Score: 1
+
+**idx_5**  
+- Response: ""siemensgamesa""  
+- Target: ""vestasv164-10""  
+Analysis:  
+Response is Siemens Gamesa, target is Vestas. Different entities.  
+Score: 0
+
+**idx_6**  
+- Response: ""vestasv90""  
+- Target: ""vestasv90-3.0""  
+Analysis:  
+Response gives Vestas V90, target adds 3.0 (capacity) detail. Response captures the same model family clearly.  
+Score: 1
+
+---
+
+### Final scoring in JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1
+}
+```",vestasv164-9.5,siemensgamesa,0.0,"exact not match, response: nan, target: 77.0",77.0,nan,1.0,key_match
+,,eastangliaone,East Anglia ONE,1.0,"number near in range 10.0%, response: 735.0, target: 714.0",714,735,0.0,"exact not match, response: 2021, target: 2020",2020,2021,0.0,"Let's analyze each pair according to the grading criteria:
+
+- Criterion: It is sufficient if the semantics are approximately the same or if they point to the same entity. The company mentioned in the answer could be a subset of the reference answer.
+
+---
+
+**idx_0:**  
+- Response: ""eneco""  
+- Target: ""ørsted/norgesbankinvestmentmanagement(nbim)""  
+- Analysis: The response mentions ""eneco"" which is a different company than ""ørsted"" or ""norgesbankinvestmentmanagement"". No overlap or subset relation. Not the same entity or approximate semantics.  
+- Score: 0
+
+---
+
+**idx_1:**  
+- Response: ""eneco""  
+- Target: ""blauwwindconsortium""  
+- Analysis: ""eneco"" vs ""blauwwindconsortium"" are different companies/entities with no direct relation or subset relation. The answer does not match the reference.  
+- Score: 0
+
+---
+
+**idx_2:**  
+- Response: ""sserenewables""  
+- Target: ""iberdrola/gig""  
+- Analysis: ""sserenewables"" is different from ""iberdrola"" or ""gig"" (gig is often an abbreviation for Green Investment Group but here treated as an entity). The response is not the same or a subset of the target.  
+- Score: 0
+
+---
+
+**idx_3:**  
+- Response: ""ørsted""  
+- Target: ""ørsted/vattenfall""  
+- Analysis: Response is ""ørsted"" while target mentions two companies ""ørsted"" and ""vattenfall"". According to the criteria, the response being a subset (just one of the two companies) is acceptable and considered correct.  
+- Score: 1
+
+---
+
+**idx_4:**  
+- Response: ""e.onanddongenergy""  
+- Target: multiple companies: ""caissededépôtetplacementduquébec\n e.onuk\n masdar\n ørsted""  
+- Analysis: Response combines ""e.on"" and ""dongenergy"".  
+  ""e.on"" is in the target (e.onuk assumed same), but ""dongenergy"" is NOT explicitly in target. The target also includes others not in response. According to criterion: the response company could be a subset of the reference answer. However, ""dongenergy"" is not found in the reference target, and ""caissededépôtetplacementduquébec"" and others are missing from response.
+
+  Since ""e.on"" is a subset of companies mentioned, but ""dongenergy"" is extra and not in the reference, does that invalidate the response? The criteria don't mention penalty for extra entities, only that it can be a subset of the target.
+
+  The response’s overall semantics includes an extraneous company ""dongenergy"" not in the target, but it at least contains one correct company ""e.on"".
+
+  Given the criterion, ""the company mentioned in the answer could be a subset of the reference answer"". This doesn't say the response cannot have extra companies, but this is borderline. Since ""dongenergy"" is extra, the semantics are not approximately the same; the response points to at least a correct company.
+
+  The criterion also says ""It is sufficient if the semantics approximately the same or they point to the same entity."" Here, the response points partly to the same entity (""e.on""), but also includes an entity not mentioned in the target. The inclusion of ""dongenergy"" could be considered incorrect or noise.
+
+  Given the judgment rule, responses should have semantics approximately the same or point to the same entity. The addition of ""dongenergy"" which is not in the target likely makes it incorrect.
+
+  Thus, score: 0
+
+---
+
+**idx_5:**  
+- Response: ""sserenewables""  
+- Target: ""sse/totalenergies""  
+- Analysis: Response ""sserenewables"" is a division or part of SSE presumably. Target mentions ""sse"" and ""totalenergies"" (two companies). The response company can be a subset of the target answer, so pointing to ""sserenewables"" (subset of sse) is acceptable.  
+- Score: 1
+
+---
+
+**idx_6:**  
+- Response: ""e.on""  
+- Target: ""vattenfall""  
+- Analysis: Different companies, no overlap or subset relation. Not the same entity or approximate semantics.  
+- Score: 0
+
+---
+
+### Final Scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0
+}
+```",iberdrola/gig,sserenewables,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for word-for-word correspondence.
+
+---
+
+### idx_0
+
+- Response: ""northsea""
+- Target: ""northsea(nl)""
+
+Analysis: The response is ""northsea"" while the target specifies ""northsea(nl)"", presumably meaning the North Sea near the Netherlands. Since ""northsea"" alone points to the same general entity (the North Sea), and the criterion allows approximate semantics or pointing to the same entity, this is acceptable.
+
+Score: 1
+
+---
+
+### idx_1
+
+- Response: ""northsea""
+- Target: ""northsea(nl)""
+
+Same as idx_0. Score: 1
+
+---
+
+### idx_2
+
+- Response: ""northsea""
+- Target: ""northsea""
+
+Exact match. Score: 1
+
+---
+
+### idx_3
+
+- Response: ""northsea""
+- Target: ""northsea""
+
+Exact match. Score: 1
+
+---
+
+### idx_4
+
+- Response: ""northsea""
+- Target: ""northsea(thamesest.)""
+
+The target is ""northsea(thamesest.)"" which likely specifies the North Sea at the Thames Estuary.
+
+The response ""northsea"" points to the same entity (North Sea), so approximate semantics and same entity criteria are met.
+
+Score: 1
+
+---
+
+### idx_5
+
+- Response: ""northsea""
+- Target: ""northsea""
+
+Exact match. Score: 1
+
+---
+
+### idx_6
+
+- Response: ""northsea""
+- Target: ""northsea(thamesest.)""
+
+Same as idx_4. Score: 1
+
+---
+
+### Final scoring
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",northsea,northsea,1.0,"Let's analyze each pair according to the given criterion:
+
+Criterion summary:  
+- The semantics should approximately be the same or point to the same entity.  
+- Detail level can differ but must refer to the same model.  
+
+---
+
+**idx_0**  
+- Response: ""siemensgamesa""  
+- Target: ""siemenssg8.0-167dd""  
+Analysis:  
+Target mentions a specific Siemens Gamesa model (SG 8.0-167 DD). Response just says ""siemensgamesa"". The response refers to the same company/maker, though lacks the model detail. The criterion states sufficient if semantics point to the same entity and level of detail can differ. ""siemensgamesa"" is semantically the same entity.  
+Score: 1
+
+**idx_1**  
+- Response: ""siemensgamesa""  
+- Target: ""vestasv164-9.5""  
+Analysis:  
+Target is a ""vestas"" model, response is ""siemensgamesa"". Different companies/entities. So semantics do not point to the same entity.  
+Score: 0
+
+**idx_2**  
+- Response: ""siemensgamesa""  
+- Target: ""siemens(gamesa}swt-7.0-154"" (typo, but meaning Siemens Gamesa SWT 7.0-154)  
+Analysis:  
+Target clearly a Siemens Gamesa model. Response is ""siemensgamesa"". Same entity.  
+Score: 1
+
+**idx_3**  
+- Response: ""siemensgamesa""  
+- Target: ""siemensswt-7.0-154"" (Siemens SWT 7.0-154)  
+Analysis:  
+Target is ""Siemens"" only, no explicit ""Gamesa"" in the target, but it likely refers to the same entity or at least the Siemens brand with SWT series. Response ""siemensgamesa"" is a valid superset of ""siemens"". Possible that Siemens Gamesa is intended. Since criterion allows detail difference if referring to the same entity, and Siemens Gamesa is the merged company, the response is acceptable as referring to the same entity.  
+Score: 1
+
+**idx_4**  
+- Response: ""siemens""  
+- Target: ""siemensswt-3.6-120""  
+Analysis:  
+Response specifies the company only (""siemens"") whereas target specifies model ""swt-3.6-120"". The response meaningfully refers to the same entity (Siemens).  
+Score: 1
+
+**idx_5**  
+- Response: ""siemensgamesa""  
+- Target: ""vestasv164-10""  
+Analysis:  
+Response is Siemens Gamesa, target is Vestas. Different entities.  
+Score: 0
+
+**idx_6**  
+- Response: ""vestasv90""  
+- Target: ""vestasv90-3.0""  
+Analysis:  
+Response gives Vestas V90, target adds 3.0 (capacity) detail. Response captures the same model family clearly.  
+Score: 1
+
+---
+
+### Final scoring in JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1
+}
+```",siemens(gamesa}swt-7.0-154,siemensgamesa,0.0,"exact not match, response: nan, target: 102.0",102.0,nan,1.0,key_match
+,,hornseaone,Hornsea One,1.0,"number near in range 10.0%, response: 1218.0, target: 1218.0",1218,1218,0.0,"exact not match, response: 2020, target: 2019",2019,2020,1.0,"Let's analyze each pair according to the grading criteria:
+
+- Criterion: It is sufficient if the semantics are approximately the same or if they point to the same entity. The company mentioned in the answer could be a subset of the reference answer.
+
+---
+
+**idx_0:**  
+- Response: ""eneco""  
+- Target: ""ørsted/norgesbankinvestmentmanagement(nbim)""  
+- Analysis: The response mentions ""eneco"" which is a different company than ""ørsted"" or ""norgesbankinvestmentmanagement"". No overlap or subset relation. Not the same entity or approximate semantics.  
+- Score: 0
+
+---
+
+**idx_1:**  
+- Response: ""eneco""  
+- Target: ""blauwwindconsortium""  
+- Analysis: ""eneco"" vs ""blauwwindconsortium"" are different companies/entities with no direct relation or subset relation. The answer does not match the reference.  
+- Score: 0
+
+---
+
+**idx_2:**  
+- Response: ""sserenewables""  
+- Target: ""iberdrola/gig""  
+- Analysis: ""sserenewables"" is different from ""iberdrola"" or ""gig"" (gig is often an abbreviation for Green Investment Group but here treated as an entity). The response is not the same or a subset of the target.  
+- Score: 0
+
+---
+
+**idx_3:**  
+- Response: ""ørsted""  
+- Target: ""ørsted/vattenfall""  
+- Analysis: Response is ""ørsted"" while target mentions two companies ""ørsted"" and ""vattenfall"". According to the criteria, the response being a subset (just one of the two companies) is acceptable and considered correct.  
+- Score: 1
+
+---
+
+**idx_4:**  
+- Response: ""e.onanddongenergy""  
+- Target: multiple companies: ""caissededépôtetplacementduquébec\n e.onuk\n masdar\n ørsted""  
+- Analysis: Response combines ""e.on"" and ""dongenergy"".  
+  ""e.on"" is in the target (e.onuk assumed same), but ""dongenergy"" is NOT explicitly in target. The target also includes others not in response. According to criterion: the response company could be a subset of the reference answer. However, ""dongenergy"" is not found in the reference target, and ""caissededépôtetplacementduquébec"" and others are missing from response.
+
+  Since ""e.on"" is a subset of companies mentioned, but ""dongenergy"" is extra and not in the reference, does that invalidate the response? The criteria don't mention penalty for extra entities, only that it can be a subset of the target.
+
+  The response’s overall semantics includes an extraneous company ""dongenergy"" not in the target, but it at least contains one correct company ""e.on"".
+
+  Given the criterion, ""the company mentioned in the answer could be a subset of the reference answer"". This doesn't say the response cannot have extra companies, but this is borderline. Since ""dongenergy"" is extra, the semantics are not approximately the same; the response points to at least a correct company.
+
+  The criterion also says ""It is sufficient if the semantics approximately the same or they point to the same entity."" Here, the response points partly to the same entity (""e.on""), but also includes an entity not mentioned in the target. The inclusion of ""dongenergy"" could be considered incorrect or noise.
+
+  Given the judgment rule, responses should have semantics approximately the same or point to the same entity. The addition of ""dongenergy"" which is not in the target likely makes it incorrect.
+
+  Thus, score: 0
+
+---
+
+**idx_5:**  
+- Response: ""sserenewables""  
+- Target: ""sse/totalenergies""  
+- Analysis: Response ""sserenewables"" is a division or part of SSE presumably. Target mentions ""sse"" and ""totalenergies"" (two companies). The response company can be a subset of the target answer, so pointing to ""sserenewables"" (subset of sse) is acceptable.  
+- Score: 1
+
+---
+
+**idx_6:**  
+- Response: ""e.on""  
+- Target: ""vattenfall""  
+- Analysis: Different companies, no overlap or subset relation. Not the same entity or approximate semantics.  
+- Score: 0
+
+---
+
+### Final Scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0
+}
+```",ørsted/vattenfall,ørsted,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for word-for-word correspondence.
+
+---
+
+### idx_0
+
+- Response: ""northsea""
+- Target: ""northsea(nl)""
+
+Analysis: The response is ""northsea"" while the target specifies ""northsea(nl)"", presumably meaning the North Sea near the Netherlands. Since ""northsea"" alone points to the same general entity (the North Sea), and the criterion allows approximate semantics or pointing to the same entity, this is acceptable.
+
+Score: 1
+
+---
+
+### idx_1
+
+- Response: ""northsea""
+- Target: ""northsea(nl)""
+
+Same as idx_0. Score: 1
+
+---
+
+### idx_2
+
+- Response: ""northsea""
+- Target: ""northsea""
+
+Exact match. Score: 1
+
+---
+
+### idx_3
+
+- Response: ""northsea""
+- Target: ""northsea""
+
+Exact match. Score: 1
+
+---
+
+### idx_4
+
+- Response: ""northsea""
+- Target: ""northsea(thamesest.)""
+
+The target is ""northsea(thamesest.)"" which likely specifies the North Sea at the Thames Estuary.
+
+The response ""northsea"" points to the same entity (North Sea), so approximate semantics and same entity criteria are met.
+
+Score: 1
+
+---
+
+### idx_5
+
+- Response: ""northsea""
+- Target: ""northsea""
+
+Exact match. Score: 1
+
+---
+
+### idx_6
+
+- Response: ""northsea""
+- Target: ""northsea(thamesest.)""
+
+Same as idx_4. Score: 1
+
+---
+
+### Final scoring
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",northsea,northsea,1.0,"Let's analyze each pair according to the given criterion:
+
+Criterion summary:  
+- The semantics should approximately be the same or point to the same entity.  
+- Detail level can differ but must refer to the same model.  
+
+---
+
+**idx_0**  
+- Response: ""siemensgamesa""  
+- Target: ""siemenssg8.0-167dd""  
+Analysis:  
+Target mentions a specific Siemens Gamesa model (SG 8.0-167 DD). Response just says ""siemensgamesa"". The response refers to the same company/maker, though lacks the model detail. The criterion states sufficient if semantics point to the same entity and level of detail can differ. ""siemensgamesa"" is semantically the same entity.  
+Score: 1
+
+**idx_1**  
+- Response: ""siemensgamesa""  
+- Target: ""vestasv164-9.5""  
+Analysis:  
+Target is a ""vestas"" model, response is ""siemensgamesa"". Different companies/entities. So semantics do not point to the same entity.  
+Score: 0
+
+**idx_2**  
+- Response: ""siemensgamesa""  
+- Target: ""siemens(gamesa}swt-7.0-154"" (typo, but meaning Siemens Gamesa SWT 7.0-154)  
+Analysis:  
+Target clearly a Siemens Gamesa model. Response is ""siemensgamesa"". Same entity.  
+Score: 1
+
+**idx_3**  
+- Response: ""siemensgamesa""  
+- Target: ""siemensswt-7.0-154"" (Siemens SWT 7.0-154)  
+Analysis:  
+Target is ""Siemens"" only, no explicit ""Gamesa"" in the target, but it likely refers to the same entity or at least the Siemens brand with SWT series. Response ""siemensgamesa"" is a valid superset of ""siemens"". Possible that Siemens Gamesa is intended. Since criterion allows detail difference if referring to the same entity, and Siemens Gamesa is the merged company, the response is acceptable as referring to the same entity.  
+Score: 1
+
+**idx_4**  
+- Response: ""siemens""  
+- Target: ""siemensswt-3.6-120""  
+Analysis:  
+Response specifies the company only (""siemens"") whereas target specifies model ""swt-3.6-120"". The response meaningfully refers to the same entity (Siemens).  
+Score: 1
+
+**idx_5**  
+- Response: ""siemensgamesa""  
+- Target: ""vestasv164-10""  
+Analysis:  
+Response is Siemens Gamesa, target is Vestas. Different entities.  
+Score: 0
+
+**idx_6**  
+- Response: ""vestasv90""  
+- Target: ""vestasv90-3.0""  
+Analysis:  
+Response gives Vestas V90, target adds 3.0 (capacity) detail. Response captures the same model family clearly.  
+Score: 1
+
+---
+
+### Final scoring in JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1
+}
+```",siemensswt-7.0-154,siemensgamesa,0.0,"exact not match, response: nan, target: 174.0",174.0,nan,1.0,key_match
+,,londonarray,London Array,1.0,"number near in range 10.0%, response: 632.0, target: 630.0",630,632,0.0,"exact not match, response: 2010, target: 2013",2013,2010,0.0,"Let's analyze each pair according to the grading criteria:
+
+- Criterion: It is sufficient if the semantics are approximately the same or if they point to the same entity. The company mentioned in the answer could be a subset of the reference answer.
+
+---
+
+**idx_0:**  
+- Response: ""eneco""  
+- Target: ""ørsted/norgesbankinvestmentmanagement(nbim)""  
+- Analysis: The response mentions ""eneco"" which is a different company than ""ørsted"" or ""norgesbankinvestmentmanagement"". No overlap or subset relation. Not the same entity or approximate semantics.  
+- Score: 0
+
+---
+
+**idx_1:**  
+- Response: ""eneco""  
+- Target: ""blauwwindconsortium""  
+- Analysis: ""eneco"" vs ""blauwwindconsortium"" are different companies/entities with no direct relation or subset relation. The answer does not match the reference.  
+- Score: 0
+
+---
+
+**idx_2:**  
+- Response: ""sserenewables""  
+- Target: ""iberdrola/gig""  
+- Analysis: ""sserenewables"" is different from ""iberdrola"" or ""gig"" (gig is often an abbreviation for Green Investment Group but here treated as an entity). The response is not the same or a subset of the target.  
+- Score: 0
+
+---
+
+**idx_3:**  
+- Response: ""ørsted""  
+- Target: ""ørsted/vattenfall""  
+- Analysis: Response is ""ørsted"" while target mentions two companies ""ørsted"" and ""vattenfall"". According to the criteria, the response being a subset (just one of the two companies) is acceptable and considered correct.  
+- Score: 1
+
+---
+
+**idx_4:**  
+- Response: ""e.onanddongenergy""  
+- Target: multiple companies: ""caissededépôtetplacementduquébec\n e.onuk\n masdar\n ørsted""  
+- Analysis: Response combines ""e.on"" and ""dongenergy"".  
+  ""e.on"" is in the target (e.onuk assumed same), but ""dongenergy"" is NOT explicitly in target. The target also includes others not in response. According to criterion: the response company could be a subset of the reference answer. However, ""dongenergy"" is not found in the reference target, and ""caissededépôtetplacementduquébec"" and others are missing from response.
+
+  Since ""e.on"" is a subset of companies mentioned, but ""dongenergy"" is extra and not in the reference, does that invalidate the response? The criteria don't mention penalty for extra entities, only that it can be a subset of the target.
+
+  The response’s overall semantics includes an extraneous company ""dongenergy"" not in the target, but it at least contains one correct company ""e.on"".
+
+  Given the criterion, ""the company mentioned in the answer could be a subset of the reference answer"". This doesn't say the response cannot have extra companies, but this is borderline. Since ""dongenergy"" is extra, the semantics are not approximately the same; the response points to at least a correct company.
+
+  The criterion also says ""It is sufficient if the semantics approximately the same or they point to the same entity."" Here, the response points partly to the same entity (""e.on""), but also includes an entity not mentioned in the target. The inclusion of ""dongenergy"" could be considered incorrect or noise.
+
+  Given the judgment rule, responses should have semantics approximately the same or point to the same entity. The addition of ""dongenergy"" which is not in the target likely makes it incorrect.
+
+  Thus, score: 0
+
+---
+
+**idx_5:**  
+- Response: ""sserenewables""  
+- Target: ""sse/totalenergies""  
+- Analysis: Response ""sserenewables"" is a division or part of SSE presumably. Target mentions ""sse"" and ""totalenergies"" (two companies). The response company can be a subset of the target answer, so pointing to ""sserenewables"" (subset of sse) is acceptable.  
+- Score: 1
+
+---
+
+**idx_6:**  
+- Response: ""e.on""  
+- Target: ""vattenfall""  
+- Analysis: Different companies, no overlap or subset relation. Not the same entity or approximate semantics.  
+- Score: 0
+
+---
+
+### Final Scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0
+}
+```","caissededépôtetplacementduquébec
+e.onuk
+masdar
+ørsted",e.onanddongenergy,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for word-for-word correspondence.
+
+---
+
+### idx_0
+
+- Response: ""northsea""
+- Target: ""northsea(nl)""
+
+Analysis: The response is ""northsea"" while the target specifies ""northsea(nl)"", presumably meaning the North Sea near the Netherlands. Since ""northsea"" alone points to the same general entity (the North Sea), and the criterion allows approximate semantics or pointing to the same entity, this is acceptable.
+
+Score: 1
+
+---
+
+### idx_1
+
+- Response: ""northsea""
+- Target: ""northsea(nl)""
+
+Same as idx_0. Score: 1
+
+---
+
+### idx_2
+
+- Response: ""northsea""
+- Target: ""northsea""
+
+Exact match. Score: 1
+
+---
+
+### idx_3
+
+- Response: ""northsea""
+- Target: ""northsea""
+
+Exact match. Score: 1
+
+---
+
+### idx_4
+
+- Response: ""northsea""
+- Target: ""northsea(thamesest.)""
+
+The target is ""northsea(thamesest.)"" which likely specifies the North Sea at the Thames Estuary.
+
+The response ""northsea"" points to the same entity (North Sea), so approximate semantics and same entity criteria are met.
+
+Score: 1
+
+---
+
+### idx_5
+
+- Response: ""northsea""
+- Target: ""northsea""
+
+Exact match. Score: 1
+
+---
+
+### idx_6
+
+- Response: ""northsea""
+- Target: ""northsea(thamesest.)""
+
+Same as idx_4. Score: 1
+
+---
+
+### Final scoring
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",northsea(thamesest.),northsea,1.0,"Let's analyze each pair according to the given criterion:
+
+Criterion summary:  
+- The semantics should approximately be the same or point to the same entity.  
+- Detail level can differ but must refer to the same model.  
+
+---
+
+**idx_0**  
+- Response: ""siemensgamesa""  
+- Target: ""siemenssg8.0-167dd""  
+Analysis:  
+Target mentions a specific Siemens Gamesa model (SG 8.0-167 DD). Response just says ""siemensgamesa"". The response refers to the same company/maker, though lacks the model detail. The criterion states sufficient if semantics point to the same entity and level of detail can differ. ""siemensgamesa"" is semantically the same entity.  
+Score: 1
+
+**idx_1**  
+- Response: ""siemensgamesa""  
+- Target: ""vestasv164-9.5""  
+Analysis:  
+Target is a ""vestas"" model, response is ""siemensgamesa"". Different companies/entities. So semantics do not point to the same entity.  
+Score: 0
+
+**idx_2**  
+- Response: ""siemensgamesa""  
+- Target: ""siemens(gamesa}swt-7.0-154"" (typo, but meaning Siemens Gamesa SWT 7.0-154)  
+Analysis:  
+Target clearly a Siemens Gamesa model. Response is ""siemensgamesa"". Same entity.  
+Score: 1
+
+**idx_3**  
+- Response: ""siemensgamesa""  
+- Target: ""siemensswt-7.0-154"" (Siemens SWT 7.0-154)  
+Analysis:  
+Target is ""Siemens"" only, no explicit ""Gamesa"" in the target, but it likely refers to the same entity or at least the Siemens brand with SWT series. Response ""siemensgamesa"" is a valid superset of ""siemens"". Possible that Siemens Gamesa is intended. Since criterion allows detail difference if referring to the same entity, and Siemens Gamesa is the merged company, the response is acceptable as referring to the same entity.  
+Score: 1
+
+**idx_4**  
+- Response: ""siemens""  
+- Target: ""siemensswt-3.6-120""  
+Analysis:  
+Response specifies the company only (""siemens"") whereas target specifies model ""swt-3.6-120"". The response meaningfully refers to the same entity (Siemens).  
+Score: 1
+
+**idx_5**  
+- Response: ""siemensgamesa""  
+- Target: ""vestasv164-10""  
+Analysis:  
+Response is Siemens Gamesa, target is Vestas. Different entities.  
+Score: 0
+
+**idx_6**  
+- Response: ""vestasv90""  
+- Target: ""vestasv90-3.0""  
+Analysis:  
+Response gives Vestas V90, target adds 3.0 (capacity) detail. Response captures the same model family clearly.  
+Score: 1
+
+---
+
+### Final scoring in JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1
+}
+```",siemensswt-3.6-120,siemens,0.0,"exact not match, response: nan, target: 175.0",175.0,nan,1.0,key_match
+,,seagreen,Seagreen,0.0,"number not near, response: 588.0, target: 1075.0",1075,588,1.0,"exact match, response: 2023, target: 2023",2023,2023,1.0,"Let's analyze each pair according to the grading criteria:
+
+- Criterion: It is sufficient if the semantics are approximately the same or if they point to the same entity. The company mentioned in the answer could be a subset of the reference answer.
+
+---
+
+**idx_0:**  
+- Response: ""eneco""  
+- Target: ""ørsted/norgesbankinvestmentmanagement(nbim)""  
+- Analysis: The response mentions ""eneco"" which is a different company than ""ørsted"" or ""norgesbankinvestmentmanagement"". No overlap or subset relation. Not the same entity or approximate semantics.  
+- Score: 0
+
+---
+
+**idx_1:**  
+- Response: ""eneco""  
+- Target: ""blauwwindconsortium""  
+- Analysis: ""eneco"" vs ""blauwwindconsortium"" are different companies/entities with no direct relation or subset relation. The answer does not match the reference.  
+- Score: 0
+
+---
+
+**idx_2:**  
+- Response: ""sserenewables""  
+- Target: ""iberdrola/gig""  
+- Analysis: ""sserenewables"" is different from ""iberdrola"" or ""gig"" (gig is often an abbreviation for Green Investment Group but here treated as an entity). The response is not the same or a subset of the target.  
+- Score: 0
+
+---
+
+**idx_3:**  
+- Response: ""ørsted""  
+- Target: ""ørsted/vattenfall""  
+- Analysis: Response is ""ørsted"" while target mentions two companies ""ørsted"" and ""vattenfall"". According to the criteria, the response being a subset (just one of the two companies) is acceptable and considered correct.  
+- Score: 1
+
+---
+
+**idx_4:**  
+- Response: ""e.onanddongenergy""  
+- Target: multiple companies: ""caissededépôtetplacementduquébec\n e.onuk\n masdar\n ørsted""  
+- Analysis: Response combines ""e.on"" and ""dongenergy"".  
+  ""e.on"" is in the target (e.onuk assumed same), but ""dongenergy"" is NOT explicitly in target. The target also includes others not in response. According to criterion: the response company could be a subset of the reference answer. However, ""dongenergy"" is not found in the reference target, and ""caissededépôtetplacementduquébec"" and others are missing from response.
+
+  Since ""e.on"" is a subset of companies mentioned, but ""dongenergy"" is extra and not in the reference, does that invalidate the response? The criteria don't mention penalty for extra entities, only that it can be a subset of the target.
+
+  The response’s overall semantics includes an extraneous company ""dongenergy"" not in the target, but it at least contains one correct company ""e.on"".
+
+  Given the criterion, ""the company mentioned in the answer could be a subset of the reference answer"". This doesn't say the response cannot have extra companies, but this is borderline. Since ""dongenergy"" is extra, the semantics are not approximately the same; the response points to at least a correct company.
+
+  The criterion also says ""It is sufficient if the semantics approximately the same or they point to the same entity."" Here, the response points partly to the same entity (""e.on""), but also includes an entity not mentioned in the target. The inclusion of ""dongenergy"" could be considered incorrect or noise.
+
+  Given the judgment rule, responses should have semantics approximately the same or point to the same entity. The addition of ""dongenergy"" which is not in the target likely makes it incorrect.
+
+  Thus, score: 0
+
+---
+
+**idx_5:**  
+- Response: ""sserenewables""  
+- Target: ""sse/totalenergies""  
+- Analysis: Response ""sserenewables"" is a division or part of SSE presumably. Target mentions ""sse"" and ""totalenergies"" (two companies). The response company can be a subset of the target answer, so pointing to ""sserenewables"" (subset of sse) is acceptable.  
+- Score: 1
+
+---
+
+**idx_6:**  
+- Response: ""e.on""  
+- Target: ""vattenfall""  
+- Analysis: Different companies, no overlap or subset relation. Not the same entity or approximate semantics.  
+- Score: 0
+
+---
+
+### Final Scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0
+}
+```",sse/totalenergies,sserenewables,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for word-for-word correspondence.
+
+---
+
+### idx_0
+
+- Response: ""northsea""
+- Target: ""northsea(nl)""
+
+Analysis: The response is ""northsea"" while the target specifies ""northsea(nl)"", presumably meaning the North Sea near the Netherlands. Since ""northsea"" alone points to the same general entity (the North Sea), and the criterion allows approximate semantics or pointing to the same entity, this is acceptable.
+
+Score: 1
+
+---
+
+### idx_1
+
+- Response: ""northsea""
+- Target: ""northsea(nl)""
+
+Same as idx_0. Score: 1
+
+---
+
+### idx_2
+
+- Response: ""northsea""
+- Target: ""northsea""
+
+Exact match. Score: 1
+
+---
+
+### idx_3
+
+- Response: ""northsea""
+- Target: ""northsea""
+
+Exact match. Score: 1
+
+---
+
+### idx_4
+
+- Response: ""northsea""
+- Target: ""northsea(thamesest.)""
+
+The target is ""northsea(thamesest.)"" which likely specifies the North Sea at the Thames Estuary.
+
+The response ""northsea"" points to the same entity (North Sea), so approximate semantics and same entity criteria are met.
+
+Score: 1
+
+---
+
+### idx_5
+
+- Response: ""northsea""
+- Target: ""northsea""
+
+Exact match. Score: 1
+
+---
+
+### idx_6
+
+- Response: ""northsea""
+- Target: ""northsea(thamesest.)""
+
+Same as idx_4. Score: 1
+
+---
+
+### Final scoring
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",northsea,northsea,0.0,"Let's analyze each pair according to the given criterion:
+
+Criterion summary:  
+- The semantics should approximately be the same or point to the same entity.  
+- Detail level can differ but must refer to the same model.  
+
+---
+
+**idx_0**  
+- Response: ""siemensgamesa""  
+- Target: ""siemenssg8.0-167dd""  
+Analysis:  
+Target mentions a specific Siemens Gamesa model (SG 8.0-167 DD). Response just says ""siemensgamesa"". The response refers to the same company/maker, though lacks the model detail. The criterion states sufficient if semantics point to the same entity and level of detail can differ. ""siemensgamesa"" is semantically the same entity.  
+Score: 1
+
+**idx_1**  
+- Response: ""siemensgamesa""  
+- Target: ""vestasv164-9.5""  
+Analysis:  
+Target is a ""vestas"" model, response is ""siemensgamesa"". Different companies/entities. So semantics do not point to the same entity.  
+Score: 0
+
+**idx_2**  
+- Response: ""siemensgamesa""  
+- Target: ""siemens(gamesa}swt-7.0-154"" (typo, but meaning Siemens Gamesa SWT 7.0-154)  
+Analysis:  
+Target clearly a Siemens Gamesa model. Response is ""siemensgamesa"". Same entity.  
+Score: 1
+
+**idx_3**  
+- Response: ""siemensgamesa""  
+- Target: ""siemensswt-7.0-154"" (Siemens SWT 7.0-154)  
+Analysis:  
+Target is ""Siemens"" only, no explicit ""Gamesa"" in the target, but it likely refers to the same entity or at least the Siemens brand with SWT series. Response ""siemensgamesa"" is a valid superset of ""siemens"". Possible that Siemens Gamesa is intended. Since criterion allows detail difference if referring to the same entity, and Siemens Gamesa is the merged company, the response is acceptable as referring to the same entity.  
+Score: 1
+
+**idx_4**  
+- Response: ""siemens""  
+- Target: ""siemensswt-3.6-120""  
+Analysis:  
+Response specifies the company only (""siemens"") whereas target specifies model ""swt-3.6-120"". The response meaningfully refers to the same entity (Siemens).  
+Score: 1
+
+**idx_5**  
+- Response: ""siemensgamesa""  
+- Target: ""vestasv164-10""  
+Analysis:  
+Response is Siemens Gamesa, target is Vestas. Different entities.  
+Score: 0
+
+**idx_6**  
+- Response: ""vestasv90""  
+- Target: ""vestasv90-3.0""  
+Analysis:  
+Response gives Vestas V90, target adds 3.0 (capacity) detail. Response captures the same model family clearly.  
+Score: 1
+
+---
+
+### Final scoring in JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1
+}
+```",vestasv164-10,siemensgamesa,0.0,"exact not match, response: nan, target: 114.0",114.0,nan,1.0,key_match
+,,thanet,Thanet,1.0,"number near in range 10.0%, response: 300.0, target: 300.0",300,300,1.0,"exact match, response: 2010, target: 2010",2010,2010,0.0,"Let's analyze each pair according to the grading criteria:
+
+- Criterion: It is sufficient if the semantics are approximately the same or if they point to the same entity. The company mentioned in the answer could be a subset of the reference answer.
+
+---
+
+**idx_0:**  
+- Response: ""eneco""  
+- Target: ""ørsted/norgesbankinvestmentmanagement(nbim)""  
+- Analysis: The response mentions ""eneco"" which is a different company than ""ørsted"" or ""norgesbankinvestmentmanagement"". No overlap or subset relation. Not the same entity or approximate semantics.  
+- Score: 0
+
+---
+
+**idx_1:**  
+- Response: ""eneco""  
+- Target: ""blauwwindconsortium""  
+- Analysis: ""eneco"" vs ""blauwwindconsortium"" are different companies/entities with no direct relation or subset relation. The answer does not match the reference.  
+- Score: 0
+
+---
+
+**idx_2:**  
+- Response: ""sserenewables""  
+- Target: ""iberdrola/gig""  
+- Analysis: ""sserenewables"" is different from ""iberdrola"" or ""gig"" (gig is often an abbreviation for Green Investment Group but here treated as an entity). The response is not the same or a subset of the target.  
+- Score: 0
+
+---
+
+**idx_3:**  
+- Response: ""ørsted""  
+- Target: ""ørsted/vattenfall""  
+- Analysis: Response is ""ørsted"" while target mentions two companies ""ørsted"" and ""vattenfall"". According to the criteria, the response being a subset (just one of the two companies) is acceptable and considered correct.  
+- Score: 1
+
+---
+
+**idx_4:**  
+- Response: ""e.onanddongenergy""  
+- Target: multiple companies: ""caissededépôtetplacementduquébec\n e.onuk\n masdar\n ørsted""  
+- Analysis: Response combines ""e.on"" and ""dongenergy"".  
+  ""e.on"" is in the target (e.onuk assumed same), but ""dongenergy"" is NOT explicitly in target. The target also includes others not in response. According to criterion: the response company could be a subset of the reference answer. However, ""dongenergy"" is not found in the reference target, and ""caissededépôtetplacementduquébec"" and others are missing from response.
+
+  Since ""e.on"" is a subset of companies mentioned, but ""dongenergy"" is extra and not in the reference, does that invalidate the response? The criteria don't mention penalty for extra entities, only that it can be a subset of the target.
+
+  The response’s overall semantics includes an extraneous company ""dongenergy"" not in the target, but it at least contains one correct company ""e.on"".
+
+  Given the criterion, ""the company mentioned in the answer could be a subset of the reference answer"". This doesn't say the response cannot have extra companies, but this is borderline. Since ""dongenergy"" is extra, the semantics are not approximately the same; the response points to at least a correct company.
+
+  The criterion also says ""It is sufficient if the semantics approximately the same or they point to the same entity."" Here, the response points partly to the same entity (""e.on""), but also includes an entity not mentioned in the target. The inclusion of ""dongenergy"" could be considered incorrect or noise.
+
+  Given the judgment rule, responses should have semantics approximately the same or point to the same entity. The addition of ""dongenergy"" which is not in the target likely makes it incorrect.
+
+  Thus, score: 0
+
+---
+
+**idx_5:**  
+- Response: ""sserenewables""  
+- Target: ""sse/totalenergies""  
+- Analysis: Response ""sserenewables"" is a division or part of SSE presumably. Target mentions ""sse"" and ""totalenergies"" (two companies). The response company can be a subset of the target answer, so pointing to ""sserenewables"" (subset of sse) is acceptable.  
+- Score: 1
+
+---
+
+**idx_6:**  
+- Response: ""e.on""  
+- Target: ""vattenfall""  
+- Analysis: Different companies, no overlap or subset relation. Not the same entity or approximate semantics.  
+- Score: 0
+
+---
+
+### Final Scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0
+}
+```",vattenfall,e.on,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for word-for-word correspondence.
+
+---
+
+### idx_0
+
+- Response: ""northsea""
+- Target: ""northsea(nl)""
+
+Analysis: The response is ""northsea"" while the target specifies ""northsea(nl)"", presumably meaning the North Sea near the Netherlands. Since ""northsea"" alone points to the same general entity (the North Sea), and the criterion allows approximate semantics or pointing to the same entity, this is acceptable.
+
+Score: 1
+
+---
+
+### idx_1
+
+- Response: ""northsea""
+- Target: ""northsea(nl)""
+
+Same as idx_0. Score: 1
+
+---
+
+### idx_2
+
+- Response: ""northsea""
+- Target: ""northsea""
+
+Exact match. Score: 1
+
+---
+
+### idx_3
+
+- Response: ""northsea""
+- Target: ""northsea""
+
+Exact match. Score: 1
+
+---
+
+### idx_4
+
+- Response: ""northsea""
+- Target: ""northsea(thamesest.)""
+
+The target is ""northsea(thamesest.)"" which likely specifies the North Sea at the Thames Estuary.
+
+The response ""northsea"" points to the same entity (North Sea), so approximate semantics and same entity criteria are met.
+
+Score: 1
+
+---
+
+### idx_5
+
+- Response: ""northsea""
+- Target: ""northsea""
+
+Exact match. Score: 1
+
+---
+
+### idx_6
+
+- Response: ""northsea""
+- Target: ""northsea(thamesest.)""
+
+Same as idx_4. Score: 1
+
+---
+
+### Final scoring
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",northsea(thamesest.),northsea,1.0,"Let's analyze each pair according to the given criterion:
+
+Criterion summary:  
+- The semantics should approximately be the same or point to the same entity.  
+- Detail level can differ but must refer to the same model.  
+
+---
+
+**idx_0**  
+- Response: ""siemensgamesa""  
+- Target: ""siemenssg8.0-167dd""  
+Analysis:  
+Target mentions a specific Siemens Gamesa model (SG 8.0-167 DD). Response just says ""siemensgamesa"". The response refers to the same company/maker, though lacks the model detail. The criterion states sufficient if semantics point to the same entity and level of detail can differ. ""siemensgamesa"" is semantically the same entity.  
+Score: 1
+
+**idx_1**  
+- Response: ""siemensgamesa""  
+- Target: ""vestasv164-9.5""  
+Analysis:  
+Target is a ""vestas"" model, response is ""siemensgamesa"". Different companies/entities. So semantics do not point to the same entity.  
+Score: 0
+
+**idx_2**  
+- Response: ""siemensgamesa""  
+- Target: ""siemens(gamesa}swt-7.0-154"" (typo, but meaning Siemens Gamesa SWT 7.0-154)  
+Analysis:  
+Target clearly a Siemens Gamesa model. Response is ""siemensgamesa"". Same entity.  
+Score: 1
+
+**idx_3**  
+- Response: ""siemensgamesa""  
+- Target: ""siemensswt-7.0-154"" (Siemens SWT 7.0-154)  
+Analysis:  
+Target is ""Siemens"" only, no explicit ""Gamesa"" in the target, but it likely refers to the same entity or at least the Siemens brand with SWT series. Response ""siemensgamesa"" is a valid superset of ""siemens"". Possible that Siemens Gamesa is intended. Since criterion allows detail difference if referring to the same entity, and Siemens Gamesa is the merged company, the response is acceptable as referring to the same entity.  
+Score: 1
+
+**idx_4**  
+- Response: ""siemens""  
+- Target: ""siemensswt-3.6-120""  
+Analysis:  
+Response specifies the company only (""siemens"") whereas target specifies model ""swt-3.6-120"". The response meaningfully refers to the same entity (Siemens).  
+Score: 1
+
+**idx_5**  
+- Response: ""siemensgamesa""  
+- Target: ""vestasv164-10""  
+Analysis:  
+Response is Siemens Gamesa, target is Vestas. Different entities.  
+Score: 0
+
+**idx_6**  
+- Response: ""vestasv90""  
+- Target: ""vestasv90-3.0""  
+Analysis:  
+Response gives Vestas V90, target adds 3.0 (capacity) detail. Response captures the same model family clearly.  
+Score: 1
+
+---
+
+### Final scoring in JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1
+}
+```",vestasv90-3.0,vestasv90,0.0,"exact not match, response: nan, target: 100.0",100.0,nan,1.0,key_match
+1.0,,amrumbankwest,,,,302,,,,2015,,,,rweag,,,,northsea,,,,siemensswt-3.6-120,,,,80.0,,,
+1.0,,anholt,,,,400,,,,2013,,,,ørsted,,,,kattegat,,,,siemensswt-3.6-20(111),,,,111.0,,,
+1.0,,arkona,,,,385,,,,2019,,,,rwe/equinor,,,,balticsea,,,,siemensswt-6.0-154,,,,60.0,,,
+1.0,,balticeagle,,,,476,,,,2024,,,,masdar/iberdrola,,,,balticsea,,,,vestas(mvow)v174-9.5mw,,,,50.0,,,
+1.0,,bardoffshore1,,,,400,,,,2013,,,,oceanbreezeenergy,,,,germanbight,,,,bard5.0,,,,80.0,,,
+1.0,,beatrice,,,,588,,,,2019,,,,sse/cip/redrock,,,,morayfirth,,,,siemensswt-7.0-154,,,,84.0,,,
+1.0,,borkumriffgrund1,,,,312,,,,2015,,,,ørsted,,,,germanbight,,,,siemensswt-4.0-120,,,,78.0,,,
+1.0,,borkumriffgrund2,,,,450,,,,2019,,,,ørsted,,,,germanbight,,,,vestasv164-8.0,,,,56.0,,,
+,1.0,borssele5&6,Borssele 5 & 6,,,,780,,,,2023,,,,eneco,,,,northsea,,,,siemensgamesa,,,,nan,,
+,1.0,doggerbanka,Dogger Bank A,,,,1200,,,,2024,,,,equinor,,,,northsea,,,,siemensgamesa,,,,nan,,
+,1.0,dolwin3,Dolwin 3,,,,300,,,,2018,,,,equinor,,,,germanbight,,,,siemensgamesa,,,,nan,,
+,1.0,dolwin5,Dolwin 5,,,,300,,,,2018,,,,equinor,,,,germanbight,,,,siemensgamesa,,,,nan,,
+1.0,,dudgeon,,,,402,,,,2017,,,,equinor/masdar/statkraft,,,,northsea,,,,siemensswt-6.0-154,,,,67.0,,,
+1.0,,fécamp,,,,497,,,,2024,,,,eolienmaritimefrance(emf)/enbridge/réseaudetransportd'electricité(rte)/skybornrenewablesgmbh(formerlywpd)/edfenergiesnouvellesgroup/canadapensionplaninvestmentboard(cppib),,,,englishchannel,,,,siemensgamesaswt-7.0-154,,,,71.0,,,
+1.0,,galloper,,,,353,,,,2018,,,,rwerenewables/siemensfinancialservices/equitix/esb/springinfrastructure,,,,northsea,,,,siemensgamesa6.0-154,,,,56.0,,,
+1.0,,gemini,,,,600,,,,2017,,,,northlandpowerconsortium,,,,northsea(nl),,,,siemensswt-4.0-130,,,,150.0,,,
+1.0,,globaltechi,,,,400,,,,2015,,,,globaltechioffshorewindgmbh/axpointernationals.a./geventures/entegaag/stadtwerkemünchengmbh/tennetoffshoregmbh,,,,northsea,,,,arevam5000-116(5mw),,,,80.0,,,
+1.0,,godewind1+2,,,,582,,,,2017,,,,ørsted,,,,germanbight,,,,siemensswt-6.0-154,,,,97.0,,,
+1.0,,greatergabbard,,,,504,,,,2012,,,,sse/rwe,,,,northsea(outerthames),,,,siemensswt-3.6-107,,,,140.0,,,
+,1.0,gunfleetsands,Gunfleet Sands,,,,300,,,,2010,,,,e.on,,,,thamesestuary,,,,vestasv90,,,,nan,,
+1.0,,gwyntymôr,,,,576,,,,2015,,,,rwe/macquarie/stadtwerkemünchengmbh,,,,irishsea,,,,siemensswt-3.6-107,,,,160.0,,,
+1.0,,hohesee,,,,497,,,,2019,,,,enbw/canadapensionplaninvestmentboard(cppib)/enbridgeinc,,,,northsea,,,,siemensgamesaswt-7.0-154,,,,71.0,,,
+1.0,,hollandsekustnoord,,,,759,,,,2023,,,,shell/eneco,,,,northsea(nl),,,,siemenssg11.0-200dd,,,,69.0,,,
+1.0,,hollandsekustzuid1-2,,,,770,,,,2023,,,,allianz/basf/vattenfall/chinookc.v.,,,,northsea(nl),,,,siemens-gamesasg11.0-200,,,,70.0,,,
+1.0,,hollandsekustzuid3-4,,,,770,,,,2023,,,,allianz/basf/vattenfall/chinookc.v.,,,,northsea(nl),,,,siemens-gamesasg11.0-200,,,,70.0,,,
+1.0,,hornseatwo,,,,1386,,,,2022,,,,ørsted,,,,northsea,,,,siemenssg8.0-167dd,,,,165.0,,,
+1.0,,hornsrev3,,,,407,,,,2019,,,,vattenfall,,,,northsea(dk),,,,vestasv164-8.3,,,,49.0,,,
+,1.0,humbergateway,Humber Gateway,,,,400,,,,2018,,,,sserenewables,,,,northsea,,,,siemensgamesa,,,,nan,,
+1.0,,kaskasi,,,,342,,,,2022,,,,rweag,,,,northsea,,,,siemensgamesasg8.0-167,,,,38.0,,,
+,1.0,kentishflats,Kentish Flats,,,,300,,,,2010,,,,e.on,,,,northsea,,,,siemens,,,,nan,,
+1.0,,kriegersflak,,,,604,,,,2021,,,,vattenfall,,,,balticsea,,,,siemensswt-8.4-167,,,,72.0,,,
+1.0,,merkur,,,,396,,,,2019,,,,thedutchpensioninvestorapg/therenewablesinfrastructuregrouplimited(trig),,,,germanbight,,,,gehaliade150-6,,,,66.0,,,
+,1.0,merseygateway,Mersey Gateway,,,,478,,,,2017,,,,sserenewables,,,,irishsea,,,,siemensgamesa,,,,nan,,
+1.0,,morayeast,,,,950,,,,2022,,,,oceanwinds/inpex/ctg/equitix/kepco/mitsubishi,,,,northsea,,,,vestasv164-9.5,,,,100.0,,,
+,1.0,neartnagaoithe,Neart na Gaoithe,,,,300,,,,2016,,,,sserenewables,,,,northsea,,,,siemens,,,,nan,,
+1.0,,nordseeone,,,,332,,,,2017,,,,northlandpower/innogy,,,,germanbight,,,,senvion6.2m126,,,,54.0,,,
+1.0,,norther,,,,370,,,,2019,,,,eneco/elicio,,,,northsea(be),,,,vestasv164-8.4,,,,44.0,,,
+1.0,,racebank,,,,573,,,,2018,,,,ørsted/sumitomocorporation/macquarieeuropeaninfrastructurefund5/fundsmanagedbygreeninvestmentgroup,,,,northsea,,,,siemensswt-6.0-154,,,,91.0,,,
+1.0,,rampion,,,,400,,,,2018,,,,rwe/macquarie-ledconsortium/enbridge/equitix,,,,englishchannel,,,,vestasv112-3.45,,,,116.0,,,
+1.0,,rentel,,,,309,,,,2018,,,,otary,,,,northsea(be),,,,siemensswt-7.0-154(7.35mw),,,,42.0,,,
+1.0,,saint-brieuc,,,,496,,,,2024,,,,"iberdrolarenovablesenergia,s.a./réseaudetransportd'electricité(rte)/ailesmarinessas",,,,englishchannel,,,,siemensgamesa8.0-167,,,,62.0,,,
+1.0,,saint-nazaire,,,,480,,,,2022,,,,edf/enbridge/cppinvest.,,,,bayofbiscay,,,,gehaliade150-6,,,,80.0,,,
+1.0,,seamade,,,,487,,,,2020,,,,otary/eneco/oceanwinds,,,,northsea(be),,,,siemenssg8.0-167dd,,,,58.0,,,
+1.0,,sheringhamshoal,,,,317,,,,2012,,,,equinor/greeninvestmentgroup/equitix,,,,northsea,,,,siemensswt-3.6-107,,,,88.0,,,
+1.0,,thorntonbank(c-power),,,,325,,,,2013,,,,c-powernv,,,,northsea,,,,repower5m,,,,54.0,,,
+1.0,,tritonknoll,,,,857,,,,2022,,,,rwe/j-power/kansai,,,,northsea,,,,vestasv164-9.5,,,,90.0,,,
+1.0,,vejamate,,,,402,,,,2017,,,,siemens/cip/highland,,,,germanbight,,,,siemensswt-6.0-154,,,,67.0,,,
+1.0,,walney1&2,,,,367,,,,2012,,,,ørstedconsortium,,,,irishsea,,,,siemensswt-3.6-107(3.6mw)&siemensswt-3.6-120(3.6mw),,,,102.0,,,
+1.0,,walneyextension,,,,659,,,,2018,,,,ørstedconsortium,,,,irishsea,,,,"mhi-vestas8.25mw&
+siemensgamesaswt-7.0-154(7mw)",,,,87.0,,,
+1.0,,westofduddonsands,,,,389,,,,2014,,,,ørsted/sse,,,,irishsea,,,,siemensswt-3.6-120,,,,108.0,,,
+1.0,,wikinger,,,,350,,,,2018,,,,iberdrola,,,,balticsea,,,,adwenad5-135,,,,70.0,,,

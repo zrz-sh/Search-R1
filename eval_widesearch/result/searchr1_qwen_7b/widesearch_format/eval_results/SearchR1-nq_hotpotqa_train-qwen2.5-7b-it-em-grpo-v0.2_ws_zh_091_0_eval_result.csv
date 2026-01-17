@@ -1,0 +1,737 @@
+exist_flag_gt,exist_flag_response,景区名称,景区名称_before_map,具体地址_llm_judge,具体地址_llm_judge_eval_msg,具体地址_query,具体地址_response,所在城市_llm_judge,所在城市_llm_judge_eval_msg,所在城市_query,所在城市_response,景区名称_exact_match,景区名称_exact_match_eval_msg,景区等级_llm_judge,景区等级_llm_judge_eval_msg,景区等级_query,景区等级_response
+,,承德市承德避暑山庄及周围寺庙景区,避暑山庄及周围寺庙景区,1.0,"Let's analyze each pair according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+This means the response only needs to be roughly semantically the same or refer to the same entity.
+
+---
+
+### idx_0  
+- Response: 河北省承德市双桥区丽正门大街22号  
+- Target: 河北省承德市双桥区境内
+
+Analysis:  
+The target is ""within Shuangqiao District, Chengde City, Hebei Province.""  
+The response provides a more specific address ""22 Lizhengmen Street, Shuangqiao District, Chengde City, Hebei Province.""  
+The response is included within the target area. They refer to the same general location (Shuangqiao District, Chengde City).  
+According to the criterion, this is semantically equivalent because the response is inside the target area.
+
+**Score: 1**
+
+---
+
+### idx_1  
+- Response: 石家庄市平山县  
+- Target: 河北省石家庄市平山县境内
+
+Analysis:  
+The response is ""Pingshan County, Shijiazhuang City.""  
+The target is ""Within Pingshan County, Shijiazhuang City, Hebei Province.""  
+The response matches the main entity and the location. The absence of ""河北省"" does not matter because the city and county are stated correctly. The response is consistent with the target.
+
+**Score: 1**
+
+---
+
+### idx_2  
+- Response: 山海关  
+- Target: 河北省秦皇岛市山海关区境内
+
+Analysis:  
+The response is ""Shanhaiguan"" (a well-known district-level entity).  
+The target is ""Within Shanhaiguan District, Qinhuangdao City, Hebei Province.""  
+The response refers to the same entity/location as the target area. Sufficiently matching as per the criterion.
+
+**Score: 1**
+
+---
+
+### idx_3  
+- Response: 承德市宽城满族自治县蟠龙湖景区  
+- Target: 河北省石家庄市灵寿县寨头乡水峪村
+
+Analysis:  
+Response: Panlong Lake Scenic Area, Kuancheng Manchu Autonomous County, Chengde City, Hebei Province  
+Target: Zhaitou Township, Shijiazhuang City's Lingshou County, Hebei Province
+
+The response and target refer to completely different locations and districts:  
+- Response is in Kuancheng County, Chengde City  
+- Target is in Lingshou County, Shijiazhuang City  
+
+They are different entities in different places. So semantically they do NOT match.
+
+**Score: 0**
+
+---
+
+### Final scores JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0
+}
+```",河北省承德市双桥区境内,河北省承德市双桥区丽正门大街22号,1.0,"Let's analyze each response against its target based on the given criterion:
+
+Criterion summary:  
+- Semantic equivalence or pointing to the same entity is sufficient.  
+- Exact word-for-word match is not necessary.
+
+---
+
+**idx_0:**  
+- Response: ""承德市双桥区"" (Shuangqiao District, Chengde City)  
+- Target: ""承德市"" (Chengde City)  
+Analysis: The response is a district within the target city. It clearly points to a more specific location inside the target entity. This is semantically consistent and points to the same general geographic entity.  
+Score: 1
+
+---
+
+**idx_1:**  
+- Response: ""石家庄市平山县"" (Pingshan County, Shijiazhuang City)  
+- Target: ""石家庄"" (Shijiazhuang)  
+Analysis: The response points to a county within the city of Shijiazhuang. This is semantically consistent with the target city and matches the entity.  
+Score: 1
+
+---
+
+**idx_2:**  
+- Response: ""秦皇岛市"" (Qinhuangdao City)  
+- Target: ""秦皇岛市"" (Qinhuangdao City)  
+Analysis: Exactly the same place name.  
+Score: 1
+
+---
+
+**idx_3:**  
+- Response: ""承德市宽城满族自治县"" (Kuancheng Manchu Autonomous County, Chengde City)  
+- Target: ""石家庄市"" (Shijiazhuang City)  
+Analysis: The response is a county within Chengde City, which is a different city than the target ""石家庄市"". These are different entities. This does not meet the criterion of pointing to the same entity or semantic equivalence.  
+Score: 0
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0
+}
+```",承德市,承德市双桥区,1.0,key_match,1.0,"Let's analyze each idx item according to the grading criterion:
+
+Criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Translation: The response is correct if its meaning is basically the same as the standard answer or if it points to the same entity. Exact word-by-word match is not required.
+
+---
+
+Analysis:
+
+- idx_0  
+  Response: ""5a""  
+  Target: ""5a""  
+  They are exactly the same, clearly semantically identical.  
+  Score: 1
+
+- idx_1  
+  Response: ""5a""  
+  Target: ""5a""  
+  Same as above.  
+  Score: 1
+
+- idx_2  
+  Response: ""5a""  
+  Target: ""5a""  
+  Same as above.  
+  Score: 1
+
+- idx_3  
+  Response: ""4a""  
+  Target: ""4a""  
+  Same as above.  
+  Score: 1
+
+---
+
+Final scoring results in JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1
+}
+```",5a,5a
+,,石家庄西柏坡景区,西柏坡景区,1.0,"Let's analyze each pair according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+This means the response only needs to be roughly semantically the same or refer to the same entity.
+
+---
+
+### idx_0  
+- Response: 河北省承德市双桥区丽正门大街22号  
+- Target: 河北省承德市双桥区境内
+
+Analysis:  
+The target is ""within Shuangqiao District, Chengde City, Hebei Province.""  
+The response provides a more specific address ""22 Lizhengmen Street, Shuangqiao District, Chengde City, Hebei Province.""  
+The response is included within the target area. They refer to the same general location (Shuangqiao District, Chengde City).  
+According to the criterion, this is semantically equivalent because the response is inside the target area.
+
+**Score: 1**
+
+---
+
+### idx_1  
+- Response: 石家庄市平山县  
+- Target: 河北省石家庄市平山县境内
+
+Analysis:  
+The response is ""Pingshan County, Shijiazhuang City.""  
+The target is ""Within Pingshan County, Shijiazhuang City, Hebei Province.""  
+The response matches the main entity and the location. The absence of ""河北省"" does not matter because the city and county are stated correctly. The response is consistent with the target.
+
+**Score: 1**
+
+---
+
+### idx_2  
+- Response: 山海关  
+- Target: 河北省秦皇岛市山海关区境内
+
+Analysis:  
+The response is ""Shanhaiguan"" (a well-known district-level entity).  
+The target is ""Within Shanhaiguan District, Qinhuangdao City, Hebei Province.""  
+The response refers to the same entity/location as the target area. Sufficiently matching as per the criterion.
+
+**Score: 1**
+
+---
+
+### idx_3  
+- Response: 承德市宽城满族自治县蟠龙湖景区  
+- Target: 河北省石家庄市灵寿县寨头乡水峪村
+
+Analysis:  
+Response: Panlong Lake Scenic Area, Kuancheng Manchu Autonomous County, Chengde City, Hebei Province  
+Target: Zhaitou Township, Shijiazhuang City's Lingshou County, Hebei Province
+
+The response and target refer to completely different locations and districts:  
+- Response is in Kuancheng County, Chengde City  
+- Target is in Lingshou County, Shijiazhuang City  
+
+They are different entities in different places. So semantically they do NOT match.
+
+**Score: 0**
+
+---
+
+### Final scores JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0
+}
+```",河北省石家庄市平山县境内,石家庄市平山县,1.0,"Let's analyze each response against its target based on the given criterion:
+
+Criterion summary:  
+- Semantic equivalence or pointing to the same entity is sufficient.  
+- Exact word-for-word match is not necessary.
+
+---
+
+**idx_0:**  
+- Response: ""承德市双桥区"" (Shuangqiao District, Chengde City)  
+- Target: ""承德市"" (Chengde City)  
+Analysis: The response is a district within the target city. It clearly points to a more specific location inside the target entity. This is semantically consistent and points to the same general geographic entity.  
+Score: 1
+
+---
+
+**idx_1:**  
+- Response: ""石家庄市平山县"" (Pingshan County, Shijiazhuang City)  
+- Target: ""石家庄"" (Shijiazhuang)  
+Analysis: The response points to a county within the city of Shijiazhuang. This is semantically consistent with the target city and matches the entity.  
+Score: 1
+
+---
+
+**idx_2:**  
+- Response: ""秦皇岛市"" (Qinhuangdao City)  
+- Target: ""秦皇岛市"" (Qinhuangdao City)  
+Analysis: Exactly the same place name.  
+Score: 1
+
+---
+
+**idx_3:**  
+- Response: ""承德市宽城满族自治县"" (Kuancheng Manchu Autonomous County, Chengde City)  
+- Target: ""石家庄市"" (Shijiazhuang City)  
+Analysis: The response is a county within Chengde City, which is a different city than the target ""石家庄市"". These are different entities. This does not meet the criterion of pointing to the same entity or semantic equivalence.  
+Score: 0
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0
+}
+```",石家庄,石家庄市平山县,1.0,key_match,1.0,"Let's analyze each idx item according to the grading criterion:
+
+Criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Translation: The response is correct if its meaning is basically the same as the standard answer or if it points to the same entity. Exact word-by-word match is not required.
+
+---
+
+Analysis:
+
+- idx_0  
+  Response: ""5a""  
+  Target: ""5a""  
+  They are exactly the same, clearly semantically identical.  
+  Score: 1
+
+- idx_1  
+  Response: ""5a""  
+  Target: ""5a""  
+  Same as above.  
+  Score: 1
+
+- idx_2  
+  Response: ""5a""  
+  Target: ""5a""  
+  Same as above.  
+  Score: 1
+
+- idx_3  
+  Response: ""4a""  
+  Target: ""4a""  
+  Same as above.  
+  Score: 1
+
+---
+
+Final scoring results in JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1
+}
+```",5a,5a
+,,秦皇岛市山海关景区,山海关,1.0,"Let's analyze each pair according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+This means the response only needs to be roughly semantically the same or refer to the same entity.
+
+---
+
+### idx_0  
+- Response: 河北省承德市双桥区丽正门大街22号  
+- Target: 河北省承德市双桥区境内
+
+Analysis:  
+The target is ""within Shuangqiao District, Chengde City, Hebei Province.""  
+The response provides a more specific address ""22 Lizhengmen Street, Shuangqiao District, Chengde City, Hebei Province.""  
+The response is included within the target area. They refer to the same general location (Shuangqiao District, Chengde City).  
+According to the criterion, this is semantically equivalent because the response is inside the target area.
+
+**Score: 1**
+
+---
+
+### idx_1  
+- Response: 石家庄市平山县  
+- Target: 河北省石家庄市平山县境内
+
+Analysis:  
+The response is ""Pingshan County, Shijiazhuang City.""  
+The target is ""Within Pingshan County, Shijiazhuang City, Hebei Province.""  
+The response matches the main entity and the location. The absence of ""河北省"" does not matter because the city and county are stated correctly. The response is consistent with the target.
+
+**Score: 1**
+
+---
+
+### idx_2  
+- Response: 山海关  
+- Target: 河北省秦皇岛市山海关区境内
+
+Analysis:  
+The response is ""Shanhaiguan"" (a well-known district-level entity).  
+The target is ""Within Shanhaiguan District, Qinhuangdao City, Hebei Province.""  
+The response refers to the same entity/location as the target area. Sufficiently matching as per the criterion.
+
+**Score: 1**
+
+---
+
+### idx_3  
+- Response: 承德市宽城满族自治县蟠龙湖景区  
+- Target: 河北省石家庄市灵寿县寨头乡水峪村
+
+Analysis:  
+Response: Panlong Lake Scenic Area, Kuancheng Manchu Autonomous County, Chengde City, Hebei Province  
+Target: Zhaitou Township, Shijiazhuang City's Lingshou County, Hebei Province
+
+The response and target refer to completely different locations and districts:  
+- Response is in Kuancheng County, Chengde City  
+- Target is in Lingshou County, Shijiazhuang City  
+
+They are different entities in different places. So semantically they do NOT match.
+
+**Score: 0**
+
+---
+
+### Final scores JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0
+}
+```",河北省秦皇岛市山海关区境内,山海关,1.0,"Let's analyze each response against its target based on the given criterion:
+
+Criterion summary:  
+- Semantic equivalence or pointing to the same entity is sufficient.  
+- Exact word-for-word match is not necessary.
+
+---
+
+**idx_0:**  
+- Response: ""承德市双桥区"" (Shuangqiao District, Chengde City)  
+- Target: ""承德市"" (Chengde City)  
+Analysis: The response is a district within the target city. It clearly points to a more specific location inside the target entity. This is semantically consistent and points to the same general geographic entity.  
+Score: 1
+
+---
+
+**idx_1:**  
+- Response: ""石家庄市平山县"" (Pingshan County, Shijiazhuang City)  
+- Target: ""石家庄"" (Shijiazhuang)  
+Analysis: The response points to a county within the city of Shijiazhuang. This is semantically consistent with the target city and matches the entity.  
+Score: 1
+
+---
+
+**idx_2:**  
+- Response: ""秦皇岛市"" (Qinhuangdao City)  
+- Target: ""秦皇岛市"" (Qinhuangdao City)  
+Analysis: Exactly the same place name.  
+Score: 1
+
+---
+
+**idx_3:**  
+- Response: ""承德市宽城满族自治县"" (Kuancheng Manchu Autonomous County, Chengde City)  
+- Target: ""石家庄市"" (Shijiazhuang City)  
+Analysis: The response is a county within Chengde City, which is a different city than the target ""石家庄市"". These are different entities. This does not meet the criterion of pointing to the same entity or semantic equivalence.  
+Score: 0
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0
+}
+```",秦皇岛市,秦皇岛市,1.0,key_match,1.0,"Let's analyze each idx item according to the grading criterion:
+
+Criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Translation: The response is correct if its meaning is basically the same as the standard answer or if it points to the same entity. Exact word-by-word match is not required.
+
+---
+
+Analysis:
+
+- idx_0  
+  Response: ""5a""  
+  Target: ""5a""  
+  They are exactly the same, clearly semantically identical.  
+  Score: 1
+
+- idx_1  
+  Response: ""5a""  
+  Target: ""5a""  
+  Same as above.  
+  Score: 1
+
+- idx_2  
+  Response: ""5a""  
+  Target: ""5a""  
+  Same as above.  
+  Score: 1
+
+- idx_3  
+  Response: ""4a""  
+  Target: ""4a""  
+  Same as above.  
+  Score: 1
+
+---
+
+Final scoring results in JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1
+}
+```",5a,5a
+,,花溪谷树桥旅游区,花溪谷树桥旅游区,0.0,"Let's analyze each pair according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+This means the response only needs to be roughly semantically the same or refer to the same entity.
+
+---
+
+### idx_0  
+- Response: 河北省承德市双桥区丽正门大街22号  
+- Target: 河北省承德市双桥区境内
+
+Analysis:  
+The target is ""within Shuangqiao District, Chengde City, Hebei Province.""  
+The response provides a more specific address ""22 Lizhengmen Street, Shuangqiao District, Chengde City, Hebei Province.""  
+The response is included within the target area. They refer to the same general location (Shuangqiao District, Chengde City).  
+According to the criterion, this is semantically equivalent because the response is inside the target area.
+
+**Score: 1**
+
+---
+
+### idx_1  
+- Response: 石家庄市平山县  
+- Target: 河北省石家庄市平山县境内
+
+Analysis:  
+The response is ""Pingshan County, Shijiazhuang City.""  
+The target is ""Within Pingshan County, Shijiazhuang City, Hebei Province.""  
+The response matches the main entity and the location. The absence of ""河北省"" does not matter because the city and county are stated correctly. The response is consistent with the target.
+
+**Score: 1**
+
+---
+
+### idx_2  
+- Response: 山海关  
+- Target: 河北省秦皇岛市山海关区境内
+
+Analysis:  
+The response is ""Shanhaiguan"" (a well-known district-level entity).  
+The target is ""Within Shanhaiguan District, Qinhuangdao City, Hebei Province.""  
+The response refers to the same entity/location as the target area. Sufficiently matching as per the criterion.
+
+**Score: 1**
+
+---
+
+### idx_3  
+- Response: 承德市宽城满族自治县蟠龙湖景区  
+- Target: 河北省石家庄市灵寿县寨头乡水峪村
+
+Analysis:  
+Response: Panlong Lake Scenic Area, Kuancheng Manchu Autonomous County, Chengde City, Hebei Province  
+Target: Zhaitou Township, Shijiazhuang City's Lingshou County, Hebei Province
+
+The response and target refer to completely different locations and districts:  
+- Response is in Kuancheng County, Chengde City  
+- Target is in Lingshou County, Shijiazhuang City  
+
+They are different entities in different places. So semantically they do NOT match.
+
+**Score: 0**
+
+---
+
+### Final scores JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0
+}
+```",河北省石家庄市灵寿县寨头乡水峪村,承德市宽城满族自治县蟠龙湖景区,0.0,"Let's analyze each response against its target based on the given criterion:
+
+Criterion summary:  
+- Semantic equivalence or pointing to the same entity is sufficient.  
+- Exact word-for-word match is not necessary.
+
+---
+
+**idx_0:**  
+- Response: ""承德市双桥区"" (Shuangqiao District, Chengde City)  
+- Target: ""承德市"" (Chengde City)  
+Analysis: The response is a district within the target city. It clearly points to a more specific location inside the target entity. This is semantically consistent and points to the same general geographic entity.  
+Score: 1
+
+---
+
+**idx_1:**  
+- Response: ""石家庄市平山县"" (Pingshan County, Shijiazhuang City)  
+- Target: ""石家庄"" (Shijiazhuang)  
+Analysis: The response points to a county within the city of Shijiazhuang. This is semantically consistent with the target city and matches the entity.  
+Score: 1
+
+---
+
+**idx_2:**  
+- Response: ""秦皇岛市"" (Qinhuangdao City)  
+- Target: ""秦皇岛市"" (Qinhuangdao City)  
+Analysis: Exactly the same place name.  
+Score: 1
+
+---
+
+**idx_3:**  
+- Response: ""承德市宽城满族自治县"" (Kuancheng Manchu Autonomous County, Chengde City)  
+- Target: ""石家庄市"" (Shijiazhuang City)  
+Analysis: The response is a county within Chengde City, which is a different city than the target ""石家庄市"". These are different entities. This does not meet the criterion of pointing to the same entity or semantic equivalence.  
+Score: 0
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0
+}
+```",石家庄市,承德市宽城满族自治县,1.0,key_match,1.0,"Let's analyze each idx item according to the grading criterion:
+
+Criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Translation: The response is correct if its meaning is basically the same as the standard answer or if it points to the same entity. Exact word-by-word match is not required.
+
+---
+
+Analysis:
+
+- idx_0  
+  Response: ""5a""  
+  Target: ""5a""  
+  They are exactly the same, clearly semantically identical.  
+  Score: 1
+
+- idx_1  
+  Response: ""5a""  
+  Target: ""5a""  
+  Same as above.  
+  Score: 1
+
+- idx_2  
+  Response: ""5a""  
+  Target: ""5a""  
+  Same as above.  
+  Score: 1
+
+- idx_3  
+  Response: ""4a""  
+  Target: ""4a""  
+  Same as above.  
+  Score: 1
+
+---
+
+Final scoring results in JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1
+}
+```",4a,4a
+1.0,,东方巨龟苑,,,,河北省石家庄市平山县东冶村,,,,石家庄市,,,,,,4a,
+1.0,,中国马镇旅游度假区,,,,中国河北承德市丰宁满族自治县大滩镇大滩村马镇路3号,,,,承德市,,,,,,4a,
+1.0,,丰宁京北第一草原,,,,河北省承德市丰宁满族自治县大滩镇,,,,承德市,,,,,,4a,
+1.0,,乐岛海洋公园,,,,秦皇岛市山海关区龙海大道148号,,,,秦皇岛市,,,,,,4a,
+1.0,,五岳寨风景区,,,,石家庄市灵寿县,,,,石家庄市,,,,,,4a,
+1.0,,佛光山景区,,,,河北省石家庄市平山县北冶乡柏树庄村,,,,石家庄市,,,,,,4a,
+1.0,,兴隆溶洞,,,,河北省承德市兴隆县北水泉乡陶家台河北兴隆国家地质公园内,,,,承德市,,,,,,4a,
+1.0,,冰塘峪长城风情大峡谷景区,,,,河北省秦皇岛市抚宁区,,,,秦皇岛市,,,,,,4a,
+1.0,,华北军区烈士陵园,,,,河北省石家庄市中山西路343号,,,,石家庄市,,,,,,4a,
+1.0,,华夏庄园景区,,,,河北省秦皇岛市昌黎县,,,,秦皇岛市,,,,,,4a,
+1.0,,南戴河国际娱乐中心,,,,河北省秦皇岛市北戴河新区南娱大道,,,,秦皇岛市,,,,,,4a,
+1.0,,双凤山景区,,,,石家庄市鹿泉区惠民路,,,,石家庄市,,,,,,4a,
+1.0,,双塔山风景区,,,,河北省承德市双滦区,,,,承德市,,,,,,4a,
+,1.0,唐家湾景区,唐家湾景区,,,,承德市承德县唐家湾景区,,,,承德市承德县,,,,,,4a
+1.0,,国御温泉度假小镇,,,,石家庄市藁城区藁新路6号,,,,石家庄市,,,,,,4a,
+1.0,,大汗行宫旅游景区,,,,河北省承德市丰宁满族自治县大滩镇,,,,承德市,,,,,,4a,
+1.0,,宽城蟠龙湖景区,,,,河北省承德市宽城满族自治县桲罗台镇新甸子村50号,,,,承德市,,,,,,4a,
+1.0,,山庄老酒文化产业园景区,,,,河北省承德平泉市,,,,承德市,,,,,,4a,
+1.0,,嶂石岩风景名胜区,,,,石家庄西南的赞皇县境内,,,,石家庄市,,,,,,4a,
+1.0,,左右山谷景区,,,,秦皇岛市卢龙县刘田各庄镇,,,,秦皇岛市,,,,,,4a,
+1.0,,平山县沕沕水景区,,,,河北省石家庄市平山县北冶乡沕沕水村,,,,石家庄,,,,,,4a,
+1.0,,平山县紫云山景区,,,,河北省石家庄市平山县北冶乡,,,,石家庄市,,,,,,4a,
+1.0,,平山县黑山大峡谷景区,,,,河北省石家庄平山县西北部太行山腹中,,,,石家庄,,,,,,4a,
+1.0,,御道口草原森林风景区,,,,河北省承德市围场县御塞七号,,,,承德市,,,,,,4a,
+1.0,,承德兴隆山景区,,,,承德市兴隆县大水泉乡白马川,,,,承德市,,,,,,4a,
+1.0,,承德市金山岭长城景区,,,,河北省承德市滦平县境内,,,,承德市,,,,,,5a,
+1.0,,承德市鼎盛文化产业园景区,,,,承德市双滦区元宝山,,,,承德市,,,,,,4a,
+1.0,,抱犊寨景区,,,,河北省石家庄市鹿泉区西部2千米莲花山西,,,,石家庄市,,,,,,4a,
+,1.0,揽月湾旅游景区,揽月湾旅游景区,,,,唐山市曹妃甸区揽月湾旅游景区,,,,唐山市曹妃甸区,,,,,,4a
+1.0,,新澳海底世界,,,,河北省秦皇岛市海港区河滨路81号,,,,秦皇岛市,,,,,,4a,
+1.0,,昌黎县旅游滑沙活动中心,,,,河北秦皇岛市昌黎县沿海路15号,,,,秦皇岛市,,,,,,4a,
+1.0,,板城酒博园景区,,,,河北省承德市承德县,,,,承德市,,,,,,4a,
+1.0,,棋盘山景区,,,,河北省石家庄市赞皇县黄北坪乡段里沟,,,,石家庄市,,,,,,4a,
+1.0,,正定荣国府,,,,河北省石家庄市正定县兴荣路51号,,,,石家庄市,,,,,,4a,
+1.0,,正定隆兴寺,,,,石家庄市正定县中山东路109号,,,,石家庄市,,,,,,4a,
+1.0,,沙雕海洋乐园,,,,秦皇岛市北戴河新区滨海新大道d4段东侧,,,,秦皇岛市,,,,,,4a,
+1.0,,河北塞罕坝国家森林公园,,,,河北省承德市围场满族蒙古族自治县北部,,,,承德市,,,,,,4a,
+1.0,,河北平山藤龙山,,,,河北省石家庄市平山县王坡乡北部,,,,石家庄市,,,,,,4a,
+1.0,,河北驼梁山国家森林公园,,,,河北平山县,,,,石家庄市,,,,,,4a,
+1.0,,渔岛海洋温泉景区,,,,河北秦皇岛市北戴河新区赤洋口片区滨海新大道d4段东侧,,,,秦皇岛市,,,,,,4a,
+,1.0,渔田七里海景区,渔田七里海景区,,,,北戴河新区渔田七里海景区,,,,秦皇岛市北戴河新区,,,,,,4a
+,1.0,漫山花溪谷景区,漫山花溪谷景区,,,,灵寿县漫山花溪谷景区,,,,石家庄市灵寿县,,,,,,4a
+1.0,,灵寿县水泉溪自然风景区,,,,石家庄市灵寿县,,,,石家庄市,,,,,,4a,
+1.0,,热河中药花海小镇,,,,滦平县金沟屯镇下营子村,,,,承德市,,,,,,4a,
+1.0,,石家庄天山海世界,,,,河北省石家庄市裕华区天山大街106号,,,,石家庄市,,,,,,4a,
+1.0,,石家庄天桂山景区,,,,河北省石家庄市平山县,,,,石家庄市,,,,,,4a,
+1.0,,石家庄市君乐宝乳业工业旅游区,,,,石家庄市鹿泉区石铜路36号,,,,石家庄市,,,,,,4a,
+1.0,,碧螺塔海上酒吧公园,,,,秦皇岛北戴河东海滩路中段,,,,秦皇岛市,,,,,,4a,
+1.0,,磬锤峰国家森林公园,,,,河北省承德市双桥区,,,,承德市,,,,,,4a,
+1.0,,祖山景区,,,,河北省秦皇岛市青龙满族自治县,,,,秦皇岛市,,,,,,4a,
+1.0,,神仙谷七彩森林,,,,承德市丰宁县大滩镇,,,,承德市,,,,,,4a,
+1.0,,秋山风景区,,,,石家庄市灵寿县,,,,石家庄市,,,,,,4a,
+1.0,,秦皇岛港口工业旅游区,,,,河北省秦皇岛市海港区东山立交桥下1号门内,,,,秦皇岛市,,,,,,4a,
+1.0,,秦皇岛野生动物园,,,,河北省秦皇岛市北戴河区滨海大道62号海滨国家森林公园内,,,,秦皇岛市,,,,,,4a,
+1.0,,秦皇求仙入海处景区,,,,秦皇岛市海港区南山街56号(近港口医院),,,,秦皇岛市,,,,,,4a,
+1.0,,联峰山公园,,,,河北省秦皇岛市北戴河海滨中心区,,,,秦皇岛市,,,,,,4a,
+1.0,,苍岩山风景区,,,,河北省石家庄市井陉县苍岩山镇,,,,石家庄市,,,,,,4a,
+1.0,,董存瑞烈士纪念馆,,,,河北省张家口市怀来县存瑞镇南山堡村,,,,张家口市,,,,,,4a,
+1.0,,西苑温泉度假村,,,,河北省石家庄市平山县温塘镇,,,,石家庄市,,,,,,4a,
+1.0,,角山景区,,,,河北省秦皇岛山海关区境内,,,,秦皇岛市,,,,,,4a,
+1.0,,赵州桥景区,,,,河北省石家庄市赵县赵州镇大石桥村,,,,石家庄市,,,,,,4a,
+1.0,,长寿山风景区,,,,河北省秦皇岛山海关城东北部,,,,秦皇岛市,,,,,,4a,
+1.0,,集发农业梦想王国,,,,秦皇岛市北戴河区海北路27号,,,,秦皇岛市,,,,,,4a,
+1.0,,鸽子窝公园,,,,河北省秦皇岛市北戴河海滨的东北角,,,,秦皇岛市,,,,,,4a,

@@ -1,0 +1,467 @@
+exist_flag_gt,exist_flag_response,state,state_before_map,governor(party)_llm_judge,governor(party)_llm_judge_eval_msg,governor(party)_query,governor(party)_response,numberofcongressionaldistricts_exact_match,numberofcongressionaldistricts_exact_match_eval_msg,numberofcongressionaldistricts_query,numberofcongressionaldistricts_response,numberofelectors_exact_match,numberofelectors_exact_match_eval_msg,numberofelectors_query,numberofelectors_response,senator1(party)&senator2(party)_llm_judge,senator1(party)&senator2(party)_llm_judge_eval_msg,senator1(party)&senator2(party)_query,senator1(party)&senator2(party)_response,state_exact_match,state_exact_match_eval_msg
+,,alabama,Alabama,1.0,"Let's analyze each pair carefully:
+
+- idx_0:
+  - Response: ""kayivey(r)""
+  - Target: ""kayivey(r)""
+  - Both are exactly the same. So, this meets the criterion fully.
+  - Score: 1
+
+- idx_1:
+  - Response: ""mikedunleavy(r)""
+  - Target: ""mikedunleavy(r)""
+  - Both are exactly the same.
+  - Score: 1
+
+- idx_2:
+  - Response: ""dougducey(r)""
+  - Target: ""katiehobbs(d)""
+  - Different entities and different party affiliations. They do not match semantically.
+  - Score: 0
+
+- idx_3:
+  - Response: ""sarahhuckabeesanders(r)""
+  - Target: ""sarahhuckabeesanders(r)""
+  - Exactly the same.
+  - Score: 1
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1
+}
+```",kayivey(r),kayivey(r),1.0,"exact match, response: 7, target: 7",7,7,1.0,"exact match, response: 9, target: 9",9,9,1.0,"Let's analyze each idx item carefully according to the grading criteria.
+
+---
+
+### idx_0
+
+- **Target:** tommytuberville(r)katiebritt(r)
+- **Response:** tommytuberville(r)&katiebritt(r)
+
+**Analysis:**  
+The response mentions the two correct entities (Tommy Tuberville and Katie Britt, both Republicans). The response uses ""&"" to separate them whereas the target concatenates with no symbol. According to the criterion, approximate semantics or entities are sufficient. The ideologies ""(r)"" match exactly. So this is effectively the same answer.
+
+**Score:** 1
+
+---
+
+### idx_1
+
+- **Target:** lisamurkowski(r)dansullivan(r)
+- **Response:** dansullivan(r)&lisamurkowski(r)
+
+**Analysis:**  
+The names are the same, only the order differs. Both Lisa Murkowski and Dan Sullivan are Republicans, ""(r)"", and the order difference is irrelevant as per the criterion if the same entities are present. The ""&"" symbol is used in the response. This is acceptable.
+
+**Score:** 1
+
+---
+
+### idx_2
+
+- **Target:** kyrstensinema(i)markkelly(d)
+- **Response:** kyrstensinema(d)&markkelly(d)
+
+**Analysis:**  
+- Target has Kyrsten Sinema (I), Response has Kyrsten Sinema (D), but the criterion states ""(D)"" can substitute for ""(I)"" only in the case of Joe Manchin. No mention about Kyrsten Sinema. So this is a discrepancy.  
+- Mark Kelly matches exactly ""(d)"" both times.  
+- Only one entity's affiliation is mismatched.
+
+According to the criterion, exact ideology symbol exchanges are only allowed in certain cases (Joe Manchin D and I can be interchanged). No such relaxations are mentioned here. So the semantics are slightly different. This should be considered incorrect.
+
+**Score:** 0
+
+---
+
+### idx_3
+
+- **Target:** johnboozman(r)tomcotton(r)
+- **Response:** tomcotton(r)&cindyhyde-smith(r)
+
+**Analysis:**  
+- Target lists John Boozman and Tom Cotton (both Republicans)  
+- Response lists Tom Cotton and Cindy Hyde-Smith (both Republicans)  
+- Only one correct match (Tom Cotton), the other person is different.  
+
+Since only partial overlap is there, this is not a complete match. The criterion expects the same entities or semantically equivalent. Different names indicate different answers.
+
+**Score:** 0
+
+---
+
+### Final scoring JSON
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0
+}
+```",tommytuberville(r)katiebritt(r),tommytuberville(r)&katiebritt(r),1.0,key_match
+,,alaska,Alaska,1.0,"Let's analyze each pair carefully:
+
+- idx_0:
+  - Response: ""kayivey(r)""
+  - Target: ""kayivey(r)""
+  - Both are exactly the same. So, this meets the criterion fully.
+  - Score: 1
+
+- idx_1:
+  - Response: ""mikedunleavy(r)""
+  - Target: ""mikedunleavy(r)""
+  - Both are exactly the same.
+  - Score: 1
+
+- idx_2:
+  - Response: ""dougducey(r)""
+  - Target: ""katiehobbs(d)""
+  - Different entities and different party affiliations. They do not match semantically.
+  - Score: 0
+
+- idx_3:
+  - Response: ""sarahhuckabeesanders(r)""
+  - Target: ""sarahhuckabeesanders(r)""
+  - Exactly the same.
+  - Score: 1
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1
+}
+```",mikedunleavy(r),mikedunleavy(r),0.0,"exact not match, response: 2, target: 1",1,2,1.0,"exact match, response: 3, target: 3",3,3,1.0,"Let's analyze each idx item carefully according to the grading criteria.
+
+---
+
+### idx_0
+
+- **Target:** tommytuberville(r)katiebritt(r)
+- **Response:** tommytuberville(r)&katiebritt(r)
+
+**Analysis:**  
+The response mentions the two correct entities (Tommy Tuberville and Katie Britt, both Republicans). The response uses ""&"" to separate them whereas the target concatenates with no symbol. According to the criterion, approximate semantics or entities are sufficient. The ideologies ""(r)"" match exactly. So this is effectively the same answer.
+
+**Score:** 1
+
+---
+
+### idx_1
+
+- **Target:** lisamurkowski(r)dansullivan(r)
+- **Response:** dansullivan(r)&lisamurkowski(r)
+
+**Analysis:**  
+The names are the same, only the order differs. Both Lisa Murkowski and Dan Sullivan are Republicans, ""(r)"", and the order difference is irrelevant as per the criterion if the same entities are present. The ""&"" symbol is used in the response. This is acceptable.
+
+**Score:** 1
+
+---
+
+### idx_2
+
+- **Target:** kyrstensinema(i)markkelly(d)
+- **Response:** kyrstensinema(d)&markkelly(d)
+
+**Analysis:**  
+- Target has Kyrsten Sinema (I), Response has Kyrsten Sinema (D), but the criterion states ""(D)"" can substitute for ""(I)"" only in the case of Joe Manchin. No mention about Kyrsten Sinema. So this is a discrepancy.  
+- Mark Kelly matches exactly ""(d)"" both times.  
+- Only one entity's affiliation is mismatched.
+
+According to the criterion, exact ideology symbol exchanges are only allowed in certain cases (Joe Manchin D and I can be interchanged). No such relaxations are mentioned here. So the semantics are slightly different. This should be considered incorrect.
+
+**Score:** 0
+
+---
+
+### idx_3
+
+- **Target:** johnboozman(r)tomcotton(r)
+- **Response:** tomcotton(r)&cindyhyde-smith(r)
+
+**Analysis:**  
+- Target lists John Boozman and Tom Cotton (both Republicans)  
+- Response lists Tom Cotton and Cindy Hyde-Smith (both Republicans)  
+- Only one correct match (Tom Cotton), the other person is different.  
+
+Since only partial overlap is there, this is not a complete match. The criterion expects the same entities or semantically equivalent. Different names indicate different answers.
+
+**Score:** 0
+
+---
+
+### Final scoring JSON
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0
+}
+```",lisamurkowski(r)dansullivan(r),dansullivan(r)&lisamurkowski(r),1.0,key_match
+,,arizona,Arizona,0.0,"Let's analyze each pair carefully:
+
+- idx_0:
+  - Response: ""kayivey(r)""
+  - Target: ""kayivey(r)""
+  - Both are exactly the same. So, this meets the criterion fully.
+  - Score: 1
+
+- idx_1:
+  - Response: ""mikedunleavy(r)""
+  - Target: ""mikedunleavy(r)""
+  - Both are exactly the same.
+  - Score: 1
+
+- idx_2:
+  - Response: ""dougducey(r)""
+  - Target: ""katiehobbs(d)""
+  - Different entities and different party affiliations. They do not match semantically.
+  - Score: 0
+
+- idx_3:
+  - Response: ""sarahhuckabeesanders(r)""
+  - Target: ""sarahhuckabeesanders(r)""
+  - Exactly the same.
+  - Score: 1
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1
+}
+```",katiehobbs(d),dougducey(r),1.0,"exact match, response: 9, target: 9",9,9,1.0,"exact match, response: 11, target: 11",11,11,0.0,"Let's analyze each idx item carefully according to the grading criteria.
+
+---
+
+### idx_0
+
+- **Target:** tommytuberville(r)katiebritt(r)
+- **Response:** tommytuberville(r)&katiebritt(r)
+
+**Analysis:**  
+The response mentions the two correct entities (Tommy Tuberville and Katie Britt, both Republicans). The response uses ""&"" to separate them whereas the target concatenates with no symbol. According to the criterion, approximate semantics or entities are sufficient. The ideologies ""(r)"" match exactly. So this is effectively the same answer.
+
+**Score:** 1
+
+---
+
+### idx_1
+
+- **Target:** lisamurkowski(r)dansullivan(r)
+- **Response:** dansullivan(r)&lisamurkowski(r)
+
+**Analysis:**  
+The names are the same, only the order differs. Both Lisa Murkowski and Dan Sullivan are Republicans, ""(r)"", and the order difference is irrelevant as per the criterion if the same entities are present. The ""&"" symbol is used in the response. This is acceptable.
+
+**Score:** 1
+
+---
+
+### idx_2
+
+- **Target:** kyrstensinema(i)markkelly(d)
+- **Response:** kyrstensinema(d)&markkelly(d)
+
+**Analysis:**  
+- Target has Kyrsten Sinema (I), Response has Kyrsten Sinema (D), but the criterion states ""(D)"" can substitute for ""(I)"" only in the case of Joe Manchin. No mention about Kyrsten Sinema. So this is a discrepancy.  
+- Mark Kelly matches exactly ""(d)"" both times.  
+- Only one entity's affiliation is mismatched.
+
+According to the criterion, exact ideology symbol exchanges are only allowed in certain cases (Joe Manchin D and I can be interchanged). No such relaxations are mentioned here. So the semantics are slightly different. This should be considered incorrect.
+
+**Score:** 0
+
+---
+
+### idx_3
+
+- **Target:** johnboozman(r)tomcotton(r)
+- **Response:** tomcotton(r)&cindyhyde-smith(r)
+
+**Analysis:**  
+- Target lists John Boozman and Tom Cotton (both Republicans)  
+- Response lists Tom Cotton and Cindy Hyde-Smith (both Republicans)  
+- Only one correct match (Tom Cotton), the other person is different.  
+
+Since only partial overlap is there, this is not a complete match. The criterion expects the same entities or semantically equivalent. Different names indicate different answers.
+
+**Score:** 0
+
+---
+
+### Final scoring JSON
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0
+}
+```",kyrstensinema(i)markkelly(d),kyrstensinema(d)&markkelly(d),1.0,key_match
+,,arkansas,Arkansas,1.0,"Let's analyze each pair carefully:
+
+- idx_0:
+  - Response: ""kayivey(r)""
+  - Target: ""kayivey(r)""
+  - Both are exactly the same. So, this meets the criterion fully.
+  - Score: 1
+
+- idx_1:
+  - Response: ""mikedunleavy(r)""
+  - Target: ""mikedunleavy(r)""
+  - Both are exactly the same.
+  - Score: 1
+
+- idx_2:
+  - Response: ""dougducey(r)""
+  - Target: ""katiehobbs(d)""
+  - Different entities and different party affiliations. They do not match semantically.
+  - Score: 0
+
+- idx_3:
+  - Response: ""sarahhuckabeesanders(r)""
+  - Target: ""sarahhuckabeesanders(r)""
+  - Exactly the same.
+  - Score: 1
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1
+}
+```",sarahhuckabeesanders(r),sarahhuckabeesanders(r),1.0,"exact match, response: 4, target: 4",4,4,1.0,"exact match, response: 6, target: 6",6,6,0.0,"Let's analyze each idx item carefully according to the grading criteria.
+
+---
+
+### idx_0
+
+- **Target:** tommytuberville(r)katiebritt(r)
+- **Response:** tommytuberville(r)&katiebritt(r)
+
+**Analysis:**  
+The response mentions the two correct entities (Tommy Tuberville and Katie Britt, both Republicans). The response uses ""&"" to separate them whereas the target concatenates with no symbol. According to the criterion, approximate semantics or entities are sufficient. The ideologies ""(r)"" match exactly. So this is effectively the same answer.
+
+**Score:** 1
+
+---
+
+### idx_1
+
+- **Target:** lisamurkowski(r)dansullivan(r)
+- **Response:** dansullivan(r)&lisamurkowski(r)
+
+**Analysis:**  
+The names are the same, only the order differs. Both Lisa Murkowski and Dan Sullivan are Republicans, ""(r)"", and the order difference is irrelevant as per the criterion if the same entities are present. The ""&"" symbol is used in the response. This is acceptable.
+
+**Score:** 1
+
+---
+
+### idx_2
+
+- **Target:** kyrstensinema(i)markkelly(d)
+- **Response:** kyrstensinema(d)&markkelly(d)
+
+**Analysis:**  
+- Target has Kyrsten Sinema (I), Response has Kyrsten Sinema (D), but the criterion states ""(D)"" can substitute for ""(I)"" only in the case of Joe Manchin. No mention about Kyrsten Sinema. So this is a discrepancy.  
+- Mark Kelly matches exactly ""(d)"" both times.  
+- Only one entity's affiliation is mismatched.
+
+According to the criterion, exact ideology symbol exchanges are only allowed in certain cases (Joe Manchin D and I can be interchanged). No such relaxations are mentioned here. So the semantics are slightly different. This should be considered incorrect.
+
+**Score:** 0
+
+---
+
+### idx_3
+
+- **Target:** johnboozman(r)tomcotton(r)
+- **Response:** tomcotton(r)&cindyhyde-smith(r)
+
+**Analysis:**  
+- Target lists John Boozman and Tom Cotton (both Republicans)  
+- Response lists Tom Cotton and Cindy Hyde-Smith (both Republicans)  
+- Only one correct match (Tom Cotton), the other person is different.  
+
+Since only partial overlap is there, this is not a complete match. The criterion expects the same entities or semantically equivalent. Different names indicate different answers.
+
+**Score:** 0
+
+---
+
+### Final scoring JSON
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0
+}
+```",johnboozman(r)tomcotton(r),tomcotton(r)&cindyhyde-smith(r),1.0,key_match
+1.0,,california,,,,gavinnewsom(d),,,,52,,,,54,,,,alexpadilla(d)laphonzabutler(d),,,
+1.0,,colorado,,,,jaredpolis(d),,,,8,,,,10,,,,michaelbennet(d)johnhickenlooper(d),,,
+1.0,,connecticut,,,,nedlamont(d),,,,5,,,,7,,,,richardblumenthal(d)chrismurphy(d),,,
+1.0,,delaware,,,,johncarney(d),,,,1,,,,3,,,,tomcarper(d)chriscoons(d),,,
+1.0,,florida,,,,rondesantis(r),,,,28,,,,30,,,,marcorubio(r)rickscott(r),,,
+1.0,,georgia,,,,briankemp(r),,,,14,,,,16,,,,jonossoff(d)raphaelwarnock(d),,,
+1.0,,hawaii,,,,joshgreen(d),,,,2,,,,4,,,,brianschatz(d)maziehirono(d),,,
+1.0,,idaho,,,,bradlittle(r),,,,2,,,,4,,,,mikecrapo(r)jimrisch(r),,,
+1.0,,illinois,,,,j.b.pritzker(d),,,,17,,,,19,,,,dickdurbin(d)tammyduckworth(d),,,
+1.0,,indiana,,,,ericholcomb(r),,,,9,,,,11,,,,toddyoung(r)mikebraun(r),,,
+1.0,,iowa,,,,kimreynolds(r),,,,4,,,,6,,,,chuckgrassley(r)joniernst(r),,,
+1.0,,kansas,,,,laurakelly(d),,,,4,,,,6,,,,jerrymoran(r)rogermarshall(r),,,
+1.0,,kentucky,,,,andybeshear(d),,,,6,,,,8,,,,mitchmcconnell(r)randpaul(r),,,
+1.0,,louisiana,,,,jefflandry(r),,,,6,,,,8,,,,billcassidy(r)johnkennedy(r),,,
+1.0,,maine,,,,janetmills(d),,,,2,,,,4,,,,susancollins(r)angusking(i),,,
+1.0,,maryland,,,,wesmoore(d),,,,8,,,,10,,,,bencardin(d)chrisvanhollen(d),,,
+1.0,,massachusetts,,,,maurahealey(d),,,,9,,,,11,,,,elizabethwarren(d)edmarkey(d),,,
+1.0,,michigan,,,,gretchenwhitmer(d),,,,13,,,,15,,,,debbiestabenow(d)garypeters(d),,,
+1.0,,minnesota,,,,timwalz(d),,,,8,,,,10,,,,amyklobuchar(d)tinasmith(d),,,
+1.0,,mississippi,,,,tatereeves(r),,,,4,,,,6,,,,rogerwicker(r)cindyhyde-smith(r),,,
+1.0,,missouri,,,,mikeparson(r),,,,8,,,,10,,,,joshhawley(r)ericschmitt(r),,,
+1.0,,montana,,,,greggianforte(r),,,,2,,,,4,,,,jontester(d)stevedaines(r),,,
+1.0,,nebraska,,,,jimpillen(r),,,,3,,,,5,,,,debfischer(r)petericketts(r),,,
+1.0,,nevada,,,,joelombardo(r),,,,4,,,,6,,,,catherinecortezmasto(d)jackyrosen(d),,,
+1.0,,newhampshire,,,,chrissununu(r),,,,2,,,,4,,,,jeanneshaheen(d)maggiehassan(d),,,
+1.0,,newjersey,,,,philmurphy(d),,,,12,,,,14,,,,bobmenendez(d)corybooker(d),,,
+1.0,,newmexico,,,,michellelujangrisham(d),,,,3,,,,5,,,,martinheinrich(d)benrayluján(d),,,
+1.0,,newyork,,,,kathyhochul(d),,,,26,,,,28,,,,chuckschumer(d)kirstengillibrand(d),,,
+1.0,,northcarolina,,,,roycooper(d),,,,14,,,,16,,,,thomtillis(r)tedbudd(r),,,
+1.0,,northdakota,,,,dougburgum(r),,,,1,,,,3,,,,johnhoeven(r)kevincramer(r),,,
+1.0,,ohio,,,,mikedewine(r),,,,15,,,,17,,,,sherrodbrown(d)j.d.vance(r),,,
+1.0,,oklahoma,,,,kevinstitt(r),,,,5,,,,7,,,,jameslankford(r)markwaynemullin(r),,,
+1.0,,oregon,,,,tinakotek(d),,,,6,,,,8,,,,ronwyden(d)jeffmerkley(d),,,
+1.0,,pennsylvania,,,,joshshapiro(d),,,,17,,,,19,,,,bobcaseyjr.(d)johnfetterman(d),,,
+1.0,,rhodeisland,,,,danielmckee(d),,,,2,,,,4,,,,jackreed(d)sheldonwhitehouse(d),,,
+1.0,,southcarolina,,,,henrymcmaster(r),,,,7,,,,9,,,,lindseygraham(r)timscott(r),,,
+1.0,,southdakota,,,,kristinoem(r),,,,1,,,,3,,,,johnthune(r)mikerounds(r),,,
+1.0,,tennessee,,,,billlee(r),,,,9,,,,11,,,,marshablackburn(r)billhagerty(r),,,
+1.0,,texas,,,,gregabbott(r),,,,38,,,,40,,,,johncornyn(r)tedcruz(r),,,
+1.0,,utah,,,,spencercox(r),,,,4,,,,6,,,,mikelee(r)mittromney(r),,,
+1.0,,vermont,,,,philscott(r),,,,1,,,,3,,,,berniesanders(i)peterwelch(d),,,
+1.0,,virginia,,,,glennyoungkin(r),,,,11,,,,13,,,,markwarner(d)timkaine(d),,,
+1.0,,washington,,,,jayinslee(d),,,,10,,,,12,,,,pattymurray(d)mariacantwell(d),,,
+1.0,,westvirginia,,,,jimjustice(r),,,,2,,,,4,,,,joemanchin(d)shelleymoorecapito(r),,,
+1.0,,wisconsin,,,,tonyevers(d),,,,8,,,,10,,,,ronjohnson(r)tammybaldwin(d),,,
+1.0,,wyoming,,,,markgordon(r),,,,1,,,,3,,,,johnbarrasso(r)cynthialummis(r),,,

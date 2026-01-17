@@ -1,0 +1,1303 @@
+exist_flag_gt,exist_flag_response,modelcode,modelcode_before_map,region,region_before_map,firstretailavailabilitydate_date_near,firstretailavailabilitydate_date_near_eval_msg,firstretailavailabilitydate_query,firstretailavailabilitydate_response,launchmsrp_llm_judge,launchmsrp_llm_judge_eval_msg,launchmsrp_query,launchmsrp_response,modelcode_exact_match,modelcode_exact_match_eval_msg,numberofincludedattachments_exact_match,numberofincludedattachments_exact_match_eval_msg,numberofincludedattachments_query,numberofincludedattachments_response,region_exact_match,region_exact_match_eval_msg,warranty(yrs)_exact_match,warranty(yrs)_exact_match_eval_msg,warranty(yrs)_query,warranty(yrs)_response
+,,hd01,HD01,u.s.,U.S.,0.0,"date not near, response: 2016-04-01 00:00:00, target: 2016-09-01 00:00:00",2016-09-01,2016-04-01,0.0,"Let's analyze each item pair one by one according to the criteria:
+
+The criterion states:  
+- The semantics must be approximately the same or point to the same entity.  
+- No need for word-for-word match; approximate equality or reference to the same entity is enough.  
+- Score is either 0 or 1.
+
+---
+
+### idx_0  
+- Response: ""$149.95""  
+- Target: ""$379.99""  
+These two amounts are quite different. Different monetary values, no indication they refer to the same or approximately equal value.  
+Score: 0
+
+### idx_1  
+- Response: ""$199.95""  
+- Target: ""$379.99""  
+Again, quite different amounts, no approximation here. Not the same entity or similar value.  
+Score: 0
+
+### idx_2  
+- Response: ""$499.99""  
+- Target: ""$399.99""  
+Response is actually higher by $100. Different values, no approximate equality.  
+Score: 0
+
+### idx_3  
+- Response: ""$349.95""  
+- Target: ""$429.99""  
+Significant difference - about $80 difference, not approximately the same or pointing to the same entity.  
+Score: 0
+
+### idx_4  
+- Response: ""rmb1499""  
+- Target: ""¥2990""  
+Assuming rmb = ¥, Chinese Yuan, but the values differ (1499 vs 2990), approximately half the target value. Not the same entity or approximately equal.  
+Score: 0
+
+### idx_5  
+- Response: ""rmb1999""  
+- Target: ""¥2990""  
+Again, different values (1999 vs 2990), no approximate equality.  
+Score: 0
+
+### idx_6  
+- Response: ""rmb2499""  
+- Target: ""¥2799""  
+Close values: 2499 vs 2799, difference of 300 RMB (~10-11%). Could be seen as roughly similar depending on tolerance, but criterion does not specify a threshold for approximation. Assuming the criterion expects ""approximate"" to be close enough semantically.
+
+300 difference on roughly 2,500 is about 12% difference.
+
+This may be borderline.
+
+Given the criterion is vague (only states ""approximately the same"" or ""point to the same entity""), this might be enough for 1 since they both refer to similar price points in RMB.
+
+Score possibility: 1
+
+### idx_7  
+- Response: ""rmb3499""  
+- Target: ""¥3499""  
+Values are exactly the same (ignoring ""rmb"" vs ""¥"" which both refer to the same currency).  
+Score: 1
+
+### idx_8  
+- Response: ""¥14,990""  
+- Target: ""¥45000""  
+Value difference is large, 14,990 vs 45,000, very different, no approximate equality.  
+Score: 0
+
+### idx_9  
+- Response: ""¥19,990""  
+- Target: ""¥47980""  
+Again, large difference.  
+Score: 0
+
+### idx_10  
+- Response: ""¥24,990""  
+- Target: ""¥39900""  
+Large difference; not approximate equality.  
+Score: 0
+
+### idx_11  
+- Response: ""¥34,990""  
+- Target: ""¥48800""  
+Similarly, different values, about 13,810 difference. Not approximate equality.  
+Score: 0
+
+---
+
+### Final Scores
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0
+}
+```",$379.99,$149.95,1.0,key_match,0.0,"exact not match, response: 5, target: 3",3,5,1.0,key_match,1.0,"exact match, response: 2, target: 2",2,2
+,,hd03,HD03,u.s.,U.S.,0.0,"date not near, response: 2018-08-01 00:00:00, target: 2019-09-01 00:00:00",2019-09-01,2018-08-01,0.0,"Let's analyze each item pair one by one according to the criteria:
+
+The criterion states:  
+- The semantics must be approximately the same or point to the same entity.  
+- No need for word-for-word match; approximate equality or reference to the same entity is enough.  
+- Score is either 0 or 1.
+
+---
+
+### idx_0  
+- Response: ""$149.95""  
+- Target: ""$379.99""  
+These two amounts are quite different. Different monetary values, no indication they refer to the same or approximately equal value.  
+Score: 0
+
+### idx_1  
+- Response: ""$199.95""  
+- Target: ""$379.99""  
+Again, quite different amounts, no approximation here. Not the same entity or similar value.  
+Score: 0
+
+### idx_2  
+- Response: ""$499.99""  
+- Target: ""$399.99""  
+Response is actually higher by $100. Different values, no approximate equality.  
+Score: 0
+
+### idx_3  
+- Response: ""$349.95""  
+- Target: ""$429.99""  
+Significant difference - about $80 difference, not approximately the same or pointing to the same entity.  
+Score: 0
+
+### idx_4  
+- Response: ""rmb1499""  
+- Target: ""¥2990""  
+Assuming rmb = ¥, Chinese Yuan, but the values differ (1499 vs 2990), approximately half the target value. Not the same entity or approximately equal.  
+Score: 0
+
+### idx_5  
+- Response: ""rmb1999""  
+- Target: ""¥2990""  
+Again, different values (1999 vs 2990), no approximate equality.  
+Score: 0
+
+### idx_6  
+- Response: ""rmb2499""  
+- Target: ""¥2799""  
+Close values: 2499 vs 2799, difference of 300 RMB (~10-11%). Could be seen as roughly similar depending on tolerance, but criterion does not specify a threshold for approximation. Assuming the criterion expects ""approximate"" to be close enough semantically.
+
+300 difference on roughly 2,500 is about 12% difference.
+
+This may be borderline.
+
+Given the criterion is vague (only states ""approximately the same"" or ""point to the same entity""), this might be enough for 1 since they both refer to similar price points in RMB.
+
+Score possibility: 1
+
+### idx_7  
+- Response: ""rmb3499""  
+- Target: ""¥3499""  
+Values are exactly the same (ignoring ""rmb"" vs ""¥"" which both refer to the same currency).  
+Score: 1
+
+### idx_8  
+- Response: ""¥14,990""  
+- Target: ""¥45000""  
+Value difference is large, 14,990 vs 45,000, very different, no approximate equality.  
+Score: 0
+
+### idx_9  
+- Response: ""¥19,990""  
+- Target: ""¥47980""  
+Again, large difference.  
+Score: 0
+
+### idx_10  
+- Response: ""¥24,990""  
+- Target: ""¥39900""  
+Large difference; not approximate equality.  
+Score: 0
+
+### idx_11  
+- Response: ""¥34,990""  
+- Target: ""¥48800""  
+Similarly, different values, about 13,810 difference. Not approximate equality.  
+Score: 0
+
+---
+
+### Final Scores
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0
+}
+```",$379.99,$199.95,1.0,key_match,0.0,"exact not match, response: 5, target: 4",4,5,1.0,key_match,1.0,"exact match, response: 2, target: 2",2,2
+,,hd07,HD07,u.s.,U.S.,0.0,"date not near, response: 2023-07-01 00:00:00, target: 2021-08-01 00:00:00",2021-08-01,2023-07-01,0.0,"Let's analyze each item pair one by one according to the criteria:
+
+The criterion states:  
+- The semantics must be approximately the same or point to the same entity.  
+- No need for word-for-word match; approximate equality or reference to the same entity is enough.  
+- Score is either 0 or 1.
+
+---
+
+### idx_0  
+- Response: ""$149.95""  
+- Target: ""$379.99""  
+These two amounts are quite different. Different monetary values, no indication they refer to the same or approximately equal value.  
+Score: 0
+
+### idx_1  
+- Response: ""$199.95""  
+- Target: ""$379.99""  
+Again, quite different amounts, no approximation here. Not the same entity or similar value.  
+Score: 0
+
+### idx_2  
+- Response: ""$499.99""  
+- Target: ""$399.99""  
+Response is actually higher by $100. Different values, no approximate equality.  
+Score: 0
+
+### idx_3  
+- Response: ""$349.95""  
+- Target: ""$429.99""  
+Significant difference - about $80 difference, not approximately the same or pointing to the same entity.  
+Score: 0
+
+### idx_4  
+- Response: ""rmb1499""  
+- Target: ""¥2990""  
+Assuming rmb = ¥, Chinese Yuan, but the values differ (1499 vs 2990), approximately half the target value. Not the same entity or approximately equal.  
+Score: 0
+
+### idx_5  
+- Response: ""rmb1999""  
+- Target: ""¥2990""  
+Again, different values (1999 vs 2990), no approximate equality.  
+Score: 0
+
+### idx_6  
+- Response: ""rmb2499""  
+- Target: ""¥2799""  
+Close values: 2499 vs 2799, difference of 300 RMB (~10-11%). Could be seen as roughly similar depending on tolerance, but criterion does not specify a threshold for approximation. Assuming the criterion expects ""approximate"" to be close enough semantically.
+
+300 difference on roughly 2,500 is about 12% difference.
+
+This may be borderline.
+
+Given the criterion is vague (only states ""approximately the same"" or ""point to the same entity""), this might be enough for 1 since they both refer to similar price points in RMB.
+
+Score possibility: 1
+
+### idx_7  
+- Response: ""rmb3499""  
+- Target: ""¥3499""  
+Values are exactly the same (ignoring ""rmb"" vs ""¥"" which both refer to the same currency).  
+Score: 1
+
+### idx_8  
+- Response: ""¥14,990""  
+- Target: ""¥45000""  
+Value difference is large, 14,990 vs 45,000, very different, no approximate equality.  
+Score: 0
+
+### idx_9  
+- Response: ""¥19,990""  
+- Target: ""¥47980""  
+Again, large difference.  
+Score: 0
+
+### idx_10  
+- Response: ""¥24,990""  
+- Target: ""¥39900""  
+Large difference; not approximate equality.  
+Score: 0
+
+### idx_11  
+- Response: ""¥34,990""  
+- Target: ""¥48800""  
+Similarly, different values, about 13,810 difference. Not approximate equality.  
+Score: 0
+
+---
+
+### Final Scores
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0
+}
+```",$399.99,$499.99,1.0,key_match,0.0,"exact not match, response: 5, target: 3",3,5,1.0,key_match,1.0,"exact match, response: 2, target: 2",2,2
+,,hd15,HD06,u.s.,U.S.,0.0,"date not near, response: 2022-03-01 00:00:00, target: 2024-05-01 00:00:00",2024-05-01,2022-03-01,0.0,"Let's analyze each item pair one by one according to the criteria:
+
+The criterion states:  
+- The semantics must be approximately the same or point to the same entity.  
+- No need for word-for-word match; approximate equality or reference to the same entity is enough.  
+- Score is either 0 or 1.
+
+---
+
+### idx_0  
+- Response: ""$149.95""  
+- Target: ""$379.99""  
+These two amounts are quite different. Different monetary values, no indication they refer to the same or approximately equal value.  
+Score: 0
+
+### idx_1  
+- Response: ""$199.95""  
+- Target: ""$379.99""  
+Again, quite different amounts, no approximation here. Not the same entity or similar value.  
+Score: 0
+
+### idx_2  
+- Response: ""$499.99""  
+- Target: ""$399.99""  
+Response is actually higher by $100. Different values, no approximate equality.  
+Score: 0
+
+### idx_3  
+- Response: ""$349.95""  
+- Target: ""$429.99""  
+Significant difference - about $80 difference, not approximately the same or pointing to the same entity.  
+Score: 0
+
+### idx_4  
+- Response: ""rmb1499""  
+- Target: ""¥2990""  
+Assuming rmb = ¥, Chinese Yuan, but the values differ (1499 vs 2990), approximately half the target value. Not the same entity or approximately equal.  
+Score: 0
+
+### idx_5  
+- Response: ""rmb1999""  
+- Target: ""¥2990""  
+Again, different values (1999 vs 2990), no approximate equality.  
+Score: 0
+
+### idx_6  
+- Response: ""rmb2499""  
+- Target: ""¥2799""  
+Close values: 2499 vs 2799, difference of 300 RMB (~10-11%). Could be seen as roughly similar depending on tolerance, but criterion does not specify a threshold for approximation. Assuming the criterion expects ""approximate"" to be close enough semantically.
+
+300 difference on roughly 2,500 is about 12% difference.
+
+This may be borderline.
+
+Given the criterion is vague (only states ""approximately the same"" or ""point to the same entity""), this might be enough for 1 since they both refer to similar price points in RMB.
+
+Score possibility: 1
+
+### idx_7  
+- Response: ""rmb3499""  
+- Target: ""¥3499""  
+Values are exactly the same (ignoring ""rmb"" vs ""¥"" which both refer to the same currency).  
+Score: 1
+
+### idx_8  
+- Response: ""¥14,990""  
+- Target: ""¥45000""  
+Value difference is large, 14,990 vs 45,000, very different, no approximate equality.  
+Score: 0
+
+### idx_9  
+- Response: ""¥19,990""  
+- Target: ""¥47980""  
+Again, large difference.  
+Score: 0
+
+### idx_10  
+- Response: ""¥24,990""  
+- Target: ""¥39900""  
+Large difference; not approximate equality.  
+Score: 0
+
+### idx_11  
+- Response: ""¥34,990""  
+- Target: ""¥48800""  
+Similarly, different values, about 13,810 difference. Not approximate equality.  
+Score: 0
+
+---
+
+### Final Scores
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0
+}
+```",$429.99,$349.95,1.0,key_match,1.0,"exact match, response: 5, target: 5",5,5,1.0,key_match,1.0,"exact match, response: 2, target: 2",2,2
+,,hd01,HD01,china,China,0.0,"date not near, response: 2016-04-01 00:00:00, target: 2016-08-01 00:00:00",2016-08-01,2016-04-01,0.0,"Let's analyze each item pair one by one according to the criteria:
+
+The criterion states:  
+- The semantics must be approximately the same or point to the same entity.  
+- No need for word-for-word match; approximate equality or reference to the same entity is enough.  
+- Score is either 0 or 1.
+
+---
+
+### idx_0  
+- Response: ""$149.95""  
+- Target: ""$379.99""  
+These two amounts are quite different. Different monetary values, no indication they refer to the same or approximately equal value.  
+Score: 0
+
+### idx_1  
+- Response: ""$199.95""  
+- Target: ""$379.99""  
+Again, quite different amounts, no approximation here. Not the same entity or similar value.  
+Score: 0
+
+### idx_2  
+- Response: ""$499.99""  
+- Target: ""$399.99""  
+Response is actually higher by $100. Different values, no approximate equality.  
+Score: 0
+
+### idx_3  
+- Response: ""$349.95""  
+- Target: ""$429.99""  
+Significant difference - about $80 difference, not approximately the same or pointing to the same entity.  
+Score: 0
+
+### idx_4  
+- Response: ""rmb1499""  
+- Target: ""¥2990""  
+Assuming rmb = ¥, Chinese Yuan, but the values differ (1499 vs 2990), approximately half the target value. Not the same entity or approximately equal.  
+Score: 0
+
+### idx_5  
+- Response: ""rmb1999""  
+- Target: ""¥2990""  
+Again, different values (1999 vs 2990), no approximate equality.  
+Score: 0
+
+### idx_6  
+- Response: ""rmb2499""  
+- Target: ""¥2799""  
+Close values: 2499 vs 2799, difference of 300 RMB (~10-11%). Could be seen as roughly similar depending on tolerance, but criterion does not specify a threshold for approximation. Assuming the criterion expects ""approximate"" to be close enough semantically.
+
+300 difference on roughly 2,500 is about 12% difference.
+
+This may be borderline.
+
+Given the criterion is vague (only states ""approximately the same"" or ""point to the same entity""), this might be enough for 1 since they both refer to similar price points in RMB.
+
+Score possibility: 1
+
+### idx_7  
+- Response: ""rmb3499""  
+- Target: ""¥3499""  
+Values are exactly the same (ignoring ""rmb"" vs ""¥"" which both refer to the same currency).  
+Score: 1
+
+### idx_8  
+- Response: ""¥14,990""  
+- Target: ""¥45000""  
+Value difference is large, 14,990 vs 45,000, very different, no approximate equality.  
+Score: 0
+
+### idx_9  
+- Response: ""¥19,990""  
+- Target: ""¥47980""  
+Again, large difference.  
+Score: 0
+
+### idx_10  
+- Response: ""¥24,990""  
+- Target: ""¥39900""  
+Large difference; not approximate equality.  
+Score: 0
+
+### idx_11  
+- Response: ""¥34,990""  
+- Target: ""¥48800""  
+Similarly, different values, about 13,810 difference. Not approximate equality.  
+Score: 0
+
+---
+
+### Final Scores
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0
+}
+```",¥2990,rmb1499,1.0,key_match,0.0,"exact not match, response: 5, target: 3",3,5,1.0,key_match,1.0,"exact match, response: 2, target: 2",2,2
+,,hd03,HD03,china,China,0.0,"date not near, response: 2018-08-01 00:00:00, target: 2019-09-01 00:00:00",2019-09-01,2018-08-01,0.0,"Let's analyze each item pair one by one according to the criteria:
+
+The criterion states:  
+- The semantics must be approximately the same or point to the same entity.  
+- No need for word-for-word match; approximate equality or reference to the same entity is enough.  
+- Score is either 0 or 1.
+
+---
+
+### idx_0  
+- Response: ""$149.95""  
+- Target: ""$379.99""  
+These two amounts are quite different. Different monetary values, no indication they refer to the same or approximately equal value.  
+Score: 0
+
+### idx_1  
+- Response: ""$199.95""  
+- Target: ""$379.99""  
+Again, quite different amounts, no approximation here. Not the same entity or similar value.  
+Score: 0
+
+### idx_2  
+- Response: ""$499.99""  
+- Target: ""$399.99""  
+Response is actually higher by $100. Different values, no approximate equality.  
+Score: 0
+
+### idx_3  
+- Response: ""$349.95""  
+- Target: ""$429.99""  
+Significant difference - about $80 difference, not approximately the same or pointing to the same entity.  
+Score: 0
+
+### idx_4  
+- Response: ""rmb1499""  
+- Target: ""¥2990""  
+Assuming rmb = ¥, Chinese Yuan, but the values differ (1499 vs 2990), approximately half the target value. Not the same entity or approximately equal.  
+Score: 0
+
+### idx_5  
+- Response: ""rmb1999""  
+- Target: ""¥2990""  
+Again, different values (1999 vs 2990), no approximate equality.  
+Score: 0
+
+### idx_6  
+- Response: ""rmb2499""  
+- Target: ""¥2799""  
+Close values: 2499 vs 2799, difference of 300 RMB (~10-11%). Could be seen as roughly similar depending on tolerance, but criterion does not specify a threshold for approximation. Assuming the criterion expects ""approximate"" to be close enough semantically.
+
+300 difference on roughly 2,500 is about 12% difference.
+
+This may be borderline.
+
+Given the criterion is vague (only states ""approximately the same"" or ""point to the same entity""), this might be enough for 1 since they both refer to similar price points in RMB.
+
+Score possibility: 1
+
+### idx_7  
+- Response: ""rmb3499""  
+- Target: ""¥3499""  
+Values are exactly the same (ignoring ""rmb"" vs ""¥"" which both refer to the same currency).  
+Score: 1
+
+### idx_8  
+- Response: ""¥14,990""  
+- Target: ""¥45000""  
+Value difference is large, 14,990 vs 45,000, very different, no approximate equality.  
+Score: 0
+
+### idx_9  
+- Response: ""¥19,990""  
+- Target: ""¥47980""  
+Again, large difference.  
+Score: 0
+
+### idx_10  
+- Response: ""¥24,990""  
+- Target: ""¥39900""  
+Large difference; not approximate equality.  
+Score: 0
+
+### idx_11  
+- Response: ""¥34,990""  
+- Target: ""¥48800""  
+Similarly, different values, about 13,810 difference. Not approximate equality.  
+Score: 0
+
+---
+
+### Final Scores
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0
+}
+```",¥2990,rmb1999,1.0,key_match,0.0,"exact not match, response: 5, target: 4",4,5,1.0,key_match,1.0,"exact match, response: 2, target: 2",2,2
+,,hd08,HD04,china,China,0.0,"date not near, response: 2020-10-01 00:00:00, target: 2021-07-01 00:00:00",2021-07-01,2020-10-01,1.0,"Let's analyze each item pair one by one according to the criteria:
+
+The criterion states:  
+- The semantics must be approximately the same or point to the same entity.  
+- No need for word-for-word match; approximate equality or reference to the same entity is enough.  
+- Score is either 0 or 1.
+
+---
+
+### idx_0  
+- Response: ""$149.95""  
+- Target: ""$379.99""  
+These two amounts are quite different. Different monetary values, no indication they refer to the same or approximately equal value.  
+Score: 0
+
+### idx_1  
+- Response: ""$199.95""  
+- Target: ""$379.99""  
+Again, quite different amounts, no approximation here. Not the same entity or similar value.  
+Score: 0
+
+### idx_2  
+- Response: ""$499.99""  
+- Target: ""$399.99""  
+Response is actually higher by $100. Different values, no approximate equality.  
+Score: 0
+
+### idx_3  
+- Response: ""$349.95""  
+- Target: ""$429.99""  
+Significant difference - about $80 difference, not approximately the same or pointing to the same entity.  
+Score: 0
+
+### idx_4  
+- Response: ""rmb1499""  
+- Target: ""¥2990""  
+Assuming rmb = ¥, Chinese Yuan, but the values differ (1499 vs 2990), approximately half the target value. Not the same entity or approximately equal.  
+Score: 0
+
+### idx_5  
+- Response: ""rmb1999""  
+- Target: ""¥2990""  
+Again, different values (1999 vs 2990), no approximate equality.  
+Score: 0
+
+### idx_6  
+- Response: ""rmb2499""  
+- Target: ""¥2799""  
+Close values: 2499 vs 2799, difference of 300 RMB (~10-11%). Could be seen as roughly similar depending on tolerance, but criterion does not specify a threshold for approximation. Assuming the criterion expects ""approximate"" to be close enough semantically.
+
+300 difference on roughly 2,500 is about 12% difference.
+
+This may be borderline.
+
+Given the criterion is vague (only states ""approximately the same"" or ""point to the same entity""), this might be enough for 1 since they both refer to similar price points in RMB.
+
+Score possibility: 1
+
+### idx_7  
+- Response: ""rmb3499""  
+- Target: ""¥3499""  
+Values are exactly the same (ignoring ""rmb"" vs ""¥"" which both refer to the same currency).  
+Score: 1
+
+### idx_8  
+- Response: ""¥14,990""  
+- Target: ""¥45000""  
+Value difference is large, 14,990 vs 45,000, very different, no approximate equality.  
+Score: 0
+
+### idx_9  
+- Response: ""¥19,990""  
+- Target: ""¥47980""  
+Again, large difference.  
+Score: 0
+
+### idx_10  
+- Response: ""¥24,990""  
+- Target: ""¥39900""  
+Large difference; not approximate equality.  
+Score: 0
+
+### idx_11  
+- Response: ""¥34,990""  
+- Target: ""¥48800""  
+Similarly, different values, about 13,810 difference. Not approximate equality.  
+Score: 0
+
+---
+
+### Final Scores
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0
+}
+```",¥2799,rmb2499,1.0,key_match,1.0,"exact match, response: 5, target: 5",5,5,1.0,key_match,1.0,"exact match, response: 2, target: 2",2,2
+,,hd15,HD06,china,China,0.0,"date not near, response: 2022-03-01 00:00:00, target: 2024-04-01 00:00:00",2024-04-01,2022-03-01,1.0,"Let's analyze each item pair one by one according to the criteria:
+
+The criterion states:  
+- The semantics must be approximately the same or point to the same entity.  
+- No need for word-for-word match; approximate equality or reference to the same entity is enough.  
+- Score is either 0 or 1.
+
+---
+
+### idx_0  
+- Response: ""$149.95""  
+- Target: ""$379.99""  
+These two amounts are quite different. Different monetary values, no indication they refer to the same or approximately equal value.  
+Score: 0
+
+### idx_1  
+- Response: ""$199.95""  
+- Target: ""$379.99""  
+Again, quite different amounts, no approximation here. Not the same entity or similar value.  
+Score: 0
+
+### idx_2  
+- Response: ""$499.99""  
+- Target: ""$399.99""  
+Response is actually higher by $100. Different values, no approximate equality.  
+Score: 0
+
+### idx_3  
+- Response: ""$349.95""  
+- Target: ""$429.99""  
+Significant difference - about $80 difference, not approximately the same or pointing to the same entity.  
+Score: 0
+
+### idx_4  
+- Response: ""rmb1499""  
+- Target: ""¥2990""  
+Assuming rmb = ¥, Chinese Yuan, but the values differ (1499 vs 2990), approximately half the target value. Not the same entity or approximately equal.  
+Score: 0
+
+### idx_5  
+- Response: ""rmb1999""  
+- Target: ""¥2990""  
+Again, different values (1999 vs 2990), no approximate equality.  
+Score: 0
+
+### idx_6  
+- Response: ""rmb2499""  
+- Target: ""¥2799""  
+Close values: 2499 vs 2799, difference of 300 RMB (~10-11%). Could be seen as roughly similar depending on tolerance, but criterion does not specify a threshold for approximation. Assuming the criterion expects ""approximate"" to be close enough semantically.
+
+300 difference on roughly 2,500 is about 12% difference.
+
+This may be borderline.
+
+Given the criterion is vague (only states ""approximately the same"" or ""point to the same entity""), this might be enough for 1 since they both refer to similar price points in RMB.
+
+Score possibility: 1
+
+### idx_7  
+- Response: ""rmb3499""  
+- Target: ""¥3499""  
+Values are exactly the same (ignoring ""rmb"" vs ""¥"" which both refer to the same currency).  
+Score: 1
+
+### idx_8  
+- Response: ""¥14,990""  
+- Target: ""¥45000""  
+Value difference is large, 14,990 vs 45,000, very different, no approximate equality.  
+Score: 0
+
+### idx_9  
+- Response: ""¥19,990""  
+- Target: ""¥47980""  
+Again, large difference.  
+Score: 0
+
+### idx_10  
+- Response: ""¥24,990""  
+- Target: ""¥39900""  
+Large difference; not approximate equality.  
+Score: 0
+
+### idx_11  
+- Response: ""¥34,990""  
+- Target: ""¥48800""  
+Similarly, different values, about 13,810 difference. Not approximate equality.  
+Score: 0
+
+---
+
+### Final Scores
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0
+}
+```",¥3499,rmb3499,1.0,key_match,1.0,"exact match, response: 5, target: 5",5,5,1.0,key_match,1.0,"exact match, response: 2, target: 2",2,2
+,,hd01,HD01,japan,Japan,1.0,"date near, response: 2016-04-01 00:00:00, target: 2016-04-01 00:00:00",2016-04-01,2016-04-01,0.0,"Let's analyze each item pair one by one according to the criteria:
+
+The criterion states:  
+- The semantics must be approximately the same or point to the same entity.  
+- No need for word-for-word match; approximate equality or reference to the same entity is enough.  
+- Score is either 0 or 1.
+
+---
+
+### idx_0  
+- Response: ""$149.95""  
+- Target: ""$379.99""  
+These two amounts are quite different. Different monetary values, no indication they refer to the same or approximately equal value.  
+Score: 0
+
+### idx_1  
+- Response: ""$199.95""  
+- Target: ""$379.99""  
+Again, quite different amounts, no approximation here. Not the same entity or similar value.  
+Score: 0
+
+### idx_2  
+- Response: ""$499.99""  
+- Target: ""$399.99""  
+Response is actually higher by $100. Different values, no approximate equality.  
+Score: 0
+
+### idx_3  
+- Response: ""$349.95""  
+- Target: ""$429.99""  
+Significant difference - about $80 difference, not approximately the same or pointing to the same entity.  
+Score: 0
+
+### idx_4  
+- Response: ""rmb1499""  
+- Target: ""¥2990""  
+Assuming rmb = ¥, Chinese Yuan, but the values differ (1499 vs 2990), approximately half the target value. Not the same entity or approximately equal.  
+Score: 0
+
+### idx_5  
+- Response: ""rmb1999""  
+- Target: ""¥2990""  
+Again, different values (1999 vs 2990), no approximate equality.  
+Score: 0
+
+### idx_6  
+- Response: ""rmb2499""  
+- Target: ""¥2799""  
+Close values: 2499 vs 2799, difference of 300 RMB (~10-11%). Could be seen as roughly similar depending on tolerance, but criterion does not specify a threshold for approximation. Assuming the criterion expects ""approximate"" to be close enough semantically.
+
+300 difference on roughly 2,500 is about 12% difference.
+
+This may be borderline.
+
+Given the criterion is vague (only states ""approximately the same"" or ""point to the same entity""), this might be enough for 1 since they both refer to similar price points in RMB.
+
+Score possibility: 1
+
+### idx_7  
+- Response: ""rmb3499""  
+- Target: ""¥3499""  
+Values are exactly the same (ignoring ""rmb"" vs ""¥"" which both refer to the same currency).  
+Score: 1
+
+### idx_8  
+- Response: ""¥14,990""  
+- Target: ""¥45000""  
+Value difference is large, 14,990 vs 45,000, very different, no approximate equality.  
+Score: 0
+
+### idx_9  
+- Response: ""¥19,990""  
+- Target: ""¥47980""  
+Again, large difference.  
+Score: 0
+
+### idx_10  
+- Response: ""¥24,990""  
+- Target: ""¥39900""  
+Large difference; not approximate equality.  
+Score: 0
+
+### idx_11  
+- Response: ""¥34,990""  
+- Target: ""¥48800""  
+Similarly, different values, about 13,810 difference. Not approximate equality.  
+Score: 0
+
+---
+
+### Final Scores
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0
+}
+```",¥45000,"¥14,990",1.0,key_match,0.0,"exact not match, response: 5, target: 3",3,5,1.0,key_match,1.0,"exact match, response: 2, target: 2",2,2
+,,hd03,HD03,japan,Japan,0.0,"date not near, response: 2018-08-01 00:00:00, target: 2019-09-01 00:00:00",2019-09-01,2018-08-01,0.0,"Let's analyze each item pair one by one according to the criteria:
+
+The criterion states:  
+- The semantics must be approximately the same or point to the same entity.  
+- No need for word-for-word match; approximate equality or reference to the same entity is enough.  
+- Score is either 0 or 1.
+
+---
+
+### idx_0  
+- Response: ""$149.95""  
+- Target: ""$379.99""  
+These two amounts are quite different. Different monetary values, no indication they refer to the same or approximately equal value.  
+Score: 0
+
+### idx_1  
+- Response: ""$199.95""  
+- Target: ""$379.99""  
+Again, quite different amounts, no approximation here. Not the same entity or similar value.  
+Score: 0
+
+### idx_2  
+- Response: ""$499.99""  
+- Target: ""$399.99""  
+Response is actually higher by $100. Different values, no approximate equality.  
+Score: 0
+
+### idx_3  
+- Response: ""$349.95""  
+- Target: ""$429.99""  
+Significant difference - about $80 difference, not approximately the same or pointing to the same entity.  
+Score: 0
+
+### idx_4  
+- Response: ""rmb1499""  
+- Target: ""¥2990""  
+Assuming rmb = ¥, Chinese Yuan, but the values differ (1499 vs 2990), approximately half the target value. Not the same entity or approximately equal.  
+Score: 0
+
+### idx_5  
+- Response: ""rmb1999""  
+- Target: ""¥2990""  
+Again, different values (1999 vs 2990), no approximate equality.  
+Score: 0
+
+### idx_6  
+- Response: ""rmb2499""  
+- Target: ""¥2799""  
+Close values: 2499 vs 2799, difference of 300 RMB (~10-11%). Could be seen as roughly similar depending on tolerance, but criterion does not specify a threshold for approximation. Assuming the criterion expects ""approximate"" to be close enough semantically.
+
+300 difference on roughly 2,500 is about 12% difference.
+
+This may be borderline.
+
+Given the criterion is vague (only states ""approximately the same"" or ""point to the same entity""), this might be enough for 1 since they both refer to similar price points in RMB.
+
+Score possibility: 1
+
+### idx_7  
+- Response: ""rmb3499""  
+- Target: ""¥3499""  
+Values are exactly the same (ignoring ""rmb"" vs ""¥"" which both refer to the same currency).  
+Score: 1
+
+### idx_8  
+- Response: ""¥14,990""  
+- Target: ""¥45000""  
+Value difference is large, 14,990 vs 45,000, very different, no approximate equality.  
+Score: 0
+
+### idx_9  
+- Response: ""¥19,990""  
+- Target: ""¥47980""  
+Again, large difference.  
+Score: 0
+
+### idx_10  
+- Response: ""¥24,990""  
+- Target: ""¥39900""  
+Large difference; not approximate equality.  
+Score: 0
+
+### idx_11  
+- Response: ""¥34,990""  
+- Target: ""¥48800""  
+Similarly, different values, about 13,810 difference. Not approximate equality.  
+Score: 0
+
+---
+
+### Final Scores
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0
+}
+```",¥47980,"¥19,990",1.0,key_match,0.0,"exact not match, response: 5, target: 4",4,5,1.0,key_match,1.0,"exact match, response: 2, target: 2",2,2
+,,hd08,HD04,japan,Japan,0.0,"date not near, response: 2020-10-01 00:00:00, target: 2021-09-01 00:00:00",2021-09-01,2020-10-01,0.0,"Let's analyze each item pair one by one according to the criteria:
+
+The criterion states:  
+- The semantics must be approximately the same or point to the same entity.  
+- No need for word-for-word match; approximate equality or reference to the same entity is enough.  
+- Score is either 0 or 1.
+
+---
+
+### idx_0  
+- Response: ""$149.95""  
+- Target: ""$379.99""  
+These two amounts are quite different. Different monetary values, no indication they refer to the same or approximately equal value.  
+Score: 0
+
+### idx_1  
+- Response: ""$199.95""  
+- Target: ""$379.99""  
+Again, quite different amounts, no approximation here. Not the same entity or similar value.  
+Score: 0
+
+### idx_2  
+- Response: ""$499.99""  
+- Target: ""$399.99""  
+Response is actually higher by $100. Different values, no approximate equality.  
+Score: 0
+
+### idx_3  
+- Response: ""$349.95""  
+- Target: ""$429.99""  
+Significant difference - about $80 difference, not approximately the same or pointing to the same entity.  
+Score: 0
+
+### idx_4  
+- Response: ""rmb1499""  
+- Target: ""¥2990""  
+Assuming rmb = ¥, Chinese Yuan, but the values differ (1499 vs 2990), approximately half the target value. Not the same entity or approximately equal.  
+Score: 0
+
+### idx_5  
+- Response: ""rmb1999""  
+- Target: ""¥2990""  
+Again, different values (1999 vs 2990), no approximate equality.  
+Score: 0
+
+### idx_6  
+- Response: ""rmb2499""  
+- Target: ""¥2799""  
+Close values: 2499 vs 2799, difference of 300 RMB (~10-11%). Could be seen as roughly similar depending on tolerance, but criterion does not specify a threshold for approximation. Assuming the criterion expects ""approximate"" to be close enough semantically.
+
+300 difference on roughly 2,500 is about 12% difference.
+
+This may be borderline.
+
+Given the criterion is vague (only states ""approximately the same"" or ""point to the same entity""), this might be enough for 1 since they both refer to similar price points in RMB.
+
+Score possibility: 1
+
+### idx_7  
+- Response: ""rmb3499""  
+- Target: ""¥3499""  
+Values are exactly the same (ignoring ""rmb"" vs ""¥"" which both refer to the same currency).  
+Score: 1
+
+### idx_8  
+- Response: ""¥14,990""  
+- Target: ""¥45000""  
+Value difference is large, 14,990 vs 45,000, very different, no approximate equality.  
+Score: 0
+
+### idx_9  
+- Response: ""¥19,990""  
+- Target: ""¥47980""  
+Again, large difference.  
+Score: 0
+
+### idx_10  
+- Response: ""¥24,990""  
+- Target: ""¥39900""  
+Large difference; not approximate equality.  
+Score: 0
+
+### idx_11  
+- Response: ""¥34,990""  
+- Target: ""¥48800""  
+Similarly, different values, about 13,810 difference. Not approximate equality.  
+Score: 0
+
+---
+
+### Final Scores
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0
+}
+```",¥39900,"¥24,990",1.0,key_match,1.0,"exact match, response: 5, target: 5",5,5,1.0,key_match,1.0,"exact match, response: 2, target: 2",2,2
+,,hd15,HD06,japan,Japan,0.0,"date not near, response: 2022-03-01 00:00:00, target: 2023-04-01 00:00:00",2023-04-01,2022-03-01,0.0,"Let's analyze each item pair one by one according to the criteria:
+
+The criterion states:  
+- The semantics must be approximately the same or point to the same entity.  
+- No need for word-for-word match; approximate equality or reference to the same entity is enough.  
+- Score is either 0 or 1.
+
+---
+
+### idx_0  
+- Response: ""$149.95""  
+- Target: ""$379.99""  
+These two amounts are quite different. Different monetary values, no indication they refer to the same or approximately equal value.  
+Score: 0
+
+### idx_1  
+- Response: ""$199.95""  
+- Target: ""$379.99""  
+Again, quite different amounts, no approximation here. Not the same entity or similar value.  
+Score: 0
+
+### idx_2  
+- Response: ""$499.99""  
+- Target: ""$399.99""  
+Response is actually higher by $100. Different values, no approximate equality.  
+Score: 0
+
+### idx_3  
+- Response: ""$349.95""  
+- Target: ""$429.99""  
+Significant difference - about $80 difference, not approximately the same or pointing to the same entity.  
+Score: 0
+
+### idx_4  
+- Response: ""rmb1499""  
+- Target: ""¥2990""  
+Assuming rmb = ¥, Chinese Yuan, but the values differ (1499 vs 2990), approximately half the target value. Not the same entity or approximately equal.  
+Score: 0
+
+### idx_5  
+- Response: ""rmb1999""  
+- Target: ""¥2990""  
+Again, different values (1999 vs 2990), no approximate equality.  
+Score: 0
+
+### idx_6  
+- Response: ""rmb2499""  
+- Target: ""¥2799""  
+Close values: 2499 vs 2799, difference of 300 RMB (~10-11%). Could be seen as roughly similar depending on tolerance, but criterion does not specify a threshold for approximation. Assuming the criterion expects ""approximate"" to be close enough semantically.
+
+300 difference on roughly 2,500 is about 12% difference.
+
+This may be borderline.
+
+Given the criterion is vague (only states ""approximately the same"" or ""point to the same entity""), this might be enough for 1 since they both refer to similar price points in RMB.
+
+Score possibility: 1
+
+### idx_7  
+- Response: ""rmb3499""  
+- Target: ""¥3499""  
+Values are exactly the same (ignoring ""rmb"" vs ""¥"" which both refer to the same currency).  
+Score: 1
+
+### idx_8  
+- Response: ""¥14,990""  
+- Target: ""¥45000""  
+Value difference is large, 14,990 vs 45,000, very different, no approximate equality.  
+Score: 0
+
+### idx_9  
+- Response: ""¥19,990""  
+- Target: ""¥47980""  
+Again, large difference.  
+Score: 0
+
+### idx_10  
+- Response: ""¥24,990""  
+- Target: ""¥39900""  
+Large difference; not approximate equality.  
+Score: 0
+
+### idx_11  
+- Response: ""¥34,990""  
+- Target: ""¥48800""  
+Similarly, different values, about 13,810 difference. Not approximate equality.  
+Score: 0
+
+---
+
+### Final Scores
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0
+}
+```",¥48800,"¥34,990",1.0,key_match,0.0,"exact not match, response: 5, target: 3",3,5,1.0,key_match,1.0,"exact match, response: 2, target: 2",2,2
+,1.0,hd07,HD07,china,China,,,,2023-07-01,,,,rmb4999,,,,,,5,,,,,,2
+1.0,,hd16,,china,,,,2024-04-01,,,,¥3499,,,,,,5,,,,,,2,
+,1.0,hd07,HD07,japan,Japan,,,,2023-07-01,,,,"¥49,990",,,,,,5,,,,,,2
+1.0,,hd16,,japan,,,,2023-03-01,,,,¥49900,,,,,,3,,,,,,2,
+,1.0,hd08,HD04,u.s.,U.S.,,,,2020-10-01,,,,$249.95,,,,,,5,,,,,,2
+1.0,,hd16,,u.s.,,,,2024-03-01,,,,$499.99,,,,,,5,,,,,,2,

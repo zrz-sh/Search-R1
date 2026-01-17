@@ -1,0 +1,2516 @@
+areaname,areaname_before_map,exist_flag_gt,exist_flag_response,areaname_exact_match,areaname_exact_match_eval_msg,counties_llm_judge,counties_llm_judge_eval_msg,counties_query,counties_response,designationcategory_exact_match,designationcategory_exact_match_eval_msg,designationcategory_query,designationcategory_response,designationtime_exact_match,designationtime_exact_match_eval_msg,designationtime_query,designationtime_response,regions_llm_judge,regions_llm_judge_eval_msg,regions_query,regions_response,responsiblepublicbody_llm_judge,responsiblepublicbody_llm_judge_eval_msg,responsiblepublicbody_query,responsiblepublicbody_response,website_llm_judge,website_llm_judge_eval_msg,website_query,website_response
+dorset,West Dorset,,,1.0,key_match,1.0,"Analysis step-by-step according to the criterion:
+
+- Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+
+---
+
+**idx_0:**  
+Response: ""dorset""  
+Target: ""dorset""  
+Exact match, semantics clearly the same → score = 1
+
+---
+
+**idx_1:**  
+Response: ""anglesey""  
+Target: ""anglesey""  
+Exact match → score = 1
+
+---
+
+**idx_2:**  
+Response: ""herefordshire,gloucestershire""  
+Target: ""monmouthshireengland:gloucestershire,herefordshire""  
+- The target includes ""monmouthshireengland:"" prefix, which looks like formatting noise. The main entities are ""gloucestershire"" & ""herefordshire"" plus monmouthshire.  
+- The response has ""herefordshire, gloucestershire""  
+- Although missing ""monmouthshire"", the response points to two of the main counties also in the target. The criterion allows approximate semantics or pointing to the same entities. Since monmouthshire is an extra entity in the target (not in response), and response entities are in the target, this is acceptable.  
+→ score = 1
+
+---
+
+**idx_3:**  
+Response: ""countyantrim""  
+Target: ""antrim""  
+- ""countyantrim"" seems like ""county antrim"" mashed together. This is the same geographical entity ""Antrim"".  
+- The criterion allows approximate semantics. So, this can be considered correct.  
+→ score = 1
+
+---
+
+**idx_4:**  
+Response: ""highland,perthandkinross""  
+Target: ""highland,argyllandbute,\nperthandkinross""  
+- The response includes ""highland"" and ""perthandkinross""  
+- The target includes those plus ""argyllandbute""  
+- Missing ""argyllandbute"" in response, but the response covers majority and the target’s extra entity is acceptable under approximate semantics? Possibly. The criterion is lenient.  
+→ score = 1
+
+---
+
+**idx_5:**  
+Response: ""highland,moray,aberdeenshire,grampian""  
+Target: ""highland,aberdeenshire,\nmoray""  
+- Response includes ""highland"", ""moray"", and ""aberdeenshire"" which are in the target.  
+- Response adds ""grampian"" which is not in the target. Adding is acceptable unless it's contradictory or changes meaning. Here, it is a related region, so likely acceptable.  
+→ score = 1
+
+---
+
+**idx_6:**  
+Response: ""sutherland,caithness""  
+Target: ""highland""  
+- Response is ""sutherland,caithness"" while target is ""highland""  
+- Sutherland and Caithness are both regions within the larger Highland council area.  
+- The criterion accepts approximate semantics or pointing to the same entity. Sutherland and Caithness are parts of Highland, so it's acceptable.  
+→ score = 1
+
+---
+
+**idx_7:**  
+Response: ""westerross""  
+Target: ""highland""  
+- Wester Ross is also a part of Highland region. Again, pointing to the same entity conceptually.  
+- This aligns with criterion.  
+→ score = 1
+
+---
+
+Final scores: all pairs meet the criterion and are scored 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",dorset,dorset,0.0,"exact not match, response: areasofoutstandingnaturalbeauty, target: aonb",aonb,areasofoutstandingnaturalbeauty,0.0,"exact not match, response: 1956, target: 1959",1959,1956,1.0,"Let's analyze each pair according to the criteria:
+
+- Criterion: Semantics approximately the same or pointing to the same entity. No need for exact word-for-word match.
+
+---
+
+**idx_0**: response = ""england"", target = ""england""  
+- Exact match.  
+- Score = 1
+
+**idx_1**: response = ""wales"", target = ""wales""  
+- Exact match.  
+- Score = 1
+
+**idx_2**: response = ""england"", target = ""wales(partlyinengland)""  
+- Target mentions a complicated entity: ""wales(partlyinengland)"". The response only states ""england"".  
+- The target implies the answer is Wales, though partly in England. The response only says ""england"", which is incorrect as per the target. The response and target are different entities.  
+- So they don't approximate the same semantics or refer to the same entity. ""England"" ≠ ""Wales"".  
+- Score = 0
+
+**idx_3**: response = ""northernireland"", target = ""northernireland""  
+- Exact match.  
+- Score = 1
+
+**idx_4**: response = ""scotland"", target = ""scotland""  
+- Exact match.  
+- Score = 1
+
+**idx_5**: response = ""scotland"", target = ""scotland""  
+- Exact match.  
+- Score = 1
+
+**idx_6**: response = ""scotland"", target = ""scotland""  
+- Exact match.  
+- Score = 1
+
+**idx_7**: response = ""scotland"", target = ""scotland""  
+- Exact match.  
+- Score = 1
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1
+}
+```",england,england,1.0,"Let's analyze each idx item according to the criterion:
+
+Criterion:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+**idx_0**:  
+- response: ""naturalengland""  
+- target: ""naturalengland""  
+- They match exactly. Score = 1
+
+---
+
+**idx_1**:  
+- response: ""naturalresourceswales""  
+- target: ""naturalresourceswales""  
+- Match exactly. Score = 1
+
+---
+
+**idx_2**:  
+- response: ""naturalengland""  
+- target: ""naturalresourceswales&naturalengland""  
+- Target expects both ""naturalresourceswales"" and ""naturalengland"". Response only mentions ""naturalengland"".  
+- Lemma: the response matches only part of the target, not the entire. The criterion says ""approximately the same or point to the same entity"" - here the target lists two entities, and only one is provided.  
+- Since it's a multi-entity answer, partial mention is technically insufficient to get full credit.  
+- So score = 0
+
+---
+
+**idx_3**:  
+- response: ""naturescot""  
+- target: ""northernirelandenvironmentagency""  
+- Different entities, no semantic similarity. Score = 0
+
+---
+
+**idx_4**:  
+- response: ""naturalresourceswales""  
+- target: ""naturescot""  
+- Different entities. Score = 0
+
+---
+
+**idx_5**:  
+- response: ""naturalresourceswales""  
+- target: ""naturescot""  
+- Same as above. Score = 0
+
+---
+
+**idx_6**:  
+- response: ""naturalresourceswales""  
+- target: ""naturescot""  
+- Same. Score = 0
+
+---
+
+**idx_7**:  
+- response: ""naturalresourceswales""  
+- target: ""naturescot""  
+- Same again. Score = 0
+
+---
+
+Final JSON output:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```",naturalengland,naturalengland,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- Semantics should be approximately the same or point to the same entity.  
+- Website links can vary as long as the main body remains the same.
+
+---
+
+**idx_0**  
+- Response: https://www.naturalengland.org.uk/our-work/places-to-visit/aonbs/west-dorset.aspx  
+- Target: https://dorset-nl.org.uk/  
+Analysis: Both refer to West Dorset AONB, but the response link is from Natural England and the target is a local Dorset-based AONB site. Both refer to the same entity (West Dorset AONB), just different hosting sites. According to the criterion, this is acceptable.  
+Score: 1
+
+---
+
+**idx_1**  
+- Response: https://national-landscapes.org.uk/  
+- Target: https://www.anglesey.gov.wales/en/residents/countryside/areas-of-outstanding-natural-beauty-aonbs/anglesey-area-of-outstanding-natural-beauty-aonb.aspx  
+Analysis: Response links to a general site for National Landscapes (umbrella site), target is a specific link about Anglesey AONB. The response does not specifically point to Anglesey AONB but to a general site. The criterion states it is sufficient if semantics are approximately the same or point to the same entity. Here, response is too general relative to target, might be considered missing the specific entity indicated by the target. So the main body/content of the link is different.  
+Score: 0
+
+---
+
+**idx_2**  
+- Response: https://www.naturalengland.org.uk/our-work/places-to-visit/aonbs/wye-valley.aspx  
+- Target: https://wyevalleyaonb.org.uk/  
+Analysis: Both links refer to Wye Valley AONB, hosted on different sites but same entity.  
+Score: 1
+
+---
+
+**idx_3**  
+- Response: https://www.naturescot.net/en/national-scenic-area-antrim-coast-glens/  
+- Target: https://antrimcoastandglensaonb.ccght.org/  
+Analysis: Both links talk about Antrim Coast & Glens. The response is from NatureScot official site about the national scenic area, and the target is a dedicated website for that AONB. Both refer to the same entity.  
+Score: 1
+
+---
+
+**idx_4**  
+- Response: https://national-landscapes.org.uk/  
+- Target: https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas  
+Analysis: Response is the general national-landscapes.org.uk homepage; target is a specific NatureScot page on national designations (national scenic areas). The response is much more general, not directly addressing national scenic areas as the target does. This is similar to idx_1.  
+Score: 0
+
+---
+
+**idx_5**  
+- Same as idx_4: response and target same as above, same logic applies.  
+Score: 0
+
+---
+
+**idx_6**  
+- Same as idx_4 and idx_5.  
+Score: 0
+
+---
+
+**idx_7**  
+- Same as idx_4, 5, 6.  
+Score: 0
+
+---
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```",https://dorset-nl.org.uk/,https://www.naturalengland.org.uk/our-work/places-to-visit/aonbs/west-dorset.aspx
+anglesey/ynysmôn,Ynys Mon,,,1.0,key_match,1.0,"Analysis step-by-step according to the criterion:
+
+- Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+
+---
+
+**idx_0:**  
+Response: ""dorset""  
+Target: ""dorset""  
+Exact match, semantics clearly the same → score = 1
+
+---
+
+**idx_1:**  
+Response: ""anglesey""  
+Target: ""anglesey""  
+Exact match → score = 1
+
+---
+
+**idx_2:**  
+Response: ""herefordshire,gloucestershire""  
+Target: ""monmouthshireengland:gloucestershire,herefordshire""  
+- The target includes ""monmouthshireengland:"" prefix, which looks like formatting noise. The main entities are ""gloucestershire"" & ""herefordshire"" plus monmouthshire.  
+- The response has ""herefordshire, gloucestershire""  
+- Although missing ""monmouthshire"", the response points to two of the main counties also in the target. The criterion allows approximate semantics or pointing to the same entities. Since monmouthshire is an extra entity in the target (not in response), and response entities are in the target, this is acceptable.  
+→ score = 1
+
+---
+
+**idx_3:**  
+Response: ""countyantrim""  
+Target: ""antrim""  
+- ""countyantrim"" seems like ""county antrim"" mashed together. This is the same geographical entity ""Antrim"".  
+- The criterion allows approximate semantics. So, this can be considered correct.  
+→ score = 1
+
+---
+
+**idx_4:**  
+Response: ""highland,perthandkinross""  
+Target: ""highland,argyllandbute,\nperthandkinross""  
+- The response includes ""highland"" and ""perthandkinross""  
+- The target includes those plus ""argyllandbute""  
+- Missing ""argyllandbute"" in response, but the response covers majority and the target’s extra entity is acceptable under approximate semantics? Possibly. The criterion is lenient.  
+→ score = 1
+
+---
+
+**idx_5:**  
+Response: ""highland,moray,aberdeenshire,grampian""  
+Target: ""highland,aberdeenshire,\nmoray""  
+- Response includes ""highland"", ""moray"", and ""aberdeenshire"" which are in the target.  
+- Response adds ""grampian"" which is not in the target. Adding is acceptable unless it's contradictory or changes meaning. Here, it is a related region, so likely acceptable.  
+→ score = 1
+
+---
+
+**idx_6:**  
+Response: ""sutherland,caithness""  
+Target: ""highland""  
+- Response is ""sutherland,caithness"" while target is ""highland""  
+- Sutherland and Caithness are both regions within the larger Highland council area.  
+- The criterion accepts approximate semantics or pointing to the same entity. Sutherland and Caithness are parts of Highland, so it's acceptable.  
+→ score = 1
+
+---
+
+**idx_7:**  
+Response: ""westerross""  
+Target: ""highland""  
+- Wester Ross is also a part of Highland region. Again, pointing to the same entity conceptually.  
+- This aligns with criterion.  
+→ score = 1
+
+---
+
+Final scores: all pairs meet the criterion and are scored 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",anglesey,anglesey,0.0,"exact not match, response: areasofoutstandingnaturalbeauty, target: aonb",aonb,areasofoutstandingnaturalbeauty,0.0,"exact not match, response: 1956, target: 1967",1967,1956,1.0,"Let's analyze each pair according to the criteria:
+
+- Criterion: Semantics approximately the same or pointing to the same entity. No need for exact word-for-word match.
+
+---
+
+**idx_0**: response = ""england"", target = ""england""  
+- Exact match.  
+- Score = 1
+
+**idx_1**: response = ""wales"", target = ""wales""  
+- Exact match.  
+- Score = 1
+
+**idx_2**: response = ""england"", target = ""wales(partlyinengland)""  
+- Target mentions a complicated entity: ""wales(partlyinengland)"". The response only states ""england"".  
+- The target implies the answer is Wales, though partly in England. The response only says ""england"", which is incorrect as per the target. The response and target are different entities.  
+- So they don't approximate the same semantics or refer to the same entity. ""England"" ≠ ""Wales"".  
+- Score = 0
+
+**idx_3**: response = ""northernireland"", target = ""northernireland""  
+- Exact match.  
+- Score = 1
+
+**idx_4**: response = ""scotland"", target = ""scotland""  
+- Exact match.  
+- Score = 1
+
+**idx_5**: response = ""scotland"", target = ""scotland""  
+- Exact match.  
+- Score = 1
+
+**idx_6**: response = ""scotland"", target = ""scotland""  
+- Exact match.  
+- Score = 1
+
+**idx_7**: response = ""scotland"", target = ""scotland""  
+- Exact match.  
+- Score = 1
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1
+}
+```",wales,wales,1.0,"Let's analyze each idx item according to the criterion:
+
+Criterion:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+**idx_0**:  
+- response: ""naturalengland""  
+- target: ""naturalengland""  
+- They match exactly. Score = 1
+
+---
+
+**idx_1**:  
+- response: ""naturalresourceswales""  
+- target: ""naturalresourceswales""  
+- Match exactly. Score = 1
+
+---
+
+**idx_2**:  
+- response: ""naturalengland""  
+- target: ""naturalresourceswales&naturalengland""  
+- Target expects both ""naturalresourceswales"" and ""naturalengland"". Response only mentions ""naturalengland"".  
+- Lemma: the response matches only part of the target, not the entire. The criterion says ""approximately the same or point to the same entity"" - here the target lists two entities, and only one is provided.  
+- Since it's a multi-entity answer, partial mention is technically insufficient to get full credit.  
+- So score = 0
+
+---
+
+**idx_3**:  
+- response: ""naturescot""  
+- target: ""northernirelandenvironmentagency""  
+- Different entities, no semantic similarity. Score = 0
+
+---
+
+**idx_4**:  
+- response: ""naturalresourceswales""  
+- target: ""naturescot""  
+- Different entities. Score = 0
+
+---
+
+**idx_5**:  
+- response: ""naturalresourceswales""  
+- target: ""naturescot""  
+- Same as above. Score = 0
+
+---
+
+**idx_6**:  
+- response: ""naturalresourceswales""  
+- target: ""naturescot""  
+- Same. Score = 0
+
+---
+
+**idx_7**:  
+- response: ""naturalresourceswales""  
+- target: ""naturescot""  
+- Same again. Score = 0
+
+---
+
+Final JSON output:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```",naturalresourceswales,naturalresourceswales,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- Semantics should be approximately the same or point to the same entity.  
+- Website links can vary as long as the main body remains the same.
+
+---
+
+**idx_0**  
+- Response: https://www.naturalengland.org.uk/our-work/places-to-visit/aonbs/west-dorset.aspx  
+- Target: https://dorset-nl.org.uk/  
+Analysis: Both refer to West Dorset AONB, but the response link is from Natural England and the target is a local Dorset-based AONB site. Both refer to the same entity (West Dorset AONB), just different hosting sites. According to the criterion, this is acceptable.  
+Score: 1
+
+---
+
+**idx_1**  
+- Response: https://national-landscapes.org.uk/  
+- Target: https://www.anglesey.gov.wales/en/residents/countryside/areas-of-outstanding-natural-beauty-aonbs/anglesey-area-of-outstanding-natural-beauty-aonb.aspx  
+Analysis: Response links to a general site for National Landscapes (umbrella site), target is a specific link about Anglesey AONB. The response does not specifically point to Anglesey AONB but to a general site. The criterion states it is sufficient if semantics are approximately the same or point to the same entity. Here, response is too general relative to target, might be considered missing the specific entity indicated by the target. So the main body/content of the link is different.  
+Score: 0
+
+---
+
+**idx_2**  
+- Response: https://www.naturalengland.org.uk/our-work/places-to-visit/aonbs/wye-valley.aspx  
+- Target: https://wyevalleyaonb.org.uk/  
+Analysis: Both links refer to Wye Valley AONB, hosted on different sites but same entity.  
+Score: 1
+
+---
+
+**idx_3**  
+- Response: https://www.naturescot.net/en/national-scenic-area-antrim-coast-glens/  
+- Target: https://antrimcoastandglensaonb.ccght.org/  
+Analysis: Both links talk about Antrim Coast & Glens. The response is from NatureScot official site about the national scenic area, and the target is a dedicated website for that AONB. Both refer to the same entity.  
+Score: 1
+
+---
+
+**idx_4**  
+- Response: https://national-landscapes.org.uk/  
+- Target: https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas  
+Analysis: Response is the general national-landscapes.org.uk homepage; target is a specific NatureScot page on national designations (national scenic areas). The response is much more general, not directly addressing national scenic areas as the target does. This is similar to idx_1.  
+Score: 0
+
+---
+
+**idx_5**  
+- Same as idx_4: response and target same as above, same logic applies.  
+Score: 0
+
+---
+
+**idx_6**  
+- Same as idx_4 and idx_5.  
+Score: 0
+
+---
+
+**idx_7**  
+- Same as idx_4, 5, 6.  
+Score: 0
+
+---
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```",https://www.anglesey.gov.wales/en/residents/countryside/areas-of-outstanding-natural-beauty-aonbs/anglesey-area-of-outstanding-natural-beauty-aonb.aspx,https://national-landscapes.org.uk/
+wyevalley/dyffryngwy,Wye Valley,,,1.0,key_match,1.0,"Analysis step-by-step according to the criterion:
+
+- Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+
+---
+
+**idx_0:**  
+Response: ""dorset""  
+Target: ""dorset""  
+Exact match, semantics clearly the same → score = 1
+
+---
+
+**idx_1:**  
+Response: ""anglesey""  
+Target: ""anglesey""  
+Exact match → score = 1
+
+---
+
+**idx_2:**  
+Response: ""herefordshire,gloucestershire""  
+Target: ""monmouthshireengland:gloucestershire,herefordshire""  
+- The target includes ""monmouthshireengland:"" prefix, which looks like formatting noise. The main entities are ""gloucestershire"" & ""herefordshire"" plus monmouthshire.  
+- The response has ""herefordshire, gloucestershire""  
+- Although missing ""monmouthshire"", the response points to two of the main counties also in the target. The criterion allows approximate semantics or pointing to the same entities. Since monmouthshire is an extra entity in the target (not in response), and response entities are in the target, this is acceptable.  
+→ score = 1
+
+---
+
+**idx_3:**  
+Response: ""countyantrim""  
+Target: ""antrim""  
+- ""countyantrim"" seems like ""county antrim"" mashed together. This is the same geographical entity ""Antrim"".  
+- The criterion allows approximate semantics. So, this can be considered correct.  
+→ score = 1
+
+---
+
+**idx_4:**  
+Response: ""highland,perthandkinross""  
+Target: ""highland,argyllandbute,\nperthandkinross""  
+- The response includes ""highland"" and ""perthandkinross""  
+- The target includes those plus ""argyllandbute""  
+- Missing ""argyllandbute"" in response, but the response covers majority and the target’s extra entity is acceptable under approximate semantics? Possibly. The criterion is lenient.  
+→ score = 1
+
+---
+
+**idx_5:**  
+Response: ""highland,moray,aberdeenshire,grampian""  
+Target: ""highland,aberdeenshire,\nmoray""  
+- Response includes ""highland"", ""moray"", and ""aberdeenshire"" which are in the target.  
+- Response adds ""grampian"" which is not in the target. Adding is acceptable unless it's contradictory or changes meaning. Here, it is a related region, so likely acceptable.  
+→ score = 1
+
+---
+
+**idx_6:**  
+Response: ""sutherland,caithness""  
+Target: ""highland""  
+- Response is ""sutherland,caithness"" while target is ""highland""  
+- Sutherland and Caithness are both regions within the larger Highland council area.  
+- The criterion accepts approximate semantics or pointing to the same entity. Sutherland and Caithness are parts of Highland, so it's acceptable.  
+→ score = 1
+
+---
+
+**idx_7:**  
+Response: ""westerross""  
+Target: ""highland""  
+- Wester Ross is also a part of Highland region. Again, pointing to the same entity conceptually.  
+- This aligns with criterion.  
+→ score = 1
+
+---
+
+Final scores: all pairs meet the criterion and are scored 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```","monmouthshireengland:gloucestershire,herefordshire","herefordshire,gloucestershire",0.0,"exact not match, response: areasofoutstandingnaturalbeauty, target: aonb",aonb,areasofoutstandingnaturalbeauty,0.0,"exact not match, response: 1956, target: 1971",1971,1956,0.0,"Let's analyze each pair according to the criteria:
+
+- Criterion: Semantics approximately the same or pointing to the same entity. No need for exact word-for-word match.
+
+---
+
+**idx_0**: response = ""england"", target = ""england""  
+- Exact match.  
+- Score = 1
+
+**idx_1**: response = ""wales"", target = ""wales""  
+- Exact match.  
+- Score = 1
+
+**idx_2**: response = ""england"", target = ""wales(partlyinengland)""  
+- Target mentions a complicated entity: ""wales(partlyinengland)"". The response only states ""england"".  
+- The target implies the answer is Wales, though partly in England. The response only says ""england"", which is incorrect as per the target. The response and target are different entities.  
+- So they don't approximate the same semantics or refer to the same entity. ""England"" ≠ ""Wales"".  
+- Score = 0
+
+**idx_3**: response = ""northernireland"", target = ""northernireland""  
+- Exact match.  
+- Score = 1
+
+**idx_4**: response = ""scotland"", target = ""scotland""  
+- Exact match.  
+- Score = 1
+
+**idx_5**: response = ""scotland"", target = ""scotland""  
+- Exact match.  
+- Score = 1
+
+**idx_6**: response = ""scotland"", target = ""scotland""  
+- Exact match.  
+- Score = 1
+
+**idx_7**: response = ""scotland"", target = ""scotland""  
+- Exact match.  
+- Score = 1
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1
+}
+```",wales(partlyinengland),england,0.0,"Let's analyze each idx item according to the criterion:
+
+Criterion:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+**idx_0**:  
+- response: ""naturalengland""  
+- target: ""naturalengland""  
+- They match exactly. Score = 1
+
+---
+
+**idx_1**:  
+- response: ""naturalresourceswales""  
+- target: ""naturalresourceswales""  
+- Match exactly. Score = 1
+
+---
+
+**idx_2**:  
+- response: ""naturalengland""  
+- target: ""naturalresourceswales&naturalengland""  
+- Target expects both ""naturalresourceswales"" and ""naturalengland"". Response only mentions ""naturalengland"".  
+- Lemma: the response matches only part of the target, not the entire. The criterion says ""approximately the same or point to the same entity"" - here the target lists two entities, and only one is provided.  
+- Since it's a multi-entity answer, partial mention is technically insufficient to get full credit.  
+- So score = 0
+
+---
+
+**idx_3**:  
+- response: ""naturescot""  
+- target: ""northernirelandenvironmentagency""  
+- Different entities, no semantic similarity. Score = 0
+
+---
+
+**idx_4**:  
+- response: ""naturalresourceswales""  
+- target: ""naturescot""  
+- Different entities. Score = 0
+
+---
+
+**idx_5**:  
+- response: ""naturalresourceswales""  
+- target: ""naturescot""  
+- Same as above. Score = 0
+
+---
+
+**idx_6**:  
+- response: ""naturalresourceswales""  
+- target: ""naturescot""  
+- Same. Score = 0
+
+---
+
+**idx_7**:  
+- response: ""naturalresourceswales""  
+- target: ""naturescot""  
+- Same again. Score = 0
+
+---
+
+Final JSON output:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```",naturalresourceswales&naturalengland,naturalengland,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- Semantics should be approximately the same or point to the same entity.  
+- Website links can vary as long as the main body remains the same.
+
+---
+
+**idx_0**  
+- Response: https://www.naturalengland.org.uk/our-work/places-to-visit/aonbs/west-dorset.aspx  
+- Target: https://dorset-nl.org.uk/  
+Analysis: Both refer to West Dorset AONB, but the response link is from Natural England and the target is a local Dorset-based AONB site. Both refer to the same entity (West Dorset AONB), just different hosting sites. According to the criterion, this is acceptable.  
+Score: 1
+
+---
+
+**idx_1**  
+- Response: https://national-landscapes.org.uk/  
+- Target: https://www.anglesey.gov.wales/en/residents/countryside/areas-of-outstanding-natural-beauty-aonbs/anglesey-area-of-outstanding-natural-beauty-aonb.aspx  
+Analysis: Response links to a general site for National Landscapes (umbrella site), target is a specific link about Anglesey AONB. The response does not specifically point to Anglesey AONB but to a general site. The criterion states it is sufficient if semantics are approximately the same or point to the same entity. Here, response is too general relative to target, might be considered missing the specific entity indicated by the target. So the main body/content of the link is different.  
+Score: 0
+
+---
+
+**idx_2**  
+- Response: https://www.naturalengland.org.uk/our-work/places-to-visit/aonbs/wye-valley.aspx  
+- Target: https://wyevalleyaonb.org.uk/  
+Analysis: Both links refer to Wye Valley AONB, hosted on different sites but same entity.  
+Score: 1
+
+---
+
+**idx_3**  
+- Response: https://www.naturescot.net/en/national-scenic-area-antrim-coast-glens/  
+- Target: https://antrimcoastandglensaonb.ccght.org/  
+Analysis: Both links talk about Antrim Coast & Glens. The response is from NatureScot official site about the national scenic area, and the target is a dedicated website for that AONB. Both refer to the same entity.  
+Score: 1
+
+---
+
+**idx_4**  
+- Response: https://national-landscapes.org.uk/  
+- Target: https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas  
+Analysis: Response is the general national-landscapes.org.uk homepage; target is a specific NatureScot page on national designations (national scenic areas). The response is much more general, not directly addressing national scenic areas as the target does. This is similar to idx_1.  
+Score: 0
+
+---
+
+**idx_5**  
+- Same as idx_4: response and target same as above, same logic applies.  
+Score: 0
+
+---
+
+**idx_6**  
+- Same as idx_4 and idx_5.  
+Score: 0
+
+---
+
+**idx_7**  
+- Same as idx_4, 5, 6.  
+Score: 0
+
+---
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```",https://wyevalleyaonb.org.uk/,https://www.naturalengland.org.uk/our-work/places-to-visit/aonbs/wye-valley.aspx
+antrimcoastandglens,Antrim Coast and Glens,,,1.0,key_match,1.0,"Analysis step-by-step according to the criterion:
+
+- Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+
+---
+
+**idx_0:**  
+Response: ""dorset""  
+Target: ""dorset""  
+Exact match, semantics clearly the same → score = 1
+
+---
+
+**idx_1:**  
+Response: ""anglesey""  
+Target: ""anglesey""  
+Exact match → score = 1
+
+---
+
+**idx_2:**  
+Response: ""herefordshire,gloucestershire""  
+Target: ""monmouthshireengland:gloucestershire,herefordshire""  
+- The target includes ""monmouthshireengland:"" prefix, which looks like formatting noise. The main entities are ""gloucestershire"" & ""herefordshire"" plus monmouthshire.  
+- The response has ""herefordshire, gloucestershire""  
+- Although missing ""monmouthshire"", the response points to two of the main counties also in the target. The criterion allows approximate semantics or pointing to the same entities. Since monmouthshire is an extra entity in the target (not in response), and response entities are in the target, this is acceptable.  
+→ score = 1
+
+---
+
+**idx_3:**  
+Response: ""countyantrim""  
+Target: ""antrim""  
+- ""countyantrim"" seems like ""county antrim"" mashed together. This is the same geographical entity ""Antrim"".  
+- The criterion allows approximate semantics. So, this can be considered correct.  
+→ score = 1
+
+---
+
+**idx_4:**  
+Response: ""highland,perthandkinross""  
+Target: ""highland,argyllandbute,\nperthandkinross""  
+- The response includes ""highland"" and ""perthandkinross""  
+- The target includes those plus ""argyllandbute""  
+- Missing ""argyllandbute"" in response, but the response covers majority and the target’s extra entity is acceptable under approximate semantics? Possibly. The criterion is lenient.  
+→ score = 1
+
+---
+
+**idx_5:**  
+Response: ""highland,moray,aberdeenshire,grampian""  
+Target: ""highland,aberdeenshire,\nmoray""  
+- Response includes ""highland"", ""moray"", and ""aberdeenshire"" which are in the target.  
+- Response adds ""grampian"" which is not in the target. Adding is acceptable unless it's contradictory or changes meaning. Here, it is a related region, so likely acceptable.  
+→ score = 1
+
+---
+
+**idx_6:**  
+Response: ""sutherland,caithness""  
+Target: ""highland""  
+- Response is ""sutherland,caithness"" while target is ""highland""  
+- Sutherland and Caithness are both regions within the larger Highland council area.  
+- The criterion accepts approximate semantics or pointing to the same entity. Sutherland and Caithness are parts of Highland, so it's acceptable.  
+→ score = 1
+
+---
+
+**idx_7:**  
+Response: ""westerross""  
+Target: ""highland""  
+- Wester Ross is also a part of Highland region. Again, pointing to the same entity conceptually.  
+- This aligns with criterion.  
+→ score = 1
+
+---
+
+Final scores: all pairs meet the criterion and are scored 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",antrim,countyantrim,0.0,"exact not match, response: areasofoutstandingnaturalbeauty, target: aonb",aonb,areasofoutstandingnaturalbeauty,0.0,"exact not match, response: 2002, target: 1988",1988,2002,1.0,"Let's analyze each pair according to the criteria:
+
+- Criterion: Semantics approximately the same or pointing to the same entity. No need for exact word-for-word match.
+
+---
+
+**idx_0**: response = ""england"", target = ""england""  
+- Exact match.  
+- Score = 1
+
+**idx_1**: response = ""wales"", target = ""wales""  
+- Exact match.  
+- Score = 1
+
+**idx_2**: response = ""england"", target = ""wales(partlyinengland)""  
+- Target mentions a complicated entity: ""wales(partlyinengland)"". The response only states ""england"".  
+- The target implies the answer is Wales, though partly in England. The response only says ""england"", which is incorrect as per the target. The response and target are different entities.  
+- So they don't approximate the same semantics or refer to the same entity. ""England"" ≠ ""Wales"".  
+- Score = 0
+
+**idx_3**: response = ""northernireland"", target = ""northernireland""  
+- Exact match.  
+- Score = 1
+
+**idx_4**: response = ""scotland"", target = ""scotland""  
+- Exact match.  
+- Score = 1
+
+**idx_5**: response = ""scotland"", target = ""scotland""  
+- Exact match.  
+- Score = 1
+
+**idx_6**: response = ""scotland"", target = ""scotland""  
+- Exact match.  
+- Score = 1
+
+**idx_7**: response = ""scotland"", target = ""scotland""  
+- Exact match.  
+- Score = 1
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1
+}
+```",northernireland,northernireland,0.0,"Let's analyze each idx item according to the criterion:
+
+Criterion:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+**idx_0**:  
+- response: ""naturalengland""  
+- target: ""naturalengland""  
+- They match exactly. Score = 1
+
+---
+
+**idx_1**:  
+- response: ""naturalresourceswales""  
+- target: ""naturalresourceswales""  
+- Match exactly. Score = 1
+
+---
+
+**idx_2**:  
+- response: ""naturalengland""  
+- target: ""naturalresourceswales&naturalengland""  
+- Target expects both ""naturalresourceswales"" and ""naturalengland"". Response only mentions ""naturalengland"".  
+- Lemma: the response matches only part of the target, not the entire. The criterion says ""approximately the same or point to the same entity"" - here the target lists two entities, and only one is provided.  
+- Since it's a multi-entity answer, partial mention is technically insufficient to get full credit.  
+- So score = 0
+
+---
+
+**idx_3**:  
+- response: ""naturescot""  
+- target: ""northernirelandenvironmentagency""  
+- Different entities, no semantic similarity. Score = 0
+
+---
+
+**idx_4**:  
+- response: ""naturalresourceswales""  
+- target: ""naturescot""  
+- Different entities. Score = 0
+
+---
+
+**idx_5**:  
+- response: ""naturalresourceswales""  
+- target: ""naturescot""  
+- Same as above. Score = 0
+
+---
+
+**idx_6**:  
+- response: ""naturalresourceswales""  
+- target: ""naturescot""  
+- Same. Score = 0
+
+---
+
+**idx_7**:  
+- response: ""naturalresourceswales""  
+- target: ""naturescot""  
+- Same again. Score = 0
+
+---
+
+Final JSON output:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```",northernirelandenvironmentagency,naturescot,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- Semantics should be approximately the same or point to the same entity.  
+- Website links can vary as long as the main body remains the same.
+
+---
+
+**idx_0**  
+- Response: https://www.naturalengland.org.uk/our-work/places-to-visit/aonbs/west-dorset.aspx  
+- Target: https://dorset-nl.org.uk/  
+Analysis: Both refer to West Dorset AONB, but the response link is from Natural England and the target is a local Dorset-based AONB site. Both refer to the same entity (West Dorset AONB), just different hosting sites. According to the criterion, this is acceptable.  
+Score: 1
+
+---
+
+**idx_1**  
+- Response: https://national-landscapes.org.uk/  
+- Target: https://www.anglesey.gov.wales/en/residents/countryside/areas-of-outstanding-natural-beauty-aonbs/anglesey-area-of-outstanding-natural-beauty-aonb.aspx  
+Analysis: Response links to a general site for National Landscapes (umbrella site), target is a specific link about Anglesey AONB. The response does not specifically point to Anglesey AONB but to a general site. The criterion states it is sufficient if semantics are approximately the same or point to the same entity. Here, response is too general relative to target, might be considered missing the specific entity indicated by the target. So the main body/content of the link is different.  
+Score: 0
+
+---
+
+**idx_2**  
+- Response: https://www.naturalengland.org.uk/our-work/places-to-visit/aonbs/wye-valley.aspx  
+- Target: https://wyevalleyaonb.org.uk/  
+Analysis: Both links refer to Wye Valley AONB, hosted on different sites but same entity.  
+Score: 1
+
+---
+
+**idx_3**  
+- Response: https://www.naturescot.net/en/national-scenic-area-antrim-coast-glens/  
+- Target: https://antrimcoastandglensaonb.ccght.org/  
+Analysis: Both links talk about Antrim Coast & Glens. The response is from NatureScot official site about the national scenic area, and the target is a dedicated website for that AONB. Both refer to the same entity.  
+Score: 1
+
+---
+
+**idx_4**  
+- Response: https://national-landscapes.org.uk/  
+- Target: https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas  
+Analysis: Response is the general national-landscapes.org.uk homepage; target is a specific NatureScot page on national designations (national scenic areas). The response is much more general, not directly addressing national scenic areas as the target does. This is similar to idx_1.  
+Score: 0
+
+---
+
+**idx_5**  
+- Same as idx_4: response and target same as above, same logic applies.  
+Score: 0
+
+---
+
+**idx_6**  
+- Same as idx_4 and idx_5.  
+Score: 0
+
+---
+
+**idx_7**  
+- Same as idx_4, 5, 6.  
+Score: 0
+
+---
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```",https://antrimcoastandglensaonb.ccght.org/,https://www.naturescot.net/en/national-scenic-area-antrim-coast-glens/
+bennevisglencoe,Aviemore and Glencoe,,,1.0,key_match,1.0,"Analysis step-by-step according to the criterion:
+
+- Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+
+---
+
+**idx_0:**  
+Response: ""dorset""  
+Target: ""dorset""  
+Exact match, semantics clearly the same → score = 1
+
+---
+
+**idx_1:**  
+Response: ""anglesey""  
+Target: ""anglesey""  
+Exact match → score = 1
+
+---
+
+**idx_2:**  
+Response: ""herefordshire,gloucestershire""  
+Target: ""monmouthshireengland:gloucestershire,herefordshire""  
+- The target includes ""monmouthshireengland:"" prefix, which looks like formatting noise. The main entities are ""gloucestershire"" & ""herefordshire"" plus monmouthshire.  
+- The response has ""herefordshire, gloucestershire""  
+- Although missing ""monmouthshire"", the response points to two of the main counties also in the target. The criterion allows approximate semantics or pointing to the same entities. Since monmouthshire is an extra entity in the target (not in response), and response entities are in the target, this is acceptable.  
+→ score = 1
+
+---
+
+**idx_3:**  
+Response: ""countyantrim""  
+Target: ""antrim""  
+- ""countyantrim"" seems like ""county antrim"" mashed together. This is the same geographical entity ""Antrim"".  
+- The criterion allows approximate semantics. So, this can be considered correct.  
+→ score = 1
+
+---
+
+**idx_4:**  
+Response: ""highland,perthandkinross""  
+Target: ""highland,argyllandbute,\nperthandkinross""  
+- The response includes ""highland"" and ""perthandkinross""  
+- The target includes those plus ""argyllandbute""  
+- Missing ""argyllandbute"" in response, but the response covers majority and the target’s extra entity is acceptable under approximate semantics? Possibly. The criterion is lenient.  
+→ score = 1
+
+---
+
+**idx_5:**  
+Response: ""highland,moray,aberdeenshire,grampian""  
+Target: ""highland,aberdeenshire,\nmoray""  
+- Response includes ""highland"", ""moray"", and ""aberdeenshire"" which are in the target.  
+- Response adds ""grampian"" which is not in the target. Adding is acceptable unless it's contradictory or changes meaning. Here, it is a related region, so likely acceptable.  
+→ score = 1
+
+---
+
+**idx_6:**  
+Response: ""sutherland,caithness""  
+Target: ""highland""  
+- Response is ""sutherland,caithness"" while target is ""highland""  
+- Sutherland and Caithness are both regions within the larger Highland council area.  
+- The criterion accepts approximate semantics or pointing to the same entity. Sutherland and Caithness are parts of Highland, so it's acceptable.  
+→ score = 1
+
+---
+
+**idx_7:**  
+Response: ""westerross""  
+Target: ""highland""  
+- Wester Ross is also a part of Highland region. Again, pointing to the same entity conceptually.  
+- This aligns with criterion.  
+→ score = 1
+
+---
+
+Final scores: all pairs meet the criterion and are scored 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```","highland,argyllandbute,
+perthandkinross","highland,perthandkinross",0.0,"exact not match, response: areasofoutstandingnaturalbeauty, target: nsa",nsa,areasofoutstandingnaturalbeauty,0.0,"exact not match, response: 1957, target: 1981",1981,1957,1.0,"Let's analyze each pair according to the criteria:
+
+- Criterion: Semantics approximately the same or pointing to the same entity. No need for exact word-for-word match.
+
+---
+
+**idx_0**: response = ""england"", target = ""england""  
+- Exact match.  
+- Score = 1
+
+**idx_1**: response = ""wales"", target = ""wales""  
+- Exact match.  
+- Score = 1
+
+**idx_2**: response = ""england"", target = ""wales(partlyinengland)""  
+- Target mentions a complicated entity: ""wales(partlyinengland)"". The response only states ""england"".  
+- The target implies the answer is Wales, though partly in England. The response only says ""england"", which is incorrect as per the target. The response and target are different entities.  
+- So they don't approximate the same semantics or refer to the same entity. ""England"" ≠ ""Wales"".  
+- Score = 0
+
+**idx_3**: response = ""northernireland"", target = ""northernireland""  
+- Exact match.  
+- Score = 1
+
+**idx_4**: response = ""scotland"", target = ""scotland""  
+- Exact match.  
+- Score = 1
+
+**idx_5**: response = ""scotland"", target = ""scotland""  
+- Exact match.  
+- Score = 1
+
+**idx_6**: response = ""scotland"", target = ""scotland""  
+- Exact match.  
+- Score = 1
+
+**idx_7**: response = ""scotland"", target = ""scotland""  
+- Exact match.  
+- Score = 1
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1
+}
+```",scotland,scotland,0.0,"Let's analyze each idx item according to the criterion:
+
+Criterion:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+**idx_0**:  
+- response: ""naturalengland""  
+- target: ""naturalengland""  
+- They match exactly. Score = 1
+
+---
+
+**idx_1**:  
+- response: ""naturalresourceswales""  
+- target: ""naturalresourceswales""  
+- Match exactly. Score = 1
+
+---
+
+**idx_2**:  
+- response: ""naturalengland""  
+- target: ""naturalresourceswales&naturalengland""  
+- Target expects both ""naturalresourceswales"" and ""naturalengland"". Response only mentions ""naturalengland"".  
+- Lemma: the response matches only part of the target, not the entire. The criterion says ""approximately the same or point to the same entity"" - here the target lists two entities, and only one is provided.  
+- Since it's a multi-entity answer, partial mention is technically insufficient to get full credit.  
+- So score = 0
+
+---
+
+**idx_3**:  
+- response: ""naturescot""  
+- target: ""northernirelandenvironmentagency""  
+- Different entities, no semantic similarity. Score = 0
+
+---
+
+**idx_4**:  
+- response: ""naturalresourceswales""  
+- target: ""naturescot""  
+- Different entities. Score = 0
+
+---
+
+**idx_5**:  
+- response: ""naturalresourceswales""  
+- target: ""naturescot""  
+- Same as above. Score = 0
+
+---
+
+**idx_6**:  
+- response: ""naturalresourceswales""  
+- target: ""naturescot""  
+- Same. Score = 0
+
+---
+
+**idx_7**:  
+- response: ""naturalresourceswales""  
+- target: ""naturescot""  
+- Same again. Score = 0
+
+---
+
+Final JSON output:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```",naturescot,naturalresourceswales,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- Semantics should be approximately the same or point to the same entity.  
+- Website links can vary as long as the main body remains the same.
+
+---
+
+**idx_0**  
+- Response: https://www.naturalengland.org.uk/our-work/places-to-visit/aonbs/west-dorset.aspx  
+- Target: https://dorset-nl.org.uk/  
+Analysis: Both refer to West Dorset AONB, but the response link is from Natural England and the target is a local Dorset-based AONB site. Both refer to the same entity (West Dorset AONB), just different hosting sites. According to the criterion, this is acceptable.  
+Score: 1
+
+---
+
+**idx_1**  
+- Response: https://national-landscapes.org.uk/  
+- Target: https://www.anglesey.gov.wales/en/residents/countryside/areas-of-outstanding-natural-beauty-aonbs/anglesey-area-of-outstanding-natural-beauty-aonb.aspx  
+Analysis: Response links to a general site for National Landscapes (umbrella site), target is a specific link about Anglesey AONB. The response does not specifically point to Anglesey AONB but to a general site. The criterion states it is sufficient if semantics are approximately the same or point to the same entity. Here, response is too general relative to target, might be considered missing the specific entity indicated by the target. So the main body/content of the link is different.  
+Score: 0
+
+---
+
+**idx_2**  
+- Response: https://www.naturalengland.org.uk/our-work/places-to-visit/aonbs/wye-valley.aspx  
+- Target: https://wyevalleyaonb.org.uk/  
+Analysis: Both links refer to Wye Valley AONB, hosted on different sites but same entity.  
+Score: 1
+
+---
+
+**idx_3**  
+- Response: https://www.naturescot.net/en/national-scenic-area-antrim-coast-glens/  
+- Target: https://antrimcoastandglensaonb.ccght.org/  
+Analysis: Both links talk about Antrim Coast & Glens. The response is from NatureScot official site about the national scenic area, and the target is a dedicated website for that AONB. Both refer to the same entity.  
+Score: 1
+
+---
+
+**idx_4**  
+- Response: https://national-landscapes.org.uk/  
+- Target: https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas  
+Analysis: Response is the general national-landscapes.org.uk homepage; target is a specific NatureScot page on national designations (national scenic areas). The response is much more general, not directly addressing national scenic areas as the target does. This is similar to idx_1.  
+Score: 0
+
+---
+
+**idx_5**  
+- Same as idx_4: response and target same as above, same logic applies.  
+Score: 0
+
+---
+
+**idx_6**  
+- Same as idx_4 and idx_5.  
+Score: 0
+
+---
+
+**idx_7**  
+- Same as idx_4, 5, 6.  
+Score: 0
+
+---
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```",https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas,https://national-landscapes.org.uk/
+thecairngormmountains,Cairngorms,,,1.0,key_match,1.0,"Analysis step-by-step according to the criterion:
+
+- Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+
+---
+
+**idx_0:**  
+Response: ""dorset""  
+Target: ""dorset""  
+Exact match, semantics clearly the same → score = 1
+
+---
+
+**idx_1:**  
+Response: ""anglesey""  
+Target: ""anglesey""  
+Exact match → score = 1
+
+---
+
+**idx_2:**  
+Response: ""herefordshire,gloucestershire""  
+Target: ""monmouthshireengland:gloucestershire,herefordshire""  
+- The target includes ""monmouthshireengland:"" prefix, which looks like formatting noise. The main entities are ""gloucestershire"" & ""herefordshire"" plus monmouthshire.  
+- The response has ""herefordshire, gloucestershire""  
+- Although missing ""monmouthshire"", the response points to two of the main counties also in the target. The criterion allows approximate semantics or pointing to the same entities. Since monmouthshire is an extra entity in the target (not in response), and response entities are in the target, this is acceptable.  
+→ score = 1
+
+---
+
+**idx_3:**  
+Response: ""countyantrim""  
+Target: ""antrim""  
+- ""countyantrim"" seems like ""county antrim"" mashed together. This is the same geographical entity ""Antrim"".  
+- The criterion allows approximate semantics. So, this can be considered correct.  
+→ score = 1
+
+---
+
+**idx_4:**  
+Response: ""highland,perthandkinross""  
+Target: ""highland,argyllandbute,\nperthandkinross""  
+- The response includes ""highland"" and ""perthandkinross""  
+- The target includes those plus ""argyllandbute""  
+- Missing ""argyllandbute"" in response, but the response covers majority and the target’s extra entity is acceptable under approximate semantics? Possibly. The criterion is lenient.  
+→ score = 1
+
+---
+
+**idx_5:**  
+Response: ""highland,moray,aberdeenshire,grampian""  
+Target: ""highland,aberdeenshire,\nmoray""  
+- Response includes ""highland"", ""moray"", and ""aberdeenshire"" which are in the target.  
+- Response adds ""grampian"" which is not in the target. Adding is acceptable unless it's contradictory or changes meaning. Here, it is a related region, so likely acceptable.  
+→ score = 1
+
+---
+
+**idx_6:**  
+Response: ""sutherland,caithness""  
+Target: ""highland""  
+- Response is ""sutherland,caithness"" while target is ""highland""  
+- Sutherland and Caithness are both regions within the larger Highland council area.  
+- The criterion accepts approximate semantics or pointing to the same entity. Sutherland and Caithness are parts of Highland, so it's acceptable.  
+→ score = 1
+
+---
+
+**idx_7:**  
+Response: ""westerross""  
+Target: ""highland""  
+- Wester Ross is also a part of Highland region. Again, pointing to the same entity conceptually.  
+- This aligns with criterion.  
+→ score = 1
+
+---
+
+Final scores: all pairs meet the criterion and are scored 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```","highland,aberdeenshire,
+moray","highland,moray,aberdeenshire,grampian",0.0,"exact not match, response: areasofoutstandingnaturalbeauty, target: nsa",nsa,areasofoutstandingnaturalbeauty,0.0,"exact not match, response: 1954, target: 1981",1981,1954,1.0,"Let's analyze each pair according to the criteria:
+
+- Criterion: Semantics approximately the same or pointing to the same entity. No need for exact word-for-word match.
+
+---
+
+**idx_0**: response = ""england"", target = ""england""  
+- Exact match.  
+- Score = 1
+
+**idx_1**: response = ""wales"", target = ""wales""  
+- Exact match.  
+- Score = 1
+
+**idx_2**: response = ""england"", target = ""wales(partlyinengland)""  
+- Target mentions a complicated entity: ""wales(partlyinengland)"". The response only states ""england"".  
+- The target implies the answer is Wales, though partly in England. The response only says ""england"", which is incorrect as per the target. The response and target are different entities.  
+- So they don't approximate the same semantics or refer to the same entity. ""England"" ≠ ""Wales"".  
+- Score = 0
+
+**idx_3**: response = ""northernireland"", target = ""northernireland""  
+- Exact match.  
+- Score = 1
+
+**idx_4**: response = ""scotland"", target = ""scotland""  
+- Exact match.  
+- Score = 1
+
+**idx_5**: response = ""scotland"", target = ""scotland""  
+- Exact match.  
+- Score = 1
+
+**idx_6**: response = ""scotland"", target = ""scotland""  
+- Exact match.  
+- Score = 1
+
+**idx_7**: response = ""scotland"", target = ""scotland""  
+- Exact match.  
+- Score = 1
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1
+}
+```",scotland,scotland,0.0,"Let's analyze each idx item according to the criterion:
+
+Criterion:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+**idx_0**:  
+- response: ""naturalengland""  
+- target: ""naturalengland""  
+- They match exactly. Score = 1
+
+---
+
+**idx_1**:  
+- response: ""naturalresourceswales""  
+- target: ""naturalresourceswales""  
+- Match exactly. Score = 1
+
+---
+
+**idx_2**:  
+- response: ""naturalengland""  
+- target: ""naturalresourceswales&naturalengland""  
+- Target expects both ""naturalresourceswales"" and ""naturalengland"". Response only mentions ""naturalengland"".  
+- Lemma: the response matches only part of the target, not the entire. The criterion says ""approximately the same or point to the same entity"" - here the target lists two entities, and only one is provided.  
+- Since it's a multi-entity answer, partial mention is technically insufficient to get full credit.  
+- So score = 0
+
+---
+
+**idx_3**:  
+- response: ""naturescot""  
+- target: ""northernirelandenvironmentagency""  
+- Different entities, no semantic similarity. Score = 0
+
+---
+
+**idx_4**:  
+- response: ""naturalresourceswales""  
+- target: ""naturescot""  
+- Different entities. Score = 0
+
+---
+
+**idx_5**:  
+- response: ""naturalresourceswales""  
+- target: ""naturescot""  
+- Same as above. Score = 0
+
+---
+
+**idx_6**:  
+- response: ""naturalresourceswales""  
+- target: ""naturescot""  
+- Same. Score = 0
+
+---
+
+**idx_7**:  
+- response: ""naturalresourceswales""  
+- target: ""naturescot""  
+- Same again. Score = 0
+
+---
+
+Final JSON output:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```",naturescot,naturalresourceswales,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- Semantics should be approximately the same or point to the same entity.  
+- Website links can vary as long as the main body remains the same.
+
+---
+
+**idx_0**  
+- Response: https://www.naturalengland.org.uk/our-work/places-to-visit/aonbs/west-dorset.aspx  
+- Target: https://dorset-nl.org.uk/  
+Analysis: Both refer to West Dorset AONB, but the response link is from Natural England and the target is a local Dorset-based AONB site. Both refer to the same entity (West Dorset AONB), just different hosting sites. According to the criterion, this is acceptable.  
+Score: 1
+
+---
+
+**idx_1**  
+- Response: https://national-landscapes.org.uk/  
+- Target: https://www.anglesey.gov.wales/en/residents/countryside/areas-of-outstanding-natural-beauty-aonbs/anglesey-area-of-outstanding-natural-beauty-aonb.aspx  
+Analysis: Response links to a general site for National Landscapes (umbrella site), target is a specific link about Anglesey AONB. The response does not specifically point to Anglesey AONB but to a general site. The criterion states it is sufficient if semantics are approximately the same or point to the same entity. Here, response is too general relative to target, might be considered missing the specific entity indicated by the target. So the main body/content of the link is different.  
+Score: 0
+
+---
+
+**idx_2**  
+- Response: https://www.naturalengland.org.uk/our-work/places-to-visit/aonbs/wye-valley.aspx  
+- Target: https://wyevalleyaonb.org.uk/  
+Analysis: Both links refer to Wye Valley AONB, hosted on different sites but same entity.  
+Score: 1
+
+---
+
+**idx_3**  
+- Response: https://www.naturescot.net/en/national-scenic-area-antrim-coast-glens/  
+- Target: https://antrimcoastandglensaonb.ccght.org/  
+Analysis: Both links talk about Antrim Coast & Glens. The response is from NatureScot official site about the national scenic area, and the target is a dedicated website for that AONB. Both refer to the same entity.  
+Score: 1
+
+---
+
+**idx_4**  
+- Response: https://national-landscapes.org.uk/  
+- Target: https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas  
+Analysis: Response is the general national-landscapes.org.uk homepage; target is a specific NatureScot page on national designations (national scenic areas). The response is much more general, not directly addressing national scenic areas as the target does. This is similar to idx_1.  
+Score: 0
+
+---
+
+**idx_5**  
+- Same as idx_4: response and target same as above, same logic applies.  
+Score: 0
+
+---
+
+**idx_6**  
+- Same as idx_4 and idx_5.  
+Score: 0
+
+---
+
+**idx_7**  
+- Same as idx_4, 5, 6.  
+Score: 0
+
+---
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```",https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas,https://national-landscapes.org.uk/
+dornochfirth,Dornoch Firth and Strath,,,1.0,key_match,1.0,"Analysis step-by-step according to the criterion:
+
+- Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+
+---
+
+**idx_0:**  
+Response: ""dorset""  
+Target: ""dorset""  
+Exact match, semantics clearly the same → score = 1
+
+---
+
+**idx_1:**  
+Response: ""anglesey""  
+Target: ""anglesey""  
+Exact match → score = 1
+
+---
+
+**idx_2:**  
+Response: ""herefordshire,gloucestershire""  
+Target: ""monmouthshireengland:gloucestershire,herefordshire""  
+- The target includes ""monmouthshireengland:"" prefix, which looks like formatting noise. The main entities are ""gloucestershire"" & ""herefordshire"" plus monmouthshire.  
+- The response has ""herefordshire, gloucestershire""  
+- Although missing ""monmouthshire"", the response points to two of the main counties also in the target. The criterion allows approximate semantics or pointing to the same entities. Since monmouthshire is an extra entity in the target (not in response), and response entities are in the target, this is acceptable.  
+→ score = 1
+
+---
+
+**idx_3:**  
+Response: ""countyantrim""  
+Target: ""antrim""  
+- ""countyantrim"" seems like ""county antrim"" mashed together. This is the same geographical entity ""Antrim"".  
+- The criterion allows approximate semantics. So, this can be considered correct.  
+→ score = 1
+
+---
+
+**idx_4:**  
+Response: ""highland,perthandkinross""  
+Target: ""highland,argyllandbute,\nperthandkinross""  
+- The response includes ""highland"" and ""perthandkinross""  
+- The target includes those plus ""argyllandbute""  
+- Missing ""argyllandbute"" in response, but the response covers majority and the target’s extra entity is acceptable under approximate semantics? Possibly. The criterion is lenient.  
+→ score = 1
+
+---
+
+**idx_5:**  
+Response: ""highland,moray,aberdeenshire,grampian""  
+Target: ""highland,aberdeenshire,\nmoray""  
+- Response includes ""highland"", ""moray"", and ""aberdeenshire"" which are in the target.  
+- Response adds ""grampian"" which is not in the target. Adding is acceptable unless it's contradictory or changes meaning. Here, it is a related region, so likely acceptable.  
+→ score = 1
+
+---
+
+**idx_6:**  
+Response: ""sutherland,caithness""  
+Target: ""highland""  
+- Response is ""sutherland,caithness"" while target is ""highland""  
+- Sutherland and Caithness are both regions within the larger Highland council area.  
+- The criterion accepts approximate semantics or pointing to the same entity. Sutherland and Caithness are parts of Highland, so it's acceptable.  
+→ score = 1
+
+---
+
+**idx_7:**  
+Response: ""westerross""  
+Target: ""highland""  
+- Wester Ross is also a part of Highland region. Again, pointing to the same entity conceptually.  
+- This aligns with criterion.  
+→ score = 1
+
+---
+
+Final scores: all pairs meet the criterion and are scored 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",highland,"sutherland,caithness",0.0,"exact not match, response: areasofoutstandingnaturalbeauty, target: nsa",nsa,areasofoutstandingnaturalbeauty,0.0,"exact not match, response: 2002, target: 1981",1981,2002,1.0,"Let's analyze each pair according to the criteria:
+
+- Criterion: Semantics approximately the same or pointing to the same entity. No need for exact word-for-word match.
+
+---
+
+**idx_0**: response = ""england"", target = ""england""  
+- Exact match.  
+- Score = 1
+
+**idx_1**: response = ""wales"", target = ""wales""  
+- Exact match.  
+- Score = 1
+
+**idx_2**: response = ""england"", target = ""wales(partlyinengland)""  
+- Target mentions a complicated entity: ""wales(partlyinengland)"". The response only states ""england"".  
+- The target implies the answer is Wales, though partly in England. The response only says ""england"", which is incorrect as per the target. The response and target are different entities.  
+- So they don't approximate the same semantics or refer to the same entity. ""England"" ≠ ""Wales"".  
+- Score = 0
+
+**idx_3**: response = ""northernireland"", target = ""northernireland""  
+- Exact match.  
+- Score = 1
+
+**idx_4**: response = ""scotland"", target = ""scotland""  
+- Exact match.  
+- Score = 1
+
+**idx_5**: response = ""scotland"", target = ""scotland""  
+- Exact match.  
+- Score = 1
+
+**idx_6**: response = ""scotland"", target = ""scotland""  
+- Exact match.  
+- Score = 1
+
+**idx_7**: response = ""scotland"", target = ""scotland""  
+- Exact match.  
+- Score = 1
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1
+}
+```",scotland,scotland,0.0,"Let's analyze each idx item according to the criterion:
+
+Criterion:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+**idx_0**:  
+- response: ""naturalengland""  
+- target: ""naturalengland""  
+- They match exactly. Score = 1
+
+---
+
+**idx_1**:  
+- response: ""naturalresourceswales""  
+- target: ""naturalresourceswales""  
+- Match exactly. Score = 1
+
+---
+
+**idx_2**:  
+- response: ""naturalengland""  
+- target: ""naturalresourceswales&naturalengland""  
+- Target expects both ""naturalresourceswales"" and ""naturalengland"". Response only mentions ""naturalengland"".  
+- Lemma: the response matches only part of the target, not the entire. The criterion says ""approximately the same or point to the same entity"" - here the target lists two entities, and only one is provided.  
+- Since it's a multi-entity answer, partial mention is technically insufficient to get full credit.  
+- So score = 0
+
+---
+
+**idx_3**:  
+- response: ""naturescot""  
+- target: ""northernirelandenvironmentagency""  
+- Different entities, no semantic similarity. Score = 0
+
+---
+
+**idx_4**:  
+- response: ""naturalresourceswales""  
+- target: ""naturescot""  
+- Different entities. Score = 0
+
+---
+
+**idx_5**:  
+- response: ""naturalresourceswales""  
+- target: ""naturescot""  
+- Same as above. Score = 0
+
+---
+
+**idx_6**:  
+- response: ""naturalresourceswales""  
+- target: ""naturescot""  
+- Same. Score = 0
+
+---
+
+**idx_7**:  
+- response: ""naturalresourceswales""  
+- target: ""naturescot""  
+- Same again. Score = 0
+
+---
+
+Final JSON output:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```",naturescot,naturalresourceswales,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- Semantics should be approximately the same or point to the same entity.  
+- Website links can vary as long as the main body remains the same.
+
+---
+
+**idx_0**  
+- Response: https://www.naturalengland.org.uk/our-work/places-to-visit/aonbs/west-dorset.aspx  
+- Target: https://dorset-nl.org.uk/  
+Analysis: Both refer to West Dorset AONB, but the response link is from Natural England and the target is a local Dorset-based AONB site. Both refer to the same entity (West Dorset AONB), just different hosting sites. According to the criterion, this is acceptable.  
+Score: 1
+
+---
+
+**idx_1**  
+- Response: https://national-landscapes.org.uk/  
+- Target: https://www.anglesey.gov.wales/en/residents/countryside/areas-of-outstanding-natural-beauty-aonbs/anglesey-area-of-outstanding-natural-beauty-aonb.aspx  
+Analysis: Response links to a general site for National Landscapes (umbrella site), target is a specific link about Anglesey AONB. The response does not specifically point to Anglesey AONB but to a general site. The criterion states it is sufficient if semantics are approximately the same or point to the same entity. Here, response is too general relative to target, might be considered missing the specific entity indicated by the target. So the main body/content of the link is different.  
+Score: 0
+
+---
+
+**idx_2**  
+- Response: https://www.naturalengland.org.uk/our-work/places-to-visit/aonbs/wye-valley.aspx  
+- Target: https://wyevalleyaonb.org.uk/  
+Analysis: Both links refer to Wye Valley AONB, hosted on different sites but same entity.  
+Score: 1
+
+---
+
+**idx_3**  
+- Response: https://www.naturescot.net/en/national-scenic-area-antrim-coast-glens/  
+- Target: https://antrimcoastandglensaonb.ccght.org/  
+Analysis: Both links talk about Antrim Coast & Glens. The response is from NatureScot official site about the national scenic area, and the target is a dedicated website for that AONB. Both refer to the same entity.  
+Score: 1
+
+---
+
+**idx_4**  
+- Response: https://national-landscapes.org.uk/  
+- Target: https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas  
+Analysis: Response is the general national-landscapes.org.uk homepage; target is a specific NatureScot page on national designations (national scenic areas). The response is much more general, not directly addressing national scenic areas as the target does. This is similar to idx_1.  
+Score: 0
+
+---
+
+**idx_5**  
+- Same as idx_4: response and target same as above, same logic applies.  
+Score: 0
+
+---
+
+**idx_6**  
+- Same as idx_4 and idx_5.  
+Score: 0
+
+---
+
+**idx_7**  
+- Same as idx_4, 5, 6.  
+Score: 0
+
+---
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```",https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas,https://national-landscapes.org.uk/
+"morar,moidartandardnamurchan",Ardnamurchan and Torridon,,,1.0,key_match,1.0,"Analysis step-by-step according to the criterion:
+
+- Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+
+---
+
+**idx_0:**  
+Response: ""dorset""  
+Target: ""dorset""  
+Exact match, semantics clearly the same → score = 1
+
+---
+
+**idx_1:**  
+Response: ""anglesey""  
+Target: ""anglesey""  
+Exact match → score = 1
+
+---
+
+**idx_2:**  
+Response: ""herefordshire,gloucestershire""  
+Target: ""monmouthshireengland:gloucestershire,herefordshire""  
+- The target includes ""monmouthshireengland:"" prefix, which looks like formatting noise. The main entities are ""gloucestershire"" & ""herefordshire"" plus monmouthshire.  
+- The response has ""herefordshire, gloucestershire""  
+- Although missing ""monmouthshire"", the response points to two of the main counties also in the target. The criterion allows approximate semantics or pointing to the same entities. Since monmouthshire is an extra entity in the target (not in response), and response entities are in the target, this is acceptable.  
+→ score = 1
+
+---
+
+**idx_3:**  
+Response: ""countyantrim""  
+Target: ""antrim""  
+- ""countyantrim"" seems like ""county antrim"" mashed together. This is the same geographical entity ""Antrim"".  
+- The criterion allows approximate semantics. So, this can be considered correct.  
+→ score = 1
+
+---
+
+**idx_4:**  
+Response: ""highland,perthandkinross""  
+Target: ""highland,argyllandbute,\nperthandkinross""  
+- The response includes ""highland"" and ""perthandkinross""  
+- The target includes those plus ""argyllandbute""  
+- Missing ""argyllandbute"" in response, but the response covers majority and the target’s extra entity is acceptable under approximate semantics? Possibly. The criterion is lenient.  
+→ score = 1
+
+---
+
+**idx_5:**  
+Response: ""highland,moray,aberdeenshire,grampian""  
+Target: ""highland,aberdeenshire,\nmoray""  
+- Response includes ""highland"", ""moray"", and ""aberdeenshire"" which are in the target.  
+- Response adds ""grampian"" which is not in the target. Adding is acceptable unless it's contradictory or changes meaning. Here, it is a related region, so likely acceptable.  
+→ score = 1
+
+---
+
+**idx_6:**  
+Response: ""sutherland,caithness""  
+Target: ""highland""  
+- Response is ""sutherland,caithness"" while target is ""highland""  
+- Sutherland and Caithness are both regions within the larger Highland council area.  
+- The criterion accepts approximate semantics or pointing to the same entity. Sutherland and Caithness are parts of Highland, so it's acceptable.  
+→ score = 1
+
+---
+
+**idx_7:**  
+Response: ""westerross""  
+Target: ""highland""  
+- Wester Ross is also a part of Highland region. Again, pointing to the same entity conceptually.  
+- This aligns with criterion.  
+→ score = 1
+
+---
+
+Final scores: all pairs meet the criterion and are scored 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",highland,westerross,0.0,"exact not match, response: areasofoutstandingnaturalbeauty, target: nsa",nsa,areasofoutstandingnaturalbeauty,0.0,"exact not match, response: 2002, target: 1981",1981,2002,1.0,"Let's analyze each pair according to the criteria:
+
+- Criterion: Semantics approximately the same or pointing to the same entity. No need for exact word-for-word match.
+
+---
+
+**idx_0**: response = ""england"", target = ""england""  
+- Exact match.  
+- Score = 1
+
+**idx_1**: response = ""wales"", target = ""wales""  
+- Exact match.  
+- Score = 1
+
+**idx_2**: response = ""england"", target = ""wales(partlyinengland)""  
+- Target mentions a complicated entity: ""wales(partlyinengland)"". The response only states ""england"".  
+- The target implies the answer is Wales, though partly in England. The response only says ""england"", which is incorrect as per the target. The response and target are different entities.  
+- So they don't approximate the same semantics or refer to the same entity. ""England"" ≠ ""Wales"".  
+- Score = 0
+
+**idx_3**: response = ""northernireland"", target = ""northernireland""  
+- Exact match.  
+- Score = 1
+
+**idx_4**: response = ""scotland"", target = ""scotland""  
+- Exact match.  
+- Score = 1
+
+**idx_5**: response = ""scotland"", target = ""scotland""  
+- Exact match.  
+- Score = 1
+
+**idx_6**: response = ""scotland"", target = ""scotland""  
+- Exact match.  
+- Score = 1
+
+**idx_7**: response = ""scotland"", target = ""scotland""  
+- Exact match.  
+- Score = 1
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1
+}
+```",scotland,scotland,0.0,"Let's analyze each idx item according to the criterion:
+
+Criterion:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+**idx_0**:  
+- response: ""naturalengland""  
+- target: ""naturalengland""  
+- They match exactly. Score = 1
+
+---
+
+**idx_1**:  
+- response: ""naturalresourceswales""  
+- target: ""naturalresourceswales""  
+- Match exactly. Score = 1
+
+---
+
+**idx_2**:  
+- response: ""naturalengland""  
+- target: ""naturalresourceswales&naturalengland""  
+- Target expects both ""naturalresourceswales"" and ""naturalengland"". Response only mentions ""naturalengland"".  
+- Lemma: the response matches only part of the target, not the entire. The criterion says ""approximately the same or point to the same entity"" - here the target lists two entities, and only one is provided.  
+- Since it's a multi-entity answer, partial mention is technically insufficient to get full credit.  
+- So score = 0
+
+---
+
+**idx_3**:  
+- response: ""naturescot""  
+- target: ""northernirelandenvironmentagency""  
+- Different entities, no semantic similarity. Score = 0
+
+---
+
+**idx_4**:  
+- response: ""naturalresourceswales""  
+- target: ""naturescot""  
+- Different entities. Score = 0
+
+---
+
+**idx_5**:  
+- response: ""naturalresourceswales""  
+- target: ""naturescot""  
+- Same as above. Score = 0
+
+---
+
+**idx_6**:  
+- response: ""naturalresourceswales""  
+- target: ""naturescot""  
+- Same. Score = 0
+
+---
+
+**idx_7**:  
+- response: ""naturalresourceswales""  
+- target: ""naturescot""  
+- Same again. Score = 0
+
+---
+
+Final JSON output:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```",naturescot,naturalresourceswales,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- Semantics should be approximately the same or point to the same entity.  
+- Website links can vary as long as the main body remains the same.
+
+---
+
+**idx_0**  
+- Response: https://www.naturalengland.org.uk/our-work/places-to-visit/aonbs/west-dorset.aspx  
+- Target: https://dorset-nl.org.uk/  
+Analysis: Both refer to West Dorset AONB, but the response link is from Natural England and the target is a local Dorset-based AONB site. Both refer to the same entity (West Dorset AONB), just different hosting sites. According to the criterion, this is acceptable.  
+Score: 1
+
+---
+
+**idx_1**  
+- Response: https://national-landscapes.org.uk/  
+- Target: https://www.anglesey.gov.wales/en/residents/countryside/areas-of-outstanding-natural-beauty-aonbs/anglesey-area-of-outstanding-natural-beauty-aonb.aspx  
+Analysis: Response links to a general site for National Landscapes (umbrella site), target is a specific link about Anglesey AONB. The response does not specifically point to Anglesey AONB but to a general site. The criterion states it is sufficient if semantics are approximately the same or point to the same entity. Here, response is too general relative to target, might be considered missing the specific entity indicated by the target. So the main body/content of the link is different.  
+Score: 0
+
+---
+
+**idx_2**  
+- Response: https://www.naturalengland.org.uk/our-work/places-to-visit/aonbs/wye-valley.aspx  
+- Target: https://wyevalleyaonb.org.uk/  
+Analysis: Both links refer to Wye Valley AONB, hosted on different sites but same entity.  
+Score: 1
+
+---
+
+**idx_3**  
+- Response: https://www.naturescot.net/en/national-scenic-area-antrim-coast-glens/  
+- Target: https://antrimcoastandglensaonb.ccght.org/  
+Analysis: Both links talk about Antrim Coast & Glens. The response is from NatureScot official site about the national scenic area, and the target is a dedicated website for that AONB. Both refer to the same entity.  
+Score: 1
+
+---
+
+**idx_4**  
+- Response: https://national-landscapes.org.uk/  
+- Target: https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas  
+Analysis: Response is the general national-landscapes.org.uk homepage; target is a specific NatureScot page on national designations (national scenic areas). The response is much more general, not directly addressing national scenic areas as the target does. This is similar to idx_1.  
+Score: 0
+
+---
+
+**idx_5**  
+- Same as idx_4: response and target same as above, same logic applies.  
+Score: 0
+
+---
+
+**idx_6**  
+- Same as idx_4 and idx_5.  
+Score: 0
+
+---
+
+**idx_7**  
+- Same as idx_4, 5, 6.  
+Score: 0
+
+---
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```",https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas,https://national-landscapes.org.uk/
+arnsideandsilverdale,,1.0,,,,,,"lancashire,cumbria",,,,aonb,,,,1972,,,,england,,,,naturalengland,,,,https://www.arnsidesilverdaleaonb.org.uk/,
+assynt-coigach,,1.0,,,,,,highland,,,,nsa,,,,1981,,,,scotland,,,,naturescot,,,,https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas,
+binevenagh,,1.0,,,,,,londonderry,,,,aonb,,,,1966,,,,northernireland,,,,northernirelandenvironmentagency,,,,https://binevenaghaonb.ccght.org/,
+blackdownhills,,1.0,,,,,,"devon,somerset",,,,aonb,,,,1991,,,,england,,,,naturalengland,,,,https://blackdownhillsaonb.org.uk/,
+cannockchase,,1.0,,,,,,staffordshire,,,,aonb,,,,1958,,,,england,,,,naturalengland,,,,https://www.cannock-chase.co.uk/,
+causewaycoast,,1.0,,,,,,antrim,,,,aonb,,,,1989,,,,northernireland,,,,northernirelandenvironmentagency,,,,https://causewaycoastaonb.ccght.org/,
+chichesterharbour,,1.0,,,,,,"westsussex,hampshire",,,,aonb,,,,1964,,,,england,,,,naturalengland,,,,https://www.conservancy.co.uk/,
+chilterns,,1.0,,,,,,"bedfordshire,buckinghamshire,hertfordshire,oxfordshire",,,,aonb,,,,1965,,,,england,,,,naturalengland,,,,https://www.chilterns.org.uk/,
+clwydianrangeanddeevalley,,1.0,,,,,,"denbighshire,flintshire,wrexham",,,,aonb,,,,1985,,,,wales,,,,naturalresourceswales,,,,https://www.clwydianrangeanddeevalleyaonb.org.uk/,
+cornwall,,1.0,,,,,,cornwall,,,,aonb,,,,1959,,,,england,,,,naturalengland,,,,https://cornwall-landscape.org/,
+cotswolds,,1.0,,,,,,"gloucestershire,oxfordshire,wiltshire,somerset,worcestershire,warwickshire",,,,aonb,,,,1966,,,,england,,,,naturalengland,,,,https://www.cotswolds-nl.org.uk/,
+cranbornechaseandwestwiltshiredowns,,1.0,,,,,,"dorset,hampshire,somerset,wiltshire",,,,aonb,,,,1981,,,,england,,,,naturalengland,,,,https://cranbornechase.org.uk/,
+dedhamvale,,1.0,,,,,,"essex,suffolk",,,,aonb,,,,1970,,,,england,,,,naturalengland,,,,https://dedhamvale-nl.org.uk/,
+deesideandlochnagar,,1.0,,,,,,"aberdeenshire,angus",,,,nsa,,,,1981,,,,scotland,,,,naturescot,,,,https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas,
+eastdevon,,1.0,,,,,,devon,,,,aonb,,,,1963,,,,england,,,,naturalengland,,,,https://eastdevon-nl.org.uk/,
+eaststewartrycoast,,1.0,,,,,,dumfriesandgalloway,,,,nsa,,,,1981,,,,scotland,,,,naturescot,,,,https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas,
+eildonandleaderfoot,,1.0,,,,,,scottishborders,,,,nsa,,,,1981,,,,scotland,,,,naturescot,,,,https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas,
+fleetvalley,,1.0,,,,,,dumfriesandgalloway,,,,nsa,,,,1981,,,,scotland,,,,naturescot,,,,https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas,
+forestofbowland,,1.0,,,,,,"lancashire,northyorkshire",,,,aonb,,,,1964,,,,england,,,,naturalengland,,,,https://www.forestofbowland.com/,
+glenaffric,,1.0,,,,,,highland,,,,nsa,,,,1981,,,,scotland,,,,naturescot,,,,https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas,
+glenstrathfarrar,,1.0,,,,,,highland,,,,nsa,,,,1981,,,,scotland,,,,naturescot,,,,https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas,
+gower(gŵyr),,1.0,,,,,,swansea,,,,aonb,,,,1956,,,,wales,,,,naturalresourceswales,,,,https://www.swansea.gov.uk/article/9102/gower-area-of-outstanding-natural-beauty,
+highweald,,1.0,,,,,,"kent,westsussex,eastsussex,surrey",,,,aonb,,,,1983,,,,england,,,,naturalengland,,,,https://highweald.org/,
+howardianhills,,1.0,,,,,,northyorkshire,,,,aonb,,,,1987,,,,england,,,,naturalengland,,,,https://www.howardianhills.org.uk/,
+hoyandwestmainland,,1.0,,,,,,orkneyislands,,,,nsa,,,,1981,,,,scotland,,,,naturescot,,,,https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas,
+isleofwight,,1.0,,,,,,isleofwight,,,,aonb,,,,1963,,,,england,,,,naturalengland,,,,https://www.wightaonb.org.uk/,
+islesofscilly,,1.0,,,,,,cornwall,,,,aonb,,,,1975,,,,england,,,,naturalengland,,,,https://islesofscilly-nl.org.uk/,
+jura,,1.0,,,,,,argyllandbute,,,,nsa,,,,1981,,,,scotland,,,,naturescot,,,,https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas,
+kentdowns,,1.0,,,,,,kent,,,,aonb,,,,1968,,,,england,,,,naturalengland,,,,https://kentdowns.org.uk/,
+kintail,,1.0,,,,,,highland,,,,nsa,,,,1981,,,,scotland,,,,naturescot,,,,https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas,
+knapdale,,1.0,,,,,,argyllandbute,,,,nsa,,,,1981,,,,scotland,,,,naturescot,,,,https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas,
+knoydart,,1.0,,,,,,highland,,,,nsa,,,,1981,,,,scotland,,,,naturescot,,,,https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas,
+kyleoftongue,,1.0,,,,,,highland,,,,nsa,,,,1981,,,,scotland,,,,naturescot,,,,https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas,
+kylesofbute,,1.0,,,,,,argyllandbute,,,,nsa,,,,1981,,,,scotland,,,,naturescot,,,,https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas,
+laganvalley,,1.0,,,,,,down,,,,aonb,,,,1965,,,,northernireland,,,,northernirelandenvironmentagency,,,,https://www.laganvalley.co.uk/,
+lincolnshirewolds,,1.0,,,,,,lincolnshire,,,,aonb,,,,1973,,,,england,,,,naturalengland,,,,https://www.lincswolds.org.uk/,
+llŷn,,1.0,,,,,,gwynedd,,,,aonb,,,,1957,,,,wales,,,,naturalresourceswales,,,,https://www.ahne-llyn-aonb.org/home,
+lochlomond,,1.0,,,,,,"argyllandbute,stirling,
+westdunbartonshire",,,,nsa,,,,1981,,,,scotland,,,,naturescot,,,,https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas,
+"lochnakeal,isleofmull",,1.0,,,,,,argyllandbute,,,,nsa,,,,1981,,,,scotland,,,,naturescot,,,,https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas,
+lochrannochandglenlyon,,1.0,,,,,,"perthandkinross,stirling",,,,nsa,,,,1981,,,,scotland,,,,naturescot,,,,https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas,
+lochshiel,,1.0,,,,,,highland,,,,nsa,,,,1981,,,,scotland,,,,naturescot,,,,https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas,
+lochtummel,,1.0,,,,,,perthandkinross,,,,nsa,,,,1981,,,,scotland,,,,naturescot,,,,https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas,
+lynnoflorn,,1.0,,,,,,argyllandbute,,,,nsa,,,,1981,,,,scotland,,,,naturescot,,,,https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas,
+malvernhills,,1.0,,,,,,"worcestershire,herefordshire,gloucestershire",,,,aonb,,,,1959,,,,england,,,,naturalengland,,,,https://www.malvernhillsaonb.org.uk/,
+mendiphills,,1.0,,,,,,somerset,,,,aonb,,,,1972,,,,england,,,,naturalengland,,,,https://www.mendiphillsaonb.org.uk/,
+mourne,,1.0,,,,,,down,,,,aonb,,,,1986,,,,northernireland,,,,northernirelandenvironmentagency,,,,https://mournelive.com/,
+nidderdale,,1.0,,,,,,northyorkshire,,,,aonb,,,,1994,,,,england,,,,naturalengland,,,,https://nidderdale-nl.org.uk/,
+nithestuary,,1.0,,,,,,dumfriesandgalloway,,,,nsa,,,,1981,,,,scotland,,,,naturescot,,,,https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas,
+none,Brecon Beacons,,1.0,,,,,,powys,,,,areasofoutstandingnaturalbeauty,,,,1956,,,,wales,,,,naturalengland,,,,https://www.naturalengland.org.uk/our-work/places-to-visit/aonbs/brecon-beacons.aspx
+none,Dartmoor,,1.0,,,,,,devon,,,,areasofoutstandingnaturalbeauty,,,,1951,,,,england,,,,naturalengland,,,,https://www.naturalengland.org.uk/our-work/places-to-visit/aonbs/dartmoor.aspx
+none,Exmoor,,1.0,,,,,,somerset,,,,areasofoutstandingnaturalbeauty,,,,1956,,,,england,,,,naturalengland,,,,https://www.naturalengland.org.uk/our-work/places-to-visit/aonbs/exmoor.aspx
+none,Lake District,,1.0,,,,,,cumbria,,,,areasofoutstandingnaturalbeauty,,,,1951,,,,england,,,,naturalengland,,,,https://www.naturalengland.org.uk/our-work/places-to-visit/aonbs/lake-district.aspx
+none,North York Moors,,1.0,,,,,,northyorkshire,,,,nationallandscape,,,,2024,,,,england,,,,naturalengland,,,,https://www.naturalengland.org.uk/our-work/places-to-visit/aonbs/north-york-moors.aspx
+none,Peak District,,1.0,,,,,,"derbyshire,staffordshire",,,,areasofoutstandingnaturalbeauty,,,,1956,,,,england,,,,naturalengland,,,,https://www.naturalengland.org.uk/our-work/places-to-visit/aonbs/peak-district.aspx
+none,Snowdonia,,1.0,,,,,,"gwynedd,conwy",,,,areasofoutstandingnaturalbeauty,,,,1956,,,,wales,,,,naturalresourceswales,,,,https://national-landscapes.org.uk/
+none,Strathspey and Glen Spey,,1.0,,,,,,highland,,,,areasofoutstandingnaturalbeauty,,,,1957,,,,scotland,,,,naturalresourceswales,,,,https://national-landscapes.org.uk/
+none,Vale of Glamorgan,,1.0,,,,,,valeofglamorgan,,,,areasofoutstandingnaturalbeauty,,,,1957,,,,wales,,,,naturalresourceswales,,,,https://national-landscapes.org.uk/
+none,Vale of Leven and District,,1.0,,,,,,"eastrenfrewshire,renfrewshire",,,,areasofoutstandingnaturalbeauty,,,,1956,,,,scotland,,,,naturalresourceswales,,,,https://national-landscapes.org.uk/
+none,Vale of Tweed,,1.0,,,,,,"berwickshire,roxburghshire",,,,areasofoutstandingnaturalbeauty,,,,1956,,,,scotland,,,,naturalresourceswales,,,,https://national-landscapes.org.uk/
+none,Wyre Forest and Broseley,,1.0,,,,,,"shropshire,telford&wrekin",,,,areasofoutstandingnaturalbeauty,,,,1956,,,,wales,,,,naturalresourceswales,,,,https://national-landscapes.org.uk/
+none,Argyll Coast,,1.0,,,,,,argyllandbute,,,,areasofoutstandingnaturalbeauty,,,,1984,,,,scotland,,,,naturalresourceswales,,,,https://national-landscapes.org.uk/
+none,Blaenau Gwent,,1.0,,,,,,blaenaugwent,,,,areasofoutstandingnaturalbeauty,,,,2002,,,,wales,,,,naturalresourceswales,,,,https://national-landscapes.org.uk/
+none,Caerlaverock Coastal Landscape,,1.0,,,,,,dumfriesandgalloway,,,,areasofoutstandingnaturalbeauty,,,,2002,,,,scotland,,,,naturalresourceswales,,,,https://national-landscapes.org.uk/
+none,Clwyd Coast,,1.0,,,,,,clwyd,,,,areasofoutstandingnaturalbeauty,,,,2002,,,,wales,,,,naturalresourceswales,,,,https://national-landscapes.org.uk/
+none,Dunvegan and Lochaber,,1.0,,,,,,westerross,,,,areasofoutstandingnaturalbeauty,,,,2002,,,,scotland,,,,naturalresourceswales,,,,https://national-landscapes.org.uk/
+none,Fermanagh Lakes,,1.0,,,,,,countyfermanagh,,,,areasofoutstandingnaturalbeauty,,,,2002,,,,northernireland,,,,naturescot,,,,nan
+norfolkcoast,,1.0,,,,,,norfolk,,,,aonb,,,,1968,,,,england,,,,naturalengland,,,,https://norfolkcoast.org/,
+north-westsutherland,,1.0,,,,,,highland,,,,nsa,,,,1981,,,,scotland,,,,naturescot,,,,https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas,
+northarran,,1.0,,,,,,northayrshire,,,,nsa,,,,1981,,,,scotland,,,,naturescot,,,,https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas,
+northdevoncoast,,1.0,,,,,,devon,,,,aonb,,,,1959,,,,england,,,,naturalengland,,,,https://www.northdevoncoast-nl.org.uk/,
+northpennines,,1.0,,,,,,"durham,northumberland,northyorkshire,cumbria",,,,aonb,,,,1988,,,,england,,,,naturalengland,,,,https://northpennines.org.uk/,
+northumberlandcoast,,1.0,,,,,,northumberland,,,,aonb,,,,1958,,,,england,,,,naturalengland,,,,https://www.northumberlandcoastaonb.org/,
+northwessexdowns,,1.0,,,,,,"wiltshire,berkshire,hampshire,oxfordshire",,,,aonb,,,,1972,,,,england,,,,naturalengland,,,,https://www.northwessexdowns.org.uk/,
+quantockhills,,1.0,,,,,,somerset,,,,aonb,,,,1956,,,,england,,,,naturalengland,,,,https://www.quantockhills.com/,
+ringofgullion,,1.0,,,,,,armagh,,,,aonb,,,,1991,,,,northernireland,,,,northernirelandenvironmentagency,,,,https://ringofgullion.org/,
+riverearn(comrietost.fillans),,1.0,,,,,,perthandkinross,,,,nsa,,,,1981,,,,scotland,,,,naturescot,,,,https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas,
+rivertay(dunkeld),,1.0,,,,,,perthandkinross,,,,nsa,,,,1981,,,,scotland,,,,naturescot,,,,https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas,
+"scarba,lungaandthegarvellachs",,1.0,,,,,,argyllandbute,,,,nsa,,,,1981,,,,scotland,,,,naturescot,,,,https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas,
+shetland,,1.0,,,,,,shetlandislands,,,,nsa,,,,1981,,,,scotland,,,,naturescot,,,,https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas,
+shropshirehills,,1.0,,,,,,shropshire,,,,aonb,,,,1958,,,,england,,,,naturalengland,,,,https://www.shropshirehills-nl.org.uk/,
+solwaycoast,,1.0,,,,,,cumbria,,,,aonb,,,,1964,,,,england,,,,naturalengland,,,,https://www.solwaycoast-nl.org.uk/,
+southdevon,,1.0,,,,,,devon,,,,aonb,,,,1960,,,,england,,,,naturalengland,,,,https://www.southdevon-nl.org.uk/,
+"southlewis,harrisandnorthuist",,1.0,,,,,,westernisles,,,,nsa,,,,1981,,,,scotland,,,,naturescot,,,,https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas,
+southuistmachair,,1.0,,,,,,westernisles,,,,nsa,,,,1981,,,,scotland,,,,naturescot,,,,https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas,
+sperrins,,1.0,,,,,,"tyrone,londonderry",,,,aonb,,,,1968,,,,northernireland,,,,northernirelandenvironmentagency,,,,https://www.daera-ni.gov.uk/articles/sperrin-area-outstanding-natural-beauty,
+st.kilda,,1.0,,,,,,westernisles,,,,nsa,,,,1981,,,,scotland,,,,naturescot,,,,https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas,
+strangford&lecale,,1.0,,,,,,down,,,,aonb,,,,2010,,,,northernireland,,,,northernirelandenvironmentagency,,,,https://strangfordlough.org/,
+suffolk&essexcoast&heaths,,1.0,,,,,,"suffolk,essex",,,,aonb,,,,1970,,,,england,,,,naturalengland,,,,https://coastandheaths-nl.org.uk/,
+surreyhills,,1.0,,,,,,surrey,,,,aonb,,,,1958,,,,england,,,,naturalengland,,,,https://surreyhills.org/,
+tamarvalley,,1.0,,,,,,"cornwall,devon",,,,aonb,,,,1995,,,,england,,,,naturalengland,,,,https://www.tamarvalley-nl.org.uk/,
+thecuillinhills,,1.0,,,,,,highland,,,,nsa,,,,1981,,,,scotland,,,,naturescot,,,,https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas,
+thesmallisles,,1.0,,,,,,highland,,,,nsa,,,,1981,,,,scotland,,,,naturescot,,,,https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas,
+thetrossachs,,1.0,,,,,,stirling,,,,nsa,,,,1981,,,,scotland,,,,naturescot,,,,https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas,
+trotternish,,1.0,,,,,,highland,,,,nsa,,,,1981,,,,scotland,,,,naturescot,,,,https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas,
+uppertweeddale,,1.0,,,,,,scottishborders,,,,nsa,,,,1981,,,,scotland,,,,naturescot,,,,https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas,
+westerross,,1.0,,,,,,highland,,,,nsa,,,,1981,,,,scotland,,,,naturescot,,,,https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas,

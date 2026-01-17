@@ -1,0 +1,1341 @@
+category,category_before_map,exist_flag_gt,exist_flag_response,rank,rank_before_map,category_exact_match,category_exact_match_eval_msg,language_exact_match,language_exact_match_eval_msg,language_query,language_response,producer(s)_llm_judge,producer(s)_llm_judge_eval_msg,producer(s)_query,producer(s)_response,rank_exact_match,rank_exact_match_eval_msg,releasedate_date_near,releasedate_date_near_eval_msg,releasedate_query,releasedate_response,singer_llm_judge,singer_llm_judge_eval_msg,singer_query,singer_response,songwriter(s)_llm_judge,songwriter(s)_llm_judge_eval_msg,songwriter(s)_query,songwriter(s)_response,title_llm_judge,title_llm_judge_eval_msg,title_query,title_response
+top10spotify'smost-streamedsongsglobally,Global,,,1,1,1.0,key_match,1.0,"exact match, response: english, target: english",english,english,1.0,"Let's analyze each pair one by one according to the grading criterion:
+
+Criterion summary:  
+- Semantics approximately same or pointing to same entity is sufficient.  
+- No need for word-for-word match.  
+- Matching one or more from target answer is sufficient.  
+- Few extra info outside target is allowed.
+
+---
+
+### idx_0  
+- Response: ""julianbunetta""  
+- Target: ""julianbunetta""  
+- Exact match, clearly correct.  
+- Score: 1
+
+### idx_1  
+- Response: ""unspecified""  
+- Target: ""evanblair""  
+- Response does not match or refer to the target entity. ""unspecified"" is a placeholder and does not meet the criterion.  
+- Score: 0
+
+### idx_2  
+- Response: ""unspecified""  
+- Target: ""finneas""  
+- Same as idx_1: response does not indicate ""finneas"" or an equivalent.  
+- Score: 0
+
+### idx_3  
+- Response: ""julianbunetta""  
+- Target: ""julianbunetta""  
+- Exact match again.  
+- Score: 1
+
+### idx_4  
+- Response: ""unspecified""  
+- Target: ""mustard""  
+- Response fails to match or point to ""mustard"".  
+- Score: 0
+
+### idx_5  
+- Response: ""unspecified""  
+- Target: ""seancook,nevinsastry""  
+- Response ""unspecified"" does not match or point to either ""seancook"" or ""nevinsastry"".  
+- Score: 0
+
+---
+
+### Final scores:  
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```",julianbunetta,julianbunetta,1.0,key_match,1.0,"date near, response: 2024-04-11 00:00:00, target: 2024-04-11 00:00:00",2024-04-11,2024-04-11,1.0,"Let's analyze each pair step by step:
+
+- idx_0: response = ""sabrinacarpenter"", target = ""sabrinacarpenter""  
+  The response exactly matches the target. Score = 1
+
+- idx_1: response = ""bensonboone"", target = ""bensonboone""  
+  Exact match. Score = 1
+
+- idx_2: response = ""billieeilish"", target = ""billieeilish""  
+  Exact match. Score = 1
+
+- idx_3: response = ""sabrinacarpenter"", target = ""sabrinacarpenter""  
+  Exact match. Score = 1
+
+- idx_4: response = ""kendricklamar"", target = ""kendricklamar""  
+  Exact match. Score = 1
+
+- idx_5: response = ""shaboozey"", target = ""shaboozey""  
+  Exact match. Score = 1
+
+All responses exactly match their targets; per the grading criteria, this results in full scores.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1
+}
+```",sabrinacarpenter,sabrinacarpenter,1.0,"Let's analyze each idx one by one according to the criterion:
+
+Criterion summary:  
+- The response should have approximate semantic equivalence or point to the same entity as the target.  
+- It suffices if the response matches one or more entities in the reference answer. Having a few extra entities is allowed.
+
+---
+
+### idx_0  
+Response: ""sabrinacarpenter,amyallen,stephjones,julianbunetta""  
+Target: ""amyallen,julianbunetta,stephjones,sabrinacarpenter""  
+
+- The response contains all four names in the target, just ordered differently.  
+- This is a perfect match, so score = 1.
+
+### idx_1  
+Response: ""bensonboone""  
+Target: ""evanblair,jacklafrantz,bensonboone""  
+
+- The response contains one entity from the target list out of three.  
+- Since the criterion allows partial matches (one or more entities counted), and it suffices to match only one, this qualifies.  
+- Having fewer than the full list is acceptable.  
+- So score = 1.
+
+### idx_2  
+Response: ""billieeilish""  
+Target: ""finneaso'connell,billieeilisho'connell""  
+
+- The target has two entities: ""finneaso'connell"" and ""billieeilisho'connell"" (which looks like ""billieeilish o'connell"" combined).  
+- The response has only ""billieeilish"".  
+- The criterion is about semantic equivalence or pointing to the same entity. ""billieeilish"" matches with ""billieeilisho'connell"" (likely the same person).  
+- Thus, although not word-for-word, the same entity is named.  
+- Hence, score = 1.
+
+### idx_3  
+Response: ""sabrinacarpenter,amyallen,stephjones,julianbunetta""  
+Target: ""amyallen,julianbunetta,stephjones,sabrinacarpenter""  
+
+- Identical scenario as idx_0.  
+- All entities match, order different.  
+- Score = 1.
+
+### idx_4  
+Response: ""kendricklamar""  
+Target: ""dijonmcfarlane,kendricklamar,markanthonyspears,raycharles,seanmomberger""  
+
+- Response has one name from the target list: ""kendricklamar"".  
+- Criterion allows partial matches with one or more.  
+- Score = 1.
+
+### idx_5  
+Response: ""shaboozey""  
+Target: ""collinsobinnachibueze,jerreljones,joekent,markwilliams,nevinsastry,seancook""  
+
+- Response has ""shaboozey"".  
+- Target has six different names, none matching ""shaboozey"".  
+- No semantic equivalence or the same entity.  
+- Therefore, score = 0.
+
+---
+
+# Final scores in requested JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0
+}
+```","amyallen,julianbunetta,stephjones,sabrinacarpenter","sabrinacarpenter,amyallen,stephjones,julianbunetta",1.0,"Let's analyze each pair item by item based on the given grading criterion:
+
+Criterion summary:
+- Semantics need to be approximately the same or point to the same entity.
+- No need for exact word-for-word match.
+- Main body needs to be consistent.
+- Presence or absence of ""feat xx"" or ""with xx"" is acceptable.
+
+---
+
+**idx_0:**  
+Response: ""espresso""  
+Target: ""espresso""  
+- Exact match, clearly consistent.  
+Score: 1
+
+**idx_1:**  
+Response: ""beautifulthings""  
+Target: ""beautifulthings""  
+- Exact match, consistent.  
+Score: 1
+
+**idx_2:**  
+Response: ""birdsofafeather""  
+Target: ""birdsofafeather""  
+- Exact match, consistent.  
+Score: 1
+
+**idx_3:**  
+Response: ""espresso""  
+Target: ""espresso""  
+- Same as idx_0, exact match.  
+Score: 1
+
+**idx_4:**  
+Response: ""notlikeus""  
+Target: ""notlikeus""  
+- Exact match, consistent.  
+Score: 1
+
+**idx_5:**  
+Response: ""abarsong(tipsy)""  
+Target: ""abarsong(tipsy)""  
+- Exact match, including parenthesis and title. Consistent with main body.  
+Score: 1
+
+---
+
+All answers are exactly consistent with their targets, so each gets a full score of 1.
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1
+}
+```",espresso,espresso
+top10spotify'smost-streamedsongsglobally,Global,,,2,2,1.0,key_match,1.0,"exact match, response: english, target: english",english,english,0.0,"Let's analyze each pair one by one according to the grading criterion:
+
+Criterion summary:  
+- Semantics approximately same or pointing to same entity is sufficient.  
+- No need for word-for-word match.  
+- Matching one or more from target answer is sufficient.  
+- Few extra info outside target is allowed.
+
+---
+
+### idx_0  
+- Response: ""julianbunetta""  
+- Target: ""julianbunetta""  
+- Exact match, clearly correct.  
+- Score: 1
+
+### idx_1  
+- Response: ""unspecified""  
+- Target: ""evanblair""  
+- Response does not match or refer to the target entity. ""unspecified"" is a placeholder and does not meet the criterion.  
+- Score: 0
+
+### idx_2  
+- Response: ""unspecified""  
+- Target: ""finneas""  
+- Same as idx_1: response does not indicate ""finneas"" or an equivalent.  
+- Score: 0
+
+### idx_3  
+- Response: ""julianbunetta""  
+- Target: ""julianbunetta""  
+- Exact match again.  
+- Score: 1
+
+### idx_4  
+- Response: ""unspecified""  
+- Target: ""mustard""  
+- Response fails to match or point to ""mustard"".  
+- Score: 0
+
+### idx_5  
+- Response: ""unspecified""  
+- Target: ""seancook,nevinsastry""  
+- Response ""unspecified"" does not match or point to either ""seancook"" or ""nevinsastry"".  
+- Score: 0
+
+---
+
+### Final scores:  
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```",evanblair,unspecified,1.0,key_match,1.0,"date near, response: 2024-01-19 00:00:00, target: 2024-01-19 00:00:00",2024-01-19,2024-01-19,1.0,"Let's analyze each pair step by step:
+
+- idx_0: response = ""sabrinacarpenter"", target = ""sabrinacarpenter""  
+  The response exactly matches the target. Score = 1
+
+- idx_1: response = ""bensonboone"", target = ""bensonboone""  
+  Exact match. Score = 1
+
+- idx_2: response = ""billieeilish"", target = ""billieeilish""  
+  Exact match. Score = 1
+
+- idx_3: response = ""sabrinacarpenter"", target = ""sabrinacarpenter""  
+  Exact match. Score = 1
+
+- idx_4: response = ""kendricklamar"", target = ""kendricklamar""  
+  Exact match. Score = 1
+
+- idx_5: response = ""shaboozey"", target = ""shaboozey""  
+  Exact match. Score = 1
+
+All responses exactly match their targets; per the grading criteria, this results in full scores.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1
+}
+```",bensonboone,bensonboone,1.0,"Let's analyze each idx one by one according to the criterion:
+
+Criterion summary:  
+- The response should have approximate semantic equivalence or point to the same entity as the target.  
+- It suffices if the response matches one or more entities in the reference answer. Having a few extra entities is allowed.
+
+---
+
+### idx_0  
+Response: ""sabrinacarpenter,amyallen,stephjones,julianbunetta""  
+Target: ""amyallen,julianbunetta,stephjones,sabrinacarpenter""  
+
+- The response contains all four names in the target, just ordered differently.  
+- This is a perfect match, so score = 1.
+
+### idx_1  
+Response: ""bensonboone""  
+Target: ""evanblair,jacklafrantz,bensonboone""  
+
+- The response contains one entity from the target list out of three.  
+- Since the criterion allows partial matches (one or more entities counted), and it suffices to match only one, this qualifies.  
+- Having fewer than the full list is acceptable.  
+- So score = 1.
+
+### idx_2  
+Response: ""billieeilish""  
+Target: ""finneaso'connell,billieeilisho'connell""  
+
+- The target has two entities: ""finneaso'connell"" and ""billieeilisho'connell"" (which looks like ""billieeilish o'connell"" combined).  
+- The response has only ""billieeilish"".  
+- The criterion is about semantic equivalence or pointing to the same entity. ""billieeilish"" matches with ""billieeilisho'connell"" (likely the same person).  
+- Thus, although not word-for-word, the same entity is named.  
+- Hence, score = 1.
+
+### idx_3  
+Response: ""sabrinacarpenter,amyallen,stephjones,julianbunetta""  
+Target: ""amyallen,julianbunetta,stephjones,sabrinacarpenter""  
+
+- Identical scenario as idx_0.  
+- All entities match, order different.  
+- Score = 1.
+
+### idx_4  
+Response: ""kendricklamar""  
+Target: ""dijonmcfarlane,kendricklamar,markanthonyspears,raycharles,seanmomberger""  
+
+- Response has one name from the target list: ""kendricklamar"".  
+- Criterion allows partial matches with one or more.  
+- Score = 1.
+
+### idx_5  
+Response: ""shaboozey""  
+Target: ""collinsobinnachibueze,jerreljones,joekent,markwilliams,nevinsastry,seancook""  
+
+- Response has ""shaboozey"".  
+- Target has six different names, none matching ""shaboozey"".  
+- No semantic equivalence or the same entity.  
+- Therefore, score = 0.
+
+---
+
+# Final scores in requested JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0
+}
+```","evanblair,jacklafrantz,bensonboone",bensonboone,1.0,"Let's analyze each pair item by item based on the given grading criterion:
+
+Criterion summary:
+- Semantics need to be approximately the same or point to the same entity.
+- No need for exact word-for-word match.
+- Main body needs to be consistent.
+- Presence or absence of ""feat xx"" or ""with xx"" is acceptable.
+
+---
+
+**idx_0:**  
+Response: ""espresso""  
+Target: ""espresso""  
+- Exact match, clearly consistent.  
+Score: 1
+
+**idx_1:**  
+Response: ""beautifulthings""  
+Target: ""beautifulthings""  
+- Exact match, consistent.  
+Score: 1
+
+**idx_2:**  
+Response: ""birdsofafeather""  
+Target: ""birdsofafeather""  
+- Exact match, consistent.  
+Score: 1
+
+**idx_3:**  
+Response: ""espresso""  
+Target: ""espresso""  
+- Same as idx_0, exact match.  
+Score: 1
+
+**idx_4:**  
+Response: ""notlikeus""  
+Target: ""notlikeus""  
+- Exact match, consistent.  
+Score: 1
+
+**idx_5:**  
+Response: ""abarsong(tipsy)""  
+Target: ""abarsong(tipsy)""  
+- Exact match, including parenthesis and title. Consistent with main body.  
+Score: 1
+
+---
+
+All answers are exactly consistent with their targets, so each gets a full score of 1.
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1
+}
+```",beautifulthings,beautifulthings
+top10spotify'smost-streamedsongsglobally,Global,,,3,3,1.0,key_match,1.0,"exact match, response: english, target: english",english,english,0.0,"Let's analyze each pair one by one according to the grading criterion:
+
+Criterion summary:  
+- Semantics approximately same or pointing to same entity is sufficient.  
+- No need for word-for-word match.  
+- Matching one or more from target answer is sufficient.  
+- Few extra info outside target is allowed.
+
+---
+
+### idx_0  
+- Response: ""julianbunetta""  
+- Target: ""julianbunetta""  
+- Exact match, clearly correct.  
+- Score: 1
+
+### idx_1  
+- Response: ""unspecified""  
+- Target: ""evanblair""  
+- Response does not match or refer to the target entity. ""unspecified"" is a placeholder and does not meet the criterion.  
+- Score: 0
+
+### idx_2  
+- Response: ""unspecified""  
+- Target: ""finneas""  
+- Same as idx_1: response does not indicate ""finneas"" or an equivalent.  
+- Score: 0
+
+### idx_3  
+- Response: ""julianbunetta""  
+- Target: ""julianbunetta""  
+- Exact match again.  
+- Score: 1
+
+### idx_4  
+- Response: ""unspecified""  
+- Target: ""mustard""  
+- Response fails to match or point to ""mustard"".  
+- Score: 0
+
+### idx_5  
+- Response: ""unspecified""  
+- Target: ""seancook,nevinsastry""  
+- Response ""unspecified"" does not match or point to either ""seancook"" or ""nevinsastry"".  
+- Score: 0
+
+---
+
+### Final scores:  
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```",finneas,unspecified,1.0,key_match,1.0,"date near, response: 2024-05-17 00:00:00, target: 2024-05-17 00:00:00",2024-05-17,2024-05-17,1.0,"Let's analyze each pair step by step:
+
+- idx_0: response = ""sabrinacarpenter"", target = ""sabrinacarpenter""  
+  The response exactly matches the target. Score = 1
+
+- idx_1: response = ""bensonboone"", target = ""bensonboone""  
+  Exact match. Score = 1
+
+- idx_2: response = ""billieeilish"", target = ""billieeilish""  
+  Exact match. Score = 1
+
+- idx_3: response = ""sabrinacarpenter"", target = ""sabrinacarpenter""  
+  Exact match. Score = 1
+
+- idx_4: response = ""kendricklamar"", target = ""kendricklamar""  
+  Exact match. Score = 1
+
+- idx_5: response = ""shaboozey"", target = ""shaboozey""  
+  Exact match. Score = 1
+
+All responses exactly match their targets; per the grading criteria, this results in full scores.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1
+}
+```",billieeilish,billieeilish,1.0,"Let's analyze each idx one by one according to the criterion:
+
+Criterion summary:  
+- The response should have approximate semantic equivalence or point to the same entity as the target.  
+- It suffices if the response matches one or more entities in the reference answer. Having a few extra entities is allowed.
+
+---
+
+### idx_0  
+Response: ""sabrinacarpenter,amyallen,stephjones,julianbunetta""  
+Target: ""amyallen,julianbunetta,stephjones,sabrinacarpenter""  
+
+- The response contains all four names in the target, just ordered differently.  
+- This is a perfect match, so score = 1.
+
+### idx_1  
+Response: ""bensonboone""  
+Target: ""evanblair,jacklafrantz,bensonboone""  
+
+- The response contains one entity from the target list out of three.  
+- Since the criterion allows partial matches (one or more entities counted), and it suffices to match only one, this qualifies.  
+- Having fewer than the full list is acceptable.  
+- So score = 1.
+
+### idx_2  
+Response: ""billieeilish""  
+Target: ""finneaso'connell,billieeilisho'connell""  
+
+- The target has two entities: ""finneaso'connell"" and ""billieeilisho'connell"" (which looks like ""billieeilish o'connell"" combined).  
+- The response has only ""billieeilish"".  
+- The criterion is about semantic equivalence or pointing to the same entity. ""billieeilish"" matches with ""billieeilisho'connell"" (likely the same person).  
+- Thus, although not word-for-word, the same entity is named.  
+- Hence, score = 1.
+
+### idx_3  
+Response: ""sabrinacarpenter,amyallen,stephjones,julianbunetta""  
+Target: ""amyallen,julianbunetta,stephjones,sabrinacarpenter""  
+
+- Identical scenario as idx_0.  
+- All entities match, order different.  
+- Score = 1.
+
+### idx_4  
+Response: ""kendricklamar""  
+Target: ""dijonmcfarlane,kendricklamar,markanthonyspears,raycharles,seanmomberger""  
+
+- Response has one name from the target list: ""kendricklamar"".  
+- Criterion allows partial matches with one or more.  
+- Score = 1.
+
+### idx_5  
+Response: ""shaboozey""  
+Target: ""collinsobinnachibueze,jerreljones,joekent,markwilliams,nevinsastry,seancook""  
+
+- Response has ""shaboozey"".  
+- Target has six different names, none matching ""shaboozey"".  
+- No semantic equivalence or the same entity.  
+- Therefore, score = 0.
+
+---
+
+# Final scores in requested JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0
+}
+```","finneaso'connell,billieeilisho'connell",billieeilish,1.0,"Let's analyze each pair item by item based on the given grading criterion:
+
+Criterion summary:
+- Semantics need to be approximately the same or point to the same entity.
+- No need for exact word-for-word match.
+- Main body needs to be consistent.
+- Presence or absence of ""feat xx"" or ""with xx"" is acceptable.
+
+---
+
+**idx_0:**  
+Response: ""espresso""  
+Target: ""espresso""  
+- Exact match, clearly consistent.  
+Score: 1
+
+**idx_1:**  
+Response: ""beautifulthings""  
+Target: ""beautifulthings""  
+- Exact match, consistent.  
+Score: 1
+
+**idx_2:**  
+Response: ""birdsofafeather""  
+Target: ""birdsofafeather""  
+- Exact match, consistent.  
+Score: 1
+
+**idx_3:**  
+Response: ""espresso""  
+Target: ""espresso""  
+- Same as idx_0, exact match.  
+Score: 1
+
+**idx_4:**  
+Response: ""notlikeus""  
+Target: ""notlikeus""  
+- Exact match, consistent.  
+Score: 1
+
+**idx_5:**  
+Response: ""abarsong(tipsy)""  
+Target: ""abarsong(tipsy)""  
+- Exact match, including parenthesis and title. Consistent with main body.  
+Score: 1
+
+---
+
+All answers are exactly consistent with their targets, so each gets a full score of 1.
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1
+}
+```",birdsofafeather,birdsofafeather
+top10u.s.most-streamedsongs,U.S.,,,1,1,1.0,key_match,1.0,"exact match, response: english, target: english",english,english,1.0,"Let's analyze each pair one by one according to the grading criterion:
+
+Criterion summary:  
+- Semantics approximately same or pointing to same entity is sufficient.  
+- No need for word-for-word match.  
+- Matching one or more from target answer is sufficient.  
+- Few extra info outside target is allowed.
+
+---
+
+### idx_0  
+- Response: ""julianbunetta""  
+- Target: ""julianbunetta""  
+- Exact match, clearly correct.  
+- Score: 1
+
+### idx_1  
+- Response: ""unspecified""  
+- Target: ""evanblair""  
+- Response does not match or refer to the target entity. ""unspecified"" is a placeholder and does not meet the criterion.  
+- Score: 0
+
+### idx_2  
+- Response: ""unspecified""  
+- Target: ""finneas""  
+- Same as idx_1: response does not indicate ""finneas"" or an equivalent.  
+- Score: 0
+
+### idx_3  
+- Response: ""julianbunetta""  
+- Target: ""julianbunetta""  
+- Exact match again.  
+- Score: 1
+
+### idx_4  
+- Response: ""unspecified""  
+- Target: ""mustard""  
+- Response fails to match or point to ""mustard"".  
+- Score: 0
+
+### idx_5  
+- Response: ""unspecified""  
+- Target: ""seancook,nevinsastry""  
+- Response ""unspecified"" does not match or point to either ""seancook"" or ""nevinsastry"".  
+- Score: 0
+
+---
+
+### Final scores:  
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```",julianbunetta,julianbunetta,1.0,key_match,1.0,"date near, response: 2024-04-11 00:00:00, target: 2024-04-11 00:00:00",2024-04-11,2024-04-11,1.0,"Let's analyze each pair step by step:
+
+- idx_0: response = ""sabrinacarpenter"", target = ""sabrinacarpenter""  
+  The response exactly matches the target. Score = 1
+
+- idx_1: response = ""bensonboone"", target = ""bensonboone""  
+  Exact match. Score = 1
+
+- idx_2: response = ""billieeilish"", target = ""billieeilish""  
+  Exact match. Score = 1
+
+- idx_3: response = ""sabrinacarpenter"", target = ""sabrinacarpenter""  
+  Exact match. Score = 1
+
+- idx_4: response = ""kendricklamar"", target = ""kendricklamar""  
+  Exact match. Score = 1
+
+- idx_5: response = ""shaboozey"", target = ""shaboozey""  
+  Exact match. Score = 1
+
+All responses exactly match their targets; per the grading criteria, this results in full scores.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1
+}
+```",sabrinacarpenter,sabrinacarpenter,1.0,"Let's analyze each idx one by one according to the criterion:
+
+Criterion summary:  
+- The response should have approximate semantic equivalence or point to the same entity as the target.  
+- It suffices if the response matches one or more entities in the reference answer. Having a few extra entities is allowed.
+
+---
+
+### idx_0  
+Response: ""sabrinacarpenter,amyallen,stephjones,julianbunetta""  
+Target: ""amyallen,julianbunetta,stephjones,sabrinacarpenter""  
+
+- The response contains all four names in the target, just ordered differently.  
+- This is a perfect match, so score = 1.
+
+### idx_1  
+Response: ""bensonboone""  
+Target: ""evanblair,jacklafrantz,bensonboone""  
+
+- The response contains one entity from the target list out of three.  
+- Since the criterion allows partial matches (one or more entities counted), and it suffices to match only one, this qualifies.  
+- Having fewer than the full list is acceptable.  
+- So score = 1.
+
+### idx_2  
+Response: ""billieeilish""  
+Target: ""finneaso'connell,billieeilisho'connell""  
+
+- The target has two entities: ""finneaso'connell"" and ""billieeilisho'connell"" (which looks like ""billieeilish o'connell"" combined).  
+- The response has only ""billieeilish"".  
+- The criterion is about semantic equivalence or pointing to the same entity. ""billieeilish"" matches with ""billieeilisho'connell"" (likely the same person).  
+- Thus, although not word-for-word, the same entity is named.  
+- Hence, score = 1.
+
+### idx_3  
+Response: ""sabrinacarpenter,amyallen,stephjones,julianbunetta""  
+Target: ""amyallen,julianbunetta,stephjones,sabrinacarpenter""  
+
+- Identical scenario as idx_0.  
+- All entities match, order different.  
+- Score = 1.
+
+### idx_4  
+Response: ""kendricklamar""  
+Target: ""dijonmcfarlane,kendricklamar,markanthonyspears,raycharles,seanmomberger""  
+
+- Response has one name from the target list: ""kendricklamar"".  
+- Criterion allows partial matches with one or more.  
+- Score = 1.
+
+### idx_5  
+Response: ""shaboozey""  
+Target: ""collinsobinnachibueze,jerreljones,joekent,markwilliams,nevinsastry,seancook""  
+
+- Response has ""shaboozey"".  
+- Target has six different names, none matching ""shaboozey"".  
+- No semantic equivalence or the same entity.  
+- Therefore, score = 0.
+
+---
+
+# Final scores in requested JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0
+}
+```","amyallen,julianbunetta,stephjones,sabrinacarpenter","sabrinacarpenter,amyallen,stephjones,julianbunetta",1.0,"Let's analyze each pair item by item based on the given grading criterion:
+
+Criterion summary:
+- Semantics need to be approximately the same or point to the same entity.
+- No need for exact word-for-word match.
+- Main body needs to be consistent.
+- Presence or absence of ""feat xx"" or ""with xx"" is acceptable.
+
+---
+
+**idx_0:**  
+Response: ""espresso""  
+Target: ""espresso""  
+- Exact match, clearly consistent.  
+Score: 1
+
+**idx_1:**  
+Response: ""beautifulthings""  
+Target: ""beautifulthings""  
+- Exact match, consistent.  
+Score: 1
+
+**idx_2:**  
+Response: ""birdsofafeather""  
+Target: ""birdsofafeather""  
+- Exact match, consistent.  
+Score: 1
+
+**idx_3:**  
+Response: ""espresso""  
+Target: ""espresso""  
+- Same as idx_0, exact match.  
+Score: 1
+
+**idx_4:**  
+Response: ""notlikeus""  
+Target: ""notlikeus""  
+- Exact match, consistent.  
+Score: 1
+
+**idx_5:**  
+Response: ""abarsong(tipsy)""  
+Target: ""abarsong(tipsy)""  
+- Exact match, including parenthesis and title. Consistent with main body.  
+Score: 1
+
+---
+
+All answers are exactly consistent with their targets, so each gets a full score of 1.
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1
+}
+```",espresso,espresso
+top10u.s.most-streamedsongs,U.S.,,,2,2,1.0,key_match,1.0,"exact match, response: english, target: english",english,english,0.0,"Let's analyze each pair one by one according to the grading criterion:
+
+Criterion summary:  
+- Semantics approximately same or pointing to same entity is sufficient.  
+- No need for word-for-word match.  
+- Matching one or more from target answer is sufficient.  
+- Few extra info outside target is allowed.
+
+---
+
+### idx_0  
+- Response: ""julianbunetta""  
+- Target: ""julianbunetta""  
+- Exact match, clearly correct.  
+- Score: 1
+
+### idx_1  
+- Response: ""unspecified""  
+- Target: ""evanblair""  
+- Response does not match or refer to the target entity. ""unspecified"" is a placeholder and does not meet the criterion.  
+- Score: 0
+
+### idx_2  
+- Response: ""unspecified""  
+- Target: ""finneas""  
+- Same as idx_1: response does not indicate ""finneas"" or an equivalent.  
+- Score: 0
+
+### idx_3  
+- Response: ""julianbunetta""  
+- Target: ""julianbunetta""  
+- Exact match again.  
+- Score: 1
+
+### idx_4  
+- Response: ""unspecified""  
+- Target: ""mustard""  
+- Response fails to match or point to ""mustard"".  
+- Score: 0
+
+### idx_5  
+- Response: ""unspecified""  
+- Target: ""seancook,nevinsastry""  
+- Response ""unspecified"" does not match or point to either ""seancook"" or ""nevinsastry"".  
+- Score: 0
+
+---
+
+### Final scores:  
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```",mustard,unspecified,1.0,key_match,0.0,"date not near, response: 2024-01-19 00:00:00, target: 2024-05-04 00:00:00",2024-05-04,2024-01-19,1.0,"Let's analyze each pair step by step:
+
+- idx_0: response = ""sabrinacarpenter"", target = ""sabrinacarpenter""  
+  The response exactly matches the target. Score = 1
+
+- idx_1: response = ""bensonboone"", target = ""bensonboone""  
+  Exact match. Score = 1
+
+- idx_2: response = ""billieeilish"", target = ""billieeilish""  
+  Exact match. Score = 1
+
+- idx_3: response = ""sabrinacarpenter"", target = ""sabrinacarpenter""  
+  Exact match. Score = 1
+
+- idx_4: response = ""kendricklamar"", target = ""kendricklamar""  
+  Exact match. Score = 1
+
+- idx_5: response = ""shaboozey"", target = ""shaboozey""  
+  Exact match. Score = 1
+
+All responses exactly match their targets; per the grading criteria, this results in full scores.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1
+}
+```",kendricklamar,kendricklamar,1.0,"Let's analyze each idx one by one according to the criterion:
+
+Criterion summary:  
+- The response should have approximate semantic equivalence or point to the same entity as the target.  
+- It suffices if the response matches one or more entities in the reference answer. Having a few extra entities is allowed.
+
+---
+
+### idx_0  
+Response: ""sabrinacarpenter,amyallen,stephjones,julianbunetta""  
+Target: ""amyallen,julianbunetta,stephjones,sabrinacarpenter""  
+
+- The response contains all four names in the target, just ordered differently.  
+- This is a perfect match, so score = 1.
+
+### idx_1  
+Response: ""bensonboone""  
+Target: ""evanblair,jacklafrantz,bensonboone""  
+
+- The response contains one entity from the target list out of three.  
+- Since the criterion allows partial matches (one or more entities counted), and it suffices to match only one, this qualifies.  
+- Having fewer than the full list is acceptable.  
+- So score = 1.
+
+### idx_2  
+Response: ""billieeilish""  
+Target: ""finneaso'connell,billieeilisho'connell""  
+
+- The target has two entities: ""finneaso'connell"" and ""billieeilisho'connell"" (which looks like ""billieeilish o'connell"" combined).  
+- The response has only ""billieeilish"".  
+- The criterion is about semantic equivalence or pointing to the same entity. ""billieeilish"" matches with ""billieeilisho'connell"" (likely the same person).  
+- Thus, although not word-for-word, the same entity is named.  
+- Hence, score = 1.
+
+### idx_3  
+Response: ""sabrinacarpenter,amyallen,stephjones,julianbunetta""  
+Target: ""amyallen,julianbunetta,stephjones,sabrinacarpenter""  
+
+- Identical scenario as idx_0.  
+- All entities match, order different.  
+- Score = 1.
+
+### idx_4  
+Response: ""kendricklamar""  
+Target: ""dijonmcfarlane,kendricklamar,markanthonyspears,raycharles,seanmomberger""  
+
+- Response has one name from the target list: ""kendricklamar"".  
+- Criterion allows partial matches with one or more.  
+- Score = 1.
+
+### idx_5  
+Response: ""shaboozey""  
+Target: ""collinsobinnachibueze,jerreljones,joekent,markwilliams,nevinsastry,seancook""  
+
+- Response has ""shaboozey"".  
+- Target has six different names, none matching ""shaboozey"".  
+- No semantic equivalence or the same entity.  
+- Therefore, score = 0.
+
+---
+
+# Final scores in requested JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0
+}
+```","dijonmcfarlane,kendricklamar,markanthonyspears,raycharles,seanmomberger",kendricklamar,1.0,"Let's analyze each pair item by item based on the given grading criterion:
+
+Criterion summary:
+- Semantics need to be approximately the same or point to the same entity.
+- No need for exact word-for-word match.
+- Main body needs to be consistent.
+- Presence or absence of ""feat xx"" or ""with xx"" is acceptable.
+
+---
+
+**idx_0:**  
+Response: ""espresso""  
+Target: ""espresso""  
+- Exact match, clearly consistent.  
+Score: 1
+
+**idx_1:**  
+Response: ""beautifulthings""  
+Target: ""beautifulthings""  
+- Exact match, consistent.  
+Score: 1
+
+**idx_2:**  
+Response: ""birdsofafeather""  
+Target: ""birdsofafeather""  
+- Exact match, consistent.  
+Score: 1
+
+**idx_3:**  
+Response: ""espresso""  
+Target: ""espresso""  
+- Same as idx_0, exact match.  
+Score: 1
+
+**idx_4:**  
+Response: ""notlikeus""  
+Target: ""notlikeus""  
+- Exact match, consistent.  
+Score: 1
+
+**idx_5:**  
+Response: ""abarsong(tipsy)""  
+Target: ""abarsong(tipsy)""  
+- Exact match, including parenthesis and title. Consistent with main body.  
+Score: 1
+
+---
+
+All answers are exactly consistent with their targets, so each gets a full score of 1.
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1
+}
+```",notlikeus,notlikeus
+top10u.s.most-streamedsongs,U.S.,,,3,3,1.0,key_match,1.0,"exact match, response: english, target: english",english,english,0.0,"Let's analyze each pair one by one according to the grading criterion:
+
+Criterion summary:  
+- Semantics approximately same or pointing to same entity is sufficient.  
+- No need for word-for-word match.  
+- Matching one or more from target answer is sufficient.  
+- Few extra info outside target is allowed.
+
+---
+
+### idx_0  
+- Response: ""julianbunetta""  
+- Target: ""julianbunetta""  
+- Exact match, clearly correct.  
+- Score: 1
+
+### idx_1  
+- Response: ""unspecified""  
+- Target: ""evanblair""  
+- Response does not match or refer to the target entity. ""unspecified"" is a placeholder and does not meet the criterion.  
+- Score: 0
+
+### idx_2  
+- Response: ""unspecified""  
+- Target: ""finneas""  
+- Same as idx_1: response does not indicate ""finneas"" or an equivalent.  
+- Score: 0
+
+### idx_3  
+- Response: ""julianbunetta""  
+- Target: ""julianbunetta""  
+- Exact match again.  
+- Score: 1
+
+### idx_4  
+- Response: ""unspecified""  
+- Target: ""mustard""  
+- Response fails to match or point to ""mustard"".  
+- Score: 0
+
+### idx_5  
+- Response: ""unspecified""  
+- Target: ""seancook,nevinsastry""  
+- Response ""unspecified"" does not match or point to either ""seancook"" or ""nevinsastry"".  
+- Score: 0
+
+---
+
+### Final scores:  
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```","seancook,nevinsastry",unspecified,1.0,key_match,0.0,"date not near, response: 2024-02-02 00:00:00, target: 2024-04-12 00:00:00",2024-04-12,2024-02-02,1.0,"Let's analyze each pair step by step:
+
+- idx_0: response = ""sabrinacarpenter"", target = ""sabrinacarpenter""  
+  The response exactly matches the target. Score = 1
+
+- idx_1: response = ""bensonboone"", target = ""bensonboone""  
+  Exact match. Score = 1
+
+- idx_2: response = ""billieeilish"", target = ""billieeilish""  
+  Exact match. Score = 1
+
+- idx_3: response = ""sabrinacarpenter"", target = ""sabrinacarpenter""  
+  Exact match. Score = 1
+
+- idx_4: response = ""kendricklamar"", target = ""kendricklamar""  
+  Exact match. Score = 1
+
+- idx_5: response = ""shaboozey"", target = ""shaboozey""  
+  Exact match. Score = 1
+
+All responses exactly match their targets; per the grading criteria, this results in full scores.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1
+}
+```",shaboozey,shaboozey,0.0,"Let's analyze each idx one by one according to the criterion:
+
+Criterion summary:  
+- The response should have approximate semantic equivalence or point to the same entity as the target.  
+- It suffices if the response matches one or more entities in the reference answer. Having a few extra entities is allowed.
+
+---
+
+### idx_0  
+Response: ""sabrinacarpenter,amyallen,stephjones,julianbunetta""  
+Target: ""amyallen,julianbunetta,stephjones,sabrinacarpenter""  
+
+- The response contains all four names in the target, just ordered differently.  
+- This is a perfect match, so score = 1.
+
+### idx_1  
+Response: ""bensonboone""  
+Target: ""evanblair,jacklafrantz,bensonboone""  
+
+- The response contains one entity from the target list out of three.  
+- Since the criterion allows partial matches (one or more entities counted), and it suffices to match only one, this qualifies.  
+- Having fewer than the full list is acceptable.  
+- So score = 1.
+
+### idx_2  
+Response: ""billieeilish""  
+Target: ""finneaso'connell,billieeilisho'connell""  
+
+- The target has two entities: ""finneaso'connell"" and ""billieeilisho'connell"" (which looks like ""billieeilish o'connell"" combined).  
+- The response has only ""billieeilish"".  
+- The criterion is about semantic equivalence or pointing to the same entity. ""billieeilish"" matches with ""billieeilisho'connell"" (likely the same person).  
+- Thus, although not word-for-word, the same entity is named.  
+- Hence, score = 1.
+
+### idx_3  
+Response: ""sabrinacarpenter,amyallen,stephjones,julianbunetta""  
+Target: ""amyallen,julianbunetta,stephjones,sabrinacarpenter""  
+
+- Identical scenario as idx_0.  
+- All entities match, order different.  
+- Score = 1.
+
+### idx_4  
+Response: ""kendricklamar""  
+Target: ""dijonmcfarlane,kendricklamar,markanthonyspears,raycharles,seanmomberger""  
+
+- Response has one name from the target list: ""kendricklamar"".  
+- Criterion allows partial matches with one or more.  
+- Score = 1.
+
+### idx_5  
+Response: ""shaboozey""  
+Target: ""collinsobinnachibueze,jerreljones,joekent,markwilliams,nevinsastry,seancook""  
+
+- Response has ""shaboozey"".  
+- Target has six different names, none matching ""shaboozey"".  
+- No semantic equivalence or the same entity.  
+- Therefore, score = 0.
+
+---
+
+# Final scores in requested JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0
+}
+```","collinsobinnachibueze,jerreljones,joekent,markwilliams,nevinsastry,seancook",shaboozey,1.0,"Let's analyze each pair item by item based on the given grading criterion:
+
+Criterion summary:
+- Semantics need to be approximately the same or point to the same entity.
+- No need for exact word-for-word match.
+- Main body needs to be consistent.
+- Presence or absence of ""feat xx"" or ""with xx"" is acceptable.
+
+---
+
+**idx_0:**  
+Response: ""espresso""  
+Target: ""espresso""  
+- Exact match, clearly consistent.  
+Score: 1
+
+**idx_1:**  
+Response: ""beautifulthings""  
+Target: ""beautifulthings""  
+- Exact match, consistent.  
+Score: 1
+
+**idx_2:**  
+Response: ""birdsofafeather""  
+Target: ""birdsofafeather""  
+- Exact match, consistent.  
+Score: 1
+
+**idx_3:**  
+Response: ""espresso""  
+Target: ""espresso""  
+- Same as idx_0, exact match.  
+Score: 1
+
+**idx_4:**  
+Response: ""notlikeus""  
+Target: ""notlikeus""  
+- Exact match, consistent.  
+Score: 1
+
+**idx_5:**  
+Response: ""abarsong(tipsy)""  
+Target: ""abarsong(tipsy)""  
+- Exact match, including parenthesis and title. Consistent with main body.  
+Score: 1
+
+---
+
+All answers are exactly consistent with their targets, so each gets a full score of 1.
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1
+}
+```",abarsong(tipsy),abarsong(tipsy)
+top10spotify'smost-streamedsongsglobally,,1.0,,10,,,,,,english,,,,"brunomars,dernst""d'mile""emileii,ladygaga,andrewwatt",,,,,,2024-08-16,,,,brunomars，ladygaga,,,,"andrewwatt,dernst""d'mile""emileii,brunomars,jamesfauntleroy,ladygaga",,,,diewithasmile,
+top10spotify'smost-streamedsongsglobally,,1.0,,4,,,,,,spanish,,,,bigcvyu,,,,,,2024-02-02,,,,"crismj,floyymenor",,,,"crismj,floyymenor",,,,gataonly,
+top10spotify'smost-streamedsongsglobally,,1.0,,5,,,,,,english,,,,"ammo,julianbunetta",,,,,,2023-06-23,,,,teddyswims,,,,"julianbunetta,jatendimsdale,joshuacoleman,marco“infamous”rodriguez,mikkyekko",,,,losecontrol,
+top10spotify'smost-streamedsongsglobally,,1.0,,6,,,,,,english,,,,"joekeery,adamthein",,,,,,2024-03-01,,,,djo,,,,joekeery,,,,endofbeginning,
+top10spotify'smost-streamedsongsglobally,,1.0,,7,,,,,,english,,,,"bekon,peteg,chakra,andrewhozier-byrne",,,,,,2024-03-22,,,,hozier,,,,"danielkrieger,danieltannenbaum,sergiugherman,tylermehlenbacher,andrewhozier-byrne,petergonzales,stuartjohnson",,,,toosweet,
+top10spotify'smost-streamedsongsglobally,,1.0,,8,,,,,,english,,,,"theweeknd,mikedean",,,,,,2023-12-08,,,,"jennie,lily-rosedepp,theweeknd",,,,"mikedean,abeltesfaye,lily-rosedepp,ramsey,samlevinson",,,,"oneofthegirls(withjennie,lilyrosedepp)",
+top10spotify'smost-streamedsongsglobally,,1.0,,9,,,,,,english,,,,"jackantonoff,taylorswift",,,,,,2019-08-23,,,,taylorswift,,,,"annieclark,jackantonoff,taylorswift",,,,cruelsummer,
+top10u.s.most-streamedsongs,,1.0,,10,,,,,,english,,,,"gabesimon,noahkahan",,,,,,2022-10-14,,,,stickseason,,,,noahkahan,,,,stickseason,
+top10u.s.most-streamedsongs,,1.0,,4,,,,,,english,,,,"louisbell,charliehandsome,hoskins",,,,,,2024-05-10,,,,"morganwallen,postmalone",,,,"ashleygorley,chandlerpaulwalters,ernestkeithsmith,hoskins,louisbell,morganwallen,ryanvojtesak,austinpost",,,,ihadsomehelp(feat.morganwallen),
+top10u.s.most-streamedsongs,,1.0,,5,,,,,,english,,,,"maxvossberg,jonahroy,mannyvelli,sparkheem,kavi,gidi",,,,,,2024-04-26,,,,tommyrichman,,,,"avala'rae,tommyrichman",,,,milliondollarbaby,
+top10u.s.most-streamedsongs,,1.0,,6,,,,,,english,,,,dannigro,,,,,,2024-04-05,,,,chappellroan,,,,"danielnigro,justintranter,kayleighroseamstutz",,,,"goodluck,babe!",
+top10u.s.most-streamedsongs,,1.0,,7,,,,,,english,,,,evanblair,,,,,,2024-01-18,,,,bensonboone,,,,"evanblair,jacklafrantz,bensonboone",,,,beautifulthings,
+top10u.s.most-streamedsongs,,1.0,,8,,,,,,english,,,,finneas,,,,,,2024-05-17,,,,billieeilish,,,,"finneaso'connell,billieeilisho'connell",,,,birdsofafeather,
+top10u.s.most-streamedsongs,,1.0,,9,,,,,,english,,,,zachbryan,,,,,,2023-08-25,,,,"kaceymusgraves,zachbryan",,,,"kaceymusgraves,zachbryan",,,,iremembereverything(feat.kaceymusgraves),

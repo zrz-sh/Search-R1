@@ -1,0 +1,1219 @@
+exist_flag_gt,exist_flag_response,作品名称,作品名称_before_map,作品名称_exact_match,作品名称_exact_match_eval_msg,制片国家/地区_llm_judge,制片国家/地区_llm_judge_eval_msg,制片国家/地区_query,制片国家/地区_response,导演_llm_judge,导演_llm_judge_eval_msg,导演_query,导演_response,片长_number_near,片长_number_near_eval_msg,片长_query,片长_response,类型_llm_judge,类型_llm_judge_eval_msg,类型_query,类型_response
+,,小丑,小丑,1.0,key_match,1.0,"分析过程：
+
+- idx_0  
+  标准答案：美国/加拿大  
+  回答：美国  
+  回答属于标准答案的子集，语义一致。  
+  得分：1
+
+- idx_1  
+  标准答案：美国/巴西/中国大陆  
+  回答：美国  
+  回答属于标准答案的子集，语义一致。  
+  得分：1
+
+- idx_2  
+  标准答案：中国香港/中国大陆  
+  回答：香港  
+  回答与“中国香港”语义相符，属于子集。  
+  得分：1
+
+- idx_3  
+  标准答案：法国/意大利  
+  回答：法国  
+  回答属于标准答案的子集，语义一致。  
+  得分：1
+
+- idx_4  
+  标准答案：捷克/斯洛伐克/乌克兰  
+  回答：匈牙利  
+  回答不在标准答案范围内，指向实体不一致。  
+  得分：0
+
+- idx_5  
+  标准答案：瑞典/德国/挪威  
+  回答：瑞典  
+  回答属于标准答案的子集，语义一致。  
+  得分：1
+
+- idx_6  
+  标准答案：美国  
+  回答：丹麦  
+  回答不在标准答案范围内，指向实体不一致。  
+  得分：0
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 1,
+    ""idx_6"": 0
+}
+```",美国/加拿大,美国,1.0,"Let's analyze each idx pair according to the criterion:
+
+Criterion:
+- As long as the response's semantic meaning is roughly the same as the target, or the entity pointed to is the same, it is considered correct.
+- Exact wording is not required.
+
+Analysis:
+
+- idx_0: response ""托德·菲利普斯"", target ""托德·菲利普斯""
+  - Exactly the same entity.
+  - Score: 1
+
+- idx_1: response ""詹姆斯·格雷"", target ""詹姆斯·格雷""
+  - Exactly the same entity.
+  - Score: 1
+
+- idx_2: response ""杨凡"", target ""杨凡""
+  - Exactly the same entity.
+  - Score: 1
+
+- idx_3: response ""安妮·路易丝·费里耶"", target ""罗曼·波兰斯基""
+  - Different entities; no semantic equivalence.
+  - Score: 0
+
+- idx_4: response ""克里斯蒂安·帕夫"", target ""瓦茨拉夫·马尔豪尔""
+  - Different persons, no indication of equivalence.
+  - Score: 0
+
+- idx_5: response ""洛伊·安德森"", target ""罗伊·安德森""
+  - The only difference is the first character: ""洛伊"" vs ""罗伊"".
+  - These are different names, so not equivalent.
+  - Score: 0
+
+- idx_6: response ""西莉亚·贝克特"", target ""史蒂文·索德伯格""
+  - Completely different entities.
+  - Score: 0
+
+Final scoring in JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",托德·菲利普斯,托德·菲利普斯,1.0,"number near in range 10.0%, response: 122.0, target: 118.0",118,122,1.0,"以下是对每条回答的逐条分析与评分依据：
+
+---
+**idx_0**  
+- 标准答案：""剧情/惊悚/犯罪""  
+- 回答：""剧情/惊悚""  
+- 分析：类型是标准答案的子集，且其他内容符合电影内容，符合「类型答出子集且其他内容符合电影内容可算对」的准则。  
+- 评分：1
+
+---
+**idx_1**  
+- 标准答案：""科幻/冒险""  
+- 回答：""科幻/冒险""  
+- 分析：完全匹配。  
+- 评分：1
+
+---
+**idx_2**  
+- 标准答案：""动画""  
+- 回答：""剧情""  
+- 分析：两者类型不同，语义不相同，也无指向同一实体，不可视作子集关系。  
+- 评分：0
+
+---
+**idx_3**  
+- 标准答案：""剧情""  
+- 回答：""剧情""  
+- 分析：完全匹配。  
+- 评分：1
+
+---
+**idx_4**  
+- 标准答案：""剧情/战争""  
+- 回答：""剧情/惊悚""  
+- 分析：两者都包含“剧情”，但是第二个类型中“惊悚”与“战争”不是同类或子集关系，指向不同实体，因此不算匹配。  
+- 评分：0
+
+---
+**idx_5**  
+- 标准答案：""剧情""  
+- 回答：""剧情""  
+- 分析：完全匹配。  
+- 评分：1
+
+---
+**idx_6**  
+- 标准答案：""喜剧/剧情""  
+- 回答：""剧情/犯罪""  
+- 分析：两者都有“剧情”，但“犯罪”与“喜剧”不匹配，且整个类型组合不同。既然出现了子集关系的话有“剧情”部分重合，但根据按照子集允许，需整体类型大致符合，此处因为“犯罪”与“喜剧”为不同类型，难以判定。考虑「类型答出子集且其他内容符合电影内容可算对」— 应当考虑是否指向实体一致。  
+综合考虑，该回答部分正确（剧情是子集），但“犯罪”替代“喜剧”属于不同类型且不是子集，故整个类型组合不匹配。  
+- 评分：0
+
+---
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 1,
+    ""idx_6"": 0
+}
+```",剧情/惊悚/犯罪,剧情/惊悚
+,,星际探索,星际探索,1.0,key_match,1.0,"分析过程：
+
+- idx_0  
+  标准答案：美国/加拿大  
+  回答：美国  
+  回答属于标准答案的子集，语义一致。  
+  得分：1
+
+- idx_1  
+  标准答案：美国/巴西/中国大陆  
+  回答：美国  
+  回答属于标准答案的子集，语义一致。  
+  得分：1
+
+- idx_2  
+  标准答案：中国香港/中国大陆  
+  回答：香港  
+  回答与“中国香港”语义相符，属于子集。  
+  得分：1
+
+- idx_3  
+  标准答案：法国/意大利  
+  回答：法国  
+  回答属于标准答案的子集，语义一致。  
+  得分：1
+
+- idx_4  
+  标准答案：捷克/斯洛伐克/乌克兰  
+  回答：匈牙利  
+  回答不在标准答案范围内，指向实体不一致。  
+  得分：0
+
+- idx_5  
+  标准答案：瑞典/德国/挪威  
+  回答：瑞典  
+  回答属于标准答案的子集，语义一致。  
+  得分：1
+
+- idx_6  
+  标准答案：美国  
+  回答：丹麦  
+  回答不在标准答案范围内，指向实体不一致。  
+  得分：0
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 1,
+    ""idx_6"": 0
+}
+```",美国/巴西/中国大陆,美国,1.0,"Let's analyze each idx pair according to the criterion:
+
+Criterion:
+- As long as the response's semantic meaning is roughly the same as the target, or the entity pointed to is the same, it is considered correct.
+- Exact wording is not required.
+
+Analysis:
+
+- idx_0: response ""托德·菲利普斯"", target ""托德·菲利普斯""
+  - Exactly the same entity.
+  - Score: 1
+
+- idx_1: response ""詹姆斯·格雷"", target ""詹姆斯·格雷""
+  - Exactly the same entity.
+  - Score: 1
+
+- idx_2: response ""杨凡"", target ""杨凡""
+  - Exactly the same entity.
+  - Score: 1
+
+- idx_3: response ""安妮·路易丝·费里耶"", target ""罗曼·波兰斯基""
+  - Different entities; no semantic equivalence.
+  - Score: 0
+
+- idx_4: response ""克里斯蒂安·帕夫"", target ""瓦茨拉夫·马尔豪尔""
+  - Different persons, no indication of equivalence.
+  - Score: 0
+
+- idx_5: response ""洛伊·安德森"", target ""罗伊·安德森""
+  - The only difference is the first character: ""洛伊"" vs ""罗伊"".
+  - These are different names, so not equivalent.
+  - Score: 0
+
+- idx_6: response ""西莉亚·贝克特"", target ""史蒂文·索德伯格""
+  - Completely different entities.
+  - Score: 0
+
+Final scoring in JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",詹姆斯·格雷,詹姆斯·格雷,1.0,"number near in range 10.0%, response: 129.0, target: 124.0",124,129,1.0,"以下是对每条回答的逐条分析与评分依据：
+
+---
+**idx_0**  
+- 标准答案：""剧情/惊悚/犯罪""  
+- 回答：""剧情/惊悚""  
+- 分析：类型是标准答案的子集，且其他内容符合电影内容，符合「类型答出子集且其他内容符合电影内容可算对」的准则。  
+- 评分：1
+
+---
+**idx_1**  
+- 标准答案：""科幻/冒险""  
+- 回答：""科幻/冒险""  
+- 分析：完全匹配。  
+- 评分：1
+
+---
+**idx_2**  
+- 标准答案：""动画""  
+- 回答：""剧情""  
+- 分析：两者类型不同，语义不相同，也无指向同一实体，不可视作子集关系。  
+- 评分：0
+
+---
+**idx_3**  
+- 标准答案：""剧情""  
+- 回答：""剧情""  
+- 分析：完全匹配。  
+- 评分：1
+
+---
+**idx_4**  
+- 标准答案：""剧情/战争""  
+- 回答：""剧情/惊悚""  
+- 分析：两者都包含“剧情”，但是第二个类型中“惊悚”与“战争”不是同类或子集关系，指向不同实体，因此不算匹配。  
+- 评分：0
+
+---
+**idx_5**  
+- 标准答案：""剧情""  
+- 回答：""剧情""  
+- 分析：完全匹配。  
+- 评分：1
+
+---
+**idx_6**  
+- 标准答案：""喜剧/剧情""  
+- 回答：""剧情/犯罪""  
+- 分析：两者都有“剧情”，但“犯罪”与“喜剧”不匹配，且整个类型组合不同。既然出现了子集关系的话有“剧情”部分重合，但根据按照子集允许，需整体类型大致符合，此处因为“犯罪”与“喜剧”为不同类型，难以判定。考虑「类型答出子集且其他内容符合电影内容可算对」— 应当考虑是否指向实体一致。  
+综合考虑，该回答部分正确（剧情是子集），但“犯罪”替代“喜剧”属于不同类型且不是子集，故整个类型组合不匹配。  
+- 评分：0
+
+---
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 1,
+    ""idx_6"": 0
+}
+```",科幻/冒险,科幻/冒险
+,,继园台七号,继园台七号,1.0,key_match,1.0,"分析过程：
+
+- idx_0  
+  标准答案：美国/加拿大  
+  回答：美国  
+  回答属于标准答案的子集，语义一致。  
+  得分：1
+
+- idx_1  
+  标准答案：美国/巴西/中国大陆  
+  回答：美国  
+  回答属于标准答案的子集，语义一致。  
+  得分：1
+
+- idx_2  
+  标准答案：中国香港/中国大陆  
+  回答：香港  
+  回答与“中国香港”语义相符，属于子集。  
+  得分：1
+
+- idx_3  
+  标准答案：法国/意大利  
+  回答：法国  
+  回答属于标准答案的子集，语义一致。  
+  得分：1
+
+- idx_4  
+  标准答案：捷克/斯洛伐克/乌克兰  
+  回答：匈牙利  
+  回答不在标准答案范围内，指向实体不一致。  
+  得分：0
+
+- idx_5  
+  标准答案：瑞典/德国/挪威  
+  回答：瑞典  
+  回答属于标准答案的子集，语义一致。  
+  得分：1
+
+- idx_6  
+  标准答案：美国  
+  回答：丹麦  
+  回答不在标准答案范围内，指向实体不一致。  
+  得分：0
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 1,
+    ""idx_6"": 0
+}
+```",中国香港/中国大陆,香港,1.0,"Let's analyze each idx pair according to the criterion:
+
+Criterion:
+- As long as the response's semantic meaning is roughly the same as the target, or the entity pointed to is the same, it is considered correct.
+- Exact wording is not required.
+
+Analysis:
+
+- idx_0: response ""托德·菲利普斯"", target ""托德·菲利普斯""
+  - Exactly the same entity.
+  - Score: 1
+
+- idx_1: response ""詹姆斯·格雷"", target ""詹姆斯·格雷""
+  - Exactly the same entity.
+  - Score: 1
+
+- idx_2: response ""杨凡"", target ""杨凡""
+  - Exactly the same entity.
+  - Score: 1
+
+- idx_3: response ""安妮·路易丝·费里耶"", target ""罗曼·波兰斯基""
+  - Different entities; no semantic equivalence.
+  - Score: 0
+
+- idx_4: response ""克里斯蒂安·帕夫"", target ""瓦茨拉夫·马尔豪尔""
+  - Different persons, no indication of equivalence.
+  - Score: 0
+
+- idx_5: response ""洛伊·安德森"", target ""罗伊·安德森""
+  - The only difference is the first character: ""洛伊"" vs ""罗伊"".
+  - These are different names, so not equivalent.
+  - Score: 0
+
+- idx_6: response ""西莉亚·贝克特"", target ""史蒂文·索德伯格""
+  - Completely different entities.
+  - Score: 0
+
+Final scoring in JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",杨凡,杨凡,0.0,"number not near, response: 103.0, target: 125.0",125,103,0.0,"以下是对每条回答的逐条分析与评分依据：
+
+---
+**idx_0**  
+- 标准答案：""剧情/惊悚/犯罪""  
+- 回答：""剧情/惊悚""  
+- 分析：类型是标准答案的子集，且其他内容符合电影内容，符合「类型答出子集且其他内容符合电影内容可算对」的准则。  
+- 评分：1
+
+---
+**idx_1**  
+- 标准答案：""科幻/冒险""  
+- 回答：""科幻/冒险""  
+- 分析：完全匹配。  
+- 评分：1
+
+---
+**idx_2**  
+- 标准答案：""动画""  
+- 回答：""剧情""  
+- 分析：两者类型不同，语义不相同，也无指向同一实体，不可视作子集关系。  
+- 评分：0
+
+---
+**idx_3**  
+- 标准答案：""剧情""  
+- 回答：""剧情""  
+- 分析：完全匹配。  
+- 评分：1
+
+---
+**idx_4**  
+- 标准答案：""剧情/战争""  
+- 回答：""剧情/惊悚""  
+- 分析：两者都包含“剧情”，但是第二个类型中“惊悚”与“战争”不是同类或子集关系，指向不同实体，因此不算匹配。  
+- 评分：0
+
+---
+**idx_5**  
+- 标准答案：""剧情""  
+- 回答：""剧情""  
+- 分析：完全匹配。  
+- 评分：1
+
+---
+**idx_6**  
+- 标准答案：""喜剧/剧情""  
+- 回答：""剧情/犯罪""  
+- 分析：两者都有“剧情”，但“犯罪”与“喜剧”不匹配，且整个类型组合不同。既然出现了子集关系的话有“剧情”部分重合，但根据按照子集允许，需整体类型大致符合，此处因为“犯罪”与“喜剧”为不同类型，难以判定。考虑「类型答出子集且其他内容符合电影内容可算对」— 应当考虑是否指向实体一致。  
+综合考虑，该回答部分正确（剧情是子集），但“犯罪”替代“喜剧”属于不同类型且不是子集，故整个类型组合不匹配。  
+- 评分：0
+
+---
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 1,
+    ""idx_6"": 0
+}
+```",动画,剧情
+,,我控诉,我控诉,1.0,key_match,1.0,"分析过程：
+
+- idx_0  
+  标准答案：美国/加拿大  
+  回答：美国  
+  回答属于标准答案的子集，语义一致。  
+  得分：1
+
+- idx_1  
+  标准答案：美国/巴西/中国大陆  
+  回答：美国  
+  回答属于标准答案的子集，语义一致。  
+  得分：1
+
+- idx_2  
+  标准答案：中国香港/中国大陆  
+  回答：香港  
+  回答与“中国香港”语义相符，属于子集。  
+  得分：1
+
+- idx_3  
+  标准答案：法国/意大利  
+  回答：法国  
+  回答属于标准答案的子集，语义一致。  
+  得分：1
+
+- idx_4  
+  标准答案：捷克/斯洛伐克/乌克兰  
+  回答：匈牙利  
+  回答不在标准答案范围内，指向实体不一致。  
+  得分：0
+
+- idx_5  
+  标准答案：瑞典/德国/挪威  
+  回答：瑞典  
+  回答属于标准答案的子集，语义一致。  
+  得分：1
+
+- idx_6  
+  标准答案：美国  
+  回答：丹麦  
+  回答不在标准答案范围内，指向实体不一致。  
+  得分：0
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 1,
+    ""idx_6"": 0
+}
+```",法国/意大利,法国,0.0,"Let's analyze each idx pair according to the criterion:
+
+Criterion:
+- As long as the response's semantic meaning is roughly the same as the target, or the entity pointed to is the same, it is considered correct.
+- Exact wording is not required.
+
+Analysis:
+
+- idx_0: response ""托德·菲利普斯"", target ""托德·菲利普斯""
+  - Exactly the same entity.
+  - Score: 1
+
+- idx_1: response ""詹姆斯·格雷"", target ""詹姆斯·格雷""
+  - Exactly the same entity.
+  - Score: 1
+
+- idx_2: response ""杨凡"", target ""杨凡""
+  - Exactly the same entity.
+  - Score: 1
+
+- idx_3: response ""安妮·路易丝·费里耶"", target ""罗曼·波兰斯基""
+  - Different entities; no semantic equivalence.
+  - Score: 0
+
+- idx_4: response ""克里斯蒂安·帕夫"", target ""瓦茨拉夫·马尔豪尔""
+  - Different persons, no indication of equivalence.
+  - Score: 0
+
+- idx_5: response ""洛伊·安德森"", target ""罗伊·安德森""
+  - The only difference is the first character: ""洛伊"" vs ""罗伊"".
+  - These are different names, so not equivalent.
+  - Score: 0
+
+- idx_6: response ""西莉亚·贝克特"", target ""史蒂文·索德伯格""
+  - Completely different entities.
+  - Score: 0
+
+Final scoring in JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",罗曼·波兰斯基,安妮·路易丝·费里耶,0.0,"number not near, response: 110.0, target: 132.0",132,110,1.0,"以下是对每条回答的逐条分析与评分依据：
+
+---
+**idx_0**  
+- 标准答案：""剧情/惊悚/犯罪""  
+- 回答：""剧情/惊悚""  
+- 分析：类型是标准答案的子集，且其他内容符合电影内容，符合「类型答出子集且其他内容符合电影内容可算对」的准则。  
+- 评分：1
+
+---
+**idx_1**  
+- 标准答案：""科幻/冒险""  
+- 回答：""科幻/冒险""  
+- 分析：完全匹配。  
+- 评分：1
+
+---
+**idx_2**  
+- 标准答案：""动画""  
+- 回答：""剧情""  
+- 分析：两者类型不同，语义不相同，也无指向同一实体，不可视作子集关系。  
+- 评分：0
+
+---
+**idx_3**  
+- 标准答案：""剧情""  
+- 回答：""剧情""  
+- 分析：完全匹配。  
+- 评分：1
+
+---
+**idx_4**  
+- 标准答案：""剧情/战争""  
+- 回答：""剧情/惊悚""  
+- 分析：两者都包含“剧情”，但是第二个类型中“惊悚”与“战争”不是同类或子集关系，指向不同实体，因此不算匹配。  
+- 评分：0
+
+---
+**idx_5**  
+- 标准答案：""剧情""  
+- 回答：""剧情""  
+- 分析：完全匹配。  
+- 评分：1
+
+---
+**idx_6**  
+- 标准答案：""喜剧/剧情""  
+- 回答：""剧情/犯罪""  
+- 分析：两者都有“剧情”，但“犯罪”与“喜剧”不匹配，且整个类型组合不同。既然出现了子集关系的话有“剧情”部分重合，但根据按照子集允许，需整体类型大致符合，此处因为“犯罪”与“喜剧”为不同类型，难以判定。考虑「类型答出子集且其他内容符合电影内容可算对」— 应当考虑是否指向实体一致。  
+综合考虑，该回答部分正确（剧情是子集），但“犯罪”替代“喜剧”属于不同类型且不是子集，故整个类型组合不匹配。  
+- 评分：0
+
+---
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 1,
+    ""idx_6"": 0
+}
+```",剧情,剧情
+,,被涂污的鸟,被涂污的鸟,1.0,key_match,0.0,"分析过程：
+
+- idx_0  
+  标准答案：美国/加拿大  
+  回答：美国  
+  回答属于标准答案的子集，语义一致。  
+  得分：1
+
+- idx_1  
+  标准答案：美国/巴西/中国大陆  
+  回答：美国  
+  回答属于标准答案的子集，语义一致。  
+  得分：1
+
+- idx_2  
+  标准答案：中国香港/中国大陆  
+  回答：香港  
+  回答与“中国香港”语义相符，属于子集。  
+  得分：1
+
+- idx_3  
+  标准答案：法国/意大利  
+  回答：法国  
+  回答属于标准答案的子集，语义一致。  
+  得分：1
+
+- idx_4  
+  标准答案：捷克/斯洛伐克/乌克兰  
+  回答：匈牙利  
+  回答不在标准答案范围内，指向实体不一致。  
+  得分：0
+
+- idx_5  
+  标准答案：瑞典/德国/挪威  
+  回答：瑞典  
+  回答属于标准答案的子集，语义一致。  
+  得分：1
+
+- idx_6  
+  标准答案：美国  
+  回答：丹麦  
+  回答不在标准答案范围内，指向实体不一致。  
+  得分：0
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 1,
+    ""idx_6"": 0
+}
+```",捷克/斯洛伐克/乌克兰,匈牙利,0.0,"Let's analyze each idx pair according to the criterion:
+
+Criterion:
+- As long as the response's semantic meaning is roughly the same as the target, or the entity pointed to is the same, it is considered correct.
+- Exact wording is not required.
+
+Analysis:
+
+- idx_0: response ""托德·菲利普斯"", target ""托德·菲利普斯""
+  - Exactly the same entity.
+  - Score: 1
+
+- idx_1: response ""詹姆斯·格雷"", target ""詹姆斯·格雷""
+  - Exactly the same entity.
+  - Score: 1
+
+- idx_2: response ""杨凡"", target ""杨凡""
+  - Exactly the same entity.
+  - Score: 1
+
+- idx_3: response ""安妮·路易丝·费里耶"", target ""罗曼·波兰斯基""
+  - Different entities; no semantic equivalence.
+  - Score: 0
+
+- idx_4: response ""克里斯蒂安·帕夫"", target ""瓦茨拉夫·马尔豪尔""
+  - Different persons, no indication of equivalence.
+  - Score: 0
+
+- idx_5: response ""洛伊·安德森"", target ""罗伊·安德森""
+  - The only difference is the first character: ""洛伊"" vs ""罗伊"".
+  - These are different names, so not equivalent.
+  - Score: 0
+
+- idx_6: response ""西莉亚·贝克特"", target ""史蒂文·索德伯格""
+  - Completely different entities.
+  - Score: 0
+
+Final scoring in JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",瓦茨拉夫·马尔豪尔,克里斯蒂安·帕夫,0.0,"number not near, response: 105.0, target: 169.0",169,105,0.0,"以下是对每条回答的逐条分析与评分依据：
+
+---
+**idx_0**  
+- 标准答案：""剧情/惊悚/犯罪""  
+- 回答：""剧情/惊悚""  
+- 分析：类型是标准答案的子集，且其他内容符合电影内容，符合「类型答出子集且其他内容符合电影内容可算对」的准则。  
+- 评分：1
+
+---
+**idx_1**  
+- 标准答案：""科幻/冒险""  
+- 回答：""科幻/冒险""  
+- 分析：完全匹配。  
+- 评分：1
+
+---
+**idx_2**  
+- 标准答案：""动画""  
+- 回答：""剧情""  
+- 分析：两者类型不同，语义不相同，也无指向同一实体，不可视作子集关系。  
+- 评分：0
+
+---
+**idx_3**  
+- 标准答案：""剧情""  
+- 回答：""剧情""  
+- 分析：完全匹配。  
+- 评分：1
+
+---
+**idx_4**  
+- 标准答案：""剧情/战争""  
+- 回答：""剧情/惊悚""  
+- 分析：两者都包含“剧情”，但是第二个类型中“惊悚”与“战争”不是同类或子集关系，指向不同实体，因此不算匹配。  
+- 评分：0
+
+---
+**idx_5**  
+- 标准答案：""剧情""  
+- 回答：""剧情""  
+- 分析：完全匹配。  
+- 评分：1
+
+---
+**idx_6**  
+- 标准答案：""喜剧/剧情""  
+- 回答：""剧情/犯罪""  
+- 分析：两者都有“剧情”，但“犯罪”与“喜剧”不匹配，且整个类型组合不同。既然出现了子集关系的话有“剧情”部分重合，但根据按照子集允许，需整体类型大致符合，此处因为“犯罪”与“喜剧”为不同类型，难以判定。考虑「类型答出子集且其他内容符合电影内容可算对」— 应当考虑是否指向实体一致。  
+综合考虑，该回答部分正确（剧情是子集），但“犯罪”替代“喜剧”属于不同类型且不是子集，故整个类型组合不匹配。  
+- 评分：0
+
+---
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 1,
+    ""idx_6"": 0
+}
+```",剧情/战争,剧情/惊悚
+,,关于无尽,关于无尽,1.0,key_match,1.0,"分析过程：
+
+- idx_0  
+  标准答案：美国/加拿大  
+  回答：美国  
+  回答属于标准答案的子集，语义一致。  
+  得分：1
+
+- idx_1  
+  标准答案：美国/巴西/中国大陆  
+  回答：美国  
+  回答属于标准答案的子集，语义一致。  
+  得分：1
+
+- idx_2  
+  标准答案：中国香港/中国大陆  
+  回答：香港  
+  回答与“中国香港”语义相符，属于子集。  
+  得分：1
+
+- idx_3  
+  标准答案：法国/意大利  
+  回答：法国  
+  回答属于标准答案的子集，语义一致。  
+  得分：1
+
+- idx_4  
+  标准答案：捷克/斯洛伐克/乌克兰  
+  回答：匈牙利  
+  回答不在标准答案范围内，指向实体不一致。  
+  得分：0
+
+- idx_5  
+  标准答案：瑞典/德国/挪威  
+  回答：瑞典  
+  回答属于标准答案的子集，语义一致。  
+  得分：1
+
+- idx_6  
+  标准答案：美国  
+  回答：丹麦  
+  回答不在标准答案范围内，指向实体不一致。  
+  得分：0
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 1,
+    ""idx_6"": 0
+}
+```",瑞典/德国/挪威,瑞典,0.0,"Let's analyze each idx pair according to the criterion:
+
+Criterion:
+- As long as the response's semantic meaning is roughly the same as the target, or the entity pointed to is the same, it is considered correct.
+- Exact wording is not required.
+
+Analysis:
+
+- idx_0: response ""托德·菲利普斯"", target ""托德·菲利普斯""
+  - Exactly the same entity.
+  - Score: 1
+
+- idx_1: response ""詹姆斯·格雷"", target ""詹姆斯·格雷""
+  - Exactly the same entity.
+  - Score: 1
+
+- idx_2: response ""杨凡"", target ""杨凡""
+  - Exactly the same entity.
+  - Score: 1
+
+- idx_3: response ""安妮·路易丝·费里耶"", target ""罗曼·波兰斯基""
+  - Different entities; no semantic equivalence.
+  - Score: 0
+
+- idx_4: response ""克里斯蒂安·帕夫"", target ""瓦茨拉夫·马尔豪尔""
+  - Different persons, no indication of equivalence.
+  - Score: 0
+
+- idx_5: response ""洛伊·安德森"", target ""罗伊·安德森""
+  - The only difference is the first character: ""洛伊"" vs ""罗伊"".
+  - These are different names, so not equivalent.
+  - Score: 0
+
+- idx_6: response ""西莉亚·贝克特"", target ""史蒂文·索德伯格""
+  - Completely different entities.
+  - Score: 0
+
+Final scoring in JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",罗伊·安德森,洛伊·安德森,0.0,"number not near, response: 114.0, target: 76.0",76,114,1.0,"以下是对每条回答的逐条分析与评分依据：
+
+---
+**idx_0**  
+- 标准答案：""剧情/惊悚/犯罪""  
+- 回答：""剧情/惊悚""  
+- 分析：类型是标准答案的子集，且其他内容符合电影内容，符合「类型答出子集且其他内容符合电影内容可算对」的准则。  
+- 评分：1
+
+---
+**idx_1**  
+- 标准答案：""科幻/冒险""  
+- 回答：""科幻/冒险""  
+- 分析：完全匹配。  
+- 评分：1
+
+---
+**idx_2**  
+- 标准答案：""动画""  
+- 回答：""剧情""  
+- 分析：两者类型不同，语义不相同，也无指向同一实体，不可视作子集关系。  
+- 评分：0
+
+---
+**idx_3**  
+- 标准答案：""剧情""  
+- 回答：""剧情""  
+- 分析：完全匹配。  
+- 评分：1
+
+---
+**idx_4**  
+- 标准答案：""剧情/战争""  
+- 回答：""剧情/惊悚""  
+- 分析：两者都包含“剧情”，但是第二个类型中“惊悚”与“战争”不是同类或子集关系，指向不同实体，因此不算匹配。  
+- 评分：0
+
+---
+**idx_5**  
+- 标准答案：""剧情""  
+- 回答：""剧情""  
+- 分析：完全匹配。  
+- 评分：1
+
+---
+**idx_6**  
+- 标准答案：""喜剧/剧情""  
+- 回答：""剧情/犯罪""  
+- 分析：两者都有“剧情”，但“犯罪”与“喜剧”不匹配，且整个类型组合不同。既然出现了子集关系的话有“剧情”部分重合，但根据按照子集允许，需整体类型大致符合，此处因为“犯罪”与“喜剧”为不同类型，难以判定。考虑「类型答出子集且其他内容符合电影内容可算对」— 应当考虑是否指向实体一致。  
+综合考虑，该回答部分正确（剧情是子集），但“犯罪”替代“喜剧”属于不同类型且不是子集，故整个类型组合不匹配。  
+- 评分：0
+
+---
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 1,
+    ""idx_6"": 0
+}
+```",剧情,剧情
+,,自助洗衣店,自助洗衣店,1.0,key_match,0.0,"分析过程：
+
+- idx_0  
+  标准答案：美国/加拿大  
+  回答：美国  
+  回答属于标准答案的子集，语义一致。  
+  得分：1
+
+- idx_1  
+  标准答案：美国/巴西/中国大陆  
+  回答：美国  
+  回答属于标准答案的子集，语义一致。  
+  得分：1
+
+- idx_2  
+  标准答案：中国香港/中国大陆  
+  回答：香港  
+  回答与“中国香港”语义相符，属于子集。  
+  得分：1
+
+- idx_3  
+  标准答案：法国/意大利  
+  回答：法国  
+  回答属于标准答案的子集，语义一致。  
+  得分：1
+
+- idx_4  
+  标准答案：捷克/斯洛伐克/乌克兰  
+  回答：匈牙利  
+  回答不在标准答案范围内，指向实体不一致。  
+  得分：0
+
+- idx_5  
+  标准答案：瑞典/德国/挪威  
+  回答：瑞典  
+  回答属于标准答案的子集，语义一致。  
+  得分：1
+
+- idx_6  
+  标准答案：美国  
+  回答：丹麦  
+  回答不在标准答案范围内，指向实体不一致。  
+  得分：0
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 1,
+    ""idx_6"": 0
+}
+```",美国,丹麦,0.0,"Let's analyze each idx pair according to the criterion:
+
+Criterion:
+- As long as the response's semantic meaning is roughly the same as the target, or the entity pointed to is the same, it is considered correct.
+- Exact wording is not required.
+
+Analysis:
+
+- idx_0: response ""托德·菲利普斯"", target ""托德·菲利普斯""
+  - Exactly the same entity.
+  - Score: 1
+
+- idx_1: response ""詹姆斯·格雷"", target ""詹姆斯·格雷""
+  - Exactly the same entity.
+  - Score: 1
+
+- idx_2: response ""杨凡"", target ""杨凡""
+  - Exactly the same entity.
+  - Score: 1
+
+- idx_3: response ""安妮·路易丝·费里耶"", target ""罗曼·波兰斯基""
+  - Different entities; no semantic equivalence.
+  - Score: 0
+
+- idx_4: response ""克里斯蒂安·帕夫"", target ""瓦茨拉夫·马尔豪尔""
+  - Different persons, no indication of equivalence.
+  - Score: 0
+
+- idx_5: response ""洛伊·安德森"", target ""罗伊·安德森""
+  - The only difference is the first character: ""洛伊"" vs ""罗伊"".
+  - These are different names, so not equivalent.
+  - Score: 0
+
+- idx_6: response ""西莉亚·贝克特"", target ""史蒂文·索德伯格""
+  - Completely different entities.
+  - Score: 0
+
+Final scoring in JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",史蒂文·索德伯格,西莉亚·贝克特,1.0,"number near in range 10.0%, response: 101.0, target: 96.0",96,101,0.0,"以下是对每条回答的逐条分析与评分依据：
+
+---
+**idx_0**  
+- 标准答案：""剧情/惊悚/犯罪""  
+- 回答：""剧情/惊悚""  
+- 分析：类型是标准答案的子集，且其他内容符合电影内容，符合「类型答出子集且其他内容符合电影内容可算对」的准则。  
+- 评分：1
+
+---
+**idx_1**  
+- 标准答案：""科幻/冒险""  
+- 回答：""科幻/冒险""  
+- 分析：完全匹配。  
+- 评分：1
+
+---
+**idx_2**  
+- 标准答案：""动画""  
+- 回答：""剧情""  
+- 分析：两者类型不同，语义不相同，也无指向同一实体，不可视作子集关系。  
+- 评分：0
+
+---
+**idx_3**  
+- 标准答案：""剧情""  
+- 回答：""剧情""  
+- 分析：完全匹配。  
+- 评分：1
+
+---
+**idx_4**  
+- 标准答案：""剧情/战争""  
+- 回答：""剧情/惊悚""  
+- 分析：两者都包含“剧情”，但是第二个类型中“惊悚”与“战争”不是同类或子集关系，指向不同实体，因此不算匹配。  
+- 评分：0
+
+---
+**idx_5**  
+- 标准答案：""剧情""  
+- 回答：""剧情""  
+- 分析：完全匹配。  
+- 评分：1
+
+---
+**idx_6**  
+- 标准答案：""喜剧/剧情""  
+- 回答：""剧情/犯罪""  
+- 分析：两者都有“剧情”，但“犯罪”与“喜剧”不匹配，且整个类型组合不同。既然出现了子集关系的话有“剧情”部分重合，但根据按照子集允许，需整体类型大致符合，此处因为“犯罪”与“喜剧”为不同类型，难以判定。考虑「类型答出子集且其他内容符合电影内容可算对」— 应当考虑是否指向实体一致。  
+综合考虑，该回答部分正确（剧情是子集），但“犯罪”替代“喜剧”属于不同类型且不是子集，故整个类型组合不匹配。  
+- 评分：0
+
+---
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 1,
+    ""idx_6"": 0
+}
+```",喜剧/剧情,剧情/犯罪
+1.0,,世界的胜利,,,,,,法国/意大利,,,,罗贝尔·盖迪吉昂,,,,107,,,,剧情,
+1.0,,乳牙,,,,,,澳大利亚,,,,香农·墨菲,,,,120,,,,剧情/喜剧,
+1.0,,兰心大剧院,,,,,,中国大陆,,,,娄烨,,,,126,,,,剧情,
+1.0,,厄玛,,,,,,智利,,,,帕布罗·拉雷恩,,,,102,,,,剧情/爱情/音乐,
+1.0,,婚姻故事,,,,,,英国/美国,,,,诺亚·鲍姆巴赫,,,,135,,,,剧情/爱情,
+1.0,,完美候选人,,,,,,沙特阿拉伯/德国,,,,海法·曼苏尔,,,,101,,,,剧情,
+1.0,,庄园,,,,,,葡萄牙/法国,,,,蒂亚戈·盖吉思,,,,164,,,,剧情,
+1.0,,真相,,,,,,法国/日本,,,,是枝裕和,,,,106,,,,剧情,
+1.0,,等待野蛮人,,,,,,意大利/美国,,,,西罗·格拉,,,,112,,,,剧情,
+1.0,,荣誉之客,,,,,,加拿大,,,,阿托姆·伊戈扬,,,,104,,,,剧情,
+1.0,,非常市长,,,,,,意大利,,,,马里奥·马尔托内,,,,118,,,,剧情,
+1.0,,马丁·伊登,,,,,,意大利/法国/德国,,,,皮耶特罗·马切罗,,,,129,,,,剧情,
+1.0,,黄蜂网络,,,,,,法国/西班牙/比利时/巴西,,,,奥利维耶·阿萨亚斯,,,,123,,,,惊悚,
+1.0,,黑手党不再是曾经,,,,,,意大利,,,,弗兰科·马雷斯科,,,,107,,,,纪录片,

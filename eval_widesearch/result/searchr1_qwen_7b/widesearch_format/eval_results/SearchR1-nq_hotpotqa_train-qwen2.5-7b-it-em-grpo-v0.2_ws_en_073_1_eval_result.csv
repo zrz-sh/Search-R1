@@ -1,0 +1,1656 @@
+chipname,chipname_before_map,exist_flag_gt,exist_flag_response,productname,productname_before_map,businterface_exact_match,businterface_exact_match_eval_msg,businterface_query,businterface_response,chipname_exact_match,chipname_exact_match_eval_msg,corefrequency_exact_match,corefrequency_exact_match_eval_msg,corefrequency_query,corefrequency_response,memorybitwidth_llm_judge,memorybitwidth_llm_judge_eval_msg,memorybitwidth_query,memorybitwidth_response,memorycapacity_llm_judge,memorycapacity_llm_judge_eval_msg,memorycapacity_query,memorycapacity_response,memoryfrequency_exact_match,memoryfrequency_exact_match_eval_msg,memoryfrequency_query,memoryfrequency_response,memorytype_exact_match,memorytype_exact_match_eval_msg,memorytype_query,memorytype_response,productname_exact_match,productname_exact_match_eval_msg,productseries_llm_judge,productseries_llm_judge_eval_msg,productseries_query,productseries_response,releasedate_exact_match,releasedate_exact_match_eval_msg,releasedate_query,releasedate_response
+nv20,NV20,,,geforce3,GeForce 3,0.0,"exact not match, response: agp2x, target: agp4x",agp4x,agp2x,1.0,key_match,0.0,"exact not match, response: 225mhz, target: 200mhz",200mhz,225mhz,0.0,"Let's analyze each pair based on the criterion:
+
+Criterion summary:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- Different memory bit widths or capacities under the same product name are considered correct regardless of separate or combined writing.  
+- Since the standard answers and responses are all bit widths, we consider if those bit widths correspond or match according to ""point to the same entity"" or roughly equivalent.
+
+Now item-by-item:
+
+1. idx_0: response = ""64-bit"", target = ""128bit""  
+   - 64-bit is not approximately the same as 128-bit, they differ by half in magnitude.  
+   - They do not point to the same entity or a range that includes each other.  
+   - Score = 0.
+
+2. idx_1: response = ""64-bit"", target = ""384bit""  
+   - Again, 64-bit is much smaller than 384bit. Not semantically same. Different entities.  
+   - Score = 0.
+
+3. idx_2: response = ""256-bit"", target = ""192bit""  
+   - These are different values (256 vs 192). Not the same. No indication that under same product name these are acceptable here since it’s a pairwise comparison.  
+   - Score = 0.
+
+4. idx_3: response = ""256-bit"", target = ""256bit""  
+   - Same bit width, only difference is dash and space, semantics the same.  
+   - Score = 1.
+
+5. idx_4: response = ""256-bit"", target = ""256bit""  
+   - Same as above, score = 1.
+
+6. idx_5: response = ""320-bit"", target = ""256bit""  
+   - Different bit widths, no equivalence.  
+   - Score = 0.
+
+7. idx_6: response = ""256-bit"", target = ""320bit""  
+   - Different bit width, no equivalence.  
+   - Score = 0.
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0
+}
+```",128bit,64-bit,0.0,"Let's analyze each pair according to the criteria:
+
+- The score is either 0 or 1.
+- Semantics should be approximately the same or point to the same entity.
+- No need for exact word-for-word match.
+- If the ""response"" is the same or semantically equivalent to the ""target"", score = 1.
+- If not, score = 0.
+
+Analysis:
+
+1. idx_0: response = ""128mb"", target = ""64mb""
+   - Different values, they refer to different memory sizes.
+   - Not approximately the same.
+   - Score = 0
+
+2. idx_1: response = ""512mb"", target = ""768mb""
+   - Different memory sizes.
+   - Score = 0
+
+3. idx_2: response = ""1024mb"", target = ""768mb""
+   - Different memory sizes.
+   - Score = 0
+
+4. idx_3: response = ""4gb"", target = ""4gb""
+   - Exactly the same.
+   - Score = 1
+
+5. idx_4: response = ""8gb"", target = ""8gb""
+   - Exactly the same.
+   - Score = 1
+
+6. idx_5: response = ""11gb"", target = ""8gb""
+   - Different values.
+   - Score = 0
+
+7. idx_6: response = ""10gb"", target = ""10gb""
+   - Exactly the same.
+   - Score = 1
+
+Final scoring:  
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1
+}
+```",64mb,128mb,0.0,"exact not match, response: 225mhz, target: 230mhz",230mhz,225mhz,1.0,"exact match, response: ddr, target: ddr",ddr,ddr,1.0,key_match,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion recap:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- No need for exact wording.  
+- Score is either 0 or 1.  
+
+---
+
+**idx_0**:  
+- Response: ""geforce""  
+- Target: ""geforce3series""  
+- Analysis: The response is very vague, ""geforce"" covers a huge family of GPUs, while the target specifies the ""geforce3series,"" a particular generation. The response does not specify or sufficiently approximate the target. Too general and not equivalent.  
+- Score: 0  
+
+**idx_1**:  
+- Response: ""geforce8""  
+- Target: ""geforce8(8xxx)series""  
+- Analysis: The response ""geforce8"" clearly indicates the same generation as ""geforce8(8xxx)series."" The response effectively points to the same entity.  
+- Score: 1  
+
+**idx_2**:  
+- Response: ""geforcegtx""  
+- Target: ""geforce400series""  
+- Analysis: ""geforcegtx"" is a broad brand term used across multiple series, but does the 400 series belong to GTX? Yes, the GeForce 400 series uses the GTX moniker (e.g., GTX 480). The response does not specify ""400series,"" only the GTX brand. Is this sufficient? Per criterion, approximate semantics or same entity. ""geforcegtx"" is broader but includes 400 series. However, the target is specifically ""400series,"" so response is too generic, but points to the correct general family. Considering the criterion ""approximately the same"" or ""points to the same entity,"" this may be acceptable.  
+- Score: 1  
+
+**idx_3**:  
+- Response: ""geforcegtx""  
+- Target: ""geforce900series""  
+- Analysis: Same as above. The 900 series are branded as GTX as well (e.g., GTX 970). Response is broad but covers the target series.  
+- Score: 1  
+
+**idx_4**:  
+- Response: ""geforcegtx""  
+- Target: ""geforce10series""  
+- Analysis: GeForce 10 series is branded as GTX too (e.g., GTX 1080), so response is generalized but covers the target entity.  
+- Score: 1  
+
+**idx_5**:  
+- Response: ""geforcertx2""  
+- Target: ""geforce20series""  
+- Analysis: ""geforcertx2"" is presumably a typo or an attempt to say ""geforcertx 2"" or ""geforce rtx 2,"" referring to the 20 series (RTX 20 series). Although the wording is inaccurate and slightly garbled, it references RTX 2, possibly meaning the RTX generation 2, which corresponds to the 20 series. This matches the target fairly well in meaning.  
+- Score: 1  
+
+**idx_6**:  
+- Response: ""geforcertx3""  
+- Target: ""geforce30series""  
+- Analysis: Similar to above, ""geforcertx3"" seems to mean RTX 3 or RTX 30 series, matching the target ""geforce30series."" Despite the merged word, it points to the same entity.  
+- Score: 1  
+
+---
+
+### Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1
+}
+```",geforce3series,geforce,0.0,"exact not match, response: feb27,2001, target: feb27th,2001","feb27th,2001","feb27,2001"
+g80,G80,,,geforce8800gtx,GeForce 8800 GTX,0.0,"exact not match, response: pci-ex16, target: pcie1.0x16",pcie1.0x16,pci-ex16,1.0,key_match,0.0,"exact not match, response: 575mhz, target: 576mhz",576mhz,575mhz,0.0,"Let's analyze each pair based on the criterion:
+
+Criterion summary:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- Different memory bit widths or capacities under the same product name are considered correct regardless of separate or combined writing.  
+- Since the standard answers and responses are all bit widths, we consider if those bit widths correspond or match according to ""point to the same entity"" or roughly equivalent.
+
+Now item-by-item:
+
+1. idx_0: response = ""64-bit"", target = ""128bit""  
+   - 64-bit is not approximately the same as 128-bit, they differ by half in magnitude.  
+   - They do not point to the same entity or a range that includes each other.  
+   - Score = 0.
+
+2. idx_1: response = ""64-bit"", target = ""384bit""  
+   - Again, 64-bit is much smaller than 384bit. Not semantically same. Different entities.  
+   - Score = 0.
+
+3. idx_2: response = ""256-bit"", target = ""192bit""  
+   - These are different values (256 vs 192). Not the same. No indication that under same product name these are acceptable here since it’s a pairwise comparison.  
+   - Score = 0.
+
+4. idx_3: response = ""256-bit"", target = ""256bit""  
+   - Same bit width, only difference is dash and space, semantics the same.  
+   - Score = 1.
+
+5. idx_4: response = ""256-bit"", target = ""256bit""  
+   - Same as above, score = 1.
+
+6. idx_5: response = ""320-bit"", target = ""256bit""  
+   - Different bit widths, no equivalence.  
+   - Score = 0.
+
+7. idx_6: response = ""256-bit"", target = ""320bit""  
+   - Different bit width, no equivalence.  
+   - Score = 0.
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0
+}
+```",384bit,64-bit,0.0,"Let's analyze each pair according to the criteria:
+
+- The score is either 0 or 1.
+- Semantics should be approximately the same or point to the same entity.
+- No need for exact word-for-word match.
+- If the ""response"" is the same or semantically equivalent to the ""target"", score = 1.
+- If not, score = 0.
+
+Analysis:
+
+1. idx_0: response = ""128mb"", target = ""64mb""
+   - Different values, they refer to different memory sizes.
+   - Not approximately the same.
+   - Score = 0
+
+2. idx_1: response = ""512mb"", target = ""768mb""
+   - Different memory sizes.
+   - Score = 0
+
+3. idx_2: response = ""1024mb"", target = ""768mb""
+   - Different memory sizes.
+   - Score = 0
+
+4. idx_3: response = ""4gb"", target = ""4gb""
+   - Exactly the same.
+   - Score = 1
+
+5. idx_4: response = ""8gb"", target = ""8gb""
+   - Exactly the same.
+   - Score = 1
+
+6. idx_5: response = ""11gb"", target = ""8gb""
+   - Different values.
+   - Score = 0
+
+7. idx_6: response = ""10gb"", target = ""10gb""
+   - Exactly the same.
+   - Score = 1
+
+Final scoring:  
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1
+}
+```",768mb,512mb,0.0,"exact not match, response: 1300mhz, target: 900mhz",900mhz,1300mhz,1.0,"exact match, response: gddr3, target: gddr3",gddr3,gddr3,1.0,key_match,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion recap:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- No need for exact wording.  
+- Score is either 0 or 1.  
+
+---
+
+**idx_0**:  
+- Response: ""geforce""  
+- Target: ""geforce3series""  
+- Analysis: The response is very vague, ""geforce"" covers a huge family of GPUs, while the target specifies the ""geforce3series,"" a particular generation. The response does not specify or sufficiently approximate the target. Too general and not equivalent.  
+- Score: 0  
+
+**idx_1**:  
+- Response: ""geforce8""  
+- Target: ""geforce8(8xxx)series""  
+- Analysis: The response ""geforce8"" clearly indicates the same generation as ""geforce8(8xxx)series."" The response effectively points to the same entity.  
+- Score: 1  
+
+**idx_2**:  
+- Response: ""geforcegtx""  
+- Target: ""geforce400series""  
+- Analysis: ""geforcegtx"" is a broad brand term used across multiple series, but does the 400 series belong to GTX? Yes, the GeForce 400 series uses the GTX moniker (e.g., GTX 480). The response does not specify ""400series,"" only the GTX brand. Is this sufficient? Per criterion, approximate semantics or same entity. ""geforcegtx"" is broader but includes 400 series. However, the target is specifically ""400series,"" so response is too generic, but points to the correct general family. Considering the criterion ""approximately the same"" or ""points to the same entity,"" this may be acceptable.  
+- Score: 1  
+
+**idx_3**:  
+- Response: ""geforcegtx""  
+- Target: ""geforce900series""  
+- Analysis: Same as above. The 900 series are branded as GTX as well (e.g., GTX 970). Response is broad but covers the target series.  
+- Score: 1  
+
+**idx_4**:  
+- Response: ""geforcegtx""  
+- Target: ""geforce10series""  
+- Analysis: GeForce 10 series is branded as GTX too (e.g., GTX 1080), so response is generalized but covers the target entity.  
+- Score: 1  
+
+**idx_5**:  
+- Response: ""geforcertx2""  
+- Target: ""geforce20series""  
+- Analysis: ""geforcertx2"" is presumably a typo or an attempt to say ""geforcertx 2"" or ""geforce rtx 2,"" referring to the 20 series (RTX 20 series). Although the wording is inaccurate and slightly garbled, it references RTX 2, possibly meaning the RTX generation 2, which corresponds to the 20 series. This matches the target fairly well in meaning.  
+- Score: 1  
+
+**idx_6**:  
+- Response: ""geforcertx3""  
+- Target: ""geforce30series""  
+- Analysis: Similar to above, ""geforcertx3"" seems to mean RTX 3 or RTX 30 series, matching the target ""geforce30series."" Despite the merged word, it points to the same entity.  
+- Score: 1  
+
+---
+
+### Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1
+}
+```",geforce8(8xxx)series,geforce8,0.0,"exact not match, response: aug25,2006, target: nov8th,2006","nov8th,2006","aug25,2006"
+gf104,GF104,,,geforcegtx460,GeForce GTX 460,0.0,"exact not match, response: pci-ex16, target: pcie2.0x16",pcie2.0x16,pci-ex16,1.0,key_match,0.0,"exact not match, response: 865mhz, target: 675mhz",675mhz,865mhz,0.0,"Let's analyze each pair based on the criterion:
+
+Criterion summary:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- Different memory bit widths or capacities under the same product name are considered correct regardless of separate or combined writing.  
+- Since the standard answers and responses are all bit widths, we consider if those bit widths correspond or match according to ""point to the same entity"" or roughly equivalent.
+
+Now item-by-item:
+
+1. idx_0: response = ""64-bit"", target = ""128bit""  
+   - 64-bit is not approximately the same as 128-bit, they differ by half in magnitude.  
+   - They do not point to the same entity or a range that includes each other.  
+   - Score = 0.
+
+2. idx_1: response = ""64-bit"", target = ""384bit""  
+   - Again, 64-bit is much smaller than 384bit. Not semantically same. Different entities.  
+   - Score = 0.
+
+3. idx_2: response = ""256-bit"", target = ""192bit""  
+   - These are different values (256 vs 192). Not the same. No indication that under same product name these are acceptable here since it’s a pairwise comparison.  
+   - Score = 0.
+
+4. idx_3: response = ""256-bit"", target = ""256bit""  
+   - Same bit width, only difference is dash and space, semantics the same.  
+   - Score = 1.
+
+5. idx_4: response = ""256-bit"", target = ""256bit""  
+   - Same as above, score = 1.
+
+6. idx_5: response = ""320-bit"", target = ""256bit""  
+   - Different bit widths, no equivalence.  
+   - Score = 0.
+
+7. idx_6: response = ""256-bit"", target = ""320bit""  
+   - Different bit width, no equivalence.  
+   - Score = 0.
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0
+}
+```",192bit,256-bit,0.0,"Let's analyze each pair according to the criteria:
+
+- The score is either 0 or 1.
+- Semantics should be approximately the same or point to the same entity.
+- No need for exact word-for-word match.
+- If the ""response"" is the same or semantically equivalent to the ""target"", score = 1.
+- If not, score = 0.
+
+Analysis:
+
+1. idx_0: response = ""128mb"", target = ""64mb""
+   - Different values, they refer to different memory sizes.
+   - Not approximately the same.
+   - Score = 0
+
+2. idx_1: response = ""512mb"", target = ""768mb""
+   - Different memory sizes.
+   - Score = 0
+
+3. idx_2: response = ""1024mb"", target = ""768mb""
+   - Different memory sizes.
+   - Score = 0
+
+4. idx_3: response = ""4gb"", target = ""4gb""
+   - Exactly the same.
+   - Score = 1
+
+5. idx_4: response = ""8gb"", target = ""8gb""
+   - Exactly the same.
+   - Score = 1
+
+6. idx_5: response = ""11gb"", target = ""8gb""
+   - Different values.
+   - Score = 0
+
+7. idx_6: response = ""10gb"", target = ""10gb""
+   - Exactly the same.
+   - Score = 1
+
+Final scoring:  
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1
+}
+```",768mb,1024mb,0.0,"exact not match, response: 1600mhz, target: 900mhz",900mhz,1600mhz,1.0,"exact match, response: gddr5, target: gddr5",gddr5,gddr5,1.0,key_match,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion recap:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- No need for exact wording.  
+- Score is either 0 or 1.  
+
+---
+
+**idx_0**:  
+- Response: ""geforce""  
+- Target: ""geforce3series""  
+- Analysis: The response is very vague, ""geforce"" covers a huge family of GPUs, while the target specifies the ""geforce3series,"" a particular generation. The response does not specify or sufficiently approximate the target. Too general and not equivalent.  
+- Score: 0  
+
+**idx_1**:  
+- Response: ""geforce8""  
+- Target: ""geforce8(8xxx)series""  
+- Analysis: The response ""geforce8"" clearly indicates the same generation as ""geforce8(8xxx)series."" The response effectively points to the same entity.  
+- Score: 1  
+
+**idx_2**:  
+- Response: ""geforcegtx""  
+- Target: ""geforce400series""  
+- Analysis: ""geforcegtx"" is a broad brand term used across multiple series, but does the 400 series belong to GTX? Yes, the GeForce 400 series uses the GTX moniker (e.g., GTX 480). The response does not specify ""400series,"" only the GTX brand. Is this sufficient? Per criterion, approximate semantics or same entity. ""geforcegtx"" is broader but includes 400 series. However, the target is specifically ""400series,"" so response is too generic, but points to the correct general family. Considering the criterion ""approximately the same"" or ""points to the same entity,"" this may be acceptable.  
+- Score: 1  
+
+**idx_3**:  
+- Response: ""geforcegtx""  
+- Target: ""geforce900series""  
+- Analysis: Same as above. The 900 series are branded as GTX as well (e.g., GTX 970). Response is broad but covers the target series.  
+- Score: 1  
+
+**idx_4**:  
+- Response: ""geforcegtx""  
+- Target: ""geforce10series""  
+- Analysis: GeForce 10 series is branded as GTX too (e.g., GTX 1080), so response is generalized but covers the target entity.  
+- Score: 1  
+
+**idx_5**:  
+- Response: ""geforcertx2""  
+- Target: ""geforce20series""  
+- Analysis: ""geforcertx2"" is presumably a typo or an attempt to say ""geforcertx 2"" or ""geforce rtx 2,"" referring to the 20 series (RTX 20 series). Although the wording is inaccurate and slightly garbled, it references RTX 2, possibly meaning the RTX generation 2, which corresponds to the 20 series. This matches the target fairly well in meaning.  
+- Score: 1  
+
+**idx_6**:  
+- Response: ""geforcertx3""  
+- Target: ""geforce30series""  
+- Analysis: Similar to above, ""geforcertx3"" seems to mean RTX 3 or RTX 30 series, matching the target ""geforce30series."" Despite the merged word, it points to the same entity.  
+- Score: 1  
+
+---
+
+### Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1
+}
+```",geforce400series,geforcegtx,0.0,"exact not match, response: mar22,2010, target: jul12th,2010","jul12th,2010","mar22,2010"
+gm204,GM204,,,geforcegtx980,GeForce GTX 980,0.0,"exact not match, response: pci-ex16, target: pcie3.0x16",pcie3.0x16,pci-ex16,1.0,key_match,0.0,"exact not match, response: 1206mhz, target: 1127mhz",1127mhz,1206mhz,1.0,"Let's analyze each pair based on the criterion:
+
+Criterion summary:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- Different memory bit widths or capacities under the same product name are considered correct regardless of separate or combined writing.  
+- Since the standard answers and responses are all bit widths, we consider if those bit widths correspond or match according to ""point to the same entity"" or roughly equivalent.
+
+Now item-by-item:
+
+1. idx_0: response = ""64-bit"", target = ""128bit""  
+   - 64-bit is not approximately the same as 128-bit, they differ by half in magnitude.  
+   - They do not point to the same entity or a range that includes each other.  
+   - Score = 0.
+
+2. idx_1: response = ""64-bit"", target = ""384bit""  
+   - Again, 64-bit is much smaller than 384bit. Not semantically same. Different entities.  
+   - Score = 0.
+
+3. idx_2: response = ""256-bit"", target = ""192bit""  
+   - These are different values (256 vs 192). Not the same. No indication that under same product name these are acceptable here since it’s a pairwise comparison.  
+   - Score = 0.
+
+4. idx_3: response = ""256-bit"", target = ""256bit""  
+   - Same bit width, only difference is dash and space, semantics the same.  
+   - Score = 1.
+
+5. idx_4: response = ""256-bit"", target = ""256bit""  
+   - Same as above, score = 1.
+
+6. idx_5: response = ""320-bit"", target = ""256bit""  
+   - Different bit widths, no equivalence.  
+   - Score = 0.
+
+7. idx_6: response = ""256-bit"", target = ""320bit""  
+   - Different bit width, no equivalence.  
+   - Score = 0.
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0
+}
+```",256bit,256-bit,1.0,"Let's analyze each pair according to the criteria:
+
+- The score is either 0 or 1.
+- Semantics should be approximately the same or point to the same entity.
+- No need for exact word-for-word match.
+- If the ""response"" is the same or semantically equivalent to the ""target"", score = 1.
+- If not, score = 0.
+
+Analysis:
+
+1. idx_0: response = ""128mb"", target = ""64mb""
+   - Different values, they refer to different memory sizes.
+   - Not approximately the same.
+   - Score = 0
+
+2. idx_1: response = ""512mb"", target = ""768mb""
+   - Different memory sizes.
+   - Score = 0
+
+3. idx_2: response = ""1024mb"", target = ""768mb""
+   - Different memory sizes.
+   - Score = 0
+
+4. idx_3: response = ""4gb"", target = ""4gb""
+   - Exactly the same.
+   - Score = 1
+
+5. idx_4: response = ""8gb"", target = ""8gb""
+   - Exactly the same.
+   - Score = 1
+
+6. idx_5: response = ""11gb"", target = ""8gb""
+   - Different values.
+   - Score = 0
+
+7. idx_6: response = ""10gb"", target = ""10gb""
+   - Exactly the same.
+   - Score = 1
+
+Final scoring:  
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1
+}
+```",4gb,4gb,0.0,"exact not match, response: 10000mhz, target: 1753mhz",1753mhz,10000mhz,0.0,"exact not match, response: gddr5x, target: gddr5",gddr5,gddr5x,1.0,key_match,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion recap:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- No need for exact wording.  
+- Score is either 0 or 1.  
+
+---
+
+**idx_0**:  
+- Response: ""geforce""  
+- Target: ""geforce3series""  
+- Analysis: The response is very vague, ""geforce"" covers a huge family of GPUs, while the target specifies the ""geforce3series,"" a particular generation. The response does not specify or sufficiently approximate the target. Too general and not equivalent.  
+- Score: 0  
+
+**idx_1**:  
+- Response: ""geforce8""  
+- Target: ""geforce8(8xxx)series""  
+- Analysis: The response ""geforce8"" clearly indicates the same generation as ""geforce8(8xxx)series."" The response effectively points to the same entity.  
+- Score: 1  
+
+**idx_2**:  
+- Response: ""geforcegtx""  
+- Target: ""geforce400series""  
+- Analysis: ""geforcegtx"" is a broad brand term used across multiple series, but does the 400 series belong to GTX? Yes, the GeForce 400 series uses the GTX moniker (e.g., GTX 480). The response does not specify ""400series,"" only the GTX brand. Is this sufficient? Per criterion, approximate semantics or same entity. ""geforcegtx"" is broader but includes 400 series. However, the target is specifically ""400series,"" so response is too generic, but points to the correct general family. Considering the criterion ""approximately the same"" or ""points to the same entity,"" this may be acceptable.  
+- Score: 1  
+
+**idx_3**:  
+- Response: ""geforcegtx""  
+- Target: ""geforce900series""  
+- Analysis: Same as above. The 900 series are branded as GTX as well (e.g., GTX 970). Response is broad but covers the target series.  
+- Score: 1  
+
+**idx_4**:  
+- Response: ""geforcegtx""  
+- Target: ""geforce10series""  
+- Analysis: GeForce 10 series is branded as GTX too (e.g., GTX 1080), so response is generalized but covers the target entity.  
+- Score: 1  
+
+**idx_5**:  
+- Response: ""geforcertx2""  
+- Target: ""geforce20series""  
+- Analysis: ""geforcertx2"" is presumably a typo or an attempt to say ""geforcertx 2"" or ""geforce rtx 2,"" referring to the 20 series (RTX 20 series). Although the wording is inaccurate and slightly garbled, it references RTX 2, possibly meaning the RTX generation 2, which corresponds to the 20 series. This matches the target fairly well in meaning.  
+- Score: 1  
+
+**idx_6**:  
+- Response: ""geforcertx3""  
+- Target: ""geforce30series""  
+- Analysis: Similar to above, ""geforcertx3"" seems to mean RTX 3 or RTX 30 series, matching the target ""geforce30series."" Despite the merged word, it points to the same entity.  
+- Score: 1  
+
+---
+
+### Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1
+}
+```",geforce900series,geforcegtx,0.0,"exact not match, response: oct15,2014, target: sep19th,2014","sep19th,2014","oct15,2014"
+gp104,GP104,,,geforcegtx1080,GeForce GTX 1080,0.0,"exact not match, response: pci-ex16, target: pcie3.0x16",pcie3.0x16,pci-ex16,1.0,key_match,1.0,"exact match, response: 1607mhz, target: 1607mhz",1607mhz,1607mhz,1.0,"Let's analyze each pair based on the criterion:
+
+Criterion summary:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- Different memory bit widths or capacities under the same product name are considered correct regardless of separate or combined writing.  
+- Since the standard answers and responses are all bit widths, we consider if those bit widths correspond or match according to ""point to the same entity"" or roughly equivalent.
+
+Now item-by-item:
+
+1. idx_0: response = ""64-bit"", target = ""128bit""  
+   - 64-bit is not approximately the same as 128-bit, they differ by half in magnitude.  
+   - They do not point to the same entity or a range that includes each other.  
+   - Score = 0.
+
+2. idx_1: response = ""64-bit"", target = ""384bit""  
+   - Again, 64-bit is much smaller than 384bit. Not semantically same. Different entities.  
+   - Score = 0.
+
+3. idx_2: response = ""256-bit"", target = ""192bit""  
+   - These are different values (256 vs 192). Not the same. No indication that under same product name these are acceptable here since it’s a pairwise comparison.  
+   - Score = 0.
+
+4. idx_3: response = ""256-bit"", target = ""256bit""  
+   - Same bit width, only difference is dash and space, semantics the same.  
+   - Score = 1.
+
+5. idx_4: response = ""256-bit"", target = ""256bit""  
+   - Same as above, score = 1.
+
+6. idx_5: response = ""320-bit"", target = ""256bit""  
+   - Different bit widths, no equivalence.  
+   - Score = 0.
+
+7. idx_6: response = ""256-bit"", target = ""320bit""  
+   - Different bit width, no equivalence.  
+   - Score = 0.
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0
+}
+```",256bit,256-bit,1.0,"Let's analyze each pair according to the criteria:
+
+- The score is either 0 or 1.
+- Semantics should be approximately the same or point to the same entity.
+- No need for exact word-for-word match.
+- If the ""response"" is the same or semantically equivalent to the ""target"", score = 1.
+- If not, score = 0.
+
+Analysis:
+
+1. idx_0: response = ""128mb"", target = ""64mb""
+   - Different values, they refer to different memory sizes.
+   - Not approximately the same.
+   - Score = 0
+
+2. idx_1: response = ""512mb"", target = ""768mb""
+   - Different memory sizes.
+   - Score = 0
+
+3. idx_2: response = ""1024mb"", target = ""768mb""
+   - Different memory sizes.
+   - Score = 0
+
+4. idx_3: response = ""4gb"", target = ""4gb""
+   - Exactly the same.
+   - Score = 1
+
+5. idx_4: response = ""8gb"", target = ""8gb""
+   - Exactly the same.
+   - Score = 1
+
+6. idx_5: response = ""11gb"", target = ""8gb""
+   - Different values.
+   - Score = 0
+
+7. idx_6: response = ""10gb"", target = ""10gb""
+   - Exactly the same.
+   - Score = 1
+
+Final scoring:  
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1
+}
+```",8gb,8gb,0.0,"exact not match, response: 11250mhz, target: 1251mhz",1251mhz,11250mhz,1.0,"exact match, response: gddr5x, target: gddr5x",gddr5x,gddr5x,1.0,key_match,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion recap:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- No need for exact wording.  
+- Score is either 0 or 1.  
+
+---
+
+**idx_0**:  
+- Response: ""geforce""  
+- Target: ""geforce3series""  
+- Analysis: The response is very vague, ""geforce"" covers a huge family of GPUs, while the target specifies the ""geforce3series,"" a particular generation. The response does not specify or sufficiently approximate the target. Too general and not equivalent.  
+- Score: 0  
+
+**idx_1**:  
+- Response: ""geforce8""  
+- Target: ""geforce8(8xxx)series""  
+- Analysis: The response ""geforce8"" clearly indicates the same generation as ""geforce8(8xxx)series."" The response effectively points to the same entity.  
+- Score: 1  
+
+**idx_2**:  
+- Response: ""geforcegtx""  
+- Target: ""geforce400series""  
+- Analysis: ""geforcegtx"" is a broad brand term used across multiple series, but does the 400 series belong to GTX? Yes, the GeForce 400 series uses the GTX moniker (e.g., GTX 480). The response does not specify ""400series,"" only the GTX brand. Is this sufficient? Per criterion, approximate semantics or same entity. ""geforcegtx"" is broader but includes 400 series. However, the target is specifically ""400series,"" so response is too generic, but points to the correct general family. Considering the criterion ""approximately the same"" or ""points to the same entity,"" this may be acceptable.  
+- Score: 1  
+
+**idx_3**:  
+- Response: ""geforcegtx""  
+- Target: ""geforce900series""  
+- Analysis: Same as above. The 900 series are branded as GTX as well (e.g., GTX 970). Response is broad but covers the target series.  
+- Score: 1  
+
+**idx_4**:  
+- Response: ""geforcegtx""  
+- Target: ""geforce10series""  
+- Analysis: GeForce 10 series is branded as GTX too (e.g., GTX 1080), so response is generalized but covers the target entity.  
+- Score: 1  
+
+**idx_5**:  
+- Response: ""geforcertx2""  
+- Target: ""geforce20series""  
+- Analysis: ""geforcertx2"" is presumably a typo or an attempt to say ""geforcertx 2"" or ""geforce rtx 2,"" referring to the 20 series (RTX 20 series). Although the wording is inaccurate and slightly garbled, it references RTX 2, possibly meaning the RTX generation 2, which corresponds to the 20 series. This matches the target fairly well in meaning.  
+- Score: 1  
+
+**idx_6**:  
+- Response: ""geforcertx3""  
+- Target: ""geforce30series""  
+- Analysis: Similar to above, ""geforcertx3"" seems to mean RTX 3 or RTX 30 series, matching the target ""geforce30series."" Despite the merged word, it points to the same entity.  
+- Score: 1  
+
+---
+
+### Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1
+}
+```",geforce10series,geforcegtx,0.0,"exact not match, response: aug17,2016, target: may27th,2016","may27th,2016","aug17,2016"
+tu104,TU104,,,geforcertx2080,GeForce RTX 2080,0.0,"exact not match, response: pci-ex16, target: pcie3.0x16",pcie3.0x16,pci-ex16,1.0,key_match,0.0,"exact not match, response: 1530mhz, target: 1515mhz",1515mhz,1530mhz,0.0,"Let's analyze each pair based on the criterion:
+
+Criterion summary:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- Different memory bit widths or capacities under the same product name are considered correct regardless of separate or combined writing.  
+- Since the standard answers and responses are all bit widths, we consider if those bit widths correspond or match according to ""point to the same entity"" or roughly equivalent.
+
+Now item-by-item:
+
+1. idx_0: response = ""64-bit"", target = ""128bit""  
+   - 64-bit is not approximately the same as 128-bit, they differ by half in magnitude.  
+   - They do not point to the same entity or a range that includes each other.  
+   - Score = 0.
+
+2. idx_1: response = ""64-bit"", target = ""384bit""  
+   - Again, 64-bit is much smaller than 384bit. Not semantically same. Different entities.  
+   - Score = 0.
+
+3. idx_2: response = ""256-bit"", target = ""192bit""  
+   - These are different values (256 vs 192). Not the same. No indication that under same product name these are acceptable here since it’s a pairwise comparison.  
+   - Score = 0.
+
+4. idx_3: response = ""256-bit"", target = ""256bit""  
+   - Same bit width, only difference is dash and space, semantics the same.  
+   - Score = 1.
+
+5. idx_4: response = ""256-bit"", target = ""256bit""  
+   - Same as above, score = 1.
+
+6. idx_5: response = ""320-bit"", target = ""256bit""  
+   - Different bit widths, no equivalence.  
+   - Score = 0.
+
+7. idx_6: response = ""256-bit"", target = ""320bit""  
+   - Different bit width, no equivalence.  
+   - Score = 0.
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0
+}
+```",256bit,320-bit,0.0,"Let's analyze each pair according to the criteria:
+
+- The score is either 0 or 1.
+- Semantics should be approximately the same or point to the same entity.
+- No need for exact word-for-word match.
+- If the ""response"" is the same or semantically equivalent to the ""target"", score = 1.
+- If not, score = 0.
+
+Analysis:
+
+1. idx_0: response = ""128mb"", target = ""64mb""
+   - Different values, they refer to different memory sizes.
+   - Not approximately the same.
+   - Score = 0
+
+2. idx_1: response = ""512mb"", target = ""768mb""
+   - Different memory sizes.
+   - Score = 0
+
+3. idx_2: response = ""1024mb"", target = ""768mb""
+   - Different memory sizes.
+   - Score = 0
+
+4. idx_3: response = ""4gb"", target = ""4gb""
+   - Exactly the same.
+   - Score = 1
+
+5. idx_4: response = ""8gb"", target = ""8gb""
+   - Exactly the same.
+   - Score = 1
+
+6. idx_5: response = ""11gb"", target = ""8gb""
+   - Different values.
+   - Score = 0
+
+7. idx_6: response = ""10gb"", target = ""10gb""
+   - Exactly the same.
+   - Score = 1
+
+Final scoring:  
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1
+}
+```",8gb,11gb,0.0,"exact not match, response: 14000mhz, target: 1750mhz",1750mhz,14000mhz,1.0,"exact match, response: gddr6, target: gddr6",gddr6,gddr6,1.0,key_match,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion recap:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- No need for exact wording.  
+- Score is either 0 or 1.  
+
+---
+
+**idx_0**:  
+- Response: ""geforce""  
+- Target: ""geforce3series""  
+- Analysis: The response is very vague, ""geforce"" covers a huge family of GPUs, while the target specifies the ""geforce3series,"" a particular generation. The response does not specify or sufficiently approximate the target. Too general and not equivalent.  
+- Score: 0  
+
+**idx_1**:  
+- Response: ""geforce8""  
+- Target: ""geforce8(8xxx)series""  
+- Analysis: The response ""geforce8"" clearly indicates the same generation as ""geforce8(8xxx)series."" The response effectively points to the same entity.  
+- Score: 1  
+
+**idx_2**:  
+- Response: ""geforcegtx""  
+- Target: ""geforce400series""  
+- Analysis: ""geforcegtx"" is a broad brand term used across multiple series, but does the 400 series belong to GTX? Yes, the GeForce 400 series uses the GTX moniker (e.g., GTX 480). The response does not specify ""400series,"" only the GTX brand. Is this sufficient? Per criterion, approximate semantics or same entity. ""geforcegtx"" is broader but includes 400 series. However, the target is specifically ""400series,"" so response is too generic, but points to the correct general family. Considering the criterion ""approximately the same"" or ""points to the same entity,"" this may be acceptable.  
+- Score: 1  
+
+**idx_3**:  
+- Response: ""geforcegtx""  
+- Target: ""geforce900series""  
+- Analysis: Same as above. The 900 series are branded as GTX as well (e.g., GTX 970). Response is broad but covers the target series.  
+- Score: 1  
+
+**idx_4**:  
+- Response: ""geforcegtx""  
+- Target: ""geforce10series""  
+- Analysis: GeForce 10 series is branded as GTX too (e.g., GTX 1080), so response is generalized but covers the target entity.  
+- Score: 1  
+
+**idx_5**:  
+- Response: ""geforcertx2""  
+- Target: ""geforce20series""  
+- Analysis: ""geforcertx2"" is presumably a typo or an attempt to say ""geforcertx 2"" or ""geforce rtx 2,"" referring to the 20 series (RTX 20 series). Although the wording is inaccurate and slightly garbled, it references RTX 2, possibly meaning the RTX generation 2, which corresponds to the 20 series. This matches the target fairly well in meaning.  
+- Score: 1  
+
+**idx_6**:  
+- Response: ""geforcertx3""  
+- Target: ""geforce30series""  
+- Analysis: Similar to above, ""geforcertx3"" seems to mean RTX 3 or RTX 30 series, matching the target ""geforce30series."" Despite the merged word, it points to the same entity.  
+- Score: 1  
+
+---
+
+### Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1
+}
+```",geforce20series,geforcertx2,0.0,"exact not match, response: sep20,2018, target: sep20th,2018","sep20th,2018","sep20,2018"
+ga102,GA102,,,geforcertx3080,GeForce RTX 3080,0.0,"exact not match, response: pci-ex16, target: pcie4.0x16",pcie4.0x16,pci-ex16,1.0,key_match,0.0,"exact not match, response: 1695mhz, target: 1440mhz",1440mhz,1695mhz,0.0,"Let's analyze each pair based on the criterion:
+
+Criterion summary:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- Different memory bit widths or capacities under the same product name are considered correct regardless of separate or combined writing.  
+- Since the standard answers and responses are all bit widths, we consider if those bit widths correspond or match according to ""point to the same entity"" or roughly equivalent.
+
+Now item-by-item:
+
+1. idx_0: response = ""64-bit"", target = ""128bit""  
+   - 64-bit is not approximately the same as 128-bit, they differ by half in magnitude.  
+   - They do not point to the same entity or a range that includes each other.  
+   - Score = 0.
+
+2. idx_1: response = ""64-bit"", target = ""384bit""  
+   - Again, 64-bit is much smaller than 384bit. Not semantically same. Different entities.  
+   - Score = 0.
+
+3. idx_2: response = ""256-bit"", target = ""192bit""  
+   - These are different values (256 vs 192). Not the same. No indication that under same product name these are acceptable here since it’s a pairwise comparison.  
+   - Score = 0.
+
+4. idx_3: response = ""256-bit"", target = ""256bit""  
+   - Same bit width, only difference is dash and space, semantics the same.  
+   - Score = 1.
+
+5. idx_4: response = ""256-bit"", target = ""256bit""  
+   - Same as above, score = 1.
+
+6. idx_5: response = ""320-bit"", target = ""256bit""  
+   - Different bit widths, no equivalence.  
+   - Score = 0.
+
+7. idx_6: response = ""256-bit"", target = ""320bit""  
+   - Different bit width, no equivalence.  
+   - Score = 0.
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0
+}
+```",320bit,256-bit,1.0,"Let's analyze each pair according to the criteria:
+
+- The score is either 0 or 1.
+- Semantics should be approximately the same or point to the same entity.
+- No need for exact word-for-word match.
+- If the ""response"" is the same or semantically equivalent to the ""target"", score = 1.
+- If not, score = 0.
+
+Analysis:
+
+1. idx_0: response = ""128mb"", target = ""64mb""
+   - Different values, they refer to different memory sizes.
+   - Not approximately the same.
+   - Score = 0
+
+2. idx_1: response = ""512mb"", target = ""768mb""
+   - Different memory sizes.
+   - Score = 0
+
+3. idx_2: response = ""1024mb"", target = ""768mb""
+   - Different memory sizes.
+   - Score = 0
+
+4. idx_3: response = ""4gb"", target = ""4gb""
+   - Exactly the same.
+   - Score = 1
+
+5. idx_4: response = ""8gb"", target = ""8gb""
+   - Exactly the same.
+   - Score = 1
+
+6. idx_5: response = ""11gb"", target = ""8gb""
+   - Different values.
+   - Score = 0
+
+7. idx_6: response = ""10gb"", target = ""10gb""
+   - Exactly the same.
+   - Score = 1
+
+Final scoring:  
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1
+}
+```",10gb,10gb,0.0,"exact not match, response: 19500mhz, target: 1188mhz",1188mhz,19500mhz,1.0,"exact match, response: gddr6x, target: gddr6x",gddr6x,gddr6x,1.0,key_match,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion recap:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- No need for exact wording.  
+- Score is either 0 or 1.  
+
+---
+
+**idx_0**:  
+- Response: ""geforce""  
+- Target: ""geforce3series""  
+- Analysis: The response is very vague, ""geforce"" covers a huge family of GPUs, while the target specifies the ""geforce3series,"" a particular generation. The response does not specify or sufficiently approximate the target. Too general and not equivalent.  
+- Score: 0  
+
+**idx_1**:  
+- Response: ""geforce8""  
+- Target: ""geforce8(8xxx)series""  
+- Analysis: The response ""geforce8"" clearly indicates the same generation as ""geforce8(8xxx)series."" The response effectively points to the same entity.  
+- Score: 1  
+
+**idx_2**:  
+- Response: ""geforcegtx""  
+- Target: ""geforce400series""  
+- Analysis: ""geforcegtx"" is a broad brand term used across multiple series, but does the 400 series belong to GTX? Yes, the GeForce 400 series uses the GTX moniker (e.g., GTX 480). The response does not specify ""400series,"" only the GTX brand. Is this sufficient? Per criterion, approximate semantics or same entity. ""geforcegtx"" is broader but includes 400 series. However, the target is specifically ""400series,"" so response is too generic, but points to the correct general family. Considering the criterion ""approximately the same"" or ""points to the same entity,"" this may be acceptable.  
+- Score: 1  
+
+**idx_3**:  
+- Response: ""geforcegtx""  
+- Target: ""geforce900series""  
+- Analysis: Same as above. The 900 series are branded as GTX as well (e.g., GTX 970). Response is broad but covers the target series.  
+- Score: 1  
+
+**idx_4**:  
+- Response: ""geforcegtx""  
+- Target: ""geforce10series""  
+- Analysis: GeForce 10 series is branded as GTX too (e.g., GTX 1080), so response is generalized but covers the target entity.  
+- Score: 1  
+
+**idx_5**:  
+- Response: ""geforcertx2""  
+- Target: ""geforce20series""  
+- Analysis: ""geforcertx2"" is presumably a typo or an attempt to say ""geforcertx 2"" or ""geforce rtx 2,"" referring to the 20 series (RTX 20 series). Although the wording is inaccurate and slightly garbled, it references RTX 2, possibly meaning the RTX generation 2, which corresponds to the 20 series. This matches the target fairly well in meaning.  
+- Score: 1  
+
+**idx_6**:  
+- Response: ""geforcertx3""  
+- Target: ""geforce30series""  
+- Analysis: Similar to above, ""geforcertx3"" seems to mean RTX 3 or RTX 30 series, matching the target ""geforce30series."" Despite the merged word, it points to the same entity.  
+- Score: 1  
+
+---
+
+### Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1
+}
+```",geforce30series,geforcertx3,0.0,"exact not match, response: may12,2020, target: sep1st,2020","sep1st,2020","may12,2020"
+gt218s,,1.0,,geforce205oem,,,,pcie2.0x16,,,,,,589mhz,,,,64bit,,,,512mb,,,,400mhz,,,,ddr2,,,,,,geforce200series,,,,"nov26th,2009",
+gt218s,,1.0,,geforce210,,,,pcie2.0x16,,,,,,520mhz,,,,64bit,,,,512mb,,,,400mhz,,,,ddr3,,,,,,geforce200series,,,,"oct12th,2009",
+gt216,,1.0,,geforce210oem,,,,pcie2.0x16,,,,,,475mhz,,,,64bit,,,,1024mb,,,,400mhz,,,,ddr2,,,,,,geforce200series,,,,"sep4th,2009",
+gt216,,1.0,,geforce210pci,,,,pci,,,,,,475mhz,,,,64bit,,,,512mb,,,,400mhz,,,,ddr2,,,,,,geforce200series,,,,"oct12th,2009",
+gt218s,,1.0,,geforce210rev.2,,,,pcie2.0x16,,,,,,520mhz,,,,64bit,,,,1024mb,,,,400mhz,,,,ddr3,,,,,,geforce200series,,,,"oct12th,2009",
+nv10,,1.0,,geforce256ddr,,,,agp4x,,,,,,120mhz,,,,128bit,,,,32mb,,,,150mhz,,,,ddr,,,,,,geforce256series,,,,"dec23rd,1999",
+nv10,,1.0,,geforce256sdr,,,,agp4x,,,,,,120mhz,,,,64bit,,,,32mb,,,,143mhz,,,,sdr,,,,,,geforce256series,,,,"oct11th,1999",
+nv15,,1.0,,geforce2gts,,,,agp4x,,,,,,200mhz,,,,128bit,,,,32mb,,,,166mhz,,,,ddr,,,,,,geforce2series,,,,"apr26th,2000",
+nv15,,1.0,,geforce2gtspro,,,,agp4x,,,,,,200mhz,,,,128bit,,,,32mb,,,,200mhz,,,,ddr,,,,,,geforce3series,,,,"apr26th,2000",
+nv11,,1.0,,geforce2mx,,,,agp4x,,,,,,175mhz,,,,128bit,,,,32mb,,,,166mhz,,,,sdr,,,,,,geforce2mxseries,,,,"jun28th,2000",
+crush11,,1.0,,geforce2mx+nforce220,,,,agp4x,,,,,,175mhz,,,,systemshared,,,,systemshared,,,,systemshared,,,,systemshared,,,,,,geforce2mxseries,,,,"jun4th,2001",
+crush11,,1.0,,geforce2mx+nforce420,,,,agp4x,,,,,,175mhz,,,,systemshared,,,,systemshared,,,,systemshared,,,,systemshared,,,,,,geforce2mxseries,,,,"jun4th,2001",
+nv11b,,1.0,,geforce2mx200,,,,agp4x,,,,,,175mhz,,,,64bit,,,,32mb,,,,166mhz,,,,sdr,,,,,,geforce2mxseries,,,,"mar3rd,2001",
+nv11b,,1.0,,geforce2mx200lp,,,,agp4x,,,,,,175mhz,,,,64bit,,,,32mb,,,,166mhz,,,,sdr,,,,,,geforce2mxseries,,,,"mar3rd,2001",
+nv11b,,1.0,,geforce2mx200pci,,,,pci,,,,,,175mhz,,,,64bit,,,,64mb,,,,166mhz,,,,sdr,,,,,,geforce2mxseries,,,,"mar3rd,2001",
+nv11b,,1.0,,geforce2mx400,,,,agp4x,,,,,,200mhz,,,,128bit,,,,32mb,,,,166mhz,,,,sdr,,,,,,geforce2mxseries,,,,"mar3rd,2001",
+nv11b,,1.0,,geforce2mx400pci,,,,pci,,,,,,200mhz,,,,64bit,,,,32mb,,,,166mhz,,,,ddr,,,,,,geforce2mxseries,,,,"mar3rd,2001",
+nv11,,1.0,,geforce2mxdhprotv,,,,agp4x,,,,,,175mhz,,,,128bit,,,,32mb,,,,166mhz,,,,sdr,,,,,,geforce2mxseries,,,,"jun28th,2000",
+nv11,,1.0,,geforce2mxdhprotvpci,,,,pci,,,,,,175mhz,,,,128bit,,,,32mb,,,,166mhz,,,,sdr,,,,,,geforce2mxseries,,,,"jun28th,2000",
+nv11,,1.0,,geforce2mxpci,,,,pci,,,,,,175mhz,,,,64bit,,,,32mb,,,,166mhz,,,,sdr,,,,,,geforce2mxseries,,,,"jun28th,2000",
+nv15,,1.0,,geforce2pro,,,,agp4x,,,,,,200mhz,,,,128bit,,,,64mb,,,,200mhz,,,,ddr,,,,,,geforce4series,,,,"dec5th,2000",
+nv15,,1.0,,geforce2ti,,,,agp4x,,,,,,250mhz,,,,128bit,,,,64mb,,,,200mhz,,,,ddr,,,,,,geforce5series,,,,"oct1st,2001",
+nv15,,1.0,,geforce2ultra,,,,agp4x,,,,,,250mhz,,,,128bit,,,,64mb,,,,230mhz,,,,ddr,,,,,,geforce6series,,,,"aug14th,2000",
+gt218s,,1.0,,geforce310oem,,,,pcie2.0x16,,,,,,589mhz,,,,64bit,,,,512mb,,,,333mhz,,,,ddr2,,,,,,geforce300series,,,,"nov27th,2009",
+gt215,,1.0,,geforce315oem,,,,pcie2.0x16,,,,,,506mhz,,,,64bit,,,,256mb,,,,350mhz,,,,ddr2,,,,,,geforce300series,,,,"apr28th,2011",
+gt216,,1.0,,geforce315oem,,,,pcie2.0x16,,,,,,475mhz,,,,64bit,,,,512mb,,,,790mhz,,,,ddr3,,,,,,geforce300series,,,,"mar31st,2010",
+gt218s,,1.0,,geforce315oem,,,,pcie2.0x16,,,,,,589mhz,,,,64bit,,,,1024mb,,,,600mhz,,,,ddr3,,,,,,geforce300series,,,,"feb22nd,2011",
+nv20,,1.0,,geforce3ti200,,,,agp4x,,,,,,175mhz,,,,128bit,,,,64mb,,,,200mhz,,,,ddr,,,,,,geforce3series,,,,"oct1st,2001",
+nv20,,1.0,,geforce3ti500,,,,agp4x,,,,,,240mhz,,,,128bit,,,,64mb,,,,250mhz,,,,ddr,,,,,,geforce3series,,,,"oct1st,2001",
+gt216,,1.0,,geforce405oem,,,,pcie2.0x16,,,,,,475mhz,,,,128bit,,,,1024mb,,,,400mhz,,,,ddr2,,,,,,geforce400series,,,,"sep3rd,2010",
+gt218s,,1.0,,geforce405oem,,,,pcie2.0x16,,,,,,589mhz,,,,64bit,,,,512mb,,,,790mhz,,,,ddr3,,,,,,geforce400series,,,,"sep3rd,2010",
+crush17,,1.0,,geforce4mx+nforce2,,,,agp4x,,,,,,200mhz,,,,systemshared,,,,systemshared,,,,systemshared,,,,systemshared,,,,,,geforce4mxseries,,,,"oct1st,2002",
+nv18,,1.0,,geforce4mx4000,,,,agp8x,,,,,,250mhz,,,,64bit,,,,128mb,,,,166mhz,,,,ddr,,,,,,geforce4mxseries,,,,"dec14th,2003",
+nv18c,,1.0,,geforce4mx4000pci,,,,pci,,,,,,250mhz,,,,64bit,,,,128mb,,,,166mhz,,,,ddr,,,,,,geforce4mxseries,,,,"dec14th,2003",
+nv18c,,1.0,,geforce4mx4000rev.2,,,,agp8x,,,,,,250mhz,,,,64bit,,,,128mb,,,,166mhz,,,,ddr,,,,,,geforce4mxseries,,,,"dec14th,2003",
+nv17,,1.0,,geforce4mx420,,,,agp4x,,,,,,250mhz,,,,128bit,,,,64mb,,,,166mhz,,,,sdr,,,,,,geforce4mxseries,,,,"feb6th,2002",
+nv17,,1.0,,geforce4mx420pci,,,,pci,,,,,,250mhz,,,,64bit,,,,64mb,,,,166mhz,,,,sdr,,,,,,geforce4mxseries,,,,"feb6th,2002",
+nv17,,1.0,,geforce4mx440,,,,agp4x,,,,,,275mhz,,,,128bit,,,,64mb,,,,200mhz,,,,ddr,,,,,,geforce4mxseries,,,,"feb6th,2002",
+nv18,,1.0,,geforce4mx440-8x,,,,agp8x,,,,,,275mhz,,,,32bit/128bit,,,,32mb/64mb,,,,250mhz,,,,ddr,,,,,,geforce4mxseries,,,,"sep25th,2002",
+nv17,,1.0,,geforce4mx440-se,,,,agp4x,,,,,,250mhz,,,,128bit,,,,64mb,,,,166mhz,,,,ddr,,,,,,geforce4mxseries,,,,"feb6th,2002",
+nv18,,1.0,,geforce4mx440-se,,,,agp8x,,,,,,250mhz,,,,64bit,,,,64mb,,,,200mhz,,,,ddr,,,,,,geforce4mxseries,,,,"feb6th,2002",
+nv17,,1.0,,geforce4mx440macedition,,,,agp4x,,,,,,275mhz,,,,128bit,,,,64mb,,,,200mhz,,,,ddr,,,,,,geforce4mxseries,,,,"feb6th,2002",
+nv17,,1.0,,geforce4mx460,,,,agp4x,,,,,,300mhz,,,,128bit,,,,64mb,,,,225mhz,,,,ddr,,,,,,geforce4mxseries,,,,"feb6th,2002",
+nv25,,1.0,,geforce4ti4200,,,,agp4x,,,,,,250mhz,,,,64bit/128bit,,,,64mb,,,,250mhz,,,,ddr,,,,,,geforce4tiseries,,,,"feb6th,2002",
+nv40,NV40,,1.0,geforce4ti4200,GeForce 4 Ti,,,,agp4x,,,,,,265mhz,,,,64-bit,,,,128mb,,,,1325mhz,,,,ddr3,,,,,,geforce,,,,"oct1,2002"
+nv28,,1.0,,geforce4ti4200-8x,,,,agp8x,,,,,,250mhz,,,,128bit,,,,64mb,,,,250mhz,,,,sdr,,,,,,geforce4tiseries,,,,"feb6th,2002",
+nv25,,1.0,,geforce4ti4400,,,,agp4x,,,,,,275mhz,,,,128bit,,,,128mb,,,,275mhz,,,,ddr,,,,,,geforce4tiseries,,,,"feb6th,2002",
+nv25,,1.0,,geforce4ti4600,,,,agp4x,,,,,,300mhz,,,,128bit,,,,128mb,,,,324mhz,,,,ddr,,,,,,geforce4tiseries,,,,"feb6th,2002",
+nv28,,1.0,,geforce4ti4800,,,,agp8x,,,,,,300mhz,,,,128bit,,,,128mb,,,,325mhz,,,,ddr,,,,,,geforce4tiseries,,,,"mar15th,2003",
+nv28,,1.0,,geforce4ti4800se,,,,agp8x,,,,,,275mhz,,,,128bit,,,,128mb,,,,275mhz,,,,ddr,,,,,,geforce4tiseries,,,,"feb16th,2003",
+gt216,,1.0,,geforce505oem,,,,pcie1.0x16,,,,,,615mhz,,,,128bit,,,,1024mb,,,,700mhz,,,,ddr3,,,,,,geforce500series,,,,"feb17th,2013",
+gt218s,,1.0,,geforce505oem,,,,pcie1.0x16,,,,,,589mhz,,,,64bit,,,,512mb,,,,600mhz,,,,ddr3,,,,,,geforce500series,,,,"jan6th,2013",
+gf119s,,1.0,,geforce510oem,,,,pcie2.0x16,,,,,,523mhz,,,,64bit,,,,1024mb,,,,898mhz,,,,ddr3,,,,,,geforce500series,,,,"sep29th,2011",
+gf119s,,1.0,,geforce605oem,,,,pcie2.0x16,,,,,,523mhz,,,,64bit,,,,512mb,,,,897mhz,,,,ddr3,,,,,,geforce600series,,,,"apr2nd,2012",
+c51,,1.0,,geforce6100,,,,pci,,,,,,425mhz,,,,systemshared,,,,systemshared,,,,systemshared,,,,systemshared,,,,,,geforce6igpseries,,,,"oct11th,2004",
+c61,,1.0,,geforce6100+nforce400,,,,pci,,,,,,425mhz,,,,systemshared,,,,systemshared,,,,systemshared,,,,systemshared,,,,,,geforce6igpseries,,,,"oct11th,2004",
+c61,,1.0,,geforce6100+nforce405,,,,pci,,,,,,425mhz,,,,systemshared,,,,systemshared,,,,systemshared,,,,systemshared,,,,,,geforce6igpseries,,,,"oct11th,2004",
+c61,,1.0,,geforce6100+nforce420,,,,pci,,,,,,425mhz,,,,systemshared,,,,systemshared,,,,systemshared,,,,systemshared,,,,,,geforce6igpseries,,,,"oct11th,2004",
+c61,,1.0,,geforce6100+nforce430,,,,pci,,,,,,425mhz,,,,systemshared,,,,systemshared,,,,systemshared,,,,systemshared,,,,,,geforce6igpseries,,,,"oct11th,2004",
+c51,,1.0,,geforce6150,,,,pci,,,,,,475mhz,,,,systemshared,,,,systemshared,,,,systemshared,,,,systemshared,,,,,,geforce6igpseries,,,,"oct11th,2004",
+c51,,1.0,,geforce6150le,,,,pci,,,,,,425mhz,,,,systemshared,,,,systemshared,,,,systemshared,,,,systemshared,,,,,,geforce6igpseries,,,,"oct11th,2004",
+c61,,1.0,,geforce6150se+nforce430,,,,pci,,,,,,425mhz,,,,systemshared,,,,systemshared,,,,systemshared,,,,systemshared,,,,,,geforce6igpseries,,,,"oct11th,2004",
+gf108,,1.0,,geforce615oem,,,,pcie2.0x16,,,,,,660mhz,,,,128bit,,,,1024mb,,,,900mhz,,,,ddr3,,,,,,geforce600series,,,,"may15th,2012",
+nv43,,1.0,,geforce6200,,,,pcie1.0x16,,,,,,300mhz,,,,128bit,,,,128mb,,,,275mhz,,,,ddr,,,,,,geforce6pcie(6xxx)series,,,,"oct11th,2004",
+nv18c,,1.0,,geforce6200agp,,,,agp8x,,,,,,230mhz,,,,64bit,,,,128mb,,,,66mhz,,,,ddr,,,,,,geforce6agp(6xxx)series,,,,"dec14th,2003",
+nv44,,1.0,,geforce6200agp,,,,agp8x,,,,,,350mhz,,,,64bit,,,,128mb/256mb,,,,250mhz/266mhz,,,,ddr/ddr2,,,,,,geforce6agp(6xxx)series,,,,"apr4th,2005",
+nv44,,1.0,,geforce6200le,,,,pcie1.0x16,,,,,,350mhz,,,,32bit/64bit,,,,64mb/128mb,,,,266mhz,,,,ddr/ddr2,,,,,,geforce6pcie(6xxx)series,,,,"apr4th,2005",
+nv44,,1.0,,geforce6200leagp,,,,agp8x,,,,,,350mhz,,,,64bit,,,,128mb,,,,266mhz,,,,ddr,,,,,,geforce6agp(6xxx)series,,,,"apr4th,2005",
+nv44,,1.0,,geforce6200leagp512mb,,,,agp8x,,,,,,300mhz,,,,128bit,,,,512mb,,,,275mhz,,,,ddr2,,,,,,geforce6agp(6xxx)series,,,,"oct11th,2004",
+nv43,,1.0,,geforce6200lepci,,,,pci,,,,,,300mhz,,,,64bit,,,,256mb,,,,266mhz,,,,ddr,,,,,,geforce6pci(6200)series,,,,"oct11th,2004",
+nv44,,1.0,,geforce6200pci,,,,pci,,,,,,280mhz,,,,64bit,,,,256mb,,,,200mhz,,,,ddr2,,,,,,geforce6pci(6200)series,,,,"jan16th,2008",
+nv44,,1.0,,geforce6200seturbocache,,,,pcie1.0x16,,,,,,350mhz,,,,32bit,,,,64mb,,,,250mhz,,,,ddr,,,,,,geforce6pcie(6xxx)series,,,,"dec15th,2004",
+nv44b,,1.0,,geforce6200turbocache,,,,agp4x,,,,,,350mhz,,,,64bit,,,,64mb,,,,250mhz,,,,ddr,,,,,,geforce6agp(6xxx)series,,,,"dec15th,2004",
+nv44,,1.0,,geforce6200x2pci,,,,pci,,,,,,280mhz,,,,64bit,,,,256mb,,,,200mhz,,,,ddr2,,,,,,geforce6pci(6200)series,,,,"jan16th,2008",
+nv44,,1.0,,geforce6500,,,,pcie1.0x16,,,,,,400mhz,,,,128bit,,,,128mb,,,,266mhz,,,,ddr2,,,,,,geforce6pcie(6xxx)series,,,,"oct1st,2005",
+nv43,,1.0,,geforce6600,,,,pcie1.0x16,,,,,,300mhz,,,,128bit,,,,256mb,,,,250mhz,,,,ddr,,,,,,geforce6pcie(6xxx)series,,,,"aug12th,2004",
+nv45,NV45,,1.0,geforce6600,GeForce 6600,,,,pci-ex16,,,,,,400mhz,,,,64-bit,,,,256mb,,,,1000mhz,,,,gddr3,,,,,,geforce6,,,,"mar1,2004"
+nv43,,1.0,,geforce6600agp,,,,agp8x,,,,,,300mhz,,,,128bit,,,,128mb,,,,250mhz,,,,ddr,,,,,,geforce6agp(6xxx)series,,,,"aug12th,2004",
+nv43,,1.0,,geforce6600gt,,,,pcie1.0x16,,,,,,500mhz,,,,128bit,,,,128mb,,,,500mhz,,,,gddr3,,,,,,geforce6pcie(6xxx)series,,,,"aug12th,2004",
+nv43,,1.0,,geforce6600gtagp,,,,agp8x,,,,,,500mhz,,,,128bit,,,,128mb,,,,475mhz,,,,gddr3,,,,,,geforce6agp(6xxx)series,,,,"nov14th,2004",
+nv43,,1.0,,geforce6600gtdual,,,,pcie1.0x16,,,,,,500mhz,,,,128bit,,,,128mb,,,,560mhz,,,,gddr3,,,,,,geforce6pcie(6xxx)series,,,,"aug12th,2004",
+nv43,,1.0,,geforce6600le,,,,pcie1.0x16,,,,,,300mhz,,,,128bit,,,,128mb,,,,250mhz,,,,ddr,,,,,,geforce6pcie(6xxx)series,,,,2005,
+nv43,,1.0,,geforce6600leagp,,,,agp8x,,,,,,300mhz,,,,128bit,,,,128mb,,,,200mhz,,,,ddr,,,,,,geforce6agp(6xxx)series,,,,2005,
+nv43,,1.0,,geforce6600ve,,,,pcie1.0x16,,,,,,300mhz,,,,128bit,,,,128mb,,,,200mhz,,,,gddr3,,,,,,geforce6pcie(6xxx)series,,,,2005,
+nv43,,1.0,,geforce6610xl,,,,pcie1.0x16,,,,,,400mhz,,,,128bit,,,,128mb,,,,400mhz,,,,gddr3,,,,,,geforce6pcie(6xxx)series,,,,"nov14th,2004",
+nv43,,1.0,,geforce6700xl,,,,pcie1.0x16,,,,,,525mhz,,,,128bit,,,,128mb,,,,550mhz,,,,gddr3,,,,,,geforce6pcie(6xxx)series,,,,"nov14th,2004",
+nv40,,1.0,,geforce6800,,,,agp8x,,,,,,325mhz,,,,256bit,,,,128mb,,,,350mhz,,,,ddr,,,,,,geforce6agp(6xxx)series,,,,"apr14th,2004",
+nv41,,1.0,,geforce6800,,,,pcie1.0x16,,,,,,325mhz,,,,256bit,,,,256mb,,,,300mhz,,,,ddr,,,,,,geforce6pcie(6xxx)series,,,,"nov8th,2004",
+nv48,,1.0,,geforce6800,,,,agp8x,,,,,,325mhz,,,,256bit,,,,256mb,,,,350mhz,,,,ddr,,,,,,geforce6agp(6xxx)series,,,,"apr14th,2004",
+nv40,,1.0,,geforce6800gs,,,,agp8x,,,,,,350mhz,,,,256bit,,,,256mb,,,,500mhz,,,,gddr3,,,,,,geforce6agp(6xxx)series,,,,"dec8th,2005",
+nv41,,1.0,,geforce6800gs,,,,pcie1.0x16,,,,,,425mhz,,,,256bit,,,,256mb,,,,500mhz,,,,gddr3,,,,,,geforce6pcie(6xxx)series,,,,"nov7th,2005",
+nv40,,1.0,,geforce6800gt,,,,agp8x,,,,,,350mhz,,,,256bit,,,,128mb,,,,250mhz,,,,ddr,,,,,,geforce6agp(6xxx)series,,,,"apr14th,2004",
+nv45,,1.0,,geforce6800gt,,,,pcie1.0x16,,,,,,350mhz,,,,256bit,,,,256mb,,,,500mhz,,,,gddr3,,,,,,geforce6pcie(6xxx)series,,,,"jun8th,2004",
+nv48,,1.0,,geforce6800gt,,,,agp8x,,,,,,350mhz,,,,256bit,,,,256mb,,,,500mhz,,,,gddr3,,,,,,geforce6agp(6xxx)series,,,,"apr14th,2004",
+nv40,,1.0,,geforce6800gtddl,,,,agppro8x,,,,,,350mhz,,,,256bit,,,,256mb,,,,500mhz,,,,gddr3,,,,,,geforce6agp(6xxx)series,,,,"apr14th,2004",
+nv45,,1.0,,geforce6800gtdual,,,,pcie1.0x16,,,,,,350mhz,,,,256bit,,,,256mb,,,,500mhz,,,,gddr3,,,,,,geforce6pcie(6xxx)series,,,,"jun8th,2004",
+nv45,,1.0,,geforce6800gto,,,,pcie1.0x16,,,,,,350mhz,,,,256bit,,,,256mb,,,,500mhz,,,,gddr3,,,,,,geforce6pcie(6xxx)series,,,,"apr14th,2004",
+nv40,,1.0,,geforce6800le,,,,agp8x,,,,,,300mhz,,,,256bit,,,,128mb,,,,350mhz,,,,ddr,,,,,,geforce6agp(6xxx)series,,,,"jul21st,2004",
+nv41,,1.0,,geforce6800le,,,,pcie1.0x16,,,,,,325mhz,,,,256bit,,,,256mb,,,,300mhz,,,,ddr,,,,,,geforce6pcie(6xxx)series,,,,"jan16th,2005",
+nv40,,1.0,,geforce6800ultra,,,,agp8x,,,,,,425mhz,,,,256bit,,,,256mb,,,,550mhz,,,,gddr3,,,,,,geforce6agp(6xxx)series,,,,"apr14th,2004",
+nv45,,1.0,,geforce6800ultra,,,,pcie1.0x16,,,,,,425mhz,,,,256bit,,,,256mb,,,,550mhz,,,,gddr3,,,,,,geforce6pcie(6xxx)series,,,,"jul26th,2004",
+nv40,,1.0,,geforce6800ultraddl,,,,agppro8x,,,,,,400mhz,,,,256bit,,,,256mb,,,,550mhz,,,,gddr3,,,,,,geforce6agp(6xxx)series,,,,"apr14th,2004",
+nv40,,1.0,,geforce6800xe,,,,agp8x,,,,,,275mhz,,,,128bit,,,,256mb,,,,266mhz,,,,ddr2,,,,,,geforce6agp(6xxx)series,,,,"sep30th,2005",
+nv40,,1.0,,geforce6800xt,,,,agp8x,,,,,,300mhz,,,,256bit,,,,256mb,,,,350mhz,,,,ddr,,,,,,geforce6agp(6xxx)series,,,,"sep30th,2005",
+nv41,,1.0,,geforce6800xt,,,,pcie1.0x16,,,,,,425mhz,,,,256bit,,,,256mb,,,,500mhz,,,,gddr3,,,,,,geforce6pcie(6xxx)series,,,,"sep30th,2005",
+nv42,,1.0,,geforce6800xt,,,,agp8x,,,,,,450mhz,,,,256bit,,,,256mb,,,,600mhz,,,,gddr3,,,,,,geforce6agp(6xxx)series,,,,"sep30th,2005",
+nv48,,1.0,,geforce6800xt,,,,agp8x,,,,,,300mhz,,,,128bit,,,,256mb,,,,266mhz,,,,ddr,,,,,,geforce6agp(6xxx)series,,,,"sep30th,2005",
+c61,,1.0,,geforce7025+nforce630a,,,,pci,,,,,,425mhz,,,,systemshared,,,,systemshared,,,,systemshared,,,,systemshared,,,,,,geforce7igpseries,,,,"feb1st,2006",
+c67,,1.0,,geforce7025+nforce630a,,,,pci,,,,,,425mhz,,,,systemshared,,,,systemshared,,,,systemshared,,,,systemshared,,,,,,geforce7igpseries,,,,"feb1st,2006",
+c68,,1.0,,geforce7025+nforce630a,,,,pci,,,,,,425mhz,,,,systemshared,,,,systemshared,,,,systemshared,,,,systemshared,,,,,,geforce7igpseries,,,,"feb1st,2006",
+c73b,,1.0,,geforce7050+nforce610i,,,,pci,,,,,,500mhz,,,,systemshared,,,,systemshared,,,,systemshared,,,,systemshared,,,,,,geforce7igpseries,,,,"jan13th,2008",
+c73,,1.0,,geforce7050+nforce620i,,,,pci,,,,,,500mhz,,,,systemshared,,,,systemshared,,,,systemshared,,,,systemshared,,,,,,geforce7igpseries,,,,"oct4th,2007",
+c61,,1.0,,geforce7050+nforce630a,,,,pci,,,,,,425mhz,,,,systemshared,,,,systemshared,,,,systemshared,,,,systemshared,,,,,,geforce7igpseries,,,,"feb1st,2006",
+c73,,1.0,,geforce7050+nforce630i,,,,pci,,,,,,500mhz,,,,systemshared,,,,systemshared,,,,systemshared,,,,systemshared,,,,,,geforce7igpseries,,,,"oct4th,2007",
+c68,,1.0,,geforce7050pv+nforce630a,,,,pci,,,,,,425mhz,,,,systemshared,,,,systemshared,,,,systemshared,,,,systemshared,,,,,,geforce7igpseries,,,,"feb1st,2006",
+c68,,1.0,,geforce7050se+nforce630a,,,,pci,,,,,,425mhz,,,,systemshared,,,,systemshared,,,,systemshared,,,,systemshared,,,,,,geforce7igpseries,,,,"feb1st,2006",
+c73,,1.0,,geforce7100+nforce630i,,,,pci,,,,,,600mhz,,,,systemshared,,,,systemshared,,,,systemshared,,,,systemshared,,,,,,geforce7igpseries,,,,"oct4th,2007",
+nv44b,,1.0,,geforce7100gs,,,,pcie1.0x16,,,,,,350mhz,,,,64bit,,,,128mb,,,,266mhz,,,,ddr2,,,,,,geforce7pcie(7xxx)series,,,,"aug8th,2006",
+c73,,1.0,,geforce7150+nforce630i,,,,pci,,,,,,630mhz,,,,systemshared,,,,systemshared,,,,systemshared,,,,systemshared,,,,,,geforce7igpseries,,,,"nov16th,2007",
+g72,,1.0,,geforce7200gs,,,,pcie1.0x16,,,,,,450mhz,,,,64bit,,,,128mb,,,,334mhz,,,,ddr2,,,,,,geforce7pcie(7xxx)series,,,,"jan18th,2006",
+g72,,1.0,,geforce7300gs,,,,pcie1.0x16,,,,,,450mhz,,,,64bit,,,,256mb,,,,266mhz,,,,ddr2,,,,,,geforce7pcie(7xxx)series,,,,"jan18th,2006",
+g72,,1.0,,geforce7300gslowprofile,,,,pcie1.0x16,,,,,,450mhz,,,,64bit,,,,256mb,,,,266mhz,,,,ddr2,,,,,,geforce7pcie(7xxx)series,,,,"jan18th,2006",
+g73,,1.0,,geforce7300gt,,,,pcie1.0x16,,,,,,350mhz,,,,128bit,,,,128mb,,,,325mhz,,,,ddr2,,,,,,geforce7pcie(7xxx)series,,,,"may15th,2006",
+g73b,,1.0,,geforce7300gt,,,,pcie1.0x16,,,,,,350mhz,,,,128bit,,,,128mb,,,,325mhz,,,,ddr2,,,,,,geforce7pcie(7xxx)series,,,,"may15th,2006",
+g73b,,1.0,,geforce7300gtagp,,,,agp8x,,,,,,350mhz,,,,128bit,,,,128mb,,,,325mhz,,,,ddr2,,,,,,geforce7agp(7xxx)series,,,,"may15th,2006",
+g73,,1.0,,geforce7300gtmacedition,,,,pcie1.0x16,,,,,,350mhz,,,,128bit,,,,128mb,,,,500mhz,,,,gddr3,,,,,,geforce7pcie(7xxx)series,,,,"aug26th,2006",
+g72,,1.0,,geforce7300le,,,,pcie1.0x16,,,,,,450mhz,,,,64bit,,,,128mb,,,,324mhz,,,,ddr2,,,,,,geforce7pcie(7xxx)series,,,,"mar22nd,2006",
+g72,,1.0,,geforce7300se,,,,pcie1.0x16,,,,,,450mhz,,,,64bit,,,,256mb,,,,266mhz,,,,ddr2,,,,,,geforce7pcie(7xxx)series,,,,"mar22nd,2006",
+g72,,1.0,,geforce7350le,,,,pcie1.0x16,,,,,,450mhz,,,,64bit,,,,128mb,,,,400mhz,,,,ddr2,,,,,,geforce7pcie(7xxx)series,,,,"mar22nd,2006",
+g72,,1.0,,geforce7500le,,,,pcie1.0x16,,,,,,475mhz,,,,64bit,,,,64mb,,,,405mhz,,,,ddr2,,,,,,geforce7pcie(7xxx)series,,,,"mar22nd,2006",
+g73b,,1.0,,geforce7600gs,,,,pcie1.0x16,,,,,,400mhz,,,,128bit,,,,256mb,,,,400mhz,,,,ddr2,,,,,,geforce7pcie(7xxx)series,,,,"mar22nd,2006",
+g71,,1.0,,geforce7600gsagp,,,,agp8x,,,,,,500mhz,,,,128bit,,,,256mb,,,,725mhz,,,,gddr3,,,,,,geforce7agp(7xxx)series,,,,"jul1st,2006",
+g73b,,1.0,,geforce7600gsagp,,,,agp8x,,,,,,400mhz,,,,128bit,,,,256mb,,,,400mhz,,,,ddr2,,,,,,geforce7agp(7xxx)series,,,,"jul1st,2006",
+g73b,,1.0,,geforce7600gt,,,,pcie1.0x16,,,,,,560mhz,,,,128bit,,,,256mb,,,,700mhz,,,,gddr3,,,,,,geforce7pcie(7xxx)series,,,,"mar9th,2006",
+g73b,,1.0,,geforce7600gtagp,,,,agp8x,,,,,,560mhz,,,,128bit,,,,256mb,,,,700mhz,,,,gddr3,,,,,,geforce7agp(7xxx)series,,,,"jan8th,2007",
+g73,,1.0,,geforce7600gtmacedition,,,,pcie1.0x16,,,,,,560mhz,,,,128bit,,,,256mb,,,,700mhz,,,,gddr3,,,,,,geforce7pcie(7xxx)series,,,,"sep2nd,2006",
+g73b,,1.0,,geforce7600gtmacedition,,,,pcie1.0x16,,,,,,560mhz,,,,128bit,,,,256mb,,,,700mhz,,,,gddr3,,,,,,geforce7pcie(7xxx)series,,,,"sep2nd,2006",
+g73b,,1.0,,geforce7600le,,,,pcie1.0x16,,,,,,400mhz,,,,128bit,,,,256mb,,,,400mhz,,,,ddr2,,,,,,geforce7pcie(7xxx)series,,,,"mar22nd,2006",
+g73b,,1.0,,geforce7650gs,,,,pcie1.0x16,,,,,,450mhz,,,,128bit,,,,256mb,,,,400mhz,,,,ddr2,,,,,,geforce7pcie(7xxx)series,,,,"mar22nd,2006",
+g71,,1.0,,geforce7800gs+20pipesagp,,,,agp8x,,,,,,425mhz,,,,256bit,,,,512mb,,,,625mhz,,,,gddr3,,,,,,geforce7agp(7xxx)series,,,,"sep28th,2006",
+g71,,1.0,,geforce7800gs+24pipesagp,,,,agp8x,,,,,,425mhz,,,,256bit,,,,512mb,,,,625mhz,,,,gddr3,,,,,,geforce7agp(7xxx)series,,,,"sep28th,2006",
+g71,,1.0,,geforce7800gs+agp,,,,agp8x,,,,,,375mhz,,,,256bit,,,,256mb,,,,600mhz,,,,gddr3,,,,,,geforce7agp(7xxx)series,,,,"sep28th,2006",
+g70,,1.0,,geforce7800gs20pipesagp,,,,agp8x,,,,,,425mhz,,,,256bit,,,,512mb,,,,625mhz,,,,gddr3,,,,,,geforce7agp(7xxx)series,,,,"feb2nd,2006",
+g70,,1.0,,geforce7800gs24pipesagp,,,,agp8x,,,,,,425mhz,,,,256bit,,,,512mb,,,,625mhz,,,,gddr3,,,,,,geforce7agp(7xxx)series,,,,"feb2nd,2006",
+g70,,1.0,,geforce7800gsagp,,,,agp8x,,,,,,375mhz,,,,256bit,,,,256mb,,,,600mhz,,,,gddr3,,,,,,geforce7agp(7xxx)series,,,,"feb2nd,2006",
+g70,,1.0,,geforce7800gt,,,,pcie1.0x16,,,,,,400mhz,,,,256bit,,,,256mb,,,,500mhz,,,,gddr3,,,,,,geforce7pcie(7xxx)series,,,,"aug11th,2005",
+g70,,1.0,,geforce7800gtdual,,,,pcie1.0x16,,,,,,400mhz,,,,256bit,,,,256mb,,,,500mhz,,,,gddr3,,,,,,geforce7pcie(7xxx)series,,,,"aug11th,2005",
+g70,,1.0,,geforce7800gtx,,,,pcie1.0x16,,,,,,430mhz,,,,256bit,,,,256mb,,,,600mhz,,,,gddr3,,,,,,geforce7pcie(7xxx)series,,,,"jun22nd,2005",
+g71,G71,,1.0,geforce7800gtx,GeForce 7800 GTX,,,,pci-ex16,,,,,,533mhz,,,,64-bit,,,,256mb,,,,1200mhz,,,,gddr3,,,,,,geforce7,,,,"jul25,2005"
+g70,,1.0,,geforce7800gtx512,,,,pcie1.0x16,,,,,,500mhz,,,,256bit,,,,512mb,,,,800mhz,,,,gddr3,,,,,,geforce7pcie(7xxx)series,,,,"nov14th,2005",
+g71,,1.0,,geforce7900gs,,,,pcie1.0x16,,,,,,450mhz,,,,256bit,,,,256mb,,,,660mhz,,,,gddr3,,,,,,geforce7pcie(7xxx)series,,,,"may1st,2006",
+g71,,1.0,,geforce7900gsagp,,,,agp8x,,,,,,450mhz,,,,256bit,,,,256mb,,,,660mhz,,,,gddr3,,,,,,geforce7agp(7xxx)series,,,,"apr2nd,2006",
+g71,,1.0,,geforce7900gt,,,,pcie1.0x16,,,,,,450mhz,,,,256bit,,,,256mb,,,,660mhz,,,,gddr3,,,,,,geforce7pcie(7xxx)series,,,,"mar9th,2006",
+g71,,1.0,,geforce7900gto,,,,pcie1.0x16,,,,,,650mhz,,,,256bit,,,,512mb,,,,660mhz,,,,gddr3,,,,,,geforce7pcie(7xxx)series,,,,"oct1st,2006",
+g71,,1.0,,geforce7900gtx,,,,pcie1.0x16,,,,,,650mhz,,,,256bit,,,,512mb,,,,800mhz,,,,gddr3,,,,,,geforce7pcie(7xxx)series,,,,"mar9th,2006",
+g71,,1.0,,geforce7900gx2,,,,pcie1.0x16,,,,,,500mhz,,,,256bit,,,,512mb,,,,600mhz,,,,gddr3,,,,,,geforce7pcie(7xxx)series,,,,"apr30th,2006",
+g71,,1.0,,geforce7950gt,,,,pcie1.0x16,,,,,,550mhz,,,,256bit,,,,512mb,,,,700mhz,,,,gddr3,,,,,,geforce7pcie(7xxx)series,,,,"aug6th,2006",
+g71,,1.0,,geforce7950gtagp,,,,agp8x,,,,,,500mhz,,,,256bit,,,,512mb,,,,600mhz,,,,gddr3,,,,,,geforce7agp(7xxx)series,,,,"apr2nd,2007",
+g71,,1.0,,geforce7950gx2,,,,pcie1.0x16,,,,,,500mhz,,,,256bit,,,,512mb,,,,600mhz,,,,gddr3,,,,,,geforce7pcie(7xxx)series,,,,"jun5th,2006",
+c78,,1.0,,geforce8100+nforce720a,,,,pci,,,,,,500mhz,,,,systemshared,,,,systemshared,,,,systemshared,,,,systemshared,,,,,,geforce8igpseries,,,,"apr17th,2007",
+c78,,1.0,,geforce8200,,,,pci,,,,,,500mhz,,,,systemshared,,,,systemshared,,,,systemshared,,,,systemshared,,,,,,geforce8igpseries,,,,"apr17th,2007",
+c78,,1.0,,geforce8300,,,,pci,,,,,,500mhz,,,,systemshared,,,,systemshared,,,,systemshared,,,,systemshared,,,,,,geforce8igpseries,,,,"apr17th,2007",
+g86s,,1.0,,geforce8300gs,,,,pcie1.0x16,,,,,,459mhz,,,,64bit,,,,128mb,,,,400mhz,,,,ddr2,,,,,,geforce8(8xxx)series,,,,"apr17th,2007",
+g98s,,1.0,,geforce8400,,,,pcie2.0x16,,,,,,540mhz,,,,64bit,,,,256mb,,,,500mhz,,,,ddr2,,,,,,geforce8(8xxx)series,,,,"dec4th,2007",
+g86s,,1.0,,geforce8400gs,,,,pcie1.0x16,,,,,,459mhz,,,,64bit,,,,256mb,,,,400mhz,,,,ddr2,,,,,,geforce8(8xxx)series,,,,"apr17th,2007",
+g98s,,1.0,,geforce8400gspci,,,,pci,,,,,,567mhz,,,,64bit,,,,512mb,,,,333mhz,,,,ddr2,,,,,,geforce8(8xxx)series,,,,"dec4th,2007",
+gt218s,,1.0,,geforce8400gspcirev.2,,,,pci,,,,,,520mhz,,,,64bit,,,,512mb,,,,500mhz,,,,ddr3,,,,,,geforce8(8xxx)series,,,,"apr17th,2007",
+g98s,,1.0,,geforce8400gsrev.2,,,,pcie2.0x16,,,,,,567mhz,,,,64bit,,,,512mb,,,,400mhz,,,,ddr2,,,,,,geforce8(8xxx)series,,,,"dec4th,2007",
+gt218s,,1.0,,geforce8400gsrev.3,,,,pcie2.0x16,,,,,,520mhz,,,,64bit,,,,512mb,,,,400mhz,,,,ddr2,,,,,,geforce8(8xxx)series,,,,"jul12th,2010",
+g86s,,1.0,,geforce8400se,,,,pcie1.0x16,,,,,,459mhz,,,,64bit,,,,128mb,,,,400mhz,,,,ddr2,,,,,,geforce8(8xxx)series,,,,"aug1st,2008",
+g86,,1.0,,geforce8500gt,,,,pcie1.0x16,,,,,,459mhz,,,,128bit,,,,256mb,,,,400mhz,,,,gddr3,,,,,,geforce8(8xxx)series,,,,"apr17th,2007",
+g84,,1.0,,geforce8600gs,,,,pcie1.0x16,,,,,,540mhz,,,,128bit,,,,512mb,,,,400mhz,,,,ddr2,,,,,,geforce8(8xxx)series,,,,"apr17th,2007",
+g84,,1.0,,geforce8600gt,,,,pcie1.0x16,,,,,,540mhz,,,,128bit,,,,512mb,,,,700mhz,,,,gddr3,,,,,,geforce8(8xxx)series,,,,"apr17th,2007",
+g84,,1.0,,geforce8600gtmacedition,,,,pcie1.0x16,,,,,,600mhz,,,,128bit,,,,128mb,,,,750mhz,,,,gddr3,,,,,,geforce8(8xxx)series,,,,"apr17th,2007",
+g84,,1.0,,geforce8600gts,,,,pcie1.0x16,,,,,,675mhz,,,,128bit,,,,256mb,,,,1000mhz,,,,gddr3,,,,,,geforce8(8xxx)series,,,,"apr17th,2007",
+g84,,1.0,,geforce8600gtsmacedition,,,,pcie1.0x16,,,,,,675mhz,,,,128bit,,,,512mb,,,,1008mhz,,,,gddr3,,,,,,geforce8(8xxx)series,,,,"sep21st,2007",
+g92,,1.0,,geforce8800gs,,,,pcie2.0x16,,,,,,550mhz,,,,192bit,,,,384mb,,,,800mhz,,,,gddr3,,,,,,geforce8(8xxx)series,,,,"jan31st,2008",
+g92,,1.0,,geforce8800gt,,,,pcie2.0x16,,,,,,600mhz,,,,256bit,,,,512mb,,,,900mhz,,,,gddr3,,,,,,geforce8(8xxx)series,,,,"oct29th,2007",
+g92,,1.0,,geforce8800gtmacedition,,,,pcie2.0x16,,,,,,600mhz,,,,256bit,,,,512mb,,,,900mhz,,,,gddr3,,,,,,geforce8(8xxx)series,,,,"feb1st,2008",
+g80,,1.0,,geforce8800gts320,,,,pcie1.0x16,,,,,,513mhz,,,,320bit,,,,320mb,,,,792mhz,,,,gddr3,,,,,,geforce8(8xxx)series,,,,"feb12th,2007",
+g92,,1.0,,geforce8800gts512,,,,pcie2.0x16,,,,,,650mhz,,,,256bit,,,,512mb,,,,820mhz,,,,gddr3,,,,,,geforce8(8xxx)series,,,,"dec11th,2007",
+g80,,1.0,,geforce8800gts640,,,,pcie1.0x16,,,,,,513mhz,,,,320bit,,,,640mb,,,,792mhz,,,,gddr3,,,,,,geforce8(8xxx)series,,,,"nov8th,2006",
+g80,,1.0,,geforce8800gtscore112,,,,pcie1.0x16,,,,,,500mhz,,,,320bit,,,,640mb,,,,800mhz,,,,gddr3,,,,,,geforce8(8xxx)series,,,,"nov19th,2007",
+g80,,1.0,,geforce8800ultra,,,,pcie1.0x16,,,,,,612mhz,,,,384bit,,,,768mb,,,,1080mhz,,,,gddr3,,,,,,geforce8(8xxx)series,,,,"may2nd,2007",
+c78,,1.0,,geforce9100,,,,pci,,,,,,500mhz,,,,systemshared,,,,systemshared,,,,systemshared,,,,systemshared,,,,,,geforce9igpseries,,,,"apr17th,2007",
+c78,,1.0,,geforce9200,,,,pci,,,,,,500mhz,,,,systemshared,,,,systemshared,,,,systemshared,,,,systemshared,,,,,,geforce9igpseries,,,,"apr17th,2007",
+c79,,1.0,,geforce9200,,,,pci,,,,,,450mhz,,,,systemshared,,,,systemshared,,,,systemshared,,,,systemshared,,,,,,geforce9igpseries,,,,"apr17th,2007",
+c79,,1.0,,geforce9300+nforce730i,,,,pci,,,,,,450mhz,,,,systemshared,,,,systemshared,,,,systemshared,,,,systemshared,,,,,,geforce9igpseries,,,,"apr17th,2007",
+g98,,1.0,,geforce9300ge,,,,pcie2.0x16,,,,,,540mhz,,,,64bit,,,,256mb,,,,400mhz,,,,ddr2,,,,,,geforce9(9xxx)series,,,,"jun1st,2008",
+g98s,,1.0,,geforce9300gs,,,,pcie2.0x16,,,,,,567mhz,,,,64bit,,,,512mb,,,,333mhz,,,,ddr2,,,,,,geforce9(9xxx)series,,,,"jun1st,2008",
+gt218s,,1.0,,geforce9300gsrev.2,,,,pcie2.0x16,,,,,,589mhz,,,,64bit,,,,256mb,,,,333mhz,,,,ddr2,,,,,,geforce9(9xxx)series,,,,"mar12th,2011",
+g98s,,1.0,,geforce9300se,,,,pcie2.0x16,,,,,,540mhz,,,,64bit,,,,256mb,,,,400mhz,,,,ddr2,,,,,,geforce9(9xxx)series,,,,"jun1st,2008",
+c79,,1.0,,geforce9400,,,,pci,,,,,,450mhz,,,,systemshared,,,,systemshared,,,,systemshared,,,,systemshared,,,,,,geforce9igpseries,,,,"apr17th,2007",
+c7a,,1.0,,geforce9400,,,,pci,,,,,,580mhz,,,,systemshared,,,,systemshared,,,,systemshared,,,,systemshared,,,,,,geforce9igpseries,,,,"apr17th,2007",
+g86s,,1.0,,geforce9400gt,,,,pcie2.0x16,,,,,,459mhz,,,,64bit,,,,128mb,,,,600mhz,,,,ddr2,,,,,,geforce9(9xxx)series,,,,"aug1st,2008",
+g96c,,1.0,,geforce9400gt,,,,pcie2.0x16,,,,,,550mhz,,,,128bit,,,,512mb,,,,400mhz,,,,ddr2,,,,,,geforce9(9xxx)series,,,,"aug27th,2008",
+g96c,,1.0,,geforce9400gtpci,,,,pci,,,,,,550mhz,,,,128bit,,,,256mb,,,,400mhz,,,,ddr2,,,,,,geforce9(9xxx)series,,,,"aug27th,2008",
+g96c,,1.0,,geforce9400gtrev.2,,,,pcie2.0x16,,,,,,550mhz,,,,128bit,,,,512mb,,,,400mhz,,,,gddr3,,,,,,geforce9(9xxx)series,,,,"aug27th,2008",
+gt218s,,1.0,,geforce9400gtrev.3,,,,pcie2.0x16,,,,,,589mhz,,,,64bit,,,,128mb,,,,600mhz,,,,ddr2,,,,,,geforce9(9xxx)series,,,,"jun13th,2012",
+g96,,1.0,,geforce9500gs,,,,pcie2.0x16,,,,,,550mhz,,,,128bit,,,,512mb,,,,504mhz,,,,ddr2,,,,,,geforce9(9xxx)series,,,,"jul29th,2008",
+g96c,,1.0,,geforce9500gsrev.2,,,,pcie2.0x16,,,,,,500mhz,,,,128bit,,,,512mb,,,,500mhz,,,,ddr2,,,,,,geforce9(9xxx)series,,,,"jul29th,2008",
+g96,,1.0,,geforce9500gt,,,,pcie2.0x16,,,,,,600mhz,,,,128bit,,,,512mb,,,,1000mhz,,,,gddr3,,,,,,geforce9(9xxx)series,,,,"jul29th,2008",
+g96c,,1.0,,geforce9500gtmacedition,,,,pcie2.0x16,,,,,,550mhz,,,,128bit,,,,512mb,,,,800mhz,,,,gddr3,,,,,,geforce9(9xxx)series,,,,"may19th,2010",
+g96b,,1.0,,geforce9500gtrev.2,,,,pcie2.0x16,,,,,,600mhz,,,,128bit,,,,512mb,,,,900mhz,,,,gddr3,,,,,,geforce9(9xxx)series,,,,"jul29th,2008",
+g96c,,1.0,,geforce9500gtrev.3,,,,pcie2.0x16,,,,,,550mhz,,,,128bit,,,,512mb,,,,800mhz,,,,gddr3,,,,,,geforce9(9xxx)series,,,,"jul29th,2008",
+g92,,1.0,,geforce9600gso,,,,pcie2.0x16,,,,,,550mhz,,,,192bit,,,,384mb,,,,800mhz,,,,gddr3,,,,,,geforce9(9xxx)series,,,,"apr28th,2008",
+g94,,1.0,,geforce9600gso512,,,,pcie2.0x16,,,,,,650mhz,,,,256bit,,,,512mb,,,,900mhz,,,,gddr3,,,,,,geforce9(9xxx)series,,,,"oct23rd,2008",
+g94,,1.0,,geforce9600gsoem,,,,pcie2.0x16,,,,,,500mhz,,,,192bit,,,,768mb,,,,1000mhz,,,,ddr2,,,,,,geforce9(9xxx)series,,,,"jul29th,2008",
+g94,,1.0,,geforce9600gt,,,,pcie2.0x16,,,,,,650mhz,,,,256bit,,,,512mb,,,,900mhz,,,,gddr3,,,,,,geforce9(9xxx)series,,,,"feb21st,2008",
+g94,,1.0,,geforce9600gtgreenedition,,,,pcie2.0x16,,,,,,600mhz,,,,256bit,,,,512mb,,,,700mhz,,,,gddr3,,,,,,geforce9(9xxx)series,,,,"feb21st,2008",
+g94,,1.0,,geforce9600gtmacedition,,,,pcie2.0x16,,,,,,600mhz,,,,256bit,,,,1024mb,,,,266mhz,,,,ddr2,,,,,,geforce9(9xxx)series,,,,"dec22nd,2008",
+g94b,,1.0,,geforce9600gtrev.2,,,,pcie2.0x16,,,,,,650mhz,,,,256bit,,,,512mb,,,,900mhz,,,,gddr3,,,,,,geforce9(9xxx)series,,,,"feb21st,2008",
+g92,,1.0,,geforce9600gtx,,,,pcie2.0x16,,,,,,580mhz,,,,256bit,,,,512mb,,,,700mhz,,,,gddr3,,,,,,geforce9(9xxx)series,,,,"may27th,2009",
+g92,,1.0,,geforce9800gt,,,,pcie2.0x16,,,,,,600mhz,,,,256bit,,,,512mb,,,,900mhz,,,,gddr3,,,,,,geforce9(9xxx)series,,,,"jul21st,2008",
+g92b,,1.0,,geforce9800gt,,,,pcie2.0x16,,,,,,600mhz,,,,256bit,,,,512mb,,,,900mhz,,,,gddr3,,,,,,geforce9(9xxx)series,,,,"jul21st,2008",
+g92,,1.0,,geforce9800gtrebrand,,,,pcie2.0x16,,,,,,725mhz,,,,256bit,,,,512mb,,,,1000mhz,,,,gddr3,,,,,,geforce9(9xxx)series,,,,"jul21st,2008",
+g92,,1.0,,geforce9800gtx,,,,pcie2.0x16,,,,,,675mhz,,,,256bit,,,,512mb,,,,1100mhz,,,,gddr3,,,,,,geforce9(9xxx)series,,,,"mar28th,2008",
+g92b,,1.0,,geforce9800gtx+,,,,pcie2.0x16,,,,,,738mhz,,,,256bit,,,,512mb,,,,1100mhz,,,,gddr3,,,,,,geforce9(9xxx)series,,,,"jan16th,2009",
+g92,,1.0,,geforce9800gx2,,,,pcie2.0x16,,,,,,600mhz,,,,256bit,,,,512mb,,,,1000mhz,,,,gddr3,,,,,,geforce9(9xxx)series,,,,"mar18th,2008",
+nv34,,1.0,,geforcefx5100,,,,agp8x,,,,,,200mhz,,,,64bit,,,,64mb,,,,166mhz,,,,ddr,,,,,,geforcefx(5xxx)series,,,,"mar6th,2003",
+nv18c,,1.0,,geforcefx5200,,,,agp8x,,,,,,250mhz,,,,128bit,,,,128mb,,,,200mhz,,,,ddr,,,,,,geforcefx(5xxx)series,,,,"mar6th,2003",
+nv34,,1.0,,geforcefx5200,,,,agp8x,,,,,,250mhz,,,,128bit,,,,128mb,,,,200mhz,,,,ddr,,,,,,geforcefx(5xxx)series,,,,"mar6th,2003",
+nv41,NV41,,1.0,geforcefx5200,GeForce FX 5200,,,,agp4x,,,,,,225mhz,,,,64-bit,,,,128mb,,,,1125mhz,,,,gddr3,,,,,,geforcefx,,,,"nov18,2003"
+nv34,,1.0,,geforcefx5200le,,,,agp8x,,,,,,250mhz,,,,64bit,,,,128mb,,,,166mhz,,,,ddr,,,,,,geforcefx(5xxx)series,,,,"mar17th,2003",
+nv34b,,1.0,,geforcefx5200pci,,,,pci,,,,,,250mhz,,,,128bit,,,,256mb,,,,200mhz,,,,ddr,,,,,,geforcefx(5xxx)series,,,,"mar6th,2003",
+nv34b,,1.0,,geforcefx5200rev.2,,,,agp8x,,,,,,250mhz,,,,64bit,,,,128mb,,,,200mhz,,,,ddr,,,,,,geforcefx(5xxx)series,,,,"mar6th,2003",
+nv34,,1.0,,geforcefx5200ultra,,,,agp8x,,,,,,325mhz,,,,128bit,,,,128mb,,,,325mhz,,,,ddr,,,,,,geforcefx(5xxx)series,,,,"mar6th,2003",
+nv34,,1.0,,geforcefx5200ultramacedition,,,,agppro8x,,,,,,325mhz,,,,128bit,,,,128mb,,,,325mhz,,,,ddr,,,,,,geforcefx(5xxx)series,,,,"mar6th,2003",
+nv34b,,1.0,,geforcefx5500,,,,agp8x,,,,,,270mhz,,,,128bit,,,,64mb,,,,166mhz,,,,ddr,,,,,,geforcefx(5xxx)series,,,,"mar17th,2004",
+nv34b,,1.0,,geforcefx5500pci,,,,pci,,,,,,270mhz,,,,128bit,,,,256mb,,,,200mhz,,,,ddr,,,,,,geforcefx(5xxx)series,,,,"mar17th,2004",
+nv31,,1.0,,geforcefx5600,,,,agp8x,,,,,,325mhz,,,,128bit,,,,128mb,,,,250mhz,,,,ddr,,,,,,geforcefx(5xxx)series,,,,"mar6th,2003",
+nv31,,1.0,,geforcefx5600ultra,,,,agp8x,,,,,,400mhz,,,,128bit,,,,128mb,,,,400mhz,,,,ddr,,,,,,geforcefx(5xxx)series,,,,"mar17th,2003",
+nv31,,1.0,,geforcefx5600xt,,,,agp8x,,,,,,235mhz,,,,128bit,,,,128mb,,,,200mhz,,,,ddr,,,,,,geforcefx(5xxx)series,,,,"mar17th,2003",
+nv31,,1.0,,geforcefx5600xtpci,,,,pci,,,,,,235mhz,,,,128bit,,,,64mb,,,,200mhz,,,,ddr,,,,,,geforcefx(5xxx)series,,,,"mar17th,2003",
+nv36b,,1.0,,geforcefx5700,,,,agp8x,,,,,,425mhz,,,,128bit,,,,128mb,,,,250mhz,,,,ddr,,,,,,geforcefx(5xxx)series,,,,"oct23rd,2003",
+nv36s,,1.0,,geforcefx5700engineeringsample,,,,agp8x,,,,,,425mhz,,,,128bit,,,,128mb,,,,250mhz,,,,ddr,,,,,,geforcefx(5xxx)series,,,,"aug18th,2003",
+nv36,,1.0,,geforcefx5700ep,,,,agp8x,,,,,,425mhz,,,,64bit,,,,128mb,,,,200mhz,,,,ddr,,,,,,geforcefx(5xxx)series,,,,"sep1st,2004",
+nv36,,1.0,,geforcefx5700le,,,,agp8x,,,,,,250mhz,,,,64bit,,,,128mb,,,,200mhz,,,,ddr,,,,,,geforcefx(5xxx)series,,,,"mar1st,2004",
+nv36b,,1.0,,geforcefx5700ultra,,,,agp8x,,,,,,475mhz,,,,128bit,,,,128mb,,,,453mhz,,,,gddr2,,,,,,geforcefx(5xxx)series,,,,"oct23rd,2003",
+nv36,,1.0,,geforcefx5700ve,,,,agp8x,,,,,,250mhz,,,,128bit,,,,128mb,,,,200mhz,,,,ddr,,,,,,geforcefx(5xxx)series,,,,"sep1st,2004",
+nv30,,1.0,,geforcefx5800,,,,agp8x,,,,,,400mhz,,,,128bit,,,,128mb,,,,400mhz,,,,gddr2,,,,,,geforcefx(5xxx)series,,,,"mar6th,2003",
+nv30,,1.0,,geforcefx5800ultra,,,,agp8x,,,,,,500mhz,,,,128bit,,,,128mb,,,,500mhz,,,,gddr2,,,,,,geforcefx(5xxx)series,,,,"mar6th,2003",
+nv35,,1.0,,geforcefx5900,,,,agp8x,,,,,,400mhz,,,,256bit,,,,128mb,,,,425mhz,,,,ddr,,,,,,geforcefx(5xxx)series,,,,"may12th,2003",
+nv35,,1.0,,geforcefx5900ultra,,,,agp8x,,,,,,450mhz,,,,256bit,,,,256mb,,,,425mhz,,,,ddr,,,,,,geforcefx(5xxx)series,,,,"oct23rd,2003",
+nv35,,1.0,,geforcefx5900xt,,,,agp8x,,,,,,400mhz,,,,256bit,,,,128mb,,,,350mhz,,,,ddr,,,,,,geforcefx(5xxx)series,,,,"may12th,2003",
+nv35,,1.0,,geforcefx5900zt,,,,agp8x,,,,,,325mhz,,,,256bit,,,,128mb,,,,350mhz,,,,ddr,,,,,,geforcefx(5xxx)series,,,,"may12th,2003",
+nv38,,1.0,,geforcefx5950ultra,,,,agp8x,,,,,,475mhz,,,,256bit,,,,256mb,,,,475mhz,,,,ddr,,,,,,geforcefx(5xxx)series,,,,"oct23rd,2003",
+g98s,,1.0,,geforceg100oem,,,,pcie2.0x16,,,,,,540mhz,,,,64bit,,,,256mb,,,,400mhz,,,,ddr2,,,,,,geforce100series,,,,"mar10th,2009",
+g96c,,1.0,,geforceg210oem,,,,pcie1.0x16,,,,,,550mhz,,,,64bit,,,,512mb,,,,504mhz,,,,ddr2,,,,,,geforce200series,,,,"may26th,2009",
+gt218s,,1.0,,geforceg210oemrev.2,,,,pcie2.0x16,,,,,,589mhz,,,,64bit,,,,128mb,,,,400mhz,,,,ddr2,,,,,,geforce200series,,,,"aug24th,2009",
+gp108,,1.0,,geforcegt1010,,,,pcie3.0x4,,,,,,1228mhz,,,,64bit,,,,2gb,,,,1502mhz,,,,gddr5,,,,,,geforce10series,,,,"jan13th,2021",
+gp108,,1.0,,geforcegt1010ddr4,,,,pcie3.0x4,,,,,,1152mhz,,,,64bit,,,,2gb,,,,1050mhz,,,,ddr4,,,,,,geforce10series,,,,"jan13th,2021",
+gp108,,1.0,,geforcegt1030,,,,pcie3.0x4,,,,,,1228mhz,,,,64bit,,,,2gb,,,,1502mhz,,,,gddr5,,,,,,geforce10series,,,,"may17th,2017",
+gp108,,1.0,,geforcegt1030ddr4,,,,pcie3.0x4,,,,,,1152mhz,,,,64bit,,,,2gb,,,,1050mhz,,,,ddr4,,,,,,geforce10series,,,,"mar12th,2018",
+gk107,,1.0,,geforcegt1030gk107,,,,pcie3.0x16,,,,,,1058mhz,,,,128bit,,,,2gb,,,,1250mhz,,,,gddr5,,,,,,geforce10series,,,,"sep30th,2018",
+g96c,,1.0,,geforcegt120macedition,,,,pcie2.0x16,,,,,,550mhz,,,,128bit,,,,512mb,,,,800mhz,,,,gddr3,,,,,,geforce100series,,,,"jan20th,2009",
+g96c,,1.0,,geforcegt120oem,,,,pcie2.0x16,,,,,,738mhz,,,,128bit,,,,512mb,,,,504mhz,,,,ddr2,,,,,,geforce100series,,,,"mar10th,2009",
+g94b,,1.0,,geforcegt130macedition,,,,pcie2.0x16,,,,,,600mhz,,,,192bit,,,,512mb,,,,792mhz,,,,gddr3,,,,,,geforce100series,,,,"dec12th,2008",
+g94b,,1.0,,geforcegt130oem,,,,pcie2.0x16,,,,,,500mhz,,,,192bit,,,,512mb,,,,500mhz,,,,ddr2,,,,,,geforce100series,,,,"mar10th,2009",
+g94b,,1.0,,geforcegt140oem,,,,pcie2.0x16,,,,,,650mhz,,,,256bit,,,,1024mb,,,,900mhz,,,,gddr3,,,,,,geforce100series,,,,"mar10th,2009",
+g94,,1.0,,geforcegt220,,,,pcie2.0x16,,,,,,600mhz,,,,128bit,,,,1024mb,,,,700mhz,,,,gddr3,,,,,,geforce200series,,,,"jan26th,2010",
+gt216,,1.0,,geforcegt220,,,,pcie2.0x16,,,,,,615mhz,,,,128bit,,,,512mb,,,,1000mhz,,,,ddr2,,,,,,geforce200series,,,,"oct12th,2009",
+gt215,,1.0,,geforcegt220oem,,,,pcie2.0x16,,,,,,506mhz,,,,128bit,,,,512mb,,,,700mhz,,,,gddr3,,,,,,geforce200series,,,,"oct12th,2009",
+g94b,,1.0,,geforcegt230,,,,pcie2.0x16,,,,,,650mhz,,,,256bit,,,,512mb,,,,900mhz,,,,gddr3,,,,,,geforce200series,,,,"oct12th,2009",
+g92b,,1.0,,geforcegt230oem,,,,pcie2.0x16,,,,,,500mhz,,,,192bit,,,,1536mb,,,,500mhz,,,,ddr2,,,,,,geforce200series,,,,"apr27th,2009",
+gt215,,1.0,,geforcegt240,,,,pcie2.0x16,,,,,,550mhz,,,,128bit,,,,1024mb,,,,850mhz,,,,gddr5,,,,,,geforce200series,,,,"nov17th,2009",
+gt215,,1.0,,geforcegt320oem,,,,pcie2.0x16,,,,,,540mhz,,,,128bit,,,,1024mb,,,,790mhz,,,,gddr3,,,,,,geforce300series,,,,"feb2nd,2010",
+g92,,1.0,,geforcegt330oem,,,,pcie2.0x16,,,,,,500mhz,,,,256bit,,,,1024mb,,,,800mhz,,,,gddr3,,,,,,geforce300series,,,,"feb2nd,2010",
+g92b,,1.0,,geforcegt330oem,,,,pcie2.0x16,,,,,,500mhz,,,,128bit,,,,256mb,,,,510mhz,,,,ddr2,,,,,,geforce300series,,,,"feb2nd,2010",
+gt215,,1.0,,geforcegt330oem,,,,pcie2.0x16,,,,,,540mhz,,,,128bit,,,,1024mb,,,,790mhz,,,,gddr3,,,,,,geforce300series,,,,"feb2nd,2010",
+gt215,,1.0,,geforcegt340oem,,,,pcie2.0x16,,,,,,550mhz,,,,128bit,,,,1024mb,,,,850mhz,,,,gddr3,,,,,,geforce300series,,,,"feb2nd,2010",
+gt216,,1.0,,geforcegt415oem,,,,pcie2.0x16,,,,,,625mhz,,,,128bit,,,,512mb,,,,333mhz,,,,ddr3,,,,,,geforce400series,,,,"sep3rd,2010",
+gf108,,1.0,,geforcegt420oem,,,,pcie2.0x16,,,,,,700mhz,,,,128bit,,,,1024mb,,,,900mhz,,,,ddr3,,,,,,geforce400series,,,,"sep3rd,2010",
+gf108,,1.0,,geforcegt430,,,,pcie2.0x16,,,,,,700mhz,,,,64bit,,,,512mb,,,,800mhz,,,,ddr3,,,,,,geforce400series,,,,"oct11th,2010",
+gf108,,1.0,,geforcegt430oem,,,,pcie2.0x16,,,,,,700mhz,,,,128bit,,,,2gb,,,,800mhz,,,,ddr3,,,,,,geforce400series,,,,"oct11th,2010",
+gf108,,1.0,,geforcegt430pci,,,,pci,,,,,,700mhz,,,,64bit,,,,512mb,,,,600mhz,,,,ddr3,,,,,,geforce400series,,,,"oct11th,2010",
+gf108,,1.0,,geforcegt440,,,,pcie2.0x16,,,,,,810mhz,,,,128bit,,,,1024mb,,,,900mhz,,,,ddr3,,,,,,geforce400series,,,,"feb1st,2011",
+gf108,,1.0,,geforcegt440macedition,,,,pcie1.0x16,,,,,,810mhz,,,,128bit,,,,1024mb,,,,667mhz,,,,ddr3,,,,,,geforce400series,,,,"feb9th,2011",
+gf106,,1.0,,geforcegt440oem,,,,pcie2.0x16,,,,,,810mhz,,,,192bit,,,,1536mb,,,,900mhz,,,,ddr3,,,,,,geforce400series,,,,"oct11th,2010",
+gf119s,,1.0,,geforcegt520,,,,pcie2.0x16,,,,,,810mhz,,,,64bit,,,,1024mb,,,,900mhz,,,,ddr3,,,,,,geforce500series,,,,"apr13th,2011",
+gf108,,1.0,,geforcegt520oem,,,,pcie2.0x16,,,,,,700mhz,,,,64bit,,,,1024mb,,,,667mhz,,,,ddr3,,,,,,geforce500series,,,,"feb1st,2012",
+gf119s,,1.0,,geforcegt520oem,,,,pcie2.0x16,,,,,,589mhz,,,,64bit,,,,1024mb,,,,500mhz,,,,ddr3,,,,,,geforce500series,,,,"aug20th,2012",
+gf119s,,1.0,,geforcegt520pci,,,,pci,,,,,,810mhz,,,,64bit,,,,1024mb,,,,900mhz,,,,ddr3,,,,,,geforce500series,,,,"apr13th,2011",
+gf119s,,1.0,,geforcegt520pciex1,,,,pcie2.0x1,,,,,,810mhz,,,,64bit,,,,1024mb,,,,900mhz,,,,ddr3,,,,,,geforce500series,,,,"apr13th,2011",
+gf108,,1.0,,geforcegt530oem,,,,pcie2.0x16,,,,,,700mhz,,,,128bit,,,,1024mb,,,,900mhz,,,,ddr3,,,,,,geforce500series,,,,"may14th,2011",
+gf116,,1.0,,geforcegt545,,,,pcie2.0x16,,,,,,720mhz,,,,192bit,,,,1536mb,,,,800mhz,,,,ddr3,,,,,,geforce500series,,,,"may14th,2011",
+gf116,,1.0,,geforcegt545oem,,,,pcie2.0x16,,,,,,871mhz,,,,128bit,,,,1024mb,,,,1000mhz,,,,gddr5,,,,,,geforce500series,,,,"may14th,2011",
+gf119s,,1.0,,geforcegt610,,,,pcie2.0x16,,,,,,810mhz,,,,64bit,,,,1024mb,,,,898mhz,,,,ddr3,,,,,,geforce600series,,,,"apr2nd,2012",
+gf108,,1.0,,geforcegt610oem,,,,pcie2.0x16,,,,,,701mhz,,,,64bit,,,,2gb,,,,500mhz,,,,ddr3,,,,,,geforce600series,,,,"apr2nd,2016",
+gf119s,,1.0,,geforcegt610oem,,,,pcie2.0x16,,,,,,550mhz,,,,64bit,,,,1024mb,,,,500mhz,,,,ddr3,,,,,,geforce600series,,,,"sep9th,2012",
+gf119s,,1.0,,geforcegt610pci,,,,pci,,,,,,810mhz,,,,64bit,,,,512mb,,,,667mhz,,,,ddr3,,,,,,geforce600series,,,,"apr2nd,2012",
+gf119s,,1.0,,geforcegt610pciex1,,,,pcie2.0x1,,,,,,810mhz,,,,64bit,,,,512mb,,,,500mhz,,,,ddr3,,,,,,geforce600series,,,,"apr2nd,2012",
+gf108,,1.0,,geforcegt620,,,,pcie2.0x16,,,,,,700mhz,,,,64bit,,,,1024mb,,,,900mhz,,,,ddr3,,,,,,geforce600series,,,,"may15th,2012",
+gf119s,,1.0,,geforcegt620oem,,,,pcie2.0x16,,,,,,810mhz,,,,64bit,,,,512mb,,,,898mhz,,,,ddr3,,,,,,geforce600series,,,,"apr2nd,2012",
+gf119s,,1.0,,geforcegt625oem,,,,pcie2.0x16,,,,,,874mhz,,,,64bit,,,,1024mb,,,,825mhz,,,,ddr3,,,,,,geforce600series,,,,"feb18th,2013",
+gf108,,1.0,,geforcegt630,,,,pcie2.0x16,,,,,,810mhz,,,,128bit,,,,1024mb,,,,900mhz,,,,ddr3,,,,,,geforce600series,,,,"may15th,2012",
+gk107,,1.0,,geforcegt630oem,,,,pcie3.0x16,,,,,,875mhz,,,,128bit,,,,1024mb,,,,891mhz,,,,ddr3,,,,,,geforce600series,,,,"apr24th,2012",
+gk208,,1.0,,geforcegt630rev.2,,,,pcie2.0x8,,,,,,902mhz,,,,64bit,,,,2gb,,,,900mhz,,,,ddr3,,,,,,geforce600series,,,,"may29th,2013",
+gk208,,1.0,,geforcegt630rev.2pciex8,,,,pcie2.0x8,,,,,,902mhz,,,,64bit,,,,2gb,,,,900mhz,,,,ddr3,,,,,,geforce600series,,,,"may29th,2013",
+gk208,,1.0,,geforcegt635oem,,,,pcie3.0x8,,,,,,967mhz,,,,64bit,,,,1024mb,,,,900mhz,,,,ddr3,,,,,,geforce600series,,,,"oct1st,2013",
+gk107,,1.0,,geforcegt640,,,,pcie3.0x16,,,,,,902mhz,,,,128bit,,,,2gb,,,,891mhz,,,,ddr3,,,,,,geforce600series,,,,"jun5th,2012",
+gk107,,1.0,,geforcegt640oem,,,,pcie3.0x16,,,,,,797mhz,,,,128bit,,,,2gb,,,,891mhz,,,,ddr3,,,,,,geforce600series,,,,"apr24th,2012",
+gf116,,1.0,,geforcegt640oemrebrand,,,,pcie2.0x16,,,,,,720mhz,,,,192bit,,,,1536mb,,,,800mhz,,,,ddr3,,,,,,geforce600series,,,,"apr24th,2012",
+gk208,,1.0,,geforcegt640rev.2,,,,pcie2.0x8,,,,,,1046mhz,,,,64bit,,,,1024mb,,,,1252mhz,,,,gddr5,,,,,,geforce600series,,,,"may29th,2013",
+gf114,,1.0,,geforcegt645oem,,,,pcie2.0x16,,,,,,776mhz,,,,192bit,,,,1024mb,,,,957mhz,,,,gddr5,,,,,,geforce600series,,,,"apr24th,2012",
+gf119s,,1.0,,geforcegt705oem,,,,pcie2.0x16,,,,,,874mhz,,,,64bit,,,,1024mb,,,,825mhz,,,,ddr3,,,,,,geforce700series,,,,"mar27th,2014",
+gf119s,,1.0,,geforcegt710,,,,pcie2.0x16,,,,,,810mhz,,,,64bit,,,,1024mb,,,,898mhz,,,,ddr3,,,,,,geforce700series,,,,"jan26th,2016",
+gk208,,1.0,,geforcegt710,,,,pcie2.0x8,,,,,,954mhz,,,,64bit,,,,2gb,,,,900mhz,,,,ddr3,,,,,,geforce700series,,,,"mar27th,2014",
+gk208b,,1.0,,geforcegt710,,,,pcie2.0x8,,,,,,954mhz,,,,64bit,,,,2gb,,,,900mhz,,,,ddr3,,,,,,geforce700series,,,,"mar27th,2014",
+gk208b,,1.0,,geforcegt710oem,,,,pcie2.0x8,,,,,,797mhz,,,,64bit,,,,1024mb,,,,900mhz,,,,ddr3,,,,,,geforce700series,,,,"apr9th,2015",
+gk208b,,1.0,,geforcegt710pciex1,,,,pcie2.0x1,,,,,,954mhz,,,,64bit,,,,1024mb,,,,800mhz,,,,ddr3,,,,,,geforce700series,,,,"mar27th,2014",
+gk208,,1.0,,geforcegt720,,,,pcie2.0x8,,,,,,967mhz,,,,64bit,,,,2gb,,,,900mhz,,,,ddr3,,,,,,geforce700series,,,,"mar27th,2014",
+gk208b,,1.0,,geforcegt720,,,,pcie2.0x8,,,,,,797mhz,,,,64bit,,,,1024mb,,,,800mhz,,,,ddr3,,,,,,geforce700series,,,,"sep29th,2014",
+gk107,,1.0,,geforcegt720oem,,,,pcie3.0x16,,,,,,993mhz,,,,128bit,,,,1024mb,,,,891mhz,,,,ddr3,,,,,,geforce700series,,,,"oct29th,2017",
+gf108,,1.0,,geforcegt730,,,,pcie2.0x16,,,,,,700mhz,,,,128bit,,,,1024mb,,,,900mhz,,,,ddr3,,,,,,geforce700series,,,,"jun18th,2014",
+gk208b,,1.0,,geforcegt730,,,,pcie2.0x8,,,,,,902mhz,,,,64bit,,,,1024mb,,,,1253mhz,,,,gddr5,,,,,,geforce700series,,,,"jun18th,2014",
+gk107,,1.0,,geforcegt730oem,,,,pcie3.0x16,,,,,,902mhz,,,,64bit,,,,1024mb,,,,1253mhz,,,,gddr5,,,,,,geforce700series,,,,"apr9th,2015",
+gk107,,1.0,,geforcegt740,,,,pcie3.0x16,,,,,,993mhz,,,,128bit,,,,1024mb,,,,1253mhz,,,,gddr5,,,,,,geforce700series,,,,"may29th,2014",
+gk106s,,1.0,,geforcegt740oem,,,,pcie3.0x16,,,,,,1006mhz/980mhz,,,,128bit,,,,1024mb,,,,1253mhz,,,,gddr5,,,,,,geforce700series,,,,"apr14th,2015",
+g92,,1.0,,geforcegts150oem,,,,pcie2.0x16,,,,,,738mhz,,,,256bit,,,,1024mb,,,,1000mhz,,,,gddr3,,,,,,geforce100series,,,,"mar10th,2009",
+g92b,,1.0,,geforcegts240oem,,,,pcie2.0x16,,,,,,675mhz,,,,256bit,,,,1024mb,,,,1100mhz,,,,gddr3,,,,,,geforce200series,,,,"jul1st,2009",
+g92b,,1.0,,geforcegts250,,,,pcie2.0x16,,,,,,675mhz/702mhz,,,,256bit,,,,1024mb,,,,1008mhz,,,,gddr3,,,,,,geforce200series,,,,"mar4th,2009",
+gf106,,1.0,,geforcegts450,,,,pcie2.0x16,,,,,,783mhz,,,,128bit,,,,1024mb,,,,902mhz,,,,gddr5,,,,,,geforce400series,,,,"sep13th,2010",
+gf106,,1.0,,geforcegts450oem,,,,pcie2.0x16,,,,,,783mhz,,,,128bit,,,,512mb,,,,902mhz,,,,gddr5,,,,,,geforce400series,,,,"sep13th,2010",
+gf116,,1.0,,geforcegts450rev.2,,,,pcie2.0x16,,,,,,783mhz,,,,128bit,,,,1024mb,,,,902mhz,,,,gddr5,,,,,,geforce400series,,,,"mar15th,2011",
+gf116,,1.0,,geforcegts450rev.3,,,,pcie2.0x16,,,,,,783mhz,,,,128bit,,,,1024mb,,,,700mhz,,,,ddr3,,,,,,geforce400series,,,,"jul11th,2012",
+gp107,,1.0,,geforcegtx1050,,,,pcie3.0x16,,,,,,1354mhz,,,,128bit,,,,2gb,,,,1752mhz,,,,gddr5,,,,,,geforce10series,,,,"oct25th,2016",
+gp107,,1.0,,geforcegtx10503gb,,,,pcie3.0x16,,,,,,1392mhz,,,,96bit,,,,3gb,,,,1752mhz,,,,gddr5,,,,,,geforce10series,,,,"may21st,2018",
+gp107,,1.0,,geforcegtx1050ti,,,,pcie3.0x16,,,,,,1291mhz,,,,128bit,,,,4gb,,,,1752mhz,,,,gddr5,,,,,,geforce10series,,,,"oct25th,2016",
+gp106,,1.0,,geforcegtx10603gb,,,,pcie3.0x16,,,,,,1506mhz,,,,192bit,,,,3gb,,,,2002mhz,,,,gddr5,,,,,,geforce10series,,,,"aug18th,2016",
+gp104,,1.0,,geforcegtx10603gbgp104,,,,pcie3.0x16,,,,,,1506mhz,,,,192bit,,,,3gb,,,,2002mhz,,,,gddr5,,,,,,geforce10series,,,,"dec25th,2016",
+gp106,,1.0,,geforcegtx10605gb,,,,pcie3.0x16,,,,,,1506mhz,,,,160bit,,,,5gb,,,,2002mhz,,,,gddr5,,,,,,geforce10series,,,,"dec26th,2017",
+gp106,,1.0,,geforcegtx10606gb,,,,pcie3.0x16,,,,,,1506mhz,,,,192bit,,,,6gb,,,,2002mhz,,,,gddr5,,,,,,geforce10series,,,,"jul19th,2016",
+gp106,,1.0,,geforcegtx10606gb9gbps,,,,pcie3.0x16,,,,,,1506mhz,,,,192bit,,,,6gb,,,,2257mhz,,,,gddr5,,,,,,geforce10series,,,,"apr20th,2017",
+gp104,,1.0,,geforcegtx10606gbgddr5x,,,,pcie3.0x16,,,,,,1506mhz,,,,192bit,,,,6gb,,,,1001mhz,,,,gddr5x,,,,,,geforce10series,,,,"oct18th,2018",
+gp104,,1.0,,geforcegtx10606gbgp104,,,,pcie3.0x16,,,,,,1506mhz,,,,192bit,,,,6gb,,,,2002mhz,,,,gddr5,,,,,,geforce10series,,,,"mar8th,2018",
+gp106,,1.0,,geforcegtx10606gbrev.2,,,,pcie3.0x16,,,,,,1506mhz,,,,192bit,,,,6gb,,,,2002mhz,,,,gddr5,,,,,,geforce10series,,,,"jan5th,2018",
+gp104,,1.0,,geforcegtx1070,,,,pcie3.0x16,,,,,,1506mhz,,,,256bit,,,,8gb,,,,2002mhz,,,,gddr5,,,,,,geforce10series,,,,"jun10th,2016",
+gp104,,1.0,,geforcegtx1070gddr5x,,,,pcie3.0x16,,,,,,1506mhz,,,,256bit,,,,8gb,,,,1001mhz,,,,gddr5x,,,,,,geforce10series,,,,"dec4th,2018",
+gp104,,1.0,,geforcegtx1070ti,,,,pcie3.0x16,,,,,,1607mhz,,,,256bit,,,,8gb,,,,2002mhz,,,,gddr5,,,,,,geforce10series,,,,"nov2nd,2017",
+gp104,,1.0,,geforcegtx108011gbps,,,,pcie3.0x16,,,,,,1607mhz,,,,256bit,,,,8gb,,,,1376mhz,,,,gddr5x,,,,,,geforce10series,,,,"apr20th,2017",
+gp102,,1.0,,geforcegtx1080ti,,,,pcie3.0x16,,,,,,1481mhz,,,,352bit,,,,11gb,,,,1376mhz,,,,gddr5x,,,,,,geforce10series,,,,"mar10th,2017",
+tu117,,1.0,,geforcegtx1630,,,,pcie3.0x16,,,,,,1740mhz,,,,64bit,,,,4gb,,,,1500mhz,,,,gddr6,,,,,,geforce16series,,,,"jun28th,2022",
+tu117,,1.0,,geforcegtx1650,,,,pcie3.0x16,,,,,,1485mhz,,,,128bit,,,,4gb,,,,2001mhz,,,,gddr5,,,,,,geforce16series,,,,"apr23rd,2019",
+tu117,,1.0,,geforcegtx1650gddr6,,,,pcie3.0x16,,,,,,1410mhz,,,,128bit,,,,4gb,,,,1500mhz,,,,gddr6,,,,,,geforce16series,,,,"apr1st,2020",
+tu116,,1.0,,geforcegtx1650super,,,,pcie3.0x16,,,,,,1530mhz,,,,128bit,,,,4gb,,,,1500mhz,,,,gddr6,,,,,,geforce16series,,,,"nov22nd,2019",
+tu106,,1.0,,geforcegtx1650tu106,,,,pcie3.0x16,,,,,,1410mhz,,,,128bit,,,,4gb,,,,1500mhz,,,,gddr6,,,,,,geforce16series,,,,"jun18th,2020",
+tu116,,1.0,,geforcegtx1650tu116,,,,pcie3.0x16,,,,,,1410mhz,,,,128bit,,,,4gb,,,,1500mhz,,,,gddr6,,,,,,geforce16series,,,,"jul7th,2020",
+tu116,,1.0,,geforcegtx1660,,,,pcie3.0x16,,,,,,1530mhz,,,,192bit,,,,6gb,,,,2001mhz,,,,gddr5,,,,,,geforce16series,,,,"mar14th,2019",
+tu116,,1.0,,geforcegtx1660super,,,,pcie3.0x16,,,,,,1530mhz,,,,192bit,,,,6gb,,,,1750mhz,,,,gddr6,,,,,,geforce16series,,,,"oct29th,2019",
+tu116,,1.0,,geforcegtx1660ti,,,,pcie3.0x16,,,,,,1500mhz,,,,192bit,,,,6gb,,,,1500mhz,,,,gddr6,,,,,,geforce16series,,,,"feb22nd,2019",
+gt200,,1.0,,geforcegtx260,,,,pcie2.0x16,,,,,,576mhz,,,,448bit,,,,896mb,,,,999mhz,,,,gddr3,,,,,,geforce200series,,,,"jun16th,2008",
+gt200,,1.0,,geforcegtx260core216,,,,pcie2.0x16,,,,,,576mhz,,,,448bit,,,,896mb,,,,999mhz,,,,gddr3,,,,,,geforce200series,,,,"sep16th,2008",
+gt200b,,1.0,,geforcegtx260core216rev.2,,,,pcie2.0x16,,,,,,576mhz,,,,448bit,,,,896mb,,,,999mhz,,,,gddr3,,,,,,geforce200series,,,,"nov27th,2008",
+gt200,,1.0,,geforcegtx260oem,,,,pcie2.0x16,,,,,,518mhz,,,,448bit,,,,1792mb,,,,1008mhz,,,,gddr3,,,,,,geforce200series,,,,"dec8th,2009",
+gt200b,,1.0,,geforcegtx260rev.2,,,,pcie2.0x16,,,,,,576mhz,,,,448bit,,,,896mb,,,,999mhz,,,,gddr3,,,,,,geforce200series,,,,"jul23rd,2008",
+gt200b,,1.0,,geforcegtx275,,,,pcie2.0x16,,,,,,633mhz,,,,448bit,,,,896mb,,,,1134mhz,,,,gddr3,,,,,,geforce200series,,,,"jan15th,2009",
+gt200b,,1.0,,geforcegtx275physxedition,,,,pcie2.0x16,,,,,,633mhz,,,,448bit,,,,896mb,,,,1134mhz,,,,gddr3,,,,,,geforce200series,,,,"feb16th,2010",
+gt200,,1.0,,geforcegtx280,,,,pcie2.0x16,,,,,,602mhz,,,,512bit,,,,1024mb,,,,1107mhz,,,,gddr3,,,,,,geforce200series,,,,"jun16th,2008",
+gt200,GT200,,1.0,geforcegtx285,GeForce GTX 285,,,,pci-ex16,,,,,,772mhz,,,,320-bit,,,,1536mb,,,,1800mhz,,,,gddr5,,,,,,geforcegtx,,,,"mar25,2008"
+gt200b,,1.0,,geforcegtx285,,,,pcie2.0x16,,,,,,648mhz,,,,512bit,,,,1024mb,,,,1242mhz,,,,gddr3,,,,,,geforce200series,,,,"dec23rd,2008",
+gt200b,,1.0,,geforcegtx285macedition,,,,pcie2.0x16,,,,,,648mhz,,,,512bit,,,,1024mb,,,,1242mhz,,,,gddr3,,,,,,geforce200series,,,,"jan15th,2009",
+gt200b,,1.0,,geforcegtx285x2,,,,pcie2.0x16,,,,,,648mhz,,,,512bit,,,,2gb,,,,1152mhz,,,,gddr3,,,,,,geforce200series,,,,"jun17th,2009",
+gt200b,,1.0,,geforcegtx295,,,,pcie2.0x16,,,,,,576mhz,,,,448bit,,,,896mb,,,,999mhz,,,,gddr3,,,,,,geforce200series,,,,"jan8th,2009",
+gt200b,,1.0,,geforcegtx295singlepcb,,,,pcie2.0x16,,,,,,576mhz,,,,448bit,,,,896mb,,,,1008mhz,,,,gddr3,,,,,,geforce200series,,,,"jun16th,2009",
+gf104,,1.0,,geforcegtx460oem,,,,pcie2.0x16,,,,,,650mhz,,,,256bit,,,,1024mb,,,,850mhz,,,,gddr5,,,,,,geforce400series,,,,"oct11th,2010",
+gf104,,1.0,,geforcegtx460se,,,,pcie2.0x16,,,,,,650mhz,,,,256bit,,,,1024mb,,,,850mhz,,,,gddr5,,,,,,geforce400series,,,,"nov15th,2010",
+gf114,,1.0,,geforcegtx460sev2,,,,pcie2.0x16,,,,,,650mhz,,,,192bit,,,,768mb,,,,850mhz,,,,gddr5,,,,,,geforce400series,,,,"nov15th,2010",
+gf114,,1.0,,geforcegtx460v2,,,,pcie2.0x16,,,,,,779mhz,,,,192bit,,,,1024mb,,,,1002mhz,,,,gddr5,,,,,,geforce400series,,,,"sep24th,2011",
+gf114,,1.0,,geforcegtx460v2es,,,,pcie2.0x16,,,,,,779mhz,,,,256bit,,,,1280mb,,,,1002mhz,,,,gddr5,,,,,,geforce400series,,,,"sep24th,2011",
+gf104,,1.0,,geforcegtx460x2,,,,pcie2.0x16,,,,,,701mhz,,,,256bit,,,,1024mb,,,,900mhz,,,,gddr5,,,,,,geforce400series,,,,"mar11th,2011",
+gf100,,1.0,,geforcegtx465,,,,pcie2.0x16,,,,,,608mhz,,,,256bit,,,,1024mb,,,,802mhz,,,,gddr5,,,,,,geforce400series,,,,"may31st,2010",
+gf100,,1.0,,geforcegtx470,,,,pcie2.0x16,,,,,,608mhz,,,,320bit,,,,1280mb,,,,837mhz,,,,gddr5,,,,,,geforce400series,,,,"mar26th,2010",
+gf100,,1.0,,geforcegtx480,,,,pcie2.0x16,,,,,,701mhz,,,,384bit,,,,1536mb,,,,924mhz,,,,gddr5,,,,,,geforce400series,,,,"mar26th,2010",
+gf116,,1.0,,geforcegtx550ti,,,,pcie2.0x16,,,,,,900mhz,,,,192bit,,,,1024mb,,,,1026mhz,,,,gddr5,,,,,,geforce500series,,,,"mar15th,2011",
+gf114,,1.0,,geforcegtx555oem,,,,pcie2.0x16,,,,,,736mhz,,,,192bit,,,,1024mb,,,,957mhz,,,,gddr5,,,,,,geforce500series,,,,"may14th,2011",
+gf114,,1.0,,geforcegtx560,,,,pcie2.0x16,,,,,,810mhz,,,,256bit,,,,1024mb,,,,1000mhz,,,,gddr5,,,,,,geforce500series,,,,"may17th,2011",
+gf110,,1.0,,geforcegtx560oem,,,,pcie2.0x16,,,,,,552mhz,,,,320bit,,,,1280mb,,,,802mhz,,,,gddr5,,,,,,geforce500series,,,,"nov29th,2011",
+gf114,,1.0,,geforcegtx560se,,,,pcie2.0x16,,,,,,736mhz,,,,192bit,,,,1024mb,,,,957mhz,,,,gddr5,,,,,,geforce500series,,,,"feb20th,2012",
+gf114,,1.0,,geforcegtx560ti,,,,pcie2.0x16,,,,,,823mhz,,,,256bit,,,,1024mb,,,,1002mhz,,,,gddr5,,,,,,geforce500series,,,,"jan25th,2011",
+gf110,,1.0,,geforcegtx560ti448,,,,pcie2.0x16,,,,,,732mhz,,,,320bit,,,,1280mb,,,,950mhz,,,,gddr5,,,,,,geforce500series,,,,"nov29th,2011",
+gf110,,1.0,,geforcegtx560tioem,,,,pcie2.0x16,,,,,,732mhz,,,,256bit,,,,1280mb,,,,950mhz,,,,gddr5,,,,,,geforce500series,,,,"mar30th,2011",
+gf114,,1.0,,geforcegtx560tioem,,,,pcie2.0x16,,,,,,823mhz,,,,256bit,,,,1024mb,,,,1002mhz,,,,gddr5,,,,,,geforce500series,,,,"mar8th,2011",
+gf114,,1.0,,geforcegtx560tix2,,,,pcie2.0x16,,,,,,850mhz,,,,256bit,,,,1024mb,,,,1002mhz,,,,gddr5,,,,,,geforce500series,,,,"jan25th,2011",
+gf110,,1.0,,geforcegtx570,,,,pcie2.0x16,,,,,,732mhz,,,,320bit,,,,1280mb,,,,950mhz,,,,gddr5,,,,,,geforce500series,,,,"dec7th,2010",
+gf110,,1.0,,geforcegtx570rev.2,,,,pcie2.0x16,,,,,,732mhz,,,,320bit,,,,1280mb,,,,950mhz,,,,gddr5,,,,,,geforce500series,,,,"dec7th,2010",
+gf110,,1.0,,geforcegtx580,,,,pcie2.0x16,,,,,,772mhz,,,,384bit,,,,1536mb,,,,1002mhz,,,,gddr5,,,,,,geforce500series,,,,"nov9th,2010",
+gf110,,1.0,,geforcegtx580rev.2,,,,pcie2.0x16,,,,,,772mhz,,,,384bit,,,,1536mb,,,,1002mhz,,,,gddr5,,,,,,geforce500series,,,,"jun6th,2011",
+gf110,,1.0,,geforcegtx590,,,,pcie2.0x16,,,,,,608mhz,,,,384bit,,,,1536mb,,,,854mhz,,,,gddr5,,,,,,geforce500series,,,,"mar24th,2011",
+gk106s,,1.0,,geforcegtx645oem,,,,pcie3.0x16,,,,,,824mhz,,,,128bit,,,,1024mb,,,,1000mhz,,,,gddr5,,,,,,geforce600series,,,,"apr22nd,2013",
+gk106,,1.0,,geforcegtx650,,,,pcie3.0x16,,,,,,1058mhz,,,,128bit,,,,1024mb,,,,1250mhz,,,,gddr5,,,,,,geforce600series,,,,"nov27th,2013",
+gk107,,1.0,,geforcegtx650,,,,pcie3.0x16,,,,,,1058mhz,,,,128bit,,,,1024mb,,,,1250mhz,,,,gddr5,,,,,,geforce600series,,,,"sep6th,2012",
+gk106s,,1.0,,geforcegtx650ti,,,,pcie3.0x16,,,,,,928mhz,,,,128bit,,,,1024mb,,,,1350mhz,,,,gddr5,,,,,,geforce600series,,,,"oct9th,2012",
+gk106,,1.0,,geforcegtx650tiboost,,,,pcie3.0x16,,,,,,980mhz,,,,192bit,,,,2gb,,,,1502mhz,,,,gddr5,,,,,,geforce600series,,,,"mar26th,2013",
+gk106,,1.0,,geforcegtx650tioem,,,,pcie3.0x16,,,,,,928mhz,,,,128bit,,,,2gb,,,,1350mhz,,,,gddr5,,,,,,geforce600series,,,,"mar31st,2013",
+gk106,,1.0,,geforcegtx660,,,,pcie3.0x16,,,,,,980mhz,,,,192bit,,,,2gb,,,,1502mhz,,,,gddr5,,,,,,geforce600series,,,,"sep6th,2012",
+gk104,,1.0,,geforcegtx660oem,,,,pcie3.0x16,,,,,,823mhz,,,,192bit,,,,1536mb,,,,1400mhz,,,,gddr5,,,,,,geforce600series,,,,"aug22nd,2012",
+gk104,,1.0,,geforcegtx660rev.2,,,,pcie3.0x16,,,,,,980mhz,,,,192bit,,,,2gb,,,,1502mhz,,,,gddr5,,,,,,geforce600series,,,,"sep13th,2014",
+gk104,,1.0,,geforcegtx660ti,,,,pcie3.0x16,,,,,,915mhz,,,,192bit,,,,2gb,,,,1502mhz,,,,gddr5,,,,,,geforce600series,,,,"aug16th,2012",
+gk104,,1.0,,geforcegtx670,,,,pcie3.0x16,,,,,,915mhz,,,,256bit,,,,2gb,,,,1502mhz,,,,gddr5,,,,,,geforce600series,,,,"may10th,2012",
+gk104,,1.0,,geforcegtx680,,,,pcie3.0x16,,,,,,1006mhz,,,,256bit,,,,2gb,,,,1502mhz,,,,gddr5,,,,,,geforce600series,,,,"mar22nd,2012",
+gk104,,1.0,,geforcegtx680macedition,,,,pcie2.0x16,,,,,,1006mhz,,,,256bit,,,,2gb,,,,1502mhz,,,,gddr5,,,,,,geforce600series,,,,"apr3rd,2013",
+gk104,,1.0,,geforcegtx690,,,,pcie3.0x16,,,,,,915mhz,,,,256bit,,,,2gb,,,,1502mhz,,,,gddr5,,,,,,geforce600series,,,,"may3rd,2012",
+gm107,,1.0,,geforcegtx745oem,,,,pcie3.0x16,,,,,,1033mhz,,,,128bit,,,,4gb,,,,900mhz,,,,ddr3,,,,,,geforce700series,,,,"feb18th,2014",
+gm107,,1.0,,geforcegtx750,,,,pcie3.0x16,,,,,,1020mhz,,,,128bit,,,,1024mb,,,,1253mhz,,,,gddr5,,,,,,geforce700series,,,,"feb18th,2014",
+gm206,,1.0,,geforcegtx750gm206,,,,pcie3.0x16,,,,,,1087mhz,,,,128bit,,,,2gb,,,,1253mhz,,,,gddr5,,,,,,geforce700series,,,,"nov17th,2015",
+gm107,,1.0,,geforcegtx750ti,,,,pcie3.0x16,,,,,,1020mhz,,,,128bit,,,,2gb,,,,1350mhz,,,,gddr5,,,,,,geforce700series,,,,"feb18th,2014",
+gk106,,1.0,,geforcegtx750tioem,,,,pcie3.0x16,,,,,,1033mhz,,,,256bit,,,,2gb,,,,1502mhz,,,,gddr5,,,,,,geforce700series,,,,unknown,
+gk104,,1.0,,geforcegtx760,,,,pcie3.0x16,,,,,,980mhz,,,,256bit,,,,2gb,,,,1502mhz,,,,gddr5,,,,,,geforce700series,,,,"jun25th,2013",
+gk104,,1.0,,geforcegtx760oem,,,,pcie3.0x16,,,,,,823mhz,,,,192bit,,,,1536mb,,,,1400mhz,,,,gddr5,,,,,,geforce700series,,,,"jun27th,2013",
+gk104,,1.0,,geforcegtx760oemrebrand,,,,pcie3.0x16,,,,,,823mhz,,,,256bit,,,,1536mb,,,,1400mhz,,,,gddr5,,,,,,geforce700series,,,,"aug25th,2013",
+gk104,,1.0,,geforcegtx760tioem,,,,pcie3.0x16,,,,,,915mhz,,,,256bit,,,,2gb,,,,1502mhz,,,,gddr5,,,,,,geforce700series,,,,"sep27th,2013",
+gk104,,1.0,,geforcegtx760tioemrebrand,,,,pcie3.0x16,,,,,,915mhz,,,,256bit,,,,2gb,,,,1502mhz,,,,gddr5,,,,,,geforce700series,,,,"aug25th,2013",
+gk104,,1.0,,geforcegtx760x2,,,,pcie3.0x16,,,,,,1006mhz,,,,256bit,,,,2gb,,,,1502mhz,,,,gddr5,,,,,,geforce700series,,,,"nov19th,2013",
+gk104,,1.0,,geforcegtx770,,,,pcie3.0x16,,,,,,1046mhz,,,,256bit,,,,2gb,,,,1753mhz,,,,gddr5,,,,,,geforce700series,,,,"may30th,2013",
+gk110,,1.0,,geforcegtx780,,,,pcie3.0x16,,,,,,863mhz,,,,384bit,,,,3gb,,,,1502mhz,,,,gddr5,,,,,,geforce700series,,,,"may23rd,2013",
+gk110b,,1.0,,geforcegtx7806gb,,,,pcie3.0x16,,,,,,863mhz,,,,384bit,,,,6gb,,,,1502mhz,,,,gddr5,,,,,,geforce700series,,,,"sep10th,2013",
+gk110b,,1.0,,geforcegtx780rev.2,,,,pcie3.0x16,,,,,,863mhz,,,,384bit,,,,3gb,,,,1502mhz,,,,gddr5,,,,,,geforce700series,,,,"sep10th,2013",
+gk110b,,1.0,,geforcegtx780ti,,,,pcie3.0x16,,,,,,875mhz,,,,384bit,,,,3gb,,,,1753mhz,,,,gddr5,,,,,,geforce700series,,,,"nov7th,2013",
+gm206,,1.0,,geforcegtx950,,,,pcie3.0x16,,,,,,1024mhz,,,,128bit,,,,2gb,,,,1653mhz,,,,gddr5,,,,,,geforce900series,,,,"aug20th,2015",
+gm206,,1.0,,geforcegtx950lowpower,,,,pcie3.0x16,,,,,,1026mhz,,,,128bit,,,,2gb,,,,1653mhz,,,,gddr5,,,,,,geforce900series,,,,"mar1st,2016",
+gm206s,,1.0,,geforcegtx950oem,,,,pcie3.0x16,,,,,,937mhz,,,,128bit,,,,4gb,,,,1253mhz,,,,gddr5,,,,,,geforce900series,,,,2016,
+gm206,,1.0,,geforcegtx960,,,,pcie3.0x16,,,,,,1127mhz,,,,128bit,,,,2gb,,,,1753mhz,,,,gddr5,,,,,,geforce900series,,,,"jan22nd,2015",
+gm204,,1.0,,geforcegtx960oem,,,,pcie3.0x16,,,,,,924mhz,,,,192bit,,,,3gb,,,,1253mhz,,,,gddr5,,,,,,geforce900series,,,,"nov26th,2015",
+gm206,,1.0,,geforcegtx960oem,,,,pcie3.0x16,,,,,,1176mhz,,,,128bit,,,,4gb,,,,1753mhz,,,,gddr5,,,,,,geforce900series,,,,"nov26th,2015",
+gm204,,1.0,,geforcegtx970,,,,pcie3.0x16,,,,,,1050mhz,,,,256bit,,,,4gb,,,,1753mhz,,,,gddr5,,,,,,geforce900series,,,,"sep19th,2014",
+gm200,,1.0,,geforcegtx980ti,,,,pcie3.0x16,,,,,,1000mhz,,,,384bit,,,,6gb,,,,1753mhz,,,,gddr5,,,,,,geforce900series,,,,"jun2nd,2015",
+gk110,,1.0,,geforcegtxtitan,,,,pcie3.0x16,,,,,,836mhz,,,,384bit,,,,6gb,,,,1502mhz,,,,gddr5,,,,,,geforce700series,,,,"feb19th,2013",
+gk110b,,1.0,,geforcegtxtitanblack,,,,pcie3.0x16,,,,,,889mhz,,,,384bit,,,,6gb,,,,1750mhz,,,,gddr5,,,,,,geforce700series,,,,"feb18th,2014",
+gm200,,1.0,,geforcegtxtitanx,,,,pcie3.0x16,,,,,,1000mhz,,,,384bit,,,,12gb,,,,1753mhz,,,,gddr5,,,,,,geforce900series,,,,"mar17th,2015",
+gk110b,,1.0,,geforcegtxtitanz,,,,pcie3.0x16,,,,,,705mhz,,,,384bit,,,,6gb,,,,1750mhz,,,,gddr5,,,,,,geforce700series,,,,"may28th,2014",
+nv18c,,1.0,,geforcepcx4300,,,,pcie1.0x16,,,,,,250mhz,,,,64bit,,,,64mb,,,,166mhz,,,,ddr,,,,,,geforcepcxseries,,,,"feb19th,2004",
+nv37,,1.0,,geforcepcx5300,,,,pcie1.0x16,,,,,,250mhz,,,,128bit,,,,128mb,,,,200mhz,,,,ddr,,,,,,geforcepcxseries,,,,"feb17th,2004",
+nv39,,1.0,,geforcepcx5750,,,,pcie1.0x16,,,,,,425mhz,,,,128bit,,,,128mb,,,,275mhz,,,,ddr,,,,,,geforcepcxseries,,,,"feb17th,2004",
+nv35,,1.0,,geforcepcx5900,,,,pcie1.0x16,,,,,,350mhz,,,,256bit,,,,128mb,,,,275mhz,,,,ddr,,,,,,geforcepcxseries,,,,"mar17th,2003",
+nv38,,1.0,,geforcepcx5950,,,,pcie1.0x16,,,,,,475mhz,,,,256bit,,,,256mb,,,,425mhz,,,,gddr3,,,,,,geforcepcxseries,,,,"feb17th,2004",
+tu106,,1.0,,geforcertx2060,,,,pcie3.0x16,,,,,,1365mhz,,,,192bit,,,,6gb,,,,1750mhz,,,,gddr6,,,,,,geforce20series,,,,"jan7th,2019",
+tu106,,1.0,,geforcertx206012gb,,,,pcie3.0x16,,,,,,1470mhz,,,,192bit,,,,12gb,,,,1750mhz,,,,gddr6,,,,,,geforce20series,,,,"dec7th,2021",
+tu106,,1.0,,geforcertx2060super,,,,pcie3.0x16,,,,,,1470mhz,,,,256bit,,,,8gb,,,,1750mhz,,,,gddr6,,,,,,geforce20series,,,,"jul9th,2019",
+tu104,,1.0,,geforcertx2060tu104,,,,pcie3.0x16,,,,,,1365mhz,,,,192bit,,,,6gb,,,,1750mhz,,,,gddr6,,,,,,geforce20series,,,,"jan10th,2020",
+tu106,,1.0,,geforcertx2070,,,,pcie3.0x16,,,,,,1410mhz,,,,256bit,,,,8gb,,,,1750mhz,,,,gddr6,,,,,,geforce20series,,,,"oct17th,2018",
+tu104,,1.0,,geforcertx2070super,,,,pcie3.0x16,,,,,,1605mhz,,,,256bit,,,,8gb,,,,1750mhz,,,,gddr6,,,,,,geforce20series,,,,"jul9th,2019",
+tu104,,1.0,,geforcertx2080super,,,,pcie3.0x16,,,,,,1650mhz,,,,256bit,,,,8gb,,,,1937mhz,,,,gddr6,,,,,,geforce20series,,,,"jul23rd,2019",
+tu102,,1.0,,geforcertx2080ti,,,,pcie3.0x16,,,,,,1350mhz,,,,352bit,,,,11gb,,,,1750mhz,,,,gddr6,,,,,,geforce20series,,,,"sep20th,2018",
+ga107,,1.0,,geforcertx30504gb,,,,pcie4.0x8,,,,,,1545mhz,,,,128bit,,,,4gb,,,,1500mhz,,,,gddr6,,,,,,geforce30series,,,,"jan27th,2022",
+ga107,,1.0,,geforcertx30506gb,,,,pcie4.0x8,,,,,,1042mhz,,,,96bit,,,,6gb,,,,1750mhz,,,,gddr6,,,,,,geforce30series,,,,"feb2nd,2024",
+ga106,,1.0,,geforcertx30508gb,,,,pcie4.0x8,,,,,,1552mhz,,,,128bit,,,,8gb,,,,1750mhz,,,,gddr6,,,,,,geforce30series,,,,"jan4th,2022",
+ga107,,1.0,,geforcertx30508gbga107,,,,pcie4.0x8,,,,,,1552mhz,,,,128bit,,,,8gb,,,,1750mhz,,,,gddr6,,,,,,geforce30series,,,,"dec16th,2022",
+ga106,,1.0,,geforcertx3050oem,,,,pcie4.0x8,,,,,,1515mhz,,,,128bit,,,,8gb,,,,1750mhz,,,,gddr6,,,,,,geforce30series,,,,"jan4th,2022",
+ga106,,1.0,,geforcertx306012gb,,,,pcie4.0x16,,,,,,1320mhz,,,,192bit,,,,12gb,,,,1875mhz,,,,gddr6,,,,,,geforce30series,,,,"jan12th,2021",
+ga104,,1.0,,geforcertx306012gbga104,,,,pcie4.0x16,,,,,,1320mhz,,,,192bit,,,,12gb,,,,1875mhz,,,,gddr6,,,,,,geforce30series,,,,"sep1st,2021",
+ga106,,1.0,,geforcertx30603840sp,,,,pcie4.0x16,,,,,,1627mhz,,,,192bit,,,,6gb,,,,1750mhz,,,,gddr6,,,,,,geforce30series,,,,2021,
+ga106,,1.0,,geforcertx30608gb,,,,pcie4.0x16,,,,,,1320mhz,,,,128bit,,,,8gb,,,,1875mhz,,,,gddr6,,,,,,geforce30series,,,,"oct12th,2022",
+ga104,,1.0,,geforcertx30608gbga104,,,,pcie4.0x16,,,,,,1320mhz,,,,128bit,,,,8gb,,,,1875mhz,,,,gddr6,,,,,,geforce30series,,,,oct2022,
+ga104,,1.0,,geforcertx3060ti,,,,pcie4.0x16,,,,,,1410mhz,,,,256bit,,,,8gb,,,,1750mhz,,,,gddr6,,,,,,geforce30series,,,,"dec1st,2020",
+ga103,,1.0,,geforcertx3060tiga103,,,,pcie4.0x16,,,,,,1410mhz,,,,256bit,,,,8gb,,,,1750mhz,,,,gddr6,,,,,,geforce30series,,,,"feb23rd,2022",
+ga104,,1.0,,geforcertx3060tigddr6x,,,,pcie4.0x16,,,,,,1410mhz,,,,256bit,,,,8gb,,,,1188mhz,,,,gddr6x,,,,,,geforce30series,,,,"oct19th,2022",
+ga104,,1.0,,geforcertx3070,,,,pcie4.0x16,,,,,,1500mhz,,,,256bit,,,,8gb,,,,1750mhz,,,,gddr6,,,,,,geforce30series,,,,"sep1st,2020",
+ga104,,1.0,,geforcertx3070ti,,,,pcie4.0x16,,,,,,1575mhz,,,,256bit,,,,8gb,,,,1188mhz,,,,gddr6x,,,,,,geforce30series,,,,"may31st,2021",
+ga102,,1.0,,geforcertx3070ti8gbga102,,,,pcie4.0x16,,,,,,1575mhz,,,,256bit,,,,8gb,,,,1188mhz,,,,gddr6x,,,,,,geforce30series,,,,"oct21st,2022",
+ga104,,1.0,,geforcertx3070tim,,,,pcie4.0x16,,,,,,915mhz,,,,256bit,,,,8gb,,,,1750mhz,,,,gddr6,,,,,,geforce30series,,,,nov2022,
+ga102,,1.0,,geforcertx308012gb,,,,pcie4.0x16,,,,,,1260mhz,,,,384bit,,,,12gb,,,,1188mhz,,,,gddr6x,,,,,,geforce30series,,,,"jan11th,2022",
+ga102,,1.0,,geforcertx3080ti,,,,pcie4.0x16,,,,,,1365mhz,,,,384bit,,,,12gb,,,,1188mhz,,,,gddr6x,,,,,,geforce30series,,,,"may31st,2021",
+ga102,,1.0,,geforcertx3080ti20gb,,,,pcie4.0x16,,,,,,1335mhz,,,,320bit,,,,20gb,,,,1188mhz,,,,gddr6x,,,,,,geforce30series,,,,jan2022,
+ga102,,1.0,,geforcertx3090,,,,pcie4.0x16,,,,,,1395mhz,,,,384bit,,,,24gb,,,,1219mhz,,,,gddr6x,,,,,,geforce30series,,,,"sep1st,2020",
+ga102,,1.0,,geforcertx3090ti,,,,pcie4.0x16,,,,,,1560mhz,,,,384bit,,,,24gb,,,,1313mhz,,,,gddr6x,,,,,,geforce30series,,,,"jan27th,2022",
+ad107,,1.0,,geforcertx4060,,,,pcie4.0x8,,,,,,1830mhz,,,,128bit,,,,8gb,,,,2125mhz,,,,gddr6,,,,,,geforce40series,,,,"may18th,2023",
+ad106,,1.0,,geforcertx4060ad106,,,,pcie4.0x8,,,,,,1830mhz,,,,128bit,,,,8gb,,,,2125mhz,,,,gddr6,,,,,,geforce40series,,,,apr2024,
+ad106,,1.0,,geforcertx4060ti16gb,,,,pcie4.0x8,,,,,,2310mhz,,,,128bit,,,,16gb,,,,2250mhz,,,,gddr6,,,,,,geforce40series,,,,"may18th,2023",
+ad106,,1.0,,geforcertx4060ti8gb,,,,pcie4.0x8,,,,,,2310mhz,,,,128bit,,,,8gb,,,,2250mhz,,,,gddr6,,,,,,geforce40series,,,,"may18th,2023",
+ad104,,1.0,,geforcertx4060tiad104,,,,pcie4.0x8,,,,,,2310mhz,,,,128bit,,,,8gb,,,,2250mhz,,,,gddr6,,,,,,geforce40series,,,,apr2024,
+ad104,,1.0,,geforcertx4070,,,,pcie4.0x16,,,,,,1920mhz,,,,192bit,,,,12gb,,,,1313mhz,,,,gddr6x,,,,,,geforce40series,,,,"apr12th,2023",
+ad103,,1.0,,geforcertx4070ad103,,,,pcie4.0x16,,,,,,1920mhz,,,,192bit,,,,12gb,,,,1313mhz,,,,gddr6x,,,,,,geforce40series,,,,mar2024,
+ad104,,1.0,,geforcertx4070gddr6,,,,pcie4.0x16,,,,,,1920mhz,,,,192bit,,,,12gb,,,,2500mhz,,,,gddr6,,,,,,geforce40series,,,,"aug20th,2024",
+ad104,,1.0,,geforcertx4070super,,,,pcie4.0x16,,,,,,1980mhz,,,,192bit,,,,12gb,,,,1313mhz,,,,gddr6x,,,,,,geforce40series,,,,"jan8th,2024",
+ad104,,1.0,,geforcertx4070ti,,,,pcie4.0x16,,,,,,2310mhz,,,,192bit,,,,12gb,,,,1313mhz,,,,gddr6x,,,,,,geforce40series,,,,"jan3rd,2023",
+ad103,,1.0,,geforcertx4070tisuper,,,,pcie4.0x16,,,,,,2340mhz,,,,256bit,,,,16gb,,,,1313mhz,,,,gddr6x,,,,,,geforce40series,,,,"jan8th,2024",
+ad102,,1.0,,geforcertx4070tisuperad102,,,,pcie4.0x16,,,,,,2340mhz,,,,256bit,,,,16gb,,,,1313mhz,,,,gddr6x,,,,,,geforce40series,,,,"jun10th,2024",
+ad103,,1.0,,geforcertx4080,,,,pcie4.0x16,,,,,,2205mhz,,,,256bit,,,,16gb,,,,1400mhz,,,,gddr6x,,,,,,geforce40series,,,,"sep20th,2022",
+ad103,,1.0,,geforcertx4080super,,,,pcie4.0x16,,,,,,2295mhz,,,,256bit,,,,16gb,,,,1438mhz,,,,gddr6x,,,,,,geforce40series,,,,"jan8th,2024",
+ad102,,1.0,,geforcertx4090,,,,pcie4.0x16,,,,,,2235mhz,,,,384bit,,,,24gb,,,,1313mhz,,,,gddr6x,,,,,,geforce40series,,,,"sep20th,2022",
+ad102,,1.0,,geforcertx4090d,,,,pcie4.0x16,,,,,,2280mhz,,,,384bit,,,,24gb,,,,1313mhz,,,,gddr6x,,,,,,geforce40series,,,,"dec28th,2023",
+nv1,,1.0,,nv1,,,,pci,,,,,,75mhz,,,,64bit,,,,2mb,,,,60mhz,,,,edo,,,,,,nv1series,,,,"sep30th,1995",
+nv3,,1.0,,riva128,,,,agp2x,,,,,,100mhz,,,,128bit,,,,4mb,,,,100mhz,,,,sdr,,,,,,rivaseries,,,,"apr1st,1997",
+nv3,,1.0,,riva128pci,,,,pci,,,,,,100mhz,,,,128bit,,,,4mb,,,,100mhz,,,,sdr,,,,,,rivaseries,,,,"apr1st,1997",
+nv3,,1.0,,riva128zx,,,,agp2x,,,,,,100mhz,,,,128bit,,,,8mb,,,,100mhz,,,,sdr,,,,,,rivaseries,,,,"feb23rd,1998",
+nv4,,1.0,,rivatnt,,,,agp2x,,,,,,90mhz,,,,128bit,,,,16mb,,,,110mhz,,,,sdr,,,,,,rivaseries,,,,"mar23rd,1998",
+nv5,,1.0,,rivatnt2,,,,agp4x,,,,,,125mhz,,,,128bit,,,,16mb,,,,150mhz,,,,sdr,,,,,,tnt2series,,,,"oct12th,1999",
+nv5,,1.0,,rivatnt2m64,,,,agp4x,,,,,,125mhz,,,,64bit,,,,16mb,,,,143mhz,,,,sdr,,,,,,tnt2series,,,,"oct12th,1999",
+nv5,,1.0,,rivatnt2m64vanta,,,,agp4x,,,,,,100mhz,,,,64bit,,,,16mb,,,,133mhz,,,,sdr,,,,,,tnt2series,,,,"mar22nd,1999",
+nv5,,1.0,,rivatnt2m64vanta-16,,,,agp4x,,,,,,100mhz,,,,64bit,,,,16mb,,,,133mhz,,,,sdr,,,,,,tnt2series,,,,"mar22nd,1999",
+nv5,,1.0,,rivatnt2pro,,,,agp4x,,,,,,143mhz,,,,128bit,,,,32mb,,,,167mhz,,,,sdr,,,,,,tnt2series,,,,"oct12th,1999",
+nv5,,1.0,,rivatnt2ultra,,,,agp4x,,,,,,150mhz,,,,128bit,,,,32mb,,,,183mhz,,,,sdr,,,,,,tnt2series,,,,"mar15th,1999",
+nv1,,1.0,,stg-2000,,,,pci,,,,,,75mhz,,,,64bit,,,,1mb,,,,50mhz,,,,fpm,,,,,,nv1series,,,,"sep30th,1995",
+tu102,,1.0,,titanrtx,,,,pcie3.0x16,,,,,,1350mhz,,,,384bit,,,,24gb,,,,1750mhz,,,,gddr6,,,,,,geforce20series,,,,"dec18th,2018",
+gv100,,1.0,,titanv,,,,pcie3.0x16,,,,,,1200mhz,,,,3072bit,,,,12gb,,,,848mhz,,,,hbm2,,,,,,geforce10series,,,,"dec7th,2017",
+gv100,,1.0,,titanvceoedition,,,,pcie3.0x16,,,,,,1200mhz,,,,4096bit,,,,32gb,,,,848mhz,,,,hbm2,,,,,,geforce10series,,,,"jun21st,2018",
+gp102,,1.0,,titanxp,,,,pcie3.0x16,,,,,,1405mhz,,,,384bit,,,,12gb,,,,1426mhz,,,,gddr5x,,,,,,geforce10series,,,,"apr6th,2017",
+gp102,,1.0,,titanxpascal,,,,pcie3.0x16,,,,,,1417mhz,,,,384bit,,,,12gb,,,,1251mhz,,,,gddr5x,,,,,,geforce10series,,,,"aug2nd,2016",
+nv5,,1.0,,vantalt,,,,agp2x,,,,,,105mhz,,,,64bit,,,,8mb,,,,100mhz,,,,sdr,,,,,,tnt2series,,,,"mar1st,2000",

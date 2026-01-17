@@ -1,0 +1,613 @@
+exist_flag_gt,exist_flag_response,模型名称,模型名称_before_map,aime2025_number_near,aime2025_number_near_eval_msg,aime2025_query,aime2025_response,swe-benchverified_number_near,swe-benchverified_number_near_eval_msg,swe-benchverified_query,swe-benchverified_response,tau-bench-airline_number_near,tau-bench-airline_number_near_eval_msg,tau-bench-airline_query,tau-bench-airline_response,tau-bench-retail_number_near,tau-bench-retail_number_near_eval_msg,tau-bench-retail_query,tau-bench-retail_response,上下文窗口_llm_judge,上下文窗口_llm_judge_eval_msg,上下文窗口_query,上下文窗口_response,公司_llm_judge,公司_llm_judge_eval_msg,公司_query,公司_response,模型名称_exact_match,模型名称_exact_match_eval_msg
+,,gemini2.5pro,Gemini-2.5-Pro,0.0,"number not convertable, response: None, target: 0.88",88%,NULL,0.0,"number not convertable, response: None, target: 0.596",59.60%,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,0.0,"首先，我要比较每条response和它对应的target，看是否语义相同大致或指向的实体一致，符合标准答案的含义即可得1分，否则得0分。
+
+具体分析如下：
+
+- idx_0: response是 ""32k""，target是 ""1m""。32k和1m显然是不一致的，数值差距很大，没有指向相同实体；得0分。
+- idx_1: response是 ""nan""，target是 ""1m""。nan不是任何数值，和1m明显不匹配；得0分。
+- idx_2: response是 ""nan""，target是 ""1m""。同理，得0分。
+- idx_3: response是 ""nan""，target是 ""200k""。nan和200k不匹配；得0分。
+- idx_4: response是 ""nan""，target是 ""32k""。nan和32k不匹配；得0分。
+- idx_5: response是 ""nan""，target是 ""256k""。nan和256k不匹配；得0分。
+- idx_6: response是 ""nan""，target是 ""128k""。nan和128k不匹配；得0分。
+
+综合上述理由，所有条目得分均为0。
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0
+}
+```",1m,32k,1.0,"Let's analyze each idx step-by-step based on the provided criterion:
+
+Criterion:  
+- The response is scored 1 if the semantic meaning is roughly the same as the target or the entity referred to is the same. Exact wording is not required.
+
+---
+
+**idx_0**  
+- Response: ""google""  
+- Target: ""谷歌"" (Chinese for Google)  
+- Analysis: ""google"" and ""谷歌"" refer to the exact same entity.  
+- Score: 1
+
+**idx_1**  
+- Response: ""google""  
+- Target: ""谷歌""  
+- Same as idx_0.  
+- Score: 1
+
+**idx_2**  
+- Response: ""google""  
+- Target: ""谷歌""  
+- Same as idx_0.  
+- Score: 1
+
+**idx_3**  
+- Response: ""anthropic""  
+- Target: ""anthropic""  
+- Exact entity match.  
+- Score: 1
+
+**idx_4**  
+- Response: ""bytedance""  
+- Target: ""字节跳动"" (Chinese for ByteDance)  
+- Response and target correspond semantically to the same company/entity.  
+- Score: 1
+
+**idx_5**  
+- Response: ""bytedance""  
+- Target: ""字节跳动""  
+- Same as idx_4  
+- Score: 1
+
+**idx_6**  
+- Response: ""bytedance""  
+- Target: ""deepseek""  
+- ""bytedance"" and ""deepseek"" are different entities. Therefore, semantics do not align.  
+- Score: 0
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 0
+}
+```",谷歌,google,1.0,key_match
+,,gemini2.5flash-lite-thinking,Gemini-Flash-Lite,0.0,"number not convertable, response: None, target: 0.631",63.10%,NULL,0.0,"number not convertable, response: None, target: 0.276",27.60%,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,0.0,"首先，我要比较每条response和它对应的target，看是否语义相同大致或指向的实体一致，符合标准答案的含义即可得1分，否则得0分。
+
+具体分析如下：
+
+- idx_0: response是 ""32k""，target是 ""1m""。32k和1m显然是不一致的，数值差距很大，没有指向相同实体；得0分。
+- idx_1: response是 ""nan""，target是 ""1m""。nan不是任何数值，和1m明显不匹配；得0分。
+- idx_2: response是 ""nan""，target是 ""1m""。同理，得0分。
+- idx_3: response是 ""nan""，target是 ""200k""。nan和200k不匹配；得0分。
+- idx_4: response是 ""nan""，target是 ""32k""。nan和32k不匹配；得0分。
+- idx_5: response是 ""nan""，target是 ""256k""。nan和256k不匹配；得0分。
+- idx_6: response是 ""nan""，target是 ""128k""。nan和128k不匹配；得0分。
+
+综合上述理由，所有条目得分均为0。
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0
+}
+```",1m,nan,1.0,"Let's analyze each idx step-by-step based on the provided criterion:
+
+Criterion:  
+- The response is scored 1 if the semantic meaning is roughly the same as the target or the entity referred to is the same. Exact wording is not required.
+
+---
+
+**idx_0**  
+- Response: ""google""  
+- Target: ""谷歌"" (Chinese for Google)  
+- Analysis: ""google"" and ""谷歌"" refer to the exact same entity.  
+- Score: 1
+
+**idx_1**  
+- Response: ""google""  
+- Target: ""谷歌""  
+- Same as idx_0.  
+- Score: 1
+
+**idx_2**  
+- Response: ""google""  
+- Target: ""谷歌""  
+- Same as idx_0.  
+- Score: 1
+
+**idx_3**  
+- Response: ""anthropic""  
+- Target: ""anthropic""  
+- Exact entity match.  
+- Score: 1
+
+**idx_4**  
+- Response: ""bytedance""  
+- Target: ""字节跳动"" (Chinese for ByteDance)  
+- Response and target correspond semantically to the same company/entity.  
+- Score: 1
+
+**idx_5**  
+- Response: ""bytedance""  
+- Target: ""字节跳动""  
+- Same as idx_4  
+- Score: 1
+
+**idx_6**  
+- Response: ""bytedance""  
+- Target: ""deepseek""  
+- ""bytedance"" and ""deepseek"" are different entities. Therefore, semantics do not align.  
+- Score: 0
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 0
+}
+```",谷歌,google,1.0,key_match
+,,gemini2.5flash-thinking,Gemini-Flash,0.0,"number not convertable, response: None, target: 0.72",72.00%,NULL,0.0,"number not convertable, response: None, target: 0.489",48.90%,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,0.0,"首先，我要比较每条response和它对应的target，看是否语义相同大致或指向的实体一致，符合标准答案的含义即可得1分，否则得0分。
+
+具体分析如下：
+
+- idx_0: response是 ""32k""，target是 ""1m""。32k和1m显然是不一致的，数值差距很大，没有指向相同实体；得0分。
+- idx_1: response是 ""nan""，target是 ""1m""。nan不是任何数值，和1m明显不匹配；得0分。
+- idx_2: response是 ""nan""，target是 ""1m""。同理，得0分。
+- idx_3: response是 ""nan""，target是 ""200k""。nan和200k不匹配；得0分。
+- idx_4: response是 ""nan""，target是 ""32k""。nan和32k不匹配；得0分。
+- idx_5: response是 ""nan""，target是 ""256k""。nan和256k不匹配；得0分。
+- idx_6: response是 ""nan""，target是 ""128k""。nan和128k不匹配；得0分。
+
+综合上述理由，所有条目得分均为0。
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0
+}
+```",1m,nan,1.0,"Let's analyze each idx step-by-step based on the provided criterion:
+
+Criterion:  
+- The response is scored 1 if the semantic meaning is roughly the same as the target or the entity referred to is the same. Exact wording is not required.
+
+---
+
+**idx_0**  
+- Response: ""google""  
+- Target: ""谷歌"" (Chinese for Google)  
+- Analysis: ""google"" and ""谷歌"" refer to the exact same entity.  
+- Score: 1
+
+**idx_1**  
+- Response: ""google""  
+- Target: ""谷歌""  
+- Same as idx_0.  
+- Score: 1
+
+**idx_2**  
+- Response: ""google""  
+- Target: ""谷歌""  
+- Same as idx_0.  
+- Score: 1
+
+**idx_3**  
+- Response: ""anthropic""  
+- Target: ""anthropic""  
+- Exact entity match.  
+- Score: 1
+
+**idx_4**  
+- Response: ""bytedance""  
+- Target: ""字节跳动"" (Chinese for ByteDance)  
+- Response and target correspond semantically to the same company/entity.  
+- Score: 1
+
+**idx_5**  
+- Response: ""bytedance""  
+- Target: ""字节跳动""  
+- Same as idx_4  
+- Score: 1
+
+**idx_6**  
+- Response: ""bytedance""  
+- Target: ""deepseek""  
+- ""bytedance"" and ""deepseek"" are different entities. Therefore, semantics do not align.  
+- Score: 0
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 0
+}
+```",谷歌,google,1.0,key_match
+,,claude3.7sonnet,Claude 3.7,0.0,"number not convertable, response: None, target: 0.5479999999999999",54.80%,NULL,0.0,"number not convertable, response: None, target: 0.623",62.30%,NULL,0.0,"number not convertable, response: None, target: 0.584",58.40%,NULL,0.0,"number not convertable, response: None, target: 0.812",81.20%,NULL,0.0,"首先，我要比较每条response和它对应的target，看是否语义相同大致或指向的实体一致，符合标准答案的含义即可得1分，否则得0分。
+
+具体分析如下：
+
+- idx_0: response是 ""32k""，target是 ""1m""。32k和1m显然是不一致的，数值差距很大，没有指向相同实体；得0分。
+- idx_1: response是 ""nan""，target是 ""1m""。nan不是任何数值，和1m明显不匹配；得0分。
+- idx_2: response是 ""nan""，target是 ""1m""。同理，得0分。
+- idx_3: response是 ""nan""，target是 ""200k""。nan和200k不匹配；得0分。
+- idx_4: response是 ""nan""，target是 ""32k""。nan和32k不匹配；得0分。
+- idx_5: response是 ""nan""，target是 ""256k""。nan和256k不匹配；得0分。
+- idx_6: response是 ""nan""，target是 ""128k""。nan和128k不匹配；得0分。
+
+综合上述理由，所有条目得分均为0。
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0
+}
+```",200k,nan,1.0,"Let's analyze each idx step-by-step based on the provided criterion:
+
+Criterion:  
+- The response is scored 1 if the semantic meaning is roughly the same as the target or the entity referred to is the same. Exact wording is not required.
+
+---
+
+**idx_0**  
+- Response: ""google""  
+- Target: ""谷歌"" (Chinese for Google)  
+- Analysis: ""google"" and ""谷歌"" refer to the exact same entity.  
+- Score: 1
+
+**idx_1**  
+- Response: ""google""  
+- Target: ""谷歌""  
+- Same as idx_0.  
+- Score: 1
+
+**idx_2**  
+- Response: ""google""  
+- Target: ""谷歌""  
+- Same as idx_0.  
+- Score: 1
+
+**idx_3**  
+- Response: ""anthropic""  
+- Target: ""anthropic""  
+- Exact entity match.  
+- Score: 1
+
+**idx_4**  
+- Response: ""bytedance""  
+- Target: ""字节跳动"" (Chinese for ByteDance)  
+- Response and target correspond semantically to the same company/entity.  
+- Score: 1
+
+**idx_5**  
+- Response: ""bytedance""  
+- Target: ""字节跳动""  
+- Same as idx_4  
+- Score: 1
+
+**idx_6**  
+- Response: ""bytedance""  
+- Target: ""deepseek""  
+- ""bytedance"" and ""deepseek"" are different entities. Therefore, semantics do not align.  
+- Score: 0
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 0
+}
+```",anthropic,anthropic,1.0,key_match
+,,seed-thinkingv1.5,Doubao-1.5-Thinking,0.0,"number not convertable, response: None, target: 0.74",74%,NULL,0.0,"number not convertable, response: None, target: 0.47",47%,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,0.0,"首先，我要比较每条response和它对应的target，看是否语义相同大致或指向的实体一致，符合标准答案的含义即可得1分，否则得0分。
+
+具体分析如下：
+
+- idx_0: response是 ""32k""，target是 ""1m""。32k和1m显然是不一致的，数值差距很大，没有指向相同实体；得0分。
+- idx_1: response是 ""nan""，target是 ""1m""。nan不是任何数值，和1m明显不匹配；得0分。
+- idx_2: response是 ""nan""，target是 ""1m""。同理，得0分。
+- idx_3: response是 ""nan""，target是 ""200k""。nan和200k不匹配；得0分。
+- idx_4: response是 ""nan""，target是 ""32k""。nan和32k不匹配；得0分。
+- idx_5: response是 ""nan""，target是 ""256k""。nan和256k不匹配；得0分。
+- idx_6: response是 ""nan""，target是 ""128k""。nan和128k不匹配；得0分。
+
+综合上述理由，所有条目得分均为0。
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0
+}
+```",32k,nan,1.0,"Let's analyze each idx step-by-step based on the provided criterion:
+
+Criterion:  
+- The response is scored 1 if the semantic meaning is roughly the same as the target or the entity referred to is the same. Exact wording is not required.
+
+---
+
+**idx_0**  
+- Response: ""google""  
+- Target: ""谷歌"" (Chinese for Google)  
+- Analysis: ""google"" and ""谷歌"" refer to the exact same entity.  
+- Score: 1
+
+**idx_1**  
+- Response: ""google""  
+- Target: ""谷歌""  
+- Same as idx_0.  
+- Score: 1
+
+**idx_2**  
+- Response: ""google""  
+- Target: ""谷歌""  
+- Same as idx_0.  
+- Score: 1
+
+**idx_3**  
+- Response: ""anthropic""  
+- Target: ""anthropic""  
+- Exact entity match.  
+- Score: 1
+
+**idx_4**  
+- Response: ""bytedance""  
+- Target: ""字节跳动"" (Chinese for ByteDance)  
+- Response and target correspond semantically to the same company/entity.  
+- Score: 1
+
+**idx_5**  
+- Response: ""bytedance""  
+- Target: ""字节跳动""  
+- Same as idx_4  
+- Score: 1
+
+**idx_6**  
+- Response: ""bytedance""  
+- Target: ""deepseek""  
+- ""bytedance"" and ""deepseek"" are different entities. Therefore, semantics do not align.  
+- Score: 0
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 0
+}
+```",字节跳动,bytedance,1.0,key_match
+,,seed-thinkingv1.6,Doubao-1.6-Thinking,0.0,"number not convertable, response: None, target: 0.86",86%,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,0.0,"首先，我要比较每条response和它对应的target，看是否语义相同大致或指向的实体一致，符合标准答案的含义即可得1分，否则得0分。
+
+具体分析如下：
+
+- idx_0: response是 ""32k""，target是 ""1m""。32k和1m显然是不一致的，数值差距很大，没有指向相同实体；得0分。
+- idx_1: response是 ""nan""，target是 ""1m""。nan不是任何数值，和1m明显不匹配；得0分。
+- idx_2: response是 ""nan""，target是 ""1m""。同理，得0分。
+- idx_3: response是 ""nan""，target是 ""200k""。nan和200k不匹配；得0分。
+- idx_4: response是 ""nan""，target是 ""32k""。nan和32k不匹配；得0分。
+- idx_5: response是 ""nan""，target是 ""256k""。nan和256k不匹配；得0分。
+- idx_6: response是 ""nan""，target是 ""128k""。nan和128k不匹配；得0分。
+
+综合上述理由，所有条目得分均为0。
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0
+}
+```",256k,nan,1.0,"Let's analyze each idx step-by-step based on the provided criterion:
+
+Criterion:  
+- The response is scored 1 if the semantic meaning is roughly the same as the target or the entity referred to is the same. Exact wording is not required.
+
+---
+
+**idx_0**  
+- Response: ""google""  
+- Target: ""谷歌"" (Chinese for Google)  
+- Analysis: ""google"" and ""谷歌"" refer to the exact same entity.  
+- Score: 1
+
+**idx_1**  
+- Response: ""google""  
+- Target: ""谷歌""  
+- Same as idx_0.  
+- Score: 1
+
+**idx_2**  
+- Response: ""google""  
+- Target: ""谷歌""  
+- Same as idx_0.  
+- Score: 1
+
+**idx_3**  
+- Response: ""anthropic""  
+- Target: ""anthropic""  
+- Exact entity match.  
+- Score: 1
+
+**idx_4**  
+- Response: ""bytedance""  
+- Target: ""字节跳动"" (Chinese for ByteDance)  
+- Response and target correspond semantically to the same company/entity.  
+- Score: 1
+
+**idx_5**  
+- Response: ""bytedance""  
+- Target: ""字节跳动""  
+- Same as idx_4  
+- Score: 1
+
+**idx_6**  
+- Response: ""bytedance""  
+- Target: ""deepseek""  
+- ""bytedance"" and ""deepseek"" are different entities. Therefore, semantics do not align.  
+- Score: 0
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 0
+}
+```",字节跳动,bytedance,1.0,key_match
+,,deepseek-v3,DeepSeek V3,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,0.0,"number not convertable, response: None, target: 0.42",42%,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,0.0,"首先，我要比较每条response和它对应的target，看是否语义相同大致或指向的实体一致，符合标准答案的含义即可得1分，否则得0分。
+
+具体分析如下：
+
+- idx_0: response是 ""32k""，target是 ""1m""。32k和1m显然是不一致的，数值差距很大，没有指向相同实体；得0分。
+- idx_1: response是 ""nan""，target是 ""1m""。nan不是任何数值，和1m明显不匹配；得0分。
+- idx_2: response是 ""nan""，target是 ""1m""。同理，得0分。
+- idx_3: response是 ""nan""，target是 ""200k""。nan和200k不匹配；得0分。
+- idx_4: response是 ""nan""，target是 ""32k""。nan和32k不匹配；得0分。
+- idx_5: response是 ""nan""，target是 ""256k""。nan和256k不匹配；得0分。
+- idx_6: response是 ""nan""，target是 ""128k""。nan和128k不匹配；得0分。
+
+综合上述理由，所有条目得分均为0。
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0
+}
+```",128k,nan,0.0,"Let's analyze each idx step-by-step based on the provided criterion:
+
+Criterion:  
+- The response is scored 1 if the semantic meaning is roughly the same as the target or the entity referred to is the same. Exact wording is not required.
+
+---
+
+**idx_0**  
+- Response: ""google""  
+- Target: ""谷歌"" (Chinese for Google)  
+- Analysis: ""google"" and ""谷歌"" refer to the exact same entity.  
+- Score: 1
+
+**idx_1**  
+- Response: ""google""  
+- Target: ""谷歌""  
+- Same as idx_0.  
+- Score: 1
+
+**idx_2**  
+- Response: ""google""  
+- Target: ""谷歌""  
+- Same as idx_0.  
+- Score: 1
+
+**idx_3**  
+- Response: ""anthropic""  
+- Target: ""anthropic""  
+- Exact entity match.  
+- Score: 1
+
+**idx_4**  
+- Response: ""bytedance""  
+- Target: ""字节跳动"" (Chinese for ByteDance)  
+- Response and target correspond semantically to the same company/entity.  
+- Score: 1
+
+**idx_5**  
+- Response: ""bytedance""  
+- Target: ""字节跳动""  
+- Same as idx_4  
+- Score: 1
+
+**idx_6**  
+- Response: ""bytedance""  
+- Target: ""deepseek""  
+- ""bytedance"" and ""deepseek"" are different entities. Therefore, semantics do not align.  
+- Score: 0
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 0
+}
+```",deepseek,bytedance,1.0,key_match
+1.0,,claudeopus4,,,,75.50%,,,,72.50%,,,,59.60%,,,,81.40%,,,,200k,,,,anthropic,,,
+1.0,,claudesonnet4,,,,70.50%,,,,72.70%,,,,60%,,,,80.50%,,,,200k,,,,anthropic,,,
+1.0,,deepseek-r1,,,,70%,,,,49.20%,,,,NULL,,,,NULL,,,,128k,,,,deepseek,,,
+1.0,,deepseek-r1-0528,,,,87.50%,,,,57.60%,,,,NULL,,,,NULL,,,,64k,,,,deepseek,,,
+1.0,,deepseek-v3-0324,,,,47.74%,,,,38.80%,,,,NULL,,,,NULL,,,,64k,,,,deepseek,,,
+1.0,,gemini2.5flash-lite-nonthinking,,,,49.80%,,,,31.60%,,,,NULL,,,,NULL,,,,1m,,,,谷歌,,,
+1.0,,gemini2.5flash-nonthinking,,,,61.60%,,,,50%,,,,NULL,,,,NULL,,,,1m,,,,谷歌,,,
+1.0,,o3,,,,88.90%,,,,69.10%,,,,52%,,,,70.40%,,,,200k,,,,openai,,,
+1.0,,o3mini,,,,86.50%,,,,49.30%,,,,32.40%,,,,57.60%,,,,200k,,,,openai,,,
+1.0,,o4-mini,,,,92.70%,,,,68.10%,,,,49.20%,,,,65.60%,,,,200k,,,,openai,,,

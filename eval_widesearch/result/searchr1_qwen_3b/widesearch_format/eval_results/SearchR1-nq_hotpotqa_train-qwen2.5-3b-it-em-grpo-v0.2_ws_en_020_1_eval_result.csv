@@ -1,0 +1,2914 @@
+exist_flag_gt,exist_flag_response,nameoftheheritagesite,nameoftheheritagesite_before_map,area_number_near,area_number_near_eval_msg,area_query,area_response,country_llm_judge,country_llm_judge_eval_msg,country_query,country_response,location_llm_judge,location_llm_judge_eval_msg,location_query,location_response,nameoftheheritagesite_exact_match,nameoftheheritagesite_exact_match_eval_msg,typeofheritage_llm_judge,typeofheritage_llm_judge_eval_msg,typeofheritage_query,typeofheritage_response,yearofrecognition_exact_match,yearofrecognition_exact_match_eval_msg,yearofrecognition_query,yearofrecognition_response
+,,dinosaurprovincialpark,Dinosaur Provincial Park,0.0,"number not convertable, response: None, target: 7825.0",7825,NULL,1.0,"Let's analyze each pair step-by-step according to the grading criterion:  
+**Criterion:** It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for word-for-word correspondence.
+
+---
+
+### idx_0 to idx_4  
+- Response: ""canada""  
+- Target: ""canada""  
+- Exact match, same entity → Score: 1
+
+### idx_5 to idx_6  
+- Response: ""mexico""  
+- Target: ""mexico""  
+- Exact match, same entity → Score: 1
+
+### idx_7 to idx_11  
+- Response: ""unitedstates""  
+- Target: ""unitedstatesofamerica""  
+- Semantically same, both refer to the same country (United States of America)  
+- Criterion states approximate semantic equality or the same entity is sufficient → Score: 1
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",canada,canada,0.0,"Let's evaluate each response against its target according to the criteria:
+
+Criteria Summary:
+- Semantics approximately the same or point to the same entity → correct.
+- For multiple addresses, all must correspond.
+- For a specific location, main city/county is required, only province is insufficient.
+
+---
+
+**idx_0**  
+- Response: ""alberta""  
+- Target: ""countyofnewell,alberta""  
+Analysis: The response only gives the province ""alberta,"" but the target includes a county ""countyofnewell"" within Alberta.  
+Criteria says province alone is not enough for a specific location, and county is required. Response misses ""countyofnewell.""  
+Score: 0
+
+**idx_1**  
+- Response: ""alberta,britishcolumbia""  
+- Target: ""albertaandbritishcolumbia""  
+Analysis: The response correctly lists both provinces Alberta and British Columbia. The target is combined but refers to the same two provinces.  
+Both names correspond, all multiple locations match.  
+Score: 1
+
+**idx_2**  
+- Response: ""newfoundlandandlabrador""  
+- Target: ""rockyharbour,newfoundlandandlabrador,canada""  
+Analysis: Response only gives province; target provides a city (rockyharbour) and province and country.  
+Main city is given in target but missing in response; province alone is insufficient per criteria.  
+Score: 0
+
+**idx_3**  
+- Response: ""novascotia""  
+- Target: ""cumberlandcounty,novascotia(easterncanada)""  
+Analysis: Province only given; county is missing. County is required for specific locations, so just province not enough.  
+Score: 0
+
+**idx_4**  
+- Response: ""quebec""  
+- Target: ""minganie,côte-nord,quebec""  
+Analysis: Province only; target gives two lower-level locations plus province. Province only not enough.  
+Score: 0
+
+**idx_5**  
+- Response: ""campeche""  
+- Target: ""calakmul,campeche""  
+Analysis: Province given; target also has ""calakmul"" (municipality or region). Province only insufficient.  
+Score: 0
+
+**idx_6**  
+- Response: ""puebla""  
+- Target: ""cuicatlán,tehuacán""  
+Analysis: Response gives ""puebla"" (a Mexican state); target lists two cities ""cuicatlán"" and ""tehuacán"" but no province/state explicitly.  
+The two cities cuicatlán and tehuacán are both in Puebla state. So response points to the province which encompasses both cities — acceptable per criteria since the main city or county is required but ""province only no"" — however, here the target lists only cities and no province.  
+The criteria states: ""for a specific location, main city/county required, only province is not enough."" Here, response: province only, target: two cities (both in Puebla)  
+Since multiple locations present, response must include both or main city or county — response gives just province, target cities. Not matching multiple addresses nor specific enough.  
+Score: 0
+
+**idx_7**  
+- Response: ""pennsylvania""  
+- Target: ""philadelphia,commonwealthofpennsylvania""  
+Analysis: Response gives the state; target gives city + state. Province only not enough.  
+Score: 0
+
+**idx_8**  
+- Response: ""illinois""  
+- Target: ""st.claircounty,illinois""  
+Analysis: Province given; county missing. Province only is insufficient.  
+Score: 0
+
+**idx_9**  
+- Response: ""puertorico""  
+- Target: ""sanjuan,puertorico""  
+Analysis: Response gives territory only, target gives city + territory. County/city required, so province only insufficient.  
+Score: 0
+
+**idx_10**  
+- Response: ""newmexico""  
+- Target: ""sanjuancounty,newmexico""  
+Analysis: Response gives state, target gives county + state. County missing in response → insufficient.  
+Score: 0
+
+**idx_11**  
+- Response: ""ohio""  
+- Target: ""rosscounty,ohio""  
+Analysis: Again, state only response, target county + state. County missing → insufficient.  
+Score: 0
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0
+}
+```","countyofnewell,alberta",alberta,1.0,key_match,1.0,"Let's analyze each item based on the criterion:
+
+Criterion:  
+- The semantics must be approximately the same or point to the same entity.  
+- No need for exact word-for-word match.  
+- Score is either 0 or 1.
+
+---
+
+### Step-by-step Analysis
+
+- **idx_0:**  
+  response = ""natural"", target = ""natural""  
+  Both are exactly the same entity.  
+  Score = 1
+
+- **idx_1:**  
+  response = ""mixed"", target = ""natural""  
+  Different entities, no semantic match.  
+  Score = 0
+
+- **idx_2:**  
+  response = ""natural"", target = ""natural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_3:**  
+  response = ""natural"", target = ""natural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_4:**  
+  response = ""natural"", target = ""natural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_5:**  
+  response = ""mixed"", target = ""mixed""  
+  Same meaning.  
+  Score = 1
+
+- **idx_6:**  
+  response = ""mixed"", target = ""mixed""  
+  Same meaning.  
+  Score = 1
+
+- **idx_7:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_8:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_9:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_10:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_11:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+---
+
+### Final scoring results in the required format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",natural,natural,1.0,"exact match, response: 1979, target: 1979",1979,1979
+,,canadianrockymountainparks,Canadian Rocky Mountain Parks,0.0,"number not convertable, response: None, target: 2360000.0",2360000,NULL,1.0,"Let's analyze each pair step-by-step according to the grading criterion:  
+**Criterion:** It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for word-for-word correspondence.
+
+---
+
+### idx_0 to idx_4  
+- Response: ""canada""  
+- Target: ""canada""  
+- Exact match, same entity → Score: 1
+
+### idx_5 to idx_6  
+- Response: ""mexico""  
+- Target: ""mexico""  
+- Exact match, same entity → Score: 1
+
+### idx_7 to idx_11  
+- Response: ""unitedstates""  
+- Target: ""unitedstatesofamerica""  
+- Semantically same, both refer to the same country (United States of America)  
+- Criterion states approximate semantic equality or the same entity is sufficient → Score: 1
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",canada,canada,1.0,"Let's evaluate each response against its target according to the criteria:
+
+Criteria Summary:
+- Semantics approximately the same or point to the same entity → correct.
+- For multiple addresses, all must correspond.
+- For a specific location, main city/county is required, only province is insufficient.
+
+---
+
+**idx_0**  
+- Response: ""alberta""  
+- Target: ""countyofnewell,alberta""  
+Analysis: The response only gives the province ""alberta,"" but the target includes a county ""countyofnewell"" within Alberta.  
+Criteria says province alone is not enough for a specific location, and county is required. Response misses ""countyofnewell.""  
+Score: 0
+
+**idx_1**  
+- Response: ""alberta,britishcolumbia""  
+- Target: ""albertaandbritishcolumbia""  
+Analysis: The response correctly lists both provinces Alberta and British Columbia. The target is combined but refers to the same two provinces.  
+Both names correspond, all multiple locations match.  
+Score: 1
+
+**idx_2**  
+- Response: ""newfoundlandandlabrador""  
+- Target: ""rockyharbour,newfoundlandandlabrador,canada""  
+Analysis: Response only gives province; target provides a city (rockyharbour) and province and country.  
+Main city is given in target but missing in response; province alone is insufficient per criteria.  
+Score: 0
+
+**idx_3**  
+- Response: ""novascotia""  
+- Target: ""cumberlandcounty,novascotia(easterncanada)""  
+Analysis: Province only given; county is missing. County is required for specific locations, so just province not enough.  
+Score: 0
+
+**idx_4**  
+- Response: ""quebec""  
+- Target: ""minganie,côte-nord,quebec""  
+Analysis: Province only; target gives two lower-level locations plus province. Province only not enough.  
+Score: 0
+
+**idx_5**  
+- Response: ""campeche""  
+- Target: ""calakmul,campeche""  
+Analysis: Province given; target also has ""calakmul"" (municipality or region). Province only insufficient.  
+Score: 0
+
+**idx_6**  
+- Response: ""puebla""  
+- Target: ""cuicatlán,tehuacán""  
+Analysis: Response gives ""puebla"" (a Mexican state); target lists two cities ""cuicatlán"" and ""tehuacán"" but no province/state explicitly.  
+The two cities cuicatlán and tehuacán are both in Puebla state. So response points to the province which encompasses both cities — acceptable per criteria since the main city or county is required but ""province only no"" — however, here the target lists only cities and no province.  
+The criteria states: ""for a specific location, main city/county required, only province is not enough."" Here, response: province only, target: two cities (both in Puebla)  
+Since multiple locations present, response must include both or main city or county — response gives just province, target cities. Not matching multiple addresses nor specific enough.  
+Score: 0
+
+**idx_7**  
+- Response: ""pennsylvania""  
+- Target: ""philadelphia,commonwealthofpennsylvania""  
+Analysis: Response gives the state; target gives city + state. Province only not enough.  
+Score: 0
+
+**idx_8**  
+- Response: ""illinois""  
+- Target: ""st.claircounty,illinois""  
+Analysis: Province given; county missing. Province only is insufficient.  
+Score: 0
+
+**idx_9**  
+- Response: ""puertorico""  
+- Target: ""sanjuan,puertorico""  
+Analysis: Response gives territory only, target gives city + territory. County/city required, so province only insufficient.  
+Score: 0
+
+**idx_10**  
+- Response: ""newmexico""  
+- Target: ""sanjuancounty,newmexico""  
+Analysis: Response gives state, target gives county + state. County missing in response → insufficient.  
+Score: 0
+
+**idx_11**  
+- Response: ""ohio""  
+- Target: ""rosscounty,ohio""  
+Analysis: Again, state only response, target county + state. County missing → insufficient.  
+Score: 0
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0
+}
+```",albertaandbritishcolumbia,"alberta,britishcolumbia",1.0,key_match,0.0,"Let's analyze each item based on the criterion:
+
+Criterion:  
+- The semantics must be approximately the same or point to the same entity.  
+- No need for exact word-for-word match.  
+- Score is either 0 or 1.
+
+---
+
+### Step-by-step Analysis
+
+- **idx_0:**  
+  response = ""natural"", target = ""natural""  
+  Both are exactly the same entity.  
+  Score = 1
+
+- **idx_1:**  
+  response = ""mixed"", target = ""natural""  
+  Different entities, no semantic match.  
+  Score = 0
+
+- **idx_2:**  
+  response = ""natural"", target = ""natural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_3:**  
+  response = ""natural"", target = ""natural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_4:**  
+  response = ""natural"", target = ""natural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_5:**  
+  response = ""mixed"", target = ""mixed""  
+  Same meaning.  
+  Score = 1
+
+- **idx_6:**  
+  response = ""mixed"", target = ""mixed""  
+  Same meaning.  
+  Score = 1
+
+- **idx_7:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_8:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_9:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_10:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_11:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+---
+
+### Final scoring results in the required format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",natural,mixed,0.0,"exact not match, response: 1984,1990, target: 1984",1984,"1984,1990"
+,,grosmornenationalpark,Gros Morne National Park,0.0,"number not convertable, response: None, target: 180500.0",180500,NULL,1.0,"Let's analyze each pair step-by-step according to the grading criterion:  
+**Criterion:** It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for word-for-word correspondence.
+
+---
+
+### idx_0 to idx_4  
+- Response: ""canada""  
+- Target: ""canada""  
+- Exact match, same entity → Score: 1
+
+### idx_5 to idx_6  
+- Response: ""mexico""  
+- Target: ""mexico""  
+- Exact match, same entity → Score: 1
+
+### idx_7 to idx_11  
+- Response: ""unitedstates""  
+- Target: ""unitedstatesofamerica""  
+- Semantically same, both refer to the same country (United States of America)  
+- Criterion states approximate semantic equality or the same entity is sufficient → Score: 1
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",canada,canada,0.0,"Let's evaluate each response against its target according to the criteria:
+
+Criteria Summary:
+- Semantics approximately the same or point to the same entity → correct.
+- For multiple addresses, all must correspond.
+- For a specific location, main city/county is required, only province is insufficient.
+
+---
+
+**idx_0**  
+- Response: ""alberta""  
+- Target: ""countyofnewell,alberta""  
+Analysis: The response only gives the province ""alberta,"" but the target includes a county ""countyofnewell"" within Alberta.  
+Criteria says province alone is not enough for a specific location, and county is required. Response misses ""countyofnewell.""  
+Score: 0
+
+**idx_1**  
+- Response: ""alberta,britishcolumbia""  
+- Target: ""albertaandbritishcolumbia""  
+Analysis: The response correctly lists both provinces Alberta and British Columbia. The target is combined but refers to the same two provinces.  
+Both names correspond, all multiple locations match.  
+Score: 1
+
+**idx_2**  
+- Response: ""newfoundlandandlabrador""  
+- Target: ""rockyharbour,newfoundlandandlabrador,canada""  
+Analysis: Response only gives province; target provides a city (rockyharbour) and province and country.  
+Main city is given in target but missing in response; province alone is insufficient per criteria.  
+Score: 0
+
+**idx_3**  
+- Response: ""novascotia""  
+- Target: ""cumberlandcounty,novascotia(easterncanada)""  
+Analysis: Province only given; county is missing. County is required for specific locations, so just province not enough.  
+Score: 0
+
+**idx_4**  
+- Response: ""quebec""  
+- Target: ""minganie,côte-nord,quebec""  
+Analysis: Province only; target gives two lower-level locations plus province. Province only not enough.  
+Score: 0
+
+**idx_5**  
+- Response: ""campeche""  
+- Target: ""calakmul,campeche""  
+Analysis: Province given; target also has ""calakmul"" (municipality or region). Province only insufficient.  
+Score: 0
+
+**idx_6**  
+- Response: ""puebla""  
+- Target: ""cuicatlán,tehuacán""  
+Analysis: Response gives ""puebla"" (a Mexican state); target lists two cities ""cuicatlán"" and ""tehuacán"" but no province/state explicitly.  
+The two cities cuicatlán and tehuacán are both in Puebla state. So response points to the province which encompasses both cities — acceptable per criteria since the main city or county is required but ""province only no"" — however, here the target lists only cities and no province.  
+The criteria states: ""for a specific location, main city/county required, only province is not enough."" Here, response: province only, target: two cities (both in Puebla)  
+Since multiple locations present, response must include both or main city or county — response gives just province, target cities. Not matching multiple addresses nor specific enough.  
+Score: 0
+
+**idx_7**  
+- Response: ""pennsylvania""  
+- Target: ""philadelphia,commonwealthofpennsylvania""  
+Analysis: Response gives the state; target gives city + state. Province only not enough.  
+Score: 0
+
+**idx_8**  
+- Response: ""illinois""  
+- Target: ""st.claircounty,illinois""  
+Analysis: Province given; county missing. Province only is insufficient.  
+Score: 0
+
+**idx_9**  
+- Response: ""puertorico""  
+- Target: ""sanjuan,puertorico""  
+Analysis: Response gives territory only, target gives city + territory. County/city required, so province only insufficient.  
+Score: 0
+
+**idx_10**  
+- Response: ""newmexico""  
+- Target: ""sanjuancounty,newmexico""  
+Analysis: Response gives state, target gives county + state. County missing in response → insufficient.  
+Score: 0
+
+**idx_11**  
+- Response: ""ohio""  
+- Target: ""rosscounty,ohio""  
+Analysis: Again, state only response, target county + state. County missing → insufficient.  
+Score: 0
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0
+}
+```","rockyharbour,newfoundlandandlabrador,canada",newfoundlandandlabrador,1.0,key_match,1.0,"Let's analyze each item based on the criterion:
+
+Criterion:  
+- The semantics must be approximately the same or point to the same entity.  
+- No need for exact word-for-word match.  
+- Score is either 0 or 1.
+
+---
+
+### Step-by-step Analysis
+
+- **idx_0:**  
+  response = ""natural"", target = ""natural""  
+  Both are exactly the same entity.  
+  Score = 1
+
+- **idx_1:**  
+  response = ""mixed"", target = ""natural""  
+  Different entities, no semantic match.  
+  Score = 0
+
+- **idx_2:**  
+  response = ""natural"", target = ""natural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_3:**  
+  response = ""natural"", target = ""natural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_4:**  
+  response = ""natural"", target = ""natural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_5:**  
+  response = ""mixed"", target = ""mixed""  
+  Same meaning.  
+  Score = 1
+
+- **idx_6:**  
+  response = ""mixed"", target = ""mixed""  
+  Same meaning.  
+  Score = 1
+
+- **idx_7:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_8:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_9:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_10:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_11:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+---
+
+### Final scoring results in the required format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",natural,natural,1.0,"exact match, response: 1987, target: 1987",1987,1987
+,,jogginsfossilcliffs,Joggins Fossil Cliffs,0.0,"number not convertable, response: None, target: 689.0",689,NULL,1.0,"Let's analyze each pair step-by-step according to the grading criterion:  
+**Criterion:** It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for word-for-word correspondence.
+
+---
+
+### idx_0 to idx_4  
+- Response: ""canada""  
+- Target: ""canada""  
+- Exact match, same entity → Score: 1
+
+### idx_5 to idx_6  
+- Response: ""mexico""  
+- Target: ""mexico""  
+- Exact match, same entity → Score: 1
+
+### idx_7 to idx_11  
+- Response: ""unitedstates""  
+- Target: ""unitedstatesofamerica""  
+- Semantically same, both refer to the same country (United States of America)  
+- Criterion states approximate semantic equality or the same entity is sufficient → Score: 1
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",canada,canada,0.0,"Let's evaluate each response against its target according to the criteria:
+
+Criteria Summary:
+- Semantics approximately the same or point to the same entity → correct.
+- For multiple addresses, all must correspond.
+- For a specific location, main city/county is required, only province is insufficient.
+
+---
+
+**idx_0**  
+- Response: ""alberta""  
+- Target: ""countyofnewell,alberta""  
+Analysis: The response only gives the province ""alberta,"" but the target includes a county ""countyofnewell"" within Alberta.  
+Criteria says province alone is not enough for a specific location, and county is required. Response misses ""countyofnewell.""  
+Score: 0
+
+**idx_1**  
+- Response: ""alberta,britishcolumbia""  
+- Target: ""albertaandbritishcolumbia""  
+Analysis: The response correctly lists both provinces Alberta and British Columbia. The target is combined but refers to the same two provinces.  
+Both names correspond, all multiple locations match.  
+Score: 1
+
+**idx_2**  
+- Response: ""newfoundlandandlabrador""  
+- Target: ""rockyharbour,newfoundlandandlabrador,canada""  
+Analysis: Response only gives province; target provides a city (rockyharbour) and province and country.  
+Main city is given in target but missing in response; province alone is insufficient per criteria.  
+Score: 0
+
+**idx_3**  
+- Response: ""novascotia""  
+- Target: ""cumberlandcounty,novascotia(easterncanada)""  
+Analysis: Province only given; county is missing. County is required for specific locations, so just province not enough.  
+Score: 0
+
+**idx_4**  
+- Response: ""quebec""  
+- Target: ""minganie,côte-nord,quebec""  
+Analysis: Province only; target gives two lower-level locations plus province. Province only not enough.  
+Score: 0
+
+**idx_5**  
+- Response: ""campeche""  
+- Target: ""calakmul,campeche""  
+Analysis: Province given; target also has ""calakmul"" (municipality or region). Province only insufficient.  
+Score: 0
+
+**idx_6**  
+- Response: ""puebla""  
+- Target: ""cuicatlán,tehuacán""  
+Analysis: Response gives ""puebla"" (a Mexican state); target lists two cities ""cuicatlán"" and ""tehuacán"" but no province/state explicitly.  
+The two cities cuicatlán and tehuacán are both in Puebla state. So response points to the province which encompasses both cities — acceptable per criteria since the main city or county is required but ""province only no"" — however, here the target lists only cities and no province.  
+The criteria states: ""for a specific location, main city/county required, only province is not enough."" Here, response: province only, target: two cities (both in Puebla)  
+Since multiple locations present, response must include both or main city or county — response gives just province, target cities. Not matching multiple addresses nor specific enough.  
+Score: 0
+
+**idx_7**  
+- Response: ""pennsylvania""  
+- Target: ""philadelphia,commonwealthofpennsylvania""  
+Analysis: Response gives the state; target gives city + state. Province only not enough.  
+Score: 0
+
+**idx_8**  
+- Response: ""illinois""  
+- Target: ""st.claircounty,illinois""  
+Analysis: Province given; county missing. Province only is insufficient.  
+Score: 0
+
+**idx_9**  
+- Response: ""puertorico""  
+- Target: ""sanjuan,puertorico""  
+Analysis: Response gives territory only, target gives city + territory. County/city required, so province only insufficient.  
+Score: 0
+
+**idx_10**  
+- Response: ""newmexico""  
+- Target: ""sanjuancounty,newmexico""  
+Analysis: Response gives state, target gives county + state. County missing in response → insufficient.  
+Score: 0
+
+**idx_11**  
+- Response: ""ohio""  
+- Target: ""rosscounty,ohio""  
+Analysis: Again, state only response, target county + state. County missing → insufficient.  
+Score: 0
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0
+}
+```","cumberlandcounty,novascotia(easterncanada)",novascotia,1.0,key_match,1.0,"Let's analyze each item based on the criterion:
+
+Criterion:  
+- The semantics must be approximately the same or point to the same entity.  
+- No need for exact word-for-word match.  
+- Score is either 0 or 1.
+
+---
+
+### Step-by-step Analysis
+
+- **idx_0:**  
+  response = ""natural"", target = ""natural""  
+  Both are exactly the same entity.  
+  Score = 1
+
+- **idx_1:**  
+  response = ""mixed"", target = ""natural""  
+  Different entities, no semantic match.  
+  Score = 0
+
+- **idx_2:**  
+  response = ""natural"", target = ""natural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_3:**  
+  response = ""natural"", target = ""natural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_4:**  
+  response = ""natural"", target = ""natural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_5:**  
+  response = ""mixed"", target = ""mixed""  
+  Same meaning.  
+  Score = 1
+
+- **idx_6:**  
+  response = ""mixed"", target = ""mixed""  
+  Same meaning.  
+  Score = 1
+
+- **idx_7:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_8:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_9:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_10:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_11:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+---
+
+### Final scoring results in the required format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",natural,natural,0.0,"exact not match, response: nan, target: 2008",2008,nan
+,,anticosti,Anticosti,0.0,"number not convertable, response: None, target: 18240.0",18240,NULL,1.0,"Let's analyze each pair step-by-step according to the grading criterion:  
+**Criterion:** It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for word-for-word correspondence.
+
+---
+
+### idx_0 to idx_4  
+- Response: ""canada""  
+- Target: ""canada""  
+- Exact match, same entity → Score: 1
+
+### idx_5 to idx_6  
+- Response: ""mexico""  
+- Target: ""mexico""  
+- Exact match, same entity → Score: 1
+
+### idx_7 to idx_11  
+- Response: ""unitedstates""  
+- Target: ""unitedstatesofamerica""  
+- Semantically same, both refer to the same country (United States of America)  
+- Criterion states approximate semantic equality or the same entity is sufficient → Score: 1
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",canada,canada,0.0,"Let's evaluate each response against its target according to the criteria:
+
+Criteria Summary:
+- Semantics approximately the same or point to the same entity → correct.
+- For multiple addresses, all must correspond.
+- For a specific location, main city/county is required, only province is insufficient.
+
+---
+
+**idx_0**  
+- Response: ""alberta""  
+- Target: ""countyofnewell,alberta""  
+Analysis: The response only gives the province ""alberta,"" but the target includes a county ""countyofnewell"" within Alberta.  
+Criteria says province alone is not enough for a specific location, and county is required. Response misses ""countyofnewell.""  
+Score: 0
+
+**idx_1**  
+- Response: ""alberta,britishcolumbia""  
+- Target: ""albertaandbritishcolumbia""  
+Analysis: The response correctly lists both provinces Alberta and British Columbia. The target is combined but refers to the same two provinces.  
+Both names correspond, all multiple locations match.  
+Score: 1
+
+**idx_2**  
+- Response: ""newfoundlandandlabrador""  
+- Target: ""rockyharbour,newfoundlandandlabrador,canada""  
+Analysis: Response only gives province; target provides a city (rockyharbour) and province and country.  
+Main city is given in target but missing in response; province alone is insufficient per criteria.  
+Score: 0
+
+**idx_3**  
+- Response: ""novascotia""  
+- Target: ""cumberlandcounty,novascotia(easterncanada)""  
+Analysis: Province only given; county is missing. County is required for specific locations, so just province not enough.  
+Score: 0
+
+**idx_4**  
+- Response: ""quebec""  
+- Target: ""minganie,côte-nord,quebec""  
+Analysis: Province only; target gives two lower-level locations plus province. Province only not enough.  
+Score: 0
+
+**idx_5**  
+- Response: ""campeche""  
+- Target: ""calakmul,campeche""  
+Analysis: Province given; target also has ""calakmul"" (municipality or region). Province only insufficient.  
+Score: 0
+
+**idx_6**  
+- Response: ""puebla""  
+- Target: ""cuicatlán,tehuacán""  
+Analysis: Response gives ""puebla"" (a Mexican state); target lists two cities ""cuicatlán"" and ""tehuacán"" but no province/state explicitly.  
+The two cities cuicatlán and tehuacán are both in Puebla state. So response points to the province which encompasses both cities — acceptable per criteria since the main city or county is required but ""province only no"" — however, here the target lists only cities and no province.  
+The criteria states: ""for a specific location, main city/county required, only province is not enough."" Here, response: province only, target: two cities (both in Puebla)  
+Since multiple locations present, response must include both or main city or county — response gives just province, target cities. Not matching multiple addresses nor specific enough.  
+Score: 0
+
+**idx_7**  
+- Response: ""pennsylvania""  
+- Target: ""philadelphia,commonwealthofpennsylvania""  
+Analysis: Response gives the state; target gives city + state. Province only not enough.  
+Score: 0
+
+**idx_8**  
+- Response: ""illinois""  
+- Target: ""st.claircounty,illinois""  
+Analysis: Province given; county missing. Province only is insufficient.  
+Score: 0
+
+**idx_9**  
+- Response: ""puertorico""  
+- Target: ""sanjuan,puertorico""  
+Analysis: Response gives territory only, target gives city + territory. County/city required, so province only insufficient.  
+Score: 0
+
+**idx_10**  
+- Response: ""newmexico""  
+- Target: ""sanjuancounty,newmexico""  
+Analysis: Response gives state, target gives county + state. County missing in response → insufficient.  
+Score: 0
+
+**idx_11**  
+- Response: ""ohio""  
+- Target: ""rosscounty,ohio""  
+Analysis: Again, state only response, target county + state. County missing → insufficient.  
+Score: 0
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0
+}
+```","minganie,côte-nord,quebec",quebec,1.0,key_match,1.0,"Let's analyze each item based on the criterion:
+
+Criterion:  
+- The semantics must be approximately the same or point to the same entity.  
+- No need for exact word-for-word match.  
+- Score is either 0 or 1.
+
+---
+
+### Step-by-step Analysis
+
+- **idx_0:**  
+  response = ""natural"", target = ""natural""  
+  Both are exactly the same entity.  
+  Score = 1
+
+- **idx_1:**  
+  response = ""mixed"", target = ""natural""  
+  Different entities, no semantic match.  
+  Score = 0
+
+- **idx_2:**  
+  response = ""natural"", target = ""natural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_3:**  
+  response = ""natural"", target = ""natural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_4:**  
+  response = ""natural"", target = ""natural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_5:**  
+  response = ""mixed"", target = ""mixed""  
+  Same meaning.  
+  Score = 1
+
+- **idx_6:**  
+  response = ""mixed"", target = ""mixed""  
+  Same meaning.  
+  Score = 1
+
+- **idx_7:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_8:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_9:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_10:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_11:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+---
+
+### Final scoring results in the required format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",natural,natural,1.0,"exact match, response: 2023, target: 2023",2023,2023
+,,"ancientmayacityandprotectedtropicalforestsofcalakmul,campeche","Ancient Maya City and Protected Tropical Forests of Calakmul, Campeche",0.0,"number not convertable, response: None, target: 331397.0",331397,NULL,1.0,"Let's analyze each pair step-by-step according to the grading criterion:  
+**Criterion:** It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for word-for-word correspondence.
+
+---
+
+### idx_0 to idx_4  
+- Response: ""canada""  
+- Target: ""canada""  
+- Exact match, same entity → Score: 1
+
+### idx_5 to idx_6  
+- Response: ""mexico""  
+- Target: ""mexico""  
+- Exact match, same entity → Score: 1
+
+### idx_7 to idx_11  
+- Response: ""unitedstates""  
+- Target: ""unitedstatesofamerica""  
+- Semantically same, both refer to the same country (United States of America)  
+- Criterion states approximate semantic equality or the same entity is sufficient → Score: 1
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",mexico,mexico,0.0,"Let's evaluate each response against its target according to the criteria:
+
+Criteria Summary:
+- Semantics approximately the same or point to the same entity → correct.
+- For multiple addresses, all must correspond.
+- For a specific location, main city/county is required, only province is insufficient.
+
+---
+
+**idx_0**  
+- Response: ""alberta""  
+- Target: ""countyofnewell,alberta""  
+Analysis: The response only gives the province ""alberta,"" but the target includes a county ""countyofnewell"" within Alberta.  
+Criteria says province alone is not enough for a specific location, and county is required. Response misses ""countyofnewell.""  
+Score: 0
+
+**idx_1**  
+- Response: ""alberta,britishcolumbia""  
+- Target: ""albertaandbritishcolumbia""  
+Analysis: The response correctly lists both provinces Alberta and British Columbia. The target is combined but refers to the same two provinces.  
+Both names correspond, all multiple locations match.  
+Score: 1
+
+**idx_2**  
+- Response: ""newfoundlandandlabrador""  
+- Target: ""rockyharbour,newfoundlandandlabrador,canada""  
+Analysis: Response only gives province; target provides a city (rockyharbour) and province and country.  
+Main city is given in target but missing in response; province alone is insufficient per criteria.  
+Score: 0
+
+**idx_3**  
+- Response: ""novascotia""  
+- Target: ""cumberlandcounty,novascotia(easterncanada)""  
+Analysis: Province only given; county is missing. County is required for specific locations, so just province not enough.  
+Score: 0
+
+**idx_4**  
+- Response: ""quebec""  
+- Target: ""minganie,côte-nord,quebec""  
+Analysis: Province only; target gives two lower-level locations plus province. Province only not enough.  
+Score: 0
+
+**idx_5**  
+- Response: ""campeche""  
+- Target: ""calakmul,campeche""  
+Analysis: Province given; target also has ""calakmul"" (municipality or region). Province only insufficient.  
+Score: 0
+
+**idx_6**  
+- Response: ""puebla""  
+- Target: ""cuicatlán,tehuacán""  
+Analysis: Response gives ""puebla"" (a Mexican state); target lists two cities ""cuicatlán"" and ""tehuacán"" but no province/state explicitly.  
+The two cities cuicatlán and tehuacán are both in Puebla state. So response points to the province which encompasses both cities — acceptable per criteria since the main city or county is required but ""province only no"" — however, here the target lists only cities and no province.  
+The criteria states: ""for a specific location, main city/county required, only province is not enough."" Here, response: province only, target: two cities (both in Puebla)  
+Since multiple locations present, response must include both or main city or county — response gives just province, target cities. Not matching multiple addresses nor specific enough.  
+Score: 0
+
+**idx_7**  
+- Response: ""pennsylvania""  
+- Target: ""philadelphia,commonwealthofpennsylvania""  
+Analysis: Response gives the state; target gives city + state. Province only not enough.  
+Score: 0
+
+**idx_8**  
+- Response: ""illinois""  
+- Target: ""st.claircounty,illinois""  
+Analysis: Province given; county missing. Province only is insufficient.  
+Score: 0
+
+**idx_9**  
+- Response: ""puertorico""  
+- Target: ""sanjuan,puertorico""  
+Analysis: Response gives territory only, target gives city + territory. County/city required, so province only insufficient.  
+Score: 0
+
+**idx_10**  
+- Response: ""newmexico""  
+- Target: ""sanjuancounty,newmexico""  
+Analysis: Response gives state, target gives county + state. County missing in response → insufficient.  
+Score: 0
+
+**idx_11**  
+- Response: ""ohio""  
+- Target: ""rosscounty,ohio""  
+Analysis: Again, state only response, target county + state. County missing → insufficient.  
+Score: 0
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0
+}
+```","calakmul,campeche",campeche,1.0,key_match,1.0,"Let's analyze each item based on the criterion:
+
+Criterion:  
+- The semantics must be approximately the same or point to the same entity.  
+- No need for exact word-for-word match.  
+- Score is either 0 or 1.
+
+---
+
+### Step-by-step Analysis
+
+- **idx_0:**  
+  response = ""natural"", target = ""natural""  
+  Both are exactly the same entity.  
+  Score = 1
+
+- **idx_1:**  
+  response = ""mixed"", target = ""natural""  
+  Different entities, no semantic match.  
+  Score = 0
+
+- **idx_2:**  
+  response = ""natural"", target = ""natural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_3:**  
+  response = ""natural"", target = ""natural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_4:**  
+  response = ""natural"", target = ""natural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_5:**  
+  response = ""mixed"", target = ""mixed""  
+  Same meaning.  
+  Score = 1
+
+- **idx_6:**  
+  response = ""mixed"", target = ""mixed""  
+  Same meaning.  
+  Score = 1
+
+- **idx_7:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_8:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_9:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_10:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_11:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+---
+
+### Final scoring results in the required format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",mixed,mixed,0.0,"exact not match, response: 2002,2014, target: 2002",2002,"2002,2014"
+,,tehuacán-cuicatlánvalley:originaryhabitatofmesoamerica,Tehuacán-Cuicatlán Valley: originary habitat of Mesoamerica,0.0,"number not convertable, response: None, target: 145255.2",145255.2,NULL,1.0,"Let's analyze each pair step-by-step according to the grading criterion:  
+**Criterion:** It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for word-for-word correspondence.
+
+---
+
+### idx_0 to idx_4  
+- Response: ""canada""  
+- Target: ""canada""  
+- Exact match, same entity → Score: 1
+
+### idx_5 to idx_6  
+- Response: ""mexico""  
+- Target: ""mexico""  
+- Exact match, same entity → Score: 1
+
+### idx_7 to idx_11  
+- Response: ""unitedstates""  
+- Target: ""unitedstatesofamerica""  
+- Semantically same, both refer to the same country (United States of America)  
+- Criterion states approximate semantic equality or the same entity is sufficient → Score: 1
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",mexico,mexico,0.0,"Let's evaluate each response against its target according to the criteria:
+
+Criteria Summary:
+- Semantics approximately the same or point to the same entity → correct.
+- For multiple addresses, all must correspond.
+- For a specific location, main city/county is required, only province is insufficient.
+
+---
+
+**idx_0**  
+- Response: ""alberta""  
+- Target: ""countyofnewell,alberta""  
+Analysis: The response only gives the province ""alberta,"" but the target includes a county ""countyofnewell"" within Alberta.  
+Criteria says province alone is not enough for a specific location, and county is required. Response misses ""countyofnewell.""  
+Score: 0
+
+**idx_1**  
+- Response: ""alberta,britishcolumbia""  
+- Target: ""albertaandbritishcolumbia""  
+Analysis: The response correctly lists both provinces Alberta and British Columbia. The target is combined but refers to the same two provinces.  
+Both names correspond, all multiple locations match.  
+Score: 1
+
+**idx_2**  
+- Response: ""newfoundlandandlabrador""  
+- Target: ""rockyharbour,newfoundlandandlabrador,canada""  
+Analysis: Response only gives province; target provides a city (rockyharbour) and province and country.  
+Main city is given in target but missing in response; province alone is insufficient per criteria.  
+Score: 0
+
+**idx_3**  
+- Response: ""novascotia""  
+- Target: ""cumberlandcounty,novascotia(easterncanada)""  
+Analysis: Province only given; county is missing. County is required for specific locations, so just province not enough.  
+Score: 0
+
+**idx_4**  
+- Response: ""quebec""  
+- Target: ""minganie,côte-nord,quebec""  
+Analysis: Province only; target gives two lower-level locations plus province. Province only not enough.  
+Score: 0
+
+**idx_5**  
+- Response: ""campeche""  
+- Target: ""calakmul,campeche""  
+Analysis: Province given; target also has ""calakmul"" (municipality or region). Province only insufficient.  
+Score: 0
+
+**idx_6**  
+- Response: ""puebla""  
+- Target: ""cuicatlán,tehuacán""  
+Analysis: Response gives ""puebla"" (a Mexican state); target lists two cities ""cuicatlán"" and ""tehuacán"" but no province/state explicitly.  
+The two cities cuicatlán and tehuacán are both in Puebla state. So response points to the province which encompasses both cities — acceptable per criteria since the main city or county is required but ""province only no"" — however, here the target lists only cities and no province.  
+The criteria states: ""for a specific location, main city/county required, only province is not enough."" Here, response: province only, target: two cities (both in Puebla)  
+Since multiple locations present, response must include both or main city or county — response gives just province, target cities. Not matching multiple addresses nor specific enough.  
+Score: 0
+
+**idx_7**  
+- Response: ""pennsylvania""  
+- Target: ""philadelphia,commonwealthofpennsylvania""  
+Analysis: Response gives the state; target gives city + state. Province only not enough.  
+Score: 0
+
+**idx_8**  
+- Response: ""illinois""  
+- Target: ""st.claircounty,illinois""  
+Analysis: Province given; county missing. Province only is insufficient.  
+Score: 0
+
+**idx_9**  
+- Response: ""puertorico""  
+- Target: ""sanjuan,puertorico""  
+Analysis: Response gives territory only, target gives city + territory. County/city required, so province only insufficient.  
+Score: 0
+
+**idx_10**  
+- Response: ""newmexico""  
+- Target: ""sanjuancounty,newmexico""  
+Analysis: Response gives state, target gives county + state. County missing in response → insufficient.  
+Score: 0
+
+**idx_11**  
+- Response: ""ohio""  
+- Target: ""rosscounty,ohio""  
+Analysis: Again, state only response, target county + state. County missing → insufficient.  
+Score: 0
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0
+}
+```","cuicatlán,tehuacán",puebla,1.0,key_match,1.0,"Let's analyze each item based on the criterion:
+
+Criterion:  
+- The semantics must be approximately the same or point to the same entity.  
+- No need for exact word-for-word match.  
+- Score is either 0 or 1.
+
+---
+
+### Step-by-step Analysis
+
+- **idx_0:**  
+  response = ""natural"", target = ""natural""  
+  Both are exactly the same entity.  
+  Score = 1
+
+- **idx_1:**  
+  response = ""mixed"", target = ""natural""  
+  Different entities, no semantic match.  
+  Score = 0
+
+- **idx_2:**  
+  response = ""natural"", target = ""natural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_3:**  
+  response = ""natural"", target = ""natural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_4:**  
+  response = ""natural"", target = ""natural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_5:**  
+  response = ""mixed"", target = ""mixed""  
+  Same meaning.  
+  Score = 1
+
+- **idx_6:**  
+  response = ""mixed"", target = ""mixed""  
+  Same meaning.  
+  Score = 1
+
+- **idx_7:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_8:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_9:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_10:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_11:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+---
+
+### Final scoring results in the required format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",mixed,mixed,1.0,"exact match, response: 2018, target: 2018",2018,2018
+,,independencehall,Independence Hall,0.0,"number not convertable, response: None, target: 2.0",2,NULL,1.0,"Let's analyze each pair step-by-step according to the grading criterion:  
+**Criterion:** It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for word-for-word correspondence.
+
+---
+
+### idx_0 to idx_4  
+- Response: ""canada""  
+- Target: ""canada""  
+- Exact match, same entity → Score: 1
+
+### idx_5 to idx_6  
+- Response: ""mexico""  
+- Target: ""mexico""  
+- Exact match, same entity → Score: 1
+
+### idx_7 to idx_11  
+- Response: ""unitedstates""  
+- Target: ""unitedstatesofamerica""  
+- Semantically same, both refer to the same country (United States of America)  
+- Criterion states approximate semantic equality or the same entity is sufficient → Score: 1
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",unitedstatesofamerica,unitedstates,0.0,"Let's evaluate each response against its target according to the criteria:
+
+Criteria Summary:
+- Semantics approximately the same or point to the same entity → correct.
+- For multiple addresses, all must correspond.
+- For a specific location, main city/county is required, only province is insufficient.
+
+---
+
+**idx_0**  
+- Response: ""alberta""  
+- Target: ""countyofnewell,alberta""  
+Analysis: The response only gives the province ""alberta,"" but the target includes a county ""countyofnewell"" within Alberta.  
+Criteria says province alone is not enough for a specific location, and county is required. Response misses ""countyofnewell.""  
+Score: 0
+
+**idx_1**  
+- Response: ""alberta,britishcolumbia""  
+- Target: ""albertaandbritishcolumbia""  
+Analysis: The response correctly lists both provinces Alberta and British Columbia. The target is combined but refers to the same two provinces.  
+Both names correspond, all multiple locations match.  
+Score: 1
+
+**idx_2**  
+- Response: ""newfoundlandandlabrador""  
+- Target: ""rockyharbour,newfoundlandandlabrador,canada""  
+Analysis: Response only gives province; target provides a city (rockyharbour) and province and country.  
+Main city is given in target but missing in response; province alone is insufficient per criteria.  
+Score: 0
+
+**idx_3**  
+- Response: ""novascotia""  
+- Target: ""cumberlandcounty,novascotia(easterncanada)""  
+Analysis: Province only given; county is missing. County is required for specific locations, so just province not enough.  
+Score: 0
+
+**idx_4**  
+- Response: ""quebec""  
+- Target: ""minganie,côte-nord,quebec""  
+Analysis: Province only; target gives two lower-level locations plus province. Province only not enough.  
+Score: 0
+
+**idx_5**  
+- Response: ""campeche""  
+- Target: ""calakmul,campeche""  
+Analysis: Province given; target also has ""calakmul"" (municipality or region). Province only insufficient.  
+Score: 0
+
+**idx_6**  
+- Response: ""puebla""  
+- Target: ""cuicatlán,tehuacán""  
+Analysis: Response gives ""puebla"" (a Mexican state); target lists two cities ""cuicatlán"" and ""tehuacán"" but no province/state explicitly.  
+The two cities cuicatlán and tehuacán are both in Puebla state. So response points to the province which encompasses both cities — acceptable per criteria since the main city or county is required but ""province only no"" — however, here the target lists only cities and no province.  
+The criteria states: ""for a specific location, main city/county required, only province is not enough."" Here, response: province only, target: two cities (both in Puebla)  
+Since multiple locations present, response must include both or main city or county — response gives just province, target cities. Not matching multiple addresses nor specific enough.  
+Score: 0
+
+**idx_7**  
+- Response: ""pennsylvania""  
+- Target: ""philadelphia,commonwealthofpennsylvania""  
+Analysis: Response gives the state; target gives city + state. Province only not enough.  
+Score: 0
+
+**idx_8**  
+- Response: ""illinois""  
+- Target: ""st.claircounty,illinois""  
+Analysis: Province given; county missing. Province only is insufficient.  
+Score: 0
+
+**idx_9**  
+- Response: ""puertorico""  
+- Target: ""sanjuan,puertorico""  
+Analysis: Response gives territory only, target gives city + territory. County/city required, so province only insufficient.  
+Score: 0
+
+**idx_10**  
+- Response: ""newmexico""  
+- Target: ""sanjuancounty,newmexico""  
+Analysis: Response gives state, target gives county + state. County missing in response → insufficient.  
+Score: 0
+
+**idx_11**  
+- Response: ""ohio""  
+- Target: ""rosscounty,ohio""  
+Analysis: Again, state only response, target county + state. County missing → insufficient.  
+Score: 0
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0
+}
+```","philadelphia,commonwealthofpennsylvania",pennsylvania,1.0,key_match,1.0,"Let's analyze each item based on the criterion:
+
+Criterion:  
+- The semantics must be approximately the same or point to the same entity.  
+- No need for exact word-for-word match.  
+- Score is either 0 or 1.
+
+---
+
+### Step-by-step Analysis
+
+- **idx_0:**  
+  response = ""natural"", target = ""natural""  
+  Both are exactly the same entity.  
+  Score = 1
+
+- **idx_1:**  
+  response = ""mixed"", target = ""natural""  
+  Different entities, no semantic match.  
+  Score = 0
+
+- **idx_2:**  
+  response = ""natural"", target = ""natural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_3:**  
+  response = ""natural"", target = ""natural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_4:**  
+  response = ""natural"", target = ""natural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_5:**  
+  response = ""mixed"", target = ""mixed""  
+  Same meaning.  
+  Score = 1
+
+- **idx_6:**  
+  response = ""mixed"", target = ""mixed""  
+  Same meaning.  
+  Score = 1
+
+- **idx_7:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_8:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_9:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_10:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_11:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+---
+
+### Final scoring results in the required format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",cultural,cultural,1.0,"exact match, response: 1979, target: 1979",1979,1979
+,,cahokiamoundsstatehistoricsite,Cahokia Mounds State Historic Site,0.0,"number not convertable, response: None, target: 541.0",541,NULL,1.0,"Let's analyze each pair step-by-step according to the grading criterion:  
+**Criterion:** It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for word-for-word correspondence.
+
+---
+
+### idx_0 to idx_4  
+- Response: ""canada""  
+- Target: ""canada""  
+- Exact match, same entity → Score: 1
+
+### idx_5 to idx_6  
+- Response: ""mexico""  
+- Target: ""mexico""  
+- Exact match, same entity → Score: 1
+
+### idx_7 to idx_11  
+- Response: ""unitedstates""  
+- Target: ""unitedstatesofamerica""  
+- Semantically same, both refer to the same country (United States of America)  
+- Criterion states approximate semantic equality or the same entity is sufficient → Score: 1
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",unitedstatesofamerica,unitedstates,0.0,"Let's evaluate each response against its target according to the criteria:
+
+Criteria Summary:
+- Semantics approximately the same or point to the same entity → correct.
+- For multiple addresses, all must correspond.
+- For a specific location, main city/county is required, only province is insufficient.
+
+---
+
+**idx_0**  
+- Response: ""alberta""  
+- Target: ""countyofnewell,alberta""  
+Analysis: The response only gives the province ""alberta,"" but the target includes a county ""countyofnewell"" within Alberta.  
+Criteria says province alone is not enough for a specific location, and county is required. Response misses ""countyofnewell.""  
+Score: 0
+
+**idx_1**  
+- Response: ""alberta,britishcolumbia""  
+- Target: ""albertaandbritishcolumbia""  
+Analysis: The response correctly lists both provinces Alberta and British Columbia. The target is combined but refers to the same two provinces.  
+Both names correspond, all multiple locations match.  
+Score: 1
+
+**idx_2**  
+- Response: ""newfoundlandandlabrador""  
+- Target: ""rockyharbour,newfoundlandandlabrador,canada""  
+Analysis: Response only gives province; target provides a city (rockyharbour) and province and country.  
+Main city is given in target but missing in response; province alone is insufficient per criteria.  
+Score: 0
+
+**idx_3**  
+- Response: ""novascotia""  
+- Target: ""cumberlandcounty,novascotia(easterncanada)""  
+Analysis: Province only given; county is missing. County is required for specific locations, so just province not enough.  
+Score: 0
+
+**idx_4**  
+- Response: ""quebec""  
+- Target: ""minganie,côte-nord,quebec""  
+Analysis: Province only; target gives two lower-level locations plus province. Province only not enough.  
+Score: 0
+
+**idx_5**  
+- Response: ""campeche""  
+- Target: ""calakmul,campeche""  
+Analysis: Province given; target also has ""calakmul"" (municipality or region). Province only insufficient.  
+Score: 0
+
+**idx_6**  
+- Response: ""puebla""  
+- Target: ""cuicatlán,tehuacán""  
+Analysis: Response gives ""puebla"" (a Mexican state); target lists two cities ""cuicatlán"" and ""tehuacán"" but no province/state explicitly.  
+The two cities cuicatlán and tehuacán are both in Puebla state. So response points to the province which encompasses both cities — acceptable per criteria since the main city or county is required but ""province only no"" — however, here the target lists only cities and no province.  
+The criteria states: ""for a specific location, main city/county required, only province is not enough."" Here, response: province only, target: two cities (both in Puebla)  
+Since multiple locations present, response must include both or main city or county — response gives just province, target cities. Not matching multiple addresses nor specific enough.  
+Score: 0
+
+**idx_7**  
+- Response: ""pennsylvania""  
+- Target: ""philadelphia,commonwealthofpennsylvania""  
+Analysis: Response gives the state; target gives city + state. Province only not enough.  
+Score: 0
+
+**idx_8**  
+- Response: ""illinois""  
+- Target: ""st.claircounty,illinois""  
+Analysis: Province given; county missing. Province only is insufficient.  
+Score: 0
+
+**idx_9**  
+- Response: ""puertorico""  
+- Target: ""sanjuan,puertorico""  
+Analysis: Response gives territory only, target gives city + territory. County/city required, so province only insufficient.  
+Score: 0
+
+**idx_10**  
+- Response: ""newmexico""  
+- Target: ""sanjuancounty,newmexico""  
+Analysis: Response gives state, target gives county + state. County missing in response → insufficient.  
+Score: 0
+
+**idx_11**  
+- Response: ""ohio""  
+- Target: ""rosscounty,ohio""  
+Analysis: Again, state only response, target county + state. County missing → insufficient.  
+Score: 0
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0
+}
+```","st.claircounty,illinois",illinois,1.0,key_match,1.0,"Let's analyze each item based on the criterion:
+
+Criterion:  
+- The semantics must be approximately the same or point to the same entity.  
+- No need for exact word-for-word match.  
+- Score is either 0 or 1.
+
+---
+
+### Step-by-step Analysis
+
+- **idx_0:**  
+  response = ""natural"", target = ""natural""  
+  Both are exactly the same entity.  
+  Score = 1
+
+- **idx_1:**  
+  response = ""mixed"", target = ""natural""  
+  Different entities, no semantic match.  
+  Score = 0
+
+- **idx_2:**  
+  response = ""natural"", target = ""natural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_3:**  
+  response = ""natural"", target = ""natural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_4:**  
+  response = ""natural"", target = ""natural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_5:**  
+  response = ""mixed"", target = ""mixed""  
+  Same meaning.  
+  Score = 1
+
+- **idx_6:**  
+  response = ""mixed"", target = ""mixed""  
+  Same meaning.  
+  Score = 1
+
+- **idx_7:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_8:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_9:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_10:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_11:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+---
+
+### Final scoring results in the required format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",cultural,cultural,1.0,"exact match, response: 1982, target: 1982",1982,1982
+,,lafortalezaandsanjuannationalhistoricsiteinpuertorico,La Fortaleza and San Juan,0.0,"number not convertable, response: None, target: 33.39",33.39,NULL,1.0,"Let's analyze each pair step-by-step according to the grading criterion:  
+**Criterion:** It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for word-for-word correspondence.
+
+---
+
+### idx_0 to idx_4  
+- Response: ""canada""  
+- Target: ""canada""  
+- Exact match, same entity → Score: 1
+
+### idx_5 to idx_6  
+- Response: ""mexico""  
+- Target: ""mexico""  
+- Exact match, same entity → Score: 1
+
+### idx_7 to idx_11  
+- Response: ""unitedstates""  
+- Target: ""unitedstatesofamerica""  
+- Semantically same, both refer to the same country (United States of America)  
+- Criterion states approximate semantic equality or the same entity is sufficient → Score: 1
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",unitedstatesofamerica,unitedstates,0.0,"Let's evaluate each response against its target according to the criteria:
+
+Criteria Summary:
+- Semantics approximately the same or point to the same entity → correct.
+- For multiple addresses, all must correspond.
+- For a specific location, main city/county is required, only province is insufficient.
+
+---
+
+**idx_0**  
+- Response: ""alberta""  
+- Target: ""countyofnewell,alberta""  
+Analysis: The response only gives the province ""alberta,"" but the target includes a county ""countyofnewell"" within Alberta.  
+Criteria says province alone is not enough for a specific location, and county is required. Response misses ""countyofnewell.""  
+Score: 0
+
+**idx_1**  
+- Response: ""alberta,britishcolumbia""  
+- Target: ""albertaandbritishcolumbia""  
+Analysis: The response correctly lists both provinces Alberta and British Columbia. The target is combined but refers to the same two provinces.  
+Both names correspond, all multiple locations match.  
+Score: 1
+
+**idx_2**  
+- Response: ""newfoundlandandlabrador""  
+- Target: ""rockyharbour,newfoundlandandlabrador,canada""  
+Analysis: Response only gives province; target provides a city (rockyharbour) and province and country.  
+Main city is given in target but missing in response; province alone is insufficient per criteria.  
+Score: 0
+
+**idx_3**  
+- Response: ""novascotia""  
+- Target: ""cumberlandcounty,novascotia(easterncanada)""  
+Analysis: Province only given; county is missing. County is required for specific locations, so just province not enough.  
+Score: 0
+
+**idx_4**  
+- Response: ""quebec""  
+- Target: ""minganie,côte-nord,quebec""  
+Analysis: Province only; target gives two lower-level locations plus province. Province only not enough.  
+Score: 0
+
+**idx_5**  
+- Response: ""campeche""  
+- Target: ""calakmul,campeche""  
+Analysis: Province given; target also has ""calakmul"" (municipality or region). Province only insufficient.  
+Score: 0
+
+**idx_6**  
+- Response: ""puebla""  
+- Target: ""cuicatlán,tehuacán""  
+Analysis: Response gives ""puebla"" (a Mexican state); target lists two cities ""cuicatlán"" and ""tehuacán"" but no province/state explicitly.  
+The two cities cuicatlán and tehuacán are both in Puebla state. So response points to the province which encompasses both cities — acceptable per criteria since the main city or county is required but ""province only no"" — however, here the target lists only cities and no province.  
+The criteria states: ""for a specific location, main city/county required, only province is not enough."" Here, response: province only, target: two cities (both in Puebla)  
+Since multiple locations present, response must include both or main city or county — response gives just province, target cities. Not matching multiple addresses nor specific enough.  
+Score: 0
+
+**idx_7**  
+- Response: ""pennsylvania""  
+- Target: ""philadelphia,commonwealthofpennsylvania""  
+Analysis: Response gives the state; target gives city + state. Province only not enough.  
+Score: 0
+
+**idx_8**  
+- Response: ""illinois""  
+- Target: ""st.claircounty,illinois""  
+Analysis: Province given; county missing. Province only is insufficient.  
+Score: 0
+
+**idx_9**  
+- Response: ""puertorico""  
+- Target: ""sanjuan,puertorico""  
+Analysis: Response gives territory only, target gives city + territory. County/city required, so province only insufficient.  
+Score: 0
+
+**idx_10**  
+- Response: ""newmexico""  
+- Target: ""sanjuancounty,newmexico""  
+Analysis: Response gives state, target gives county + state. County missing in response → insufficient.  
+Score: 0
+
+**idx_11**  
+- Response: ""ohio""  
+- Target: ""rosscounty,ohio""  
+Analysis: Again, state only response, target county + state. County missing → insufficient.  
+Score: 0
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0
+}
+```","sanjuan,puertorico",puertorico,1.0,key_match,1.0,"Let's analyze each item based on the criterion:
+
+Criterion:  
+- The semantics must be approximately the same or point to the same entity.  
+- No need for exact word-for-word match.  
+- Score is either 0 or 1.
+
+---
+
+### Step-by-step Analysis
+
+- **idx_0:**  
+  response = ""natural"", target = ""natural""  
+  Both are exactly the same entity.  
+  Score = 1
+
+- **idx_1:**  
+  response = ""mixed"", target = ""natural""  
+  Different entities, no semantic match.  
+  Score = 0
+
+- **idx_2:**  
+  response = ""natural"", target = ""natural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_3:**  
+  response = ""natural"", target = ""natural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_4:**  
+  response = ""natural"", target = ""natural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_5:**  
+  response = ""mixed"", target = ""mixed""  
+  Same meaning.  
+  Score = 1
+
+- **idx_6:**  
+  response = ""mixed"", target = ""mixed""  
+  Same meaning.  
+  Score = 1
+
+- **idx_7:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_8:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_9:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_10:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_11:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+---
+
+### Final scoring results in the required format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",cultural,cultural,0.0,"exact not match, response: nan, target: 1983",1983,nan
+,,chacoculture,Chaco Culture,0.0,"number not convertable, response: None, target: 14261.0",14261,NULL,1.0,"Let's analyze each pair step-by-step according to the grading criterion:  
+**Criterion:** It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for word-for-word correspondence.
+
+---
+
+### idx_0 to idx_4  
+- Response: ""canada""  
+- Target: ""canada""  
+- Exact match, same entity → Score: 1
+
+### idx_5 to idx_6  
+- Response: ""mexico""  
+- Target: ""mexico""  
+- Exact match, same entity → Score: 1
+
+### idx_7 to idx_11  
+- Response: ""unitedstates""  
+- Target: ""unitedstatesofamerica""  
+- Semantically same, both refer to the same country (United States of America)  
+- Criterion states approximate semantic equality or the same entity is sufficient → Score: 1
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",unitedstatesofamerica,unitedstates,0.0,"Let's evaluate each response against its target according to the criteria:
+
+Criteria Summary:
+- Semantics approximately the same or point to the same entity → correct.
+- For multiple addresses, all must correspond.
+- For a specific location, main city/county is required, only province is insufficient.
+
+---
+
+**idx_0**  
+- Response: ""alberta""  
+- Target: ""countyofnewell,alberta""  
+Analysis: The response only gives the province ""alberta,"" but the target includes a county ""countyofnewell"" within Alberta.  
+Criteria says province alone is not enough for a specific location, and county is required. Response misses ""countyofnewell.""  
+Score: 0
+
+**idx_1**  
+- Response: ""alberta,britishcolumbia""  
+- Target: ""albertaandbritishcolumbia""  
+Analysis: The response correctly lists both provinces Alberta and British Columbia. The target is combined but refers to the same two provinces.  
+Both names correspond, all multiple locations match.  
+Score: 1
+
+**idx_2**  
+- Response: ""newfoundlandandlabrador""  
+- Target: ""rockyharbour,newfoundlandandlabrador,canada""  
+Analysis: Response only gives province; target provides a city (rockyharbour) and province and country.  
+Main city is given in target but missing in response; province alone is insufficient per criteria.  
+Score: 0
+
+**idx_3**  
+- Response: ""novascotia""  
+- Target: ""cumberlandcounty,novascotia(easterncanada)""  
+Analysis: Province only given; county is missing. County is required for specific locations, so just province not enough.  
+Score: 0
+
+**idx_4**  
+- Response: ""quebec""  
+- Target: ""minganie,côte-nord,quebec""  
+Analysis: Province only; target gives two lower-level locations plus province. Province only not enough.  
+Score: 0
+
+**idx_5**  
+- Response: ""campeche""  
+- Target: ""calakmul,campeche""  
+Analysis: Province given; target also has ""calakmul"" (municipality or region). Province only insufficient.  
+Score: 0
+
+**idx_6**  
+- Response: ""puebla""  
+- Target: ""cuicatlán,tehuacán""  
+Analysis: Response gives ""puebla"" (a Mexican state); target lists two cities ""cuicatlán"" and ""tehuacán"" but no province/state explicitly.  
+The two cities cuicatlán and tehuacán are both in Puebla state. So response points to the province which encompasses both cities — acceptable per criteria since the main city or county is required but ""province only no"" — however, here the target lists only cities and no province.  
+The criteria states: ""for a specific location, main city/county required, only province is not enough."" Here, response: province only, target: two cities (both in Puebla)  
+Since multiple locations present, response must include both or main city or county — response gives just province, target cities. Not matching multiple addresses nor specific enough.  
+Score: 0
+
+**idx_7**  
+- Response: ""pennsylvania""  
+- Target: ""philadelphia,commonwealthofpennsylvania""  
+Analysis: Response gives the state; target gives city + state. Province only not enough.  
+Score: 0
+
+**idx_8**  
+- Response: ""illinois""  
+- Target: ""st.claircounty,illinois""  
+Analysis: Province given; county missing. Province only is insufficient.  
+Score: 0
+
+**idx_9**  
+- Response: ""puertorico""  
+- Target: ""sanjuan,puertorico""  
+Analysis: Response gives territory only, target gives city + territory. County/city required, so province only insufficient.  
+Score: 0
+
+**idx_10**  
+- Response: ""newmexico""  
+- Target: ""sanjuancounty,newmexico""  
+Analysis: Response gives state, target gives county + state. County missing in response → insufficient.  
+Score: 0
+
+**idx_11**  
+- Response: ""ohio""  
+- Target: ""rosscounty,ohio""  
+Analysis: Again, state only response, target county + state. County missing → insufficient.  
+Score: 0
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0
+}
+```","sanjuancounty,newmexico",newmexico,1.0,key_match,1.0,"Let's analyze each item based on the criterion:
+
+Criterion:  
+- The semantics must be approximately the same or point to the same entity.  
+- No need for exact word-for-word match.  
+- Score is either 0 or 1.
+
+---
+
+### Step-by-step Analysis
+
+- **idx_0:**  
+  response = ""natural"", target = ""natural""  
+  Both are exactly the same entity.  
+  Score = 1
+
+- **idx_1:**  
+  response = ""mixed"", target = ""natural""  
+  Different entities, no semantic match.  
+  Score = 0
+
+- **idx_2:**  
+  response = ""natural"", target = ""natural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_3:**  
+  response = ""natural"", target = ""natural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_4:**  
+  response = ""natural"", target = ""natural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_5:**  
+  response = ""mixed"", target = ""mixed""  
+  Same meaning.  
+  Score = 1
+
+- **idx_6:**  
+  response = ""mixed"", target = ""mixed""  
+  Same meaning.  
+  Score = 1
+
+- **idx_7:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_8:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_9:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_10:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_11:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+---
+
+### Final scoring results in the required format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",cultural,cultural,1.0,"exact match, response: 1987, target: 1987",1987,1987
+,,hopewellceremonialearthworks,Hopewell Ceremonial Earthworks,0.0,"number not convertable, response: None, target: 320.7",320.7,NULL,1.0,"Let's analyze each pair step-by-step according to the grading criterion:  
+**Criterion:** It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for word-for-word correspondence.
+
+---
+
+### idx_0 to idx_4  
+- Response: ""canada""  
+- Target: ""canada""  
+- Exact match, same entity → Score: 1
+
+### idx_5 to idx_6  
+- Response: ""mexico""  
+- Target: ""mexico""  
+- Exact match, same entity → Score: 1
+
+### idx_7 to idx_11  
+- Response: ""unitedstates""  
+- Target: ""unitedstatesofamerica""  
+- Semantically same, both refer to the same country (United States of America)  
+- Criterion states approximate semantic equality or the same entity is sufficient → Score: 1
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",unitedstatesofamerica,unitedstates,0.0,"Let's evaluate each response against its target according to the criteria:
+
+Criteria Summary:
+- Semantics approximately the same or point to the same entity → correct.
+- For multiple addresses, all must correspond.
+- For a specific location, main city/county is required, only province is insufficient.
+
+---
+
+**idx_0**  
+- Response: ""alberta""  
+- Target: ""countyofnewell,alberta""  
+Analysis: The response only gives the province ""alberta,"" but the target includes a county ""countyofnewell"" within Alberta.  
+Criteria says province alone is not enough for a specific location, and county is required. Response misses ""countyofnewell.""  
+Score: 0
+
+**idx_1**  
+- Response: ""alberta,britishcolumbia""  
+- Target: ""albertaandbritishcolumbia""  
+Analysis: The response correctly lists both provinces Alberta and British Columbia. The target is combined but refers to the same two provinces.  
+Both names correspond, all multiple locations match.  
+Score: 1
+
+**idx_2**  
+- Response: ""newfoundlandandlabrador""  
+- Target: ""rockyharbour,newfoundlandandlabrador,canada""  
+Analysis: Response only gives province; target provides a city (rockyharbour) and province and country.  
+Main city is given in target but missing in response; province alone is insufficient per criteria.  
+Score: 0
+
+**idx_3**  
+- Response: ""novascotia""  
+- Target: ""cumberlandcounty,novascotia(easterncanada)""  
+Analysis: Province only given; county is missing. County is required for specific locations, so just province not enough.  
+Score: 0
+
+**idx_4**  
+- Response: ""quebec""  
+- Target: ""minganie,côte-nord,quebec""  
+Analysis: Province only; target gives two lower-level locations plus province. Province only not enough.  
+Score: 0
+
+**idx_5**  
+- Response: ""campeche""  
+- Target: ""calakmul,campeche""  
+Analysis: Province given; target also has ""calakmul"" (municipality or region). Province only insufficient.  
+Score: 0
+
+**idx_6**  
+- Response: ""puebla""  
+- Target: ""cuicatlán,tehuacán""  
+Analysis: Response gives ""puebla"" (a Mexican state); target lists two cities ""cuicatlán"" and ""tehuacán"" but no province/state explicitly.  
+The two cities cuicatlán and tehuacán are both in Puebla state. So response points to the province which encompasses both cities — acceptable per criteria since the main city or county is required but ""province only no"" — however, here the target lists only cities and no province.  
+The criteria states: ""for a specific location, main city/county required, only province is not enough."" Here, response: province only, target: two cities (both in Puebla)  
+Since multiple locations present, response must include both or main city or county — response gives just province, target cities. Not matching multiple addresses nor specific enough.  
+Score: 0
+
+**idx_7**  
+- Response: ""pennsylvania""  
+- Target: ""philadelphia,commonwealthofpennsylvania""  
+Analysis: Response gives the state; target gives city + state. Province only not enough.  
+Score: 0
+
+**idx_8**  
+- Response: ""illinois""  
+- Target: ""st.claircounty,illinois""  
+Analysis: Province given; county missing. Province only is insufficient.  
+Score: 0
+
+**idx_9**  
+- Response: ""puertorico""  
+- Target: ""sanjuan,puertorico""  
+Analysis: Response gives territory only, target gives city + territory. County/city required, so province only insufficient.  
+Score: 0
+
+**idx_10**  
+- Response: ""newmexico""  
+- Target: ""sanjuancounty,newmexico""  
+Analysis: Response gives state, target gives county + state. County missing in response → insufficient.  
+Score: 0
+
+**idx_11**  
+- Response: ""ohio""  
+- Target: ""rosscounty,ohio""  
+Analysis: Again, state only response, target county + state. County missing → insufficient.  
+Score: 0
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0
+}
+```","rosscounty,ohio",ohio,1.0,key_match,1.0,"Let's analyze each item based on the criterion:
+
+Criterion:  
+- The semantics must be approximately the same or point to the same entity.  
+- No need for exact word-for-word match.  
+- Score is either 0 or 1.
+
+---
+
+### Step-by-step Analysis
+
+- **idx_0:**  
+  response = ""natural"", target = ""natural""  
+  Both are exactly the same entity.  
+  Score = 1
+
+- **idx_1:**  
+  response = ""mixed"", target = ""natural""  
+  Different entities, no semantic match.  
+  Score = 0
+
+- **idx_2:**  
+  response = ""natural"", target = ""natural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_3:**  
+  response = ""natural"", target = ""natural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_4:**  
+  response = ""natural"", target = ""natural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_5:**  
+  response = ""mixed"", target = ""mixed""  
+  Same meaning.  
+  Score = 1
+
+- **idx_6:**  
+  response = ""mixed"", target = ""mixed""  
+  Same meaning.  
+  Score = 1
+
+- **idx_7:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_8:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_9:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_10:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+- **idx_11:**  
+  response = ""cultural"", target = ""cultural""  
+  Same meaning.  
+  Score = 1
+
+---
+
+### Final scoring results in the required format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1
+}
+```",cultural,cultural,1.0,"exact match, response: 2023, target: 2023",2023,2023
+1.0,,agavelandscapeandancientindustrialfacilitiesoftequila,,,,35018.852,,,,mexico,,,,"vallesregion,jalisco",,,,,,cultural,,,,2006,
+1.0,,aqueductofpadretemblequehydraulicsystem,,,,6540,,,,mexico,,,,"betweenthestatesofmexicoandhidalgo,onthecentralmexicanplateau",,,,,,cultural,,,,2015,
+1.0,,archaeologicalmonumentszoneofxochicalco,,,,707.65,,,,mexico,,,,"miacatlán,morelos,mexico",,,,,,cultural,,,,1999,
+1.0,,"archaeologicalzoneofpaquimé,casasgrandes",,,,146.72,,,,mexico,,,,"casasgrandes,chihuahua,mexico",,,,,,cultural,,,,1998,
+1.0,,archipiélagoderevillagigedo,,,,636685.375,,,,mexico,,,,exclusiveeconomiczoneofmexico,,,,,,natural,,,,2016,
+1.0,,caminorealdetierraadentro,,,,3101.91,,,,mexico,,,,"betweenmexicocityandsanjuanpueblo(ohkayowingeh),newmexico(inthemodernu.s.)",,,,,,cultural,,,,2010,
+1.0,,carlsbadcavernsnationalpark,,,,18926,,,,unitedstatesofamerica,,,,"eddycounty,stateofnewmexico",,,,,,natural,,,,1995,
+1.0,,centraluniversitycitycampusoftheuniversidadnacionalautónomademéxico(unam),,,,176.5,,,,mexico,,,,"mexicocity,mexico",,,,,,cultural,,,,2007,
+1.0,,earliest16th-centurymonasteriesontheslopesofpopocatepetl,,,,24.33,,,,mexico,,,,"sanandréscalpan,huejotzingo,tochimilco(puebla),tlaxcala(tlaxcala),yecapixtla,tepoztlán(morelos)",,,,,,cultural,,,,1994,
+1.0,,elpinacateandgrandesiertodealtarbiospherereserve,,,,714566,,,,mexico,,,,"sonora,méxico",,,,,,natural,,,,2013,
+1.0,,"eltajin,pre-hispaniccity",,,,240,,,,mexico,,,,"veracruz,mexico",,,,,,cultural,,,,1992,
+1.0,,evergladesnationalpark,,,,567017,,,,unitedstatesofamerica,,,,"miamidadecounty,monroecounty,andcolliercounty",,,,,,natural,,,,1979,
+1.0,,franciscanmissionsinthesierragordaofquerétaro,,,,103.7,,,,mexico,,,,"sierragorda,querétaro,mexico",,,,,,cultural,,,,2003,
+1.0,,grandcanyonnationalpark,,,,493270,,,,unitedstatesofamerica,,,,coconinoandmohavecountiesinarizona,,,,,,natural,,,,1979,
+1.0,,greatsmokymountainsnationalpark,,,,209000,,,,unitedstatesofamerica,,,,"countiesofcocke,blount,andsevierinthestateoftennessee;andthecountiesofswainandhaywoodinthestateofnorthcarolina",,,,,,natural,,,,1983,
+1.0,,hawaiivolcanoesnationalpark,,,,87940,,,,unitedstatesofamerica,,,,"hawaiicounty,hawaii",,,,,,natural,,,,1987,
+1.0,,head-smashed-inbuffalojump,,,,3626,,,,canada,,,,"fortmacleod,alberta",,,,,,cultural,,,,1981,
+1.0,,historiccentreofmexicocityandxochimilco,,,,3010.86,,,,mexico,,,,mexicocity,,,,,,natural,,,,1987,
+1.0,,historiccentreofmorelia,,,,390,,,,mexico,,,,"morelia,michoacán",,,,,,cultural,,,,1991,
+1.0,,historiccentreofoaxacaandarchaeologicalsiteofmontealbán,,,,4375,,,,mexico,,,,"oaxaca,mexico",,,,,,cultural,,,,1987,
+1.0,,historiccentreofpuebla,,,,690,,,,mexico,,,,"puebla,centralméxico",,,,,,cultural,,,,1987,
+1.0,,historiccentreofzacatecas,,,,207.72,,,,mexico,,,,"zacatecas,mexico",,,,,,cultural,,,,1993,
+1.0,,historicdistrictofoldquébec,,,,135,,,,canada,,,,cityofquebec,,,,,,cultural,,,,1985,
+1.0,,historicfortifiedtownofcampeche,,,,181,,,,mexico,,,,"inthecityofsanfranciscodecampeche,inthestateofcampeche,mexico",,,,,,cultural,,,,1999,
+1.0,,historicmonumentszoneofquerétaro,,,,258.3,,,,mexico,,,,"santiagodequerétaro,querétaro,mexico",,,,,,cultural,,,,1996,
+1.0,,historicmonumentszoneoftlacotalpan,,,,75,,,,mexico,,,,"tlacotalpan,veracruz,mexico",,,,,,cultural,,,,1998,
+1.0,,historictownofguanajuatoandadjacentmines,,,,2167.5,,,,mexico,,,,"guanajuato,guanajuaton,mexico",,,,,,cultural,,,,1988,
+1.0,,"hospiciocabañas,guadalajara",,,,2.34,,,,mexico,,,,"guadalajara,jalisco,mexico",,,,,,cultural,,,,1997,
+1.0,,islandsandprotectedareasofthegulfofcalifornia,,,,688558,,,,mexico,,,,"spansmanycitieslikebajacalifornia,sonora,bajacaliforniasur",,,,,,natural,,,,2005,
+1.0,,kluane/wrangell-st.elias/glacierbay/tatshenshini-alsek,,,,9839121,,,,"canada,unitedstatesofamerica",,,,yukonterritory(canada)andalaska(usa)andprovinceofbritishcolumbia(canada),,,,,,natural,,,,1979,
+1.0,,landscapeofgrandpré,,,,1323.24,,,,canada,,,,"kingscounty,novascotia",,,,,,cultural,,,,2012,
+1.0,,luisbarragánhouseandstudio,,,,0.1161,,,,mexico,,,,"mexicocity,mexico",,,,,,cultural,,,,2004,
+1.0,,l’anseauxmeadowsnationalhistoricsite,,,,7991,,,,canada,,,,"newfoundland,newfoundlandandlabrador",,,,,,cultural,,,,1978,
+1.0,,mammothcavenationalpark,,,,21191,,,,unitedstatesofamerica,,,,"countiesofbarren,edmonson,andhartinthestateofkentucky",,,,,,natural,,,,1981,
+1.0,,mesaverdenationalpark,,,,21043,,,,unitedstatesofamerica,,,,"montezumacounty,colorado,",,,,,,cultural,,,,1978,
+1.0,,miguashanationalpark,,,,87.3,,,,canada,,,,"nouvelle,avignonregionalcountymunicipality,quebec,canada",,,,,,natural,,,,1999,
+1.0,,mistakenpoint,,,,146,,,,canada,,,,"newfoundlandandlabrador,canad",,,,,,natural,,,,2016,
+1.0,,monarchbutterflybiospherereserve,,,,13551.552,,,,mexico,,,,"michoacán,mexico",,,,,,natural,,,,2008,
+1.0,,monticelloandtheuniversityofvirginiaincharlottesville,,,,795.96,,,,unitedstatesofamerica,,,,"albemarlecounty,virginia",,,,,,cultural,,,,1987,
+1.0,,monumentalearthworksofpovertypoint,,,,163,,,,unitedstatesofamerica,,,,"westcarroll,stateoflouisiana",,,,,,cultural,,,,2014,
+1.0,,moravianchurchsettlements,,,,NULL,,,,denmark&germany&unitedkingdomofgreatbritainandnorthernireland&unitedstatesofamerica,,,,"bethlehem(pennsylvania,usa),christiansfeld(denmark),gracehill(northernireland/uk),andherrnhut(saxony/germany)",,,,,,cultural,,,,2015,
+1.0,,nahanninationalpark,,,,476560,,,,canada,,,,"northwestterritories,canada",,,,,,natural,,,,1978,
+1.0,,oldtownlunenburg,,,,33.85,,,,canada,,,,"lunenburgcounty,novascotia",,,,,,cultural,,,,1995,
+1.0,,olympicnationalpark,,,,369659.8,,,,unitedstatesofamerica,,,,"jefferson,clallam,mason,andgraysharborcounties,washington",,,,,,natural,,,,1981,
+1.0,,papahānaumokuākea,,,,36207499,,,,unitedstatesofamerica,,,,"honolulucounty,hawaiian",,,,,,mixed,,,,2010,
+1.0,,pimachiowinaki,,,,2904000,,,,canada,,,,manitobaandontario,,,,,,mixed,,,,2018,
+1.0,,pre-hispaniccityandnationalparkofpalenque,,,,1772,,,,mexico,,,,"palenque,chiapas,mexico",,,,,,cultural,,,,1987,
+1.0,,pre-hispaniccityofchichen-itza,,,,1000,,,,mexico,,,,"yucatán,mexico",,,,,,cultural,,,,1988,
+1.0,,pre-hispaniccityofteotihuacan,,,,250,,,,mexico,,,,"teotihuacán,stateofmexico,mexico",,,,,,cultural,,,,1987,
+1.0,,pre-hispanictownofuxmal,,,,2059.8,,,,mexico,,,,"yucatán,mexico",,,,,,cultural,,,,1996,
+1.0,,prehistoriccavesofyagulandmitlainthecentralvalleyofoaxaca,,,,1515.17,,,,mexico,,,,"tlacolulavalley,oaxaca,mexico",,,,,,cultural,,,,2010,
+1.0,,protectivetownofsanmiguelandthesanctuaryofjesúsnazarenodeatotonilco,,,,46.95,,,,mexico,,,,"guanajuato,mexico",,,,,,cultural,,,,2008,
+1.0,,redbaybasquewhalingstation,,,,312.973,,,,canada,,,,"newfoundlandandlabrador,canada",,,,,,cultural,,,,2013,
+1.0,,redwoodnationalandstateparks,,,,41571,,,,unitedstatesofamerica,,,,"humboldtcounty&delnortecounty,california",,,,,,natural,,,,1980,
+1.0,,rideaucanal,,,,21454.81,,,,canada,,,,provinceofontario,,,,,,cultural,,,,2007,
+1.0,,rockpaintingsofthesierradesanfrancisco,,,,182600,,,,mexico,,,,"sierradesanfrancisco,mulegémunicipality,bajacaliforniasur,mexico",,,,,,cultural,,,,1993,
+1.0,,sanantoniomissions,,,,300.8,,,,unitedstatesofamerica,,,,"bexarcounty,sanantonio",,,,,,cultural,,,,2015,
+1.0,,sganggwaay,,,,11032,,,,canada,,,,"queencharlotteislands(haidagwaii,northcoastofbritishcolumbia,canada)",,,,,,cultural,,,,1981,
+1.0,,sianka'an,,,,528000,,,,mexico,,,,"tulum,quintanaroo,mexico",,,,,,natural,,,,1987,
+1.0,,statueofliberty,,,,5.95,,,,unitedstatesofamerica,,,,"newyork,newyork",,,,,,cultural,,,,1984,
+1.0,,taospueblo,,,,19.01,,,,unitedstatesofamerica,,,,"taos,newmexico",,,,,,cultural,,,,1992,
+1.0,,the20th-centuryarchitectureoffranklloydwright,,,,25.723,,,,unitedstatesofamerica,,,,"multiplestates(e.g.,springgreen,wi;scottsdale,az)",,,,,,cultural,,,,2019,
+1.0,,tr’ondëk-klondike,,,,334.54,,,,canada,,,,"dawsoncity,canada",,,,,,cultural,,,,2023,
+1.0,,watertonglacierinternationalpeacepark,,,,457614,,,,"canada,unitedstatesofamerica",,,,"provinceofalberta,canada;stateofmontana,usa",,,,,,natural,,,,1995,
+1.0,,whalesanctuaryofelvizcaino,,,,369631,,,,mexico,,,,"bajacaliforniasur,mexico",,,,,,natural,,,,1993,
+1.0,,woodbuffalonationalpark,,,,4480000,,,,canada,,,,"albertaandnorthwestterritories,canada",,,,,,natural,,,,1983,
+1.0,,writing-on-stone/áísínai’pi,,,,1106,,,,canada,,,,"countyofwarnerno.5,alberta,canada",,,,,,cultural,,,,2019,
+1.0,,yellowstonenationalpark,,,,898349,,,,unitedstatesofamerica,,,,"parkcounty&tetoncounty,wyoming;gallatincounty&parkcounty,montana;fremontcounty,idaho;",,,,,,natural,,,,1978,
+1.0,,yosemitenationalpark,,,,307934,,,,unitedstatesofamerica,,,,"tuolumne,mariposa,monoandmaderacounties,california",,,,,,natural,,,,1984,

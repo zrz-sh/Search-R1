@@ -1,0 +1,4826 @@
+exist_flag_gt,exist_flag_response,年份,年份_before_map,冠名商_llm_judge,冠名商_llm_judge_eval_msg,冠名商_query,冠名商_response,导演_llm_judge,导演_llm_judge_eval_msg,导演_query,导演_response,年份_exact_match,年份_exact_match_eval_msg,电视端收视率_number_near,电视端收视率_number_near_eval_msg,电视端收视率_query,电视端收视率_response
+,,2001年,2001,0.0,"分析过程：
+
+根据给定的评分标准：
+- 答案和参考答案语义大致相同，或者指向的实体一致，即给1分；
+- 完全不匹配则给0分；
+- 响应的内容全部是“-”或者具体存在实体名称。
+
+逐项分析：
+
+- idx_0 到 idx_23：响应都是“-”，即空回答或无内容。
+  - 目标（target）多数为“太极集团”、“哈药六厂”、“美的集团”、“洋河梦之蓝”等具体实体名。
+  - 响应“-”与目标实体名明显不匹配，因此打0分。
+
+- idx_11: target也是“-”，响应是“-”。
+  - 响应和目标相同，视为匹配，给1分。
+
+- idx_24: 响应是“火山引擎”，目标是“洋河梦之蓝”。
+  - 两者实体不一致，给0分。
+
+总结：
+
+- idx_11 得1分
+- 其它均得0分
+
+最终评分结果如下：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",太极集团,-,0.0,"Let's analyze each idx's response against its target according to the criterion:
+
+Criterion: The response is correct if it has the same or roughly the same semantics or points to the same entity. Exact match or synonymous entity.
+
+---
+
+**idx_0**: Response = ""杨东升""; Target = ""王冼平、王宪生、金越""  
+- Response names a single person ""杨东升"", target lists three different people (none named ""杨东升""). Different entities.  
+- Score: 0
+
+**idx_1**: Response = ""蔡晓晴""; Target = ""陈雨露""  
+- Different names, different entities, no match.  
+- Score: 0
+
+**idx_2**: Response = ""金越""; Target = ""金越""  
+- Exact match.  
+- Score: 1
+
+**idx_3**: Response = ""高晓攀""; Target = ""袁德旺""  
+- Different entities.  
+- Score: 0
+
+**idx_4**: Response = ""袁德华""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_5**: Response = ""刘伟""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_6**: Response = ""吕逸涛""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_7**: Response = ""张艺谋""; Target = ""陈临春、张晓海""  
+- Different entities; none overlap.  
+- Score: 0
+
+**idx_8**: Response = ""孙滨""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_9**: Response = ""刘伟""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_10**: Response = ""刘伟""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_11**: Response = ""马东""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_12**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_13**: Response = ""赵本山""; Target = ""冯小刚""  
+- Different entities.  
+- Score: 0
+
+**idx_14**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_15**: Response = ""马东""; Target = ""吕逸涛""  
+- Different entities.  
+- Score: 0
+
+**idx_16**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_17**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_18**: Response = ""马东""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_19**: Response = ""赵亮""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_20**: Response = ""赵亮""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_21**: Response = ""赵亮""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_22**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_23**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_24**: Response = ""于蕾""; Target = ""于蕾""  
+- Exact match.  
+- Score: 1
+
+---
+
+### Final scores in JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 1
+}
+```",王冼平、王宪生、金越,杨东升,1.0,key_match,1.0,"number near in range 10.0%, response: 0.309, target: 0.332",33.20%,30.9%
+,,2002年,2002,0.0,"分析过程：
+
+根据给定的评分标准：
+- 答案和参考答案语义大致相同，或者指向的实体一致，即给1分；
+- 完全不匹配则给0分；
+- 响应的内容全部是“-”或者具体存在实体名称。
+
+逐项分析：
+
+- idx_0 到 idx_23：响应都是“-”，即空回答或无内容。
+  - 目标（target）多数为“太极集团”、“哈药六厂”、“美的集团”、“洋河梦之蓝”等具体实体名。
+  - 响应“-”与目标实体名明显不匹配，因此打0分。
+
+- idx_11: target也是“-”，响应是“-”。
+  - 响应和目标相同，视为匹配，给1分。
+
+- idx_24: 响应是“火山引擎”，目标是“洋河梦之蓝”。
+  - 两者实体不一致，给0分。
+
+总结：
+
+- idx_11 得1分
+- 其它均得0分
+
+最终评分结果如下：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",哈药六厂,-,0.0,"Let's analyze each idx's response against its target according to the criterion:
+
+Criterion: The response is correct if it has the same or roughly the same semantics or points to the same entity. Exact match or synonymous entity.
+
+---
+
+**idx_0**: Response = ""杨东升""; Target = ""王冼平、王宪生、金越""  
+- Response names a single person ""杨东升"", target lists three different people (none named ""杨东升""). Different entities.  
+- Score: 0
+
+**idx_1**: Response = ""蔡晓晴""; Target = ""陈雨露""  
+- Different names, different entities, no match.  
+- Score: 0
+
+**idx_2**: Response = ""金越""; Target = ""金越""  
+- Exact match.  
+- Score: 1
+
+**idx_3**: Response = ""高晓攀""; Target = ""袁德旺""  
+- Different entities.  
+- Score: 0
+
+**idx_4**: Response = ""袁德华""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_5**: Response = ""刘伟""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_6**: Response = ""吕逸涛""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_7**: Response = ""张艺谋""; Target = ""陈临春、张晓海""  
+- Different entities; none overlap.  
+- Score: 0
+
+**idx_8**: Response = ""孙滨""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_9**: Response = ""刘伟""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_10**: Response = ""刘伟""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_11**: Response = ""马东""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_12**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_13**: Response = ""赵本山""; Target = ""冯小刚""  
+- Different entities.  
+- Score: 0
+
+**idx_14**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_15**: Response = ""马东""; Target = ""吕逸涛""  
+- Different entities.  
+- Score: 0
+
+**idx_16**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_17**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_18**: Response = ""马东""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_19**: Response = ""赵亮""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_20**: Response = ""赵亮""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_21**: Response = ""赵亮""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_22**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_23**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_24**: Response = ""于蕾""; Target = ""于蕾""  
+- Exact match.  
+- Score: 1
+
+---
+
+### Final scores in JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 1
+}
+```",陈雨露,蔡晓晴,1.0,key_match,1.0,"number near in range 10.0%, response: 0.321, target: 0.35100000000000003",35.10%,32.1%
+,,2003年,2003,0.0,"分析过程：
+
+根据给定的评分标准：
+- 答案和参考答案语义大致相同，或者指向的实体一致，即给1分；
+- 完全不匹配则给0分；
+- 响应的内容全部是“-”或者具体存在实体名称。
+
+逐项分析：
+
+- idx_0 到 idx_23：响应都是“-”，即空回答或无内容。
+  - 目标（target）多数为“太极集团”、“哈药六厂”、“美的集团”、“洋河梦之蓝”等具体实体名。
+  - 响应“-”与目标实体名明显不匹配，因此打0分。
+
+- idx_11: target也是“-”，响应是“-”。
+  - 响应和目标相同，视为匹配，给1分。
+
+- idx_24: 响应是“火山引擎”，目标是“洋河梦之蓝”。
+  - 两者实体不一致，给0分。
+
+总结：
+
+- idx_11 得1分
+- 其它均得0分
+
+最终评分结果如下：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",美的集团,-,1.0,"Let's analyze each idx's response against its target according to the criterion:
+
+Criterion: The response is correct if it has the same or roughly the same semantics or points to the same entity. Exact match or synonymous entity.
+
+---
+
+**idx_0**: Response = ""杨东升""; Target = ""王冼平、王宪生、金越""  
+- Response names a single person ""杨东升"", target lists three different people (none named ""杨东升""). Different entities.  
+- Score: 0
+
+**idx_1**: Response = ""蔡晓晴""; Target = ""陈雨露""  
+- Different names, different entities, no match.  
+- Score: 0
+
+**idx_2**: Response = ""金越""; Target = ""金越""  
+- Exact match.  
+- Score: 1
+
+**idx_3**: Response = ""高晓攀""; Target = ""袁德旺""  
+- Different entities.  
+- Score: 0
+
+**idx_4**: Response = ""袁德华""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_5**: Response = ""刘伟""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_6**: Response = ""吕逸涛""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_7**: Response = ""张艺谋""; Target = ""陈临春、张晓海""  
+- Different entities; none overlap.  
+- Score: 0
+
+**idx_8**: Response = ""孙滨""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_9**: Response = ""刘伟""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_10**: Response = ""刘伟""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_11**: Response = ""马东""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_12**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_13**: Response = ""赵本山""; Target = ""冯小刚""  
+- Different entities.  
+- Score: 0
+
+**idx_14**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_15**: Response = ""马东""; Target = ""吕逸涛""  
+- Different entities.  
+- Score: 0
+
+**idx_16**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_17**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_18**: Response = ""马东""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_19**: Response = ""赵亮""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_20**: Response = ""赵亮""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_21**: Response = ""赵亮""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_22**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_23**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_24**: Response = ""于蕾""; Target = ""于蕾""  
+- Exact match.  
+- Score: 1
+
+---
+
+### Final scores in JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 1
+}
+```",金越,金越,1.0,key_match,0.0,"number not near, response: 0.32799999999999996, target: 0.386",38.60%,32.8%
+,,2004年,2004,0.0,"分析过程：
+
+根据给定的评分标准：
+- 答案和参考答案语义大致相同，或者指向的实体一致，即给1分；
+- 完全不匹配则给0分；
+- 响应的内容全部是“-”或者具体存在实体名称。
+
+逐项分析：
+
+- idx_0 到 idx_23：响应都是“-”，即空回答或无内容。
+  - 目标（target）多数为“太极集团”、“哈药六厂”、“美的集团”、“洋河梦之蓝”等具体实体名。
+  - 响应“-”与目标实体名明显不匹配，因此打0分。
+
+- idx_11: target也是“-”，响应是“-”。
+  - 响应和目标相同，视为匹配，给1分。
+
+- idx_24: 响应是“火山引擎”，目标是“洋河梦之蓝”。
+  - 两者实体不一致，给0分。
+
+总结：
+
+- idx_11 得1分
+- 其它均得0分
+
+最终评分结果如下：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",美的集团,-,0.0,"Let's analyze each idx's response against its target according to the criterion:
+
+Criterion: The response is correct if it has the same or roughly the same semantics or points to the same entity. Exact match or synonymous entity.
+
+---
+
+**idx_0**: Response = ""杨东升""; Target = ""王冼平、王宪生、金越""  
+- Response names a single person ""杨东升"", target lists three different people (none named ""杨东升""). Different entities.  
+- Score: 0
+
+**idx_1**: Response = ""蔡晓晴""; Target = ""陈雨露""  
+- Different names, different entities, no match.  
+- Score: 0
+
+**idx_2**: Response = ""金越""; Target = ""金越""  
+- Exact match.  
+- Score: 1
+
+**idx_3**: Response = ""高晓攀""; Target = ""袁德旺""  
+- Different entities.  
+- Score: 0
+
+**idx_4**: Response = ""袁德华""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_5**: Response = ""刘伟""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_6**: Response = ""吕逸涛""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_7**: Response = ""张艺谋""; Target = ""陈临春、张晓海""  
+- Different entities; none overlap.  
+- Score: 0
+
+**idx_8**: Response = ""孙滨""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_9**: Response = ""刘伟""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_10**: Response = ""刘伟""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_11**: Response = ""马东""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_12**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_13**: Response = ""赵本山""; Target = ""冯小刚""  
+- Different entities.  
+- Score: 0
+
+**idx_14**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_15**: Response = ""马东""; Target = ""吕逸涛""  
+- Different entities.  
+- Score: 0
+
+**idx_16**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_17**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_18**: Response = ""马东""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_19**: Response = ""赵亮""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_20**: Response = ""赵亮""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_21**: Response = ""赵亮""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_22**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_23**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_24**: Response = ""于蕾""; Target = ""于蕾""  
+- Exact match.  
+- Score: 1
+
+---
+
+### Final scores in JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 1
+}
+```",袁德旺,高晓攀,1.0,key_match,0.0,"number not near, response: 0.331, target: 0.41600000000000004",41.60%,33.1%
+,,2005年,2005,0.0,"分析过程：
+
+根据给定的评分标准：
+- 答案和参考答案语义大致相同，或者指向的实体一致，即给1分；
+- 完全不匹配则给0分；
+- 响应的内容全部是“-”或者具体存在实体名称。
+
+逐项分析：
+
+- idx_0 到 idx_23：响应都是“-”，即空回答或无内容。
+  - 目标（target）多数为“太极集团”、“哈药六厂”、“美的集团”、“洋河梦之蓝”等具体实体名。
+  - 响应“-”与目标实体名明显不匹配，因此打0分。
+
+- idx_11: target也是“-”，响应是“-”。
+  - 响应和目标相同，视为匹配，给1分。
+
+- idx_24: 响应是“火山引擎”，目标是“洋河梦之蓝”。
+  - 两者实体不一致，给0分。
+
+总结：
+
+- idx_11 得1分
+- 其它均得0分
+
+最终评分结果如下：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",美的集团,-,0.0,"Let's analyze each idx's response against its target according to the criterion:
+
+Criterion: The response is correct if it has the same or roughly the same semantics or points to the same entity. Exact match or synonymous entity.
+
+---
+
+**idx_0**: Response = ""杨东升""; Target = ""王冼平、王宪生、金越""  
+- Response names a single person ""杨东升"", target lists three different people (none named ""杨东升""). Different entities.  
+- Score: 0
+
+**idx_1**: Response = ""蔡晓晴""; Target = ""陈雨露""  
+- Different names, different entities, no match.  
+- Score: 0
+
+**idx_2**: Response = ""金越""; Target = ""金越""  
+- Exact match.  
+- Score: 1
+
+**idx_3**: Response = ""高晓攀""; Target = ""袁德旺""  
+- Different entities.  
+- Score: 0
+
+**idx_4**: Response = ""袁德华""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_5**: Response = ""刘伟""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_6**: Response = ""吕逸涛""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_7**: Response = ""张艺谋""; Target = ""陈临春、张晓海""  
+- Different entities; none overlap.  
+- Score: 0
+
+**idx_8**: Response = ""孙滨""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_9**: Response = ""刘伟""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_10**: Response = ""刘伟""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_11**: Response = ""马东""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_12**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_13**: Response = ""赵本山""; Target = ""冯小刚""  
+- Different entities.  
+- Score: 0
+
+**idx_14**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_15**: Response = ""马东""; Target = ""吕逸涛""  
+- Different entities.  
+- Score: 0
+
+**idx_16**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_17**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_18**: Response = ""马东""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_19**: Response = ""赵亮""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_20**: Response = ""赵亮""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_21**: Response = ""赵亮""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_22**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_23**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_24**: Response = ""于蕾""; Target = ""于蕾""  
+- Exact match.  
+- Score: 1
+
+---
+
+### Final scores in JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 1
+}
+```",郎昆,袁德华,1.0,key_match,1.0,"number near in range 10.0%, response: 0.376, target: 0.36700000000000005",36.70%,37.6%
+,,2006年,2006,0.0,"分析过程：
+
+根据给定的评分标准：
+- 答案和参考答案语义大致相同，或者指向的实体一致，即给1分；
+- 完全不匹配则给0分；
+- 响应的内容全部是“-”或者具体存在实体名称。
+
+逐项分析：
+
+- idx_0 到 idx_23：响应都是“-”，即空回答或无内容。
+  - 目标（target）多数为“太极集团”、“哈药六厂”、“美的集团”、“洋河梦之蓝”等具体实体名。
+  - 响应“-”与目标实体名明显不匹配，因此打0分。
+
+- idx_11: target也是“-”，响应是“-”。
+  - 响应和目标相同，视为匹配，给1分。
+
+- idx_24: 响应是“火山引擎”，目标是“洋河梦之蓝”。
+  - 两者实体不一致，给0分。
+
+总结：
+
+- idx_11 得1分
+- 其它均得0分
+
+最终评分结果如下：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",美的集团,-,0.0,"Let's analyze each idx's response against its target according to the criterion:
+
+Criterion: The response is correct if it has the same or roughly the same semantics or points to the same entity. Exact match or synonymous entity.
+
+---
+
+**idx_0**: Response = ""杨东升""; Target = ""王冼平、王宪生、金越""  
+- Response names a single person ""杨东升"", target lists three different people (none named ""杨东升""). Different entities.  
+- Score: 0
+
+**idx_1**: Response = ""蔡晓晴""; Target = ""陈雨露""  
+- Different names, different entities, no match.  
+- Score: 0
+
+**idx_2**: Response = ""金越""; Target = ""金越""  
+- Exact match.  
+- Score: 1
+
+**idx_3**: Response = ""高晓攀""; Target = ""袁德旺""  
+- Different entities.  
+- Score: 0
+
+**idx_4**: Response = ""袁德华""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_5**: Response = ""刘伟""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_6**: Response = ""吕逸涛""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_7**: Response = ""张艺谋""; Target = ""陈临春、张晓海""  
+- Different entities; none overlap.  
+- Score: 0
+
+**idx_8**: Response = ""孙滨""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_9**: Response = ""刘伟""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_10**: Response = ""刘伟""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_11**: Response = ""马东""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_12**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_13**: Response = ""赵本山""; Target = ""冯小刚""  
+- Different entities.  
+- Score: 0
+
+**idx_14**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_15**: Response = ""马东""; Target = ""吕逸涛""  
+- Different entities.  
+- Score: 0
+
+**idx_16**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_17**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_18**: Response = ""马东""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_19**: Response = ""赵亮""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_20**: Response = ""赵亮""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_21**: Response = ""赵亮""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_22**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_23**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_24**: Response = ""于蕾""; Target = ""于蕾""  
+- Exact match.  
+- Score: 1
+
+---
+
+### Final scores in JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 1
+}
+```",郎昆,刘伟,1.0,key_match,1.0,"number near in range 10.0%, response: 0.35200000000000004, target: 0.34700000000000003",34.70%,35.2%
+,,2007年,2007,0.0,"分析过程：
+
+根据给定的评分标准：
+- 答案和参考答案语义大致相同，或者指向的实体一致，即给1分；
+- 完全不匹配则给0分；
+- 响应的内容全部是“-”或者具体存在实体名称。
+
+逐项分析：
+
+- idx_0 到 idx_23：响应都是“-”，即空回答或无内容。
+  - 目标（target）多数为“太极集团”、“哈药六厂”、“美的集团”、“洋河梦之蓝”等具体实体名。
+  - 响应“-”与目标实体名明显不匹配，因此打0分。
+
+- idx_11: target也是“-”，响应是“-”。
+  - 响应和目标相同，视为匹配，给1分。
+
+- idx_24: 响应是“火山引擎”，目标是“洋河梦之蓝”。
+  - 两者实体不一致，给0分。
+
+总结：
+
+- idx_11 得1分
+- 其它均得0分
+
+最终评分结果如下：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",美的集团,-,0.0,"Let's analyze each idx's response against its target according to the criterion:
+
+Criterion: The response is correct if it has the same or roughly the same semantics or points to the same entity. Exact match or synonymous entity.
+
+---
+
+**idx_0**: Response = ""杨东升""; Target = ""王冼平、王宪生、金越""  
+- Response names a single person ""杨东升"", target lists three different people (none named ""杨东升""). Different entities.  
+- Score: 0
+
+**idx_1**: Response = ""蔡晓晴""; Target = ""陈雨露""  
+- Different names, different entities, no match.  
+- Score: 0
+
+**idx_2**: Response = ""金越""; Target = ""金越""  
+- Exact match.  
+- Score: 1
+
+**idx_3**: Response = ""高晓攀""; Target = ""袁德旺""  
+- Different entities.  
+- Score: 0
+
+**idx_4**: Response = ""袁德华""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_5**: Response = ""刘伟""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_6**: Response = ""吕逸涛""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_7**: Response = ""张艺谋""; Target = ""陈临春、张晓海""  
+- Different entities; none overlap.  
+- Score: 0
+
+**idx_8**: Response = ""孙滨""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_9**: Response = ""刘伟""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_10**: Response = ""刘伟""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_11**: Response = ""马东""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_12**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_13**: Response = ""赵本山""; Target = ""冯小刚""  
+- Different entities.  
+- Score: 0
+
+**idx_14**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_15**: Response = ""马东""; Target = ""吕逸涛""  
+- Different entities.  
+- Score: 0
+
+**idx_16**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_17**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_18**: Response = ""马东""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_19**: Response = ""赵亮""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_20**: Response = ""赵亮""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_21**: Response = ""赵亮""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_22**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_23**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_24**: Response = ""于蕾""; Target = ""于蕾""  
+- Exact match.  
+- Score: 1
+
+---
+
+### Final scores in JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 1
+}
+```",金越,吕逸涛,1.0,key_match,1.0,"number near in range 10.0%, response: 0.337, target: 0.314",31.40%,33.7%
+,,2008年,2008,0.0,"分析过程：
+
+根据给定的评分标准：
+- 答案和参考答案语义大致相同，或者指向的实体一致，即给1分；
+- 完全不匹配则给0分；
+- 响应的内容全部是“-”或者具体存在实体名称。
+
+逐项分析：
+
+- idx_0 到 idx_23：响应都是“-”，即空回答或无内容。
+  - 目标（target）多数为“太极集团”、“哈药六厂”、“美的集团”、“洋河梦之蓝”等具体实体名。
+  - 响应“-”与目标实体名明显不匹配，因此打0分。
+
+- idx_11: target也是“-”，响应是“-”。
+  - 响应和目标相同，视为匹配，给1分。
+
+- idx_24: 响应是“火山引擎”，目标是“洋河梦之蓝”。
+  - 两者实体不一致，给0分。
+
+总结：
+
+- idx_11 得1分
+- 其它均得0分
+
+最终评分结果如下：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",美的集团,-,0.0,"Let's analyze each idx's response against its target according to the criterion:
+
+Criterion: The response is correct if it has the same or roughly the same semantics or points to the same entity. Exact match or synonymous entity.
+
+---
+
+**idx_0**: Response = ""杨东升""; Target = ""王冼平、王宪生、金越""  
+- Response names a single person ""杨东升"", target lists three different people (none named ""杨东升""). Different entities.  
+- Score: 0
+
+**idx_1**: Response = ""蔡晓晴""; Target = ""陈雨露""  
+- Different names, different entities, no match.  
+- Score: 0
+
+**idx_2**: Response = ""金越""; Target = ""金越""  
+- Exact match.  
+- Score: 1
+
+**idx_3**: Response = ""高晓攀""; Target = ""袁德旺""  
+- Different entities.  
+- Score: 0
+
+**idx_4**: Response = ""袁德华""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_5**: Response = ""刘伟""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_6**: Response = ""吕逸涛""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_7**: Response = ""张艺谋""; Target = ""陈临春、张晓海""  
+- Different entities; none overlap.  
+- Score: 0
+
+**idx_8**: Response = ""孙滨""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_9**: Response = ""刘伟""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_10**: Response = ""刘伟""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_11**: Response = ""马东""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_12**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_13**: Response = ""赵本山""; Target = ""冯小刚""  
+- Different entities.  
+- Score: 0
+
+**idx_14**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_15**: Response = ""马东""; Target = ""吕逸涛""  
+- Different entities.  
+- Score: 0
+
+**idx_16**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_17**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_18**: Response = ""马东""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_19**: Response = ""赵亮""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_20**: Response = ""赵亮""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_21**: Response = ""赵亮""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_22**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_23**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_24**: Response = ""于蕾""; Target = ""于蕾""  
+- Exact match.  
+- Score: 1
+
+---
+
+### Final scores in JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 1
+}
+```",陈临春、张晓海,张艺谋,1.0,key_match,1.0,"number near in range 10.0%, response: 0.324, target: 0.32289999999999996",32.29%,32.4%
+,,2009年,2009,0.0,"分析过程：
+
+根据给定的评分标准：
+- 答案和参考答案语义大致相同，或者指向的实体一致，即给1分；
+- 完全不匹配则给0分；
+- 响应的内容全部是“-”或者具体存在实体名称。
+
+逐项分析：
+
+- idx_0 到 idx_23：响应都是“-”，即空回答或无内容。
+  - 目标（target）多数为“太极集团”、“哈药六厂”、“美的集团”、“洋河梦之蓝”等具体实体名。
+  - 响应“-”与目标实体名明显不匹配，因此打0分。
+
+- idx_11: target也是“-”，响应是“-”。
+  - 响应和目标相同，视为匹配，给1分。
+
+- idx_24: 响应是“火山引擎”，目标是“洋河梦之蓝”。
+  - 两者实体不一致，给0分。
+
+总结：
+
+- idx_11 得1分
+- 其它均得0分
+
+最终评分结果如下：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",美的集团,-,0.0,"Let's analyze each idx's response against its target according to the criterion:
+
+Criterion: The response is correct if it has the same or roughly the same semantics or points to the same entity. Exact match or synonymous entity.
+
+---
+
+**idx_0**: Response = ""杨东升""; Target = ""王冼平、王宪生、金越""  
+- Response names a single person ""杨东升"", target lists three different people (none named ""杨东升""). Different entities.  
+- Score: 0
+
+**idx_1**: Response = ""蔡晓晴""; Target = ""陈雨露""  
+- Different names, different entities, no match.  
+- Score: 0
+
+**idx_2**: Response = ""金越""; Target = ""金越""  
+- Exact match.  
+- Score: 1
+
+**idx_3**: Response = ""高晓攀""; Target = ""袁德旺""  
+- Different entities.  
+- Score: 0
+
+**idx_4**: Response = ""袁德华""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_5**: Response = ""刘伟""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_6**: Response = ""吕逸涛""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_7**: Response = ""张艺谋""; Target = ""陈临春、张晓海""  
+- Different entities; none overlap.  
+- Score: 0
+
+**idx_8**: Response = ""孙滨""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_9**: Response = ""刘伟""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_10**: Response = ""刘伟""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_11**: Response = ""马东""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_12**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_13**: Response = ""赵本山""; Target = ""冯小刚""  
+- Different entities.  
+- Score: 0
+
+**idx_14**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_15**: Response = ""马东""; Target = ""吕逸涛""  
+- Different entities.  
+- Score: 0
+
+**idx_16**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_17**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_18**: Response = ""马东""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_19**: Response = ""赵亮""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_20**: Response = ""赵亮""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_21**: Response = ""赵亮""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_22**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_23**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_24**: Response = ""于蕾""; Target = ""于蕾""  
+- Exact match.  
+- Score: 1
+
+---
+
+### Final scores in JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 1
+}
+```",郎昆,孙滨,1.0,key_match,0.0,"number not near, response: 0.311, target: 0.3482",34.82%,31.1%
+,,2010年,2010,0.0,"分析过程：
+
+根据给定的评分标准：
+- 答案和参考答案语义大致相同，或者指向的实体一致，即给1分；
+- 完全不匹配则给0分；
+- 响应的内容全部是“-”或者具体存在实体名称。
+
+逐项分析：
+
+- idx_0 到 idx_23：响应都是“-”，即空回答或无内容。
+  - 目标（target）多数为“太极集团”、“哈药六厂”、“美的集团”、“洋河梦之蓝”等具体实体名。
+  - 响应“-”与目标实体名明显不匹配，因此打0分。
+
+- idx_11: target也是“-”，响应是“-”。
+  - 响应和目标相同，视为匹配，给1分。
+
+- idx_24: 响应是“火山引擎”，目标是“洋河梦之蓝”。
+  - 两者实体不一致，给0分。
+
+总结：
+
+- idx_11 得1分
+- 其它均得0分
+
+最终评分结果如下：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",美的集团,-,0.0,"Let's analyze each idx's response against its target according to the criterion:
+
+Criterion: The response is correct if it has the same or roughly the same semantics or points to the same entity. Exact match or synonymous entity.
+
+---
+
+**idx_0**: Response = ""杨东升""; Target = ""王冼平、王宪生、金越""  
+- Response names a single person ""杨东升"", target lists three different people (none named ""杨东升""). Different entities.  
+- Score: 0
+
+**idx_1**: Response = ""蔡晓晴""; Target = ""陈雨露""  
+- Different names, different entities, no match.  
+- Score: 0
+
+**idx_2**: Response = ""金越""; Target = ""金越""  
+- Exact match.  
+- Score: 1
+
+**idx_3**: Response = ""高晓攀""; Target = ""袁德旺""  
+- Different entities.  
+- Score: 0
+
+**idx_4**: Response = ""袁德华""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_5**: Response = ""刘伟""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_6**: Response = ""吕逸涛""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_7**: Response = ""张艺谋""; Target = ""陈临春、张晓海""  
+- Different entities; none overlap.  
+- Score: 0
+
+**idx_8**: Response = ""孙滨""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_9**: Response = ""刘伟""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_10**: Response = ""刘伟""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_11**: Response = ""马东""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_12**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_13**: Response = ""赵本山""; Target = ""冯小刚""  
+- Different entities.  
+- Score: 0
+
+**idx_14**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_15**: Response = ""马东""; Target = ""吕逸涛""  
+- Different entities.  
+- Score: 0
+
+**idx_16**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_17**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_18**: Response = ""马东""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_19**: Response = ""赵亮""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_20**: Response = ""赵亮""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_21**: Response = ""赵亮""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_22**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_23**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_24**: Response = ""于蕾""; Target = ""于蕾""  
+- Exact match.  
+- Score: 1
+
+---
+
+### Final scores in JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 1
+}
+```",金越,刘伟,1.0,key_match,0.0,"number not near, response: 0.306, target: 0.3826",38.26%,30.6%
+,,2011年,2011,0.0,"分析过程：
+
+根据给定的评分标准：
+- 答案和参考答案语义大致相同，或者指向的实体一致，即给1分；
+- 完全不匹配则给0分；
+- 响应的内容全部是“-”或者具体存在实体名称。
+
+逐项分析：
+
+- idx_0 到 idx_23：响应都是“-”，即空回答或无内容。
+  - 目标（target）多数为“太极集团”、“哈药六厂”、“美的集团”、“洋河梦之蓝”等具体实体名。
+  - 响应“-”与目标实体名明显不匹配，因此打0分。
+
+- idx_11: target也是“-”，响应是“-”。
+  - 响应和目标相同，视为匹配，给1分。
+
+- idx_24: 响应是“火山引擎”，目标是“洋河梦之蓝”。
+  - 两者实体不一致，给0分。
+
+总结：
+
+- idx_11 得1分
+- 其它均得0分
+
+最终评分结果如下：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",美的集团,-,0.0,"Let's analyze each idx's response against its target according to the criterion:
+
+Criterion: The response is correct if it has the same or roughly the same semantics or points to the same entity. Exact match or synonymous entity.
+
+---
+
+**idx_0**: Response = ""杨东升""; Target = ""王冼平、王宪生、金越""  
+- Response names a single person ""杨东升"", target lists three different people (none named ""杨东升""). Different entities.  
+- Score: 0
+
+**idx_1**: Response = ""蔡晓晴""; Target = ""陈雨露""  
+- Different names, different entities, no match.  
+- Score: 0
+
+**idx_2**: Response = ""金越""; Target = ""金越""  
+- Exact match.  
+- Score: 1
+
+**idx_3**: Response = ""高晓攀""; Target = ""袁德旺""  
+- Different entities.  
+- Score: 0
+
+**idx_4**: Response = ""袁德华""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_5**: Response = ""刘伟""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_6**: Response = ""吕逸涛""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_7**: Response = ""张艺谋""; Target = ""陈临春、张晓海""  
+- Different entities; none overlap.  
+- Score: 0
+
+**idx_8**: Response = ""孙滨""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_9**: Response = ""刘伟""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_10**: Response = ""刘伟""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_11**: Response = ""马东""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_12**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_13**: Response = ""赵本山""; Target = ""冯小刚""  
+- Different entities.  
+- Score: 0
+
+**idx_14**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_15**: Response = ""马东""; Target = ""吕逸涛""  
+- Different entities.  
+- Score: 0
+
+**idx_16**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_17**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_18**: Response = ""马东""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_19**: Response = ""赵亮""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_20**: Response = ""赵亮""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_21**: Response = ""赵亮""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_22**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_23**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_24**: Response = ""于蕾""; Target = ""于蕾""  
+- Exact match.  
+- Score: 1
+
+---
+
+### Final scores in JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 1
+}
+```",陈临春,刘伟,1.0,key_match,1.0,"number near in range 10.0%, response: 0.298, target: 0.3104",31.04%,29.8%
+,,2012年,2012,1.0,"分析过程：
+
+根据给定的评分标准：
+- 答案和参考答案语义大致相同，或者指向的实体一致，即给1分；
+- 完全不匹配则给0分；
+- 响应的内容全部是“-”或者具体存在实体名称。
+
+逐项分析：
+
+- idx_0 到 idx_23：响应都是“-”，即空回答或无内容。
+  - 目标（target）多数为“太极集团”、“哈药六厂”、“美的集团”、“洋河梦之蓝”等具体实体名。
+  - 响应“-”与目标实体名明显不匹配，因此打0分。
+
+- idx_11: target也是“-”，响应是“-”。
+  - 响应和目标相同，视为匹配，给1分。
+
+- idx_24: 响应是“火山引擎”，目标是“洋河梦之蓝”。
+  - 两者实体不一致，给0分。
+
+总结：
+
+- idx_11 得1分
+- 其它均得0分
+
+最终评分结果如下：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",-,-,0.0,"Let's analyze each idx's response against its target according to the criterion:
+
+Criterion: The response is correct if it has the same or roughly the same semantics or points to the same entity. Exact match or synonymous entity.
+
+---
+
+**idx_0**: Response = ""杨东升""; Target = ""王冼平、王宪生、金越""  
+- Response names a single person ""杨东升"", target lists three different people (none named ""杨东升""). Different entities.  
+- Score: 0
+
+**idx_1**: Response = ""蔡晓晴""; Target = ""陈雨露""  
+- Different names, different entities, no match.  
+- Score: 0
+
+**idx_2**: Response = ""金越""; Target = ""金越""  
+- Exact match.  
+- Score: 1
+
+**idx_3**: Response = ""高晓攀""; Target = ""袁德旺""  
+- Different entities.  
+- Score: 0
+
+**idx_4**: Response = ""袁德华""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_5**: Response = ""刘伟""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_6**: Response = ""吕逸涛""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_7**: Response = ""张艺谋""; Target = ""陈临春、张晓海""  
+- Different entities; none overlap.  
+- Score: 0
+
+**idx_8**: Response = ""孙滨""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_9**: Response = ""刘伟""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_10**: Response = ""刘伟""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_11**: Response = ""马东""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_12**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_13**: Response = ""赵本山""; Target = ""冯小刚""  
+- Different entities.  
+- Score: 0
+
+**idx_14**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_15**: Response = ""马东""; Target = ""吕逸涛""  
+- Different entities.  
+- Score: 0
+
+**idx_16**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_17**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_18**: Response = ""马东""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_19**: Response = ""赵亮""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_20**: Response = ""赵亮""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_21**: Response = ""赵亮""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_22**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_23**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_24**: Response = ""于蕾""; Target = ""于蕾""  
+- Exact match.  
+- Score: 1
+
+---
+
+### Final scores in JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 1
+}
+```",哈文,马东,1.0,key_match,0.0,"number not near, response: 0.29100000000000004, target: 0.3275",32.75%,29.1%
+,,2013年,2013,0.0,"分析过程：
+
+根据给定的评分标准：
+- 答案和参考答案语义大致相同，或者指向的实体一致，即给1分；
+- 完全不匹配则给0分；
+- 响应的内容全部是“-”或者具体存在实体名称。
+
+逐项分析：
+
+- idx_0 到 idx_23：响应都是“-”，即空回答或无内容。
+  - 目标（target）多数为“太极集团”、“哈药六厂”、“美的集团”、“洋河梦之蓝”等具体实体名。
+  - 响应“-”与目标实体名明显不匹配，因此打0分。
+
+- idx_11: target也是“-”，响应是“-”。
+  - 响应和目标相同，视为匹配，给1分。
+
+- idx_24: 响应是“火山引擎”，目标是“洋河梦之蓝”。
+  - 两者实体不一致，给0分。
+
+总结：
+
+- idx_11 得1分
+- 其它均得0分
+
+最终评分结果如下：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",美的集团,-,0.0,"Let's analyze each idx's response against its target according to the criterion:
+
+Criterion: The response is correct if it has the same or roughly the same semantics or points to the same entity. Exact match or synonymous entity.
+
+---
+
+**idx_0**: Response = ""杨东升""; Target = ""王冼平、王宪生、金越""  
+- Response names a single person ""杨东升"", target lists three different people (none named ""杨东升""). Different entities.  
+- Score: 0
+
+**idx_1**: Response = ""蔡晓晴""; Target = ""陈雨露""  
+- Different names, different entities, no match.  
+- Score: 0
+
+**idx_2**: Response = ""金越""; Target = ""金越""  
+- Exact match.  
+- Score: 1
+
+**idx_3**: Response = ""高晓攀""; Target = ""袁德旺""  
+- Different entities.  
+- Score: 0
+
+**idx_4**: Response = ""袁德华""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_5**: Response = ""刘伟""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_6**: Response = ""吕逸涛""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_7**: Response = ""张艺谋""; Target = ""陈临春、张晓海""  
+- Different entities; none overlap.  
+- Score: 0
+
+**idx_8**: Response = ""孙滨""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_9**: Response = ""刘伟""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_10**: Response = ""刘伟""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_11**: Response = ""马东""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_12**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_13**: Response = ""赵本山""; Target = ""冯小刚""  
+- Different entities.  
+- Score: 0
+
+**idx_14**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_15**: Response = ""马东""; Target = ""吕逸涛""  
+- Different entities.  
+- Score: 0
+
+**idx_16**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_17**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_18**: Response = ""马东""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_19**: Response = ""赵亮""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_20**: Response = ""赵亮""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_21**: Response = ""赵亮""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_22**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_23**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_24**: Response = ""于蕾""; Target = ""于蕾""  
+- Exact match.  
+- Score: 1
+
+---
+
+### Final scores in JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 1
+}
+```",哈文,刘伟,1.0,key_match,1.0,"number near in range 10.0%, response: 0.284, target: 0.31170000000000003",31.17%,28.4%
+,,2014年,2014,0.0,"分析过程：
+
+根据给定的评分标准：
+- 答案和参考答案语义大致相同，或者指向的实体一致，即给1分；
+- 完全不匹配则给0分；
+- 响应的内容全部是“-”或者具体存在实体名称。
+
+逐项分析：
+
+- idx_0 到 idx_23：响应都是“-”，即空回答或无内容。
+  - 目标（target）多数为“太极集团”、“哈药六厂”、“美的集团”、“洋河梦之蓝”等具体实体名。
+  - 响应“-”与目标实体名明显不匹配，因此打0分。
+
+- idx_11: target也是“-”，响应是“-”。
+  - 响应和目标相同，视为匹配，给1分。
+
+- idx_24: 响应是“火山引擎”，目标是“洋河梦之蓝”。
+  - 两者实体不一致，给0分。
+
+总结：
+
+- idx_11 得1分
+- 其它均得0分
+
+最终评分结果如下：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",美的集团,-,0.0,"Let's analyze each idx's response against its target according to the criterion:
+
+Criterion: The response is correct if it has the same or roughly the same semantics or points to the same entity. Exact match or synonymous entity.
+
+---
+
+**idx_0**: Response = ""杨东升""; Target = ""王冼平、王宪生、金越""  
+- Response names a single person ""杨东升"", target lists three different people (none named ""杨东升""). Different entities.  
+- Score: 0
+
+**idx_1**: Response = ""蔡晓晴""; Target = ""陈雨露""  
+- Different names, different entities, no match.  
+- Score: 0
+
+**idx_2**: Response = ""金越""; Target = ""金越""  
+- Exact match.  
+- Score: 1
+
+**idx_3**: Response = ""高晓攀""; Target = ""袁德旺""  
+- Different entities.  
+- Score: 0
+
+**idx_4**: Response = ""袁德华""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_5**: Response = ""刘伟""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_6**: Response = ""吕逸涛""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_7**: Response = ""张艺谋""; Target = ""陈临春、张晓海""  
+- Different entities; none overlap.  
+- Score: 0
+
+**idx_8**: Response = ""孙滨""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_9**: Response = ""刘伟""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_10**: Response = ""刘伟""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_11**: Response = ""马东""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_12**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_13**: Response = ""赵本山""; Target = ""冯小刚""  
+- Different entities.  
+- Score: 0
+
+**idx_14**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_15**: Response = ""马东""; Target = ""吕逸涛""  
+- Different entities.  
+- Score: 0
+
+**idx_16**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_17**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_18**: Response = ""马东""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_19**: Response = ""赵亮""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_20**: Response = ""赵亮""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_21**: Response = ""赵亮""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_22**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_23**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_24**: Response = ""于蕾""; Target = ""于蕾""  
+- Exact match.  
+- Score: 1
+
+---
+
+### Final scores in JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 1
+}
+```",冯小刚,赵本山,1.0,key_match,0.0,"number not near, response: 0.27699999999999997, target: 0.3098",30.98%,27.7%
+,,2015年,2015,0.0,"分析过程：
+
+根据给定的评分标准：
+- 答案和参考答案语义大致相同，或者指向的实体一致，即给1分；
+- 完全不匹配则给0分；
+- 响应的内容全部是“-”或者具体存在实体名称。
+
+逐项分析：
+
+- idx_0 到 idx_23：响应都是“-”，即空回答或无内容。
+  - 目标（target）多数为“太极集团”、“哈药六厂”、“美的集团”、“洋河梦之蓝”等具体实体名。
+  - 响应“-”与目标实体名明显不匹配，因此打0分。
+
+- idx_11: target也是“-”，响应是“-”。
+  - 响应和目标相同，视为匹配，给1分。
+
+- idx_24: 响应是“火山引擎”，目标是“洋河梦之蓝”。
+  - 两者实体不一致，给0分。
+
+总结：
+
+- idx_11 得1分
+- 其它均得0分
+
+最终评分结果如下：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",美的集团,-,0.0,"Let's analyze each idx's response against its target according to the criterion:
+
+Criterion: The response is correct if it has the same or roughly the same semantics or points to the same entity. Exact match or synonymous entity.
+
+---
+
+**idx_0**: Response = ""杨东升""; Target = ""王冼平、王宪生、金越""  
+- Response names a single person ""杨东升"", target lists three different people (none named ""杨东升""). Different entities.  
+- Score: 0
+
+**idx_1**: Response = ""蔡晓晴""; Target = ""陈雨露""  
+- Different names, different entities, no match.  
+- Score: 0
+
+**idx_2**: Response = ""金越""; Target = ""金越""  
+- Exact match.  
+- Score: 1
+
+**idx_3**: Response = ""高晓攀""; Target = ""袁德旺""  
+- Different entities.  
+- Score: 0
+
+**idx_4**: Response = ""袁德华""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_5**: Response = ""刘伟""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_6**: Response = ""吕逸涛""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_7**: Response = ""张艺谋""; Target = ""陈临春、张晓海""  
+- Different entities; none overlap.  
+- Score: 0
+
+**idx_8**: Response = ""孙滨""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_9**: Response = ""刘伟""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_10**: Response = ""刘伟""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_11**: Response = ""马东""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_12**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_13**: Response = ""赵本山""; Target = ""冯小刚""  
+- Different entities.  
+- Score: 0
+
+**idx_14**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_15**: Response = ""马东""; Target = ""吕逸涛""  
+- Different entities.  
+- Score: 0
+
+**idx_16**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_17**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_18**: Response = ""马东""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_19**: Response = ""赵亮""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_20**: Response = ""赵亮""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_21**: Response = ""赵亮""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_22**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_23**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_24**: Response = ""于蕾""; Target = ""于蕾""  
+- Exact match.  
+- Score: 1
+
+---
+
+### Final scores in JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 1
+}
+```",哈文,刘伟,1.0,key_match,1.0,"number near in range 10.0%, response: 0.275, target: 0.29600000000000004",29.60%,27.5%
+,,2016年,2016,0.0,"分析过程：
+
+根据给定的评分标准：
+- 答案和参考答案语义大致相同，或者指向的实体一致，即给1分；
+- 完全不匹配则给0分；
+- 响应的内容全部是“-”或者具体存在实体名称。
+
+逐项分析：
+
+- idx_0 到 idx_23：响应都是“-”，即空回答或无内容。
+  - 目标（target）多数为“太极集团”、“哈药六厂”、“美的集团”、“洋河梦之蓝”等具体实体名。
+  - 响应“-”与目标实体名明显不匹配，因此打0分。
+
+- idx_11: target也是“-”，响应是“-”。
+  - 响应和目标相同，视为匹配，给1分。
+
+- idx_24: 响应是“火山引擎”，目标是“洋河梦之蓝”。
+  - 两者实体不一致，给0分。
+
+总结：
+
+- idx_11 得1分
+- 其它均得0分
+
+最终评分结果如下：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",美的集团,-,0.0,"Let's analyze each idx's response against its target according to the criterion:
+
+Criterion: The response is correct if it has the same or roughly the same semantics or points to the same entity. Exact match or synonymous entity.
+
+---
+
+**idx_0**: Response = ""杨东升""; Target = ""王冼平、王宪生、金越""  
+- Response names a single person ""杨东升"", target lists three different people (none named ""杨东升""). Different entities.  
+- Score: 0
+
+**idx_1**: Response = ""蔡晓晴""; Target = ""陈雨露""  
+- Different names, different entities, no match.  
+- Score: 0
+
+**idx_2**: Response = ""金越""; Target = ""金越""  
+- Exact match.  
+- Score: 1
+
+**idx_3**: Response = ""高晓攀""; Target = ""袁德旺""  
+- Different entities.  
+- Score: 0
+
+**idx_4**: Response = ""袁德华""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_5**: Response = ""刘伟""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_6**: Response = ""吕逸涛""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_7**: Response = ""张艺谋""; Target = ""陈临春、张晓海""  
+- Different entities; none overlap.  
+- Score: 0
+
+**idx_8**: Response = ""孙滨""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_9**: Response = ""刘伟""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_10**: Response = ""刘伟""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_11**: Response = ""马东""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_12**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_13**: Response = ""赵本山""; Target = ""冯小刚""  
+- Different entities.  
+- Score: 0
+
+**idx_14**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_15**: Response = ""马东""; Target = ""吕逸涛""  
+- Different entities.  
+- Score: 0
+
+**idx_16**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_17**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_18**: Response = ""马东""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_19**: Response = ""赵亮""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_20**: Response = ""赵亮""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_21**: Response = ""赵亮""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_22**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_23**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_24**: Response = ""于蕾""; Target = ""于蕾""  
+- Exact match.  
+- Score: 1
+
+---
+
+### Final scores in JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 1
+}
+```",吕逸涛,马东,1.0,key_match,0.0,"number not near, response: 0.273, target: 0.3098",30.98%,27.3%
+,,2017年,2017,0.0,"分析过程：
+
+根据给定的评分标准：
+- 答案和参考答案语义大致相同，或者指向的实体一致，即给1分；
+- 完全不匹配则给0分；
+- 响应的内容全部是“-”或者具体存在实体名称。
+
+逐项分析：
+
+- idx_0 到 idx_23：响应都是“-”，即空回答或无内容。
+  - 目标（target）多数为“太极集团”、“哈药六厂”、“美的集团”、“洋河梦之蓝”等具体实体名。
+  - 响应“-”与目标实体名明显不匹配，因此打0分。
+
+- idx_11: target也是“-”，响应是“-”。
+  - 响应和目标相同，视为匹配，给1分。
+
+- idx_24: 响应是“火山引擎”，目标是“洋河梦之蓝”。
+  - 两者实体不一致，给0分。
+
+总结：
+
+- idx_11 得1分
+- 其它均得0分
+
+最终评分结果如下：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",美的集团,-,0.0,"Let's analyze each idx's response against its target according to the criterion:
+
+Criterion: The response is correct if it has the same or roughly the same semantics or points to the same entity. Exact match or synonymous entity.
+
+---
+
+**idx_0**: Response = ""杨东升""; Target = ""王冼平、王宪生、金越""  
+- Response names a single person ""杨东升"", target lists three different people (none named ""杨东升""). Different entities.  
+- Score: 0
+
+**idx_1**: Response = ""蔡晓晴""; Target = ""陈雨露""  
+- Different names, different entities, no match.  
+- Score: 0
+
+**idx_2**: Response = ""金越""; Target = ""金越""  
+- Exact match.  
+- Score: 1
+
+**idx_3**: Response = ""高晓攀""; Target = ""袁德旺""  
+- Different entities.  
+- Score: 0
+
+**idx_4**: Response = ""袁德华""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_5**: Response = ""刘伟""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_6**: Response = ""吕逸涛""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_7**: Response = ""张艺谋""; Target = ""陈临春、张晓海""  
+- Different entities; none overlap.  
+- Score: 0
+
+**idx_8**: Response = ""孙滨""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_9**: Response = ""刘伟""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_10**: Response = ""刘伟""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_11**: Response = ""马东""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_12**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_13**: Response = ""赵本山""; Target = ""冯小刚""  
+- Different entities.  
+- Score: 0
+
+**idx_14**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_15**: Response = ""马东""; Target = ""吕逸涛""  
+- Different entities.  
+- Score: 0
+
+**idx_16**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_17**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_18**: Response = ""马东""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_19**: Response = ""赵亮""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_20**: Response = ""赵亮""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_21**: Response = ""赵亮""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_22**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_23**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_24**: Response = ""于蕾""; Target = ""于蕾""  
+- Exact match.  
+- Score: 1
+
+---
+
+### Final scores in JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 1
+}
+```",杨东升,马东,1.0,key_match,0.0,"number not near, response: 0.272, target: 0.3146",31.46%,27.2%
+,,2018年,2018,0.0,"分析过程：
+
+根据给定的评分标准：
+- 答案和参考答案语义大致相同，或者指向的实体一致，即给1分；
+- 完全不匹配则给0分；
+- 响应的内容全部是“-”或者具体存在实体名称。
+
+逐项分析：
+
+- idx_0 到 idx_23：响应都是“-”，即空回答或无内容。
+  - 目标（target）多数为“太极集团”、“哈药六厂”、“美的集团”、“洋河梦之蓝”等具体实体名。
+  - 响应“-”与目标实体名明显不匹配，因此打0分。
+
+- idx_11: target也是“-”，响应是“-”。
+  - 响应和目标相同，视为匹配，给1分。
+
+- idx_24: 响应是“火山引擎”，目标是“洋河梦之蓝”。
+  - 两者实体不一致，给0分。
+
+总结：
+
+- idx_11 得1分
+- 其它均得0分
+
+最终评分结果如下：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",美的集团,-,0.0,"Let's analyze each idx's response against its target according to the criterion:
+
+Criterion: The response is correct if it has the same or roughly the same semantics or points to the same entity. Exact match or synonymous entity.
+
+---
+
+**idx_0**: Response = ""杨东升""; Target = ""王冼平、王宪生、金越""  
+- Response names a single person ""杨东升"", target lists three different people (none named ""杨东升""). Different entities.  
+- Score: 0
+
+**idx_1**: Response = ""蔡晓晴""; Target = ""陈雨露""  
+- Different names, different entities, no match.  
+- Score: 0
+
+**idx_2**: Response = ""金越""; Target = ""金越""  
+- Exact match.  
+- Score: 1
+
+**idx_3**: Response = ""高晓攀""; Target = ""袁德旺""  
+- Different entities.  
+- Score: 0
+
+**idx_4**: Response = ""袁德华""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_5**: Response = ""刘伟""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_6**: Response = ""吕逸涛""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_7**: Response = ""张艺谋""; Target = ""陈临春、张晓海""  
+- Different entities; none overlap.  
+- Score: 0
+
+**idx_8**: Response = ""孙滨""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_9**: Response = ""刘伟""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_10**: Response = ""刘伟""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_11**: Response = ""马东""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_12**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_13**: Response = ""赵本山""; Target = ""冯小刚""  
+- Different entities.  
+- Score: 0
+
+**idx_14**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_15**: Response = ""马东""; Target = ""吕逸涛""  
+- Different entities.  
+- Score: 0
+
+**idx_16**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_17**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_18**: Response = ""马东""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_19**: Response = ""赵亮""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_20**: Response = ""赵亮""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_21**: Response = ""赵亮""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_22**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_23**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_24**: Response = ""于蕾""; Target = ""于蕾""  
+- Exact match.  
+- Score: 1
+
+---
+
+### Final scores in JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 1
+}
+```",杨东升,马东,1.0,key_match,0.0,"number not near, response: 0.271, target: 0.325",32.50%,27.1%
+,,2019年,2019,0.0,"分析过程：
+
+根据给定的评分标准：
+- 答案和参考答案语义大致相同，或者指向的实体一致，即给1分；
+- 完全不匹配则给0分；
+- 响应的内容全部是“-”或者具体存在实体名称。
+
+逐项分析：
+
+- idx_0 到 idx_23：响应都是“-”，即空回答或无内容。
+  - 目标（target）多数为“太极集团”、“哈药六厂”、“美的集团”、“洋河梦之蓝”等具体实体名。
+  - 响应“-”与目标实体名明显不匹配，因此打0分。
+
+- idx_11: target也是“-”，响应是“-”。
+  - 响应和目标相同，视为匹配，给1分。
+
+- idx_24: 响应是“火山引擎”，目标是“洋河梦之蓝”。
+  - 两者实体不一致，给0分。
+
+总结：
+
+- idx_11 得1分
+- 其它均得0分
+
+最终评分结果如下：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",美的集团,-,0.0,"Let's analyze each idx's response against its target according to the criterion:
+
+Criterion: The response is correct if it has the same or roughly the same semantics or points to the same entity. Exact match or synonymous entity.
+
+---
+
+**idx_0**: Response = ""杨东升""; Target = ""王冼平、王宪生、金越""  
+- Response names a single person ""杨东升"", target lists three different people (none named ""杨东升""). Different entities.  
+- Score: 0
+
+**idx_1**: Response = ""蔡晓晴""; Target = ""陈雨露""  
+- Different names, different entities, no match.  
+- Score: 0
+
+**idx_2**: Response = ""金越""; Target = ""金越""  
+- Exact match.  
+- Score: 1
+
+**idx_3**: Response = ""高晓攀""; Target = ""袁德旺""  
+- Different entities.  
+- Score: 0
+
+**idx_4**: Response = ""袁德华""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_5**: Response = ""刘伟""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_6**: Response = ""吕逸涛""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_7**: Response = ""张艺谋""; Target = ""陈临春、张晓海""  
+- Different entities; none overlap.  
+- Score: 0
+
+**idx_8**: Response = ""孙滨""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_9**: Response = ""刘伟""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_10**: Response = ""刘伟""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_11**: Response = ""马东""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_12**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_13**: Response = ""赵本山""; Target = ""冯小刚""  
+- Different entities.  
+- Score: 0
+
+**idx_14**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_15**: Response = ""马东""; Target = ""吕逸涛""  
+- Different entities.  
+- Score: 0
+
+**idx_16**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_17**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_18**: Response = ""马东""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_19**: Response = ""赵亮""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_20**: Response = ""赵亮""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_21**: Response = ""赵亮""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_22**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_23**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_24**: Response = ""于蕾""; Target = ""于蕾""  
+- Exact match.  
+- Score: 1
+
+---
+
+### Final scores in JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 1
+}
+```",刘真,马东,1.0,key_match,0.0,"number not near, response: 0.27, target: 0.3007",30.07%,27.0%
+,,2020年,2020,0.0,"分析过程：
+
+根据给定的评分标准：
+- 答案和参考答案语义大致相同，或者指向的实体一致，即给1分；
+- 完全不匹配则给0分；
+- 响应的内容全部是“-”或者具体存在实体名称。
+
+逐项分析：
+
+- idx_0 到 idx_23：响应都是“-”，即空回答或无内容。
+  - 目标（target）多数为“太极集团”、“哈药六厂”、“美的集团”、“洋河梦之蓝”等具体实体名。
+  - 响应“-”与目标实体名明显不匹配，因此打0分。
+
+- idx_11: target也是“-”，响应是“-”。
+  - 响应和目标相同，视为匹配，给1分。
+
+- idx_24: 响应是“火山引擎”，目标是“洋河梦之蓝”。
+  - 两者实体不一致，给0分。
+
+总结：
+
+- idx_11 得1分
+- 其它均得0分
+
+最终评分结果如下：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",洋河梦之蓝,-,0.0,"Let's analyze each idx's response against its target according to the criterion:
+
+Criterion: The response is correct if it has the same or roughly the same semantics or points to the same entity. Exact match or synonymous entity.
+
+---
+
+**idx_0**: Response = ""杨东升""; Target = ""王冼平、王宪生、金越""  
+- Response names a single person ""杨东升"", target lists three different people (none named ""杨东升""). Different entities.  
+- Score: 0
+
+**idx_1**: Response = ""蔡晓晴""; Target = ""陈雨露""  
+- Different names, different entities, no match.  
+- Score: 0
+
+**idx_2**: Response = ""金越""; Target = ""金越""  
+- Exact match.  
+- Score: 1
+
+**idx_3**: Response = ""高晓攀""; Target = ""袁德旺""  
+- Different entities.  
+- Score: 0
+
+**idx_4**: Response = ""袁德华""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_5**: Response = ""刘伟""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_6**: Response = ""吕逸涛""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_7**: Response = ""张艺谋""; Target = ""陈临春、张晓海""  
+- Different entities; none overlap.  
+- Score: 0
+
+**idx_8**: Response = ""孙滨""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_9**: Response = ""刘伟""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_10**: Response = ""刘伟""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_11**: Response = ""马东""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_12**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_13**: Response = ""赵本山""; Target = ""冯小刚""  
+- Different entities.  
+- Score: 0
+
+**idx_14**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_15**: Response = ""马东""; Target = ""吕逸涛""  
+- Different entities.  
+- Score: 0
+
+**idx_16**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_17**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_18**: Response = ""马东""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_19**: Response = ""赵亮""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_20**: Response = ""赵亮""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_21**: Response = ""赵亮""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_22**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_23**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_24**: Response = ""于蕾""; Target = ""于蕾""  
+- Exact match.  
+- Score: 1
+
+---
+
+### Final scores in JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 1
+}
+```",杨东升,赵亮,1.0,key_match,0.0,"number not near, response: 0.268, target: 0.20629999999999998",20.63%,26.8%
+,,2021年,2021,0.0,"分析过程：
+
+根据给定的评分标准：
+- 答案和参考答案语义大致相同，或者指向的实体一致，即给1分；
+- 完全不匹配则给0分；
+- 响应的内容全部是“-”或者具体存在实体名称。
+
+逐项分析：
+
+- idx_0 到 idx_23：响应都是“-”，即空回答或无内容。
+  - 目标（target）多数为“太极集团”、“哈药六厂”、“美的集团”、“洋河梦之蓝”等具体实体名。
+  - 响应“-”与目标实体名明显不匹配，因此打0分。
+
+- idx_11: target也是“-”，响应是“-”。
+  - 响应和目标相同，视为匹配，给1分。
+
+- idx_24: 响应是“火山引擎”，目标是“洋河梦之蓝”。
+  - 两者实体不一致，给0分。
+
+总结：
+
+- idx_11 得1分
+- 其它均得0分
+
+最终评分结果如下：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",洋河梦之蓝,-,0.0,"Let's analyze each idx's response against its target according to the criterion:
+
+Criterion: The response is correct if it has the same or roughly the same semantics or points to the same entity. Exact match or synonymous entity.
+
+---
+
+**idx_0**: Response = ""杨东升""; Target = ""王冼平、王宪生、金越""  
+- Response names a single person ""杨东升"", target lists three different people (none named ""杨东升""). Different entities.  
+- Score: 0
+
+**idx_1**: Response = ""蔡晓晴""; Target = ""陈雨露""  
+- Different names, different entities, no match.  
+- Score: 0
+
+**idx_2**: Response = ""金越""; Target = ""金越""  
+- Exact match.  
+- Score: 1
+
+**idx_3**: Response = ""高晓攀""; Target = ""袁德旺""  
+- Different entities.  
+- Score: 0
+
+**idx_4**: Response = ""袁德华""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_5**: Response = ""刘伟""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_6**: Response = ""吕逸涛""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_7**: Response = ""张艺谋""; Target = ""陈临春、张晓海""  
+- Different entities; none overlap.  
+- Score: 0
+
+**idx_8**: Response = ""孙滨""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_9**: Response = ""刘伟""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_10**: Response = ""刘伟""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_11**: Response = ""马东""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_12**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_13**: Response = ""赵本山""; Target = ""冯小刚""  
+- Different entities.  
+- Score: 0
+
+**idx_14**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_15**: Response = ""马东""; Target = ""吕逸涛""  
+- Different entities.  
+- Score: 0
+
+**idx_16**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_17**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_18**: Response = ""马东""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_19**: Response = ""赵亮""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_20**: Response = ""赵亮""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_21**: Response = ""赵亮""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_22**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_23**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_24**: Response = ""于蕾""; Target = ""于蕾""  
+- Exact match.  
+- Score: 1
+
+---
+
+### Final scores in JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 1
+}
+```",陈临春,赵亮,1.0,key_match,0.0,"number not near, response: 0.268, target: 0.23260000000000003",23.26%,26.8%
+,,2022年,2022,0.0,"分析过程：
+
+根据给定的评分标准：
+- 答案和参考答案语义大致相同，或者指向的实体一致，即给1分；
+- 完全不匹配则给0分；
+- 响应的内容全部是“-”或者具体存在实体名称。
+
+逐项分析：
+
+- idx_0 到 idx_23：响应都是“-”，即空回答或无内容。
+  - 目标（target）多数为“太极集团”、“哈药六厂”、“美的集团”、“洋河梦之蓝”等具体实体名。
+  - 响应“-”与目标实体名明显不匹配，因此打0分。
+
+- idx_11: target也是“-”，响应是“-”。
+  - 响应和目标相同，视为匹配，给1分。
+
+- idx_24: 响应是“火山引擎”，目标是“洋河梦之蓝”。
+  - 两者实体不一致，给0分。
+
+总结：
+
+- idx_11 得1分
+- 其它均得0分
+
+最终评分结果如下：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",洋河梦之蓝,-,0.0,"Let's analyze each idx's response against its target according to the criterion:
+
+Criterion: The response is correct if it has the same or roughly the same semantics or points to the same entity. Exact match or synonymous entity.
+
+---
+
+**idx_0**: Response = ""杨东升""; Target = ""王冼平、王宪生、金越""  
+- Response names a single person ""杨东升"", target lists three different people (none named ""杨东升""). Different entities.  
+- Score: 0
+
+**idx_1**: Response = ""蔡晓晴""; Target = ""陈雨露""  
+- Different names, different entities, no match.  
+- Score: 0
+
+**idx_2**: Response = ""金越""; Target = ""金越""  
+- Exact match.  
+- Score: 1
+
+**idx_3**: Response = ""高晓攀""; Target = ""袁德旺""  
+- Different entities.  
+- Score: 0
+
+**idx_4**: Response = ""袁德华""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_5**: Response = ""刘伟""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_6**: Response = ""吕逸涛""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_7**: Response = ""张艺谋""; Target = ""陈临春、张晓海""  
+- Different entities; none overlap.  
+- Score: 0
+
+**idx_8**: Response = ""孙滨""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_9**: Response = ""刘伟""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_10**: Response = ""刘伟""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_11**: Response = ""马东""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_12**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_13**: Response = ""赵本山""; Target = ""冯小刚""  
+- Different entities.  
+- Score: 0
+
+**idx_14**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_15**: Response = ""马东""; Target = ""吕逸涛""  
+- Different entities.  
+- Score: 0
+
+**idx_16**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_17**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_18**: Response = ""马东""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_19**: Response = ""赵亮""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_20**: Response = ""赵亮""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_21**: Response = ""赵亮""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_22**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_23**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_24**: Response = ""于蕾""; Target = ""于蕾""  
+- Exact match.  
+- Score: 1
+
+---
+
+### Final scores in JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 1
+}
+```",刘真,赵亮,1.0,key_match,0.0,"number not near, response: 0.266, target: 0.2193",21.93%,26.6%
+,,2023年,2023,0.0,"分析过程：
+
+根据给定的评分标准：
+- 答案和参考答案语义大致相同，或者指向的实体一致，即给1分；
+- 完全不匹配则给0分；
+- 响应的内容全部是“-”或者具体存在实体名称。
+
+逐项分析：
+
+- idx_0 到 idx_23：响应都是“-”，即空回答或无内容。
+  - 目标（target）多数为“太极集团”、“哈药六厂”、“美的集团”、“洋河梦之蓝”等具体实体名。
+  - 响应“-”与目标实体名明显不匹配，因此打0分。
+
+- idx_11: target也是“-”，响应是“-”。
+  - 响应和目标相同，视为匹配，给1分。
+
+- idx_24: 响应是“火山引擎”，目标是“洋河梦之蓝”。
+  - 两者实体不一致，给0分。
+
+总结：
+
+- idx_11 得1分
+- 其它均得0分
+
+最终评分结果如下：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",洋河梦之蓝,-,0.0,"Let's analyze each idx's response against its target according to the criterion:
+
+Criterion: The response is correct if it has the same or roughly the same semantics or points to the same entity. Exact match or synonymous entity.
+
+---
+
+**idx_0**: Response = ""杨东升""; Target = ""王冼平、王宪生、金越""  
+- Response names a single person ""杨东升"", target lists three different people (none named ""杨东升""). Different entities.  
+- Score: 0
+
+**idx_1**: Response = ""蔡晓晴""; Target = ""陈雨露""  
+- Different names, different entities, no match.  
+- Score: 0
+
+**idx_2**: Response = ""金越""; Target = ""金越""  
+- Exact match.  
+- Score: 1
+
+**idx_3**: Response = ""高晓攀""; Target = ""袁德旺""  
+- Different entities.  
+- Score: 0
+
+**idx_4**: Response = ""袁德华""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_5**: Response = ""刘伟""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_6**: Response = ""吕逸涛""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_7**: Response = ""张艺谋""; Target = ""陈临春、张晓海""  
+- Different entities; none overlap.  
+- Score: 0
+
+**idx_8**: Response = ""孙滨""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_9**: Response = ""刘伟""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_10**: Response = ""刘伟""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_11**: Response = ""马东""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_12**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_13**: Response = ""赵本山""; Target = ""冯小刚""  
+- Different entities.  
+- Score: 0
+
+**idx_14**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_15**: Response = ""马东""; Target = ""吕逸涛""  
+- Different entities.  
+- Score: 0
+
+**idx_16**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_17**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_18**: Response = ""马东""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_19**: Response = ""赵亮""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_20**: Response = ""赵亮""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_21**: Response = ""赵亮""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_22**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_23**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_24**: Response = ""于蕾""; Target = ""于蕾""  
+- Exact match.  
+- Score: 1
+
+---
+
+### Final scores in JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 1
+}
+```",于蕾,赵亮,1.0,key_match,1.0,"number near in range 10.0%, response: 0.264, target: 0.27",27.00%,26.4%
+,,2024年,2024,0.0,"分析过程：
+
+根据给定的评分标准：
+- 答案和参考答案语义大致相同，或者指向的实体一致，即给1分；
+- 完全不匹配则给0分；
+- 响应的内容全部是“-”或者具体存在实体名称。
+
+逐项分析：
+
+- idx_0 到 idx_23：响应都是“-”，即空回答或无内容。
+  - 目标（target）多数为“太极集团”、“哈药六厂”、“美的集团”、“洋河梦之蓝”等具体实体名。
+  - 响应“-”与目标实体名明显不匹配，因此打0分。
+
+- idx_11: target也是“-”，响应是“-”。
+  - 响应和目标相同，视为匹配，给1分。
+
+- idx_24: 响应是“火山引擎”，目标是“洋河梦之蓝”。
+  - 两者实体不一致，给0分。
+
+总结：
+
+- idx_11 得1分
+- 其它均得0分
+
+最终评分结果如下：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",洋河梦之蓝,-,0.0,"Let's analyze each idx's response against its target according to the criterion:
+
+Criterion: The response is correct if it has the same or roughly the same semantics or points to the same entity. Exact match or synonymous entity.
+
+---
+
+**idx_0**: Response = ""杨东升""; Target = ""王冼平、王宪生、金越""  
+- Response names a single person ""杨东升"", target lists three different people (none named ""杨东升""). Different entities.  
+- Score: 0
+
+**idx_1**: Response = ""蔡晓晴""; Target = ""陈雨露""  
+- Different names, different entities, no match.  
+- Score: 0
+
+**idx_2**: Response = ""金越""; Target = ""金越""  
+- Exact match.  
+- Score: 1
+
+**idx_3**: Response = ""高晓攀""; Target = ""袁德旺""  
+- Different entities.  
+- Score: 0
+
+**idx_4**: Response = ""袁德华""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_5**: Response = ""刘伟""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_6**: Response = ""吕逸涛""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_7**: Response = ""张艺谋""; Target = ""陈临春、张晓海""  
+- Different entities; none overlap.  
+- Score: 0
+
+**idx_8**: Response = ""孙滨""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_9**: Response = ""刘伟""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_10**: Response = ""刘伟""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_11**: Response = ""马东""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_12**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_13**: Response = ""赵本山""; Target = ""冯小刚""  
+- Different entities.  
+- Score: 0
+
+**idx_14**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_15**: Response = ""马东""; Target = ""吕逸涛""  
+- Different entities.  
+- Score: 0
+
+**idx_16**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_17**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_18**: Response = ""马东""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_19**: Response = ""赵亮""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_20**: Response = ""赵亮""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_21**: Response = ""赵亮""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_22**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_23**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_24**: Response = ""于蕾""; Target = ""于蕾""  
+- Exact match.  
+- Score: 1
+
+---
+
+### Final scores in JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 1
+}
+```",于蕾,赵亮,1.0,key_match,0.0,"number not near, response: 0.262, target: 0.34600000000000003",34.60%,26.2%
+,,2025年,2025,0.0,"分析过程：
+
+根据给定的评分标准：
+- 答案和参考答案语义大致相同，或者指向的实体一致，即给1分；
+- 完全不匹配则给0分；
+- 响应的内容全部是“-”或者具体存在实体名称。
+
+逐项分析：
+
+- idx_0 到 idx_23：响应都是“-”，即空回答或无内容。
+  - 目标（target）多数为“太极集团”、“哈药六厂”、“美的集团”、“洋河梦之蓝”等具体实体名。
+  - 响应“-”与目标实体名明显不匹配，因此打0分。
+
+- idx_11: target也是“-”，响应是“-”。
+  - 响应和目标相同，视为匹配，给1分。
+
+- idx_24: 响应是“火山引擎”，目标是“洋河梦之蓝”。
+  - 两者实体不一致，给0分。
+
+总结：
+
+- idx_11 得1分
+- 其它均得0分
+
+最终评分结果如下：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",洋河梦之蓝,火山引擎,1.0,"Let's analyze each idx's response against its target according to the criterion:
+
+Criterion: The response is correct if it has the same or roughly the same semantics or points to the same entity. Exact match or synonymous entity.
+
+---
+
+**idx_0**: Response = ""杨东升""; Target = ""王冼平、王宪生、金越""  
+- Response names a single person ""杨东升"", target lists three different people (none named ""杨东升""). Different entities.  
+- Score: 0
+
+**idx_1**: Response = ""蔡晓晴""; Target = ""陈雨露""  
+- Different names, different entities, no match.  
+- Score: 0
+
+**idx_2**: Response = ""金越""; Target = ""金越""  
+- Exact match.  
+- Score: 1
+
+**idx_3**: Response = ""高晓攀""; Target = ""袁德旺""  
+- Different entities.  
+- Score: 0
+
+**idx_4**: Response = ""袁德华""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_5**: Response = ""刘伟""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_6**: Response = ""吕逸涛""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_7**: Response = ""张艺谋""; Target = ""陈临春、张晓海""  
+- Different entities; none overlap.  
+- Score: 0
+
+**idx_8**: Response = ""孙滨""; Target = ""郎昆""  
+- Different entities.  
+- Score: 0
+
+**idx_9**: Response = ""刘伟""; Target = ""金越""  
+- Different entities.  
+- Score: 0
+
+**idx_10**: Response = ""刘伟""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_11**: Response = ""马东""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_12**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_13**: Response = ""赵本山""; Target = ""冯小刚""  
+- Different entities.  
+- Score: 0
+
+**idx_14**: Response = ""刘伟""; Target = ""哈文""  
+- Different entities.  
+- Score: 0
+
+**idx_15**: Response = ""马东""; Target = ""吕逸涛""  
+- Different entities.  
+- Score: 0
+
+**idx_16**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_17**: Response = ""马东""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_18**: Response = ""马东""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_19**: Response = ""赵亮""; Target = ""杨东升""  
+- Different entities.  
+- Score: 0
+
+**idx_20**: Response = ""赵亮""; Target = ""陈临春""  
+- Different entities.  
+- Score: 0
+
+**idx_21**: Response = ""赵亮""; Target = ""刘真""  
+- Different entities.  
+- Score: 0
+
+**idx_22**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_23**: Response = ""赵亮""; Target = ""于蕾""  
+- Different entities.  
+- Score: 0
+
+**idx_24**: Response = ""于蕾""; Target = ""于蕾""  
+- Exact match.  
+- Score: 1
+
+---
+
+### Final scores in JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 1
+}
+```",于蕾,于蕾,1.0,key_match,0.0,"number not near, response: 0.259, target: 0.3436",34.36%,25.9%

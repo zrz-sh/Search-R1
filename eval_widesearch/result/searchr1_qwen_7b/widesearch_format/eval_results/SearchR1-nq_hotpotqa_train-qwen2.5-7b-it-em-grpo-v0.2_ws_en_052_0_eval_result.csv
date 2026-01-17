@@ -1,0 +1,509 @@
+exist_flag_gt,exist_flag_response,windfarm,windfarm_before_map,capacity(mw)_number_near,capacity(mw)_number_near_eval_msg,capacity(mw)_query,capacity(mw)_response,commissioningyear_exact_match,commissioningyear_exact_match_eval_msg,commissioningyear_query,commissioningyear_response,owner/operator_llm_judge,owner/operator_llm_judge_eval_msg,owner/operator_query,owner/operator_response,sea/basin_llm_judge,sea/basin_llm_judge_eval_msg,sea/basin_query,sea/basin_response,turbinemodel_llm_judge,turbinemodel_llm_judge_eval_msg,turbinemodel_query,turbinemodel_response,turbinesnumber_exact_match,turbinesnumber_exact_match_eval_msg,turbinesnumber_query,turbinesnumber_response,windfarm_exact_match,windfarm_exact_match_eval_msg
+,,borssele1&2,Borssele I & II,0.0,"number not near, response: 550.0, target: 752.0",752,550,0.0,"exact not match, response: 2019, target: 2020",2020,2019,0.0,"Let's analyze each pair in detail according to the criterion:
+
+Criterion Summary:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- The company mentioned in the response could be a subset of the reference answer (target).
+
+---
+
+**idx_0:**  
+- Response: ""eneco""  
+- Target: ""ørsted/norgesbankinvestmentmanagement(nbim)""  
+Analysis:  
+The target includes ""ørsted"" and ""norgesbankinvestmentmanagement (nbim)"". The response is ""eneco,"" which is a completely different entity, not a subset, nor the same semantics.  
+Score: 0
+
+---
+
+**idx_1:**  
+- Response: ""sserenewables""  
+- Target: ""rwe/macquarie/stadtwerkemünchengmbh""  
+Analysis:  
+The target companies are ""rwe,"" ""macquarie,"" and ""stadtwerkemünchengmbh."" The response is ""sserenewables,"" which appears to be a misspelling or a different company. Possibly meant to be ""sse renewables""?  
+However, ""sse renewables"" is a different company, not included or a subset of target companies. Hence, no semantic match.  
+Score: 0
+
+---
+
+**idx_2:**  
+- Response: ""ørsted""  
+- Target: ""ørsted/vattenfall""  
+Analysis:  
+Response matches part of the target: ""ørsted"" is exactly the same as part of the target list. According to the criterion, the company mentioned in the answer can be a subset; therefore, this is acceptable.  
+Score: 1
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1
+}
+```",ørsted/norgesbankinvestmentmanagement(nbim),eneco,1.0,"Let's analyze each pair step by step according to the criterion:
+
+Criterion:  
+- Semantics must be approximately the same or point to the same entity.  
+- Word-for-word exactness is not required.
+
+---
+
+**idx_0**:  
+- Response: ""northsea""  
+- Target: ""northsea(nl)""  
+Analysis:  
+- The response ""northsea"" and target ""northsea(nl)"" clearly refer to the same entity (the North Sea).  
+- The addition of ""(nl)"" in the target likely denotes the Netherlands side or context but doesn't change the core entity.  
+- Given the criterion, this is acceptable and sufficient.  
+Score: 1
+
+---
+
+**idx_1**:  
+- Response: ""irishsea""  
+- Target: ""irishsea""  
+Analysis:  
+- Response and target are the same.  
+- Direct match.  
+Score: 1
+
+---
+
+**idx_2**:  
+- Response: ""northsea""  
+- Target: ""northsea""  
+Analysis:  
+- Response and target are identical.  
+Score: 1
+
+---
+
+### Final scoring results in JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1
+}
+```",northsea(nl),northsea,1.0,"Let's analyze each pair step by step according to the grading criteria:
+
+Criteria summary:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- No need for identical wording.  
+- Different levels of detail are acceptable as long as they refer to the same model.
+
+---
+
+### idx_0  
+- Response: ""siemensgamesasg8.0-167dd""  
+- Target: ""siemenssg8.0-167dd""
+
+Analysis:  
+- The target seems to be a turbine model ""siemens sg 8.0-167 dd"" (Siemens SG 8.0-167 DD).  
+- The response says ""siemensgamesasg8.0-167dd."" The word ""gamesa"" is inserted in the response. Siemens Gamesa is a company formed by a merger of Siemens Wind Power and Gamesa. The model number part ""8.0-167dd"" matches exactly.  
+- Semantically, it points to the same turbine model family 8.0-167 DD produced by Siemens or Siemens Gamesa.  
+- According to criteria, inclusion of ""gamesa"" does not make it wrong since it refers to the same model entity.  
+- Conclusion: same entity, semantics match.
+
+Score: 1
+
+---
+
+### idx_1  
+- Response: ""siemensgamesasg8.0-167dd""  
+- Target: ""siemensswt-3.6-107""
+
+Analysis:  
+- Target is ""siemens swt 3.6-107"" which is a Siemens turbine model rated at 3.6 MW with a 107 m rotor diameter.  
+- Response is ""siemensgamesasg8.0-167dd"" which corresponds closer to an 8.0 MW 167 m rotor turbine (bigger and different model line). This is a different model from the target.  
+- They do NOT point to the same entity or model. Semantics differ.  
+- Hence, the response does not answer the target.
+
+Score: 0
+
+---
+
+### idx_2  
+- Response: ""lmwindpowerlm92-7.2mmtp""  
+- Target: ""siemensswt-7.0-154""
+
+Analysis:  
+- Target: Siemens SWT 7.0-154; rating 7.0 MW, rotor diameter 154 m.  
+- Response: ""lmwindpowerlm92-7.2mmtp"" refers to LM Wind Power model LM92 (92 m rotor diameter) with 7.2 MW rating. Completely different manufacturer, model, and dimensions.  
+- These are not the same turbine models.  
+- Semantics not matching, entities differ.
+
+Score: 0
+
+---
+
+### Final Scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0
+}
+```
+",siemenssg8.0-167dd,siemensgamesasg8.0-167dd,0.0,"exact not match, response: 74, target: 94",94,74,1.0,key_match
+,,gwyntymôr,Gwynt y Môr,1.0,"number near in range 10.0%, response: 600.0, target: 576.0",576,600,1.0,"exact match, response: 2015, target: 2015",2015,2015,0.0,"Let's analyze each pair in detail according to the criterion:
+
+Criterion Summary:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- The company mentioned in the response could be a subset of the reference answer (target).
+
+---
+
+**idx_0:**  
+- Response: ""eneco""  
+- Target: ""ørsted/norgesbankinvestmentmanagement(nbim)""  
+Analysis:  
+The target includes ""ørsted"" and ""norgesbankinvestmentmanagement (nbim)"". The response is ""eneco,"" which is a completely different entity, not a subset, nor the same semantics.  
+Score: 0
+
+---
+
+**idx_1:**  
+- Response: ""sserenewables""  
+- Target: ""rwe/macquarie/stadtwerkemünchengmbh""  
+Analysis:  
+The target companies are ""rwe,"" ""macquarie,"" and ""stadtwerkemünchengmbh."" The response is ""sserenewables,"" which appears to be a misspelling or a different company. Possibly meant to be ""sse renewables""?  
+However, ""sse renewables"" is a different company, not included or a subset of target companies. Hence, no semantic match.  
+Score: 0
+
+---
+
+**idx_2:**  
+- Response: ""ørsted""  
+- Target: ""ørsted/vattenfall""  
+Analysis:  
+Response matches part of the target: ""ørsted"" is exactly the same as part of the target list. According to the criterion, the company mentioned in the answer can be a subset; therefore, this is acceptable.  
+Score: 1
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1
+}
+```",rwe/macquarie/stadtwerkemünchengmbh,sserenewables,1.0,"Let's analyze each pair step by step according to the criterion:
+
+Criterion:  
+- Semantics must be approximately the same or point to the same entity.  
+- Word-for-word exactness is not required.
+
+---
+
+**idx_0**:  
+- Response: ""northsea""  
+- Target: ""northsea(nl)""  
+Analysis:  
+- The response ""northsea"" and target ""northsea(nl)"" clearly refer to the same entity (the North Sea).  
+- The addition of ""(nl)"" in the target likely denotes the Netherlands side or context but doesn't change the core entity.  
+- Given the criterion, this is acceptable and sufficient.  
+Score: 1
+
+---
+
+**idx_1**:  
+- Response: ""irishsea""  
+- Target: ""irishsea""  
+Analysis:  
+- Response and target are the same.  
+- Direct match.  
+Score: 1
+
+---
+
+**idx_2**:  
+- Response: ""northsea""  
+- Target: ""northsea""  
+Analysis:  
+- Response and target are identical.  
+Score: 1
+
+---
+
+### Final scoring results in JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1
+}
+```",irishsea,irishsea,0.0,"Let's analyze each pair step by step according to the grading criteria:
+
+Criteria summary:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- No need for identical wording.  
+- Different levels of detail are acceptable as long as they refer to the same model.
+
+---
+
+### idx_0  
+- Response: ""siemensgamesasg8.0-167dd""  
+- Target: ""siemenssg8.0-167dd""
+
+Analysis:  
+- The target seems to be a turbine model ""siemens sg 8.0-167 dd"" (Siemens SG 8.0-167 DD).  
+- The response says ""siemensgamesasg8.0-167dd."" The word ""gamesa"" is inserted in the response. Siemens Gamesa is a company formed by a merger of Siemens Wind Power and Gamesa. The model number part ""8.0-167dd"" matches exactly.  
+- Semantically, it points to the same turbine model family 8.0-167 DD produced by Siemens or Siemens Gamesa.  
+- According to criteria, inclusion of ""gamesa"" does not make it wrong since it refers to the same model entity.  
+- Conclusion: same entity, semantics match.
+
+Score: 1
+
+---
+
+### idx_1  
+- Response: ""siemensgamesasg8.0-167dd""  
+- Target: ""siemensswt-3.6-107""
+
+Analysis:  
+- Target is ""siemens swt 3.6-107"" which is a Siemens turbine model rated at 3.6 MW with a 107 m rotor diameter.  
+- Response is ""siemensgamesasg8.0-167dd"" which corresponds closer to an 8.0 MW 167 m rotor turbine (bigger and different model line). This is a different model from the target.  
+- They do NOT point to the same entity or model. Semantics differ.  
+- Hence, the response does not answer the target.
+
+Score: 0
+
+---
+
+### idx_2  
+- Response: ""lmwindpowerlm92-7.2mmtp""  
+- Target: ""siemensswt-7.0-154""
+
+Analysis:  
+- Target: Siemens SWT 7.0-154; rating 7.0 MW, rotor diameter 154 m.  
+- Response: ""lmwindpowerlm92-7.2mmtp"" refers to LM Wind Power model LM92 (92 m rotor diameter) with 7.2 MW rating. Completely different manufacturer, model, and dimensions.  
+- These are not the same turbine models.  
+- Semantics not matching, entities differ.
+
+Score: 0
+
+---
+
+### Final Scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0
+}
+```
+",siemensswt-3.6-107,siemensgamesasg8.0-167dd,0.0,"exact not match, response: 80, target: 160",160,80,1.0,key_match
+,,hornseaone,Hornsea Project One,1.0,"number near in range 10.0%, response: 1200.0, target: 1218.0",1218,1200,0.0,"exact not match, response: 2020, target: 2019",2019,2020,1.0,"Let's analyze each pair in detail according to the criterion:
+
+Criterion Summary:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- The company mentioned in the response could be a subset of the reference answer (target).
+
+---
+
+**idx_0:**  
+- Response: ""eneco""  
+- Target: ""ørsted/norgesbankinvestmentmanagement(nbim)""  
+Analysis:  
+The target includes ""ørsted"" and ""norgesbankinvestmentmanagement (nbim)"". The response is ""eneco,"" which is a completely different entity, not a subset, nor the same semantics.  
+Score: 0
+
+---
+
+**idx_1:**  
+- Response: ""sserenewables""  
+- Target: ""rwe/macquarie/stadtwerkemünchengmbh""  
+Analysis:  
+The target companies are ""rwe,"" ""macquarie,"" and ""stadtwerkemünchengmbh."" The response is ""sserenewables,"" which appears to be a misspelling or a different company. Possibly meant to be ""sse renewables""?  
+However, ""sse renewables"" is a different company, not included or a subset of target companies. Hence, no semantic match.  
+Score: 0
+
+---
+
+**idx_2:**  
+- Response: ""ørsted""  
+- Target: ""ørsted/vattenfall""  
+Analysis:  
+Response matches part of the target: ""ørsted"" is exactly the same as part of the target list. According to the criterion, the company mentioned in the answer can be a subset; therefore, this is acceptable.  
+Score: 1
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1
+}
+```",ørsted/vattenfall,ørsted,1.0,"Let's analyze each pair step by step according to the criterion:
+
+Criterion:  
+- Semantics must be approximately the same or point to the same entity.  
+- Word-for-word exactness is not required.
+
+---
+
+**idx_0**:  
+- Response: ""northsea""  
+- Target: ""northsea(nl)""  
+Analysis:  
+- The response ""northsea"" and target ""northsea(nl)"" clearly refer to the same entity (the North Sea).  
+- The addition of ""(nl)"" in the target likely denotes the Netherlands side or context but doesn't change the core entity.  
+- Given the criterion, this is acceptable and sufficient.  
+Score: 1
+
+---
+
+**idx_1**:  
+- Response: ""irishsea""  
+- Target: ""irishsea""  
+Analysis:  
+- Response and target are the same.  
+- Direct match.  
+Score: 1
+
+---
+
+**idx_2**:  
+- Response: ""northsea""  
+- Target: ""northsea""  
+Analysis:  
+- Response and target are identical.  
+Score: 1
+
+---
+
+### Final scoring results in JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1
+}
+```",northsea,northsea,0.0,"Let's analyze each pair step by step according to the grading criteria:
+
+Criteria summary:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- No need for identical wording.  
+- Different levels of detail are acceptable as long as they refer to the same model.
+
+---
+
+### idx_0  
+- Response: ""siemensgamesasg8.0-167dd""  
+- Target: ""siemenssg8.0-167dd""
+
+Analysis:  
+- The target seems to be a turbine model ""siemens sg 8.0-167 dd"" (Siemens SG 8.0-167 DD).  
+- The response says ""siemensgamesasg8.0-167dd."" The word ""gamesa"" is inserted in the response. Siemens Gamesa is a company formed by a merger of Siemens Wind Power and Gamesa. The model number part ""8.0-167dd"" matches exactly.  
+- Semantically, it points to the same turbine model family 8.0-167 DD produced by Siemens or Siemens Gamesa.  
+- According to criteria, inclusion of ""gamesa"" does not make it wrong since it refers to the same model entity.  
+- Conclusion: same entity, semantics match.
+
+Score: 1
+
+---
+
+### idx_1  
+- Response: ""siemensgamesasg8.0-167dd""  
+- Target: ""siemensswt-3.6-107""
+
+Analysis:  
+- Target is ""siemens swt 3.6-107"" which is a Siemens turbine model rated at 3.6 MW with a 107 m rotor diameter.  
+- Response is ""siemensgamesasg8.0-167dd"" which corresponds closer to an 8.0 MW 167 m rotor turbine (bigger and different model line). This is a different model from the target.  
+- They do NOT point to the same entity or model. Semantics differ.  
+- Hence, the response does not answer the target.
+
+Score: 0
+
+---
+
+### idx_2  
+- Response: ""lmwindpowerlm92-7.2mmtp""  
+- Target: ""siemensswt-7.0-154""
+
+Analysis:  
+- Target: Siemens SWT 7.0-154; rating 7.0 MW, rotor diameter 154 m.  
+- Response: ""lmwindpowerlm92-7.2mmtp"" refers to LM Wind Power model LM92 (92 m rotor diameter) with 7.2 MW rating. Completely different manufacturer, model, and dimensions.  
+- These are not the same turbine models.  
+- Semantics not matching, entities differ.
+
+Score: 0
+
+---
+
+### Final Scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0
+}
+```
+",siemensswt-7.0-154,lmwindpowerlm92-7.2mmtp,1.0,"exact match, response: 174, target: 174",174,174,1.0,key_match
+1.0,,amrumbankwest,,,,302,,,,2015,,,,rweag,,,,northsea,,,,siemensswt-3.6-120,,,,80,,,
+1.0,,anholt,,,,400,,,,2013,,,,ørsted,,,,kattegat,,,,siemensswt-3.6-20(111),,,,111,,,
+1.0,,arkona,,,,385,,,,2019,,,,rwe/equinor,,,,balticsea,,,,siemensswt-6.0-154,,,,60,,,
+1.0,,balticeagle,,,,476,,,,2024,,,,masdar/iberdrola,,,,balticsea,,,,vestas(mvow)v174-9.5mw,,,,50,,,
+1.0,,bardoffshore1,,,,400,,,,2013,,,,oceanbreezeenergy,,,,germanbight,,,,bard5.0,,,,80,,,
+1.0,,beatrice,,,,588,,,,2019,,,,sse/cip/redrock,,,,morayfirth,,,,siemensswt-7.0-154,,,,84,,,
+1.0,,borkumriffgrund1,,,,312,,,,2015,,,,ørsted,,,,germanbight,,,,siemensswt-4.0-120,,,,78,,,
+1.0,,borkumriffgrund2,,,,450,,,,2019,,,,ørsted,,,,germanbight,,,,vestasv164-8.0,,,,56,,,
+1.0,,borssele3&4,,,,731,,,,2021,,,,blauwwindconsortium,,,,northsea(nl),,,,vestasv164-9.5,,,,77,,,
+1.0,,dudgeon,,,,402,,,,2017,,,,equinor/masdar/statkraft,,,,northsea,,,,siemensswt-6.0-154,,,,67,,,
+1.0,,eastangliaone,,,,714,,,,2020,,,,iberdrola/gig,,,,northsea,,,,siemens(gamesa}swt-7.0-154,,,,102,,,
+1.0,,fécamp,,,,497,,,,2024,,,,eolienmaritimefrance(emf)/enbridge/réseaudetransportd'electricité(rte)/skybornrenewablesgmbh(formerlywpd)/edfenergiesnouvellesgroup/canadapensionplaninvestmentboard(cppib),,,,englishchannel,,,,siemensgamesaswt-7.0-154,,,,71,,,
+1.0,,galloper,,,,353,,,,2018,,,,rwerenewables/siemensfinancialservices/equitix/esb/springinfrastructure,,,,northsea,,,,siemensgamesa6.0-154,,,,56,,,
+1.0,,gemini,,,,600,,,,2017,,,,northlandpowerconsortium,,,,northsea(nl),,,,siemensswt-4.0-130,,,,150,,,
+1.0,,globaltechi,,,,400,,,,2015,,,,globaltechioffshorewindgmbh/axpointernationals.a./geventures/entegaag/stadtwerkemünchengmbh/tennetoffshoregmbh,,,,northsea,,,,arevam5000-116(5mw),,,,80,,,
+1.0,,godewind1+2,,,,582,,,,2017,,,,ørsted,,,,germanbight,,,,siemensswt-6.0-154,,,,97,,,
+1.0,,greatergabbard,,,,504,,,,2012,,,,sse/rwe,,,,northsea(outerthames),,,,siemensswt-3.6-107,,,,140,,,
+1.0,,hohesee,,,,497,,,,2019,,,,enbw/canadapensionplaninvestmentboard(cppib)/enbridgeinc,,,,northsea,,,,siemensgamesaswt-7.0-154,,,,71,,,
+1.0,,hollandsekustnoord,,,,759,,,,2023,,,,shell/eneco,,,,northsea(nl),,,,siemenssg11.0-200dd,,,,69,,,
+1.0,,hollandsekustzuid1-2,,,,770,,,,2023,,,,allianz/basf/vattenfall/chinookc.v.,,,,northsea(nl),,,,siemens-gamesasg11.0-200,,,,70,,,
+1.0,,hollandsekustzuid3-4,,,,770,,,,2023,,,,allianz/basf/vattenfall/chinookc.v.,,,,northsea(nl),,,,siemens-gamesasg11.0-200,,,,70,,,
+1.0,,hornseatwo,,,,1386,,,,2022,,,,ørsted,,,,northsea,,,,siemenssg8.0-167dd,,,,165,,,
+1.0,,hornsrev3,,,,407,,,,2019,,,,vattenfall,,,,northsea(dk),,,,vestasv164-8.3,,,,49,,,
+1.0,,kaskasi,,,,342,,,,2022,,,,rweag,,,,northsea,,,,siemensgamesasg8.0-167,,,,38,,,
+1.0,,kriegersflak,,,,604,,,,2021,,,,vattenfall,,,,balticsea,,,,siemensswt-8.4-167,,,,72,,,
+1.0,,londonarray,,,,630,,,,2013,,,,"caissededépôtetplacementduquébec
+e.onuk
+masdar
+ørsted",,,,northsea(thamesest.),,,,siemensswt-3.6-120,,,,175,,,
+1.0,,merkur,,,,396,,,,2019,,,,thedutchpensioninvestorapg/therenewablesinfrastructuregrouplimited(trig),,,,germanbight,,,,gehaliade150-6,,,,66,,,
+1.0,,morayeast,,,,950,,,,2022,,,,oceanwinds/inpex/ctg/equitix/kepco/mitsubishi,,,,northsea,,,,vestasv164-9.5,,,,100,,,
+,1.0,neartnagaoithe,Neart Na Gaoithe,,,,300,,,,2019,,,,sserenewables,,,,irishsea,,,,vestasv158-7.2mmtp,,,,45,,
+1.0,,nordseeone,,,,332,,,,2017,,,,northlandpower/innogy,,,,germanbight,,,,senvion6.2m126,,,,54,,,
+1.0,,norther,,,,370,,,,2019,,,,eneco/elicio,,,,northsea(be),,,,vestasv164-8.4,,,,44,,,
+1.0,,racebank,,,,573,,,,2018,,,,ørsted/sumitomocorporation/macquarieeuropeaninfrastructurefund5/fundsmanagedbygreeninvestmentgroup,,,,northsea,,,,siemensswt-6.0-154,,,,91,,,
+1.0,,rampion,,,,400,,,,2018,,,,rwe/macquarie-ledconsortium/enbridge/equitix,,,,englishchannel,,,,vestasv112-3.45,,,,116,,,
+1.0,,rentel,,,,309,,,,2018,,,,otary,,,,northsea(be),,,,siemensswt-7.0-154(7.35mw),,,,42,,,
+1.0,,saint-brieuc,,,,496,,,,2024,,,,"iberdrolarenovablesenergia,s.a./réseaudetransportd'electricité(rte)/ailesmarinessas",,,,englishchannel,,,,siemensgamesa8.0-167,,,,62,,,
+1.0,,saint-nazaire,,,,480,,,,2022,,,,edf/enbridge/cppinvest.,,,,bayofbiscay,,,,gehaliade150-6,,,,80,,,
+1.0,,seagreen,,,,1075,,,,2023,,,,sse/totalenergies,,,,northsea,,,,vestasv164-10,,,,114,,,
+1.0,,seamade,,,,487,,,,2020,,,,otary/eneco/oceanwinds,,,,northsea(be),,,,siemenssg8.0-167dd,,,,58,,,
+1.0,,sheringhamshoal,,,,317,,,,2012,,,,equinor/greeninvestmentgroup/equitix,,,,northsea,,,,siemensswt-3.6-107,,,,88,,,
+1.0,,thanet,,,,300,,,,2010,,,,vattenfall,,,,northsea(thamesest.),,,,vestasv90-3.0,,,,100,,,
+1.0,,thorntonbank(c-power),,,,325,,,,2013,,,,c-powernv,,,,northsea,,,,repower5m,,,,54,,,
+1.0,,tritonknoll,,,,857,,,,2022,,,,rwe/j-power/kansai,,,,northsea,,,,vestasv164-9.5,,,,90,,,
+1.0,,vejamate,,,,402,,,,2017,,,,siemens/cip/highland,,,,germanbight,,,,siemensswt-6.0-154,,,,67,,,
+1.0,,walney1&2,,,,367,,,,2012,,,,ørstedconsortium,,,,irishsea,,,,siemensswt-3.6-107(3.6mw)&siemensswt-3.6-120(3.6mw),,,,102,,,
+1.0,,walneyextension,,,,659,,,,2018,,,,ørstedconsortium,,,,irishsea,,,,"mhi-vestas8.25mw&
+siemensgamesaswt-7.0-154(7mw)",,,,87,,,
+,1.0,westermostrough,Westermost Rough,,,,300,,,,2017,,,,e.on,,,,northsea,,,,vestasv164-8.0mmtp,,,,40,,
+1.0,,westofduddonsands,,,,389,,,,2014,,,,ørsted/sse,,,,irishsea,,,,siemensswt-3.6-120,,,,108,,,
+1.0,,wikinger,,,,350,,,,2018,,,,iberdrola,,,,balticsea,,,,adwenad5-135,,,,70,,,

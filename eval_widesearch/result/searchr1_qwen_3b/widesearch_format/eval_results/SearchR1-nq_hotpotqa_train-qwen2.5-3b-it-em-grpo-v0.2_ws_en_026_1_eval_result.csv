@@ -1,0 +1,3230 @@
+exist_flag_gt,exist_flag_response,state,state_before_map,governor(party)_llm_judge,governor(party)_llm_judge_eval_msg,governor(party)_query,governor(party)_response,numberofcongressionaldistricts_exact_match,numberofcongressionaldistricts_exact_match_eval_msg,numberofcongressionaldistricts_query,numberofcongressionaldistricts_response,numberofelectors_exact_match,numberofelectors_exact_match_eval_msg,numberofelectors_query,numberofelectors_response,senator1(party)&senator2(party)_llm_judge,senator1(party)&senator2(party)_llm_judge_eval_msg,senator1(party)&senator2(party)_query,senator1(party)&senator2(party)_response,state_exact_match,state_exact_match_eval_msg
+,,alabama,Alabama,1.0,"Let's analyze each item according to the criterion:  
+- Semantics are sufficient if approximately the same or point to the same entity; exact string match not necessary.  
+- Score is either 0 or 1.  
+
+---
+
+**idx_0:**  
+- Response: ""kayivey(r)""  
+- Target: ""kayivey(r)""  
+- Exact match, same entity and semantics, so score 1.
+
+**idx_1:**  
+- Response: ""mikedunleavy(r)""  
+- Target: ""mikedunleavy(r)""  
+- Exact match, same entity, score 1.
+
+**idx_2:**  
+- Response: ""katiehobbs(d)""  
+- Target: ""katiehobbs(d)""  
+- Exact match, score 1.
+
+**idx_3:**  
+- Response: ""asahutchinson(r)""  
+- Target: ""sarahhuckabeesanders(r)""  
+- Different persons: Asa Hutchinson vs Sarah Huckabee Sanders are different names/entities, so semantics differ. Score 0.
+
+**idx_4:**  
+- Response: ""gavinnewsom(d)""  
+- Target: ""gavinnewsom(d)""  
+- Exact match, score 1.
+
+**idx_5:**  
+- Response: ""jaredpolis(d)""  
+- Target: ""jaredpolis(d)""  
+- Exact match, score 1.
+
+**idx_6:**  
+- Response: ""nedlamont(d)""  
+- Target: ""nedlamont(d)""  
+- Exact match, score 1.
+
+**idx_7:**  
+- Response: ""https://www.democratsdel.com/governor/chrisduerr(d)""  
+- Target: ""johncarney(d)""  
+- Different persons/entities: Chris Duer vs John Carney, response includes URL but entity differs. Semantics do not match. Score 0.
+
+**idx_8:**  
+- Response: ""rondesantis(r)""  
+- Target: ""rondesantis(r)""  
+- Exact match, score 1.
+
+**idx_9:**  
+- Response: ""briankemp(r)""  
+- Target: ""briankemp(r)""  
+- Exact match, score 1.
+
+**idx_10:**  
+- Response: ""davidige(d)""  
+- Target: ""joshgreen(d)""  
+- Different persons: David Ige vs Josh Green. Different semantics, score 0.
+
+**idx_11:**  
+- Response: ""bradlittle(r)""  
+- Target: ""bradlittle(r)""  
+- Exact match, score 1.
+
+**idx_12:**  
+- Response: ""jbpritzker(d)""  
+- Target: ""j.b.pritzker(d)""  
+- Minor difference in punctuation; clearly the same person (J.B. Pritzker). Semantics match, score 1.
+
+**idx_13:**  
+- Response: ""ericholcomb(r)""  
+- Target: ""ericholcomb(r)""  
+- Exact match, score 1.
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1
+}
+```",kayivey(r),kayivey(r),1.0,"exact match, response: 7, target: 7",7,7,1.0,"exact match, response: 9, target: 9",9,9,0.0,"Let's analyze each idx one by one against the criteria:
+
+- Criterion: It is sufficient if semantics are approximately the same or point to the same entity. No strict word-for-word needed.
+- Also, substitutions like Joe Manchin (D) and Joe Manchin (I) accepted, but this applies only if relevant.
+
+---
+
+### idx_0
+- Response: ""willainsworth(r)&richardshelby(r)""
+- Target: ""tommytuberville(r)katiebritt(r)""
+- Response senators: Will Ainsworth (likely AL Lt. Governor, not a senator) & Richard Shelby (Retiring Senator AL)
+- Target senators: Tommy Tuberville (AL Senator) & Katie Britt (New AL Senator, replacing Shelby)
+- The response names do not match or approximate target senators. Also, Will Ainsworth is not a senator.
+- Score: 0
+
+### idx_1
+- Response: ""lisamurkowski(r)&dansullivan(r)""
+- Target: ""lisamurkowski(r)dansullivan(r)""
+- Exact same two senators, minor difference: & vs just concatenated; semantically the same.
+- Score: 1
+
+### idx_2
+- Response: ""kyrstensinema(d)&joshhawley(r)""
+- Target: ""kyrstensinema(i)markkelly(d)""
+- Sinema is indicated (D) vs (I) - substitution allowed between D and I for Joe Manchin only? Criterion says yes only for Joe Manchin (D) and (I) - no generalization to others.
+- So Sinema (d) vs Sinema (i) - is that accepted? Criterion does not say so explicitly.
+- Since it says only for Joe Manchin, we cannot treat (d) vs (i) as equivalent here.
+- Josh Hawley vs Mark Kelly - entirely different senators.
+- Response includes Sinema (d), target Sinema (i), and Mark Kelly (d).
+- Because of (d) vs (i) for Sinema is probably not accepted, and second senator differs.
+- Score: 0
+
+### idx_3
+- Response: ""johnboozman(r)&tomcotton(r)""
+- Target: ""johnboozman(r)tomcotton(r)""
+- Same two senators, different formatting but semantically equivalent.
+- Score: 1
+
+### idx_4
+- Response: ""jerrybrown(d)&alexpadilla(d)""
+- Target: ""alexpadilla(d)laphonzabutler(d)""
+- Response is Jerry Brown and Alex Padilla; target is Alex Padilla and LaPhonza Butler.
+- Jerry Brown is not a senator.
+- Only overlap is Alex Padilla.
+- One senator matches, other does not.
+- Criterion requires approximate semantics or pointing to same entity. Partial overlap is not enough to get full score.
+- According to instructions, score is 0 or 1 only.
+- Since partially correct is not specified as accepted, partial is likely 0.
+- Score: 0
+
+### idx_5
+- Response: ""michaelbennet(d)&johnthune(r)""
+- Target: ""michaelbennet(d)johnhickenlooper(d)""
+- One senator matches (Bennet), other is different (John Thune vs John Hickenlooper).
+- As above, partial matches are not accepted to grant full score.
+- Score: 0
+
+### idx_6
+- Response: ""richardblumenthal(d)&chrismurphy(d)""
+- Target: ""richardblumenthal(d)chrismurphy(d)""
+- Exact match except format. Score: 1
+
+### idx_7
+- Response: contains some URLs and ""chrismurphy(d)&johnthune(r)""
+- Target: ""tomcarper(d)chriscoons(d)""
+- Response senators: Murphy and Thune
+- Target: Carper and Coons
+- No matches, URLs are irrelevant.
+- Score: 0
+
+### idx_8
+- Response: ""marcorubio(r)&rickscott(r)""
+- Target: ""marcorubio(r)rickscott(r)""
+- Exact matches
+- Score: 1
+
+### idx_9
+- Response: ""davidperdue(r)&jonossoff(d)""
+- Target: ""jonossoff(d)raphaelwarnock(d)""
+- Both have Jon Ossoff, other senators differ
+- Partial match only, score: 0
+
+### idx_10
+- Response: ""maziehirono(d)&joshhawley(r)""
+- Target: ""brianschatz(d)maziehirono(d)""
+- One senator matches (Mazie Hirono)
+- Partial match only, score: 0
+
+### idx_11
+- Response: ""mikecrapo(r)&https://senate.idaho.gov/craig-cornelius/craigcornelius(r)""
+- Target: ""mikecrapo(r)jimrisch(r)""
+- Mike Crapo matches
+- Craig Cornelius (not senator), target is Jim Risch (senator)
+- Partial match only, score: 0
+
+### idx_12
+- Response: ""dickdurbin(d)&tammyduckworth(d)""
+- Target: same
+- Exact match
+- Score: 1
+
+### idx_13
+- Response: ""dancoon(r)&toddyoung(r)""
+- Target: ""toddyoung(r)mikebraun(r)""
+- Response includes Young and Dan Coon (not a senator)
+- Target Young and Braun
+- Partial match only, score: 0
+
+---
+
+## Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0
+}
+```
+",tommytuberville(r)katiebritt(r),willainsworth(r)&richardshelby(r),1.0,key_match
+,,alaska,Alaska,1.0,"Let's analyze each item according to the criterion:  
+- Semantics are sufficient if approximately the same or point to the same entity; exact string match not necessary.  
+- Score is either 0 or 1.  
+
+---
+
+**idx_0:**  
+- Response: ""kayivey(r)""  
+- Target: ""kayivey(r)""  
+- Exact match, same entity and semantics, so score 1.
+
+**idx_1:**  
+- Response: ""mikedunleavy(r)""  
+- Target: ""mikedunleavy(r)""  
+- Exact match, same entity, score 1.
+
+**idx_2:**  
+- Response: ""katiehobbs(d)""  
+- Target: ""katiehobbs(d)""  
+- Exact match, score 1.
+
+**idx_3:**  
+- Response: ""asahutchinson(r)""  
+- Target: ""sarahhuckabeesanders(r)""  
+- Different persons: Asa Hutchinson vs Sarah Huckabee Sanders are different names/entities, so semantics differ. Score 0.
+
+**idx_4:**  
+- Response: ""gavinnewsom(d)""  
+- Target: ""gavinnewsom(d)""  
+- Exact match, score 1.
+
+**idx_5:**  
+- Response: ""jaredpolis(d)""  
+- Target: ""jaredpolis(d)""  
+- Exact match, score 1.
+
+**idx_6:**  
+- Response: ""nedlamont(d)""  
+- Target: ""nedlamont(d)""  
+- Exact match, score 1.
+
+**idx_7:**  
+- Response: ""https://www.democratsdel.com/governor/chrisduerr(d)""  
+- Target: ""johncarney(d)""  
+- Different persons/entities: Chris Duer vs John Carney, response includes URL but entity differs. Semantics do not match. Score 0.
+
+**idx_8:**  
+- Response: ""rondesantis(r)""  
+- Target: ""rondesantis(r)""  
+- Exact match, score 1.
+
+**idx_9:**  
+- Response: ""briankemp(r)""  
+- Target: ""briankemp(r)""  
+- Exact match, score 1.
+
+**idx_10:**  
+- Response: ""davidige(d)""  
+- Target: ""joshgreen(d)""  
+- Different persons: David Ige vs Josh Green. Different semantics, score 0.
+
+**idx_11:**  
+- Response: ""bradlittle(r)""  
+- Target: ""bradlittle(r)""  
+- Exact match, score 1.
+
+**idx_12:**  
+- Response: ""jbpritzker(d)""  
+- Target: ""j.b.pritzker(d)""  
+- Minor difference in punctuation; clearly the same person (J.B. Pritzker). Semantics match, score 1.
+
+**idx_13:**  
+- Response: ""ericholcomb(r)""  
+- Target: ""ericholcomb(r)""  
+- Exact match, score 1.
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1
+}
+```",mikedunleavy(r),mikedunleavy(r),0.0,"exact not match, response: 3, target: 1",1,3,1.0,"exact match, response: 3, target: 3",3,3,1.0,"Let's analyze each idx one by one against the criteria:
+
+- Criterion: It is sufficient if semantics are approximately the same or point to the same entity. No strict word-for-word needed.
+- Also, substitutions like Joe Manchin (D) and Joe Manchin (I) accepted, but this applies only if relevant.
+
+---
+
+### idx_0
+- Response: ""willainsworth(r)&richardshelby(r)""
+- Target: ""tommytuberville(r)katiebritt(r)""
+- Response senators: Will Ainsworth (likely AL Lt. Governor, not a senator) & Richard Shelby (Retiring Senator AL)
+- Target senators: Tommy Tuberville (AL Senator) & Katie Britt (New AL Senator, replacing Shelby)
+- The response names do not match or approximate target senators. Also, Will Ainsworth is not a senator.
+- Score: 0
+
+### idx_1
+- Response: ""lisamurkowski(r)&dansullivan(r)""
+- Target: ""lisamurkowski(r)dansullivan(r)""
+- Exact same two senators, minor difference: & vs just concatenated; semantically the same.
+- Score: 1
+
+### idx_2
+- Response: ""kyrstensinema(d)&joshhawley(r)""
+- Target: ""kyrstensinema(i)markkelly(d)""
+- Sinema is indicated (D) vs (I) - substitution allowed between D and I for Joe Manchin only? Criterion says yes only for Joe Manchin (D) and (I) - no generalization to others.
+- So Sinema (d) vs Sinema (i) - is that accepted? Criterion does not say so explicitly.
+- Since it says only for Joe Manchin, we cannot treat (d) vs (i) as equivalent here.
+- Josh Hawley vs Mark Kelly - entirely different senators.
+- Response includes Sinema (d), target Sinema (i), and Mark Kelly (d).
+- Because of (d) vs (i) for Sinema is probably not accepted, and second senator differs.
+- Score: 0
+
+### idx_3
+- Response: ""johnboozman(r)&tomcotton(r)""
+- Target: ""johnboozman(r)tomcotton(r)""
+- Same two senators, different formatting but semantically equivalent.
+- Score: 1
+
+### idx_4
+- Response: ""jerrybrown(d)&alexpadilla(d)""
+- Target: ""alexpadilla(d)laphonzabutler(d)""
+- Response is Jerry Brown and Alex Padilla; target is Alex Padilla and LaPhonza Butler.
+- Jerry Brown is not a senator.
+- Only overlap is Alex Padilla.
+- One senator matches, other does not.
+- Criterion requires approximate semantics or pointing to same entity. Partial overlap is not enough to get full score.
+- According to instructions, score is 0 or 1 only.
+- Since partially correct is not specified as accepted, partial is likely 0.
+- Score: 0
+
+### idx_5
+- Response: ""michaelbennet(d)&johnthune(r)""
+- Target: ""michaelbennet(d)johnhickenlooper(d)""
+- One senator matches (Bennet), other is different (John Thune vs John Hickenlooper).
+- As above, partial matches are not accepted to grant full score.
+- Score: 0
+
+### idx_6
+- Response: ""richardblumenthal(d)&chrismurphy(d)""
+- Target: ""richardblumenthal(d)chrismurphy(d)""
+- Exact match except format. Score: 1
+
+### idx_7
+- Response: contains some URLs and ""chrismurphy(d)&johnthune(r)""
+- Target: ""tomcarper(d)chriscoons(d)""
+- Response senators: Murphy and Thune
+- Target: Carper and Coons
+- No matches, URLs are irrelevant.
+- Score: 0
+
+### idx_8
+- Response: ""marcorubio(r)&rickscott(r)""
+- Target: ""marcorubio(r)rickscott(r)""
+- Exact matches
+- Score: 1
+
+### idx_9
+- Response: ""davidperdue(r)&jonossoff(d)""
+- Target: ""jonossoff(d)raphaelwarnock(d)""
+- Both have Jon Ossoff, other senators differ
+- Partial match only, score: 0
+
+### idx_10
+- Response: ""maziehirono(d)&joshhawley(r)""
+- Target: ""brianschatz(d)maziehirono(d)""
+- One senator matches (Mazie Hirono)
+- Partial match only, score: 0
+
+### idx_11
+- Response: ""mikecrapo(r)&https://senate.idaho.gov/craig-cornelius/craigcornelius(r)""
+- Target: ""mikecrapo(r)jimrisch(r)""
+- Mike Crapo matches
+- Craig Cornelius (not senator), target is Jim Risch (senator)
+- Partial match only, score: 0
+
+### idx_12
+- Response: ""dickdurbin(d)&tammyduckworth(d)""
+- Target: same
+- Exact match
+- Score: 1
+
+### idx_13
+- Response: ""dancoon(r)&toddyoung(r)""
+- Target: ""toddyoung(r)mikebraun(r)""
+- Response includes Young and Dan Coon (not a senator)
+- Target Young and Braun
+- Partial match only, score: 0
+
+---
+
+## Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0
+}
+```
+",lisamurkowski(r)dansullivan(r),lisamurkowski(r)&dansullivan(r),1.0,key_match
+,,arizona,Arizona,1.0,"Let's analyze each item according to the criterion:  
+- Semantics are sufficient if approximately the same or point to the same entity; exact string match not necessary.  
+- Score is either 0 or 1.  
+
+---
+
+**idx_0:**  
+- Response: ""kayivey(r)""  
+- Target: ""kayivey(r)""  
+- Exact match, same entity and semantics, so score 1.
+
+**idx_1:**  
+- Response: ""mikedunleavy(r)""  
+- Target: ""mikedunleavy(r)""  
+- Exact match, same entity, score 1.
+
+**idx_2:**  
+- Response: ""katiehobbs(d)""  
+- Target: ""katiehobbs(d)""  
+- Exact match, score 1.
+
+**idx_3:**  
+- Response: ""asahutchinson(r)""  
+- Target: ""sarahhuckabeesanders(r)""  
+- Different persons: Asa Hutchinson vs Sarah Huckabee Sanders are different names/entities, so semantics differ. Score 0.
+
+**idx_4:**  
+- Response: ""gavinnewsom(d)""  
+- Target: ""gavinnewsom(d)""  
+- Exact match, score 1.
+
+**idx_5:**  
+- Response: ""jaredpolis(d)""  
+- Target: ""jaredpolis(d)""  
+- Exact match, score 1.
+
+**idx_6:**  
+- Response: ""nedlamont(d)""  
+- Target: ""nedlamont(d)""  
+- Exact match, score 1.
+
+**idx_7:**  
+- Response: ""https://www.democratsdel.com/governor/chrisduerr(d)""  
+- Target: ""johncarney(d)""  
+- Different persons/entities: Chris Duer vs John Carney, response includes URL but entity differs. Semantics do not match. Score 0.
+
+**idx_8:**  
+- Response: ""rondesantis(r)""  
+- Target: ""rondesantis(r)""  
+- Exact match, score 1.
+
+**idx_9:**  
+- Response: ""briankemp(r)""  
+- Target: ""briankemp(r)""  
+- Exact match, score 1.
+
+**idx_10:**  
+- Response: ""davidige(d)""  
+- Target: ""joshgreen(d)""  
+- Different persons: David Ige vs Josh Green. Different semantics, score 0.
+
+**idx_11:**  
+- Response: ""bradlittle(r)""  
+- Target: ""bradlittle(r)""  
+- Exact match, score 1.
+
+**idx_12:**  
+- Response: ""jbpritzker(d)""  
+- Target: ""j.b.pritzker(d)""  
+- Minor difference in punctuation; clearly the same person (J.B. Pritzker). Semantics match, score 1.
+
+**idx_13:**  
+- Response: ""ericholcomb(r)""  
+- Target: ""ericholcomb(r)""  
+- Exact match, score 1.
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1
+}
+```",katiehobbs(d),katiehobbs(d),0.0,"exact not match, response: 12, target: 9",9,12,0.0,"exact not match, response: 12, target: 11",11,12,0.0,"Let's analyze each idx one by one against the criteria:
+
+- Criterion: It is sufficient if semantics are approximately the same or point to the same entity. No strict word-for-word needed.
+- Also, substitutions like Joe Manchin (D) and Joe Manchin (I) accepted, but this applies only if relevant.
+
+---
+
+### idx_0
+- Response: ""willainsworth(r)&richardshelby(r)""
+- Target: ""tommytuberville(r)katiebritt(r)""
+- Response senators: Will Ainsworth (likely AL Lt. Governor, not a senator) & Richard Shelby (Retiring Senator AL)
+- Target senators: Tommy Tuberville (AL Senator) & Katie Britt (New AL Senator, replacing Shelby)
+- The response names do not match or approximate target senators. Also, Will Ainsworth is not a senator.
+- Score: 0
+
+### idx_1
+- Response: ""lisamurkowski(r)&dansullivan(r)""
+- Target: ""lisamurkowski(r)dansullivan(r)""
+- Exact same two senators, minor difference: & vs just concatenated; semantically the same.
+- Score: 1
+
+### idx_2
+- Response: ""kyrstensinema(d)&joshhawley(r)""
+- Target: ""kyrstensinema(i)markkelly(d)""
+- Sinema is indicated (D) vs (I) - substitution allowed between D and I for Joe Manchin only? Criterion says yes only for Joe Manchin (D) and (I) - no generalization to others.
+- So Sinema (d) vs Sinema (i) - is that accepted? Criterion does not say so explicitly.
+- Since it says only for Joe Manchin, we cannot treat (d) vs (i) as equivalent here.
+- Josh Hawley vs Mark Kelly - entirely different senators.
+- Response includes Sinema (d), target Sinema (i), and Mark Kelly (d).
+- Because of (d) vs (i) for Sinema is probably not accepted, and second senator differs.
+- Score: 0
+
+### idx_3
+- Response: ""johnboozman(r)&tomcotton(r)""
+- Target: ""johnboozman(r)tomcotton(r)""
+- Same two senators, different formatting but semantically equivalent.
+- Score: 1
+
+### idx_4
+- Response: ""jerrybrown(d)&alexpadilla(d)""
+- Target: ""alexpadilla(d)laphonzabutler(d)""
+- Response is Jerry Brown and Alex Padilla; target is Alex Padilla and LaPhonza Butler.
+- Jerry Brown is not a senator.
+- Only overlap is Alex Padilla.
+- One senator matches, other does not.
+- Criterion requires approximate semantics or pointing to same entity. Partial overlap is not enough to get full score.
+- According to instructions, score is 0 or 1 only.
+- Since partially correct is not specified as accepted, partial is likely 0.
+- Score: 0
+
+### idx_5
+- Response: ""michaelbennet(d)&johnthune(r)""
+- Target: ""michaelbennet(d)johnhickenlooper(d)""
+- One senator matches (Bennet), other is different (John Thune vs John Hickenlooper).
+- As above, partial matches are not accepted to grant full score.
+- Score: 0
+
+### idx_6
+- Response: ""richardblumenthal(d)&chrismurphy(d)""
+- Target: ""richardblumenthal(d)chrismurphy(d)""
+- Exact match except format. Score: 1
+
+### idx_7
+- Response: contains some URLs and ""chrismurphy(d)&johnthune(r)""
+- Target: ""tomcarper(d)chriscoons(d)""
+- Response senators: Murphy and Thune
+- Target: Carper and Coons
+- No matches, URLs are irrelevant.
+- Score: 0
+
+### idx_8
+- Response: ""marcorubio(r)&rickscott(r)""
+- Target: ""marcorubio(r)rickscott(r)""
+- Exact matches
+- Score: 1
+
+### idx_9
+- Response: ""davidperdue(r)&jonossoff(d)""
+- Target: ""jonossoff(d)raphaelwarnock(d)""
+- Both have Jon Ossoff, other senators differ
+- Partial match only, score: 0
+
+### idx_10
+- Response: ""maziehirono(d)&joshhawley(r)""
+- Target: ""brianschatz(d)maziehirono(d)""
+- One senator matches (Mazie Hirono)
+- Partial match only, score: 0
+
+### idx_11
+- Response: ""mikecrapo(r)&https://senate.idaho.gov/craig-cornelius/craigcornelius(r)""
+- Target: ""mikecrapo(r)jimrisch(r)""
+- Mike Crapo matches
+- Craig Cornelius (not senator), target is Jim Risch (senator)
+- Partial match only, score: 0
+
+### idx_12
+- Response: ""dickdurbin(d)&tammyduckworth(d)""
+- Target: same
+- Exact match
+- Score: 1
+
+### idx_13
+- Response: ""dancoon(r)&toddyoung(r)""
+- Target: ""toddyoung(r)mikebraun(r)""
+- Response includes Young and Dan Coon (not a senator)
+- Target Young and Braun
+- Partial match only, score: 0
+
+---
+
+## Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0
+}
+```
+",kyrstensinema(i)markkelly(d),kyrstensinema(d)&joshhawley(r),1.0,key_match
+,,arkansas,Arkansas,0.0,"Let's analyze each item according to the criterion:  
+- Semantics are sufficient if approximately the same or point to the same entity; exact string match not necessary.  
+- Score is either 0 or 1.  
+
+---
+
+**idx_0:**  
+- Response: ""kayivey(r)""  
+- Target: ""kayivey(r)""  
+- Exact match, same entity and semantics, so score 1.
+
+**idx_1:**  
+- Response: ""mikedunleavy(r)""  
+- Target: ""mikedunleavy(r)""  
+- Exact match, same entity, score 1.
+
+**idx_2:**  
+- Response: ""katiehobbs(d)""  
+- Target: ""katiehobbs(d)""  
+- Exact match, score 1.
+
+**idx_3:**  
+- Response: ""asahutchinson(r)""  
+- Target: ""sarahhuckabeesanders(r)""  
+- Different persons: Asa Hutchinson vs Sarah Huckabee Sanders are different names/entities, so semantics differ. Score 0.
+
+**idx_4:**  
+- Response: ""gavinnewsom(d)""  
+- Target: ""gavinnewsom(d)""  
+- Exact match, score 1.
+
+**idx_5:**  
+- Response: ""jaredpolis(d)""  
+- Target: ""jaredpolis(d)""  
+- Exact match, score 1.
+
+**idx_6:**  
+- Response: ""nedlamont(d)""  
+- Target: ""nedlamont(d)""  
+- Exact match, score 1.
+
+**idx_7:**  
+- Response: ""https://www.democratsdel.com/governor/chrisduerr(d)""  
+- Target: ""johncarney(d)""  
+- Different persons/entities: Chris Duer vs John Carney, response includes URL but entity differs. Semantics do not match. Score 0.
+
+**idx_8:**  
+- Response: ""rondesantis(r)""  
+- Target: ""rondesantis(r)""  
+- Exact match, score 1.
+
+**idx_9:**  
+- Response: ""briankemp(r)""  
+- Target: ""briankemp(r)""  
+- Exact match, score 1.
+
+**idx_10:**  
+- Response: ""davidige(d)""  
+- Target: ""joshgreen(d)""  
+- Different persons: David Ige vs Josh Green. Different semantics, score 0.
+
+**idx_11:**  
+- Response: ""bradlittle(r)""  
+- Target: ""bradlittle(r)""  
+- Exact match, score 1.
+
+**idx_12:**  
+- Response: ""jbpritzker(d)""  
+- Target: ""j.b.pritzker(d)""  
+- Minor difference in punctuation; clearly the same person (J.B. Pritzker). Semantics match, score 1.
+
+**idx_13:**  
+- Response: ""ericholcomb(r)""  
+- Target: ""ericholcomb(r)""  
+- Exact match, score 1.
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1
+}
+```",sarahhuckabeesanders(r),asahutchinson(r),1.0,"exact match, response: 4, target: 4",4,4,1.0,"exact match, response: 6, target: 6",6,6,1.0,"Let's analyze each idx one by one against the criteria:
+
+- Criterion: It is sufficient if semantics are approximately the same or point to the same entity. No strict word-for-word needed.
+- Also, substitutions like Joe Manchin (D) and Joe Manchin (I) accepted, but this applies only if relevant.
+
+---
+
+### idx_0
+- Response: ""willainsworth(r)&richardshelby(r)""
+- Target: ""tommytuberville(r)katiebritt(r)""
+- Response senators: Will Ainsworth (likely AL Lt. Governor, not a senator) & Richard Shelby (Retiring Senator AL)
+- Target senators: Tommy Tuberville (AL Senator) & Katie Britt (New AL Senator, replacing Shelby)
+- The response names do not match or approximate target senators. Also, Will Ainsworth is not a senator.
+- Score: 0
+
+### idx_1
+- Response: ""lisamurkowski(r)&dansullivan(r)""
+- Target: ""lisamurkowski(r)dansullivan(r)""
+- Exact same two senators, minor difference: & vs just concatenated; semantically the same.
+- Score: 1
+
+### idx_2
+- Response: ""kyrstensinema(d)&joshhawley(r)""
+- Target: ""kyrstensinema(i)markkelly(d)""
+- Sinema is indicated (D) vs (I) - substitution allowed between D and I for Joe Manchin only? Criterion says yes only for Joe Manchin (D) and (I) - no generalization to others.
+- So Sinema (d) vs Sinema (i) - is that accepted? Criterion does not say so explicitly.
+- Since it says only for Joe Manchin, we cannot treat (d) vs (i) as equivalent here.
+- Josh Hawley vs Mark Kelly - entirely different senators.
+- Response includes Sinema (d), target Sinema (i), and Mark Kelly (d).
+- Because of (d) vs (i) for Sinema is probably not accepted, and second senator differs.
+- Score: 0
+
+### idx_3
+- Response: ""johnboozman(r)&tomcotton(r)""
+- Target: ""johnboozman(r)tomcotton(r)""
+- Same two senators, different formatting but semantically equivalent.
+- Score: 1
+
+### idx_4
+- Response: ""jerrybrown(d)&alexpadilla(d)""
+- Target: ""alexpadilla(d)laphonzabutler(d)""
+- Response is Jerry Brown and Alex Padilla; target is Alex Padilla and LaPhonza Butler.
+- Jerry Brown is not a senator.
+- Only overlap is Alex Padilla.
+- One senator matches, other does not.
+- Criterion requires approximate semantics or pointing to same entity. Partial overlap is not enough to get full score.
+- According to instructions, score is 0 or 1 only.
+- Since partially correct is not specified as accepted, partial is likely 0.
+- Score: 0
+
+### idx_5
+- Response: ""michaelbennet(d)&johnthune(r)""
+- Target: ""michaelbennet(d)johnhickenlooper(d)""
+- One senator matches (Bennet), other is different (John Thune vs John Hickenlooper).
+- As above, partial matches are not accepted to grant full score.
+- Score: 0
+
+### idx_6
+- Response: ""richardblumenthal(d)&chrismurphy(d)""
+- Target: ""richardblumenthal(d)chrismurphy(d)""
+- Exact match except format. Score: 1
+
+### idx_7
+- Response: contains some URLs and ""chrismurphy(d)&johnthune(r)""
+- Target: ""tomcarper(d)chriscoons(d)""
+- Response senators: Murphy and Thune
+- Target: Carper and Coons
+- No matches, URLs are irrelevant.
+- Score: 0
+
+### idx_8
+- Response: ""marcorubio(r)&rickscott(r)""
+- Target: ""marcorubio(r)rickscott(r)""
+- Exact matches
+- Score: 1
+
+### idx_9
+- Response: ""davidperdue(r)&jonossoff(d)""
+- Target: ""jonossoff(d)raphaelwarnock(d)""
+- Both have Jon Ossoff, other senators differ
+- Partial match only, score: 0
+
+### idx_10
+- Response: ""maziehirono(d)&joshhawley(r)""
+- Target: ""brianschatz(d)maziehirono(d)""
+- One senator matches (Mazie Hirono)
+- Partial match only, score: 0
+
+### idx_11
+- Response: ""mikecrapo(r)&https://senate.idaho.gov/craig-cornelius/craigcornelius(r)""
+- Target: ""mikecrapo(r)jimrisch(r)""
+- Mike Crapo matches
+- Craig Cornelius (not senator), target is Jim Risch (senator)
+- Partial match only, score: 0
+
+### idx_12
+- Response: ""dickdurbin(d)&tammyduckworth(d)""
+- Target: same
+- Exact match
+- Score: 1
+
+### idx_13
+- Response: ""dancoon(r)&toddyoung(r)""
+- Target: ""toddyoung(r)mikebraun(r)""
+- Response includes Young and Dan Coon (not a senator)
+- Target Young and Braun
+- Partial match only, score: 0
+
+---
+
+## Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0
+}
+```
+",johnboozman(r)tomcotton(r),johnboozman(r)&tomcotton(r),1.0,key_match
+,,california,California,1.0,"Let's analyze each item according to the criterion:  
+- Semantics are sufficient if approximately the same or point to the same entity; exact string match not necessary.  
+- Score is either 0 or 1.  
+
+---
+
+**idx_0:**  
+- Response: ""kayivey(r)""  
+- Target: ""kayivey(r)""  
+- Exact match, same entity and semantics, so score 1.
+
+**idx_1:**  
+- Response: ""mikedunleavy(r)""  
+- Target: ""mikedunleavy(r)""  
+- Exact match, same entity, score 1.
+
+**idx_2:**  
+- Response: ""katiehobbs(d)""  
+- Target: ""katiehobbs(d)""  
+- Exact match, score 1.
+
+**idx_3:**  
+- Response: ""asahutchinson(r)""  
+- Target: ""sarahhuckabeesanders(r)""  
+- Different persons: Asa Hutchinson vs Sarah Huckabee Sanders are different names/entities, so semantics differ. Score 0.
+
+**idx_4:**  
+- Response: ""gavinnewsom(d)""  
+- Target: ""gavinnewsom(d)""  
+- Exact match, score 1.
+
+**idx_5:**  
+- Response: ""jaredpolis(d)""  
+- Target: ""jaredpolis(d)""  
+- Exact match, score 1.
+
+**idx_6:**  
+- Response: ""nedlamont(d)""  
+- Target: ""nedlamont(d)""  
+- Exact match, score 1.
+
+**idx_7:**  
+- Response: ""https://www.democratsdel.com/governor/chrisduerr(d)""  
+- Target: ""johncarney(d)""  
+- Different persons/entities: Chris Duer vs John Carney, response includes URL but entity differs. Semantics do not match. Score 0.
+
+**idx_8:**  
+- Response: ""rondesantis(r)""  
+- Target: ""rondesantis(r)""  
+- Exact match, score 1.
+
+**idx_9:**  
+- Response: ""briankemp(r)""  
+- Target: ""briankemp(r)""  
+- Exact match, score 1.
+
+**idx_10:**  
+- Response: ""davidige(d)""  
+- Target: ""joshgreen(d)""  
+- Different persons: David Ige vs Josh Green. Different semantics, score 0.
+
+**idx_11:**  
+- Response: ""bradlittle(r)""  
+- Target: ""bradlittle(r)""  
+- Exact match, score 1.
+
+**idx_12:**  
+- Response: ""jbpritzker(d)""  
+- Target: ""j.b.pritzker(d)""  
+- Minor difference in punctuation; clearly the same person (J.B. Pritzker). Semantics match, score 1.
+
+**idx_13:**  
+- Response: ""ericholcomb(r)""  
+- Target: ""ericholcomb(r)""  
+- Exact match, score 1.
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1
+}
+```",gavinnewsom(d),gavinnewsom(d),0.0,"exact not match, response: 53, target: 52",52,53,0.0,"exact not match, response: 55, target: 54",54,55,0.0,"Let's analyze each idx one by one against the criteria:
+
+- Criterion: It is sufficient if semantics are approximately the same or point to the same entity. No strict word-for-word needed.
+- Also, substitutions like Joe Manchin (D) and Joe Manchin (I) accepted, but this applies only if relevant.
+
+---
+
+### idx_0
+- Response: ""willainsworth(r)&richardshelby(r)""
+- Target: ""tommytuberville(r)katiebritt(r)""
+- Response senators: Will Ainsworth (likely AL Lt. Governor, not a senator) & Richard Shelby (Retiring Senator AL)
+- Target senators: Tommy Tuberville (AL Senator) & Katie Britt (New AL Senator, replacing Shelby)
+- The response names do not match or approximate target senators. Also, Will Ainsworth is not a senator.
+- Score: 0
+
+### idx_1
+- Response: ""lisamurkowski(r)&dansullivan(r)""
+- Target: ""lisamurkowski(r)dansullivan(r)""
+- Exact same two senators, minor difference: & vs just concatenated; semantically the same.
+- Score: 1
+
+### idx_2
+- Response: ""kyrstensinema(d)&joshhawley(r)""
+- Target: ""kyrstensinema(i)markkelly(d)""
+- Sinema is indicated (D) vs (I) - substitution allowed between D and I for Joe Manchin only? Criterion says yes only for Joe Manchin (D) and (I) - no generalization to others.
+- So Sinema (d) vs Sinema (i) - is that accepted? Criterion does not say so explicitly.
+- Since it says only for Joe Manchin, we cannot treat (d) vs (i) as equivalent here.
+- Josh Hawley vs Mark Kelly - entirely different senators.
+- Response includes Sinema (d), target Sinema (i), and Mark Kelly (d).
+- Because of (d) vs (i) for Sinema is probably not accepted, and second senator differs.
+- Score: 0
+
+### idx_3
+- Response: ""johnboozman(r)&tomcotton(r)""
+- Target: ""johnboozman(r)tomcotton(r)""
+- Same two senators, different formatting but semantically equivalent.
+- Score: 1
+
+### idx_4
+- Response: ""jerrybrown(d)&alexpadilla(d)""
+- Target: ""alexpadilla(d)laphonzabutler(d)""
+- Response is Jerry Brown and Alex Padilla; target is Alex Padilla and LaPhonza Butler.
+- Jerry Brown is not a senator.
+- Only overlap is Alex Padilla.
+- One senator matches, other does not.
+- Criterion requires approximate semantics or pointing to same entity. Partial overlap is not enough to get full score.
+- According to instructions, score is 0 or 1 only.
+- Since partially correct is not specified as accepted, partial is likely 0.
+- Score: 0
+
+### idx_5
+- Response: ""michaelbennet(d)&johnthune(r)""
+- Target: ""michaelbennet(d)johnhickenlooper(d)""
+- One senator matches (Bennet), other is different (John Thune vs John Hickenlooper).
+- As above, partial matches are not accepted to grant full score.
+- Score: 0
+
+### idx_6
+- Response: ""richardblumenthal(d)&chrismurphy(d)""
+- Target: ""richardblumenthal(d)chrismurphy(d)""
+- Exact match except format. Score: 1
+
+### idx_7
+- Response: contains some URLs and ""chrismurphy(d)&johnthune(r)""
+- Target: ""tomcarper(d)chriscoons(d)""
+- Response senators: Murphy and Thune
+- Target: Carper and Coons
+- No matches, URLs are irrelevant.
+- Score: 0
+
+### idx_8
+- Response: ""marcorubio(r)&rickscott(r)""
+- Target: ""marcorubio(r)rickscott(r)""
+- Exact matches
+- Score: 1
+
+### idx_9
+- Response: ""davidperdue(r)&jonossoff(d)""
+- Target: ""jonossoff(d)raphaelwarnock(d)""
+- Both have Jon Ossoff, other senators differ
+- Partial match only, score: 0
+
+### idx_10
+- Response: ""maziehirono(d)&joshhawley(r)""
+- Target: ""brianschatz(d)maziehirono(d)""
+- One senator matches (Mazie Hirono)
+- Partial match only, score: 0
+
+### idx_11
+- Response: ""mikecrapo(r)&https://senate.idaho.gov/craig-cornelius/craigcornelius(r)""
+- Target: ""mikecrapo(r)jimrisch(r)""
+- Mike Crapo matches
+- Craig Cornelius (not senator), target is Jim Risch (senator)
+- Partial match only, score: 0
+
+### idx_12
+- Response: ""dickdurbin(d)&tammyduckworth(d)""
+- Target: same
+- Exact match
+- Score: 1
+
+### idx_13
+- Response: ""dancoon(r)&toddyoung(r)""
+- Target: ""toddyoung(r)mikebraun(r)""
+- Response includes Young and Dan Coon (not a senator)
+- Target Young and Braun
+- Partial match only, score: 0
+
+---
+
+## Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0
+}
+```
+",alexpadilla(d)laphonzabutler(d),jerrybrown(d)&alexpadilla(d),1.0,key_match
+,,colorado,Colorado,1.0,"Let's analyze each item according to the criterion:  
+- Semantics are sufficient if approximately the same or point to the same entity; exact string match not necessary.  
+- Score is either 0 or 1.  
+
+---
+
+**idx_0:**  
+- Response: ""kayivey(r)""  
+- Target: ""kayivey(r)""  
+- Exact match, same entity and semantics, so score 1.
+
+**idx_1:**  
+- Response: ""mikedunleavy(r)""  
+- Target: ""mikedunleavy(r)""  
+- Exact match, same entity, score 1.
+
+**idx_2:**  
+- Response: ""katiehobbs(d)""  
+- Target: ""katiehobbs(d)""  
+- Exact match, score 1.
+
+**idx_3:**  
+- Response: ""asahutchinson(r)""  
+- Target: ""sarahhuckabeesanders(r)""  
+- Different persons: Asa Hutchinson vs Sarah Huckabee Sanders are different names/entities, so semantics differ. Score 0.
+
+**idx_4:**  
+- Response: ""gavinnewsom(d)""  
+- Target: ""gavinnewsom(d)""  
+- Exact match, score 1.
+
+**idx_5:**  
+- Response: ""jaredpolis(d)""  
+- Target: ""jaredpolis(d)""  
+- Exact match, score 1.
+
+**idx_6:**  
+- Response: ""nedlamont(d)""  
+- Target: ""nedlamont(d)""  
+- Exact match, score 1.
+
+**idx_7:**  
+- Response: ""https://www.democratsdel.com/governor/chrisduerr(d)""  
+- Target: ""johncarney(d)""  
+- Different persons/entities: Chris Duer vs John Carney, response includes URL but entity differs. Semantics do not match. Score 0.
+
+**idx_8:**  
+- Response: ""rondesantis(r)""  
+- Target: ""rondesantis(r)""  
+- Exact match, score 1.
+
+**idx_9:**  
+- Response: ""briankemp(r)""  
+- Target: ""briankemp(r)""  
+- Exact match, score 1.
+
+**idx_10:**  
+- Response: ""davidige(d)""  
+- Target: ""joshgreen(d)""  
+- Different persons: David Ige vs Josh Green. Different semantics, score 0.
+
+**idx_11:**  
+- Response: ""bradlittle(r)""  
+- Target: ""bradlittle(r)""  
+- Exact match, score 1.
+
+**idx_12:**  
+- Response: ""jbpritzker(d)""  
+- Target: ""j.b.pritzker(d)""  
+- Minor difference in punctuation; clearly the same person (J.B. Pritzker). Semantics match, score 1.
+
+**idx_13:**  
+- Response: ""ericholcomb(r)""  
+- Target: ""ericholcomb(r)""  
+- Exact match, score 1.
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1
+}
+```",jaredpolis(d),jaredpolis(d),0.0,"exact not match, response: 7, target: 8",8,7,0.0,"exact not match, response: 9, target: 10",10,9,0.0,"Let's analyze each idx one by one against the criteria:
+
+- Criterion: It is sufficient if semantics are approximately the same or point to the same entity. No strict word-for-word needed.
+- Also, substitutions like Joe Manchin (D) and Joe Manchin (I) accepted, but this applies only if relevant.
+
+---
+
+### idx_0
+- Response: ""willainsworth(r)&richardshelby(r)""
+- Target: ""tommytuberville(r)katiebritt(r)""
+- Response senators: Will Ainsworth (likely AL Lt. Governor, not a senator) & Richard Shelby (Retiring Senator AL)
+- Target senators: Tommy Tuberville (AL Senator) & Katie Britt (New AL Senator, replacing Shelby)
+- The response names do not match or approximate target senators. Also, Will Ainsworth is not a senator.
+- Score: 0
+
+### idx_1
+- Response: ""lisamurkowski(r)&dansullivan(r)""
+- Target: ""lisamurkowski(r)dansullivan(r)""
+- Exact same two senators, minor difference: & vs just concatenated; semantically the same.
+- Score: 1
+
+### idx_2
+- Response: ""kyrstensinema(d)&joshhawley(r)""
+- Target: ""kyrstensinema(i)markkelly(d)""
+- Sinema is indicated (D) vs (I) - substitution allowed between D and I for Joe Manchin only? Criterion says yes only for Joe Manchin (D) and (I) - no generalization to others.
+- So Sinema (d) vs Sinema (i) - is that accepted? Criterion does not say so explicitly.
+- Since it says only for Joe Manchin, we cannot treat (d) vs (i) as equivalent here.
+- Josh Hawley vs Mark Kelly - entirely different senators.
+- Response includes Sinema (d), target Sinema (i), and Mark Kelly (d).
+- Because of (d) vs (i) for Sinema is probably not accepted, and second senator differs.
+- Score: 0
+
+### idx_3
+- Response: ""johnboozman(r)&tomcotton(r)""
+- Target: ""johnboozman(r)tomcotton(r)""
+- Same two senators, different formatting but semantically equivalent.
+- Score: 1
+
+### idx_4
+- Response: ""jerrybrown(d)&alexpadilla(d)""
+- Target: ""alexpadilla(d)laphonzabutler(d)""
+- Response is Jerry Brown and Alex Padilla; target is Alex Padilla and LaPhonza Butler.
+- Jerry Brown is not a senator.
+- Only overlap is Alex Padilla.
+- One senator matches, other does not.
+- Criterion requires approximate semantics or pointing to same entity. Partial overlap is not enough to get full score.
+- According to instructions, score is 0 or 1 only.
+- Since partially correct is not specified as accepted, partial is likely 0.
+- Score: 0
+
+### idx_5
+- Response: ""michaelbennet(d)&johnthune(r)""
+- Target: ""michaelbennet(d)johnhickenlooper(d)""
+- One senator matches (Bennet), other is different (John Thune vs John Hickenlooper).
+- As above, partial matches are not accepted to grant full score.
+- Score: 0
+
+### idx_6
+- Response: ""richardblumenthal(d)&chrismurphy(d)""
+- Target: ""richardblumenthal(d)chrismurphy(d)""
+- Exact match except format. Score: 1
+
+### idx_7
+- Response: contains some URLs and ""chrismurphy(d)&johnthune(r)""
+- Target: ""tomcarper(d)chriscoons(d)""
+- Response senators: Murphy and Thune
+- Target: Carper and Coons
+- No matches, URLs are irrelevant.
+- Score: 0
+
+### idx_8
+- Response: ""marcorubio(r)&rickscott(r)""
+- Target: ""marcorubio(r)rickscott(r)""
+- Exact matches
+- Score: 1
+
+### idx_9
+- Response: ""davidperdue(r)&jonossoff(d)""
+- Target: ""jonossoff(d)raphaelwarnock(d)""
+- Both have Jon Ossoff, other senators differ
+- Partial match only, score: 0
+
+### idx_10
+- Response: ""maziehirono(d)&joshhawley(r)""
+- Target: ""brianschatz(d)maziehirono(d)""
+- One senator matches (Mazie Hirono)
+- Partial match only, score: 0
+
+### idx_11
+- Response: ""mikecrapo(r)&https://senate.idaho.gov/craig-cornelius/craigcornelius(r)""
+- Target: ""mikecrapo(r)jimrisch(r)""
+- Mike Crapo matches
+- Craig Cornelius (not senator), target is Jim Risch (senator)
+- Partial match only, score: 0
+
+### idx_12
+- Response: ""dickdurbin(d)&tammyduckworth(d)""
+- Target: same
+- Exact match
+- Score: 1
+
+### idx_13
+- Response: ""dancoon(r)&toddyoung(r)""
+- Target: ""toddyoung(r)mikebraun(r)""
+- Response includes Young and Dan Coon (not a senator)
+- Target Young and Braun
+- Partial match only, score: 0
+
+---
+
+## Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0
+}
+```
+",michaelbennet(d)johnhickenlooper(d),michaelbennet(d)&johnthune(r),1.0,key_match
+,,connecticut,Connecticut,1.0,"Let's analyze each item according to the criterion:  
+- Semantics are sufficient if approximately the same or point to the same entity; exact string match not necessary.  
+- Score is either 0 or 1.  
+
+---
+
+**idx_0:**  
+- Response: ""kayivey(r)""  
+- Target: ""kayivey(r)""  
+- Exact match, same entity and semantics, so score 1.
+
+**idx_1:**  
+- Response: ""mikedunleavy(r)""  
+- Target: ""mikedunleavy(r)""  
+- Exact match, same entity, score 1.
+
+**idx_2:**  
+- Response: ""katiehobbs(d)""  
+- Target: ""katiehobbs(d)""  
+- Exact match, score 1.
+
+**idx_3:**  
+- Response: ""asahutchinson(r)""  
+- Target: ""sarahhuckabeesanders(r)""  
+- Different persons: Asa Hutchinson vs Sarah Huckabee Sanders are different names/entities, so semantics differ. Score 0.
+
+**idx_4:**  
+- Response: ""gavinnewsom(d)""  
+- Target: ""gavinnewsom(d)""  
+- Exact match, score 1.
+
+**idx_5:**  
+- Response: ""jaredpolis(d)""  
+- Target: ""jaredpolis(d)""  
+- Exact match, score 1.
+
+**idx_6:**  
+- Response: ""nedlamont(d)""  
+- Target: ""nedlamont(d)""  
+- Exact match, score 1.
+
+**idx_7:**  
+- Response: ""https://www.democratsdel.com/governor/chrisduerr(d)""  
+- Target: ""johncarney(d)""  
+- Different persons/entities: Chris Duer vs John Carney, response includes URL but entity differs. Semantics do not match. Score 0.
+
+**idx_8:**  
+- Response: ""rondesantis(r)""  
+- Target: ""rondesantis(r)""  
+- Exact match, score 1.
+
+**idx_9:**  
+- Response: ""briankemp(r)""  
+- Target: ""briankemp(r)""  
+- Exact match, score 1.
+
+**idx_10:**  
+- Response: ""davidige(d)""  
+- Target: ""joshgreen(d)""  
+- Different persons: David Ige vs Josh Green. Different semantics, score 0.
+
+**idx_11:**  
+- Response: ""bradlittle(r)""  
+- Target: ""bradlittle(r)""  
+- Exact match, score 1.
+
+**idx_12:**  
+- Response: ""jbpritzker(d)""  
+- Target: ""j.b.pritzker(d)""  
+- Minor difference in punctuation; clearly the same person (J.B. Pritzker). Semantics match, score 1.
+
+**idx_13:**  
+- Response: ""ericholcomb(r)""  
+- Target: ""ericholcomb(r)""  
+- Exact match, score 1.
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1
+}
+```",nedlamont(d),nedlamont(d),1.0,"exact match, response: 5, target: 5",5,5,1.0,"exact match, response: 7, target: 7",7,7,1.0,"Let's analyze each idx one by one against the criteria:
+
+- Criterion: It is sufficient if semantics are approximately the same or point to the same entity. No strict word-for-word needed.
+- Also, substitutions like Joe Manchin (D) and Joe Manchin (I) accepted, but this applies only if relevant.
+
+---
+
+### idx_0
+- Response: ""willainsworth(r)&richardshelby(r)""
+- Target: ""tommytuberville(r)katiebritt(r)""
+- Response senators: Will Ainsworth (likely AL Lt. Governor, not a senator) & Richard Shelby (Retiring Senator AL)
+- Target senators: Tommy Tuberville (AL Senator) & Katie Britt (New AL Senator, replacing Shelby)
+- The response names do not match or approximate target senators. Also, Will Ainsworth is not a senator.
+- Score: 0
+
+### idx_1
+- Response: ""lisamurkowski(r)&dansullivan(r)""
+- Target: ""lisamurkowski(r)dansullivan(r)""
+- Exact same two senators, minor difference: & vs just concatenated; semantically the same.
+- Score: 1
+
+### idx_2
+- Response: ""kyrstensinema(d)&joshhawley(r)""
+- Target: ""kyrstensinema(i)markkelly(d)""
+- Sinema is indicated (D) vs (I) - substitution allowed between D and I for Joe Manchin only? Criterion says yes only for Joe Manchin (D) and (I) - no generalization to others.
+- So Sinema (d) vs Sinema (i) - is that accepted? Criterion does not say so explicitly.
+- Since it says only for Joe Manchin, we cannot treat (d) vs (i) as equivalent here.
+- Josh Hawley vs Mark Kelly - entirely different senators.
+- Response includes Sinema (d), target Sinema (i), and Mark Kelly (d).
+- Because of (d) vs (i) for Sinema is probably not accepted, and second senator differs.
+- Score: 0
+
+### idx_3
+- Response: ""johnboozman(r)&tomcotton(r)""
+- Target: ""johnboozman(r)tomcotton(r)""
+- Same two senators, different formatting but semantically equivalent.
+- Score: 1
+
+### idx_4
+- Response: ""jerrybrown(d)&alexpadilla(d)""
+- Target: ""alexpadilla(d)laphonzabutler(d)""
+- Response is Jerry Brown and Alex Padilla; target is Alex Padilla and LaPhonza Butler.
+- Jerry Brown is not a senator.
+- Only overlap is Alex Padilla.
+- One senator matches, other does not.
+- Criterion requires approximate semantics or pointing to same entity. Partial overlap is not enough to get full score.
+- According to instructions, score is 0 or 1 only.
+- Since partially correct is not specified as accepted, partial is likely 0.
+- Score: 0
+
+### idx_5
+- Response: ""michaelbennet(d)&johnthune(r)""
+- Target: ""michaelbennet(d)johnhickenlooper(d)""
+- One senator matches (Bennet), other is different (John Thune vs John Hickenlooper).
+- As above, partial matches are not accepted to grant full score.
+- Score: 0
+
+### idx_6
+- Response: ""richardblumenthal(d)&chrismurphy(d)""
+- Target: ""richardblumenthal(d)chrismurphy(d)""
+- Exact match except format. Score: 1
+
+### idx_7
+- Response: contains some URLs and ""chrismurphy(d)&johnthune(r)""
+- Target: ""tomcarper(d)chriscoons(d)""
+- Response senators: Murphy and Thune
+- Target: Carper and Coons
+- No matches, URLs are irrelevant.
+- Score: 0
+
+### idx_8
+- Response: ""marcorubio(r)&rickscott(r)""
+- Target: ""marcorubio(r)rickscott(r)""
+- Exact matches
+- Score: 1
+
+### idx_9
+- Response: ""davidperdue(r)&jonossoff(d)""
+- Target: ""jonossoff(d)raphaelwarnock(d)""
+- Both have Jon Ossoff, other senators differ
+- Partial match only, score: 0
+
+### idx_10
+- Response: ""maziehirono(d)&joshhawley(r)""
+- Target: ""brianschatz(d)maziehirono(d)""
+- One senator matches (Mazie Hirono)
+- Partial match only, score: 0
+
+### idx_11
+- Response: ""mikecrapo(r)&https://senate.idaho.gov/craig-cornelius/craigcornelius(r)""
+- Target: ""mikecrapo(r)jimrisch(r)""
+- Mike Crapo matches
+- Craig Cornelius (not senator), target is Jim Risch (senator)
+- Partial match only, score: 0
+
+### idx_12
+- Response: ""dickdurbin(d)&tammyduckworth(d)""
+- Target: same
+- Exact match
+- Score: 1
+
+### idx_13
+- Response: ""dancoon(r)&toddyoung(r)""
+- Target: ""toddyoung(r)mikebraun(r)""
+- Response includes Young and Dan Coon (not a senator)
+- Target Young and Braun
+- Partial match only, score: 0
+
+---
+
+## Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0
+}
+```
+",richardblumenthal(d)chrismurphy(d),richardblumenthal(d)&chrismurphy(d),1.0,key_match
+,,delaware,Delaware,0.0,"Let's analyze each item according to the criterion:  
+- Semantics are sufficient if approximately the same or point to the same entity; exact string match not necessary.  
+- Score is either 0 or 1.  
+
+---
+
+**idx_0:**  
+- Response: ""kayivey(r)""  
+- Target: ""kayivey(r)""  
+- Exact match, same entity and semantics, so score 1.
+
+**idx_1:**  
+- Response: ""mikedunleavy(r)""  
+- Target: ""mikedunleavy(r)""  
+- Exact match, same entity, score 1.
+
+**idx_2:**  
+- Response: ""katiehobbs(d)""  
+- Target: ""katiehobbs(d)""  
+- Exact match, score 1.
+
+**idx_3:**  
+- Response: ""asahutchinson(r)""  
+- Target: ""sarahhuckabeesanders(r)""  
+- Different persons: Asa Hutchinson vs Sarah Huckabee Sanders are different names/entities, so semantics differ. Score 0.
+
+**idx_4:**  
+- Response: ""gavinnewsom(d)""  
+- Target: ""gavinnewsom(d)""  
+- Exact match, score 1.
+
+**idx_5:**  
+- Response: ""jaredpolis(d)""  
+- Target: ""jaredpolis(d)""  
+- Exact match, score 1.
+
+**idx_6:**  
+- Response: ""nedlamont(d)""  
+- Target: ""nedlamont(d)""  
+- Exact match, score 1.
+
+**idx_7:**  
+- Response: ""https://www.democratsdel.com/governor/chrisduerr(d)""  
+- Target: ""johncarney(d)""  
+- Different persons/entities: Chris Duer vs John Carney, response includes URL but entity differs. Semantics do not match. Score 0.
+
+**idx_8:**  
+- Response: ""rondesantis(r)""  
+- Target: ""rondesantis(r)""  
+- Exact match, score 1.
+
+**idx_9:**  
+- Response: ""briankemp(r)""  
+- Target: ""briankemp(r)""  
+- Exact match, score 1.
+
+**idx_10:**  
+- Response: ""davidige(d)""  
+- Target: ""joshgreen(d)""  
+- Different persons: David Ige vs Josh Green. Different semantics, score 0.
+
+**idx_11:**  
+- Response: ""bradlittle(r)""  
+- Target: ""bradlittle(r)""  
+- Exact match, score 1.
+
+**idx_12:**  
+- Response: ""jbpritzker(d)""  
+- Target: ""j.b.pritzker(d)""  
+- Minor difference in punctuation; clearly the same person (J.B. Pritzker). Semantics match, score 1.
+
+**idx_13:**  
+- Response: ""ericholcomb(r)""  
+- Target: ""ericholcomb(r)""  
+- Exact match, score 1.
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1
+}
+```",johncarney(d),https://www.democratsdel.com/governor/chrisduerr(d),0.0,"exact not match, response: 3, target: 1",1,3,1.0,"exact match, response: 3, target: 3",3,3,0.0,"Let's analyze each idx one by one against the criteria:
+
+- Criterion: It is sufficient if semantics are approximately the same or point to the same entity. No strict word-for-word needed.
+- Also, substitutions like Joe Manchin (D) and Joe Manchin (I) accepted, but this applies only if relevant.
+
+---
+
+### idx_0
+- Response: ""willainsworth(r)&richardshelby(r)""
+- Target: ""tommytuberville(r)katiebritt(r)""
+- Response senators: Will Ainsworth (likely AL Lt. Governor, not a senator) & Richard Shelby (Retiring Senator AL)
+- Target senators: Tommy Tuberville (AL Senator) & Katie Britt (New AL Senator, replacing Shelby)
+- The response names do not match or approximate target senators. Also, Will Ainsworth is not a senator.
+- Score: 0
+
+### idx_1
+- Response: ""lisamurkowski(r)&dansullivan(r)""
+- Target: ""lisamurkowski(r)dansullivan(r)""
+- Exact same two senators, minor difference: & vs just concatenated; semantically the same.
+- Score: 1
+
+### idx_2
+- Response: ""kyrstensinema(d)&joshhawley(r)""
+- Target: ""kyrstensinema(i)markkelly(d)""
+- Sinema is indicated (D) vs (I) - substitution allowed between D and I for Joe Manchin only? Criterion says yes only for Joe Manchin (D) and (I) - no generalization to others.
+- So Sinema (d) vs Sinema (i) - is that accepted? Criterion does not say so explicitly.
+- Since it says only for Joe Manchin, we cannot treat (d) vs (i) as equivalent here.
+- Josh Hawley vs Mark Kelly - entirely different senators.
+- Response includes Sinema (d), target Sinema (i), and Mark Kelly (d).
+- Because of (d) vs (i) for Sinema is probably not accepted, and second senator differs.
+- Score: 0
+
+### idx_3
+- Response: ""johnboozman(r)&tomcotton(r)""
+- Target: ""johnboozman(r)tomcotton(r)""
+- Same two senators, different formatting but semantically equivalent.
+- Score: 1
+
+### idx_4
+- Response: ""jerrybrown(d)&alexpadilla(d)""
+- Target: ""alexpadilla(d)laphonzabutler(d)""
+- Response is Jerry Brown and Alex Padilla; target is Alex Padilla and LaPhonza Butler.
+- Jerry Brown is not a senator.
+- Only overlap is Alex Padilla.
+- One senator matches, other does not.
+- Criterion requires approximate semantics or pointing to same entity. Partial overlap is not enough to get full score.
+- According to instructions, score is 0 or 1 only.
+- Since partially correct is not specified as accepted, partial is likely 0.
+- Score: 0
+
+### idx_5
+- Response: ""michaelbennet(d)&johnthune(r)""
+- Target: ""michaelbennet(d)johnhickenlooper(d)""
+- One senator matches (Bennet), other is different (John Thune vs John Hickenlooper).
+- As above, partial matches are not accepted to grant full score.
+- Score: 0
+
+### idx_6
+- Response: ""richardblumenthal(d)&chrismurphy(d)""
+- Target: ""richardblumenthal(d)chrismurphy(d)""
+- Exact match except format. Score: 1
+
+### idx_7
+- Response: contains some URLs and ""chrismurphy(d)&johnthune(r)""
+- Target: ""tomcarper(d)chriscoons(d)""
+- Response senators: Murphy and Thune
+- Target: Carper and Coons
+- No matches, URLs are irrelevant.
+- Score: 0
+
+### idx_8
+- Response: ""marcorubio(r)&rickscott(r)""
+- Target: ""marcorubio(r)rickscott(r)""
+- Exact matches
+- Score: 1
+
+### idx_9
+- Response: ""davidperdue(r)&jonossoff(d)""
+- Target: ""jonossoff(d)raphaelwarnock(d)""
+- Both have Jon Ossoff, other senators differ
+- Partial match only, score: 0
+
+### idx_10
+- Response: ""maziehirono(d)&joshhawley(r)""
+- Target: ""brianschatz(d)maziehirono(d)""
+- One senator matches (Mazie Hirono)
+- Partial match only, score: 0
+
+### idx_11
+- Response: ""mikecrapo(r)&https://senate.idaho.gov/craig-cornelius/craigcornelius(r)""
+- Target: ""mikecrapo(r)jimrisch(r)""
+- Mike Crapo matches
+- Craig Cornelius (not senator), target is Jim Risch (senator)
+- Partial match only, score: 0
+
+### idx_12
+- Response: ""dickdurbin(d)&tammyduckworth(d)""
+- Target: same
+- Exact match
+- Score: 1
+
+### idx_13
+- Response: ""dancoon(r)&toddyoung(r)""
+- Target: ""toddyoung(r)mikebraun(r)""
+- Response includes Young and Dan Coon (not a senator)
+- Target Young and Braun
+- Partial match only, score: 0
+
+---
+
+## Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0
+}
+```
+",tomcarper(d)chriscoons(d),https://democratsdel.github.io/senate/https://senate.delaware.gov/christopher-murphy/chrismurphy(d)&https://democratsdel.github.io/senate/https://senate.delaware.gov/john-thune/johnthune(r),1.0,key_match
+,,florida,Florida,1.0,"Let's analyze each item according to the criterion:  
+- Semantics are sufficient if approximately the same or point to the same entity; exact string match not necessary.  
+- Score is either 0 or 1.  
+
+---
+
+**idx_0:**  
+- Response: ""kayivey(r)""  
+- Target: ""kayivey(r)""  
+- Exact match, same entity and semantics, so score 1.
+
+**idx_1:**  
+- Response: ""mikedunleavy(r)""  
+- Target: ""mikedunleavy(r)""  
+- Exact match, same entity, score 1.
+
+**idx_2:**  
+- Response: ""katiehobbs(d)""  
+- Target: ""katiehobbs(d)""  
+- Exact match, score 1.
+
+**idx_3:**  
+- Response: ""asahutchinson(r)""  
+- Target: ""sarahhuckabeesanders(r)""  
+- Different persons: Asa Hutchinson vs Sarah Huckabee Sanders are different names/entities, so semantics differ. Score 0.
+
+**idx_4:**  
+- Response: ""gavinnewsom(d)""  
+- Target: ""gavinnewsom(d)""  
+- Exact match, score 1.
+
+**idx_5:**  
+- Response: ""jaredpolis(d)""  
+- Target: ""jaredpolis(d)""  
+- Exact match, score 1.
+
+**idx_6:**  
+- Response: ""nedlamont(d)""  
+- Target: ""nedlamont(d)""  
+- Exact match, score 1.
+
+**idx_7:**  
+- Response: ""https://www.democratsdel.com/governor/chrisduerr(d)""  
+- Target: ""johncarney(d)""  
+- Different persons/entities: Chris Duer vs John Carney, response includes URL but entity differs. Semantics do not match. Score 0.
+
+**idx_8:**  
+- Response: ""rondesantis(r)""  
+- Target: ""rondesantis(r)""  
+- Exact match, score 1.
+
+**idx_9:**  
+- Response: ""briankemp(r)""  
+- Target: ""briankemp(r)""  
+- Exact match, score 1.
+
+**idx_10:**  
+- Response: ""davidige(d)""  
+- Target: ""joshgreen(d)""  
+- Different persons: David Ige vs Josh Green. Different semantics, score 0.
+
+**idx_11:**  
+- Response: ""bradlittle(r)""  
+- Target: ""bradlittle(r)""  
+- Exact match, score 1.
+
+**idx_12:**  
+- Response: ""jbpritzker(d)""  
+- Target: ""j.b.pritzker(d)""  
+- Minor difference in punctuation; clearly the same person (J.B. Pritzker). Semantics match, score 1.
+
+**idx_13:**  
+- Response: ""ericholcomb(r)""  
+- Target: ""ericholcomb(r)""  
+- Exact match, score 1.
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1
+}
+```",rondesantis(r),rondesantis(r),0.0,"exact not match, response: 27, target: 28",28,27,0.0,"exact not match, response: 29, target: 30",30,29,1.0,"Let's analyze each idx one by one against the criteria:
+
+- Criterion: It is sufficient if semantics are approximately the same or point to the same entity. No strict word-for-word needed.
+- Also, substitutions like Joe Manchin (D) and Joe Manchin (I) accepted, but this applies only if relevant.
+
+---
+
+### idx_0
+- Response: ""willainsworth(r)&richardshelby(r)""
+- Target: ""tommytuberville(r)katiebritt(r)""
+- Response senators: Will Ainsworth (likely AL Lt. Governor, not a senator) & Richard Shelby (Retiring Senator AL)
+- Target senators: Tommy Tuberville (AL Senator) & Katie Britt (New AL Senator, replacing Shelby)
+- The response names do not match or approximate target senators. Also, Will Ainsworth is not a senator.
+- Score: 0
+
+### idx_1
+- Response: ""lisamurkowski(r)&dansullivan(r)""
+- Target: ""lisamurkowski(r)dansullivan(r)""
+- Exact same two senators, minor difference: & vs just concatenated; semantically the same.
+- Score: 1
+
+### idx_2
+- Response: ""kyrstensinema(d)&joshhawley(r)""
+- Target: ""kyrstensinema(i)markkelly(d)""
+- Sinema is indicated (D) vs (I) - substitution allowed between D and I for Joe Manchin only? Criterion says yes only for Joe Manchin (D) and (I) - no generalization to others.
+- So Sinema (d) vs Sinema (i) - is that accepted? Criterion does not say so explicitly.
+- Since it says only for Joe Manchin, we cannot treat (d) vs (i) as equivalent here.
+- Josh Hawley vs Mark Kelly - entirely different senators.
+- Response includes Sinema (d), target Sinema (i), and Mark Kelly (d).
+- Because of (d) vs (i) for Sinema is probably not accepted, and second senator differs.
+- Score: 0
+
+### idx_3
+- Response: ""johnboozman(r)&tomcotton(r)""
+- Target: ""johnboozman(r)tomcotton(r)""
+- Same two senators, different formatting but semantically equivalent.
+- Score: 1
+
+### idx_4
+- Response: ""jerrybrown(d)&alexpadilla(d)""
+- Target: ""alexpadilla(d)laphonzabutler(d)""
+- Response is Jerry Brown and Alex Padilla; target is Alex Padilla and LaPhonza Butler.
+- Jerry Brown is not a senator.
+- Only overlap is Alex Padilla.
+- One senator matches, other does not.
+- Criterion requires approximate semantics or pointing to same entity. Partial overlap is not enough to get full score.
+- According to instructions, score is 0 or 1 only.
+- Since partially correct is not specified as accepted, partial is likely 0.
+- Score: 0
+
+### idx_5
+- Response: ""michaelbennet(d)&johnthune(r)""
+- Target: ""michaelbennet(d)johnhickenlooper(d)""
+- One senator matches (Bennet), other is different (John Thune vs John Hickenlooper).
+- As above, partial matches are not accepted to grant full score.
+- Score: 0
+
+### idx_6
+- Response: ""richardblumenthal(d)&chrismurphy(d)""
+- Target: ""richardblumenthal(d)chrismurphy(d)""
+- Exact match except format. Score: 1
+
+### idx_7
+- Response: contains some URLs and ""chrismurphy(d)&johnthune(r)""
+- Target: ""tomcarper(d)chriscoons(d)""
+- Response senators: Murphy and Thune
+- Target: Carper and Coons
+- No matches, URLs are irrelevant.
+- Score: 0
+
+### idx_8
+- Response: ""marcorubio(r)&rickscott(r)""
+- Target: ""marcorubio(r)rickscott(r)""
+- Exact matches
+- Score: 1
+
+### idx_9
+- Response: ""davidperdue(r)&jonossoff(d)""
+- Target: ""jonossoff(d)raphaelwarnock(d)""
+- Both have Jon Ossoff, other senators differ
+- Partial match only, score: 0
+
+### idx_10
+- Response: ""maziehirono(d)&joshhawley(r)""
+- Target: ""brianschatz(d)maziehirono(d)""
+- One senator matches (Mazie Hirono)
+- Partial match only, score: 0
+
+### idx_11
+- Response: ""mikecrapo(r)&https://senate.idaho.gov/craig-cornelius/craigcornelius(r)""
+- Target: ""mikecrapo(r)jimrisch(r)""
+- Mike Crapo matches
+- Craig Cornelius (not senator), target is Jim Risch (senator)
+- Partial match only, score: 0
+
+### idx_12
+- Response: ""dickdurbin(d)&tammyduckworth(d)""
+- Target: same
+- Exact match
+- Score: 1
+
+### idx_13
+- Response: ""dancoon(r)&toddyoung(r)""
+- Target: ""toddyoung(r)mikebraun(r)""
+- Response includes Young and Dan Coon (not a senator)
+- Target Young and Braun
+- Partial match only, score: 0
+
+---
+
+## Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0
+}
+```
+",marcorubio(r)rickscott(r),marcorubio(r)&rickscott(r),1.0,key_match
+,,georgia,Georgia,1.0,"Let's analyze each item according to the criterion:  
+- Semantics are sufficient if approximately the same or point to the same entity; exact string match not necessary.  
+- Score is either 0 or 1.  
+
+---
+
+**idx_0:**  
+- Response: ""kayivey(r)""  
+- Target: ""kayivey(r)""  
+- Exact match, same entity and semantics, so score 1.
+
+**idx_1:**  
+- Response: ""mikedunleavy(r)""  
+- Target: ""mikedunleavy(r)""  
+- Exact match, same entity, score 1.
+
+**idx_2:**  
+- Response: ""katiehobbs(d)""  
+- Target: ""katiehobbs(d)""  
+- Exact match, score 1.
+
+**idx_3:**  
+- Response: ""asahutchinson(r)""  
+- Target: ""sarahhuckabeesanders(r)""  
+- Different persons: Asa Hutchinson vs Sarah Huckabee Sanders are different names/entities, so semantics differ. Score 0.
+
+**idx_4:**  
+- Response: ""gavinnewsom(d)""  
+- Target: ""gavinnewsom(d)""  
+- Exact match, score 1.
+
+**idx_5:**  
+- Response: ""jaredpolis(d)""  
+- Target: ""jaredpolis(d)""  
+- Exact match, score 1.
+
+**idx_6:**  
+- Response: ""nedlamont(d)""  
+- Target: ""nedlamont(d)""  
+- Exact match, score 1.
+
+**idx_7:**  
+- Response: ""https://www.democratsdel.com/governor/chrisduerr(d)""  
+- Target: ""johncarney(d)""  
+- Different persons/entities: Chris Duer vs John Carney, response includes URL but entity differs. Semantics do not match. Score 0.
+
+**idx_8:**  
+- Response: ""rondesantis(r)""  
+- Target: ""rondesantis(r)""  
+- Exact match, score 1.
+
+**idx_9:**  
+- Response: ""briankemp(r)""  
+- Target: ""briankemp(r)""  
+- Exact match, score 1.
+
+**idx_10:**  
+- Response: ""davidige(d)""  
+- Target: ""joshgreen(d)""  
+- Different persons: David Ige vs Josh Green. Different semantics, score 0.
+
+**idx_11:**  
+- Response: ""bradlittle(r)""  
+- Target: ""bradlittle(r)""  
+- Exact match, score 1.
+
+**idx_12:**  
+- Response: ""jbpritzker(d)""  
+- Target: ""j.b.pritzker(d)""  
+- Minor difference in punctuation; clearly the same person (J.B. Pritzker). Semantics match, score 1.
+
+**idx_13:**  
+- Response: ""ericholcomb(r)""  
+- Target: ""ericholcomb(r)""  
+- Exact match, score 1.
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1
+}
+```",briankemp(r),briankemp(r),1.0,"exact match, response: 14, target: 14",14,14,1.0,"exact match, response: 16, target: 16",16,16,0.0,"Let's analyze each idx one by one against the criteria:
+
+- Criterion: It is sufficient if semantics are approximately the same or point to the same entity. No strict word-for-word needed.
+- Also, substitutions like Joe Manchin (D) and Joe Manchin (I) accepted, but this applies only if relevant.
+
+---
+
+### idx_0
+- Response: ""willainsworth(r)&richardshelby(r)""
+- Target: ""tommytuberville(r)katiebritt(r)""
+- Response senators: Will Ainsworth (likely AL Lt. Governor, not a senator) & Richard Shelby (Retiring Senator AL)
+- Target senators: Tommy Tuberville (AL Senator) & Katie Britt (New AL Senator, replacing Shelby)
+- The response names do not match or approximate target senators. Also, Will Ainsworth is not a senator.
+- Score: 0
+
+### idx_1
+- Response: ""lisamurkowski(r)&dansullivan(r)""
+- Target: ""lisamurkowski(r)dansullivan(r)""
+- Exact same two senators, minor difference: & vs just concatenated; semantically the same.
+- Score: 1
+
+### idx_2
+- Response: ""kyrstensinema(d)&joshhawley(r)""
+- Target: ""kyrstensinema(i)markkelly(d)""
+- Sinema is indicated (D) vs (I) - substitution allowed between D and I for Joe Manchin only? Criterion says yes only for Joe Manchin (D) and (I) - no generalization to others.
+- So Sinema (d) vs Sinema (i) - is that accepted? Criterion does not say so explicitly.
+- Since it says only for Joe Manchin, we cannot treat (d) vs (i) as equivalent here.
+- Josh Hawley vs Mark Kelly - entirely different senators.
+- Response includes Sinema (d), target Sinema (i), and Mark Kelly (d).
+- Because of (d) vs (i) for Sinema is probably not accepted, and second senator differs.
+- Score: 0
+
+### idx_3
+- Response: ""johnboozman(r)&tomcotton(r)""
+- Target: ""johnboozman(r)tomcotton(r)""
+- Same two senators, different formatting but semantically equivalent.
+- Score: 1
+
+### idx_4
+- Response: ""jerrybrown(d)&alexpadilla(d)""
+- Target: ""alexpadilla(d)laphonzabutler(d)""
+- Response is Jerry Brown and Alex Padilla; target is Alex Padilla and LaPhonza Butler.
+- Jerry Brown is not a senator.
+- Only overlap is Alex Padilla.
+- One senator matches, other does not.
+- Criterion requires approximate semantics or pointing to same entity. Partial overlap is not enough to get full score.
+- According to instructions, score is 0 or 1 only.
+- Since partially correct is not specified as accepted, partial is likely 0.
+- Score: 0
+
+### idx_5
+- Response: ""michaelbennet(d)&johnthune(r)""
+- Target: ""michaelbennet(d)johnhickenlooper(d)""
+- One senator matches (Bennet), other is different (John Thune vs John Hickenlooper).
+- As above, partial matches are not accepted to grant full score.
+- Score: 0
+
+### idx_6
+- Response: ""richardblumenthal(d)&chrismurphy(d)""
+- Target: ""richardblumenthal(d)chrismurphy(d)""
+- Exact match except format. Score: 1
+
+### idx_7
+- Response: contains some URLs and ""chrismurphy(d)&johnthune(r)""
+- Target: ""tomcarper(d)chriscoons(d)""
+- Response senators: Murphy and Thune
+- Target: Carper and Coons
+- No matches, URLs are irrelevant.
+- Score: 0
+
+### idx_8
+- Response: ""marcorubio(r)&rickscott(r)""
+- Target: ""marcorubio(r)rickscott(r)""
+- Exact matches
+- Score: 1
+
+### idx_9
+- Response: ""davidperdue(r)&jonossoff(d)""
+- Target: ""jonossoff(d)raphaelwarnock(d)""
+- Both have Jon Ossoff, other senators differ
+- Partial match only, score: 0
+
+### idx_10
+- Response: ""maziehirono(d)&joshhawley(r)""
+- Target: ""brianschatz(d)maziehirono(d)""
+- One senator matches (Mazie Hirono)
+- Partial match only, score: 0
+
+### idx_11
+- Response: ""mikecrapo(r)&https://senate.idaho.gov/craig-cornelius/craigcornelius(r)""
+- Target: ""mikecrapo(r)jimrisch(r)""
+- Mike Crapo matches
+- Craig Cornelius (not senator), target is Jim Risch (senator)
+- Partial match only, score: 0
+
+### idx_12
+- Response: ""dickdurbin(d)&tammyduckworth(d)""
+- Target: same
+- Exact match
+- Score: 1
+
+### idx_13
+- Response: ""dancoon(r)&toddyoung(r)""
+- Target: ""toddyoung(r)mikebraun(r)""
+- Response includes Young and Dan Coon (not a senator)
+- Target Young and Braun
+- Partial match only, score: 0
+
+---
+
+## Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0
+}
+```
+",jonossoff(d)raphaelwarnock(d),davidperdue(r)&jonossoff(d),1.0,key_match
+,,hawaii,Hawaii,0.0,"Let's analyze each item according to the criterion:  
+- Semantics are sufficient if approximately the same or point to the same entity; exact string match not necessary.  
+- Score is either 0 or 1.  
+
+---
+
+**idx_0:**  
+- Response: ""kayivey(r)""  
+- Target: ""kayivey(r)""  
+- Exact match, same entity and semantics, so score 1.
+
+**idx_1:**  
+- Response: ""mikedunleavy(r)""  
+- Target: ""mikedunleavy(r)""  
+- Exact match, same entity, score 1.
+
+**idx_2:**  
+- Response: ""katiehobbs(d)""  
+- Target: ""katiehobbs(d)""  
+- Exact match, score 1.
+
+**idx_3:**  
+- Response: ""asahutchinson(r)""  
+- Target: ""sarahhuckabeesanders(r)""  
+- Different persons: Asa Hutchinson vs Sarah Huckabee Sanders are different names/entities, so semantics differ. Score 0.
+
+**idx_4:**  
+- Response: ""gavinnewsom(d)""  
+- Target: ""gavinnewsom(d)""  
+- Exact match, score 1.
+
+**idx_5:**  
+- Response: ""jaredpolis(d)""  
+- Target: ""jaredpolis(d)""  
+- Exact match, score 1.
+
+**idx_6:**  
+- Response: ""nedlamont(d)""  
+- Target: ""nedlamont(d)""  
+- Exact match, score 1.
+
+**idx_7:**  
+- Response: ""https://www.democratsdel.com/governor/chrisduerr(d)""  
+- Target: ""johncarney(d)""  
+- Different persons/entities: Chris Duer vs John Carney, response includes URL but entity differs. Semantics do not match. Score 0.
+
+**idx_8:**  
+- Response: ""rondesantis(r)""  
+- Target: ""rondesantis(r)""  
+- Exact match, score 1.
+
+**idx_9:**  
+- Response: ""briankemp(r)""  
+- Target: ""briankemp(r)""  
+- Exact match, score 1.
+
+**idx_10:**  
+- Response: ""davidige(d)""  
+- Target: ""joshgreen(d)""  
+- Different persons: David Ige vs Josh Green. Different semantics, score 0.
+
+**idx_11:**  
+- Response: ""bradlittle(r)""  
+- Target: ""bradlittle(r)""  
+- Exact match, score 1.
+
+**idx_12:**  
+- Response: ""jbpritzker(d)""  
+- Target: ""j.b.pritzker(d)""  
+- Minor difference in punctuation; clearly the same person (J.B. Pritzker). Semantics match, score 1.
+
+**idx_13:**  
+- Response: ""ericholcomb(r)""  
+- Target: ""ericholcomb(r)""  
+- Exact match, score 1.
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1
+}
+```",joshgreen(d),davidige(d),0.0,"exact not match, response: 4, target: 2",2,4,1.0,"exact match, response: 4, target: 4",4,4,0.0,"Let's analyze each idx one by one against the criteria:
+
+- Criterion: It is sufficient if semantics are approximately the same or point to the same entity. No strict word-for-word needed.
+- Also, substitutions like Joe Manchin (D) and Joe Manchin (I) accepted, but this applies only if relevant.
+
+---
+
+### idx_0
+- Response: ""willainsworth(r)&richardshelby(r)""
+- Target: ""tommytuberville(r)katiebritt(r)""
+- Response senators: Will Ainsworth (likely AL Lt. Governor, not a senator) & Richard Shelby (Retiring Senator AL)
+- Target senators: Tommy Tuberville (AL Senator) & Katie Britt (New AL Senator, replacing Shelby)
+- The response names do not match or approximate target senators. Also, Will Ainsworth is not a senator.
+- Score: 0
+
+### idx_1
+- Response: ""lisamurkowski(r)&dansullivan(r)""
+- Target: ""lisamurkowski(r)dansullivan(r)""
+- Exact same two senators, minor difference: & vs just concatenated; semantically the same.
+- Score: 1
+
+### idx_2
+- Response: ""kyrstensinema(d)&joshhawley(r)""
+- Target: ""kyrstensinema(i)markkelly(d)""
+- Sinema is indicated (D) vs (I) - substitution allowed between D and I for Joe Manchin only? Criterion says yes only for Joe Manchin (D) and (I) - no generalization to others.
+- So Sinema (d) vs Sinema (i) - is that accepted? Criterion does not say so explicitly.
+- Since it says only for Joe Manchin, we cannot treat (d) vs (i) as equivalent here.
+- Josh Hawley vs Mark Kelly - entirely different senators.
+- Response includes Sinema (d), target Sinema (i), and Mark Kelly (d).
+- Because of (d) vs (i) for Sinema is probably not accepted, and second senator differs.
+- Score: 0
+
+### idx_3
+- Response: ""johnboozman(r)&tomcotton(r)""
+- Target: ""johnboozman(r)tomcotton(r)""
+- Same two senators, different formatting but semantically equivalent.
+- Score: 1
+
+### idx_4
+- Response: ""jerrybrown(d)&alexpadilla(d)""
+- Target: ""alexpadilla(d)laphonzabutler(d)""
+- Response is Jerry Brown and Alex Padilla; target is Alex Padilla and LaPhonza Butler.
+- Jerry Brown is not a senator.
+- Only overlap is Alex Padilla.
+- One senator matches, other does not.
+- Criterion requires approximate semantics or pointing to same entity. Partial overlap is not enough to get full score.
+- According to instructions, score is 0 or 1 only.
+- Since partially correct is not specified as accepted, partial is likely 0.
+- Score: 0
+
+### idx_5
+- Response: ""michaelbennet(d)&johnthune(r)""
+- Target: ""michaelbennet(d)johnhickenlooper(d)""
+- One senator matches (Bennet), other is different (John Thune vs John Hickenlooper).
+- As above, partial matches are not accepted to grant full score.
+- Score: 0
+
+### idx_6
+- Response: ""richardblumenthal(d)&chrismurphy(d)""
+- Target: ""richardblumenthal(d)chrismurphy(d)""
+- Exact match except format. Score: 1
+
+### idx_7
+- Response: contains some URLs and ""chrismurphy(d)&johnthune(r)""
+- Target: ""tomcarper(d)chriscoons(d)""
+- Response senators: Murphy and Thune
+- Target: Carper and Coons
+- No matches, URLs are irrelevant.
+- Score: 0
+
+### idx_8
+- Response: ""marcorubio(r)&rickscott(r)""
+- Target: ""marcorubio(r)rickscott(r)""
+- Exact matches
+- Score: 1
+
+### idx_9
+- Response: ""davidperdue(r)&jonossoff(d)""
+- Target: ""jonossoff(d)raphaelwarnock(d)""
+- Both have Jon Ossoff, other senators differ
+- Partial match only, score: 0
+
+### idx_10
+- Response: ""maziehirono(d)&joshhawley(r)""
+- Target: ""brianschatz(d)maziehirono(d)""
+- One senator matches (Mazie Hirono)
+- Partial match only, score: 0
+
+### idx_11
+- Response: ""mikecrapo(r)&https://senate.idaho.gov/craig-cornelius/craigcornelius(r)""
+- Target: ""mikecrapo(r)jimrisch(r)""
+- Mike Crapo matches
+- Craig Cornelius (not senator), target is Jim Risch (senator)
+- Partial match only, score: 0
+
+### idx_12
+- Response: ""dickdurbin(d)&tammyduckworth(d)""
+- Target: same
+- Exact match
+- Score: 1
+
+### idx_13
+- Response: ""dancoon(r)&toddyoung(r)""
+- Target: ""toddyoung(r)mikebraun(r)""
+- Response includes Young and Dan Coon (not a senator)
+- Target Young and Braun
+- Partial match only, score: 0
+
+---
+
+## Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0
+}
+```
+",brianschatz(d)maziehirono(d),maziehirono(d)&joshhawley(r),1.0,key_match
+,,idaho,Idaho,1.0,"Let's analyze each item according to the criterion:  
+- Semantics are sufficient if approximately the same or point to the same entity; exact string match not necessary.  
+- Score is either 0 or 1.  
+
+---
+
+**idx_0:**  
+- Response: ""kayivey(r)""  
+- Target: ""kayivey(r)""  
+- Exact match, same entity and semantics, so score 1.
+
+**idx_1:**  
+- Response: ""mikedunleavy(r)""  
+- Target: ""mikedunleavy(r)""  
+- Exact match, same entity, score 1.
+
+**idx_2:**  
+- Response: ""katiehobbs(d)""  
+- Target: ""katiehobbs(d)""  
+- Exact match, score 1.
+
+**idx_3:**  
+- Response: ""asahutchinson(r)""  
+- Target: ""sarahhuckabeesanders(r)""  
+- Different persons: Asa Hutchinson vs Sarah Huckabee Sanders are different names/entities, so semantics differ. Score 0.
+
+**idx_4:**  
+- Response: ""gavinnewsom(d)""  
+- Target: ""gavinnewsom(d)""  
+- Exact match, score 1.
+
+**idx_5:**  
+- Response: ""jaredpolis(d)""  
+- Target: ""jaredpolis(d)""  
+- Exact match, score 1.
+
+**idx_6:**  
+- Response: ""nedlamont(d)""  
+- Target: ""nedlamont(d)""  
+- Exact match, score 1.
+
+**idx_7:**  
+- Response: ""https://www.democratsdel.com/governor/chrisduerr(d)""  
+- Target: ""johncarney(d)""  
+- Different persons/entities: Chris Duer vs John Carney, response includes URL but entity differs. Semantics do not match. Score 0.
+
+**idx_8:**  
+- Response: ""rondesantis(r)""  
+- Target: ""rondesantis(r)""  
+- Exact match, score 1.
+
+**idx_9:**  
+- Response: ""briankemp(r)""  
+- Target: ""briankemp(r)""  
+- Exact match, score 1.
+
+**idx_10:**  
+- Response: ""davidige(d)""  
+- Target: ""joshgreen(d)""  
+- Different persons: David Ige vs Josh Green. Different semantics, score 0.
+
+**idx_11:**  
+- Response: ""bradlittle(r)""  
+- Target: ""bradlittle(r)""  
+- Exact match, score 1.
+
+**idx_12:**  
+- Response: ""jbpritzker(d)""  
+- Target: ""j.b.pritzker(d)""  
+- Minor difference in punctuation; clearly the same person (J.B. Pritzker). Semantics match, score 1.
+
+**idx_13:**  
+- Response: ""ericholcomb(r)""  
+- Target: ""ericholcomb(r)""  
+- Exact match, score 1.
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1
+}
+```",bradlittle(r),bradlittle(r),0.0,"exact not match, response: 3, target: 2",2,3,0.0,"exact not match, response: 3, target: 4",4,3,0.0,"Let's analyze each idx one by one against the criteria:
+
+- Criterion: It is sufficient if semantics are approximately the same or point to the same entity. No strict word-for-word needed.
+- Also, substitutions like Joe Manchin (D) and Joe Manchin (I) accepted, but this applies only if relevant.
+
+---
+
+### idx_0
+- Response: ""willainsworth(r)&richardshelby(r)""
+- Target: ""tommytuberville(r)katiebritt(r)""
+- Response senators: Will Ainsworth (likely AL Lt. Governor, not a senator) & Richard Shelby (Retiring Senator AL)
+- Target senators: Tommy Tuberville (AL Senator) & Katie Britt (New AL Senator, replacing Shelby)
+- The response names do not match or approximate target senators. Also, Will Ainsworth is not a senator.
+- Score: 0
+
+### idx_1
+- Response: ""lisamurkowski(r)&dansullivan(r)""
+- Target: ""lisamurkowski(r)dansullivan(r)""
+- Exact same two senators, minor difference: & vs just concatenated; semantically the same.
+- Score: 1
+
+### idx_2
+- Response: ""kyrstensinema(d)&joshhawley(r)""
+- Target: ""kyrstensinema(i)markkelly(d)""
+- Sinema is indicated (D) vs (I) - substitution allowed between D and I for Joe Manchin only? Criterion says yes only for Joe Manchin (D) and (I) - no generalization to others.
+- So Sinema (d) vs Sinema (i) - is that accepted? Criterion does not say so explicitly.
+- Since it says only for Joe Manchin, we cannot treat (d) vs (i) as equivalent here.
+- Josh Hawley vs Mark Kelly - entirely different senators.
+- Response includes Sinema (d), target Sinema (i), and Mark Kelly (d).
+- Because of (d) vs (i) for Sinema is probably not accepted, and second senator differs.
+- Score: 0
+
+### idx_3
+- Response: ""johnboozman(r)&tomcotton(r)""
+- Target: ""johnboozman(r)tomcotton(r)""
+- Same two senators, different formatting but semantically equivalent.
+- Score: 1
+
+### idx_4
+- Response: ""jerrybrown(d)&alexpadilla(d)""
+- Target: ""alexpadilla(d)laphonzabutler(d)""
+- Response is Jerry Brown and Alex Padilla; target is Alex Padilla and LaPhonza Butler.
+- Jerry Brown is not a senator.
+- Only overlap is Alex Padilla.
+- One senator matches, other does not.
+- Criterion requires approximate semantics or pointing to same entity. Partial overlap is not enough to get full score.
+- According to instructions, score is 0 or 1 only.
+- Since partially correct is not specified as accepted, partial is likely 0.
+- Score: 0
+
+### idx_5
+- Response: ""michaelbennet(d)&johnthune(r)""
+- Target: ""michaelbennet(d)johnhickenlooper(d)""
+- One senator matches (Bennet), other is different (John Thune vs John Hickenlooper).
+- As above, partial matches are not accepted to grant full score.
+- Score: 0
+
+### idx_6
+- Response: ""richardblumenthal(d)&chrismurphy(d)""
+- Target: ""richardblumenthal(d)chrismurphy(d)""
+- Exact match except format. Score: 1
+
+### idx_7
+- Response: contains some URLs and ""chrismurphy(d)&johnthune(r)""
+- Target: ""tomcarper(d)chriscoons(d)""
+- Response senators: Murphy and Thune
+- Target: Carper and Coons
+- No matches, URLs are irrelevant.
+- Score: 0
+
+### idx_8
+- Response: ""marcorubio(r)&rickscott(r)""
+- Target: ""marcorubio(r)rickscott(r)""
+- Exact matches
+- Score: 1
+
+### idx_9
+- Response: ""davidperdue(r)&jonossoff(d)""
+- Target: ""jonossoff(d)raphaelwarnock(d)""
+- Both have Jon Ossoff, other senators differ
+- Partial match only, score: 0
+
+### idx_10
+- Response: ""maziehirono(d)&joshhawley(r)""
+- Target: ""brianschatz(d)maziehirono(d)""
+- One senator matches (Mazie Hirono)
+- Partial match only, score: 0
+
+### idx_11
+- Response: ""mikecrapo(r)&https://senate.idaho.gov/craig-cornelius/craigcornelius(r)""
+- Target: ""mikecrapo(r)jimrisch(r)""
+- Mike Crapo matches
+- Craig Cornelius (not senator), target is Jim Risch (senator)
+- Partial match only, score: 0
+
+### idx_12
+- Response: ""dickdurbin(d)&tammyduckworth(d)""
+- Target: same
+- Exact match
+- Score: 1
+
+### idx_13
+- Response: ""dancoon(r)&toddyoung(r)""
+- Target: ""toddyoung(r)mikebraun(r)""
+- Response includes Young and Dan Coon (not a senator)
+- Target Young and Braun
+- Partial match only, score: 0
+
+---
+
+## Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0
+}
+```
+",mikecrapo(r)jimrisch(r),mikecrapo(r)&https://senate.idaho.gov/craig-cornelius/craigcornelius(r),1.0,key_match
+,,illinois,Illinois,1.0,"Let's analyze each item according to the criterion:  
+- Semantics are sufficient if approximately the same or point to the same entity; exact string match not necessary.  
+- Score is either 0 or 1.  
+
+---
+
+**idx_0:**  
+- Response: ""kayivey(r)""  
+- Target: ""kayivey(r)""  
+- Exact match, same entity and semantics, so score 1.
+
+**idx_1:**  
+- Response: ""mikedunleavy(r)""  
+- Target: ""mikedunleavy(r)""  
+- Exact match, same entity, score 1.
+
+**idx_2:**  
+- Response: ""katiehobbs(d)""  
+- Target: ""katiehobbs(d)""  
+- Exact match, score 1.
+
+**idx_3:**  
+- Response: ""asahutchinson(r)""  
+- Target: ""sarahhuckabeesanders(r)""  
+- Different persons: Asa Hutchinson vs Sarah Huckabee Sanders are different names/entities, so semantics differ. Score 0.
+
+**idx_4:**  
+- Response: ""gavinnewsom(d)""  
+- Target: ""gavinnewsom(d)""  
+- Exact match, score 1.
+
+**idx_5:**  
+- Response: ""jaredpolis(d)""  
+- Target: ""jaredpolis(d)""  
+- Exact match, score 1.
+
+**idx_6:**  
+- Response: ""nedlamont(d)""  
+- Target: ""nedlamont(d)""  
+- Exact match, score 1.
+
+**idx_7:**  
+- Response: ""https://www.democratsdel.com/governor/chrisduerr(d)""  
+- Target: ""johncarney(d)""  
+- Different persons/entities: Chris Duer vs John Carney, response includes URL but entity differs. Semantics do not match. Score 0.
+
+**idx_8:**  
+- Response: ""rondesantis(r)""  
+- Target: ""rondesantis(r)""  
+- Exact match, score 1.
+
+**idx_9:**  
+- Response: ""briankemp(r)""  
+- Target: ""briankemp(r)""  
+- Exact match, score 1.
+
+**idx_10:**  
+- Response: ""davidige(d)""  
+- Target: ""joshgreen(d)""  
+- Different persons: David Ige vs Josh Green. Different semantics, score 0.
+
+**idx_11:**  
+- Response: ""bradlittle(r)""  
+- Target: ""bradlittle(r)""  
+- Exact match, score 1.
+
+**idx_12:**  
+- Response: ""jbpritzker(d)""  
+- Target: ""j.b.pritzker(d)""  
+- Minor difference in punctuation; clearly the same person (J.B. Pritzker). Semantics match, score 1.
+
+**idx_13:**  
+- Response: ""ericholcomb(r)""  
+- Target: ""ericholcomb(r)""  
+- Exact match, score 1.
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1
+}
+```",j.b.pritzker(d),jbpritzker(d),0.0,"exact not match, response: 18, target: 17",17,18,0.0,"exact not match, response: 24, target: 19",19,24,1.0,"Let's analyze each idx one by one against the criteria:
+
+- Criterion: It is sufficient if semantics are approximately the same or point to the same entity. No strict word-for-word needed.
+- Also, substitutions like Joe Manchin (D) and Joe Manchin (I) accepted, but this applies only if relevant.
+
+---
+
+### idx_0
+- Response: ""willainsworth(r)&richardshelby(r)""
+- Target: ""tommytuberville(r)katiebritt(r)""
+- Response senators: Will Ainsworth (likely AL Lt. Governor, not a senator) & Richard Shelby (Retiring Senator AL)
+- Target senators: Tommy Tuberville (AL Senator) & Katie Britt (New AL Senator, replacing Shelby)
+- The response names do not match or approximate target senators. Also, Will Ainsworth is not a senator.
+- Score: 0
+
+### idx_1
+- Response: ""lisamurkowski(r)&dansullivan(r)""
+- Target: ""lisamurkowski(r)dansullivan(r)""
+- Exact same two senators, minor difference: & vs just concatenated; semantically the same.
+- Score: 1
+
+### idx_2
+- Response: ""kyrstensinema(d)&joshhawley(r)""
+- Target: ""kyrstensinema(i)markkelly(d)""
+- Sinema is indicated (D) vs (I) - substitution allowed between D and I for Joe Manchin only? Criterion says yes only for Joe Manchin (D) and (I) - no generalization to others.
+- So Sinema (d) vs Sinema (i) - is that accepted? Criterion does not say so explicitly.
+- Since it says only for Joe Manchin, we cannot treat (d) vs (i) as equivalent here.
+- Josh Hawley vs Mark Kelly - entirely different senators.
+- Response includes Sinema (d), target Sinema (i), and Mark Kelly (d).
+- Because of (d) vs (i) for Sinema is probably not accepted, and second senator differs.
+- Score: 0
+
+### idx_3
+- Response: ""johnboozman(r)&tomcotton(r)""
+- Target: ""johnboozman(r)tomcotton(r)""
+- Same two senators, different formatting but semantically equivalent.
+- Score: 1
+
+### idx_4
+- Response: ""jerrybrown(d)&alexpadilla(d)""
+- Target: ""alexpadilla(d)laphonzabutler(d)""
+- Response is Jerry Brown and Alex Padilla; target is Alex Padilla and LaPhonza Butler.
+- Jerry Brown is not a senator.
+- Only overlap is Alex Padilla.
+- One senator matches, other does not.
+- Criterion requires approximate semantics or pointing to same entity. Partial overlap is not enough to get full score.
+- According to instructions, score is 0 or 1 only.
+- Since partially correct is not specified as accepted, partial is likely 0.
+- Score: 0
+
+### idx_5
+- Response: ""michaelbennet(d)&johnthune(r)""
+- Target: ""michaelbennet(d)johnhickenlooper(d)""
+- One senator matches (Bennet), other is different (John Thune vs John Hickenlooper).
+- As above, partial matches are not accepted to grant full score.
+- Score: 0
+
+### idx_6
+- Response: ""richardblumenthal(d)&chrismurphy(d)""
+- Target: ""richardblumenthal(d)chrismurphy(d)""
+- Exact match except format. Score: 1
+
+### idx_7
+- Response: contains some URLs and ""chrismurphy(d)&johnthune(r)""
+- Target: ""tomcarper(d)chriscoons(d)""
+- Response senators: Murphy and Thune
+- Target: Carper and Coons
+- No matches, URLs are irrelevant.
+- Score: 0
+
+### idx_8
+- Response: ""marcorubio(r)&rickscott(r)""
+- Target: ""marcorubio(r)rickscott(r)""
+- Exact matches
+- Score: 1
+
+### idx_9
+- Response: ""davidperdue(r)&jonossoff(d)""
+- Target: ""jonossoff(d)raphaelwarnock(d)""
+- Both have Jon Ossoff, other senators differ
+- Partial match only, score: 0
+
+### idx_10
+- Response: ""maziehirono(d)&joshhawley(r)""
+- Target: ""brianschatz(d)maziehirono(d)""
+- One senator matches (Mazie Hirono)
+- Partial match only, score: 0
+
+### idx_11
+- Response: ""mikecrapo(r)&https://senate.idaho.gov/craig-cornelius/craigcornelius(r)""
+- Target: ""mikecrapo(r)jimrisch(r)""
+- Mike Crapo matches
+- Craig Cornelius (not senator), target is Jim Risch (senator)
+- Partial match only, score: 0
+
+### idx_12
+- Response: ""dickdurbin(d)&tammyduckworth(d)""
+- Target: same
+- Exact match
+- Score: 1
+
+### idx_13
+- Response: ""dancoon(r)&toddyoung(r)""
+- Target: ""toddyoung(r)mikebraun(r)""
+- Response includes Young and Dan Coon (not a senator)
+- Target Young and Braun
+- Partial match only, score: 0
+
+---
+
+## Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0
+}
+```
+",dickdurbin(d)tammyduckworth(d),dickdurbin(d)&tammyduckworth(d),1.0,key_match
+,,indiana,Indiana,1.0,"Let's analyze each item according to the criterion:  
+- Semantics are sufficient if approximately the same or point to the same entity; exact string match not necessary.  
+- Score is either 0 or 1.  
+
+---
+
+**idx_0:**  
+- Response: ""kayivey(r)""  
+- Target: ""kayivey(r)""  
+- Exact match, same entity and semantics, so score 1.
+
+**idx_1:**  
+- Response: ""mikedunleavy(r)""  
+- Target: ""mikedunleavy(r)""  
+- Exact match, same entity, score 1.
+
+**idx_2:**  
+- Response: ""katiehobbs(d)""  
+- Target: ""katiehobbs(d)""  
+- Exact match, score 1.
+
+**idx_3:**  
+- Response: ""asahutchinson(r)""  
+- Target: ""sarahhuckabeesanders(r)""  
+- Different persons: Asa Hutchinson vs Sarah Huckabee Sanders are different names/entities, so semantics differ. Score 0.
+
+**idx_4:**  
+- Response: ""gavinnewsom(d)""  
+- Target: ""gavinnewsom(d)""  
+- Exact match, score 1.
+
+**idx_5:**  
+- Response: ""jaredpolis(d)""  
+- Target: ""jaredpolis(d)""  
+- Exact match, score 1.
+
+**idx_6:**  
+- Response: ""nedlamont(d)""  
+- Target: ""nedlamont(d)""  
+- Exact match, score 1.
+
+**idx_7:**  
+- Response: ""https://www.democratsdel.com/governor/chrisduerr(d)""  
+- Target: ""johncarney(d)""  
+- Different persons/entities: Chris Duer vs John Carney, response includes URL but entity differs. Semantics do not match. Score 0.
+
+**idx_8:**  
+- Response: ""rondesantis(r)""  
+- Target: ""rondesantis(r)""  
+- Exact match, score 1.
+
+**idx_9:**  
+- Response: ""briankemp(r)""  
+- Target: ""briankemp(r)""  
+- Exact match, score 1.
+
+**idx_10:**  
+- Response: ""davidige(d)""  
+- Target: ""joshgreen(d)""  
+- Different persons: David Ige vs Josh Green. Different semantics, score 0.
+
+**idx_11:**  
+- Response: ""bradlittle(r)""  
+- Target: ""bradlittle(r)""  
+- Exact match, score 1.
+
+**idx_12:**  
+- Response: ""jbpritzker(d)""  
+- Target: ""j.b.pritzker(d)""  
+- Minor difference in punctuation; clearly the same person (J.B. Pritzker). Semantics match, score 1.
+
+**idx_13:**  
+- Response: ""ericholcomb(r)""  
+- Target: ""ericholcomb(r)""  
+- Exact match, score 1.
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1
+}
+```",ericholcomb(r),ericholcomb(r),1.0,"exact match, response: 9, target: 9",9,9,1.0,"exact match, response: 11, target: 11",11,11,0.0,"Let's analyze each idx one by one against the criteria:
+
+- Criterion: It is sufficient if semantics are approximately the same or point to the same entity. No strict word-for-word needed.
+- Also, substitutions like Joe Manchin (D) and Joe Manchin (I) accepted, but this applies only if relevant.
+
+---
+
+### idx_0
+- Response: ""willainsworth(r)&richardshelby(r)""
+- Target: ""tommytuberville(r)katiebritt(r)""
+- Response senators: Will Ainsworth (likely AL Lt. Governor, not a senator) & Richard Shelby (Retiring Senator AL)
+- Target senators: Tommy Tuberville (AL Senator) & Katie Britt (New AL Senator, replacing Shelby)
+- The response names do not match or approximate target senators. Also, Will Ainsworth is not a senator.
+- Score: 0
+
+### idx_1
+- Response: ""lisamurkowski(r)&dansullivan(r)""
+- Target: ""lisamurkowski(r)dansullivan(r)""
+- Exact same two senators, minor difference: & vs just concatenated; semantically the same.
+- Score: 1
+
+### idx_2
+- Response: ""kyrstensinema(d)&joshhawley(r)""
+- Target: ""kyrstensinema(i)markkelly(d)""
+- Sinema is indicated (D) vs (I) - substitution allowed between D and I for Joe Manchin only? Criterion says yes only for Joe Manchin (D) and (I) - no generalization to others.
+- So Sinema (d) vs Sinema (i) - is that accepted? Criterion does not say so explicitly.
+- Since it says only for Joe Manchin, we cannot treat (d) vs (i) as equivalent here.
+- Josh Hawley vs Mark Kelly - entirely different senators.
+- Response includes Sinema (d), target Sinema (i), and Mark Kelly (d).
+- Because of (d) vs (i) for Sinema is probably not accepted, and second senator differs.
+- Score: 0
+
+### idx_3
+- Response: ""johnboozman(r)&tomcotton(r)""
+- Target: ""johnboozman(r)tomcotton(r)""
+- Same two senators, different formatting but semantically equivalent.
+- Score: 1
+
+### idx_4
+- Response: ""jerrybrown(d)&alexpadilla(d)""
+- Target: ""alexpadilla(d)laphonzabutler(d)""
+- Response is Jerry Brown and Alex Padilla; target is Alex Padilla and LaPhonza Butler.
+- Jerry Brown is not a senator.
+- Only overlap is Alex Padilla.
+- One senator matches, other does not.
+- Criterion requires approximate semantics or pointing to same entity. Partial overlap is not enough to get full score.
+- According to instructions, score is 0 or 1 only.
+- Since partially correct is not specified as accepted, partial is likely 0.
+- Score: 0
+
+### idx_5
+- Response: ""michaelbennet(d)&johnthune(r)""
+- Target: ""michaelbennet(d)johnhickenlooper(d)""
+- One senator matches (Bennet), other is different (John Thune vs John Hickenlooper).
+- As above, partial matches are not accepted to grant full score.
+- Score: 0
+
+### idx_6
+- Response: ""richardblumenthal(d)&chrismurphy(d)""
+- Target: ""richardblumenthal(d)chrismurphy(d)""
+- Exact match except format. Score: 1
+
+### idx_7
+- Response: contains some URLs and ""chrismurphy(d)&johnthune(r)""
+- Target: ""tomcarper(d)chriscoons(d)""
+- Response senators: Murphy and Thune
+- Target: Carper and Coons
+- No matches, URLs are irrelevant.
+- Score: 0
+
+### idx_8
+- Response: ""marcorubio(r)&rickscott(r)""
+- Target: ""marcorubio(r)rickscott(r)""
+- Exact matches
+- Score: 1
+
+### idx_9
+- Response: ""davidperdue(r)&jonossoff(d)""
+- Target: ""jonossoff(d)raphaelwarnock(d)""
+- Both have Jon Ossoff, other senators differ
+- Partial match only, score: 0
+
+### idx_10
+- Response: ""maziehirono(d)&joshhawley(r)""
+- Target: ""brianschatz(d)maziehirono(d)""
+- One senator matches (Mazie Hirono)
+- Partial match only, score: 0
+
+### idx_11
+- Response: ""mikecrapo(r)&https://senate.idaho.gov/craig-cornelius/craigcornelius(r)""
+- Target: ""mikecrapo(r)jimrisch(r)""
+- Mike Crapo matches
+- Craig Cornelius (not senator), target is Jim Risch (senator)
+- Partial match only, score: 0
+
+### idx_12
+- Response: ""dickdurbin(d)&tammyduckworth(d)""
+- Target: same
+- Exact match
+- Score: 1
+
+### idx_13
+- Response: ""dancoon(r)&toddyoung(r)""
+- Target: ""toddyoung(r)mikebraun(r)""
+- Response includes Young and Dan Coon (not a senator)
+- Target Young and Braun
+- Partial match only, score: 0
+
+---
+
+## Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0
+}
+```
+",toddyoung(r)mikebraun(r),dancoon(r)&toddyoung(r),1.0,key_match
+,1.0,...,...,,,,...,,,,...,,,,...,,,,...,,
+1.0,,iowa,,,,kimreynolds(r),,,,4,,,,6,,,,chuckgrassley(r)joniernst(r),,,
+1.0,,kansas,,,,laurakelly(d),,,,4,,,,6,,,,jerrymoran(r)rogermarshall(r),,,
+1.0,,kentucky,,,,andybeshear(d),,,,6,,,,8,,,,mitchmcconnell(r)randpaul(r),,,
+1.0,,louisiana,,,,jefflandry(r),,,,6,,,,8,,,,billcassidy(r)johnkennedy(r),,,
+1.0,,maine,,,,janetmills(d),,,,2,,,,4,,,,susancollins(r)angusking(i),,,
+1.0,,maryland,,,,wesmoore(d),,,,8,,,,10,,,,bencardin(d)chrisvanhollen(d),,,
+1.0,,massachusetts,,,,maurahealey(d),,,,9,,,,11,,,,elizabethwarren(d)edmarkey(d),,,
+1.0,,michigan,,,,gretchenwhitmer(d),,,,13,,,,15,,,,debbiestabenow(d)garypeters(d),,,
+1.0,,minnesota,,,,timwalz(d),,,,8,,,,10,,,,amyklobuchar(d)tinasmith(d),,,
+1.0,,mississippi,,,,tatereeves(r),,,,4,,,,6,,,,rogerwicker(r)cindyhyde-smith(r),,,
+1.0,,missouri,,,,mikeparson(r),,,,8,,,,10,,,,joshhawley(r)ericschmitt(r),,,
+1.0,,montana,,,,greggianforte(r),,,,2,,,,4,,,,jontester(d)stevedaines(r),,,
+1.0,,nebraska,,,,jimpillen(r),,,,3,,,,5,,,,debfischer(r)petericketts(r),,,
+1.0,,nevada,,,,joelombardo(r),,,,4,,,,6,,,,catherinecortezmasto(d)jackyrosen(d),,,
+1.0,,newhampshire,,,,chrissununu(r),,,,2,,,,4,,,,jeanneshaheen(d)maggiehassan(d),,,
+1.0,,newjersey,,,,philmurphy(d),,,,12,,,,14,,,,bobmenendez(d)corybooker(d),,,
+1.0,,newmexico,,,,michellelujangrisham(d),,,,3,,,,5,,,,martinheinrich(d)benrayluján(d),,,
+1.0,,newyork,,,,kathyhochul(d),,,,26,,,,28,,,,chuckschumer(d)kirstengillibrand(d),,,
+1.0,,northcarolina,,,,roycooper(d),,,,14,,,,16,,,,thomtillis(r)tedbudd(r),,,
+1.0,,northdakota,,,,dougburgum(r),,,,1,,,,3,,,,johnhoeven(r)kevincramer(r),,,
+1.0,,ohio,,,,mikedewine(r),,,,15,,,,17,,,,sherrodbrown(d)j.d.vance(r),,,
+1.0,,oklahoma,,,,kevinstitt(r),,,,5,,,,7,,,,jameslankford(r)markwaynemullin(r),,,
+1.0,,oregon,,,,tinakotek(d),,,,6,,,,8,,,,ronwyden(d)jeffmerkley(d),,,
+1.0,,pennsylvania,,,,joshshapiro(d),,,,17,,,,19,,,,bobcaseyjr.(d)johnfetterman(d),,,
+1.0,,rhodeisland,,,,danielmckee(d),,,,2,,,,4,,,,jackreed(d)sheldonwhitehouse(d),,,
+1.0,,southcarolina,,,,henrymcmaster(r),,,,7,,,,9,,,,lindseygraham(r)timscott(r),,,
+1.0,,southdakota,,,,kristinoem(r),,,,1,,,,3,,,,johnthune(r)mikerounds(r),,,
+1.0,,tennessee,,,,billlee(r),,,,9,,,,11,,,,marshablackburn(r)billhagerty(r),,,
+1.0,,texas,,,,gregabbott(r),,,,38,,,,40,,,,johncornyn(r)tedcruz(r),,,
+1.0,,utah,,,,spencercox(r),,,,4,,,,6,,,,mikelee(r)mittromney(r),,,
+1.0,,vermont,,,,philscott(r),,,,1,,,,3,,,,berniesanders(i)peterwelch(d),,,
+1.0,,virginia,,,,glennyoungkin(r),,,,11,,,,13,,,,markwarner(d)timkaine(d),,,
+1.0,,washington,,,,jayinslee(d),,,,10,,,,12,,,,pattymurray(d)mariacantwell(d),,,
+1.0,,westvirginia,,,,jimjustice(r),,,,2,,,,4,,,,joemanchin(d)shelleymoorecapito(r),,,
+1.0,,wisconsin,,,,tonyevers(d),,,,8,,,,10,,,,ronjohnson(r)tammybaldwin(d),,,
+1.0,,wyoming,,,,markgordon(r),,,,1,,,,3,,,,johnbarrasso(r)cynthialummis(r),,,

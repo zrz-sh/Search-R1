@@ -1,0 +1,988 @@
+exist_flag_gt,exist_flag_response,模型名称,模型名称_before_map,aime2025_number_near,aime2025_number_near_eval_msg,aime2025_query,aime2025_response,swe-benchverified_number_near,swe-benchverified_number_near_eval_msg,swe-benchverified_query,swe-benchverified_response,tau-bench-airline_number_near,tau-bench-airline_number_near_eval_msg,tau-bench-airline_query,tau-bench-airline_response,tau-bench-retail_number_near,tau-bench-retail_number_near_eval_msg,tau-bench-retail_query,tau-bench-retail_response,上下文窗口_llm_judge,上下文窗口_llm_judge_eval_msg,上下文窗口_query,上下文窗口_response,公司_llm_judge,公司_llm_judge_eval_msg,公司_query,公司_response,模型名称_exact_match,模型名称_exact_match_eval_msg
+,,gemini2.5pro,Gemini 2.5 Pro,0.0,"number not near, response: 8.0, target: 0.88",88%,8,0.0,"number not near, response: 0.6859999999999999, target: 0.596",59.60%,68.6%,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,0.0,"number not convertable, response: 0.584, target: None",NULL,58.4%,0.0,"Let's analyze and score each pair according to the criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+It means the response must be semantically roughly the same or indicate the same entity as the target, not necessarily word-for-word.
+
+---
+
+### idx_0
+- response: ""32k""  
+- target: ""1m""  
+**Analysis:** 32k and 1m refer to different quantities (32,000 vs. 1,000,000). They clearly do not match or indicate the same entity.  
+**Score:** 0
+
+### idx_1
+- response: ""16k""  
+- target: ""1m""  
+**Analysis:** 16k vs 1m are different quantities, no semantic match or equivalence.  
+**Score:** 0
+
+### idx_2
+- response: ""16k""  
+- target: ""200k""  
+**Analysis:** 16k and 200k are different numbers, so different entities. Not matching.  
+**Score:** 0
+
+### idx_3
+- response: ""32k""  
+- target: ""200k""  
+**Analysis:** Different numbers, no semantic equivalence.  
+**Score:** 0
+
+### idx_4
+- response: ""16k""  
+- target: ""200k""  
+**Analysis:** Different quantities, no equivalence.  
+**Score:** 0
+
+### idx_5
+- response: ""32k""  
+- target: ""200k""  
+**Analysis:** Different quantities, no equivalence.  
+**Score:** 0
+
+### idx_6
+- response: ""32k""  
+- target: ""32k""  
+**Analysis:** Exactly the same entity. Perfect match.  
+**Score:** 1
+
+### idx_7
+- response: ""32k""  
+- target: ""256k""  
+**Analysis:** Different quantities, no equivalence.  
+**Score:** 0
+
+---
+
+### Final results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0
+}
+```",1m,32k,0.0,"Let's analyze each pair (response vs target) according to the criterion:
+
+Criterion: 和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。  
+Translation: The meaning or referred entity of the response and target should be basically the same, no need to match word by word.
+
+---
+
+Analysis:
+
+- idx_0: response = ""anthropic"", target = ""谷歌""  
+  ""Anthropic"" and ""谷歌"" (Google) are clearly distinct entities. Not the same or equivalent.  
+  Score: 0
+
+- idx_1: same as idx_0  
+  Score: 0
+
+- idx_2: response = ""openai"", target = ""openai""  
+  Fully matched.  
+  Score: 1
+
+- idx_3: same as idx_2  
+  Score: 1
+
+- idx_4: same as idx_2  
+  Score: 1
+
+- idx_5: response = ""anthropic"", target = ""anthropic""  
+  Fully matched.  
+  Score: 1
+
+- idx_6: response = ""bytedance"", target = ""字节跳动""  
+  ""bytedance"" is English name for ""字节跳动"", which is the same entity.  
+  So, equivalent.  
+  Score: 1
+
+- idx_7: same as idx_6  
+  Score: 1
+
+---
+
+Final scores in JSON format:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",谷歌,anthropic,1.0,key_match
+,,gemini2.5flash-lite-thinking,Gemini 2.5 Flash-Lite,0.0,"number not near, response: 0.0, target: 0.631",63.10%,0,0.0,"number not convertable, response: None, target: 0.276",27.60%,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,0.0,"Let's analyze and score each pair according to the criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+It means the response must be semantically roughly the same or indicate the same entity as the target, not necessarily word-for-word.
+
+---
+
+### idx_0
+- response: ""32k""  
+- target: ""1m""  
+**Analysis:** 32k and 1m refer to different quantities (32,000 vs. 1,000,000). They clearly do not match or indicate the same entity.  
+**Score:** 0
+
+### idx_1
+- response: ""16k""  
+- target: ""1m""  
+**Analysis:** 16k vs 1m are different quantities, no semantic match or equivalence.  
+**Score:** 0
+
+### idx_2
+- response: ""16k""  
+- target: ""200k""  
+**Analysis:** 16k and 200k are different numbers, so different entities. Not matching.  
+**Score:** 0
+
+### idx_3
+- response: ""32k""  
+- target: ""200k""  
+**Analysis:** Different numbers, no semantic equivalence.  
+**Score:** 0
+
+### idx_4
+- response: ""16k""  
+- target: ""200k""  
+**Analysis:** Different quantities, no equivalence.  
+**Score:** 0
+
+### idx_5
+- response: ""32k""  
+- target: ""200k""  
+**Analysis:** Different quantities, no equivalence.  
+**Score:** 0
+
+### idx_6
+- response: ""32k""  
+- target: ""32k""  
+**Analysis:** Exactly the same entity. Perfect match.  
+**Score:** 1
+
+### idx_7
+- response: ""32k""  
+- target: ""256k""  
+**Analysis:** Different quantities, no equivalence.  
+**Score:** 0
+
+---
+
+### Final results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0
+}
+```",1m,16k,0.0,"Let's analyze each pair (response vs target) according to the criterion:
+
+Criterion: 和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。  
+Translation: The meaning or referred entity of the response and target should be basically the same, no need to match word by word.
+
+---
+
+Analysis:
+
+- idx_0: response = ""anthropic"", target = ""谷歌""  
+  ""Anthropic"" and ""谷歌"" (Google) are clearly distinct entities. Not the same or equivalent.  
+  Score: 0
+
+- idx_1: same as idx_0  
+  Score: 0
+
+- idx_2: response = ""openai"", target = ""openai""  
+  Fully matched.  
+  Score: 1
+
+- idx_3: same as idx_2  
+  Score: 1
+
+- idx_4: same as idx_2  
+  Score: 1
+
+- idx_5: response = ""anthropic"", target = ""anthropic""  
+  Fully matched.  
+  Score: 1
+
+- idx_6: response = ""bytedance"", target = ""字节跳动""  
+  ""bytedance"" is English name for ""字节跳动"", which is the same entity.  
+  So, equivalent.  
+  Score: 1
+
+- idx_7: same as idx_6  
+  Score: 1
+
+---
+
+Final scores in JSON format:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",谷歌,anthropic,1.0,key_match
+,,o4-mini,O4 Mini,0.0,"number not near, response: 8.0, target: 0.927",92.70%,8,1.0,"number near in range 5.0%, response: 0.6859999999999999, target: 0.6809999999999999",68.10%,68.6%,0.0,"number not convertable, response: None, target: 0.49200000000000005",49.20%,NULL,0.0,"number not convertable, response: None, target: 0.6559999999999999",65.60%,NULL,0.0,"Let's analyze and score each pair according to the criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+It means the response must be semantically roughly the same or indicate the same entity as the target, not necessarily word-for-word.
+
+---
+
+### idx_0
+- response: ""32k""  
+- target: ""1m""  
+**Analysis:** 32k and 1m refer to different quantities (32,000 vs. 1,000,000). They clearly do not match or indicate the same entity.  
+**Score:** 0
+
+### idx_1
+- response: ""16k""  
+- target: ""1m""  
+**Analysis:** 16k vs 1m are different quantities, no semantic match or equivalence.  
+**Score:** 0
+
+### idx_2
+- response: ""16k""  
+- target: ""200k""  
+**Analysis:** 16k and 200k are different numbers, so different entities. Not matching.  
+**Score:** 0
+
+### idx_3
+- response: ""32k""  
+- target: ""200k""  
+**Analysis:** Different numbers, no semantic equivalence.  
+**Score:** 0
+
+### idx_4
+- response: ""16k""  
+- target: ""200k""  
+**Analysis:** Different quantities, no equivalence.  
+**Score:** 0
+
+### idx_5
+- response: ""32k""  
+- target: ""200k""  
+**Analysis:** Different quantities, no equivalence.  
+**Score:** 0
+
+### idx_6
+- response: ""32k""  
+- target: ""32k""  
+**Analysis:** Exactly the same entity. Perfect match.  
+**Score:** 1
+
+### idx_7
+- response: ""32k""  
+- target: ""256k""  
+**Analysis:** Different quantities, no equivalence.  
+**Score:** 0
+
+---
+
+### Final results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0
+}
+```",200k,16k,1.0,"Let's analyze each pair (response vs target) according to the criterion:
+
+Criterion: 和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。  
+Translation: The meaning or referred entity of the response and target should be basically the same, no need to match word by word.
+
+---
+
+Analysis:
+
+- idx_0: response = ""anthropic"", target = ""谷歌""  
+  ""Anthropic"" and ""谷歌"" (Google) are clearly distinct entities. Not the same or equivalent.  
+  Score: 0
+
+- idx_1: same as idx_0  
+  Score: 0
+
+- idx_2: response = ""openai"", target = ""openai""  
+  Fully matched.  
+  Score: 1
+
+- idx_3: same as idx_2  
+  Score: 1
+
+- idx_4: same as idx_2  
+  Score: 1
+
+- idx_5: response = ""anthropic"", target = ""anthropic""  
+  Fully matched.  
+  Score: 1
+
+- idx_6: response = ""bytedance"", target = ""字节跳动""  
+  ""bytedance"" is English name for ""字节跳动"", which is the same entity.  
+  So, equivalent.  
+  Score: 1
+
+- idx_7: same as idx_6  
+  Score: 1
+
+---
+
+Final scores in JSON format:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",openai,openai,1.0,key_match
+,,o3,O3,0.0,"number not near, response: 8.0, target: 0.889",88.90%,8,1.0,"number near in range 5.0%, response: 0.6859999999999999, target: 0.691",69.10%,68.6%,0.0,"number not convertable, response: None, target: 0.52",52%,NULL,0.0,"number not convertable, response: None, target: 0.7040000000000001",70.40%,NULL,0.0,"Let's analyze and score each pair according to the criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+It means the response must be semantically roughly the same or indicate the same entity as the target, not necessarily word-for-word.
+
+---
+
+### idx_0
+- response: ""32k""  
+- target: ""1m""  
+**Analysis:** 32k and 1m refer to different quantities (32,000 vs. 1,000,000). They clearly do not match or indicate the same entity.  
+**Score:** 0
+
+### idx_1
+- response: ""16k""  
+- target: ""1m""  
+**Analysis:** 16k vs 1m are different quantities, no semantic match or equivalence.  
+**Score:** 0
+
+### idx_2
+- response: ""16k""  
+- target: ""200k""  
+**Analysis:** 16k and 200k are different numbers, so different entities. Not matching.  
+**Score:** 0
+
+### idx_3
+- response: ""32k""  
+- target: ""200k""  
+**Analysis:** Different numbers, no semantic equivalence.  
+**Score:** 0
+
+### idx_4
+- response: ""16k""  
+- target: ""200k""  
+**Analysis:** Different quantities, no equivalence.  
+**Score:** 0
+
+### idx_5
+- response: ""32k""  
+- target: ""200k""  
+**Analysis:** Different quantities, no equivalence.  
+**Score:** 0
+
+### idx_6
+- response: ""32k""  
+- target: ""32k""  
+**Analysis:** Exactly the same entity. Perfect match.  
+**Score:** 1
+
+### idx_7
+- response: ""32k""  
+- target: ""256k""  
+**Analysis:** Different quantities, no equivalence.  
+**Score:** 0
+
+---
+
+### Final results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0
+}
+```",200k,32k,1.0,"Let's analyze each pair (response vs target) according to the criterion:
+
+Criterion: 和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。  
+Translation: The meaning or referred entity of the response and target should be basically the same, no need to match word by word.
+
+---
+
+Analysis:
+
+- idx_0: response = ""anthropic"", target = ""谷歌""  
+  ""Anthropic"" and ""谷歌"" (Google) are clearly distinct entities. Not the same or equivalent.  
+  Score: 0
+
+- idx_1: same as idx_0  
+  Score: 0
+
+- idx_2: response = ""openai"", target = ""openai""  
+  Fully matched.  
+  Score: 1
+
+- idx_3: same as idx_2  
+  Score: 1
+
+- idx_4: same as idx_2  
+  Score: 1
+
+- idx_5: response = ""anthropic"", target = ""anthropic""  
+  Fully matched.  
+  Score: 1
+
+- idx_6: response = ""bytedance"", target = ""字节跳动""  
+  ""bytedance"" is English name for ""字节跳动"", which is the same entity.  
+  So, equivalent.  
+  Score: 1
+
+- idx_7: same as idx_6  
+  Score: 1
+
+---
+
+Final scores in JSON format:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",openai,openai,1.0,key_match
+,,o3mini,O3 Mini,0.0,"number not near, response: 8.0, target: 0.865",86.50%,8,0.0,"number not near, response: 0.6859999999999999, target: 0.493",49.30%,68.6%,0.0,"number not near, response: 0.535, target: 0.324",32.40%,53.5%,0.0,"number not near, response: 0.639, target: 0.5760000000000001",57.60%,63.9%,0.0,"Let's analyze and score each pair according to the criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+It means the response must be semantically roughly the same or indicate the same entity as the target, not necessarily word-for-word.
+
+---
+
+### idx_0
+- response: ""32k""  
+- target: ""1m""  
+**Analysis:** 32k and 1m refer to different quantities (32,000 vs. 1,000,000). They clearly do not match or indicate the same entity.  
+**Score:** 0
+
+### idx_1
+- response: ""16k""  
+- target: ""1m""  
+**Analysis:** 16k vs 1m are different quantities, no semantic match or equivalence.  
+**Score:** 0
+
+### idx_2
+- response: ""16k""  
+- target: ""200k""  
+**Analysis:** 16k and 200k are different numbers, so different entities. Not matching.  
+**Score:** 0
+
+### idx_3
+- response: ""32k""  
+- target: ""200k""  
+**Analysis:** Different numbers, no semantic equivalence.  
+**Score:** 0
+
+### idx_4
+- response: ""16k""  
+- target: ""200k""  
+**Analysis:** Different quantities, no equivalence.  
+**Score:** 0
+
+### idx_5
+- response: ""32k""  
+- target: ""200k""  
+**Analysis:** Different quantities, no equivalence.  
+**Score:** 0
+
+### idx_6
+- response: ""32k""  
+- target: ""32k""  
+**Analysis:** Exactly the same entity. Perfect match.  
+**Score:** 1
+
+### idx_7
+- response: ""32k""  
+- target: ""256k""  
+**Analysis:** Different quantities, no equivalence.  
+**Score:** 0
+
+---
+
+### Final results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0
+}
+```",200k,16k,1.0,"Let's analyze each pair (response vs target) according to the criterion:
+
+Criterion: 和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。  
+Translation: The meaning or referred entity of the response and target should be basically the same, no need to match word by word.
+
+---
+
+Analysis:
+
+- idx_0: response = ""anthropic"", target = ""谷歌""  
+  ""Anthropic"" and ""谷歌"" (Google) are clearly distinct entities. Not the same or equivalent.  
+  Score: 0
+
+- idx_1: same as idx_0  
+  Score: 0
+
+- idx_2: response = ""openai"", target = ""openai""  
+  Fully matched.  
+  Score: 1
+
+- idx_3: same as idx_2  
+  Score: 1
+
+- idx_4: same as idx_2  
+  Score: 1
+
+- idx_5: response = ""anthropic"", target = ""anthropic""  
+  Fully matched.  
+  Score: 1
+
+- idx_6: response = ""bytedance"", target = ""字节跳动""  
+  ""bytedance"" is English name for ""字节跳动"", which is the same entity.  
+  So, equivalent.  
+  Score: 1
+
+- idx_7: same as idx_6  
+  Score: 1
+
+---
+
+Final scores in JSON format:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",openai,openai,1.0,key_match
+,,claude3.7sonnet,Claude 3.7 Sonnet,0.0,"number not near, response: 8.0, target: 0.5479999999999999",54.80%,8,0.0,"number not near, response: 0.703, target: 0.623",62.30%,70.3%,1.0,"number near in range 5.0%, response: 0.584, target: 0.584",58.40%,58.4%,0.0,"number not near, response: 0.494, target: 0.812",81.20%,49.4%,0.0,"Let's analyze and score each pair according to the criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+It means the response must be semantically roughly the same or indicate the same entity as the target, not necessarily word-for-word.
+
+---
+
+### idx_0
+- response: ""32k""  
+- target: ""1m""  
+**Analysis:** 32k and 1m refer to different quantities (32,000 vs. 1,000,000). They clearly do not match or indicate the same entity.  
+**Score:** 0
+
+### idx_1
+- response: ""16k""  
+- target: ""1m""  
+**Analysis:** 16k vs 1m are different quantities, no semantic match or equivalence.  
+**Score:** 0
+
+### idx_2
+- response: ""16k""  
+- target: ""200k""  
+**Analysis:** 16k and 200k are different numbers, so different entities. Not matching.  
+**Score:** 0
+
+### idx_3
+- response: ""32k""  
+- target: ""200k""  
+**Analysis:** Different numbers, no semantic equivalence.  
+**Score:** 0
+
+### idx_4
+- response: ""16k""  
+- target: ""200k""  
+**Analysis:** Different quantities, no equivalence.  
+**Score:** 0
+
+### idx_5
+- response: ""32k""  
+- target: ""200k""  
+**Analysis:** Different quantities, no equivalence.  
+**Score:** 0
+
+### idx_6
+- response: ""32k""  
+- target: ""32k""  
+**Analysis:** Exactly the same entity. Perfect match.  
+**Score:** 1
+
+### idx_7
+- response: ""32k""  
+- target: ""256k""  
+**Analysis:** Different quantities, no equivalence.  
+**Score:** 0
+
+---
+
+### Final results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0
+}
+```",200k,32k,1.0,"Let's analyze each pair (response vs target) according to the criterion:
+
+Criterion: 和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。  
+Translation: The meaning or referred entity of the response and target should be basically the same, no need to match word by word.
+
+---
+
+Analysis:
+
+- idx_0: response = ""anthropic"", target = ""谷歌""  
+  ""Anthropic"" and ""谷歌"" (Google) are clearly distinct entities. Not the same or equivalent.  
+  Score: 0
+
+- idx_1: same as idx_0  
+  Score: 0
+
+- idx_2: response = ""openai"", target = ""openai""  
+  Fully matched.  
+  Score: 1
+
+- idx_3: same as idx_2  
+  Score: 1
+
+- idx_4: same as idx_2  
+  Score: 1
+
+- idx_5: response = ""anthropic"", target = ""anthropic""  
+  Fully matched.  
+  Score: 1
+
+- idx_6: response = ""bytedance"", target = ""字节跳动""  
+  ""bytedance"" is English name for ""字节跳动"", which is the same entity.  
+  So, equivalent.  
+  Score: 1
+
+- idx_7: same as idx_6  
+  Score: 1
+
+---
+
+Final scores in JSON format:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",anthropic,anthropic,1.0,key_match
+,,seed-thinkingv1.5,Doubao-1.5-Thinking,0.0,"number not near, response: 8.0, target: 0.74",74%,8,0.0,"number not near, response: 0.66, target: 0.47",47%,66.0%,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,1.0,"Let's analyze and score each pair according to the criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+It means the response must be semantically roughly the same or indicate the same entity as the target, not necessarily word-for-word.
+
+---
+
+### idx_0
+- response: ""32k""  
+- target: ""1m""  
+**Analysis:** 32k and 1m refer to different quantities (32,000 vs. 1,000,000). They clearly do not match or indicate the same entity.  
+**Score:** 0
+
+### idx_1
+- response: ""16k""  
+- target: ""1m""  
+**Analysis:** 16k vs 1m are different quantities, no semantic match or equivalence.  
+**Score:** 0
+
+### idx_2
+- response: ""16k""  
+- target: ""200k""  
+**Analysis:** 16k and 200k are different numbers, so different entities. Not matching.  
+**Score:** 0
+
+### idx_3
+- response: ""32k""  
+- target: ""200k""  
+**Analysis:** Different numbers, no semantic equivalence.  
+**Score:** 0
+
+### idx_4
+- response: ""16k""  
+- target: ""200k""  
+**Analysis:** Different quantities, no equivalence.  
+**Score:** 0
+
+### idx_5
+- response: ""32k""  
+- target: ""200k""  
+**Analysis:** Different quantities, no equivalence.  
+**Score:** 0
+
+### idx_6
+- response: ""32k""  
+- target: ""32k""  
+**Analysis:** Exactly the same entity. Perfect match.  
+**Score:** 1
+
+### idx_7
+- response: ""32k""  
+- target: ""256k""  
+**Analysis:** Different quantities, no equivalence.  
+**Score:** 0
+
+---
+
+### Final results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0
+}
+```",32k,32k,1.0,"Let's analyze each pair (response vs target) according to the criterion:
+
+Criterion: 和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。  
+Translation: The meaning or referred entity of the response and target should be basically the same, no need to match word by word.
+
+---
+
+Analysis:
+
+- idx_0: response = ""anthropic"", target = ""谷歌""  
+  ""Anthropic"" and ""谷歌"" (Google) are clearly distinct entities. Not the same or equivalent.  
+  Score: 0
+
+- idx_1: same as idx_0  
+  Score: 0
+
+- idx_2: response = ""openai"", target = ""openai""  
+  Fully matched.  
+  Score: 1
+
+- idx_3: same as idx_2  
+  Score: 1
+
+- idx_4: same as idx_2  
+  Score: 1
+
+- idx_5: response = ""anthropic"", target = ""anthropic""  
+  Fully matched.  
+  Score: 1
+
+- idx_6: response = ""bytedance"", target = ""字节跳动""  
+  ""bytedance"" is English name for ""字节跳动"", which is the same entity.  
+  So, equivalent.  
+  Score: 1
+
+- idx_7: same as idx_6  
+  Score: 1
+
+---
+
+Final scores in JSON format:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",字节跳动,bytedance,1.0,key_match
+,,seed-thinkingv1.6,Doubao-1.6-Thinking,0.0,"number not near, response: 8.0, target: 0.86",86%,8,0.0,"number not convertable, response: 0.66, target: None",NULL,66.0%,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,0.0,"Let's analyze and score each pair according to the criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+It means the response must be semantically roughly the same or indicate the same entity as the target, not necessarily word-for-word.
+
+---
+
+### idx_0
+- response: ""32k""  
+- target: ""1m""  
+**Analysis:** 32k and 1m refer to different quantities (32,000 vs. 1,000,000). They clearly do not match or indicate the same entity.  
+**Score:** 0
+
+### idx_1
+- response: ""16k""  
+- target: ""1m""  
+**Analysis:** 16k vs 1m are different quantities, no semantic match or equivalence.  
+**Score:** 0
+
+### idx_2
+- response: ""16k""  
+- target: ""200k""  
+**Analysis:** 16k and 200k are different numbers, so different entities. Not matching.  
+**Score:** 0
+
+### idx_3
+- response: ""32k""  
+- target: ""200k""  
+**Analysis:** Different numbers, no semantic equivalence.  
+**Score:** 0
+
+### idx_4
+- response: ""16k""  
+- target: ""200k""  
+**Analysis:** Different quantities, no equivalence.  
+**Score:** 0
+
+### idx_5
+- response: ""32k""  
+- target: ""200k""  
+**Analysis:** Different quantities, no equivalence.  
+**Score:** 0
+
+### idx_6
+- response: ""32k""  
+- target: ""32k""  
+**Analysis:** Exactly the same entity. Perfect match.  
+**Score:** 1
+
+### idx_7
+- response: ""32k""  
+- target: ""256k""  
+**Analysis:** Different quantities, no equivalence.  
+**Score:** 0
+
+---
+
+### Final results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0
+}
+```",256k,32k,1.0,"Let's analyze each pair (response vs target) according to the criterion:
+
+Criterion: 和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。  
+Translation: The meaning or referred entity of the response and target should be basically the same, no need to match word by word.
+
+---
+
+Analysis:
+
+- idx_0: response = ""anthropic"", target = ""谷歌""  
+  ""Anthropic"" and ""谷歌"" (Google) are clearly distinct entities. Not the same or equivalent.  
+  Score: 0
+
+- idx_1: same as idx_0  
+  Score: 0
+
+- idx_2: response = ""openai"", target = ""openai""  
+  Fully matched.  
+  Score: 1
+
+- idx_3: same as idx_2  
+  Score: 1
+
+- idx_4: same as idx_2  
+  Score: 1
+
+- idx_5: response = ""anthropic"", target = ""anthropic""  
+  Fully matched.  
+  Score: 1
+
+- idx_6: response = ""bytedance"", target = ""字节跳动""  
+  ""bytedance"" is English name for ""字节跳动"", which is the same entity.  
+  So, equivalent.  
+  Score: 1
+
+- idx_7: same as idx_6  
+  Score: 1
+
+---
+
+Final scores in JSON format:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",字节跳动,bytedance,1.0,key_match
+1.0,,claudeopus4,,,,75.50%,,,,72.50%,,,,59.60%,,,,81.40%,,,,200k,,,,anthropic,,,
+1.0,,claudesonnet4,,,,70.50%,,,,72.70%,,,,60%,,,,80.50%,,,,200k,,,,anthropic,,,
+1.0,,deepseek-r1,,,,70%,,,,49.20%,,,,NULL,,,,NULL,,,,128k,,,,deepseek,,,
+1.0,,deepseek-r1-0528,,,,87.50%,,,,57.60%,,,,NULL,,,,NULL,,,,64k,,,,deepseek,,,
+1.0,,deepseek-v3,,,,NULL,,,,42%,,,,NULL,,,,NULL,,,,128k,,,,deepseek,,,
+1.0,,deepseek-v3-0324,,,,47.74%,,,,38.80%,,,,NULL,,,,NULL,,,,64k,,,,deepseek,,,
+,1.0,deepseekv3+,DeepSeek V3+,,,,8,,,,66.0%,,,,53.5%,,,,63.9%,,,,32k,,,,deepseek,,
+1.0,,gemini2.5flash-lite-nonthinking,,,,49.80%,,,,31.60%,,,,NULL,,,,NULL,,,,1m,,,,谷歌,,,
+1.0,,gemini2.5flash-nonthinking,,,,61.60%,,,,50%,,,,NULL,,,,NULL,,,,1m,,,,谷歌,,,
+1.0,,gemini2.5flash-thinking,,,,72.00%,,,,48.90%,,,,NULL,,,,NULL,,,,1m,,,,谷歌,,,
+,1.0,gemini2.5lite,Gemini 2.5 Lite,,,,1,,,,NULL,,,,NULL,,,,NULL,,,,16k,,,,anthropic,,

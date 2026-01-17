@@ -1,0 +1,1717 @@
+exist_flag_gt,exist_flag_response,电影名称,电影名称_before_map,上映年份_llm_judge,上映年份_llm_judge_eval_msg,上映年份_query,上映年份_response,导演_llm_judge,导演_llm_judge_eval_msg,导演_query,导演_response,梁朝伟通过该电影所获奖项_llm_judge,梁朝伟通过该电影所获奖项_llm_judge_eval_msg,梁朝伟通过该电影所获奖项_query,梁朝伟通过该电影所获奖项_response,电影名称_exact_match,电影名称_exact_match_eval_msg
+,,侠骨仁心,东邪西毒,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+That means the response only needs to be roughly the same or refer to the same entity. Since the answers and responses are years, the response must be the same year as the target year to get 1. Any mismatch will get 0.
+
+---
+
+Analysis:
+
+- idx_0: response '1995' vs target '2000年' → Different year → 0
+- idx_1: response '2000' vs target '2000年' → Same year → 1
+- idx_2: response '1997' vs target '2001年' → Different → 0
+- idx_3: response '2017' vs target '2002年' → Different → 0
+- idx_4: response '2002' vs target '2002年' → Same → 1
+- idx_5: response '2005' vs target '2002年' → Different → 0
+- idx_6: response '2004' vs target '2004年' → Same → 1
+- idx_7: response '2023' vs target '2023年' → Same → 1
+- idx_8: response '2006' vs target '2023年' → Different → 0
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0
+}
+```",2000年,1995,0.0,"首先，根据给定的评分准则：
+- 回答与参考答案语义相同或者指向的实体一致，即可得1分；
+- 否则为0分。
+
+逐一分析：
+
+idx_0  
+response: 王家卫  
+target: 邓特希  
+二者是不同的人名，且语义不一致，不得分。
+
+idx_1  
+response: 王家卫  
+target: 王家卫  
+完全相同，人名一致，得1分。
+
+idx_2  
+response: 王家卫  
+target: 马伟豪  
+不同人名，语义不一致，得0分。
+
+idx_3  
+response: 徐皓峰  
+target: 刘镇伟  
+不同人名，语义不一致，得0分。
+
+idx_4  
+response: 陈果  
+target: 刘伟强、麦兆辉  
+响应只有一个导演名称，目标答案是两个导演名称，且不同人名，语义不对应，得0分。
+
+idx_5  
+response: 杜琪峰  
+target: 张艺谋  
+不同人名，语义不一致，得0分。
+
+idx_6  
+response: 王家卫  
+target: 王家卫  
+相同，得1分。
+
+idx_7  
+response: 吴京  
+target: 程耳  
+不同人名，语义不一致，得0分。
+
+idx_8  
+response: 陈嘉上  
+target: 庄文强  
+不同人名，不一致，得0分。
+
+综上，只有 idx_1 和 idx_6 得1分，其他均为0分。
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",邓特希,王家卫,1.0,"下面针对每个 idx 进行逐条分析判定：
+
+---
+
+**idx_0**  
+- response: '-'  
+- target: '-'  
+分析：没有回答，标准答案也是无内容，可以视为无误。  
+判断：完全一致，得分1。
+
+---
+
+**idx_1**  
+- response: '法国戛纳电影节最佳男演员奖'  
+- target: '第53届戛纳国际电影节最佳男演员\n第20届香港电影金像奖最佳男主角\n第1届华语电影传媒大奖最佳男主角'  
+分析：响应只提到了“法国戛纳电影节最佳男演员奖”，与标准答案中“第53届戛纳国际电影节最佳男演员”指向的实体一致（均为戛纳电影节最佳男演员奖），但未涉及后两个奖项。根据评分标准，只要语义大致相同或者指向实体一致即可得1分。这里指向的“戛纳电影节最佳男演员奖”是标准答案的部分奖项。  
+判断：响应至少覆盖了部分标准答案中的实体，符合得1。
+
+---
+
+**idx_2**  
+- response: '-'  
+- target: '-'  
+分析：同idx_0，无内容，标准答案也无内容，得1分。
+
+---
+
+**idx_3**  
+- response: '-'  
+- target: '-'  
+分析：同idx_0、idx_2，无内容，标准答案也无内容，得1分。
+
+---
+
+**idx_4**  
+- response: '香港电影金像奖最佳男主角'  
+- target: '第22届香港电影金像奖最佳男主角\n第40届台湾电影金马奖最佳男主角奖'  
+分析：响应提到了“香港电影金像奖最佳男主角”，与标准答案中的“第22届香港电影金像奖最佳男主角”指向的实体一致。未提及台湾电影金马奖。根据标准，只要同义即可得满分。  
+判断：响应至少包含标准答案中一项，且指向实体一致，得1分。
+
+---
+
+**idx_5**  
+- response: '-'  
+- target: '-'  
+分析：无内容，对应无内容，得1分。
+
+---
+
+**idx_6**  
+- response: '-'  
+- target: '第24届香港电影金像奖最佳男主角'  
+分析：响应无内容，而标准答案有内容，内容不一致。  
+判断：响应未覆盖标准答案中的内容，得0分。
+
+---
+
+**idx_7**  
+- response: '-'  
+- target: '第36届中国电影金鸡奖最佳男主角'  
+分析：响应无内容，标准答案有内容，内容不一致。  
+得分0。
+
+---
+
+**idx_8**  
+- response: '-'  
+- target: '第42届香港电影金像奖最佳男主角'  
+分析：响应无内容，标准答案有内容，不符合。  
+得0分。
+
+---
+
+### 最终评分结果：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",-,-,1.0,key_match
+,,花样年华,花样年华,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+That means the response only needs to be roughly the same or refer to the same entity. Since the answers and responses are years, the response must be the same year as the target year to get 1. Any mismatch will get 0.
+
+---
+
+Analysis:
+
+- idx_0: response '1995' vs target '2000年' → Different year → 0
+- idx_1: response '2000' vs target '2000年' → Same year → 1
+- idx_2: response '1997' vs target '2001年' → Different → 0
+- idx_3: response '2017' vs target '2002年' → Different → 0
+- idx_4: response '2002' vs target '2002年' → Same → 1
+- idx_5: response '2005' vs target '2002年' → Different → 0
+- idx_6: response '2004' vs target '2004年' → Same → 1
+- idx_7: response '2023' vs target '2023年' → Same → 1
+- idx_8: response '2006' vs target '2023年' → Different → 0
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0
+}
+```",2000年,2000,1.0,"首先，根据给定的评分准则：
+- 回答与参考答案语义相同或者指向的实体一致，即可得1分；
+- 否则为0分。
+
+逐一分析：
+
+idx_0  
+response: 王家卫  
+target: 邓特希  
+二者是不同的人名，且语义不一致，不得分。
+
+idx_1  
+response: 王家卫  
+target: 王家卫  
+完全相同，人名一致，得1分。
+
+idx_2  
+response: 王家卫  
+target: 马伟豪  
+不同人名，语义不一致，得0分。
+
+idx_3  
+response: 徐皓峰  
+target: 刘镇伟  
+不同人名，语义不一致，得0分。
+
+idx_4  
+response: 陈果  
+target: 刘伟强、麦兆辉  
+响应只有一个导演名称，目标答案是两个导演名称，且不同人名，语义不对应，得0分。
+
+idx_5  
+response: 杜琪峰  
+target: 张艺谋  
+不同人名，语义不一致，得0分。
+
+idx_6  
+response: 王家卫  
+target: 王家卫  
+相同，得1分。
+
+idx_7  
+response: 吴京  
+target: 程耳  
+不同人名，语义不一致，得0分。
+
+idx_8  
+response: 陈嘉上  
+target: 庄文强  
+不同人名，不一致，得0分。
+
+综上，只有 idx_1 和 idx_6 得1分，其他均为0分。
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",王家卫,王家卫,1.0,"下面针对每个 idx 进行逐条分析判定：
+
+---
+
+**idx_0**  
+- response: '-'  
+- target: '-'  
+分析：没有回答，标准答案也是无内容，可以视为无误。  
+判断：完全一致，得分1。
+
+---
+
+**idx_1**  
+- response: '法国戛纳电影节最佳男演员奖'  
+- target: '第53届戛纳国际电影节最佳男演员\n第20届香港电影金像奖最佳男主角\n第1届华语电影传媒大奖最佳男主角'  
+分析：响应只提到了“法国戛纳电影节最佳男演员奖”，与标准答案中“第53届戛纳国际电影节最佳男演员”指向的实体一致（均为戛纳电影节最佳男演员奖），但未涉及后两个奖项。根据评分标准，只要语义大致相同或者指向实体一致即可得1分。这里指向的“戛纳电影节最佳男演员奖”是标准答案的部分奖项。  
+判断：响应至少覆盖了部分标准答案中的实体，符合得1。
+
+---
+
+**idx_2**  
+- response: '-'  
+- target: '-'  
+分析：同idx_0，无内容，标准答案也无内容，得1分。
+
+---
+
+**idx_3**  
+- response: '-'  
+- target: '-'  
+分析：同idx_0、idx_2，无内容，标准答案也无内容，得1分。
+
+---
+
+**idx_4**  
+- response: '香港电影金像奖最佳男主角'  
+- target: '第22届香港电影金像奖最佳男主角\n第40届台湾电影金马奖最佳男主角奖'  
+分析：响应提到了“香港电影金像奖最佳男主角”，与标准答案中的“第22届香港电影金像奖最佳男主角”指向的实体一致。未提及台湾电影金马奖。根据标准，只要同义即可得满分。  
+判断：响应至少包含标准答案中一项，且指向实体一致，得1分。
+
+---
+
+**idx_5**  
+- response: '-'  
+- target: '-'  
+分析：无内容，对应无内容，得1分。
+
+---
+
+**idx_6**  
+- response: '-'  
+- target: '第24届香港电影金像奖最佳男主角'  
+分析：响应无内容，而标准答案有内容，内容不一致。  
+判断：响应未覆盖标准答案中的内容，得0分。
+
+---
+
+**idx_7**  
+- response: '-'  
+- target: '第36届中国电影金鸡奖最佳男主角'  
+分析：响应无内容，标准答案有内容，内容不一致。  
+得分0。
+
+---
+
+**idx_8**  
+- response: '-'  
+- target: '第42届香港电影金像奖最佳男主角'  
+分析：响应无内容，标准答案有内容，不符合。  
+得0分。
+
+---
+
+### 最终评分结果：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```","第53届戛纳国际电影节最佳男演员
+第20届香港电影金像奖最佳男主角
+第1届华语电影传媒大奖最佳男主角",法国戛纳电影节最佳男演员奖,1.0,key_match
+,,同居蜜友,春光乍泄,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+That means the response only needs to be roughly the same or refer to the same entity. Since the answers and responses are years, the response must be the same year as the target year to get 1. Any mismatch will get 0.
+
+---
+
+Analysis:
+
+- idx_0: response '1995' vs target '2000年' → Different year → 0
+- idx_1: response '2000' vs target '2000年' → Same year → 1
+- idx_2: response '1997' vs target '2001年' → Different → 0
+- idx_3: response '2017' vs target '2002年' → Different → 0
+- idx_4: response '2002' vs target '2002年' → Same → 1
+- idx_5: response '2005' vs target '2002年' → Different → 0
+- idx_6: response '2004' vs target '2004年' → Same → 1
+- idx_7: response '2023' vs target '2023年' → Same → 1
+- idx_8: response '2006' vs target '2023年' → Different → 0
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0
+}
+```",2001年,1997,0.0,"首先，根据给定的评分准则：
+- 回答与参考答案语义相同或者指向的实体一致，即可得1分；
+- 否则为0分。
+
+逐一分析：
+
+idx_0  
+response: 王家卫  
+target: 邓特希  
+二者是不同的人名，且语义不一致，不得分。
+
+idx_1  
+response: 王家卫  
+target: 王家卫  
+完全相同，人名一致，得1分。
+
+idx_2  
+response: 王家卫  
+target: 马伟豪  
+不同人名，语义不一致，得0分。
+
+idx_3  
+response: 徐皓峰  
+target: 刘镇伟  
+不同人名，语义不一致，得0分。
+
+idx_4  
+response: 陈果  
+target: 刘伟强、麦兆辉  
+响应只有一个导演名称，目标答案是两个导演名称，且不同人名，语义不对应，得0分。
+
+idx_5  
+response: 杜琪峰  
+target: 张艺谋  
+不同人名，语义不一致，得0分。
+
+idx_6  
+response: 王家卫  
+target: 王家卫  
+相同，得1分。
+
+idx_7  
+response: 吴京  
+target: 程耳  
+不同人名，语义不一致，得0分。
+
+idx_8  
+response: 陈嘉上  
+target: 庄文强  
+不同人名，不一致，得0分。
+
+综上，只有 idx_1 和 idx_6 得1分，其他均为0分。
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",马伟豪,王家卫,1.0,"下面针对每个 idx 进行逐条分析判定：
+
+---
+
+**idx_0**  
+- response: '-'  
+- target: '-'  
+分析：没有回答，标准答案也是无内容，可以视为无误。  
+判断：完全一致，得分1。
+
+---
+
+**idx_1**  
+- response: '法国戛纳电影节最佳男演员奖'  
+- target: '第53届戛纳国际电影节最佳男演员\n第20届香港电影金像奖最佳男主角\n第1届华语电影传媒大奖最佳男主角'  
+分析：响应只提到了“法国戛纳电影节最佳男演员奖”，与标准答案中“第53届戛纳国际电影节最佳男演员”指向的实体一致（均为戛纳电影节最佳男演员奖），但未涉及后两个奖项。根据评分标准，只要语义大致相同或者指向实体一致即可得1分。这里指向的“戛纳电影节最佳男演员奖”是标准答案的部分奖项。  
+判断：响应至少覆盖了部分标准答案中的实体，符合得1。
+
+---
+
+**idx_2**  
+- response: '-'  
+- target: '-'  
+分析：同idx_0，无内容，标准答案也无内容，得1分。
+
+---
+
+**idx_3**  
+- response: '-'  
+- target: '-'  
+分析：同idx_0、idx_2，无内容，标准答案也无内容，得1分。
+
+---
+
+**idx_4**  
+- response: '香港电影金像奖最佳男主角'  
+- target: '第22届香港电影金像奖最佳男主角\n第40届台湾电影金马奖最佳男主角奖'  
+分析：响应提到了“香港电影金像奖最佳男主角”，与标准答案中的“第22届香港电影金像奖最佳男主角”指向的实体一致。未提及台湾电影金马奖。根据标准，只要同义即可得满分。  
+判断：响应至少包含标准答案中一项，且指向实体一致，得1分。
+
+---
+
+**idx_5**  
+- response: '-'  
+- target: '-'  
+分析：无内容，对应无内容，得1分。
+
+---
+
+**idx_6**  
+- response: '-'  
+- target: '第24届香港电影金像奖最佳男主角'  
+分析：响应无内容，而标准答案有内容，内容不一致。  
+判断：响应未覆盖标准答案中的内容，得0分。
+
+---
+
+**idx_7**  
+- response: '-'  
+- target: '第36届中国电影金鸡奖最佳男主角'  
+分析：响应无内容，标准答案有内容，内容不一致。  
+得分0。
+
+---
+
+**idx_8**  
+- response: '-'  
+- target: '第42届香港电影金像奖最佳男主角'  
+分析：响应无内容，标准答案有内容，不符合。  
+得0分。
+
+---
+
+### 最终评分结果：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",-,-,1.0,key_match
+,,天下无双,无双,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+That means the response only needs to be roughly the same or refer to the same entity. Since the answers and responses are years, the response must be the same year as the target year to get 1. Any mismatch will get 0.
+
+---
+
+Analysis:
+
+- idx_0: response '1995' vs target '2000年' → Different year → 0
+- idx_1: response '2000' vs target '2000年' → Same year → 1
+- idx_2: response '1997' vs target '2001年' → Different → 0
+- idx_3: response '2017' vs target '2002年' → Different → 0
+- idx_4: response '2002' vs target '2002年' → Same → 1
+- idx_5: response '2005' vs target '2002年' → Different → 0
+- idx_6: response '2004' vs target '2004年' → Same → 1
+- idx_7: response '2023' vs target '2023年' → Same → 1
+- idx_8: response '2006' vs target '2023年' → Different → 0
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0
+}
+```",2002年,2017,0.0,"首先，根据给定的评分准则：
+- 回答与参考答案语义相同或者指向的实体一致，即可得1分；
+- 否则为0分。
+
+逐一分析：
+
+idx_0  
+response: 王家卫  
+target: 邓特希  
+二者是不同的人名，且语义不一致，不得分。
+
+idx_1  
+response: 王家卫  
+target: 王家卫  
+完全相同，人名一致，得1分。
+
+idx_2  
+response: 王家卫  
+target: 马伟豪  
+不同人名，语义不一致，得0分。
+
+idx_3  
+response: 徐皓峰  
+target: 刘镇伟  
+不同人名，语义不一致，得0分。
+
+idx_4  
+response: 陈果  
+target: 刘伟强、麦兆辉  
+响应只有一个导演名称，目标答案是两个导演名称，且不同人名，语义不对应，得0分。
+
+idx_5  
+response: 杜琪峰  
+target: 张艺谋  
+不同人名，语义不一致，得0分。
+
+idx_6  
+response: 王家卫  
+target: 王家卫  
+相同，得1分。
+
+idx_7  
+response: 吴京  
+target: 程耳  
+不同人名，语义不一致，得0分。
+
+idx_8  
+response: 陈嘉上  
+target: 庄文强  
+不同人名，不一致，得0分。
+
+综上，只有 idx_1 和 idx_6 得1分，其他均为0分。
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",刘镇伟,徐皓峰,1.0,"下面针对每个 idx 进行逐条分析判定：
+
+---
+
+**idx_0**  
+- response: '-'  
+- target: '-'  
+分析：没有回答，标准答案也是无内容，可以视为无误。  
+判断：完全一致，得分1。
+
+---
+
+**idx_1**  
+- response: '法国戛纳电影节最佳男演员奖'  
+- target: '第53届戛纳国际电影节最佳男演员\n第20届香港电影金像奖最佳男主角\n第1届华语电影传媒大奖最佳男主角'  
+分析：响应只提到了“法国戛纳电影节最佳男演员奖”，与标准答案中“第53届戛纳国际电影节最佳男演员”指向的实体一致（均为戛纳电影节最佳男演员奖），但未涉及后两个奖项。根据评分标准，只要语义大致相同或者指向实体一致即可得1分。这里指向的“戛纳电影节最佳男演员奖”是标准答案的部分奖项。  
+判断：响应至少覆盖了部分标准答案中的实体，符合得1。
+
+---
+
+**idx_2**  
+- response: '-'  
+- target: '-'  
+分析：同idx_0，无内容，标准答案也无内容，得1分。
+
+---
+
+**idx_3**  
+- response: '-'  
+- target: '-'  
+分析：同idx_0、idx_2，无内容，标准答案也无内容，得1分。
+
+---
+
+**idx_4**  
+- response: '香港电影金像奖最佳男主角'  
+- target: '第22届香港电影金像奖最佳男主角\n第40届台湾电影金马奖最佳男主角奖'  
+分析：响应提到了“香港电影金像奖最佳男主角”，与标准答案中的“第22届香港电影金像奖最佳男主角”指向的实体一致。未提及台湾电影金马奖。根据标准，只要同义即可得满分。  
+判断：响应至少包含标准答案中一项，且指向实体一致，得1分。
+
+---
+
+**idx_5**  
+- response: '-'  
+- target: '-'  
+分析：无内容，对应无内容，得1分。
+
+---
+
+**idx_6**  
+- response: '-'  
+- target: '第24届香港电影金像奖最佳男主角'  
+分析：响应无内容，而标准答案有内容，内容不一致。  
+判断：响应未覆盖标准答案中的内容，得0分。
+
+---
+
+**idx_7**  
+- response: '-'  
+- target: '第36届中国电影金鸡奖最佳男主角'  
+分析：响应无内容，标准答案有内容，内容不一致。  
+得分0。
+
+---
+
+**idx_8**  
+- response: '-'  
+- target: '第42届香港电影金像奖最佳男主角'  
+分析：响应无内容，标准答案有内容，不符合。  
+得0分。
+
+---
+
+### 最终评分结果：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",-,-,1.0,key_match
+,,无间道,无间道,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+That means the response only needs to be roughly the same or refer to the same entity. Since the answers and responses are years, the response must be the same year as the target year to get 1. Any mismatch will get 0.
+
+---
+
+Analysis:
+
+- idx_0: response '1995' vs target '2000年' → Different year → 0
+- idx_1: response '2000' vs target '2000年' → Same year → 1
+- idx_2: response '1997' vs target '2001年' → Different → 0
+- idx_3: response '2017' vs target '2002年' → Different → 0
+- idx_4: response '2002' vs target '2002年' → Same → 1
+- idx_5: response '2005' vs target '2002年' → Different → 0
+- idx_6: response '2004' vs target '2004年' → Same → 1
+- idx_7: response '2023' vs target '2023年' → Same → 1
+- idx_8: response '2006' vs target '2023年' → Different → 0
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0
+}
+```",2002年,2002,0.0,"首先，根据给定的评分准则：
+- 回答与参考答案语义相同或者指向的实体一致，即可得1分；
+- 否则为0分。
+
+逐一分析：
+
+idx_0  
+response: 王家卫  
+target: 邓特希  
+二者是不同的人名，且语义不一致，不得分。
+
+idx_1  
+response: 王家卫  
+target: 王家卫  
+完全相同，人名一致，得1分。
+
+idx_2  
+response: 王家卫  
+target: 马伟豪  
+不同人名，语义不一致，得0分。
+
+idx_3  
+response: 徐皓峰  
+target: 刘镇伟  
+不同人名，语义不一致，得0分。
+
+idx_4  
+response: 陈果  
+target: 刘伟强、麦兆辉  
+响应只有一个导演名称，目标答案是两个导演名称，且不同人名，语义不对应，得0分。
+
+idx_5  
+response: 杜琪峰  
+target: 张艺谋  
+不同人名，语义不一致，得0分。
+
+idx_6  
+response: 王家卫  
+target: 王家卫  
+相同，得1分。
+
+idx_7  
+response: 吴京  
+target: 程耳  
+不同人名，语义不一致，得0分。
+
+idx_8  
+response: 陈嘉上  
+target: 庄文强  
+不同人名，不一致，得0分。
+
+综上，只有 idx_1 和 idx_6 得1分，其他均为0分。
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",刘伟强、麦兆辉,陈果,1.0,"下面针对每个 idx 进行逐条分析判定：
+
+---
+
+**idx_0**  
+- response: '-'  
+- target: '-'  
+分析：没有回答，标准答案也是无内容，可以视为无误。  
+判断：完全一致，得分1。
+
+---
+
+**idx_1**  
+- response: '法国戛纳电影节最佳男演员奖'  
+- target: '第53届戛纳国际电影节最佳男演员\n第20届香港电影金像奖最佳男主角\n第1届华语电影传媒大奖最佳男主角'  
+分析：响应只提到了“法国戛纳电影节最佳男演员奖”，与标准答案中“第53届戛纳国际电影节最佳男演员”指向的实体一致（均为戛纳电影节最佳男演员奖），但未涉及后两个奖项。根据评分标准，只要语义大致相同或者指向实体一致即可得1分。这里指向的“戛纳电影节最佳男演员奖”是标准答案的部分奖项。  
+判断：响应至少覆盖了部分标准答案中的实体，符合得1。
+
+---
+
+**idx_2**  
+- response: '-'  
+- target: '-'  
+分析：同idx_0，无内容，标准答案也无内容，得1分。
+
+---
+
+**idx_3**  
+- response: '-'  
+- target: '-'  
+分析：同idx_0、idx_2，无内容，标准答案也无内容，得1分。
+
+---
+
+**idx_4**  
+- response: '香港电影金像奖最佳男主角'  
+- target: '第22届香港电影金像奖最佳男主角\n第40届台湾电影金马奖最佳男主角奖'  
+分析：响应提到了“香港电影金像奖最佳男主角”，与标准答案中的“第22届香港电影金像奖最佳男主角”指向的实体一致。未提及台湾电影金马奖。根据标准，只要同义即可得满分。  
+判断：响应至少包含标准答案中一项，且指向实体一致，得1分。
+
+---
+
+**idx_5**  
+- response: '-'  
+- target: '-'  
+分析：无内容，对应无内容，得1分。
+
+---
+
+**idx_6**  
+- response: '-'  
+- target: '第24届香港电影金像奖最佳男主角'  
+分析：响应无内容，而标准答案有内容，内容不一致。  
+判断：响应未覆盖标准答案中的内容，得0分。
+
+---
+
+**idx_7**  
+- response: '-'  
+- target: '第36届中国电影金鸡奖最佳男主角'  
+分析：响应无内容，标准答案有内容，内容不一致。  
+得分0。
+
+---
+
+**idx_8**  
+- response: '-'  
+- target: '第42届香港电影金像奖最佳男主角'  
+分析：响应无内容，标准答案有内容，不符合。  
+得0分。
+
+---
+
+### 最终评分结果：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```","第22届香港电影金像奖最佳男主角
+第40届台湾电影金马奖最佳男主角奖",香港电影金像奖最佳男主角,1.0,key_match
+,,英雄,唐伯虎点秋香,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+That means the response only needs to be roughly the same or refer to the same entity. Since the answers and responses are years, the response must be the same year as the target year to get 1. Any mismatch will get 0.
+
+---
+
+Analysis:
+
+- idx_0: response '1995' vs target '2000年' → Different year → 0
+- idx_1: response '2000' vs target '2000年' → Same year → 1
+- idx_2: response '1997' vs target '2001年' → Different → 0
+- idx_3: response '2017' vs target '2002年' → Different → 0
+- idx_4: response '2002' vs target '2002年' → Same → 1
+- idx_5: response '2005' vs target '2002年' → Different → 0
+- idx_6: response '2004' vs target '2004年' → Same → 1
+- idx_7: response '2023' vs target '2023年' → Same → 1
+- idx_8: response '2006' vs target '2023年' → Different → 0
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0
+}
+```",2002年,2005,0.0,"首先，根据给定的评分准则：
+- 回答与参考答案语义相同或者指向的实体一致，即可得1分；
+- 否则为0分。
+
+逐一分析：
+
+idx_0  
+response: 王家卫  
+target: 邓特希  
+二者是不同的人名，且语义不一致，不得分。
+
+idx_1  
+response: 王家卫  
+target: 王家卫  
+完全相同，人名一致，得1分。
+
+idx_2  
+response: 王家卫  
+target: 马伟豪  
+不同人名，语义不一致，得0分。
+
+idx_3  
+response: 徐皓峰  
+target: 刘镇伟  
+不同人名，语义不一致，得0分。
+
+idx_4  
+response: 陈果  
+target: 刘伟强、麦兆辉  
+响应只有一个导演名称，目标答案是两个导演名称，且不同人名，语义不对应，得0分。
+
+idx_5  
+response: 杜琪峰  
+target: 张艺谋  
+不同人名，语义不一致，得0分。
+
+idx_6  
+response: 王家卫  
+target: 王家卫  
+相同，得1分。
+
+idx_7  
+response: 吴京  
+target: 程耳  
+不同人名，语义不一致，得0分。
+
+idx_8  
+response: 陈嘉上  
+target: 庄文强  
+不同人名，不一致，得0分。
+
+综上，只有 idx_1 和 idx_6 得1分，其他均为0分。
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",张艺谋,杜琪峰,1.0,"下面针对每个 idx 进行逐条分析判定：
+
+---
+
+**idx_0**  
+- response: '-'  
+- target: '-'  
+分析：没有回答，标准答案也是无内容，可以视为无误。  
+判断：完全一致，得分1。
+
+---
+
+**idx_1**  
+- response: '法国戛纳电影节最佳男演员奖'  
+- target: '第53届戛纳国际电影节最佳男演员\n第20届香港电影金像奖最佳男主角\n第1届华语电影传媒大奖最佳男主角'  
+分析：响应只提到了“法国戛纳电影节最佳男演员奖”，与标准答案中“第53届戛纳国际电影节最佳男演员”指向的实体一致（均为戛纳电影节最佳男演员奖），但未涉及后两个奖项。根据评分标准，只要语义大致相同或者指向实体一致即可得1分。这里指向的“戛纳电影节最佳男演员奖”是标准答案的部分奖项。  
+判断：响应至少覆盖了部分标准答案中的实体，符合得1。
+
+---
+
+**idx_2**  
+- response: '-'  
+- target: '-'  
+分析：同idx_0，无内容，标准答案也无内容，得1分。
+
+---
+
+**idx_3**  
+- response: '-'  
+- target: '-'  
+分析：同idx_0、idx_2，无内容，标准答案也无内容，得1分。
+
+---
+
+**idx_4**  
+- response: '香港电影金像奖最佳男主角'  
+- target: '第22届香港电影金像奖最佳男主角\n第40届台湾电影金马奖最佳男主角奖'  
+分析：响应提到了“香港电影金像奖最佳男主角”，与标准答案中的“第22届香港电影金像奖最佳男主角”指向的实体一致。未提及台湾电影金马奖。根据标准，只要同义即可得满分。  
+判断：响应至少包含标准答案中一项，且指向实体一致，得1分。
+
+---
+
+**idx_5**  
+- response: '-'  
+- target: '-'  
+分析：无内容，对应无内容，得1分。
+
+---
+
+**idx_6**  
+- response: '-'  
+- target: '第24届香港电影金像奖最佳男主角'  
+分析：响应无内容，而标准答案有内容，内容不一致。  
+判断：响应未覆盖标准答案中的内容，得0分。
+
+---
+
+**idx_7**  
+- response: '-'  
+- target: '第36届中国电影金鸡奖最佳男主角'  
+分析：响应无内容，标准答案有内容，内容不一致。  
+得分0。
+
+---
+
+**idx_8**  
+- response: '-'  
+- target: '第42届香港电影金像奖最佳男主角'  
+分析：响应无内容，标准答案有内容，不符合。  
+得0分。
+
+---
+
+### 最终评分结果：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",-,-,1.0,key_match
+,,2046,2046,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+That means the response only needs to be roughly the same or refer to the same entity. Since the answers and responses are years, the response must be the same year as the target year to get 1. Any mismatch will get 0.
+
+---
+
+Analysis:
+
+- idx_0: response '1995' vs target '2000年' → Different year → 0
+- idx_1: response '2000' vs target '2000年' → Same year → 1
+- idx_2: response '1997' vs target '2001年' → Different → 0
+- idx_3: response '2017' vs target '2002年' → Different → 0
+- idx_4: response '2002' vs target '2002年' → Same → 1
+- idx_5: response '2005' vs target '2002年' → Different → 0
+- idx_6: response '2004' vs target '2004年' → Same → 1
+- idx_7: response '2023' vs target '2023年' → Same → 1
+- idx_8: response '2006' vs target '2023年' → Different → 0
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0
+}
+```",2004年,2004,1.0,"首先，根据给定的评分准则：
+- 回答与参考答案语义相同或者指向的实体一致，即可得1分；
+- 否则为0分。
+
+逐一分析：
+
+idx_0  
+response: 王家卫  
+target: 邓特希  
+二者是不同的人名，且语义不一致，不得分。
+
+idx_1  
+response: 王家卫  
+target: 王家卫  
+完全相同，人名一致，得1分。
+
+idx_2  
+response: 王家卫  
+target: 马伟豪  
+不同人名，语义不一致，得0分。
+
+idx_3  
+response: 徐皓峰  
+target: 刘镇伟  
+不同人名，语义不一致，得0分。
+
+idx_4  
+response: 陈果  
+target: 刘伟强、麦兆辉  
+响应只有一个导演名称，目标答案是两个导演名称，且不同人名，语义不对应，得0分。
+
+idx_5  
+response: 杜琪峰  
+target: 张艺谋  
+不同人名，语义不一致，得0分。
+
+idx_6  
+response: 王家卫  
+target: 王家卫  
+相同，得1分。
+
+idx_7  
+response: 吴京  
+target: 程耳  
+不同人名，语义不一致，得0分。
+
+idx_8  
+response: 陈嘉上  
+target: 庄文强  
+不同人名，不一致，得0分。
+
+综上，只有 idx_1 和 idx_6 得1分，其他均为0分。
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",王家卫,王家卫,0.0,"下面针对每个 idx 进行逐条分析判定：
+
+---
+
+**idx_0**  
+- response: '-'  
+- target: '-'  
+分析：没有回答，标准答案也是无内容，可以视为无误。  
+判断：完全一致，得分1。
+
+---
+
+**idx_1**  
+- response: '法国戛纳电影节最佳男演员奖'  
+- target: '第53届戛纳国际电影节最佳男演员\n第20届香港电影金像奖最佳男主角\n第1届华语电影传媒大奖最佳男主角'  
+分析：响应只提到了“法国戛纳电影节最佳男演员奖”，与标准答案中“第53届戛纳国际电影节最佳男演员”指向的实体一致（均为戛纳电影节最佳男演员奖），但未涉及后两个奖项。根据评分标准，只要语义大致相同或者指向实体一致即可得1分。这里指向的“戛纳电影节最佳男演员奖”是标准答案的部分奖项。  
+判断：响应至少覆盖了部分标准答案中的实体，符合得1。
+
+---
+
+**idx_2**  
+- response: '-'  
+- target: '-'  
+分析：同idx_0，无内容，标准答案也无内容，得1分。
+
+---
+
+**idx_3**  
+- response: '-'  
+- target: '-'  
+分析：同idx_0、idx_2，无内容，标准答案也无内容，得1分。
+
+---
+
+**idx_4**  
+- response: '香港电影金像奖最佳男主角'  
+- target: '第22届香港电影金像奖最佳男主角\n第40届台湾电影金马奖最佳男主角奖'  
+分析：响应提到了“香港电影金像奖最佳男主角”，与标准答案中的“第22届香港电影金像奖最佳男主角”指向的实体一致。未提及台湾电影金马奖。根据标准，只要同义即可得满分。  
+判断：响应至少包含标准答案中一项，且指向实体一致，得1分。
+
+---
+
+**idx_5**  
+- response: '-'  
+- target: '-'  
+分析：无内容，对应无内容，得1分。
+
+---
+
+**idx_6**  
+- response: '-'  
+- target: '第24届香港电影金像奖最佳男主角'  
+分析：响应无内容，而标准答案有内容，内容不一致。  
+判断：响应未覆盖标准答案中的内容，得0分。
+
+---
+
+**idx_7**  
+- response: '-'  
+- target: '第36届中国电影金鸡奖最佳男主角'  
+分析：响应无内容，标准答案有内容，内容不一致。  
+得分0。
+
+---
+
+**idx_8**  
+- response: '-'  
+- target: '第42届香港电影金像奖最佳男主角'  
+分析：响应无内容，标准答案有内容，不符合。  
+得0分。
+
+---
+
+### 最终评分结果：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",第24届香港电影金像奖最佳男主角,-,1.0,key_match
+,,无名,无名,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+That means the response only needs to be roughly the same or refer to the same entity. Since the answers and responses are years, the response must be the same year as the target year to get 1. Any mismatch will get 0.
+
+---
+
+Analysis:
+
+- idx_0: response '1995' vs target '2000年' → Different year → 0
+- idx_1: response '2000' vs target '2000年' → Same year → 1
+- idx_2: response '1997' vs target '2001年' → Different → 0
+- idx_3: response '2017' vs target '2002年' → Different → 0
+- idx_4: response '2002' vs target '2002年' → Same → 1
+- idx_5: response '2005' vs target '2002年' → Different → 0
+- idx_6: response '2004' vs target '2004年' → Same → 1
+- idx_7: response '2023' vs target '2023年' → Same → 1
+- idx_8: response '2006' vs target '2023年' → Different → 0
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0
+}
+```",2023年,2023,0.0,"首先，根据给定的评分准则：
+- 回答与参考答案语义相同或者指向的实体一致，即可得1分；
+- 否则为0分。
+
+逐一分析：
+
+idx_0  
+response: 王家卫  
+target: 邓特希  
+二者是不同的人名，且语义不一致，不得分。
+
+idx_1  
+response: 王家卫  
+target: 王家卫  
+完全相同，人名一致，得1分。
+
+idx_2  
+response: 王家卫  
+target: 马伟豪  
+不同人名，语义不一致，得0分。
+
+idx_3  
+response: 徐皓峰  
+target: 刘镇伟  
+不同人名，语义不一致，得0分。
+
+idx_4  
+response: 陈果  
+target: 刘伟强、麦兆辉  
+响应只有一个导演名称，目标答案是两个导演名称，且不同人名，语义不对应，得0分。
+
+idx_5  
+response: 杜琪峰  
+target: 张艺谋  
+不同人名，语义不一致，得0分。
+
+idx_6  
+response: 王家卫  
+target: 王家卫  
+相同，得1分。
+
+idx_7  
+response: 吴京  
+target: 程耳  
+不同人名，语义不一致，得0分。
+
+idx_8  
+response: 陈嘉上  
+target: 庄文强  
+不同人名，不一致，得0分。
+
+综上，只有 idx_1 和 idx_6 得1分，其他均为0分。
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",程耳,吴京,0.0,"下面针对每个 idx 进行逐条分析判定：
+
+---
+
+**idx_0**  
+- response: '-'  
+- target: '-'  
+分析：没有回答，标准答案也是无内容，可以视为无误。  
+判断：完全一致，得分1。
+
+---
+
+**idx_1**  
+- response: '法国戛纳电影节最佳男演员奖'  
+- target: '第53届戛纳国际电影节最佳男演员\n第20届香港电影金像奖最佳男主角\n第1届华语电影传媒大奖最佳男主角'  
+分析：响应只提到了“法国戛纳电影节最佳男演员奖”，与标准答案中“第53届戛纳国际电影节最佳男演员”指向的实体一致（均为戛纳电影节最佳男演员奖），但未涉及后两个奖项。根据评分标准，只要语义大致相同或者指向实体一致即可得1分。这里指向的“戛纳电影节最佳男演员奖”是标准答案的部分奖项。  
+判断：响应至少覆盖了部分标准答案中的实体，符合得1。
+
+---
+
+**idx_2**  
+- response: '-'  
+- target: '-'  
+分析：同idx_0，无内容，标准答案也无内容，得1分。
+
+---
+
+**idx_3**  
+- response: '-'  
+- target: '-'  
+分析：同idx_0、idx_2，无内容，标准答案也无内容，得1分。
+
+---
+
+**idx_4**  
+- response: '香港电影金像奖最佳男主角'  
+- target: '第22届香港电影金像奖最佳男主角\n第40届台湾电影金马奖最佳男主角奖'  
+分析：响应提到了“香港电影金像奖最佳男主角”，与标准答案中的“第22届香港电影金像奖最佳男主角”指向的实体一致。未提及台湾电影金马奖。根据标准，只要同义即可得满分。  
+判断：响应至少包含标准答案中一项，且指向实体一致，得1分。
+
+---
+
+**idx_5**  
+- response: '-'  
+- target: '-'  
+分析：无内容，对应无内容，得1分。
+
+---
+
+**idx_6**  
+- response: '-'  
+- target: '第24届香港电影金像奖最佳男主角'  
+分析：响应无内容，而标准答案有内容，内容不一致。  
+判断：响应未覆盖标准答案中的内容，得0分。
+
+---
+
+**idx_7**  
+- response: '-'  
+- target: '第36届中国电影金鸡奖最佳男主角'  
+分析：响应无内容，标准答案有内容，内容不一致。  
+得分0。
+
+---
+
+**idx_8**  
+- response: '-'  
+- target: '第42届香港电影金像奖最佳男主角'  
+分析：响应无内容，标准答案有内容，不符合。  
+得0分。
+
+---
+
+### 最终评分结果：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",第36届中国电影金鸡奖最佳男主角,-,1.0,key_match
+,,金手指,金鸡,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+That means the response only needs to be roughly the same or refer to the same entity. Since the answers and responses are years, the response must be the same year as the target year to get 1. Any mismatch will get 0.
+
+---
+
+Analysis:
+
+- idx_0: response '1995' vs target '2000年' → Different year → 0
+- idx_1: response '2000' vs target '2000年' → Same year → 1
+- idx_2: response '1997' vs target '2001年' → Different → 0
+- idx_3: response '2017' vs target '2002年' → Different → 0
+- idx_4: response '2002' vs target '2002年' → Same → 1
+- idx_5: response '2005' vs target '2002年' → Different → 0
+- idx_6: response '2004' vs target '2004年' → Same → 1
+- idx_7: response '2023' vs target '2023年' → Same → 1
+- idx_8: response '2006' vs target '2023年' → Different → 0
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0
+}
+```",2023年,2006,0.0,"首先，根据给定的评分准则：
+- 回答与参考答案语义相同或者指向的实体一致，即可得1分；
+- 否则为0分。
+
+逐一分析：
+
+idx_0  
+response: 王家卫  
+target: 邓特希  
+二者是不同的人名，且语义不一致，不得分。
+
+idx_1  
+response: 王家卫  
+target: 王家卫  
+完全相同，人名一致，得1分。
+
+idx_2  
+response: 王家卫  
+target: 马伟豪  
+不同人名，语义不一致，得0分。
+
+idx_3  
+response: 徐皓峰  
+target: 刘镇伟  
+不同人名，语义不一致，得0分。
+
+idx_4  
+response: 陈果  
+target: 刘伟强、麦兆辉  
+响应只有一个导演名称，目标答案是两个导演名称，且不同人名，语义不对应，得0分。
+
+idx_5  
+response: 杜琪峰  
+target: 张艺谋  
+不同人名，语义不一致，得0分。
+
+idx_6  
+response: 王家卫  
+target: 王家卫  
+相同，得1分。
+
+idx_7  
+response: 吴京  
+target: 程耳  
+不同人名，语义不一致，得0分。
+
+idx_8  
+response: 陈嘉上  
+target: 庄文强  
+不同人名，不一致，得0分。
+
+综上，只有 idx_1 和 idx_6 得1分，其他均为0分。
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",庄文强,陈嘉上,0.0,"下面针对每个 idx 进行逐条分析判定：
+
+---
+
+**idx_0**  
+- response: '-'  
+- target: '-'  
+分析：没有回答，标准答案也是无内容，可以视为无误。  
+判断：完全一致，得分1。
+
+---
+
+**idx_1**  
+- response: '法国戛纳电影节最佳男演员奖'  
+- target: '第53届戛纳国际电影节最佳男演员\n第20届香港电影金像奖最佳男主角\n第1届华语电影传媒大奖最佳男主角'  
+分析：响应只提到了“法国戛纳电影节最佳男演员奖”，与标准答案中“第53届戛纳国际电影节最佳男演员”指向的实体一致（均为戛纳电影节最佳男演员奖），但未涉及后两个奖项。根据评分标准，只要语义大致相同或者指向实体一致即可得1分。这里指向的“戛纳电影节最佳男演员奖”是标准答案的部分奖项。  
+判断：响应至少覆盖了部分标准答案中的实体，符合得1。
+
+---
+
+**idx_2**  
+- response: '-'  
+- target: '-'  
+分析：同idx_0，无内容，标准答案也无内容，得1分。
+
+---
+
+**idx_3**  
+- response: '-'  
+- target: '-'  
+分析：同idx_0、idx_2，无内容，标准答案也无内容，得1分。
+
+---
+
+**idx_4**  
+- response: '香港电影金像奖最佳男主角'  
+- target: '第22届香港电影金像奖最佳男主角\n第40届台湾电影金马奖最佳男主角奖'  
+分析：响应提到了“香港电影金像奖最佳男主角”，与标准答案中的“第22届香港电影金像奖最佳男主角”指向的实体一致。未提及台湾电影金马奖。根据标准，只要同义即可得满分。  
+判断：响应至少包含标准答案中一项，且指向实体一致，得1分。
+
+---
+
+**idx_5**  
+- response: '-'  
+- target: '-'  
+分析：无内容，对应无内容，得1分。
+
+---
+
+**idx_6**  
+- response: '-'  
+- target: '第24届香港电影金像奖最佳男主角'  
+分析：响应无内容，而标准答案有内容，内容不一致。  
+判断：响应未覆盖标准答案中的内容，得0分。
+
+---
+
+**idx_7**  
+- response: '-'  
+- target: '第36届中国电影金鸡奖最佳男主角'  
+分析：响应无内容，标准答案有内容，内容不一致。  
+得分0。
+
+---
+
+**idx_8**  
+- response: '-'  
+- target: '第42届香港电影金像奖最佳男主角'  
+分析：响应无内容，标准答案有内容，不符合。  
+得0分。
+
+---
+
+### 最终评分结果：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",第42届香港电影金像奖最佳男主角,-,1.0,key_match
+1.0,,一代宗师,,,,2013年,,,,王家卫,,,,香港导演协会奖最佳男主角,,,
+1.0,,东京攻略,,,,2000年,,,,马楚成,,,,-,,,
+1.0,,伤城,,,,2006年,,,,刘伟强、麦兆辉,,,,-,,,
+1.0,,听风者,,,,2012年,,,,麦兆辉、庄文强,,,,-,,,
+1.0,,嘿玛嘿玛,,,,2016年,,,,宗萨钦哲仁波切,,,,-,,,
+1.0,,地下铁,,,,2003年,,,,马伟豪,,,,第4届华语电影传媒大奖港台最佳男演员银奖,,,
+1.0,,大魔术师,,,,2011年,,,,尔冬升,,,,-,,,
+1.0,,尚气与十环传奇,,,,2021年,,,,德斯汀·克里顿,,,,-,,,
+1.0,,我要做model,,,,2004年,,,,谷德昭,,,,nan,,,
+1.0,,捉妖记2,,,,2018年,,,,许诚毅,,,,-,,,
+1.0,,摆渡人,,,,2016年,,,,张嘉佳,,,,-,,,
+1.0,,无间道3：终极无间,,,,2003年,,,,刘伟强、麦兆辉,,,,-,,,
+1.0,,有情饮水饱,,,,2001年,,,,王晶,,,,-,,,
+1.0,,欧洲攻略,,,,2018年,,,,马楚成,,,,-,,,
+1.0,,色·戒,,,,2007年,,,,李安,,,,"第44届台湾电影金马奖最佳男演员
+第2届亚洲电影大奖最佳男演员",,,
+1.0,,行运超人,,,,2003年,,,,谷德昭,,,,-,,,
+1.0,,赤壁（上）,,,,2008年,,,,吴宇森,,,,-,,,
+1.0,,赤壁（下）,,,,2009年,,,,吴宇森,,,,-,,,
+1.0,,韩城攻略,,,,2005年,,,,马楚成,,,,-,,,
+1.0,,风再起时,,,,2023年,,,,翁子光,,,,第16届亚洲电影大奖最佳男主角,,,
